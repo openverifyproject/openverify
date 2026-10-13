@@ -1,3 +1,4 @@
+import json
 from typing import cast
 
 from hypothesis import given
@@ -8,9 +9,21 @@ from openverify import parse_result, serialize
 from openverify.adapters.demo import known
 from openverify.engine.aggregation import aggregate
 from openverify.model import Graph, Result
-from openverify.serialization import to_data
+from openverify.serialization import decode, json_equal, to_data
 from openverify.validation import ordered_nodes, parse_object
 from tests.helpers import handling
+
+json_values = st.recursive(
+    st.none()
+    | st.booleans()
+    | st.integers()
+    | st.text()
+    | st.floats(allow_nan=False, allow_infinity=False),
+    lambda children: (
+        st.lists(children, max_size=5) | st.dictionaries(st.text(), children, max_size=5)
+    ),
+    max_leaves=20,
+)
 
 
 @given(st.floats(min_value=0, max_value=1, allow_nan=False, allow_infinity=False))
@@ -52,6 +65,62 @@ def test_custom_resource_maps(values: dict[str, float]) -> None:
     assert parse_result(serialize(result)) == result
 
 
+@given(json_values)
+def test_json_snapshot_roundtrip_preserves_types(value: JsonValue) -> None:
+    parsed = decode(json.dumps(value, ensure_ascii=True, allow_nan=False))
+    assert json_equal(value, parsed)
+
+
+@given(st.booleans(), json_values)
+def test_boolean_number_snapshot_substitution_never_equal(flag: bool, extra: JsonValue) -> None:
+    original: JsonValue = {"nested": [extra, {"value": flag}]}
+    changed: JsonValue = {"nested": [extra, {"value": int(flag)}]}
+    assert not json_equal(original, changed)
+    assert not json_equal(changed, original)
+
+
+@given(
+    st.lists(
+        st.tuples(
+            st.floats(min_value=0, max_value=1, allow_nan=False, allow_infinity=False),
+            st.floats(min_value=1e-300, max_value=1e300, allow_nan=False, allow_infinity=False),
+        ),
+        min_size=1,
+        max_size=20,
+    )
+)
+def test_weighted_bounds_and_aligned_permutation(values: list[tuple[float, float]]) -> None:
+    scores = [s for s, _ in values]
+    weights: list[JsonValue] = [w for _, w in values]
+    inputs = [known(score=s) for s in scores]
+    config: dict[str, JsonValue] = {
+        "reducer": "WEIGHTED_AVERAGE",
+        "handling": handling(),
+        "weights": weights,
+    }
+    score = aggregate(inputs, config).score
+    assert score is not None and min(scores) <= score <= max(scores)
+    reverse = aggregate(list(reversed(inputs)), {**config, "weights": list(reversed(weights))})
+    assert reverse.score == score  # Documented reference arithmetic only.
+
+
+@given(
+    st.floats(min_value=0, max_value=1, allow_nan=False, allow_infinity=False),
+    st.lists(
+        st.floats(min_value=1e-300, max_value=1e300, allow_nan=False, allow_infinity=False),
+        min_size=1,
+        max_size=20,
+    ),
+)
+def test_identical_weighted_scores_preserved(score: float, weights: list[float]) -> None:
+    config: dict[str, JsonValue] = {
+        "reducer": "WEIGHTED_AVERAGE",
+        "handling": handling(),
+        "weights": cast(list[JsonValue], weights),
+    }
+    assert aggregate([known(score=score) for _ in weights], config).score == score
+
+
 @given(
     st.integers(min_value=1, max_value=14),
     st.sets(st.tuples(st.integers(0, 13), st.integers(0, 13)), max_size=35),
@@ -68,19 +137,6 @@ def test_arbitrary_dag_order(size: int, pairs: set[tuple[int, int]]) -> None:
     assert len(order) == size
     for edge in graph.edges:
         assert order.index(edge.from_node) < order.index(edge.to_node)
-
-
-json_values = st.recursive(
-    st.none()
-    | st.booleans()
-    | st.integers()
-    | st.text()
-    | st.floats(allow_nan=False, allow_infinity=False),
-    lambda children: (
-        st.lists(children, max_size=5) | st.dictionaries(st.text(), children, max_size=5)
-    ),
-    max_leaves=20,
-)
 
 
 @given(json_values)

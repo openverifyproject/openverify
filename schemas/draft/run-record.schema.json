@@ -54,12 +54,12 @@
     "started_at": {
       "type": "string",
       "format": "date-time",
-      "pattern": "Z$"
+      "pattern": "(?:[Zz]|\\+00:00)$"
     },
     "finished_at": {
       "type": "string",
       "format": "date-time",
-      "pattern": "Z$"
+      "pattern": "(?:[Zz]|\\+00:00)$"
     },
     "nodes": {
       "type": "array",
@@ -104,12 +104,12 @@
           "started_at": {
             "type": "string",
             "format": "date-time",
-            "pattern": "Z$"
+            "pattern": "(?:[Zz]|\\+00:00)$"
           },
           "finished_at": {
             "type": "string",
             "format": "date-time",
-            "pattern": "Z$"
+            "pattern": "(?:[Zz]|\\+00:00)$"
           },
           "usage": {
             "type": "object",

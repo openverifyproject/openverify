@@ -24,8 +24,18 @@ Numeric reducers produce KNOWN score without implying verdict. MIN/MAX select
 extrema; AVERAGE is arithmetic mean. WEIGHTED_AVERAGE requires one finite
 nonnegative weight per original input and positive retained weight total;
 filtering preserves original positions. Zero total MUST be rejected.
+These positional weights require an explicitly supplied, ordered Result sequence.
+The draft does not yet define graph predecessor membership/order or weight identity
+across successful and bookkeeping outputs. Therefore a graph node with kind
+AGGREGATE, executor_ref standard.aggregate, and reducer WEIGHTED_AVERAGE MUST
+yield GRAPH_UNSUPPORTED after configuration validation in the current subset.
+Malformed configuration still yields AGGREGATE_CONFIG. The direct reducer API
+with an explicit ordered input sequence remains supported. No identity-keyed
+weight wire format is introduced by this restriction.
 WORST_SEVERITY requires an explicit severity_domain {id, levels}, whose labels
 are unique, nonempty and have distinct integer ranks; higher rank is worse.
+Ranks follow JSON Schema integer semantics: integral JSON numbers such as 1 and
+1.0 are valid; booleans, numeric strings, and fractional numbers are not ranks.
 Inputs MUST refer to that domain and labels in it. Output contains its greatest
 ranked severity without implying verdict. All output Results are successful,
 applicable, KNOWN; evidence from retained inputs is concatenated in input order.
@@ -48,4 +58,6 @@ Escalation is a Control decision rather than a synthetic score.
 
 Portable fail-closed/warning/escalation aggregation policies and majority ties
 are not implemented. No general policy language is defined.
+Graph-to-Aggregate input membership/order, treatment of Derive/Control bookkeeping
+Results, and positional weight association with predecessor identity are unresolved.
 

@@ -1,6 +1,7 @@
 """Schema validation followed by the prose invariants of the supported draft."""
 
 import json
+import re
 from datetime import datetime
 from functools import lru_cache
 from importlib.resources import files
@@ -30,7 +31,7 @@ from openverify.model import (
     Value,
     VerificationDefinition,
 )
-from openverify.serialization import decode, to_data
+from openverify.serialization import decode, json_equal, to_data
 
 TYPES: dict[str, type[Value]] = {
     "verification-definition": VerificationDefinition,
@@ -65,6 +66,23 @@ class ValidatorPort(Protocol):
     def validate(self, instance: JsonValue) -> None: ...
 
 
+def _rfc3339_datetime(value: object) -> bool:
+    # jsonschema's date-time checker otherwise depends on an optional package.
+    if not isinstance(value, str):
+        return True
+    if (
+        re.fullmatch(
+            r"[0-9]{4}-[0-9]{2}-[0-9]{2}[Tt][0-9]{2}:[0-9]{2}:[0-9]{2}"
+            r"(?:\.[0-9]+)?(?:[Zz]|[+-][0-9]{2}:[0-9]{2})",
+            value,
+        )
+        is None
+    ):
+        return False
+    datetime.fromisoformat(value[:-1] + "Z" if value.endswith("z") else value)
+    return True
+
+
 @lru_cache
 def schema_validator(name: str) -> Draft202012Validator:
     resources: list[tuple[str, Resource[Schema]]] = []
@@ -72,9 +90,9 @@ def schema_validator(name: str) -> Draft202012Validator:
         schema = cast(dict[str, JsonValue], json.loads(path.read_text(encoding="utf-8")))
         resources.append((cast(str, schema["$id"]), Resource.from_contents(cast(Schema, schema))))
     registry = Registry[Schema]().with_resources(resources)
-    return Draft202012Validator(
-        load_schema(name), registry=registry, format_checker=FormatChecker()
-    )
+    checker = FormatChecker()
+    checker.checks("date-time", raises=ValueError)(_rfc3339_datetime)
+    return Draft202012Validator(load_schema(name), registry=registry, format_checker=checker)
 
 
 def validate_wire(name: str, data: JsonValue) -> None:
@@ -305,15 +323,12 @@ def _graph(graph: Graph) -> None:
     ordered_nodes(graph)
     for n in graph.nodes:
         if n.kind == "AGGREGATE" and n.executor_ref == "standard.aggregate":
-            aggregate_config(
-                n.config,
-                sum(
-                    e.to_node == n.id
-                    for e in graph.edges
-                    if next(node for node in graph.nodes if node.id == e.from_node).kind
-                    in ("EVALUATE", "AGGREGATE")
-                ),
-            )
+            aggregate_config(n.config)
+            if n.config["reducer"] == "WEIGHTED_AVERAGE":
+                fail(
+                    "GRAPH_UNSUPPORTED",
+                    "Weighted graph input membership/order and weight identity are unspecified",
+                )
 
 
 def ordered_nodes(graph: Graph) -> list[str]:
@@ -335,14 +350,22 @@ def ordered_nodes(graph: Graph) -> list[str]:
     return ordered
 
 
+def _timestamp(value: str) -> datetime:
+    # RFC3339 allows lowercase z; datetime accepts uppercase Z. Preserve wire text.
+    try:
+        return datetime.fromisoformat(value[:-1] + "Z" if value.endswith("z") else value)
+    except ValueError as exc:
+        raise ProtocolError("PROTOCOL_STRUCTURE", "Invalid RFC3339 timestamp") from exc
+
+
 def _lineage(run: RunRecord) -> None:
     graph = run.definition.graph
     nodes = {n.id: n for n in graph.nodes}
     seen: dict[str, Result] = {}
     seen_ids: set[str] = set()
-    if run.subject != run.definition.subject or datetime.fromisoformat(
+    if not json_equal(to_data(run.subject), to_data(run.definition.subject)) or _timestamp(
         run.finished_at
-    ) < datetime.fromisoformat(run.started_at):
+    ) < _timestamp(run.started_at):
         fail("PROVENANCE_LINEAGE", "Definition identity or run timing mismatch")
     for record in run.nodes:
         node = nodes.get(record.node_id)
@@ -354,17 +377,23 @@ def _lineage(run: RunRecord) -> None:
             or set(record.upstream_node_ids) != expected
             or len(record.upstream_node_ids) != len(expected)
             or not expected <= seen_ids
-            or record.upstream_results != {id: seen[id] for id in expected if id in seen}
-            or datetime.fromisoformat(record.finished_at)
-            < datetime.fromisoformat(record.started_at)
+            or not json_equal(
+                {id: to_data(result) for id, result in record.upstream_results.items()},
+                {id: to_data(seen[id]) for id in expected if id in seen},
+            )
+            or _timestamp(record.finished_at) < _timestamp(record.started_at)
         ):
             fail("PROVENANCE_LINEAGE", "Node dependency lineage mismatch")
         outputs = sum(x is not None for x in (record.result, record.decision, record.derived))
         assert node is not None
-        if datetime.fromisoformat(record.started_at) < datetime.fromisoformat(
-            run.started_at
-        ) or datetime.fromisoformat(record.finished_at) > datetime.fromisoformat(run.finished_at):
+        if _timestamp(record.started_at) < _timestamp(run.started_at) or _timestamp(
+            record.finished_at
+        ) > _timestamp(run.finished_at):
             fail("PROVENANCE_LINEAGE", "Node timing is outside run interval")
+        if run.admission.outcome == "SKIP" and (
+            record.result is None or record.result.disposition != "SKIPPED"
+        ):
+            fail("PROVENANCE_LINEAGE", "Admission SKIP requires every node to be SKIPPED")
         if run.admission.outcome != "RUN" and (
             record.result is None or record.result.disposition == "EXECUTED"
         ):
@@ -384,5 +413,8 @@ def _lineage(run: RunRecord) -> None:
         seen_ids.add(record.node_id)
         if record.result:
             seen[record.node_id] = record.result
-    if seen_ids != set(nodes) or run.final_results != seen:
+    if seen_ids != set(nodes) or not json_equal(
+        {id: to_data(result) for id, result in run.final_results.items()},
+        {id: to_data(result) for id, result in seen.items()},
+    ):
         fail("PROVENANCE_LINEAGE", "Incomplete node or final-result lineage")

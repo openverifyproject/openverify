@@ -191,7 +191,7 @@ schemas["verification-definition"] = marked(
     },
     ("id", "version", "subject", "criterion", "judgment_schema", "graph", "execution_policy"),
 )
-timestamp = {"type": "string", "format": "date-time", "pattern": "Z$"}
+timestamp = {"type": "string", "format": "date-time", "pattern": r"(?:[Zz]|\+00:00)$"}
 results = {"type": "object", "additionalProperties": ref("result")}
 schemas["run-record"] = marked(
     {
@@ -279,7 +279,10 @@ descriptions = {
     "result": "Independent result axes and observations; prose restricts state combinations.",
     "resource": "Unit-bearing measurement with kind-dependent value or range fields.",
     "decision": "Verification control decision, distinct from judgment; ROUTE needs destination.",
-    "graph": "Directed graph subset with capabilities, dependencies and source equality guards.",
+    "graph": (
+        "Directed graph subset with source equality guards; semantic validation rejects "
+        "unsupported standard weighted graph aggregation."
+    ),
     "verification-definition": "Versioned subject/criterion, judgment schema, graph and policy.",
     "run-record": (
         "Snapshots retaining identity, admission, lineage, outputs, usage and UTC timing."

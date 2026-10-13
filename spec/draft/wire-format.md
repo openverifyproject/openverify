@@ -16,6 +16,8 @@ Artifact references are preferred for external content; the core fetches nothing
 Schemas use URN ids under urn:verification:draft: independently of package name.
 Local reference resolution MUST use shipped schemas, not network retrieval.
 JSON Schema validity and semantic validity are distinct checks.
+JSON Schema integer fields admit integral numeric values regardless of notation
+(for example 1 and 1.0), excluding booleans and numeric strings.
 
 ## NON-NORMATIVE EXAMPLES
 
@@ -23,6 +25,10 @@ Python serializes with UTF-8, no nonfinite values, stable key ordering, and no
 optional nulls. Its fingerprint is "local-sha256:" plus SHA-256 of sorted compact
 JSON of that serialization. That is deterministic within this implementation,
 NOT normative canonical JSON, cross-language hashing, or signing.
+The SDK normalizes integral severity ranks to Python integers. Its provenance
+comparison recursively distinguishes JSON types, with int/float sharing the JSON
+number type. Numeric comparison uses parsed values, including the existing binary64
+normalization of scores/measurements; it introduces no portable rounding guarantee.
 
 ## OPEN QUESTIONS
 
