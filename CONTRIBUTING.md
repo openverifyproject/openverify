@@ -23,3 +23,10 @@ in CHANGELOG.md and fixtures explicitly. Do not promise 1.0 stability.
 Adapters are trusted host code registered explicitly; definitions are data.
 Do not add infrastructure or provider integrations.
 
+The normative schemas/profile have packaged copies checked by tests. Maintain
+their explicit scripts in tools/ and regenerate schemas, fixtures, profile, then
+examples in that order; never derive protocol schemas from SDK serialization.
+Models freeze attributes, not nested containers. Validate before interchange and
+retain the engine's snapshot isolation when changing execution behavior.
+Source distributions carry specification, fixtures, examples, tests and uv.lock.
+

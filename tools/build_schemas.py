@@ -281,7 +281,9 @@ descriptions = {
     "decision": "Verification control decision, distinct from judgment; ROUTE needs destination.",
     "graph": "Directed graph subset with capabilities, dependencies and source equality guards.",
     "verification-definition": "Versioned subject/criterion, judgment schema, graph and policy.",
-    "run-record": "Snapshots retaining identity, admission, lineage, outputs, usage and UTC timing.",
+    "run-record": (
+        "Snapshots retaining identity, admission, lineage, outputs, usage and UTC timing."
+    ),
     "extension": "Namespaced data; preserve optional, reject unsupported required meaning.",
     "resource-dimension": "Open resource dimension with explicit unit and semantic description.",
     "severity-domain": "Ordered severity labels; prose requires unique labels and distinct ranks.",
