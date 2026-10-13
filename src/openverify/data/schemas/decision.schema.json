@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:verification:draft:decision",
+  "description": "Verification control decision, distinct from judgment; ROUTE needs destination.",
+  "type": "object",
+  "properties": {
+    "protocol": {
+      "const": "draft"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "CONTINUE",
+        "STOP_SUCCESS",
+        "STOP_FAILURE",
+        "ROUTE",
+        "RETRY",
+        "DEFER"
+      ]
+    },
+    "destination": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "reason": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "metadata": {
+      "type": "object"
+    },
+    "extensions": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:verification:draft:extension"
+      }
+    }
+  },
+  "required": [
+    "protocol",
+    "kind"
+  ],
+  "additionalProperties": false
+}

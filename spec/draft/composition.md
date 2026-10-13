@@ -32,6 +32,18 @@ Simple routing uses decision_destination guards on a Control source. ROUTE
 identifies a registered graph node, not a business action. Validation of a runtime
 destination is the executing host's responsibility.
 
+## NON-NORMATIVE REFERENCE ENGINE BEHAVIOR
+
+The sequential engine snapshots Context before each invocation. Derive updates
+replace matching keys for subsequent nodes. CONTINUE leaves execution active;
+ROUTE validates its destination exists and uses explicit outgoing guards to enable
+that branch. It does not force the destination to run outside graph dependencies.
+STOP_SUCCESS/STOP_FAILURE stop remaining invocations; remaining nodes record
+SKIPPED without synthesizing an overall verdict. RETRY/DEFER are recorded and
+stop this local run; no retry or defer scheduler is provided. Stopping and inactive
+guards propagate nonexecution; all graph nodes still have lineage records.
+SKIPPED records for Derive/Control are bookkeeping, not judgments from those nodes.
+
 ## NON-NORMATIVE EXAMPLES
 
 cheap evaluator -> Control -> strong evaluator -> Control -> human evaluator.

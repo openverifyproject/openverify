@@ -1,0 +1,43 @@
+{
+  "protocol": "draft",
+  "id": "temperature-envelope",
+  "version": "1",
+  "subject": {
+    "id": "reading-1",
+    "type": "application/json",
+    "locator": {
+      "sensor": "local-mock"
+    }
+  },
+  "criterion": {
+    "id": "temperature-range",
+    "description": "Temperature is within the declared envelope."
+  },
+  "judgment_schema": {},
+  "execution_policy": {
+    "activation": {
+      "executor_ref": "MANUAL"
+    },
+    "selection": {
+      "executor_ref": "EXPLICIT"
+    },
+    "admission": {
+      "strategy": "ALWAYS"
+    }
+  },
+  "graph": {
+    "nodes": [
+      {
+        "id": "envelope",
+        "kind": "EVALUATE",
+        "executor_ref": "demo.range",
+        "config": {
+          "key": "temperature",
+          "minimum": 18,
+          "maximum": 25
+        }
+      }
+    ],
+    "edges": []
+  }
+}

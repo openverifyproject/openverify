@@ -1,0 +1,8 @@
+include LICENSE README.md CHANGELOG.md CONTRIBUTING.md AGENTS.md uv.lock .python-version
+recursive-include spec *.md
+recursive-include schemas *.json
+recursive-include profiles *.md *.json
+recursive-include conformance *.md *.json
+recursive-include examples *.md *.json
+recursive-include tests *.py
+recursive-include tools *.py

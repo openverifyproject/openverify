@@ -1,0 +1,199 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:verification:draft:run-record",
+  "description": "Snapshots retaining identity, admission, lineage, outputs, usage and UTC timing.",
+  "type": "object",
+  "properties": {
+    "protocol": {
+      "const": "draft"
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "definition": {
+      "$ref": "urn:verification:draft:verification-definition"
+    },
+    "definition_fingerprint": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^local-sha256:[0-9a-f]{64}$"
+    },
+    "subject": {
+      "$ref": "urn:verification:draft:artifact-ref"
+    },
+    "initial_context": {
+      "type": "object"
+    },
+    "opportunity_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "admission": {
+      "type": "object",
+      "properties": {
+        "outcome": {
+          "type": "string",
+          "enum": [
+            "RUN",
+            "SKIP",
+            "DEFER"
+          ]
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "outcome",
+        "reason"
+      ],
+      "additionalProperties": false
+    },
+    "started_at": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "Z$"
+    },
+    "finished_at": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "Z$"
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "node_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "executor_ref": {
+            "type": "string",
+            "minLength": 1
+          },
+          "executor_version": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "upstream_node_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "input_context": {
+            "type": "object"
+          },
+          "upstream_results": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "urn:verification:draft:result"
+            }
+          },
+          "started_at": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "Z$"
+          },
+          "finished_at": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "Z$"
+          },
+          "usage": {
+            "type": "object",
+            "propertyNames": {
+              "type": "string",
+              "minLength": 1
+            },
+            "additionalProperties": {
+              "$ref": "urn:verification:draft:resource"
+            }
+          },
+          "result": {
+            "anyOf": [
+              {
+                "$ref": "urn:verification:draft:result"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "decision": {
+            "anyOf": [
+              {
+                "$ref": "urn:verification:draft:decision"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "derived": {
+            "anyOf": [
+              {
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "node_id",
+          "executor_ref",
+          "upstream_node_ids",
+          "input_context",
+          "upstream_results",
+          "started_at",
+          "finished_at",
+          "usage"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "final_results": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "urn:verification:draft:result"
+      }
+    },
+    "metadata": {
+      "type": "object"
+    },
+    "extensions": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:verification:draft:extension"
+      }
+    }
+  },
+  "required": [
+    "protocol",
+    "run_id",
+    "definition",
+    "definition_fingerprint",
+    "subject",
+    "initial_context",
+    "opportunity_id",
+    "admission",
+    "started_at",
+    "finished_at",
+    "nodes",
+    "final_results"
+  ],
+  "additionalProperties": false
+}
