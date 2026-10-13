@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "urn:verification:draft:graph",
-  "description": "Directed graph subset with capabilities, dependencies and source equality guards.",
+  "description": "Directed graph subset with source equality guards; semantic validation rejects unsupported standard weighted graph aggregation.",
   "type": "object",
   "properties": {
     "nodes": {

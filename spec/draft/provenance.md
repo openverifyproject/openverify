@@ -9,7 +9,10 @@ definition snapshot establishes id/version/criterion/graph/input artifact identi
 The fingerprint MUST be identified as reference-only, not a portable digest.
 Consumers retain that labeled identifier as opaque provenance. Recomputing a
 reference-local digest is not a portable conformance requirement or integrity proof.
-Timestamps are UTC RFC3339 strings. They establish recorded timing, not clock trust.
+Timestamps are UTC RFC3339 strings, accepting the UTC marker Z (also lowercase z
+as permitted by RFC3339) or an explicit +00:00 offset. Non-UTC offsets are invalid.
+Fractional seconds are permitted; no canonical fractional formatting is prescribed.
+Timestamps establish recorded timing, not clock trust.
 
 Each node record MUST identify node_id, executor_ref, upstream_node_ids,
 input_context, upstream_results, started_at, finished_at, and actual usage.
@@ -24,12 +27,20 @@ Consumers MUST preserve definition snapshots and lineage if they claim
 reconstructable run provenance. RunRecord validation MUST check duplicate/missing
 node identities, graph relationships, output-kind consistency, and final Results.
 Persistence mechanism is replaceable; no particular backend is required.
+The run subject MUST match the definition subject, upstream Result snapshots MUST
+match the corresponding predecessor records, and final_results MUST match all
+emitted node Results. Snapshot comparisons distinguish JSON types: booleans are
+never numbers, arrays preserve element order, and object member order is irrelevant.
+Optional nullable fields retain the absence/null equivalence in wire-format.md.
+This does not define canonical hashing or new cross-engine numeric precision.
 
 In the supported complete local-record subset, every graph node has exactly one
 record, including nonexecuted nodes. Each record has exactly one Result, Decision,
 or derived update. Nonexecuted/failure bookkeeping Results are allowed for every
 node kind. Successful executed Results belong only to Evaluate/Aggregate nodes.
 An admission SKIP records every node as SKIPPED; no adapter is invoked.
+DEFERRED and CANCELLED node dispositions MUST NOT substitute for SKIPPED in that
+case. final_results retains those same SKIPPED node Results.
 The reference implementation supplies an executor version when the registered
 adapter exposes one. Adapter errors retain code/message in Result output; a failed
 operation does not synthesize a Decision or derived update.

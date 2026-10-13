@@ -253,12 +253,18 @@ values; validate before interchange. `fingerprint` returns a **reference-only,
 non-portable** `local-sha256:` identity, not canonical signing bytes.
 
 The engine executes registered Derive/Evaluate/Control adapters and ALL, ANY,
-MAJORITY, MIN_SCORE, MAX_SCORE, AVERAGE, WEIGHTED_AVERAGE, WORST_SEVERITY reducers.
+MAJORITY, MIN_SCORE, MAX_SCORE, AVERAGE, WORST_SEVERITY graph reducers. The direct
+reducer API also supports WEIGHTED_AVERAGE with explicit ordered Results and
+positional weights. Standard weighted graph nodes are GRAPH_UNSUPPORTED while
+graph input membership/order and weight identity remain OPEN.
 Every reducer invocation requires explicit REJECT/IGNORE handling for exceptional
 and missing inputs. Empty retained input and majority ties are rejected; UNKNOWN
 is never silently 0.5 or ERROR silently zero. There is no synthesized overall verdict
 without an aggregation node. Reference numeric scores/measurements use binary64;
 means use exact rational intermediate arithmetic and one final rounding.
+Provenance comparisons distinguish JSON booleans from numbers. Admission SKIP
+requires every node Result to be SKIPPED. Integral severity ranks such as 1.0
+normalize to SDK integers; UTC timestamps accept Z and +00:00.
 
 Equality guards inspect source Result axes or Decision kind/destination. ROUTE
 checks a graph destination and selects through explicit guards. Stops record remaining

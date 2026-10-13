@@ -2,7 +2,7 @@
 
 from typing import Literal
 
-from pydantic import BaseModel, ConfigDict, Field, JsonValue
+from pydantic import BaseModel, ConfigDict, Field, JsonValue, field_validator
 
 
 class Value(BaseModel):
@@ -62,6 +62,14 @@ class Severity(Value):
 class SeverityLevel(Value):
     label: str
     rank: int
+
+    @field_validator("rank", mode="before")
+    @classmethod
+    def integral_rank(cls, value: object) -> object:
+        """Admit JSON Schema integers without loosening bool/string validation."""
+        if isinstance(value, float) and value.is_integer():
+            return int(value)
+        return value
 
 
 class SeverityDomain(Value):

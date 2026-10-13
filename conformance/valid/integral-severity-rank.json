@@ -1,0 +1,9 @@
+{
+  "id": "custom",
+  "levels": [
+    {
+      "label": "one",
+      "rank": 1.0
+    }
+  ]
+}

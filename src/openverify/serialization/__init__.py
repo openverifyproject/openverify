@@ -9,6 +9,27 @@ from openverify.errors import ProtocolError
 from openverify.model import Value
 
 
+def json_equal(left: JsonValue, right: JsonValue) -> bool:
+    """Compare parsed JSON snapshots; bool is distinct from the JSON number type.
+
+    Numeric comparison uses existing parsed values, not canonical hashing or a
+    new cross-engine precision/rounding rule. Callers supply validated JSON.
+    """
+    if type(left) in (int, float) and type(right) in (int, float):
+        return left == right
+    if type(left) is not type(right):
+        return False
+    if isinstance(left, list) and isinstance(right, list):
+        return len(left) == len(right) and all(
+            json_equal(a, b) for a, b in zip(left, right, strict=True)
+        )
+    if isinstance(left, dict) and isinstance(right, dict):
+        return left.keys() == right.keys() and all(
+            json_equal(value, right[key]) for key, value in left.items()
+        )
+    return left == right
+
+
 def to_data(value: Value) -> JsonValue:
     result: dict[str, JsonValue] = {}
     for name, field in type(value).model_fields.items():

@@ -25,6 +25,10 @@ guard is true. A disabled predecessor disables its successor. Independent nodes
 have no semantic ordering; the reference engine executes them sequentially in
 definition order when ready. Prior Results supplied to a node are direct
 predecessor Results; Control decisions and Derive outputs are not Results.
+This identifies available Result snapshots, not a portable ordered Aggregate input
+sequence. Membership/order across predecessor kinds and bookkeeping Results remains
+OPEN. Standard WEIGHTED_AVERAGE graph nodes MUST yield GRAPH_UNSUPPORTED in the
+current subset; explicitly ordered direct reducer invocations remain supported.
 
 Cycles and declared expansion features MUST yield GRAPH_UNSUPPORTED in the
 current SDK/executor, not silently be treated as a DAG.
@@ -43,6 +47,9 @@ SKIPPED without synthesizing an overall verdict. RETRY/DEFER are recorded and
 stop this local run; no retry or defer scheduler is provided. Stopping and inactive
 guards propagate nonexecution; all graph nodes still have lineage records.
 SKIPPED records for Derive/Control are bookkeeping, not judgments from those nodes.
+For supported standard graph reducers, the reference engine supplies all available
+direct predecessor Results, including bookkeeping Results, in incoming-edge array
+order. That sequence is reference-only and MUST NOT define portable weight identity.
 
 ## NON-NORMATIVE EXAMPLES
 
@@ -54,4 +61,5 @@ Decision guards can select strong/human destinations.
 General portable guard language, cycles/iteration, expansion wire semantics,
 and alternative join/guard-combination semantics remain unresolved. The subset
 makes no claim to implement all general graphs.
+Graph-to-Aggregate input membership/order and weight identity remain unresolved.
 

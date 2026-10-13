@@ -6,6 +6,10 @@
 
 Domain-neutral semantics, strict JSON schemas, standard profile, and conformance cases.
 Protocol remains DRAFT; unresolved public semantics are listed in open questions.
+Clarified admission-SKIP and JSON-type-preserving provenance invariants, integral
+severity ranks, and UTC timestamp forms. Weighted graph aggregation is unsupported
+pending explicit predecessor input/weight identity; ordered direct reducers remain
+supported.
 
 ### Python SDK changes
 
