@@ -1,0 +1,97 @@
+{
+  "protocol": "draft",
+  "id": "standard-draft",
+  "version": "0.1.0",
+  "flattened_statuses": [
+    "PASS",
+    "FAIL",
+    "UNKNOWN",
+    "ERROR",
+    "SKIP"
+  ],
+  "severity_domain": {
+    "id": "standard-draft",
+    "levels": [
+      {
+        "label": "INFO",
+        "rank": 10
+      },
+      {
+        "label": "WARNING",
+        "rank": 20
+      },
+      {
+        "label": "ERROR",
+        "rank": 30
+      },
+      {
+        "label": "BLOCKER",
+        "rank": 40
+      }
+    ]
+  },
+  "aggregators": [
+    "ALL",
+    "ANY",
+    "MAJORITY",
+    "MIN_SCORE",
+    "MAX_SCORE",
+    "AVERAGE",
+    "WEIGHTED_AVERAGE",
+    "WORST_SEVERITY"
+  ],
+  "admission_policies": [
+    "ALWAYS",
+    "PROBABILITY"
+  ],
+  "decisions": [
+    "CONTINUE",
+    "STOP_SUCCESS",
+    "STOP_FAILURE",
+    "ROUTE",
+    "RETRY",
+    "DEFER"
+  ],
+  "resource_dimensions": [
+    {
+      "id": "wall_time",
+      "unit": "s",
+      "description": "Elapsed wall-clock duration"
+    },
+    {
+      "id": "money",
+      "unit": "currency",
+      "description": "Monetary usage; measurement supplies the currency unit"
+    },
+    {
+      "id": "input_tokens",
+      "unit": "token",
+      "description": "Input tokens consumed"
+    },
+    {
+      "id": "output_tokens",
+      "unit": "token",
+      "description": "Output tokens consumed"
+    },
+    {
+      "id": "cpu_time",
+      "unit": "s",
+      "description": "CPU time consumed"
+    },
+    {
+      "id": "gpu_time",
+      "unit": "s",
+      "description": "GPU time consumed"
+    },
+    {
+      "id": "human_time",
+      "unit": "s",
+      "description": "Reviewer time consumed"
+    },
+    {
+      "id": "network_bytes",
+      "unit": "byte",
+      "description": "Network bytes transferred"
+    }
+  ]
+}

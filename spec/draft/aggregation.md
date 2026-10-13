@@ -32,6 +32,12 @@ applicable, KNOWN; evidence from retained inputs is concatenated in input order.
 
 ## NON-NORMATIVE EXAMPLES
 
+Reference numeric measurements and scores use binary64. Mean reducers use exact
+rational intermediate arithmetic on those input values and one final rounding;
+this avoids intermediate overflow and preserves identical-score means. This is
+an internal numerical choice, not cross-language bit-identical reducer semantics.
+Numeric precision/rounding portability remains in open-questions.md.
+
 Security may want ERROR -> fail closed, UNKNOWN -> escalation, and required
 SKIP -> failure. Style may ignore exceptional inputs. This profile implements
 REJECT/IGNORE only. Other policies can be explicit Evaluate adapters; core does

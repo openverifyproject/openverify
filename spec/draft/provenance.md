@@ -7,6 +7,8 @@ definition_fingerprint, subject, initial_context, opportunity_id, admission
 outcome/reason, started_at, finished_at, node records, and final_results.
 definition snapshot establishes id/version/criterion/graph/input artifact identity.
 The fingerprint MUST be identified as reference-only, not a portable digest.
+Consumers retain that labeled identifier as opaque provenance. Recomputing a
+reference-local digest is not a portable conformance requirement or integrity proof.
 Timestamps are UTC RFC3339 strings. They establish recorded timing, not clock trust.
 
 Each node record MUST identify node_id, executor_ref, upstream_node_ids,
@@ -22,6 +24,15 @@ Consumers MUST preserve definition snapshots and lineage if they claim
 reconstructable run provenance. RunRecord validation MUST check duplicate/missing
 node identities, graph relationships, output-kind consistency, and final Results.
 Persistence mechanism is replaceable; no particular backend is required.
+
+In the supported complete local-record subset, every graph node has exactly one
+record, including nonexecuted nodes. Each record has exactly one Result, Decision,
+or derived update. Nonexecuted/failure bookkeeping Results are allowed for every
+node kind. Successful executed Results belong only to Evaluate/Aggregate nodes.
+An admission SKIP records every node as SKIPPED; no adapter is invoked.
+The reference implementation supplies an executor version when the registered
+adapter exposes one. Adapter errors retain code/message in Result output; a failed
+operation does not synthesize a Decision or derived update.
 
 Continual learning is definition evolution, not a LEARN node:
 mistake -> reusable knowledge -> changed definition -> new version/fingerprint ->

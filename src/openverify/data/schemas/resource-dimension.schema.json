@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:verification:draft:resource-dimension",
+  "description": "Open resource dimension with explicit unit and semantic description.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "unit": {
+      "type": "string",
+      "minLength": 1
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1
+    },
+    "metadata": {
+      "type": "object"
+    },
+    "extensions": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:verification:draft:extension"
+      }
+    }
+  },
+  "required": [
+    "id",
+    "unit",
+    "description"
+  ],
+  "additionalProperties": false
+}

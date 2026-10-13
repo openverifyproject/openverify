@@ -6,6 +6,7 @@ implicitly answered by reference Python behavior.
 | Question | Current boundary |
 | --- | --- |
 | Cross-language canonical hashing of numbers, Unicode, defaults, nulls | Explicit id/version; local-sha256 is non-portable |
+| Cross-engine numeric precision and reducer rounding | Mathematical reducers are defined; reference numeric measurements/scores use binary64, exact rational intermediate means, and one final rounding. No bit-identical numeric portability is claimed |
 | General guard language and alternative join behavior | Equality guards, all prerequisites only |
 | Cycles/iteration and dynamic expansion wire/execution | Recognized as GRAPH_UNSUPPORTED |
 | Flattening deferred/cancelled/not-applicable and known without verdict | Partial projection raises RESULT_PROJECTION |
