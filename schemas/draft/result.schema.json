@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:verification:draft:result",
+  "description": "Independent result axes and observations; prose restricts state combinations.",
+  "type": "object",
+  "properties": {
+    "protocol": {
+      "const": "draft"
+    },
+    "disposition": {
+      "type": "string",
+      "enum": [
+        "EXECUTED",
+        "SKIPPED",
+        "DEFERRED",
+        "CANCELLED"
+      ]
+    },
+    "execution_outcome": {
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "SUCCESS",
+            "ERROR"
+          ]
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "applicability": {
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "APPLICABLE",
+            "NOT_APPLICABLE"
+          ]
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "determination": {
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "KNOWN",
+            "UNKNOWN"
+          ]
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "judgment": {},
+    "verdict": {
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "PASS",
+            "FAIL"
+          ]
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "score": {
+      "anyOf": [
+        {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "severity": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "domain": {
+              "type": "string",
+              "minLength": 1
+            },
+            "label": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "domain",
+            "label"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:verification:draft:evidence"
+      }
+    },
+    "output": {},
+    "usage": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "minLength": 1
+      },
+      "additionalProperties": {
+        "$ref": "urn:verification:draft:resource"
+      }
+    },
+    "metadata": {
+      "type": "object"
+    },
+    "extensions": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:verification:draft:extension"
+      }
+    }
+  },
+  "required": [
+    "protocol",
+    "disposition"
+  ],
+  "additionalProperties": false
+}

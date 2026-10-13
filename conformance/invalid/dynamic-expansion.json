@@ -1,0 +1,82 @@
+{
+  "protocol": "draft",
+  "id": "prose-criterion",
+  "version": "1",
+  "subject": {
+    "id": "article-1",
+    "type": "text/plain",
+    "locator": {
+      "host_key": "text"
+    }
+  },
+  "criterion": {
+    "id": "readable-prose",
+    "description": "Contains no banned phrase and is nonempty."
+  },
+  "judgment_schema": {},
+  "execution_policy": {
+    "activation": {
+      "executor_ref": "MANUAL"
+    },
+    "selection": {
+      "executor_ref": "EXPLICIT"
+    },
+    "admission": {
+      "strategy": "ALWAYS"
+    }
+  },
+  "graph": {
+    "nodes": [
+      {
+        "id": "phrase",
+        "kind": "EVALUATE",
+        "executor_ref": "demo.regex",
+        "config": {
+          "key": "text",
+          "pattern": "guaranteed cure",
+          "must_match": false
+        }
+      },
+      {
+        "id": "length",
+        "kind": "EVALUATE",
+        "executor_ref": "demo.range",
+        "config": {
+          "key": "length",
+          "minimum": 1,
+          "maximum": 10000
+        }
+      },
+      {
+        "id": "all",
+        "kind": "AGGREGATE",
+        "executor_ref": "standard.aggregate",
+        "config": {
+          "reducer": "ALL",
+          "handling": {
+            "UNKNOWN": "REJECT",
+            "ERROR": "REJECT",
+            "SKIP": "REJECT",
+            "DEFERRED": "REJECT",
+            "CANCELLED": "REJECT",
+            "NOT_APPLICABLE": "REJECT",
+            "MISSING": "REJECT"
+          }
+        }
+      }
+    ],
+    "edges": [
+      {
+        "from_node": "phrase",
+        "to_node": "all"
+      },
+      {
+        "from_node": "length",
+        "to_node": "all"
+      }
+    ],
+    "features": [
+      "DYNAMIC_EXPANSION"
+    ]
+  }
+}

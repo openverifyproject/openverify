@@ -1,0 +1,13 @@
+{
+  "id": "s",
+  "levels": [
+    {
+      "label": "A",
+      "rank": 1
+    },
+    {
+      "label": "B",
+      "rank": 2
+    }
+  ]
+}

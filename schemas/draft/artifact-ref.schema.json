@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:verification:draft:artifact-ref",
+  "description": "External artifact identity; opaque locator does not authorize fetching.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "type": {
+      "type": "string",
+      "minLength": 1
+    },
+    "locator": {},
+    "schema_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "metadata": {
+      "type": "object"
+    },
+    "extensions": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:verification:draft:extension"
+      }
+    }
+  },
+  "required": [
+    "id",
+    "type",
+    "locator"
+  ],
+  "additionalProperties": false
+}

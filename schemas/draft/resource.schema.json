@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:verification:draft:resource",
+  "description": "Unit-bearing measurement with kind-dependent value or range fields.",
+  "type": "object",
+  "properties": {
+    "unit": {
+      "type": "string",
+      "minLength": 1
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "EXACT",
+        "ESTIMATED",
+        "RANGE",
+        "UNKNOWN"
+      ]
+    },
+    "value": {
+      "anyOf": [
+        {
+          "type": "number",
+          "minimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "minimum": {
+      "anyOf": [
+        {
+          "type": "number",
+          "minimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "maximum": {
+      "anyOf": [
+        {
+          "type": "number",
+          "minimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "required": [
+    "unit",
+    "kind"
+  ],
+  "additionalProperties": false
+}
