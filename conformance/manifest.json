@@ -1,0 +1,419 @@
+{
+  "protocol": "draft",
+  "cases": [
+    {
+      "id": "minimal-result",
+      "description": "minimal result",
+      "object_type": "result",
+      "input": "valid/minimal-result.json",
+      "valid": true,
+      "stage": "both",
+      "expected": "expected/minimal-result.json",
+      "spec": "spec/draft/result.md"
+    },
+    {
+      "id": "rich-result",
+      "description": "rich result",
+      "object_type": "result",
+      "input": "valid/rich-result.json",
+      "valid": true,
+      "stage": "both",
+      "expected": "expected/rich-result.json",
+      "spec": "spec/draft/result.md"
+    },
+    {
+      "id": "unknown-result",
+      "description": "unknown result",
+      "object_type": "result",
+      "input": "valid/unknown-result.json",
+      "valid": true,
+      "stage": "both",
+      "expected": "expected/unknown-result.json",
+      "spec": "spec/draft/result.md"
+    },
+    {
+      "id": "skipped-result",
+      "description": "skipped result",
+      "object_type": "result",
+      "input": "valid/skipped-result.json",
+      "valid": true,
+      "stage": "both",
+      "expected": "expected/skipped-result.json",
+      "spec": "spec/draft/result.md"
+    },
+    {
+      "id": "simple-definition",
+      "description": "simple definition",
+      "object_type": "verification-definition",
+      "input": "valid/simple-definition.json",
+      "valid": true,
+      "stage": "both",
+      "expected": "expected/simple-definition.json",
+      "spec": "spec/draft/meaning.md"
+    },
+    {
+      "id": "simple-graph",
+      "description": "simple graph",
+      "object_type": "graph",
+      "input": "valid/simple-graph.json",
+      "valid": true,
+      "stage": "both",
+      "expected": "expected/simple-graph.json",
+      "spec": "spec/draft/composition.md"
+    },
+    {
+      "id": "resource-range",
+      "description": "resource range",
+      "object_type": "resource",
+      "input": "valid/resource-range.json",
+      "valid": true,
+      "stage": "both",
+      "expected": "expected/resource-range.json",
+      "spec": "spec/draft/resources.md"
+    },
+    {
+      "id": "route-decision",
+      "description": "route decision",
+      "object_type": "decision",
+      "input": "valid/route-decision.json",
+      "valid": true,
+      "stage": "both",
+      "expected": "expected/route-decision.json",
+      "spec": "spec/draft/result.md"
+    },
+    {
+      "id": "malformed-top-level",
+      "description": "malformed top level",
+      "object_type": "result",
+      "input": "invalid/malformed-top-level.json",
+      "valid": false,
+      "error_code": "PROTOCOL_STRUCTURE",
+      "stage": "schema",
+      "expected": "expected/malformed-top-level.json",
+      "spec": "spec/draft/wire-format.md"
+    },
+    {
+      "id": "unsupported-version",
+      "description": "unsupported version",
+      "object_type": "result",
+      "input": "invalid/unsupported-version.json",
+      "valid": false,
+      "error_code": "PROTOCOL_VERSION",
+      "stage": "schema",
+      "expected": "expected/unsupported-version.json",
+      "spec": "spec/draft/wire-format.md"
+    },
+    {
+      "id": "score-out-of-bounds",
+      "description": "score out of bounds",
+      "object_type": "result",
+      "input": "invalid/score-out-of-bounds.json",
+      "valid": false,
+      "error_code": "PROTOCOL_STRUCTURE",
+      "stage": "schema",
+      "expected": "expected/score-out-of-bounds.json",
+      "spec": "spec/draft/result.md"
+    },
+    {
+      "id": "boolean-score",
+      "description": "boolean score",
+      "object_type": "result",
+      "input": "invalid/boolean-score.json",
+      "valid": false,
+      "error_code": "PROTOCOL_STRUCTURE",
+      "stage": "schema",
+      "expected": "expected/boolean-score.json",
+      "spec": "spec/draft/result.md"
+    },
+    {
+      "id": "unknown-core-field",
+      "description": "unknown core field",
+      "object_type": "result",
+      "input": "invalid/unknown-core-field.json",
+      "valid": false,
+      "error_code": "PROTOCOL_STRUCTURE",
+      "stage": "schema",
+      "expected": "expected/unknown-core-field.json",
+      "spec": "spec/draft/wire-format.md"
+    },
+    {
+      "id": "invalid-result-state",
+      "description": "invalid result state",
+      "object_type": "result",
+      "input": "invalid/invalid-result-state.json",
+      "valid": false,
+      "error_code": "RESULT_STATE",
+      "stage": "semantic",
+      "expected": "expected/invalid-result-state.json",
+      "spec": "spec/draft/result.md"
+    },
+    {
+      "id": "error-with-verdict",
+      "description": "error with verdict",
+      "object_type": "result",
+      "input": "invalid/error-with-verdict.json",
+      "valid": false,
+      "error_code": "RESULT_STATE",
+      "stage": "semantic",
+      "expected": "expected/error-with-verdict.json",
+      "spec": "spec/draft/result.md"
+    },
+    {
+      "id": "empty-evidence",
+      "description": "empty evidence",
+      "object_type": "evidence",
+      "input": "invalid/empty-evidence.json",
+      "valid": false,
+      "error_code": "EVIDENCE_EMPTY",
+      "stage": "semantic",
+      "expected": "expected/empty-evidence.json",
+      "spec": "spec/draft/knowledge.md"
+    },
+    {
+      "id": "resource-inverted-range",
+      "description": "resource inverted range",
+      "object_type": "resource",
+      "input": "invalid/resource-inverted-range.json",
+      "valid": false,
+      "error_code": "RESOURCE_MEASUREMENT",
+      "stage": "semantic",
+      "expected": "expected/resource-inverted-range.json",
+      "spec": "spec/draft/resources.md"
+    },
+    {
+      "id": "resource-unexpected-value",
+      "description": "resource unexpected value",
+      "object_type": "resource",
+      "input": "invalid/resource-unexpected-value.json",
+      "valid": false,
+      "error_code": "RESOURCE_MEASUREMENT",
+      "stage": "semantic",
+      "expected": "expected/resource-unexpected-value.json",
+      "spec": "spec/draft/resources.md"
+    },
+    {
+      "id": "invalid-extension",
+      "description": "invalid extension",
+      "object_type": "result",
+      "input": "invalid/invalid-extension.json",
+      "valid": false,
+      "error_code": "PROTOCOL_STRUCTURE",
+      "stage": "schema",
+      "expected": "expected/invalid-extension.json",
+      "spec": "spec/draft/extensions.md"
+    },
+    {
+      "id": "required-extension",
+      "description": "required extension",
+      "object_type": "result",
+      "input": "invalid/required-extension.json",
+      "valid": false,
+      "error_code": "EXTENSION_UNSUPPORTED",
+      "stage": "semantic",
+      "expected": "expected/required-extension.json",
+      "spec": "spec/draft/extensions.md"
+    },
+    {
+      "id": "duplicate-node",
+      "description": "duplicate node",
+      "object_type": "verification-definition",
+      "input": "invalid/duplicate-node.json",
+      "valid": false,
+      "error_code": "GRAPH_DUPLICATE",
+      "stage": "semantic",
+      "expected": "expected/duplicate-node.json",
+      "spec": "spec/draft/composition.md"
+    },
+    {
+      "id": "missing-node",
+      "description": "missing node",
+      "object_type": "verification-definition",
+      "input": "invalid/missing-node.json",
+      "valid": false,
+      "error_code": "GRAPH_REFERENCE",
+      "stage": "semantic",
+      "expected": "expected/missing-node.json",
+      "spec": "spec/draft/composition.md"
+    },
+    {
+      "id": "cycle",
+      "description": "cycle",
+      "object_type": "verification-definition",
+      "input": "invalid/cycle.json",
+      "valid": false,
+      "error_code": "GRAPH_UNSUPPORTED",
+      "stage": "semantic",
+      "expected": "expected/cycle.json",
+      "spec": "spec/draft/composition.md"
+    },
+    {
+      "id": "dynamic-expansion",
+      "description": "dynamic expansion",
+      "object_type": "verification-definition",
+      "input": "invalid/dynamic-expansion.json",
+      "valid": false,
+      "error_code": "GRAPH_UNSUPPORTED",
+      "stage": "semantic",
+      "expected": "expected/dynamic-expansion.json",
+      "spec": "spec/draft/composition.md"
+    },
+    {
+      "id": "invalid-guard",
+      "description": "invalid guard",
+      "object_type": "verification-definition",
+      "input": "invalid/invalid-guard.json",
+      "valid": false,
+      "error_code": "GRAPH_REFERENCE",
+      "stage": "semantic",
+      "expected": "expected/invalid-guard.json",
+      "spec": "spec/draft/composition.md"
+    },
+    {
+      "id": "invalid-probability",
+      "description": "invalid probability",
+      "object_type": "verification-definition",
+      "input": "invalid/invalid-probability.json",
+      "valid": false,
+      "error_code": "PROTOCOL_STRUCTURE",
+      "stage": "schema",
+      "expected": "expected/invalid-probability.json",
+      "spec": "spec/draft/execution-policy.md"
+    },
+    {
+      "id": "missing-probability",
+      "description": "missing probability",
+      "object_type": "verification-definition",
+      "input": "invalid/missing-probability.json",
+      "valid": false,
+      "error_code": "ADMISSION_POLICY",
+      "stage": "semantic",
+      "expected": "expected/missing-probability.json",
+      "spec": "spec/draft/execution-policy.md"
+    },
+    {
+      "id": "invalid-weights",
+      "description": "invalid weights",
+      "object_type": "verification-definition",
+      "input": "invalid/invalid-weights.json",
+      "valid": false,
+      "error_code": "AGGREGATE_CONFIG",
+      "stage": "semantic",
+      "expected": "expected/invalid-weights.json",
+      "spec": "spec/draft/aggregation.md"
+    },
+    {
+      "id": "malformed-edge",
+      "description": "malformed edge",
+      "object_type": "graph",
+      "input": "invalid/malformed-edge.json",
+      "valid": false,
+      "error_code": "PROTOCOL_STRUCTURE",
+      "stage": "schema",
+      "expected": "expected/malformed-edge.json",
+      "spec": "spec/draft/composition.md"
+    },
+    {
+      "id": "invalid-severity-domain",
+      "description": "invalid severity domain",
+      "object_type": "severity-domain",
+      "input": "invalid/invalid-severity-domain.json",
+      "valid": false,
+      "error_code": "PROFILE_DOMAIN",
+      "stage": "semantic",
+      "expected": "expected/invalid-severity-domain.json",
+      "spec": "spec/draft/aggregation.md"
+    },
+    {
+      "id": "valid-severity-domain",
+      "description": "valid severity domain",
+      "object_type": "severity-domain",
+      "input": "valid/valid-severity-domain.json",
+      "valid": true,
+      "stage": "both",
+      "expected": "expected/valid-severity-domain.json",
+      "spec": "spec/draft/aggregation.md"
+    },
+    {
+      "id": "valid-artifact",
+      "description": "valid artifact",
+      "object_type": "artifact-ref",
+      "input": "valid/valid-artifact.json",
+      "valid": true,
+      "stage": "both",
+      "expected": "expected/valid-artifact.json",
+      "spec": "spec/draft/knowledge.md"
+    },
+    {
+      "id": "valid-evidence",
+      "description": "valid evidence",
+      "object_type": "evidence",
+      "input": "valid/valid-evidence.json",
+      "valid": true,
+      "stage": "both",
+      "expected": "expected/valid-evidence.json",
+      "spec": "spec/draft/knowledge.md"
+    },
+    {
+      "id": "optional-extension",
+      "description": "optional extension",
+      "object_type": "extension",
+      "input": "valid/optional-extension.json",
+      "valid": true,
+      "stage": "both",
+      "expected": "expected/optional-extension.json",
+      "spec": "spec/draft/extensions.md"
+    },
+    {
+      "id": "custom-resource-dimension",
+      "description": "custom resource dimension",
+      "object_type": "resource-dimension",
+      "input": "valid/custom-resource-dimension.json",
+      "valid": true,
+      "stage": "both",
+      "expected": "expected/custom-resource-dimension.json",
+      "spec": "spec/draft/resources.md"
+    },
+    {
+      "id": "route-missing-destination",
+      "description": "route missing destination",
+      "object_type": "decision",
+      "input": "invalid/route-missing-destination.json",
+      "valid": false,
+      "error_code": "RESULT_STATE",
+      "stage": "semantic",
+      "expected": "expected/route-missing-destination.json",
+      "spec": "spec/draft/result.md"
+    },
+    {
+      "id": "complete-run-record",
+      "description": "complete run record",
+      "object_type": "run-record",
+      "input": "valid/complete-run-record.json",
+      "valid": true,
+      "stage": "both",
+      "expected": "expected/complete-run-record.json",
+      "spec": "spec/draft/provenance.md"
+    },
+    {
+      "id": "invalid-upstream-lineage",
+      "description": "invalid upstream lineage",
+      "object_type": "run-record",
+      "input": "invalid/invalid-upstream-lineage.json",
+      "valid": false,
+      "error_code": "PROVENANCE_LINEAGE",
+      "stage": "semantic",
+      "expected": "expected/invalid-upstream-lineage.json",
+      "spec": "spec/draft/provenance.md"
+    },
+    {
+      "id": "standard-profile",
+      "description": "Valid standard profile reference",
+      "object_type": "profile",
+      "input": "valid/standard-profile.json",
+      "valid": true,
+      "stage": "both",
+      "expected": "expected/standard-profile.json",
+      "spec": "profiles/standard-draft/README.md"
+    }
+  ]
+}

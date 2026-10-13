@@ -1,0 +1,41 @@
+{
+  "protocol": "draft",
+  "disposition": "EXECUTED",
+  "execution_outcome": "SUCCESS",
+  "applicability": "APPLICABLE",
+  "determination": "KNOWN",
+  "verdict": "PASS",
+  "score": 0.9,
+  "judgment": {
+    "category": "acceptable"
+  },
+  "evidence": [
+    {
+      "message": "Observed directly",
+      "locator": {
+        "paragraph": 2
+      }
+    }
+  ],
+  "usage": {
+    "energy": {
+      "unit": "J",
+      "kind": "EXACT",
+      "value": 4
+    }
+  },
+  "severity": {
+    "domain": "standard-draft",
+    "label": "INFO"
+  },
+  "extensions": [
+    {
+      "namespace": "org.example:note",
+      "version": "1",
+      "required": false,
+      "data": {
+        "note": "retained"
+      }
+    }
+  ]
+}

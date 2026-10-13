@@ -1,0 +1,16 @@
+{
+  "protocol": "draft",
+  "disposition": "EXECUTED",
+  "execution_outcome": "SUCCESS",
+  "applicability": "APPLICABLE",
+  "determination": "KNOWN",
+  "verdict": "PASS",
+  "extensions": [
+    {
+      "namespace": "org.example:must",
+      "version": "1",
+      "required": true,
+      "data": {}
+    }
+  ]
+}

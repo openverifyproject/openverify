@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:verification:draft:extension",
+  "description": "Namespaced data; preserve optional, reject unsupported required meaning.",
+  "type": "object",
+  "properties": {
+    "namespace": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": ":"
+    },
+    "version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "required": {
+      "type": "boolean"
+    },
+    "data": {}
+  },
+  "required": [
+    "namespace",
+    "version",
+    "required",
+    "data"
+  ],
+  "additionalProperties": false
+}

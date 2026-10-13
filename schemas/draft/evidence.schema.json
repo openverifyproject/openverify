@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:verification:draft:evidence",
+  "description": "Supporting observations; prose requires at least one meaningful component.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "message": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "artifact_ref": {
+      "anyOf": [
+        {
+          "$ref": "urn:verification:draft:artifact-ref"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "locator": {},
+    "structured_data": {},
+    "metadata": {
+      "type": "object"
+    },
+    "extensions": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:verification:draft:extension"
+      }
+    }
+  },
+  "required": [],
+  "additionalProperties": false
+}

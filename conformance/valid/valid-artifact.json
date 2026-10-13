@@ -1,0 +1,7 @@
+{
+  "id": "article-1",
+  "type": "text/plain",
+  "locator": {
+    "host_key": "text"
+  }
+}
