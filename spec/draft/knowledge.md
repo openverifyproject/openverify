@@ -2,11 +2,11 @@
 
 ## NORMATIVE SEMANTICS
 
-Context is available structured information: a mapping of names to JSON values.
+Context is optional ambient NONSEMANTIC host metadata: a mapping of names to JSON values. Portable information uses explicit typed inputs and bindings; see [dataflow](dataflow.md).
 ArtifactRef contains id, type (media/type identifier), locator, optional schema_id,
 metadata, and extensions. Its locator is an opaque structured value identifying
 external content; implementations MUST NOT assume it contains artifact bytes or
-automatically fetch it. Hosts supply content through Context.
+automatically fetch it. Hosts supply content through declared run inputs; Derive produces declared information outputs.
 
 Evidence contains optional id, nonempty message, artifact_ref, locator,
 structured_data, metadata, and extensions. At least one of message, artifact_ref,

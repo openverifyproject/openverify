@@ -18,7 +18,7 @@ A conforming consumer MUST distinguish malformed structure, invalid semantics,
 and valid but unsupported execution capabilities.
 
 Read in order: [boundary](boundary.md), [meaning](meaning.md),
-[knowledge](knowledge.md), [computation](computation.md), [result](result.md),
+[knowledge](knowledge.md), [typed executable dataflow](dataflow.md), [computation](computation.md), [result](result.md),
 [aggregation](aggregation.md), [composition](composition.md),
 [execution policy](execution-policy.md), [resources](resources.md),
 [provenance](provenance.md), [extensions](extensions.md),

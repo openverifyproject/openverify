@@ -7,9 +7,9 @@ This draft's sole normative representation is UTF-8 JSON, with Draft 2020-12
 JSON Schemas. Top-level Definition, Result, Decision, RunRecord, and standard
 profile MUST have protocol: "draft". Other markers are PROTOCOL_VERSION errors.
 Objects MUST reject unknown core fields except in explicit metadata, config,
-Context, structured data, judgment schemas, and extension containers.
+ambient Context, port values, structured data, judgment schemas, and extension containers.
 Duplicate mapping keys, NaN, Infinity, binary bytes, and non-JSON values MUST be
-rejected. Explicit null in optional nullable fields is equivalent to absence.
+rejected. Explicit null in optional nullable control fields is equivalent to absence. Arbitrary JSON payloads, Constant.value, resolution.value and explicitly emitted Result.judgment/output preserve null as data. Absent judgment differs from null judgment.
 Schema defaults are documentation, not automatic portable wire transformations.
 Artifact references are preferred for external content; the core fetches nothing.
 

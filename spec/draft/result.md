@@ -17,7 +17,7 @@ mapping among them is implied.
 
 Score MUST be a JSON number in [0,1]; 1 means stronger satisfaction and 0 stronger
 violation. Severity is {domain, label}, referring to an ordered domain defined by
-a profile, never a closed global enum. Evidence is a sequence, output is arbitrary
+a profile, never a closed global enum. Unresolved domain identifiers are intentionally opaque; parsing does not validate label membership. Explicit reducer domain snapshots validate membership. Version-sensitive domains use distinct identifiers; no implicit registry/version lookup occurs. Evidence is a sequence, output is arbitrary
 JSON information, usage is actual ResourceVector, and metadata/extensions are
 available in every disposition. Scores are not required.
 
