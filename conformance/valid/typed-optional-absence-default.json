@@ -1,0 +1,128 @@
+{
+  "protocol": "draft",
+  "run_id": "typed-fixture",
+  "definition": {
+    "protocol": "draft",
+    "id": "prose-criterion",
+    "version": "1",
+    "subject": {
+      "id": "article-1",
+      "type": "text/plain",
+      "locator": {
+        "host_key": "text"
+      }
+    },
+    "criterion": {
+      "id": "readable-prose",
+      "description": "Contains no banned phrase and is nonempty."
+    },
+    "judgment_schema": {},
+    "run_inputs": [],
+    "execution_policy": {
+      "activation": {
+        "executor_ref": "MANUAL"
+      },
+      "selection": {
+        "executor_ref": "EXPLICIT"
+      },
+      "admission": {
+        "strategy": "ALWAYS"
+      }
+    },
+    "graph": {
+      "nodes": [
+        {
+          "id": "optional",
+          "kind": "DERIVE",
+          "operation": {
+            "capability_id": "com.example.execution.mock",
+            "capability_version": "1"
+          },
+          "inputs": [
+            {
+              "name": "omitted",
+              "schema": {},
+              "required": false,
+              "on_unavailable": "OMIT"
+            },
+            {
+              "name": "defaulted",
+              "schema": {},
+              "required": false,
+              "on_unavailable": "DEFAULT",
+              "default": {
+                "kind": "CONSTANT",
+                "value": null
+              }
+            }
+          ],
+          "outputs": [],
+          "bindings": {},
+          "config": {},
+          "aggregate_inputs": []
+        }
+      ],
+      "edges": []
+    }
+  },
+  "definition_fingerprint": "local-sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "subject": {
+    "id": "article-1",
+    "type": "text/plain",
+    "locator": {
+      "host_key": "text"
+    }
+  },
+  "initial_context": {},
+  "run_inputs": {},
+  "opportunity_id": "fixture",
+  "admission": {
+    "outcome": "RUN",
+    "reason": "ALWAYS"
+  },
+  "started_at": "2026-01-01T00:00:00Z",
+  "finished_at": "2026-01-01T00:00:00Z",
+  "nodes": [
+    {
+      "node_id": "optional",
+      "kind": "DERIVE",
+      "operation": {
+        "capability_id": "com.example.execution.mock",
+        "capability_version": "1"
+      },
+      "upstream_node_ids": [],
+      "upstream_results": {},
+      "input_values": {
+        "defaulted": null
+      },
+      "input_resolutions": {
+        "omitted": {
+          "status": "ABSENT",
+          "used_default": false
+        },
+        "defaulted": {
+          "status": "ABSENT",
+          "used_default": true,
+          "value": null
+        }
+      },
+      "started_at": "2026-01-01T00:00:00Z",
+      "finished_at": "2026-01-01T00:00:00Z",
+      "usage": {
+        "wall_time": {
+          "unit": "s",
+          "kind": "EXACT",
+          "value": 0
+        }
+      },
+      "state": "SUCCESS",
+      "information": {},
+      "observation": {
+        "outputs": {},
+        "usage": {},
+        "evidence": []
+      }
+    }
+  ],
+  "final_results": {}
+}

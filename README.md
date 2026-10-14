@@ -107,10 +107,9 @@ a document. The host owns those actions and the underlying mechanisms.
 
 **Meaning:** Subject identifies what is examined; Criterion identifies the property
 to establish. A definition includes id/version, subject reference, criterion metadata,
-judgment schema, graph, and execution policy. Criterion metadata is descriptive;
-trusted adapters execute it. There is no criterion expression language.
+judgment schema, graph, and execution policy. Every evaluator explicitly binds the definition subject and criterion; trusted implementations must honor these semantic inputs. There is no criterion expression language.
 
-**Knowledge:** Context is available structured information. ArtifactRef identifies
+**Knowledge:** Typed run inputs, constants, explicit external references and upstream outputs supply semantic information. Context is optional ambient nonsemantic metadata. ArtifactRef identifies
 content without requiring its bytes or automatically fetching it. Evidence records
 messages, references, opaque locators, or structured observations. A locator can
 address prose, image regions, sensor events, or database rows; fundamental Evidence
@@ -160,8 +159,7 @@ Decision controls execution and is distinct from judgment. A human is an evaluat
 not a special Result type.
 
 **History / Provenance:** RunRecord retains the definition snapshot and identity,
-subject, initial/node input contexts, executor references and versions when known,
-upstream Results, outputs, evidence, usage, admission reason, and timing. Lineage
+subject, initial run inputs, exact per-port resolutions and source identities, executor references and versions when known, upstream Results, observed/accepted outputs, evidence, usage, admission reason, and timing. Validation detects inconsistent snapshots along declared dataflow edges without rerunning implementations. Lineage
 does not prescribe a backend. The engine returns JSON-serializable records; memory
 and local JSONL stores are supplied. Cache equivalence, coverage/backfill scheduling,
 clock trust, and full replay are not implemented.
@@ -195,7 +193,7 @@ DECISION, so the three fundamental computation types are exhaustive by output ty
 ```text
 DERIVE     information          -> information
 EVALUATE   information/results  -> judgment
-CONTROL    context/results      -> workflow decision
+CONTROL    explicit bound inputs -> workflow decision
 
 Aggregate: Results[] -> Result
 Aggregate is a specialized Evaluate.
@@ -217,7 +215,7 @@ OpenVerify
 The [Provider Contract](provider-contract/README.md) sits below VCP and lets any
 compatible runner invoke independently implemented capabilities. OpenVerify Relay
 is the planned minimal provider-driven harness/runtime built on that contract;
-Relay does not exist yet. The current Engine retains its existing adapter API.
+Relay does not exist yet. The Engine uses a small local registry of exact capability ID/version implementations, with no discovery or provider transport runtime.
 
 ```text
 PROTOCOL: prose semantics + normative JSON schemas + conformance fixtures
@@ -259,17 +257,23 @@ are rejected. Models are frozen at the attribute level; nested containers remain
 mutable, so validation and engine snapshots guard interchange boundaries.
 
 Public functions: `parse_definition`, `parse_result`, `parse_run_record`,
-`validate_definition`, `validate_result`, `load_schema`, `inspect_definition`,
+`validate_definition` / `validate_executable_definition`, `validate_result`, `load_schema`, `inspect_definition`,
 `serialize`, `fingerprint`, and `flattened_status`. Lower-level `parse_object` and
 `validate_wire` cover other wire objects. Constructed models are convenient typed
 values; validate before interchange. `fingerprint` returns a **reference-only,
 non-portable** `local-sha256:` identity, not canonical signing bytes.
 
-The engine executes registered Derive/Evaluate/Control adapters and ALL, ANY,
-MAJORITY, MIN_SCORE, MAX_SCORE, AVERAGE, WORST_SEVERITY graph reducers. The direct
-reducer API also supports WEIGHTED_AVERAGE with explicit ordered Results and
-positional weights. Standard weighted graph nodes are GRAPH_UNSUPPORTED while
-graph input membership/order and weight identity remain OPEN.
+Every executable node declares an operation requirement, typed input/output ports,
+and explicit bindings. [Typed executable dataflow](spec/draft/dataflow.md) specifies
+the four ValueSource variants, availability, subject/criterion binding, provider
+boundary, and provenance. Execution dependency != data binding: edges transfer no
+values. Providers never guess required portable input.
+
+The engine executes registered Derive/Evaluate/Control and custom Aggregate
+implementations and all eight standard reducers, including WEIGHTED_AVERAGE.
+Graph reducers declare ordered aggregate_inputs and a constant-bound members input;
+weights map stable member names to values. The direct ordered reducer API retains
+aligned positional weights. Derive outputs never mutate global Context.
 Every reducer invocation requires explicit REJECT/IGNORE handling for exceptional
 and missing inputs. Empty retained input and majority ties are rejected; UNKNOWN
 is never silently 0.5 or ERROR silently zero. There is no synthesized overall verdict
@@ -279,7 +283,7 @@ Provenance comparisons distinguish JSON booleans from numbers. Admission SKIP
 requires every node Result to be SKIPPED. Integral severity ranks such as 1.0
 normalize to SDK integers; UTC timestamps accept Z and +00:00.
 
-Equality guards inspect source Result axes or Decision kind/destination. ROUTE
+Equality guards use explicit typed sources and JSON Pointers, including Result/Decision ports, run inputs and information outputs. ROUTE
 checks a graph destination and selects through explicit guards. Stops record remaining
 nodes as SKIPPED. RETRY/DEFER serialize and stop a local run without scheduling
 another. Adapter failures become ERROR Results; downstream behavior follows explicit
@@ -293,8 +297,7 @@ host code, not a security sandbox. CLI `run` uses only the local demo registry.
 and numeric precision, general guards, cycles/expansion, remaining status projections,
 partial UNKNOWN judgments, formal criteria/satisfaction mapping execution, richer
 reducer policies, capability negotiation, portable sampling identity, maximum staleness,
-parallel Derive conflicts, retry/defer scheduling, cache equivalence, and external
-artifact/schema resolution. Future authoring syntaxes could compile to JSON; YAML
+retry/defer scheduling, cache equivalence, and external artifact integrity. External judgment/port schema references are rejected before execution; richer schema resolution is unsupported. Future authoring syntaxes could compile to JSON; YAML
 has no implemented semantics.
 
 ## Quickstart
@@ -305,7 +308,7 @@ With uv and Python 3.13, run from the root:
 uv sync
 uv run openverify validate examples/prose/definition.json
 uv run openverify inspect examples/prose/definition.json
-uv run openverify run examples/prose/definition.json --context examples/prose/context.json --opportunity-id article-draft-1 --output run.json
+uv run openverify run examples/prose/definition.json --run-inputs examples/prose/context.json --opportunity-id article-draft-1 --output run.json
 ```
 
 The prose graph derives length, checks a banned phrase and length, then aggregates
@@ -368,6 +371,18 @@ tools/                     deterministic artifact maintenance scripts
 Schema/profile copies are packaged for offline SDK use and tested against the
 normative root files. Edit their maintainers and regenerate in order with
 `uv run python tools/<file>`: `build_schemas.py`, `build_fixtures.py`,
-`build_profile.py`, `build_examples.py`. Maintenance scripts are not package code.
+`build_profile.py`, `build_dataflow_fixtures.py`, `build_examples.py`. Maintenance scripts are not package code.
 See [CONTRIBUTING](CONTRIBUTING.md) for the protocol-change and open-question process.
 
+
+## Breaking DRAFT dataflow revision
+
+Definitions and RunRecords from earlier revisions require reauthoring. Node
+executor_ref/shared Context injection and implicit predecessor reducer membership
+are removed. CLI run uses --run-inputs. Registry.register binds exact capability
+ID/version pairs; implementations execute(inputs, config) with fresh JSON objects.
+All kinds can return ExecutionObservation(outputs, usage, evidence, error). Local
+conveniences returning Result, Decision or information mappings normalize into that
+channel. Valid reported usage survives invalid judgments and information outputs.
+Engine.run accepts optional ambient context= metadata separately from run inputs.
+No Relay, provider discovery, cycles, iteration or dynamic expansion is implemented.

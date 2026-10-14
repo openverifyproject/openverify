@@ -1,0 +1,149 @@
+{
+  "protocol": "draft",
+  "run_id": "typed-fixture",
+  "definition": {
+    "protocol": "draft",
+    "id": "prose-criterion",
+    "version": "1",
+    "subject": {
+      "id": "article-1",
+      "type": "text/plain",
+      "locator": {
+        "host_key": "text"
+      }
+    },
+    "criterion": {
+      "id": "readable-prose",
+      "description": "Contains no banned phrase and is nonempty."
+    },
+    "judgment_schema": {},
+    "run_inputs": [],
+    "execution_policy": {
+      "activation": {
+        "executor_ref": "MANUAL"
+      },
+      "selection": {
+        "executor_ref": "EXPLICIT"
+      },
+      "admission": {
+        "strategy": "ALWAYS"
+      }
+    },
+    "graph": {
+      "nodes": [
+        {
+          "id": "reference",
+          "kind": "DERIVE",
+          "operation": {
+            "capability_id": "com.example.execution.mock",
+            "capability_version": "1"
+          },
+          "inputs": [
+            {
+              "name": "ref",
+              "schema": {
+                "type": "object"
+              },
+              "required": true,
+              "on_unavailable": "BLOCK"
+            }
+          ],
+          "outputs": [],
+          "bindings": {
+            "ref": {
+              "kind": "EXTERNAL_REFERENCE",
+              "reference": {
+                "id": "document",
+                "type": "application/json",
+                "locator": {
+                  "opaque": false
+                }
+              }
+            }
+          },
+          "config": {},
+          "aggregate_inputs": []
+        }
+      ],
+      "edges": []
+    }
+  },
+  "definition_fingerprint": "local-sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "subject": {
+    "id": "article-1",
+    "type": "text/plain",
+    "locator": {
+      "host_key": "text"
+    }
+  },
+  "initial_context": {},
+  "run_inputs": {},
+  "opportunity_id": "fixture",
+  "admission": {
+    "outcome": "RUN",
+    "reason": "ALWAYS"
+  },
+  "started_at": "2026-01-01T00:00:00Z",
+  "finished_at": "2026-01-01T00:00:00Z",
+  "nodes": [
+    {
+      "node_id": "reference",
+      "kind": "DERIVE",
+      "operation": {
+        "capability_id": "com.example.execution.mock",
+        "capability_version": "1"
+      },
+      "upstream_node_ids": [],
+      "upstream_results": {},
+      "input_values": {
+        "ref": {
+          "id": "document",
+          "type": "application/json",
+          "locator": {
+            "opaque": false
+          }
+        }
+      },
+      "input_resolutions": {
+        "ref": {
+          "status": "AVAILABLE",
+          "used_default": false,
+          "source": {
+            "kind": "EXTERNAL_REFERENCE",
+            "reference": {
+              "id": "document",
+              "type": "application/json",
+              "locator": {
+                "opaque": false
+              }
+            }
+          },
+          "value": {
+            "id": "document",
+            "type": "application/json",
+            "locator": {
+              "opaque": false
+            }
+          }
+        }
+      },
+      "started_at": "2026-01-01T00:00:00Z",
+      "finished_at": "2026-01-01T00:00:00Z",
+      "usage": {
+        "wall_time": {
+          "unit": "s",
+          "kind": "EXACT",
+          "value": 0
+        }
+      },
+      "state": "SUCCESS",
+      "information": {},
+      "observation": {
+        "outputs": {},
+        "usage": {},
+        "evidence": []
+      }
+    }
+  ],
+  "final_results": {}
+}
