@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "urn:verification:draft:graph",
-  "description": "Directed graph subset with source equality guards; semantic validation rejects unsupported standard weighted graph aggregation.",
+  "description": "Typed DAG with explicit input bindings, operation requirements and aggregate membership.",
   "type": "object",
   "properties": {
     "nodes": {
@@ -22,12 +22,46 @@
               "AGGREGATE"
             ]
           },
-          "executor_ref": {
-            "type": "string",
-            "minLength": 1
+          "operation": {
+            "$ref": "urn:verification:draft:operation-requirement"
+          },
+          "inputs": {
+            "type": "array",
+            "items": {
+              "$ref": "urn:verification:draft:input-port"
+            }
+          },
+          "outputs": {
+            "type": "array",
+            "items": {
+              "$ref": "urn:verification:draft:output-port"
+            }
+          },
+          "bindings": {
+            "type": "object",
+            "propertyNames": {
+              "type": "string",
+              "minLength": 1
+            },
+            "additionalProperties": {
+              "$ref": "urn:verification:draft:value-source"
+            }
+          },
+          "aggregate_inputs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
           },
           "config": {
             "type": "object"
+          },
+          "config_schema": {
+            "type": [
+              "object",
+              "boolean"
+            ]
           },
           "resource_estimate": {
             "type": "object",
@@ -52,7 +86,10 @@
         "required": [
           "id",
           "kind",
-          "executor_ref"
+          "operation",
+          "inputs",
+          "outputs",
+          "bindings"
         ],
         "additionalProperties": false
       }
@@ -75,30 +112,17 @@
               {
                 "type": "object",
                 "properties": {
-                  "node_id": {
-                    "type": "string",
-                    "minLength": 1
+                  "source": {
+                    "$ref": "urn:verification:draft:value-source"
                   },
-                  "field": {
-                    "type": "string",
-                    "enum": [
-                      "disposition",
-                      "execution_outcome",
-                      "applicability",
-                      "determination",
-                      "verdict",
-                      "decision_kind",
-                      "decision_destination"
-                    ]
+                  "pointer": {
+                    "type": "string"
                   },
-                  "value": {
-                    "type": "string",
-                    "minLength": 1
-                  }
+                  "value": {}
                 },
                 "required": [
-                  "node_id",
-                  "field",
+                  "source",
+                  "pointer",
                   "value"
                 ],
                 "additionalProperties": false

@@ -114,6 +114,56 @@ schemas["decision"] = marked(
     },
     ("kind",),
 )
+schema_value = {"type": ["object", "boolean"]}
+schemas["operation-requirement"] = obj(
+    {
+        "capability_id": {
+            **STR,
+            "pattern": (
+                r"^(?:openverify\.[a-z][a-z0-9_]*(?:\.[a-z][a-z0-9_]*)*|"
+                r"[a-z][a-z0-9_]*(?:\.[a-z][a-z0-9_]*){2,})$"
+            ),
+        },
+        "capability_version": STR,
+    },
+    ("capability_id", "capability_version"),
+    False,
+)
+schemas["value-source"] = {
+    "oneOf": [
+        obj({"kind": {"const": "CONSTANT"}, "value": JSON}, ("kind", "value"), False),
+        obj({"kind": {"const": "RUN_INPUT"}, "name": STR}, ("kind", "name"), False),
+        obj(
+            {"kind": {"const": "EXTERNAL_REFERENCE"}, "reference": ref("artifact-ref")},
+            ("kind", "reference"),
+            False,
+        ),
+        obj(
+            {"kind": {"const": "UPSTREAM_OUTPUT"}, "node_id": STR, "output": STR},
+            ("kind", "node_id", "output"),
+            False,
+        ),
+    ]
+}
+constant = obj({"kind": {"const": "CONSTANT"}, "value": JSON}, ("kind", "value"), False)
+schemas["input-port"] = obj(
+    {
+        "name": STR,
+        "schema": schema_value,
+        "required": {"type": "boolean"},
+        "on_unavailable": enum("BLOCK", "OMIT", "DEFAULT"),
+        "default": constant,
+    },
+    ("name", "schema", "required", "on_unavailable"),
+    False,
+)
+schemas["output-port"] = obj(
+    {"name": STR, "schema": schema_value, "role": enum("INFORMATION", "RESULT", "DECISION")},
+    ("name", "schema", "role"),
+    False,
+)
+bindings = {"type": "object", "propertyNames": STR, "additionalProperties": ref("value-source")}
+ports = array(ref("input-port"))
 schemas["graph"] = obj(
     {
         "nodes": array(
@@ -121,11 +171,16 @@ schemas["graph"] = obj(
                 {
                     "id": STR,
                     "kind": enum("DERIVE", "EVALUATE", "CONTROL", "AGGREGATE"),
-                    "executor_ref": STR,
+                    "operation": ref("operation-requirement"),
+                    "inputs": ports,
+                    "outputs": array(ref("output-port")),
+                    "bindings": bindings,
+                    "aggregate_inputs": array(STR),
                     "config": {"type": "object"},
+                    "config_schema": schema_value,
                     "resource_estimate": vector,
                 },
-                ("id", "kind", "executor_ref"),
+                ("id", "kind", "operation", "inputs", "outputs", "bindings"),
             )
         ),
         "edges": array(
@@ -136,19 +191,11 @@ schemas["graph"] = obj(
                     "guard": nullable(
                         obj(
                             {
-                                "node_id": STR,
-                                "field": enum(
-                                    "disposition",
-                                    "execution_outcome",
-                                    "applicability",
-                                    "determination",
-                                    "verdict",
-                                    "decision_kind",
-                                    "decision_destination",
-                                ),
-                                "value": STR,
+                                "source": ref("value-source"),
+                                "pointer": {"type": "string"},
+                                "value": JSON,
                             },
-                            ("node_id", "field", "value"),
+                            ("source", "pointer", "value"),
                             False,
                         )
                     ),
@@ -168,19 +215,39 @@ schemas["verification-definition"] = marked(
         "version": STR,
         "subject": ref("artifact-ref"),
         "criterion": obj({"id": STR, "description": STR}, ("id", "description")),
-        "judgment_schema": {"type": "object"},
+        "judgment_schema": schema_value,
+        "run_inputs": ports,
         "satisfaction_mapping": nullable({"type": "object"}),
         "graph": ref("graph"),
         "execution_policy": obj(
             {
                 "activation": obj(
-                    {"executor_ref": STR, "config": {"type": "object"}}, ("executor_ref",), False
+                    {
+                        "executor_ref": STR,
+                        "config": {"type": "object"},
+                        "inputs": ports,
+                        "bindings": bindings,
+                    },
+                    ("executor_ref",),
+                    False,
                 ),
                 "selection": obj(
-                    {"executor_ref": STR, "config": {"type": "object"}}, ("executor_ref",), False
+                    {
+                        "executor_ref": STR,
+                        "config": {"type": "object"},
+                        "inputs": ports,
+                        "bindings": bindings,
+                    },
+                    ("executor_ref",),
+                    False,
                 ),
                 "admission": obj(
-                    {"strategy": STR, "probability": nullable({**NUM, "maximum": 1})},
+                    {
+                        "strategy": STR,
+                        "probability": nullable({**NUM, "maximum": 1}),
+                        "inputs": ports,
+                        "bindings": bindings,
+                    },
                     ("strategy",),
                     False,
                 ),
@@ -189,10 +256,46 @@ schemas["verification-definition"] = marked(
             False,
         ),
     },
-    ("id", "version", "subject", "criterion", "judgment_schema", "graph", "execution_policy"),
+    (
+        "id",
+        "version",
+        "subject",
+        "criterion",
+        "judgment_schema",
+        "run_inputs",
+        "graph",
+        "execution_policy",
+    ),
 )
 timestamp = {"type": "string", "format": "date-time", "pattern": r"(?:[Zz]|\+00:00)$"}
 results = {"type": "object", "additionalProperties": ref("result")}
+schemas["execution-observation"] = obj(
+    {
+        "outputs": {"type": "object"},
+        "usage": vector,
+        "evidence": array(ref("evidence")),
+        "error": obj({"code": STR, "message": STR}, ("code", "message"), False),
+    },
+    ("outputs", "usage", "evidence"),
+    False,
+)
+schemas["input-resolution"] = obj(
+    {
+        "source": ref("value-source"),
+        "status": enum(
+            "AVAILABLE",
+            "ABSENT",
+            "PRODUCER_NOT_EXECUTED",
+            "PRODUCER_ERROR",
+            "OUTPUT_MISSING",
+            "INVALID",
+        ),
+        "used_default": {"type": "boolean"},
+        "value": JSON,
+    },
+    ("status", "used_default"),
+    False,
+)
 schemas["run-record"] = marked(
     {
         "run_id": STR,
@@ -200,6 +303,7 @@ schemas["run-record"] = marked(
         "definition_fingerprint": {**STR, "pattern": "^local-sha256:[0-9a-f]{64}$"},
         "subject": ref("artifact-ref"),
         "initial_context": {"type": "object"},
+        "run_inputs": {"type": "object"},
         "opportunity_id": STR,
         "admission": obj(
             {"outcome": enum("RUN", "SKIP", "DEFER"), "reason": STR}, ("outcome", "reason"), False
@@ -210,27 +314,40 @@ schemas["run-record"] = marked(
             obj(
                 {
                     "node_id": STR,
-                    "executor_ref": STR,
+                    "kind": enum("DERIVE", "EVALUATE", "CONTROL", "AGGREGATE"),
+                    "operation": ref("operation-requirement"),
+                    "executor_ref": nullable(STR),
                     "executor_version": nullable(STR),
                     "upstream_node_ids": array(STR),
-                    "input_context": {"type": "object"},
                     "upstream_results": results,
+                    "input_values": {"type": "object"},
+                    "input_resolutions": {
+                        "type": "object",
+                        "additionalProperties": ref("input-resolution"),
+                    },
                     "started_at": timestamp,
                     "finished_at": timestamp,
                     "usage": vector,
+                    "state": enum("SUCCESS", "ERROR", "NONEXECUTED"),
+                    "reason": nullable(STR),
+                    "observation": ref("execution-observation"),
+                    "information": {"type": "object"},
                     "result": nullable(ref("result")),
                     "decision": nullable(ref("decision")),
-                    "derived": nullable({"type": "object"}),
                 },
                 (
                     "node_id",
-                    "executor_ref",
+                    "kind",
+                    "operation",
                     "upstream_node_ids",
-                    "input_context",
                     "upstream_results",
+                    "input_values",
+                    "input_resolutions",
                     "started_at",
                     "finished_at",
                     "usage",
+                    "state",
+                    "information",
                 ),
                 False,
             )
@@ -243,6 +360,7 @@ schemas["run-record"] = marked(
         "definition_fingerprint",
         "subject",
         "initial_context",
+        "run_inputs",
         "opportunity_id",
         "admission",
         "started_at",
@@ -280,8 +398,7 @@ descriptions = {
     "resource": "Unit-bearing measurement with kind-dependent value or range fields.",
     "decision": "Verification control decision, distinct from judgment; ROUTE needs destination.",
     "graph": (
-        "Directed graph subset with source equality guards; semantic validation rejects "
-        "unsupported standard weighted graph aggregation."
+        "Typed DAG with explicit input bindings, operation requirements and aggregate membership."
     ),
     "verification-definition": "Versioned subject/criterion, judgment schema, graph and policy.",
     "run-record": (
@@ -296,7 +413,9 @@ for name, schema in schemas.items():
     schema = {
         "$schema": "https://json-schema.org/draft/2020-12/schema",
         "$id": BASE + name,
-        "description": descriptions[name],
+        "description": descriptions.get(
+            name, "Typed explicit executable dataflow; see spec/draft/dataflow.md."
+        ),
         **schema,
     }
     for folder in (ROOT / "schemas/draft", ROOT / "src/openverify/data/schemas"):

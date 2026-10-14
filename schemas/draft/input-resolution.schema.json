@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:verification:draft:input-resolution",
+  "description": "Typed explicit executable dataflow; see spec/draft/dataflow.md.",
+  "type": "object",
+  "properties": {
+    "source": {
+      "$ref": "urn:verification:draft:value-source"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "AVAILABLE",
+        "ABSENT",
+        "PRODUCER_NOT_EXECUTED",
+        "PRODUCER_ERROR",
+        "OUTPUT_MISSING",
+        "INVALID"
+      ]
+    },
+    "used_default": {
+      "type": "boolean"
+    },
+    "value": {}
+  },
+  "required": [
+    "status",
+    "used_default"
+  ],
+  "additionalProperties": false
+}
