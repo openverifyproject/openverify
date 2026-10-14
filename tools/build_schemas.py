@@ -209,6 +209,26 @@ schemas["graph"] = obj(
     ("nodes",),
     False,
 )
+policy_fields = {
+    "operation": ref("operation-requirement"),
+    "config": {"type": "object"},
+    "config_schema": schema_value,
+    "inputs": ports,
+    "bindings": bindings,
+}
+capability = obj({**policy_fields, "executor_ref": STR}, (), False)
+admission_policy = obj(
+    {**policy_fields, "strategy": STR, "probability": nullable({**NUM, "maximum": 1})}, (), False
+)
+schemas["activation"] = obj(
+    {"outcome": enum("ACTIVATE", "DO_NOT_ACTIVATE"), "reason": STR}, ("outcome", "reason"), False
+)
+schemas["selection"] = obj(
+    {"subjects": array(ref("artifact-ref")), "reason": STR}, ("subjects", "reason"), False
+)
+schemas["admission"] = obj(
+    {"outcome": enum("RUN", "SKIP", "DEFER"), "reason": STR}, ("outcome", "reason"), False
+)
 schemas["verification-definition"] = marked(
     {
         "id": STR,
@@ -221,36 +241,9 @@ schemas["verification-definition"] = marked(
         "graph": ref("graph"),
         "execution_policy": obj(
             {
-                "activation": obj(
-                    {
-                        "executor_ref": STR,
-                        "config": {"type": "object"},
-                        "inputs": ports,
-                        "bindings": bindings,
-                    },
-                    ("executor_ref",),
-                    False,
-                ),
-                "selection": obj(
-                    {
-                        "executor_ref": STR,
-                        "config": {"type": "object"},
-                        "inputs": ports,
-                        "bindings": bindings,
-                    },
-                    ("executor_ref",),
-                    False,
-                ),
-                "admission": obj(
-                    {
-                        "strategy": STR,
-                        "probability": nullable({**NUM, "maximum": 1}),
-                        "inputs": ports,
-                        "bindings": bindings,
-                    },
-                    ("strategy",),
-                    False,
-                ),
+                "activation": capability,
+                "selection": capability,
+                "admission": admission_policy,
             },
             ("activation", "selection", "admission"),
             False,
@@ -296,6 +289,23 @@ schemas["input-resolution"] = obj(
     ("status", "used_default"),
     False,
 )
+schemas["policy-evaluation"] = obj(
+    {
+        "role": enum("ACTIVATION", "SELECTION", "ADMISSION"),
+        "input_values": {"type": "object"},
+        "input_resolutions": {"type": "object", "additionalProperties": ref("input-resolution")},
+        "outcome": {"oneOf": [ref("activation"), ref("selection"), ref("admission")]},
+        "executor_ref": nullable(STR),
+        "executor_version": nullable(STR),
+    },
+    ("role", "input_values", "input_resolutions", "outcome"),
+    False,
+)
+schemas["cancellation-event"] = obj(
+    {"node_id": STR, "phase": enum("BEFORE_START", "RUNNING"), "reason": STR},
+    ("node_id", "phase", "reason"),
+    False,
+)
 schemas["run-record"] = marked(
     {
         "run_id": STR,
@@ -305,9 +315,9 @@ schemas["run-record"] = marked(
         "initial_context": {"type": "object"},
         "run_inputs": {"type": "object"},
         "opportunity_id": STR,
-        "admission": obj(
-            {"outcome": enum("RUN", "SKIP", "DEFER"), "reason": STR}, ("outcome", "reason"), False
-        ),
+        "admission": ref("admission"),
+        "policy_evaluations": array(ref("policy-evaluation")),
+        "cancellation": ref("cancellation-event"),
         "started_at": timestamp,
         "finished_at": timestamp,
         "nodes": array(
@@ -328,7 +338,7 @@ schemas["run-record"] = marked(
                     "started_at": timestamp,
                     "finished_at": timestamp,
                     "usage": vector,
-                    "state": enum("SUCCESS", "ERROR", "NONEXECUTED"),
+                    "state": enum("SUCCESS", "ERROR", "NONEXECUTED", "CANCELLED"),
                     "reason": nullable(STR),
                     "observation": ref("execution-observation"),
                     "information": {"type": "object"},
@@ -363,6 +373,7 @@ schemas["run-record"] = marked(
         "run_inputs",
         "opportunity_id",
         "admission",
+        "policy_evaluations",
         "started_at",
         "finished_at",
         "nodes",

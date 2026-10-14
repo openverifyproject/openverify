@@ -38,7 +38,25 @@ resolution fails definitions up front. Severity references without domain snapsh
 are opaque; no validation or registry resolution is claimed. These choices replace
 previously open/engine-local behavior; see [dataflow](dataflow.md).
 
-Still open: cycles/iteration scopes, expansion, provider selection, richer policies,
+Still open: cycles/iteration scopes, expansion, provider selection, general subject-universe execution,
 retry/defer scheduling, general guards, canonical signing, artifact integrity,
 portable numeric precision and formal criterion/satisfaction languages. Adapters
 remain responsible for honestly implementing bound semantic criteria.
+
+## Resolved in policy-to-occurrence DRAFT revision
+
+Activation now has ACTIVATE/DO_NOT_ACTIVATE outcomes; selection is a subject set
+(empty or exact definition subject in the current single-subject subset).
+Custom policy operations reuse typed ports, bindings and configuration. No hidden
+Context or graph-output policy sources are allowed. Valid admission creates the
+occurrence, including SKIP and DEFER; inactive/unselected opportunities do not.
+See [execution policy](execution-policy.md).
+
+Previously ambiguous DISABLED, control DEFER/RETRY, route exclusion and cancellation
+now have deterministic lifecycle/disposition/reason mappings and provenance; see
+[lifecycle](lifecycle.md). ROUTE is constrained to a direct successor and excludes
+exclusive branch descendants while preserving shared joins. Ordinary false guards
+retain the existing explicit-dataflow behavior, with no implicit edge propagation.
+This is a breaking DRAFT clarification, not stable 1.0 compatibility. Provider
+selection, asynchronous/distributed cancellation, scheduling retries/deferred work,
+cycles/iteration and dynamic expansion remain unsupported.

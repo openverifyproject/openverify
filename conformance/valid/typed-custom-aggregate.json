@@ -216,6 +216,43 @@
     "outcome": "RUN",
     "reason": "ALWAYS"
   },
+  "policy_evaluations": [
+    {
+      "role": "ACTIVATION",
+      "input_values": {},
+      "input_resolutions": {},
+      "outcome": {
+        "outcome": "ACTIVATE",
+        "reason": "MANUAL"
+      }
+    },
+    {
+      "role": "SELECTION",
+      "input_values": {},
+      "input_resolutions": {},
+      "outcome": {
+        "subjects": [
+          {
+            "id": "article-1",
+            "type": "text/plain",
+            "locator": {
+              "host_key": "text"
+            }
+          }
+        ],
+        "reason": "EXPLICIT"
+      }
+    },
+    {
+      "role": "ADMISSION",
+      "input_values": {},
+      "input_resolutions": {},
+      "outcome": {
+        "outcome": "RUN",
+        "reason": "ALWAYS"
+      }
+    }
+  ],
   "started_at": "2026-01-01T00:00:00Z",
   "finished_at": "2026-01-01T00:00:00Z",
   "nodes": [

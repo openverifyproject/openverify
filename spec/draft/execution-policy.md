@@ -2,42 +2,80 @@
 
 ## NORMATIVE SEMANTICS
 
-Activation(explicit inputs) -> boolean asks whether an event makes verification
-eligible. Selection(explicit inputs) -> SubjectSet asks which subjects are
-included. Admission(explicit inputs) -> RUN | SKIP | DEFER
-asks whether resources should be spent on an eligible selected subject.
-These MUST remain distinct. Percentage sampling belongs to Admission.
+The order is activation, selection, admission, then graph execution. Resources
+are typed estimates, constraints or observations, not another decision stage.
+Policy decisions MUST NOT inspect graph execution or undeclared ambient Context.
 
-Any policy consuming event, history, budget, risk, staleness or opportunity facts MUST declare typed inputs and explicit bindings (run/constant/external only) as in [dataflow](dataflow.md). Upstream graph outputs cannot feed pre-execution policy. The reference engine rejects custom policy inputs before invoking nodes. The simple built-ins consume their explicit definition configuration and host opportunity identity only.
+All three roles reuse InputPort, ValueSource bindings, OperationRequirement,
+config and optional config_schema from [dataflow](dataflow.md). Required ports
+MUST be bound. Only CONSTANT, RUN_INPUT and EXTERNAL_REFERENCE are legal before
+graph execution. External references supply ArtifactRef, never fetched content.
+Defaults, omissions and runtime schema validation follow ordinary port semantics.
+All definition structure, schemas, constants and bindings MUST validate before
+any implementation is invoked. Required unavailable/invalid policy inputs,
+implementation exceptions and invalid outcomes abort policy evaluation; they MUST
+NOT invent a decision or occurrence.
 
-execution_policy contains activation and selection capability references with
-configuration, and admission. The standard implemented activation MANUAL means
-the host explicitly invoked a run; EXPLICIT selection takes the one subject
-identified in the definition. No global closed trigger/selector ontology exists.
-Other capability names remain valid wire references, but the reference engine
-rejects unsupported capabilities clearly.
+A custom policy declares operation: {capability_id, capability_version}. Its
+implementation receives only the exact resolved input object and separate config,
+and returns the role outcome object directly. The role fixes the output schema:
 
-ALWAYS admits every eligible selected opportunity.
-PROBABILITY requires a finite number p in [0,1]. p=0 skips all, p=1 admits all;
-otherwise roughly p of eligible opportunities are admitted by sampling.
-Hosts MUST give a nonempty opportunity_id and subject identity for every run.
-Reference deterministic sampling uses stable inputs, not global random state.
-Its exact hashing is non-normative; identical admission across engines is OPEN.
-A reference admission decision and reason MUST appear in RunRecord.
+* Activation: {outcome: ACTIVATE | DO_NOT_ACTIVATE, reason: nonempty string}.
+* Selection: {subjects: ArtifactRef[], reason: nonempty string}. Subjects form a
+  set identified by id; duplicate identities are invalid.
+* Admission: {outcome: RUN | SKIP | DEFER, reason: nonempty string}.
 
-maximum_staleness conceptually ensures that probability does not leave a verifier
-unevaluated indefinitely. It is not in the implemented wire policy; consumers
-MUST NOT accept it as an unnoticed extra field.
+A Result, Decision, observation envelope or arbitrary boolean is not a policy
+outcome. Candidate facts/identities needed by selection MUST be bound inputs.
+This draft defines one subject per definition: selection MUST return either an
+empty set or the exact definition subject snapshot. Other subjects require other
+definitions/opportunities; selection does not expand or mutate graphs. General
+subject-universe execution remains unsupported. A custom policy needing the
+subject MUST explicitly bind it.
 
-## NON-NORMATIVE EXAMPLES
+Legacy built-in shorthands remain: activation executor_ref MANUAL returns ACTIVATE
+for a host-offered opportunity; selection executor_ref EXPLICIT returns the
+structural definition subject; admission strategy ALWAYS returns RUN. PROBABILITY
+requires finite p in [0,1]; p=0 SKIP, p=1 RUN, otherwise sampling returns RUN/SKIP.
+A policy MUST choose exactly one of operation and its built-in discriminator
+(executor_ref or strategy). Built-ins have no ports, bindings or config; only
+PROBABILITY accepts probability. Other legacy names remain valid references but
+unsupported locally. Custom policies cannot carry a built-in discriminator or p.
 
-Changed documents, impacted measurements, random subject sets, and explicit IDs
-are selection. Events such as periodic ticks are activation. Resource budgets
-and history may influence admission. No PERIODIC scheduler is implemented.
+Hosts MUST provide a nonempty opportunity_id. The built-in sampler's complete
+structural inputs are definition fingerprint, subject identity, opportunity_id
+and explicit p. Its exact bucket identity is reference-only, not portable.
+Custom policies needing opportunity identity MUST bind it as ordinary typed data.
+There is no hidden budget, risk, history, clock or environment input. A budget-aware
+policy simply declares the relevant typed values or external snapshots and returns
+an ordinary admission outcome. Policy logic remains replaceable.
 
-## OPEN QUESTIONS
+## Exact occurrence boundary
 
-MAX_STALENESS timing, history coverage, missing-history behavior, and combination
-with probability need precise semantics; not implemented. Cross-engine sampling
-identity and retry/opportunity identity are unresolved.
+DO_NOT_ACTIVATE ends the opportunity before selection, with no occurrence.
+Empty selection ends it before admission, with no occurrence for that subject.
+Neither case creates a RunRecord or node records. Hosts MAY audit opportunities
+outside RunRecord; no opportunity-audit object is defined here.
 
+An occurrence is created exactly when valid admission returns RUN, SKIP or DEFER
+for an activated, selected subject. RUN enables graph execution. SKIP creates one
+terminal SKIPPED Result per node with ADMISSION_SKIP. DEFER creates one DEFERRED
+Result per node with ADMISSION_DEFER. Neither invokes graph providers. These
+states are never FAIL, ERROR or UNKNOWN. Policy failure before valid admission
+creates no occurrence.
+
+Each occurrence retains all three ordered policy evaluations: role, exact input
+resolutions/values, constrained outcome and known executor identity/version.
+RunRecord.admission repeats the admission outcome exactly. Validation reconstructs
+policy inputs without rerunning policy logic; these are observations, not proof
+of an honest implementation.
+
+## Reference subset and open questions
+
+Engine.attempt returns None when no occurrence exists. Engine.run is a convenience
+requiring an occurrence and raises NO_OCCURRENCE for those opportunities. Neither
+fabricates records. Required unavailable/invalid policy inputs raise POLICY_INPUT;
+invalid outcomes raise POLICY_OUTPUT. Custom policies use the same explicit local
+exact-pair registry as graph operations; no provider selection is defined.
+No periodic scheduler, policy language, multi-subject expansion or retry scheduling
+is implemented. Maximum staleness/history coverage and portable sampling remain OPEN.

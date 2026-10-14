@@ -1,0 +1,199 @@
+{
+  "protocol": "draft",
+  "run_id": "policy-fixture",
+  "definition": {
+    "protocol": "draft",
+    "id": "prose-criterion",
+    "version": "1",
+    "subject": {
+      "id": "article-1",
+      "type": "text/plain",
+      "locator": {
+        "host_key": "text"
+      }
+    },
+    "criterion": {
+      "id": "readable-prose",
+      "description": "Contains no banned phrase and is nonempty."
+    },
+    "judgment_schema": {},
+    "run_inputs": [
+      {
+        "name": "x",
+        "schema": {
+          "type": "number"
+        },
+        "required": true,
+        "on_unavailable": "BLOCK"
+      }
+    ],
+    "execution_policy": {
+      "activation": {
+        "executor_ref": "MANUAL"
+      },
+      "selection": {
+        "executor_ref": "EXPLICIT"
+      },
+      "admission": {
+        "operation": {
+          "capability_id": "com.example.policy",
+          "capability_version": "1"
+        },
+        "inputs": [
+          {
+            "name": "value",
+            "schema": {
+              "type": "number"
+            },
+            "required": true,
+            "on_unavailable": "BLOCK"
+          },
+          {
+            "name": "constant",
+            "schema": {},
+            "required": true,
+            "on_unavailable": "BLOCK"
+          },
+          {
+            "name": "ref",
+            "schema": {},
+            "required": true,
+            "on_unavailable": "BLOCK"
+          }
+        ],
+        "bindings": {
+          "value": {
+            "kind": "RUN_INPUT",
+            "name": "x"
+          },
+          "constant": {
+            "kind": "CONSTANT",
+            "value": false
+          },
+          "ref": {
+            "kind": "EXTERNAL_REFERENCE",
+            "reference": {
+              "id": "article-1",
+              "type": "text/plain",
+              "locator": {
+                "host_key": "text"
+              }
+            }
+          }
+        }
+      }
+    },
+    "graph": {
+      "nodes": [],
+      "edges": []
+    }
+  },
+  "definition_fingerprint": "local-sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "subject": {
+    "id": "article-1",
+    "type": "text/plain",
+    "locator": {
+      "host_key": "text"
+    }
+  },
+  "initial_context": {},
+  "run_inputs": {
+    "x": 4
+  },
+  "opportunity_id": "fixture",
+  "admission": {
+    "outcome": "RUN",
+    "reason": "policy"
+  },
+  "policy_evaluations": [
+    {
+      "role": "ACTIVATION",
+      "input_values": {},
+      "input_resolutions": {},
+      "outcome": {
+        "outcome": "ACTIVATE",
+        "reason": "MANUAL"
+      }
+    },
+    {
+      "role": "SELECTION",
+      "input_values": {},
+      "input_resolutions": {},
+      "outcome": {
+        "subjects": [
+          {
+            "id": "article-1",
+            "type": "text/plain",
+            "locator": {
+              "host_key": "text"
+            }
+          }
+        ],
+        "reason": "EXPLICIT"
+      }
+    },
+    {
+      "role": "ADMISSION",
+      "input_values": {
+        "value": 4,
+        "constant": false,
+        "ref": {
+          "id": "article-1",
+          "type": "text/plain",
+          "locator": {
+            "host_key": "text"
+          }
+        }
+      },
+      "input_resolutions": {
+        "value": {
+          "source": {
+            "kind": "RUN_INPUT",
+            "name": "x"
+          },
+          "status": "AVAILABLE",
+          "used_default": false,
+          "value": 4
+        },
+        "constant": {
+          "source": {
+            "kind": "CONSTANT",
+            "value": false
+          },
+          "status": "AVAILABLE",
+          "used_default": false,
+          "value": false
+        },
+        "ref": {
+          "source": {
+            "kind": "EXTERNAL_REFERENCE",
+            "reference": {
+              "id": "article-1",
+              "type": "text/plain",
+              "locator": {
+                "host_key": "text"
+              }
+            }
+          },
+          "status": "AVAILABLE",
+          "used_default": false,
+          "value": {
+            "id": "article-1",
+            "type": "text/plain",
+            "locator": {
+              "host_key": "text"
+            }
+          }
+        }
+      },
+      "outcome": {
+        "outcome": "RUN",
+        "reason": "policy"
+      }
+    }
+  ],
+  "started_at": "2026-01-01T00:00:00Z",
+  "finished_at": "2026-01-01T00:00:00Z",
+  "nodes": [],
+  "final_results": {}
+}

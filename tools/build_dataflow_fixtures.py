@@ -111,7 +111,7 @@ def run_record(d, supplied, observations, disabled=()):
             "information": {},
         }
         if blocked or n["id"] in disabled:
-            reason = "DISABLED" if n["id"] in disabled else "INPUT_UNAVAILABLE"
+            reason = "ADMISSION_SKIP" if n["id"] in disabled else "INPUT_UNAVAILABLE"
             r.update(
                 state="NONEXECUTED",
                 reason=reason,
@@ -164,6 +164,26 @@ def run_record(d, supplied, observations, disabled=()):
         "run_inputs": copy.deepcopy(supplied),
         "opportunity_id": "fixture",
         "admission": {"outcome": "RUN", "reason": "ALWAYS"},
+        "policy_evaluations": [
+            {
+                "role": "ACTIVATION",
+                "input_values": {},
+                "input_resolutions": {},
+                "outcome": {"outcome": "ACTIVATE", "reason": "MANUAL"},
+            },
+            {
+                "role": "SELECTION",
+                "input_values": {},
+                "input_resolutions": {},
+                "outcome": {"subjects": [copy.deepcopy(d["subject"])], "reason": "EXPLICIT"},
+            },
+            {
+                "role": "ADMISSION",
+                "input_values": {},
+                "input_resolutions": {},
+                "outcome": {"outcome": "RUN", "reason": "ALWAYS"},
+            },
+        ],
         "started_at": TIME,
         "finished_at": TIME,
         "nodes": list(records.values()),
@@ -441,6 +461,7 @@ for reducer in [
 case("complete-run-record", "run-record", run)
 skip = run_record(d, {"x": 0}, {}, disabled=[n["id"] for n in d["graph"]["nodes"]])
 skip["admission"] = {"outcome": "SKIP", "reason": "PROBABILITY p=0"}
+skip["policy_evaluations"][-1]["outcome"] = copy.deepcopy(skip["admission"])
 skip["definition"]["execution_policy"]["admission"] = {"strategy": "PROBABILITY", "probability": 0}
 case("admission-skip-run", "run-record", skip)
 for disposition in ("DEFERRED", "CANCELLED"):

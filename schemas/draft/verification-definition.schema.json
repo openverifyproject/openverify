@@ -76,84 +76,16 @@
         "activation": {
           "type": "object",
           "properties": {
-            "executor_ref": {
-              "type": "string",
-              "minLength": 1
+            "operation": {
+              "$ref": "urn:verification:draft:operation-requirement"
             },
             "config": {
               "type": "object"
             },
-            "inputs": {
-              "type": "array",
-              "items": {
-                "$ref": "urn:verification:draft:input-port"
-              }
-            },
-            "bindings": {
-              "type": "object",
-              "propertyNames": {
-                "type": "string",
-                "minLength": 1
-              },
-              "additionalProperties": {
-                "$ref": "urn:verification:draft:value-source"
-              }
-            }
-          },
-          "required": [
-            "executor_ref"
-          ],
-          "additionalProperties": false
-        },
-        "selection": {
-          "type": "object",
-          "properties": {
-            "executor_ref": {
-              "type": "string",
-              "minLength": 1
-            },
-            "config": {
-              "type": "object"
-            },
-            "inputs": {
-              "type": "array",
-              "items": {
-                "$ref": "urn:verification:draft:input-port"
-              }
-            },
-            "bindings": {
-              "type": "object",
-              "propertyNames": {
-                "type": "string",
-                "minLength": 1
-              },
-              "additionalProperties": {
-                "$ref": "urn:verification:draft:value-source"
-              }
-            }
-          },
-          "required": [
-            "executor_ref"
-          ],
-          "additionalProperties": false
-        },
-        "admission": {
-          "type": "object",
-          "properties": {
-            "strategy": {
-              "type": "string",
-              "minLength": 1
-            },
-            "probability": {
-              "anyOf": [
-                {
-                  "type": "number",
-                  "minimum": 0,
-                  "maximum": 1
-                },
-                {
-                  "type": "null"
-                }
+            "config_schema": {
+              "type": [
+                "object",
+                "boolean"
               ]
             },
             "inputs": {
@@ -171,11 +103,103 @@
               "additionalProperties": {
                 "$ref": "urn:verification:draft:value-source"
               }
+            },
+            "executor_ref": {
+              "type": "string",
+              "minLength": 1
             }
           },
-          "required": [
-            "strategy"
-          ],
+          "required": [],
+          "additionalProperties": false
+        },
+        "selection": {
+          "type": "object",
+          "properties": {
+            "operation": {
+              "$ref": "urn:verification:draft:operation-requirement"
+            },
+            "config": {
+              "type": "object"
+            },
+            "config_schema": {
+              "type": [
+                "object",
+                "boolean"
+              ]
+            },
+            "inputs": {
+              "type": "array",
+              "items": {
+                "$ref": "urn:verification:draft:input-port"
+              }
+            },
+            "bindings": {
+              "type": "object",
+              "propertyNames": {
+                "type": "string",
+                "minLength": 1
+              },
+              "additionalProperties": {
+                "$ref": "urn:verification:draft:value-source"
+              }
+            },
+            "executor_ref": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        },
+        "admission": {
+          "type": "object",
+          "properties": {
+            "operation": {
+              "$ref": "urn:verification:draft:operation-requirement"
+            },
+            "config": {
+              "type": "object"
+            },
+            "config_schema": {
+              "type": [
+                "object",
+                "boolean"
+              ]
+            },
+            "inputs": {
+              "type": "array",
+              "items": {
+                "$ref": "urn:verification:draft:input-port"
+              }
+            },
+            "bindings": {
+              "type": "object",
+              "propertyNames": {
+                "type": "string",
+                "minLength": 1
+              },
+              "additionalProperties": {
+                "$ref": "urn:verification:draft:value-source"
+              }
+            },
+            "strategy": {
+              "type": "string",
+              "minLength": 1
+            },
+            "probability": {
+              "anyOf": [
+                {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [],
           "additionalProperties": false
         }
       },

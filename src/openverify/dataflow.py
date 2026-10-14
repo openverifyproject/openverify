@@ -19,6 +19,7 @@ from openverify.model import (
     JsonSchema,
     Node,
     NodeRecord,
+    PolicyOperation,
     Result,
     RunInput,
     UpstreamOutput,
@@ -313,6 +314,9 @@ def validate_executable(definition: VerificationDefinition) -> None:
         validate_bindings(
             policy.inputs, policy.bindings, definition.graph, "", definition.run_inputs
         )
+        if policy.config_schema is not None:
+            check_schema(policy.config_schema)
+            validate_value(policy.config_schema, policy.config, "DATAFLOW_CONFIG")
 
 
 def validate_run_inputs(definition: VerificationDefinition, supplied: Context) -> Context:
@@ -365,7 +369,7 @@ def resolve_source(
             source=source, status="AVAILABLE", value=deepcopy(record.information[source.output])
         )
     status = "OUTPUT_MISSING"
-    if record.state == "NONEXECUTED":
+    if record.state in ("NONEXECUTED", "CANCELLED"):
         status = "PRODUCER_NOT_EXECUTED"
     elif record.state == "ERROR":
         if record.reason is None:
@@ -380,7 +384,7 @@ def resolve_source(
 
 
 def resolve_inputs(
-    node: Node, run_values: Context, records: dict[str, NodeRecord], graph: Graph
+    node: Node | PolicyOperation, run_values: Context, records: dict[str, NodeRecord], graph: Graph
 ) -> tuple[Context, dict[str, InputResolution], bool]:
     values: Context = {}
     resolutions: dict[str, InputResolution] = {}
@@ -462,9 +466,9 @@ def accept_outputs(
         elif port.role == "DECISION":
             decision = cast(Decision, parse_object("decision", value))
             if decision.kind == "ROUTE" and decision.destination not in {
-                n.id for n in definition.graph.nodes
+                e.to_node for e in definition.graph.edges if e.from_node == node.id
             }:
-                fail("ROUTE destination is absent from graph", "GRAPH_REFERENCE")
+                fail("ROUTE destination must be an outgoing successor", "GRAPH_REFERENCE")
         else:
             information[port.name] = deepcopy(value)
     if result is not None and result.execution_outcome == "ERROR":

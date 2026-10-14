@@ -128,17 +128,18 @@ are recognized as unsupported draft features. Independent nodes execute sequenti
 in definition order when ready in the reference engine.
 
 **Activation:** Trigger asks whether an event makes verification eligible. Trigger
-capabilities are extensible. The engine implements MANUAL host invocation; it has
-no periodic scheduler.
+capabilities are extensible. The engine implements MANUAL host invocation and
+registered custom policy operations with explicit typed inputs. It has no periodic
+scheduler.
 
 **Selection:** Scope asks which subjects from a candidate universe are included.
-This remains distinct from criterion. The engine implements EXPLICIT selection of
-the definition's single subject. Changed/impacted/predicate-selected sets need other
-host capabilities; they are not code-specific core concepts.
+This remains distinct from criterion. EXPLICIT selects the definition's single
+subject; custom policies select that exact subject or an empty set using explicit
+typed inputs. General subject-universe execution is not implemented.
 
 **Admission:** Run policy asks whether an eligible selected opportunity should spend
-resources now: RUN, SKIP, or DEFER. Percentage sampling belongs here. ALWAYS and
-PROBABILITY are implemented; probability requires `0 <= p <= 1` and a host-supplied
+resources now: RUN, SKIP, or DEFER. Percentage sampling belongs here. Custom typed
+policies and ALWAYS/PROBABILITY are implemented. Probability requires `0 <= p <= 1` and a host-supplied
 opportunity id. Reference sampling is deterministic for the same definition
 fingerprint, subject, and opportunity; its bucket identity is not portable.
 Maximum staleness and its interaction with sampling/history remain OPEN.
@@ -159,7 +160,11 @@ Decision controls execution and is distinct from judgment. A human is an evaluat
 not a special Result type.
 
 **History / Provenance:** RunRecord retains the definition snapshot and identity,
-subject, initial run inputs, exact per-port resolutions and source identities, executor references and versions when known, upstream Results, observed/accepted outputs, evidence, usage, admission reason, and timing. Validation detects inconsistent snapshots along declared dataflow edges without rerunning implementations. Lineage
+subject, initial run inputs, exact per-port resolutions and source identities,
+executor references and versions when known, upstream Results, observed/accepted
+outputs, evidence, usage, ordered policy evaluations, lifecycle reason codes,
+cancellation events, and timing. Validation detects inconsistent snapshots along
+declared dataflow edges without rerunning implementations. Lineage
 does not prescribe a backend. The engine returns JSON-serializable records; memory
 and local JSONL stores are supplied. Cache equivalence, coverage/backfill scheduling,
 clock trust, and full replay are not implemented.
@@ -279,14 +284,14 @@ and missing inputs. Empty retained input and majority ties are rejected; UNKNOWN
 is never silently 0.5 or ERROR silently zero. There is no synthesized overall verdict
 without an aggregation node. Reference numeric scores/measurements use binary64;
 means use exact rational intermediate arithmetic and one final rounding.
-Provenance comparisons distinguish JSON booleans from numbers. Admission SKIP
-requires every node Result to be SKIPPED. Integral severity ranks such as 1.0
+Provenance comparisons distinguish JSON booleans from numbers. Admission SKIP requires every node Result to be SKIPPED/ADMISSION_SKIP;
+admission DEFER requires DEFERRED/ADMISSION_DEFER. Integral severity ranks such as 1.0
 normalize to SDK integers; UTC timestamps accept Z and +00:00.
 
 Equality guards use explicit typed sources and JSON Pointers, including Result/Decision ports, run inputs and information outputs. ROUTE
-checks a graph destination and selects through explicit guards. Stops record remaining
-nodes as SKIPPED. RETRY/DEFER serialize and stop a local run without scheduling
-another. Adapter failures become ERROR Results; downstream behavior follows explicit
+checks a graph destination and selects through explicit guards. Stops record remaining nodes as SKIPPED/CONTROL_STOP. RETRY records
+SKIPPED/RETRY_REQUESTED; control DEFER records DEFERRED/CONTROL_DEFER without
+scheduling another occurrence. Adapter failures become ERROR Results; downstream behavior follows explicit
 edges, guards, and reducer policies.
 
 Definitions are **data**: no eval, expressions, arbitrary imports, or automatic artifact
@@ -385,4 +390,11 @@ All kinds can return ExecutionObservation(outputs, usage, evidence, error). Loca
 conveniences returning Result, Decision or information mappings normalize into that
 channel. Valid reported usage survives invalid judgments and information outputs.
 Engine.run accepts optional ambient context= metadata separately from run inputs.
+Custom activation/selection/admission operations use the same exact-pair registry,
+with typed ports/bindings and constrained outcomes. Engine.attempt returns None
+for DO_NOT_ACTIVATE or empty selection; Engine.run raises NO_OCCURRENCE instead.
+Valid RUN/SKIP/DEFER admission creates a RunRecord with all three policy evaluations.
+See [execution policy](spec/draft/execution-policy.md) and
+[lifecycle](spec/draft/lifecycle.md) for reason codes, routing and cooperative
+Cancellation tokens. This is a breaking DRAFT provenance revision.
 No Relay, provider discovery, cycles, iteration or dynamic expansion is implemented.

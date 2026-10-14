@@ -251,6 +251,43 @@
     "outcome": "SKIP",
     "reason": "PROBABILITY p=0"
   },
+  "policy_evaluations": [
+    {
+      "role": "ACTIVATION",
+      "input_values": {},
+      "input_resolutions": {},
+      "outcome": {
+        "outcome": "ACTIVATE",
+        "reason": "MANUAL"
+      }
+    },
+    {
+      "role": "SELECTION",
+      "input_values": {},
+      "input_resolutions": {},
+      "outcome": {
+        "subjects": [
+          {
+            "id": "article-1",
+            "type": "text/plain",
+            "locator": {
+              "host_key": "text"
+            }
+          }
+        ],
+        "reason": "EXPLICIT"
+      }
+    },
+    {
+      "role": "ADMISSION",
+      "input_values": {},
+      "input_resolutions": {},
+      "outcome": {
+        "outcome": "SKIP",
+        "reason": "PROBABILITY p=0"
+      }
+    }
+  ],
   "started_at": "2026-01-01T00:00:00Z",
   "finished_at": "2026-01-01T00:00:00Z",
   "nodes": [
@@ -288,12 +325,12 @@
       },
       "state": "NONEXECUTED",
       "information": {},
-      "reason": "DISABLED",
+      "reason": "ADMISSION_SKIP",
       "result": {
         "protocol": "draft",
         "disposition": "SKIPPED",
         "output": {
-          "reason": "DISABLED"
+          "reason": "ADMISSION_SKIP"
         },
         "evidence": [],
         "usage": {}
@@ -314,7 +351,7 @@
           "protocol": "draft",
           "disposition": "SKIPPED",
           "output": {
-            "reason": "DISABLED"
+            "reason": "ADMISSION_SKIP"
           },
           "evidence": [],
           "usage": {}
@@ -391,12 +428,12 @@
       },
       "state": "NONEXECUTED",
       "information": {},
-      "reason": "DISABLED",
+      "reason": "ADMISSION_SKIP",
       "result": {
         "protocol": "draft",
         "disposition": "SKIPPED",
         "output": {
-          "reason": "DISABLED"
+          "reason": "ADMISSION_SKIP"
         },
         "evidence": [],
         "usage": {}
@@ -417,7 +454,7 @@
           "protocol": "draft",
           "disposition": "SKIPPED",
           "output": {
-            "reason": "DISABLED"
+            "reason": "ADMISSION_SKIP"
           },
           "evidence": [],
           "usage": {}
@@ -428,7 +465,7 @@
           "protocol": "draft",
           "disposition": "SKIPPED",
           "output": {
-            "reason": "DISABLED"
+            "reason": "ADMISSION_SKIP"
           },
           "evidence": [],
           "usage": {}
@@ -447,7 +484,7 @@
             "protocol": "draft",
             "disposition": "SKIPPED",
             "output": {
-              "reason": "DISABLED"
+              "reason": "ADMISSION_SKIP"
             },
             "evidence": [],
             "usage": {}
@@ -465,12 +502,12 @@
       },
       "state": "NONEXECUTED",
       "information": {},
-      "reason": "DISABLED",
+      "reason": "ADMISSION_SKIP",
       "result": {
         "protocol": "draft",
         "disposition": "SKIPPED",
         "output": {
-          "reason": "DISABLED"
+          "reason": "ADMISSION_SKIP"
         },
         "evidence": [],
         "usage": {}
@@ -491,7 +528,7 @@
           "protocol": "draft",
           "disposition": "SKIPPED",
           "output": {
-            "reason": "DISABLED"
+            "reason": "ADMISSION_SKIP"
           },
           "evidence": [],
           "usage": {}
@@ -520,12 +557,12 @@
       },
       "state": "NONEXECUTED",
       "information": {},
-      "reason": "DISABLED",
+      "reason": "ADMISSION_SKIP",
       "result": {
         "protocol": "draft",
         "disposition": "SKIPPED",
         "output": {
-          "reason": "DISABLED"
+          "reason": "ADMISSION_SKIP"
         },
         "evidence": [],
         "usage": {}
@@ -537,7 +574,7 @@
       "protocol": "draft",
       "disposition": "SKIPPED",
       "output": {
-        "reason": "DISABLED"
+        "reason": "ADMISSION_SKIP"
       },
       "evidence": [],
       "usage": {}
@@ -546,7 +583,7 @@
       "protocol": "draft",
       "disposition": "SKIPPED",
       "output": {
-        "reason": "DISABLED"
+        "reason": "ADMISSION_SKIP"
       },
       "evidence": [],
       "usage": {}
@@ -555,7 +592,7 @@
       "protocol": "draft",
       "disposition": "SKIPPED",
       "output": {
-        "reason": "DISABLED"
+        "reason": "ADMISSION_SKIP"
       },
       "evidence": [],
       "usage": {}
@@ -564,7 +601,7 @@
       "protocol": "draft",
       "disposition": "SKIPPED",
       "output": {
-        "reason": "DISABLED"
+        "reason": "ADMISSION_SKIP"
       },
       "evidence": [],
       "usage": {}

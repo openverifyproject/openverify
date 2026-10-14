@@ -33,26 +33,16 @@
       "minLength": 1
     },
     "admission": {
-      "type": "object",
-      "properties": {
-        "outcome": {
-          "type": "string",
-          "enum": [
-            "RUN",
-            "SKIP",
-            "DEFER"
-          ]
-        },
-        "reason": {
-          "type": "string",
-          "minLength": 1
-        }
-      },
-      "required": [
-        "outcome",
-        "reason"
-      ],
-      "additionalProperties": false
+      "$ref": "urn:verification:draft:admission"
+    },
+    "policy_evaluations": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:verification:draft:policy-evaluation"
+      }
+    },
+    "cancellation": {
+      "$ref": "urn:verification:draft:cancellation-event"
     },
     "started_at": {
       "type": "string",
@@ -154,7 +144,8 @@
             "enum": [
               "SUCCESS",
               "ERROR",
-              "NONEXECUTED"
+              "NONEXECUTED",
+              "CANCELLED"
             ]
           },
           "reason": {
@@ -238,6 +229,7 @@
     "run_inputs",
     "opportunity_id",
     "admission",
+    "policy_evaluations",
     "started_at",
     "finished_at",
     "nodes",
