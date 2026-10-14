@@ -221,6 +221,11 @@ The [Provider Contract](provider-contract/README.md) sits below VCP and lets any
 compatible runner invoke independently implemented capabilities. OpenVerify Relay
 is the planned minimal provider-driven harness/runtime built on that contract;
 Relay does not exist yet. The Engine uses a small local registry of exact capability ID/version implementations, with no discovery or provider transport runtime.
+Hosts can also supply explicit graph-node `BoundProvider` values through
+`Engine(registry, provider_bindings=...)`. The engine checks manifest compatibility
+and declared input/config/output contracts, and records the exact concrete binding
+in occurrence provenance. An empty supplied mapping requires bindings and chooses
+no provider. See [provider binding](spec/draft/provider-binding.md).
 
 ```text
 PROTOCOL: prose semantics + normative JSON schemas + conformance fixtures
@@ -377,6 +382,8 @@ Schema/profile copies are packaged for offline SDK use and tested against the
 normative root files. Edit their maintainers and regenerate in order with
 `uv run python tools/<file>`: `build_schemas.py`, `build_fixtures.py`,
 `build_profile.py`, `build_dataflow_fixtures.py`, `build_examples.py`. Maintenance scripts are not package code.
+Run `build_provider_binding_fixtures.py` after the other conformance builders to
+maintain the concrete provider identity and rejection fixtures.
 See [CONTRIBUTING](CONTRIBUTING.md) for the protocol-change and open-question process.
 
 

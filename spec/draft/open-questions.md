@@ -18,6 +18,8 @@ implicitly answered by reference Python behavior.
 | Maximum staleness + probability/history coverage | Conceptual only; no MAX_STALENESS built-in |
 | Retry/defer scheduling and history/cache equivalence | Decisions serialize; engine does not schedule retries |
 | External artifact integrity and schema resolution | No fetching; self-contained judgment schemas only |
+| Provider authenticity and independent reproduction of host contract-rejection claims | Exact occurrence binding and structural consistency only; no binary/endpoint attestation or manifest snapshot in VCP records |
+| Future provider transport/session provenance and policy provider bindings | Graph-node bindings use trusted local execute(inputs, config); policy operations remain local; no transport runner or Relay |
 
 No missing top-level category was established by the conceptual audit. Category
 coverage does not imply portable syntax or runtime support for every example.

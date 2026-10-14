@@ -15,6 +15,9 @@ A validator reconstructs each resolution from recorded source values and checks
 semantic output acceptance, availability and guard/control/admission eligibility.
 No provider is rerun. Contradictions are PROVENANCE_LINEAGE errors. Usage on executor
 observations remains distinct from engine wall-time usage and semantic Results.
+For concrete bound providers, [provider binding](provider-binding.md) requires the
+exact four-part invocation binding, matching node provenance and executor identity.
+Host provider-output schema rejections preserve observations and incurred usage.
 
 Input/output comparisons distinguish JSON booleans from numbers and preserve array
 order. Admission SKIP requires all node Results SKIPPED/ADMISSION_SKIP; admission DEFER

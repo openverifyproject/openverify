@@ -1,0 +1,6 @@
+{
+  "provider_id": "not_namespaced",
+  "provider_version": "release-7",
+  "capability_id": "com.example.execution.mock",
+  "capability_version": "1"
+}

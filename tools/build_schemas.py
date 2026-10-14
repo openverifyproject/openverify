@@ -129,6 +129,24 @@ schemas["operation-requirement"] = obj(
     ("capability_id", "capability_version"),
     False,
 )
+provider_identifiers = json.loads(
+    (ROOT / "provider-contract/schemas/draft/provider-manifest.schema.json").read_text(
+        encoding="utf-8"
+    )
+)["properties"]
+capability_identifiers = json.loads(
+    (ROOT / "provider-contract/schemas/draft/capability.schema.json").read_text(encoding="utf-8")
+)["properties"]
+schemas["provider-binding"] = obj(
+    {
+        "provider_id": provider_identifiers["provider_id"],
+        "provider_version": provider_identifiers["provider_version"],
+        "capability_id": capability_identifiers["capability_id"],
+        "capability_version": capability_identifiers["capability_version"],
+    },
+    ("provider_id", "provider_version", "capability_id", "capability_version"),
+    False,
+)
 schemas["value-source"] = {
     "oneOf": [
         obj({"kind": {"const": "CONSTANT"}, "value": JSON}, ("kind", "value"), False),
@@ -318,6 +336,11 @@ schemas["run-record"] = marked(
         "admission": ref("admission"),
         "policy_evaluations": array(ref("policy-evaluation")),
         "cancellation": ref("cancellation-event"),
+        "provider_bindings": {
+            "type": "object",
+            "propertyNames": STR,
+            "additionalProperties": ref("provider-binding"),
+        },
         "started_at": timestamp,
         "finished_at": timestamp,
         "nodes": array(
@@ -328,6 +351,12 @@ schemas["run-record"] = marked(
                     "operation": ref("operation-requirement"),
                     "executor_ref": nullable(STR),
                     "executor_version": nullable(STR),
+                    "provider_binding": ref("provider-binding"),
+                    "provider_output_error": obj(
+                        {"code": {"const": "INVALID_PROVIDER_OUTPUT"}, "message": STR},
+                        ("code", "message"),
+                        False,
+                    ),
                     "upstream_node_ids": array(STR),
                     "upstream_results": results,
                     "input_values": {"type": "object"},
@@ -414,6 +443,10 @@ descriptions = {
     "verification-definition": "Versioned subject/criterion, judgment schema, graph and policy.",
     "run-record": (
         "Snapshots retaining identity, admission, lineage, outputs, usage and UTC timing."
+    ),
+    "provider-binding": (
+        "Concrete provider/capability identity used in an occurrence; "
+        "see spec/draft/provider-binding.md."
     ),
     "extension": "Namespaced data; preserve optional, reject unsupported required meaning.",
     "resource-dimension": "Open resource dimension with explicit unit and semantic description.",
