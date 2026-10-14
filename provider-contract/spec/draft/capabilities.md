@@ -11,18 +11,23 @@ output_schema, config_schema, and lifecycle_features. Identity is the pair
 (capability_id, capability_version), which MUST be unique within a manifest.
 Multiple versions of one ID MAY be advertised. Schemas MUST be valid Draft 2020-12
 objects or boolean schemas. They MUST be self-contained: references use only
-local JSON Pointer fragments (`#` or `#/...`); dynamic references/anchors and
-external resolution are unsupported. Schema annotations are not executed.
+local JSON Pointer fragments (`#` or `#/...`) that resolve to schema objects or
+booleans within the root schema. Nested resource `$id` values, dynamic
+references/anchors, and external resolution are unsupported. Root `$id` is allowed.
+Object targets MUST occupy schema positions under standard Draft 2020-12 keywords
+or `$defs`; arbitrary annotation objects are not schema targets in this subset.
+Schema annotations are not executed.
 Standard JSON Schema validation keywords apply; `format` is annotation-only in
 capability schemas. In schema instance equality, boolean and number are distinct,
 including enum/const/uniqueItems. No Python coercions are allowed.
 
 Identifiers for providers, capabilities, extension keys, and provider-specific
 error codes use lowercase dot-separated ASCII segments matching
-`[a-z][a-z0-9_]*`, with at least three segments for third parties. The first two
-segments MUST be a reversed domain controlled by the publisher, such as
-`com.example.verifier.smt`. `openverify.*` (at least two segments) is reserved for
-OpenVerify-defined standards. Ownership cannot be proven by syntax validation;
+`[a-z][a-z0-9_]*`, with at least three segments for third parties. A domain prefix
+of at least two segments MUST be controlled by the publisher and written in reverse
+label order, followed by at least one local identifier segment, such as
+`com.example.verifier.smt` or `uk.co.example.execution`. `openverify.*` (at least
+two segments) is reserved for OpenVerify-defined standards. Ownership cannot be proven by syntax validation;
 there is no online registry. IDs such as verifier.smt, execution.container,
 policy.evaluate, resource.estimate, and dependency.analyze describe conceptual
 families, not registered or implicitly meaningful standard capabilities.

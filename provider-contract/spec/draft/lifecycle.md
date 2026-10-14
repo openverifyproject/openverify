@@ -38,6 +38,12 @@ stdio buffering, OS scheduling, shutdown latency, clock skew, or distributed clo
 trust. Providers MUST reject deadlines if unable to enforce them. SDK validators
 check supplied provider-clock observations; they do not execute work or timers.
 
+Fractional timestamp comparison MUST preserve the supplied decimal precision;
+rounding deadlines to milliseconds/microseconds is not allowed. Supported dates
+use years 0001-9999 and seconds 00-59; leap-second notation is unsupported.
+Clock adjustments are not normalized by the contract. Once expiry is observed it
+ends the attempt irreversibly, even if the local clock subsequently moves back.
+
 Outcome meanings:
 
 | state | meaning |

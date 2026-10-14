@@ -1,0 +1,69 @@
+{
+  "manifest": {
+    "provider_id": "com.example.provider.echo",
+    "provider_version": "1",
+    "supported_contract_versions": [
+      "0.1"
+    ],
+    "supported_vcp_versions": [
+      "draft"
+    ],
+    "capabilities": [
+      {
+        "capability_id": "com.example.execution.echo",
+        "capability_version": "1",
+        "input_schema": {
+          "type": "array",
+          "uniqueItems": true
+        },
+        "output_schema": {
+          "type": "string"
+        },
+        "config_schema": {
+          "type": "object",
+          "additionalProperties": false
+        },
+        "lifecycle_features": {
+          "streaming": true,
+          "cancellation": true,
+          "deadlines": true,
+          "resource_reporting": true
+        }
+      }
+    ]
+  },
+  "initialize": {
+    "supported_contract_versions": [
+      "0.1"
+    ],
+    "supported_vcp_versions": [
+      "draft"
+    ]
+  },
+  "steps": [
+    {
+      "action": "accept",
+      "invocation": {
+        "invocation_id": "attempt-1",
+        "contract_version": "0.1",
+        "capability_id": "com.example.execution.echo",
+        "capability_version": "1",
+        "input": [
+          true,
+          1
+        ],
+        "config": {},
+        "vcp_version": "draft"
+      }
+    },
+    {
+      "action": "outcome",
+      "outcome": {
+        "invocation_id": "attempt-1",
+        "state": "COMPLETED",
+        "output": "hello"
+      }
+    }
+  ],
+  "finish": true
+}

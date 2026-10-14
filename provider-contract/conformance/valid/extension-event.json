@@ -1,0 +1,13 @@
+{
+  "invocation_id": "attempt-1",
+  "sequence": 1,
+  "kind": "extension",
+  "payload": {
+    "namespace": "com.example.observation",
+    "data": [
+      null,
+      true,
+      1
+    ]
+  }
+}

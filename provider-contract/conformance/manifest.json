@@ -1,0 +1,930 @@
+{
+  "contract_version": "0.1",
+  "status": "DRAFT",
+  "cases": [
+    {
+      "id": "minimal-manifest",
+      "object_type": "provider-manifest",
+      "input": "valid/minimal-manifest.json",
+      "valid": true,
+      "expected": "expected/minimal-manifest.json",
+      "spec": "../spec/draft/wire-format.md"
+    },
+    {
+      "id": "multi-capability-manifest",
+      "object_type": "provider-manifest",
+      "input": "valid/multi-capability-manifest.json",
+      "valid": true,
+      "expected": "expected/multi-capability-manifest.json",
+      "spec": "../spec/draft/wire-format.md"
+    },
+    {
+      "id": "capability",
+      "object_type": "capability",
+      "input": "valid/capability.json",
+      "valid": true,
+      "expected": "expected/capability.json",
+      "spec": "../spec/draft/wire-format.md"
+    },
+    {
+      "id": "invocation",
+      "object_type": "invocation",
+      "input": "valid/invocation.json",
+      "valid": true,
+      "expected": "expected/invocation.json",
+      "spec": "../spec/draft/wire-format.md"
+    },
+    {
+      "id": "context-and-budget",
+      "object_type": "invocation",
+      "input": "valid/context-and-budget.json",
+      "valid": true,
+      "expected": "expected/context-and-budget.json",
+      "spec": "../spec/draft/wire-format.md"
+    },
+    {
+      "id": "progress-event",
+      "object_type": "provider-event",
+      "input": "valid/progress-event.json",
+      "valid": true,
+      "expected": "expected/progress-event.json",
+      "spec": "../spec/draft/wire-format.md"
+    },
+    {
+      "id": "evidence-event",
+      "object_type": "provider-event",
+      "input": "valid/evidence-event.json",
+      "valid": true,
+      "expected": "expected/evidence-event.json",
+      "spec": "../spec/draft/wire-format.md"
+    },
+    {
+      "id": "artifact-event",
+      "object_type": "provider-event",
+      "input": "valid/artifact-event.json",
+      "valid": true,
+      "expected": "expected/artifact-event.json",
+      "spec": "../spec/draft/wire-format.md"
+    },
+    {
+      "id": "usage-event",
+      "object_type": "provider-event",
+      "input": "valid/usage-event.json",
+      "valid": true,
+      "expected": "expected/usage-event.json",
+      "spec": "../spec/draft/wire-format.md"
+    },
+    {
+      "id": "diagnostic-event",
+      "object_type": "provider-event",
+      "input": "valid/diagnostic-event.json",
+      "valid": true,
+      "expected": "expected/diagnostic-event.json",
+      "spec": "../spec/draft/wire-format.md"
+    },
+    {
+      "id": "extension-event",
+      "object_type": "provider-event",
+      "input": "valid/extension-event.json",
+      "valid": true,
+      "expected": "expected/extension-event.json",
+      "spec": "../spec/draft/wire-format.md"
+    },
+    {
+      "id": "cancel-request",
+      "object_type": "cancel-request",
+      "input": "valid/cancel-request.json",
+      "valid": true,
+      "expected": "expected/cancel-request.json",
+      "spec": "../spec/draft/wire-format.md"
+    },
+    {
+      "id": "completed-outcome",
+      "object_type": "outcome",
+      "input": "valid/completed-outcome.json",
+      "valid": true,
+      "expected": "expected/completed-outcome.json",
+      "spec": "../spec/draft/wire-format.md"
+    },
+    {
+      "id": "null-output",
+      "object_type": "outcome",
+      "input": "valid/null-output.json",
+      "valid": true,
+      "expected": "expected/null-output.json",
+      "spec": "../spec/draft/wire-format.md"
+    },
+    {
+      "id": "error-outcome",
+      "object_type": "outcome",
+      "input": "valid/error-outcome.json",
+      "valid": true,
+      "expected": "expected/error-outcome.json",
+      "spec": "../spec/draft/wire-format.md"
+    },
+    {
+      "id": "cancelled-outcome",
+      "object_type": "outcome",
+      "input": "valid/cancelled-outcome.json",
+      "valid": true,
+      "expected": "expected/cancelled-outcome.json",
+      "spec": "../spec/draft/wire-format.md"
+    },
+    {
+      "id": "deadline-outcome",
+      "object_type": "outcome",
+      "input": "valid/deadline-outcome.json",
+      "valid": true,
+      "expected": "expected/deadline-outcome.json",
+      "spec": "../spec/draft/wire-format.md"
+    },
+    {
+      "id": "extension-roundtrip",
+      "object_type": "provider-manifest",
+      "input": "valid/extension-roundtrip.json",
+      "valid": true,
+      "expected": "expected/extension-roundtrip.json",
+      "spec": "../spec/draft/wire-format.md"
+    },
+    {
+      "id": "initialize-request",
+      "object_type": "initialize-request",
+      "input": "valid/initialize-request.json",
+      "valid": true,
+      "expected": "expected/initialize-request.json",
+      "spec": "../spec/draft/wire-format.md"
+    },
+    {
+      "id": "initialize-result",
+      "object_type": "initialize-result",
+      "input": "valid/initialize-result.json",
+      "valid": true,
+      "expected": "expected/initialize-result.json",
+      "spec": "../spec/draft/wire-format.md"
+    },
+    {
+      "id": "contract-error",
+      "object_type": "provider-error",
+      "input": "valid/contract-error.json",
+      "valid": true,
+      "expected": "expected/contract-error.json",
+      "spec": "../spec/draft/wire-format.md"
+    },
+    {
+      "id": "integral-sequence",
+      "object_type": "provider-event",
+      "input": "valid/integral-sequence.json",
+      "valid": true,
+      "expected": "expected/integral-sequence.json",
+      "spec": "../spec/draft/wire-format.md"
+    },
+    {
+      "id": "successful-invocation",
+      "object_type": "lifecycle",
+      "input": "valid/successful-invocation.json",
+      "valid": true,
+      "expected": "expected/successful-invocation.json",
+      "spec": "../spec/draft/lifecycle.md"
+    },
+    {
+      "id": "invocation-with-events",
+      "object_type": "lifecycle",
+      "input": "valid/invocation-with-events.json",
+      "valid": true,
+      "expected": "expected/invocation-with-events.json",
+      "spec": "../spec/draft/lifecycle.md"
+    },
+    {
+      "id": "evidence-and-usage",
+      "object_type": "lifecycle",
+      "input": "valid/evidence-and-usage.json",
+      "valid": true,
+      "expected": "expected/evidence-and-usage.json",
+      "spec": "../spec/draft/lifecycle.md"
+    },
+    {
+      "id": "cooperative-cancel",
+      "object_type": "lifecycle",
+      "input": "valid/cooperative-cancel.json",
+      "valid": true,
+      "expected": "expected/cooperative-cancel.json",
+      "spec": "../spec/draft/lifecycle.md"
+    },
+    {
+      "id": "completion-wins-cancel",
+      "object_type": "lifecycle",
+      "input": "valid/completion-wins-cancel.json",
+      "valid": true,
+      "expected": "expected/completion-wins-cancel.json",
+      "spec": "../spec/draft/lifecycle.md"
+    },
+    {
+      "id": "deadline-expiry",
+      "object_type": "lifecycle",
+      "input": "valid/deadline-expiry.json",
+      "valid": true,
+      "expected": "expected/deadline-expiry.json",
+      "spec": "../spec/draft/lifecycle.md"
+    },
+    {
+      "id": "already-expired",
+      "object_type": "lifecycle",
+      "input": "valid/already-expired.json",
+      "valid": true,
+      "expected": "expected/already-expired.json",
+      "spec": "../spec/draft/lifecycle.md"
+    },
+    {
+      "id": "running-prefix",
+      "object_type": "lifecycle",
+      "input": "valid/running-prefix.json",
+      "valid": true,
+      "expected": "expected/running-prefix.json",
+      "spec": "../spec/draft/lifecycle.md"
+    },
+    {
+      "id": "interleaved-invocations",
+      "object_type": "lifecycle",
+      "input": "valid/interleaved-invocations.json",
+      "valid": true,
+      "expected": "expected/interleaved-invocations.json",
+      "spec": "../spec/draft/lifecycle.md"
+    },
+    {
+      "id": "unsupported-contract",
+      "object_type": "invocation",
+      "input": "invalid/unsupported-contract.json",
+      "valid": false,
+      "expected": "expected/unsupported-contract.json",
+      "spec": "../spec/draft/wire-format.md",
+      "error_code": "CONTRACT_VERSION_UNSUPPORTED"
+    },
+    {
+      "id": "malformed-capability",
+      "object_type": "capability",
+      "input": "invalid/malformed-capability.json",
+      "valid": false,
+      "expected": "expected/malformed-capability.json",
+      "spec": "../spec/draft/wire-format.md",
+      "error_code": "INVALID_PROVIDER_OUTPUT"
+    },
+    {
+      "id": "duplicate-capability",
+      "object_type": "provider-manifest",
+      "input": "invalid/duplicate-capability.json",
+      "valid": false,
+      "expected": "expected/duplicate-capability.json",
+      "spec": "../spec/draft/wire-format.md",
+      "error_code": "INVALID_PROVIDER_OUTPUT"
+    },
+    {
+      "id": "bad-namespace",
+      "object_type": "capability",
+      "input": "invalid/bad-namespace.json",
+      "valid": false,
+      "expected": "expected/bad-namespace.json",
+      "spec": "../spec/draft/wire-format.md",
+      "error_code": "INVALID_PROVIDER_OUTPUT"
+    },
+    {
+      "id": "invalid-schema",
+      "object_type": "capability",
+      "input": "invalid/invalid-schema.json",
+      "valid": false,
+      "expected": "expected/invalid-schema.json",
+      "spec": "../spec/draft/wire-format.md",
+      "error_code": "INVALID_PROVIDER_OUTPUT"
+    },
+    {
+      "id": "external-schema",
+      "object_type": "capability",
+      "input": "invalid/external-schema.json",
+      "valid": false,
+      "expected": "expected/external-schema.json",
+      "spec": "../spec/draft/wire-format.md",
+      "error_code": "INVALID_PROVIDER_OUTPUT"
+    },
+    {
+      "id": "unknown-core-field",
+      "object_type": "invocation",
+      "input": "invalid/unknown-core-field.json",
+      "valid": false,
+      "expected": "expected/unknown-core-field.json",
+      "spec": "../spec/draft/wire-format.md",
+      "error_code": "INVALID_INVOCATION"
+    },
+    {
+      "id": "invalid-invocation",
+      "object_type": "invocation",
+      "input": "invalid/invalid-invocation.json",
+      "valid": false,
+      "expected": "expected/invalid-invocation.json",
+      "spec": "../spec/draft/wire-format.md",
+      "error_code": "INVALID_INVOCATION"
+    },
+    {
+      "id": "invalid-deadline",
+      "object_type": "invocation",
+      "input": "invalid/invalid-deadline.json",
+      "valid": false,
+      "expected": "expected/invalid-deadline.json",
+      "spec": "../spec/draft/wire-format.md",
+      "error_code": "INVALID_INVOCATION"
+    },
+    {
+      "id": "non-utc-deadline",
+      "object_type": "invocation",
+      "input": "invalid/non-utc-deadline.json",
+      "valid": false,
+      "expected": "expected/non-utc-deadline.json",
+      "spec": "../spec/draft/wire-format.md",
+      "error_code": "INVALID_INVOCATION"
+    },
+    {
+      "id": "empty-evidence",
+      "object_type": "provider-event",
+      "input": "invalid/empty-evidence.json",
+      "valid": false,
+      "expected": "expected/empty-evidence.json",
+      "spec": "../spec/draft/wire-format.md",
+      "error_code": "INVALID_PROVIDER_OUTPUT"
+    },
+    {
+      "id": "invalid-resource-range",
+      "object_type": "provider-event",
+      "input": "invalid/invalid-resource-range.json",
+      "valid": false,
+      "expected": "expected/invalid-resource-range.json",
+      "spec": "../spec/draft/wire-format.md",
+      "error_code": "INVALID_PROVIDER_OUTPUT"
+    },
+    {
+      "id": "bool-sequence",
+      "object_type": "provider-event",
+      "input": "invalid/bool-sequence.json",
+      "valid": false,
+      "expected": "expected/bool-sequence.json",
+      "spec": "../spec/draft/wire-format.md",
+      "error_code": "INVALID_PROVIDER_OUTPUT"
+    },
+    {
+      "id": "bool-resource",
+      "object_type": "provider-event",
+      "input": "invalid/bool-resource.json",
+      "valid": false,
+      "expected": "expected/bool-resource.json",
+      "spec": "../spec/draft/wire-format.md",
+      "error_code": "INVALID_PROVIDER_OUTPUT"
+    },
+    {
+      "id": "malformed-outcome",
+      "object_type": "outcome",
+      "input": "invalid/malformed-outcome.json",
+      "valid": false,
+      "expected": "expected/malformed-outcome.json",
+      "spec": "../spec/draft/wire-format.md",
+      "error_code": "INVALID_PROVIDER_OUTPUT"
+    },
+    {
+      "id": "error-as-fail",
+      "object_type": "outcome",
+      "input": "invalid/error-as-fail.json",
+      "valid": false,
+      "expected": "expected/error-as-fail.json",
+      "spec": "../spec/draft/wire-format.md",
+      "error_code": "INVALID_PROVIDER_OUTPUT"
+    },
+    {
+      "id": "error-with-verdict",
+      "object_type": "outcome",
+      "input": "invalid/error-with-verdict.json",
+      "valid": false,
+      "expected": "expected/error-with-verdict.json",
+      "spec": "../spec/draft/wire-format.md",
+      "error_code": "INVALID_PROVIDER_OUTPUT"
+    },
+    {
+      "id": "completed-with-error",
+      "object_type": "outcome",
+      "input": "invalid/completed-with-error.json",
+      "valid": false,
+      "expected": "expected/completed-with-error.json",
+      "spec": "../spec/draft/wire-format.md",
+      "error_code": "INVALID_PROVIDER_OUTPUT"
+    },
+    {
+      "id": "unknown-error-code",
+      "object_type": "provider-error",
+      "input": "invalid/unknown-error-code.json",
+      "valid": false,
+      "expected": "expected/unknown-error-code.json",
+      "spec": "../spec/draft/wire-format.md",
+      "error_code": "INVALID_PROVIDER_OUTPUT"
+    },
+    {
+      "id": "null-optional-field",
+      "object_type": "cancel-request",
+      "input": "invalid/null-optional-field.json",
+      "valid": false,
+      "expected": "expected/null-optional-field.json",
+      "spec": "../spec/draft/wire-format.md",
+      "error_code": "PROTOCOL_VIOLATION"
+    },
+    {
+      "id": "no-common-contract",
+      "object_type": "lifecycle",
+      "input": "invalid/no-common-contract.json",
+      "valid": false,
+      "expected": "expected/no-common-contract.json",
+      "spec": "../spec/draft/lifecycle.md",
+      "error_code": "CONTRACT_VERSION_UNSUPPORTED"
+    },
+    {
+      "id": "unsupported-capability",
+      "object_type": "lifecycle",
+      "input": "invalid/unsupported-capability.json",
+      "valid": false,
+      "expected": "expected/unsupported-capability.json",
+      "spec": "../spec/draft/lifecycle.md",
+      "error_code": "CAPABILITY_UNAVAILABLE"
+    },
+    {
+      "id": "unsupported-capability-version",
+      "object_type": "lifecycle",
+      "input": "invalid/unsupported-capability-version.json",
+      "valid": false,
+      "expected": "expected/unsupported-capability-version.json",
+      "spec": "../spec/draft/lifecycle.md",
+      "error_code": "CAPABILITY_VERSION_UNSUPPORTED"
+    },
+    {
+      "id": "invalid-input",
+      "object_type": "lifecycle",
+      "input": "invalid/invalid-input.json",
+      "valid": false,
+      "expected": "expected/invalid-input.json",
+      "spec": "../spec/draft/lifecycle.md",
+      "error_code": "INVALID_INPUT"
+    },
+    {
+      "id": "invalid-config",
+      "object_type": "lifecycle",
+      "input": "invalid/invalid-config.json",
+      "valid": false,
+      "expected": "expected/invalid-config.json",
+      "spec": "../spec/draft/lifecycle.md",
+      "error_code": "INVALID_CONFIG"
+    },
+    {
+      "id": "invalid-completed-output",
+      "object_type": "lifecycle",
+      "input": "invalid/invalid-completed-output.json",
+      "valid": false,
+      "expected": "expected/invalid-completed-output.json",
+      "spec": "../spec/draft/lifecycle.md",
+      "error_code": "INVALID_PROVIDER_OUTPUT"
+    },
+    {
+      "id": "wrong-outcome-correlation",
+      "object_type": "lifecycle",
+      "input": "invalid/wrong-outcome-correlation.json",
+      "valid": false,
+      "expected": "expected/wrong-outcome-correlation.json",
+      "spec": "../spec/draft/lifecycle.md",
+      "error_code": "PROTOCOL_VIOLATION"
+    },
+    {
+      "id": "unknown-event",
+      "object_type": "lifecycle",
+      "input": "invalid/unknown-event.json",
+      "valid": false,
+      "expected": "expected/unknown-event.json",
+      "spec": "../spec/draft/lifecycle.md",
+      "error_code": "PROTOCOL_VIOLATION"
+    },
+    {
+      "id": "wrong-event-correlation",
+      "object_type": "lifecycle",
+      "input": "invalid/wrong-event-correlation.json",
+      "valid": false,
+      "expected": "expected/wrong-event-correlation.json",
+      "spec": "../spec/draft/lifecycle.md",
+      "error_code": "PROTOCOL_VIOLATION"
+    },
+    {
+      "id": "sequence-not-one",
+      "object_type": "lifecycle",
+      "input": "invalid/sequence-not-one.json",
+      "valid": false,
+      "expected": "expected/sequence-not-one.json",
+      "spec": "../spec/draft/lifecycle.md",
+      "error_code": "PROTOCOL_VIOLATION"
+    },
+    {
+      "id": "nonmonotonic-sequence",
+      "object_type": "lifecycle",
+      "input": "invalid/nonmonotonic-sequence.json",
+      "valid": false,
+      "expected": "expected/nonmonotonic-sequence.json",
+      "spec": "../spec/draft/lifecycle.md",
+      "error_code": "PROTOCOL_VIOLATION"
+    },
+    {
+      "id": "decreasing-sequence",
+      "object_type": "lifecycle",
+      "input": "invalid/decreasing-sequence.json",
+      "valid": false,
+      "expected": "expected/decreasing-sequence.json",
+      "spec": "../spec/draft/lifecycle.md",
+      "error_code": "PROTOCOL_VIOLATION"
+    },
+    {
+      "id": "duplicate-outcome",
+      "object_type": "lifecycle",
+      "input": "invalid/duplicate-outcome.json",
+      "valid": false,
+      "expected": "expected/duplicate-outcome.json",
+      "spec": "../spec/draft/lifecycle.md",
+      "error_code": "PROTOCOL_VIOLATION"
+    },
+    {
+      "id": "event-after-terminal",
+      "object_type": "lifecycle",
+      "input": "invalid/event-after-terminal.json",
+      "valid": false,
+      "expected": "expected/event-after-terminal.json",
+      "spec": "../spec/draft/lifecycle.md",
+      "error_code": "PROTOCOL_VIOLATION"
+    },
+    {
+      "id": "missing-outcome",
+      "object_type": "lifecycle",
+      "input": "invalid/missing-outcome.json",
+      "valid": false,
+      "expected": "expected/missing-outcome.json",
+      "spec": "../spec/draft/lifecycle.md",
+      "error_code": "PROTOCOL_VIOLATION"
+    },
+    {
+      "id": "duplicate-invocation",
+      "object_type": "lifecycle",
+      "input": "invalid/duplicate-invocation.json",
+      "valid": false,
+      "expected": "expected/duplicate-invocation.json",
+      "spec": "../spec/draft/lifecycle.md",
+      "error_code": "PROTOCOL_VIOLATION"
+    },
+    {
+      "id": "unsolicited-cancelled",
+      "object_type": "lifecycle",
+      "input": "invalid/unsolicited-cancelled.json",
+      "valid": false,
+      "expected": "expected/unsolicited-cancelled.json",
+      "spec": "../spec/draft/lifecycle.md",
+      "error_code": "PROTOCOL_VIOLATION"
+    },
+    {
+      "id": "unknown-cancel",
+      "object_type": "lifecycle",
+      "input": "invalid/unknown-cancel.json",
+      "valid": false,
+      "expected": "expected/unknown-cancel.json",
+      "spec": "../spec/draft/lifecycle.md",
+      "error_code": "PROTOCOL_VIOLATION"
+    },
+    {
+      "id": "early-deadline-state",
+      "object_type": "lifecycle",
+      "input": "invalid/early-deadline-state.json",
+      "valid": false,
+      "expected": "expected/early-deadline-state.json",
+      "spec": "../spec/draft/lifecycle.md",
+      "error_code": "PROTOCOL_VIOLATION"
+    },
+    {
+      "id": "late-completion",
+      "object_type": "lifecycle",
+      "input": "invalid/late-completion.json",
+      "valid": false,
+      "expected": "expected/late-completion.json",
+      "spec": "../spec/draft/lifecycle.md",
+      "error_code": "PROTOCOL_VIOLATION"
+    },
+    {
+      "id": "vcp-unavailable",
+      "object_type": "lifecycle",
+      "input": "invalid/vcp-unavailable.json",
+      "valid": false,
+      "expected": "expected/vcp-unavailable.json",
+      "spec": "../spec/draft/lifecycle.md",
+      "error_code": "INVALID_INVOCATION"
+    },
+    {
+      "id": "evidence-without-vcp",
+      "object_type": "lifecycle",
+      "input": "invalid/evidence-without-vcp.json",
+      "valid": false,
+      "expected": "expected/evidence-without-vcp.json",
+      "spec": "../spec/draft/lifecycle.md",
+      "error_code": "INVALID_PROVIDER_OUTPUT"
+    },
+    {
+      "id": "unsupported-streaming",
+      "object_type": "lifecycle",
+      "input": "invalid/unsupported-streaming.json",
+      "valid": false,
+      "expected": "expected/unsupported-streaming.json",
+      "spec": "../spec/draft/lifecycle.md",
+      "error_code": "PROTOCOL_VIOLATION"
+    },
+    {
+      "id": "unsupported-cancellation",
+      "object_type": "lifecycle",
+      "input": "invalid/unsupported-cancellation.json",
+      "valid": false,
+      "expected": "expected/unsupported-cancellation.json",
+      "spec": "../spec/draft/lifecycle.md",
+      "error_code": "PROTOCOL_VIOLATION"
+    },
+    {
+      "id": "unsupported-deadlines",
+      "object_type": "lifecycle",
+      "input": "invalid/unsupported-deadlines.json",
+      "valid": false,
+      "expected": "expected/unsupported-deadlines.json",
+      "spec": "../spec/draft/lifecycle.md",
+      "error_code": "INVALID_INVOCATION"
+    },
+    {
+      "id": "unsupported-resource_reporting",
+      "object_type": "lifecycle",
+      "input": "invalid/unsupported-resource_reporting.json",
+      "valid": false,
+      "expected": "expected/unsupported-resource_reporting.json",
+      "spec": "../spec/draft/lifecycle.md",
+      "error_code": "INVALID_PROVIDER_OUTPUT"
+    },
+    {
+      "id": "stdio-session",
+      "object_type": "stdio-session",
+      "input": "valid/stdio-session.json",
+      "valid": true,
+      "expected": "expected/stdio-session.json",
+      "spec": "../spec/draft/transports.md"
+    },
+    {
+      "id": "rpc-before-initialize",
+      "object_type": "stdio-session",
+      "input": "invalid/rpc-before-initialize.json",
+      "valid": false,
+      "expected": "expected/rpc-before-initialize.json",
+      "spec": "../spec/draft/transports.md",
+      "error_code": "PROTOCOL_VIOLATION"
+    },
+    {
+      "id": "rpc-wrong-correlation",
+      "object_type": "stdio-session",
+      "input": "invalid/rpc-wrong-correlation.json",
+      "valid": false,
+      "expected": "expected/rpc-wrong-correlation.json",
+      "spec": "../spec/draft/transports.md",
+      "error_code": "PROTOCOL_VIOLATION"
+    },
+    {
+      "id": "rpc-duplicate-response",
+      "object_type": "stdio-session",
+      "input": "invalid/rpc-duplicate-response.json",
+      "valid": false,
+      "expected": "expected/rpc-duplicate-response.json",
+      "spec": "../spec/draft/transports.md",
+      "error_code": "PROTOCOL_VIOLATION"
+    },
+    {
+      "id": "rpc-event-after-terminal",
+      "object_type": "stdio-session",
+      "input": "invalid/rpc-event-after-terminal.json",
+      "valid": false,
+      "expected": "expected/rpc-event-after-terminal.json",
+      "spec": "../spec/draft/transports.md",
+      "error_code": "PROTOCOL_VIOLATION"
+    },
+    {
+      "id": "rpc-duplicate-initialize",
+      "object_type": "stdio-session",
+      "input": "invalid/rpc-duplicate-initialize.json",
+      "valid": false,
+      "expected": "expected/rpc-duplicate-initialize.json",
+      "spec": "../spec/draft/transports.md",
+      "error_code": "PROTOCOL_VIOLATION"
+    },
+    {
+      "id": "rpc-invalid-selection",
+      "object_type": "stdio-session",
+      "input": "invalid/rpc-invalid-selection.json",
+      "valid": false,
+      "expected": "expected/rpc-invalid-selection.json",
+      "spec": "../spec/draft/transports.md",
+      "error_code": "CONTRACT_VERSION_UNSUPPORTED"
+    },
+    {
+      "id": "utf8-framing",
+      "object_type": "framing",
+      "input": "valid/utf8-framing.json",
+      "valid": true,
+      "expected": "expected/utf8-framing.json",
+      "spec": "../spec/draft/transports.md"
+    },
+    {
+      "id": "coalesced-framing",
+      "object_type": "framing",
+      "input": "valid/coalesced-framing.json",
+      "valid": true,
+      "expected": "expected/coalesced-framing.json",
+      "spec": "../spec/draft/transports.md"
+    },
+    {
+      "id": "duplicate-length",
+      "object_type": "framing",
+      "input": "invalid/duplicate-length.json",
+      "valid": false,
+      "expected": "expected/duplicate-length.json",
+      "spec": "../spec/draft/transports.md",
+      "error_code": "PROTOCOL_VIOLATION"
+    },
+    {
+      "id": "newline-framing",
+      "object_type": "framing",
+      "input": "invalid/newline-framing.json",
+      "valid": false,
+      "expected": "expected/newline-framing.json",
+      "spec": "../spec/draft/transports.md",
+      "error_code": "PROTOCOL_VIOLATION"
+    },
+    {
+      "id": "truncated-framing",
+      "object_type": "framing",
+      "input": "invalid/truncated-framing.json",
+      "valid": false,
+      "expected": "expected/truncated-framing.json",
+      "spec": "../spec/draft/transports.md",
+      "error_code": "PROTOCOL_VIOLATION"
+    },
+    {
+      "id": "zero-length",
+      "object_type": "framing",
+      "input": "invalid/zero-length.json",
+      "valid": false,
+      "expected": "expected/zero-length.json",
+      "spec": "../spec/draft/transports.md",
+      "error_code": "PROTOCOL_VIOLATION"
+    },
+    {
+      "id": "dangling-schema-reference",
+      "object_type": "capability",
+      "input": "invalid/dangling-schema-reference.json",
+      "valid": false,
+      "expected": "expected/dangling-schema-reference.json",
+      "spec": "../spec/draft/wire-format.md",
+      "error_code": "INVALID_PROVIDER_OUTPUT"
+    },
+    {
+      "id": "nested-schema-id",
+      "object_type": "capability",
+      "input": "invalid/nested-schema-id.json",
+      "valid": false,
+      "expected": "expected/nested-schema-id.json",
+      "spec": "../spec/draft/wire-format.md",
+      "error_code": "INVALID_PROVIDER_OUTPUT"
+    },
+    {
+      "id": "fractional-deadline-completion",
+      "object_type": "lifecycle",
+      "input": "valid/fractional-deadline-completion.json",
+      "valid": true,
+      "expected": "expected/fractional-deadline-completion.json",
+      "spec": "../spec/draft/lifecycle.md"
+    },
+    {
+      "id": "fractional-deadline-expiry",
+      "object_type": "lifecycle",
+      "input": "valid/fractional-deadline-expiry.json",
+      "valid": true,
+      "expected": "expected/fractional-deadline-expiry.json",
+      "spec": "../spec/draft/lifecycle.md"
+    },
+    {
+      "id": "leap-second-unsupported",
+      "object_type": "invocation",
+      "input": "invalid/leap-second-unsupported.json",
+      "valid": false,
+      "expected": "expected/leap-second-unsupported.json",
+      "spec": "../spec/draft/wire-format.md",
+      "error_code": "INVALID_INVOCATION"
+    },
+    {
+      "id": "estimated-budget",
+      "object_type": "invocation",
+      "input": "invalid/estimated-budget.json",
+      "valid": false,
+      "expected": "expected/estimated-budget.json",
+      "spec": "../spec/draft/wire-format.md",
+      "error_code": "INVALID_INVOCATION"
+    },
+    {
+      "id": "budget-without-vcp",
+      "object_type": "invocation",
+      "input": "invalid/budget-without-vcp.json",
+      "valid": false,
+      "expected": "expected/budget-without-vcp.json",
+      "spec": "../spec/draft/wire-format.md",
+      "error_code": "INVALID_INVOCATION"
+    },
+    {
+      "id": "invalid-extension-namespace",
+      "object_type": "provider-manifest",
+      "input": "invalid/invalid-extension-namespace.json",
+      "valid": false,
+      "expected": "expected/invalid-extension-namespace.json",
+      "spec": "../spec/draft/wire-format.md",
+      "error_code": "INVALID_PROVIDER_OUTPUT"
+    },
+    {
+      "id": "boolean-input-const",
+      "object_type": "lifecycle",
+      "input": "invalid/boolean-input-const.json",
+      "valid": false,
+      "expected": "expected/boolean-input-const.json",
+      "spec": "../spec/draft/lifecycle.md",
+      "error_code": "INVALID_INPUT"
+    },
+    {
+      "id": "boolean-config-const",
+      "object_type": "lifecycle",
+      "input": "invalid/boolean-config-const.json",
+      "valid": false,
+      "expected": "expected/boolean-config-const.json",
+      "spec": "../spec/draft/lifecycle.md",
+      "error_code": "INVALID_CONFIG"
+    },
+    {
+      "id": "boolean-output-const",
+      "object_type": "lifecycle",
+      "input": "invalid/boolean-output-const.json",
+      "valid": false,
+      "expected": "expected/boolean-output-const.json",
+      "spec": "../spec/draft/lifecycle.md",
+      "error_code": "INVALID_PROVIDER_OUTPUT"
+    },
+    {
+      "id": "numeric-const-completed",
+      "object_type": "lifecycle",
+      "input": "valid/numeric-const-completed.json",
+      "valid": true,
+      "expected": "expected/numeric-const-completed.json",
+      "spec": "../spec/draft/lifecycle.md"
+    },
+    {
+      "id": "bool-number-unique-items",
+      "object_type": "lifecycle",
+      "input": "valid/bool-number-unique-items.json",
+      "valid": true,
+      "expected": "expected/bool-number-unique-items.json",
+      "spec": "../spec/draft/lifecycle.md"
+    },
+    {
+      "id": "duplicate-number-items",
+      "object_type": "lifecycle",
+      "input": "invalid/duplicate-number-items.json",
+      "valid": false,
+      "expected": "expected/duplicate-number-items.json",
+      "spec": "../spec/draft/lifecycle.md",
+      "error_code": "INVALID_INPUT"
+    },
+    {
+      "id": "rpc-two-correlation-mismatch",
+      "object_type": "stdio-session",
+      "input": "invalid/rpc-two-correlation-mismatch.json",
+      "valid": false,
+      "expected": "expected/rpc-two-correlation-mismatch.json",
+      "spec": "../spec/draft/transports.md",
+      "error_code": "PROTOCOL_VIOLATION"
+    },
+    {
+      "id": "rpc-error-after-event",
+      "object_type": "stdio-session",
+      "input": "invalid/rpc-error-after-event.json",
+      "valid": false,
+      "expected": "expected/rpc-error-after-event.json",
+      "spec": "../spec/draft/transports.md",
+      "error_code": "PROTOCOL_VIOLATION"
+    },
+    {
+      "id": "rpc-cancel-completion-race",
+      "object_type": "stdio-session",
+      "input": "valid/rpc-cancel-completion-race.json",
+      "valid": true,
+      "expected": "expected/rpc-cancel-completion-race.json",
+      "spec": "../spec/draft/transports.md"
+    }
+  ]
+}
