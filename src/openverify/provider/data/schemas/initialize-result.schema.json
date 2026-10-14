@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:openverify:provider:0.1:initialize-result",
+  "type": "object",
+  "properties": {
+    "contract_version": {
+      "const": "0.1"
+    },
+    "manifest": {
+      "$ref": "urn:openverify:provider:0.1:provider-manifest"
+    },
+    "extensions": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|(?!openverify\\.)[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*)$"
+      },
+      "additionalProperties": {}
+    }
+  },
+  "required": [
+    "contract_version",
+    "manifest"
+  ],
+  "additionalProperties": false
+}

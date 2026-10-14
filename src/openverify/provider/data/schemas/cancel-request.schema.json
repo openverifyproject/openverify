@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:openverify:provider:0.1:cancel-request",
+  "type": "object",
+  "properties": {
+    "invocation_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "reason": {
+      "type": "string",
+      "minLength": 1
+    },
+    "extensions": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|(?!openverify\\.)[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*)$"
+      },
+      "additionalProperties": {}
+    }
+  },
+  "required": [
+    "invocation_id"
+  ],
+  "additionalProperties": false
+}

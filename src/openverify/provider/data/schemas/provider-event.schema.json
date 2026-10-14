@@ -1,0 +1,131 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:openverify:provider:0.1:provider-event",
+  "type": "object",
+  "properties": {
+    "invocation_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sequence": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 9007199254740991
+    },
+    "kind": {
+      "enum": [
+        "progress",
+        "evidence",
+        "artifact",
+        "resource_usage",
+        "diagnostic",
+        "extension"
+      ]
+    },
+    "payload": {},
+    "timestamp": {
+      "type": "string",
+      "minLength": 1,
+      "format": "date-time",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}[Tt]\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?(?:[Zz]|\\+00:00)$"
+    },
+    "extensions": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|(?!openverify\\.)[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*)$"
+      },
+      "additionalProperties": {}
+    }
+  },
+  "required": [
+    "invocation_id",
+    "sequence",
+    "kind",
+    "payload"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "kind": {
+            "const": "evidence"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "$ref": "urn:verification:draft:evidence"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "kind": {
+            "const": "artifact"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "$ref": "urn:verification:draft:artifact-ref"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "kind": {
+            "const": "resource_usage"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "urn:verification:draft:resource"
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "kind": {
+            "const": "extension"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "properties": {
+              "namespace": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|(?!openverify\\.)[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*)$"
+              },
+              "data": {}
+            },
+            "required": [
+              "namespace",
+              "data"
+            ],
+            "additionalProperties": false
+          }
+        }
+      }
+    }
+  ]
+}
