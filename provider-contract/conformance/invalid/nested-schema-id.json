@@ -1,0 +1,25 @@
+{
+  "capability_id": "com.example.execution.echo",
+  "capability_version": "1",
+  "input_schema": {
+    "$defs": {
+      "inner": {
+        "$id": "urn:example:inner",
+        "type": "string"
+      }
+    }
+  },
+  "output_schema": {
+    "type": "string"
+  },
+  "config_schema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "lifecycle_features": {
+    "streaming": true,
+    "cancellation": true,
+    "deadlines": true,
+    "resource_reporting": true
+  }
+}

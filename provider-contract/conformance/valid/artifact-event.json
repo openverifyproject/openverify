@@ -1,0 +1,10 @@
+{
+  "invocation_id": "attempt-1",
+  "sequence": 1,
+  "kind": "artifact",
+  "payload": {
+    "id": "a",
+    "type": "text/plain",
+    "locator": "opaque"
+  }
+}

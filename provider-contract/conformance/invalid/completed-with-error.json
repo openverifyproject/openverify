@@ -1,0 +1,9 @@
+{
+  "invocation_id": "attempt-1",
+  "state": "COMPLETED",
+  "output": "hello",
+  "error": {
+    "code": "INVALID_INPUT",
+    "message": "bad"
+  }
+}

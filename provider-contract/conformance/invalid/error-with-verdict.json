@@ -1,0 +1,9 @@
+{
+  "invocation_id": "attempt-1",
+  "state": "ERROR",
+  "verdict": "FAIL",
+  "error": {
+    "code": "com.example.failed",
+    "message": "failed"
+  }
+}

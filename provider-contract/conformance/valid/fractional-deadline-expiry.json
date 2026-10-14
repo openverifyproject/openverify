@@ -1,0 +1,67 @@
+{
+  "manifest": {
+    "provider_id": "com.example.provider.echo",
+    "provider_version": "1",
+    "supported_contract_versions": [
+      "0.1"
+    ],
+    "supported_vcp_versions": [
+      "draft"
+    ],
+    "capabilities": [
+      {
+        "capability_id": "com.example.execution.echo",
+        "capability_version": "1",
+        "input_schema": {
+          "type": "string"
+        },
+        "output_schema": {
+          "type": "string"
+        },
+        "config_schema": {
+          "type": "object",
+          "additionalProperties": false
+        },
+        "lifecycle_features": {
+          "streaming": true,
+          "cancellation": true,
+          "deadlines": true,
+          "resource_reporting": true
+        }
+      }
+    ]
+  },
+  "initialize": {
+    "supported_contract_versions": [
+      "0.1"
+    ],
+    "supported_vcp_versions": [
+      "draft"
+    ]
+  },
+  "steps": [
+    {
+      "action": "accept",
+      "invocation": {
+        "invocation_id": "attempt-1",
+        "contract_version": "0.1",
+        "capability_id": "com.example.execution.echo",
+        "capability_version": "1",
+        "input": "hello",
+        "config": {},
+        "vcp_version": "draft",
+        "deadline": "2026-10-13T00:00:00.0000001Z"
+      },
+      "now": "2026-10-13T00:00:00Z"
+    },
+    {
+      "action": "outcome",
+      "outcome": {
+        "invocation_id": "attempt-1",
+        "state": "DEADLINE_EXCEEDED"
+      },
+      "now": "2026-10-13T00:00:00.0000001Z"
+    }
+  ],
+  "finish": true
+}

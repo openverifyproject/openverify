@@ -1,0 +1,9 @@
+{
+  "provider_id": "com.example.provider.echo",
+  "provider_version": "1",
+  "supported_contract_versions": [
+    "0.1"
+  ],
+  "supported_vcp_versions": [],
+  "capabilities": []
+}

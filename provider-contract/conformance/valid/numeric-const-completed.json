@@ -1,0 +1,64 @@
+{
+  "manifest": {
+    "provider_id": "com.example.provider.echo",
+    "provider_version": "1",
+    "supported_contract_versions": [
+      "0.1"
+    ],
+    "supported_vcp_versions": [
+      "draft"
+    ],
+    "capabilities": [
+      {
+        "capability_id": "com.example.execution.echo",
+        "capability_version": "1",
+        "input_schema": {
+          "const": 1
+        },
+        "output_schema": {
+          "const": 1
+        },
+        "config_schema": {
+          "const": 0
+        },
+        "lifecycle_features": {
+          "streaming": true,
+          "cancellation": true,
+          "deadlines": true,
+          "resource_reporting": true
+        }
+      }
+    ]
+  },
+  "initialize": {
+    "supported_contract_versions": [
+      "0.1"
+    ],
+    "supported_vcp_versions": [
+      "draft"
+    ]
+  },
+  "steps": [
+    {
+      "action": "accept",
+      "invocation": {
+        "invocation_id": "attempt-1",
+        "contract_version": "0.1",
+        "capability_id": "com.example.execution.echo",
+        "capability_version": "1",
+        "input": 1,
+        "config": 0,
+        "vcp_version": "draft"
+      }
+    },
+    {
+      "action": "outcome",
+      "outcome": {
+        "invocation_id": "attempt-1",
+        "state": "COMPLETED",
+        "output": 1
+      }
+    }
+  ],
+  "finish": true
+}

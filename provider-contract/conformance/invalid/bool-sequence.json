@@ -1,0 +1,8 @@
+{
+  "invocation_id": "attempt-1",
+  "sequence": true,
+  "kind": "progress",
+  "payload": {
+    "phase": "working"
+  }
+}

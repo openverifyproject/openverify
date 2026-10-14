@@ -1,0 +1,9 @@
+{
+  "invocation_id": "attempt-1",
+  "state": "ERROR",
+  "error": {
+    "code": "com.example.tool_failed",
+    "message": "Tool exited",
+    "details": null
+  }
+}

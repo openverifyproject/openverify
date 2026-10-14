@@ -1,0 +1,12 @@
+{
+  "invocation_id": "attempt-1",
+  "sequence": 1,
+  "kind": "resource_usage",
+  "payload": {
+    "custom.calls": {
+      "unit": "call",
+      "kind": "EXACT",
+      "value": 1
+    }
+  }
+}
