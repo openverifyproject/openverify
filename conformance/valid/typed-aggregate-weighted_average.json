@@ -1,0 +1,572 @@
+{
+  "protocol": "draft",
+  "run_id": "typed-fixture",
+  "definition": {
+    "protocol": "draft",
+    "id": "prose-criterion",
+    "version": "1",
+    "subject": {
+      "id": "article-1",
+      "type": "text/plain",
+      "locator": {
+        "host_key": "text"
+      }
+    },
+    "criterion": {
+      "id": "readable-prose",
+      "description": "Contains no banned phrase and is nonempty."
+    },
+    "judgment_schema": {},
+    "run_inputs": [],
+    "execution_policy": {
+      "activation": {
+        "executor_ref": "MANUAL"
+      },
+      "selection": {
+        "executor_ref": "EXPLICIT"
+      },
+      "admission": {
+        "strategy": "ALWAYS"
+      }
+    },
+    "graph": {
+      "nodes": [
+        {
+          "id": "derive",
+          "kind": "DERIVE",
+          "operation": {
+            "capability_id": "com.example.execution.mock",
+            "capability_version": "1"
+          },
+          "inputs": [],
+          "outputs": [],
+          "bindings": {},
+          "config": {},
+          "aggregate_inputs": []
+        },
+        {
+          "id": "judge",
+          "kind": "EVALUATE",
+          "operation": {
+            "capability_id": "com.example.execution.mock",
+            "capability_version": "1"
+          },
+          "inputs": [
+            {
+              "name": "subject",
+              "schema": {
+                "type": "object"
+              },
+              "required": true,
+              "on_unavailable": "BLOCK"
+            },
+            {
+              "name": "criterion",
+              "schema": {
+                "type": "object"
+              },
+              "required": true,
+              "on_unavailable": "BLOCK"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "result",
+              "schema": {
+                "type": "object"
+              },
+              "role": "RESULT"
+            }
+          ],
+          "bindings": {
+            "subject": {
+              "kind": "CONSTANT",
+              "value": {
+                "id": "article-1",
+                "type": "text/plain",
+                "locator": {
+                  "host_key": "text"
+                }
+              }
+            },
+            "criterion": {
+              "kind": "CONSTANT",
+              "value": {
+                "id": "readable-prose",
+                "description": "Contains no banned phrase and is nonempty."
+              }
+            }
+          },
+          "config": {},
+          "aggregate_inputs": []
+        },
+        {
+          "id": "aggregate",
+          "kind": "AGGREGATE",
+          "operation": {
+            "capability_id": "openverify.aggregate",
+            "capability_version": "1"
+          },
+          "inputs": [
+            {
+              "name": "check",
+              "schema": {
+                "type": "object"
+              },
+              "required": true,
+              "on_unavailable": "BLOCK"
+            },
+            {
+              "name": "subject",
+              "schema": {
+                "type": "object"
+              },
+              "required": true,
+              "on_unavailable": "BLOCK"
+            },
+            {
+              "name": "criterion",
+              "schema": {
+                "type": "object"
+              },
+              "required": true,
+              "on_unavailable": "BLOCK"
+            },
+            {
+              "name": "members",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "required": true,
+              "on_unavailable": "BLOCK"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "result",
+              "schema": {
+                "type": "object"
+              },
+              "role": "RESULT"
+            }
+          ],
+          "bindings": {
+            "check": {
+              "kind": "UPSTREAM_OUTPUT",
+              "node_id": "judge",
+              "output": "result"
+            },
+            "subject": {
+              "kind": "CONSTANT",
+              "value": {
+                "id": "article-1",
+                "type": "text/plain",
+                "locator": {
+                  "host_key": "text"
+                }
+              }
+            },
+            "criterion": {
+              "kind": "CONSTANT",
+              "value": {
+                "id": "readable-prose",
+                "description": "Contains no banned phrase and is nonempty."
+              }
+            },
+            "members": {
+              "kind": "CONSTANT",
+              "value": [
+                "check"
+              ]
+            }
+          },
+          "config": {
+            "reducer": "WEIGHTED_AVERAGE",
+            "handling": {
+              "UNKNOWN": "REJECT",
+              "ERROR": "REJECT",
+              "SKIP": "REJECT",
+              "DEFERRED": "REJECT",
+              "CANCELLED": "REJECT",
+              "NOT_APPLICABLE": "REJECT",
+              "MISSING": "REJECT"
+            },
+            "weights": {
+              "check": 1
+            }
+          },
+          "aggregate_inputs": [
+            "check"
+          ]
+        }
+      ],
+      "edges": [
+        {
+          "from_node": "derive",
+          "to_node": "aggregate"
+        },
+        {
+          "from_node": "judge",
+          "to_node": "aggregate"
+        }
+      ]
+    }
+  },
+  "definition_fingerprint": "local-sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "subject": {
+    "id": "article-1",
+    "type": "text/plain",
+    "locator": {
+      "host_key": "text"
+    }
+  },
+  "initial_context": {},
+  "run_inputs": {},
+  "opportunity_id": "fixture",
+  "admission": {
+    "outcome": "RUN",
+    "reason": "ALWAYS"
+  },
+  "started_at": "2026-01-01T00:00:00Z",
+  "finished_at": "2026-01-01T00:00:00Z",
+  "nodes": [
+    {
+      "node_id": "derive",
+      "kind": "DERIVE",
+      "operation": {
+        "capability_id": "com.example.execution.mock",
+        "capability_version": "1"
+      },
+      "upstream_node_ids": [],
+      "upstream_results": {},
+      "input_values": {},
+      "input_resolutions": {},
+      "started_at": "2026-01-01T00:00:00Z",
+      "finished_at": "2026-01-01T00:00:00Z",
+      "usage": {
+        "wall_time": {
+          "unit": "s",
+          "kind": "EXACT",
+          "value": 0
+        }
+      },
+      "state": "SUCCESS",
+      "information": {},
+      "observation": {
+        "outputs": {},
+        "usage": {},
+        "evidence": []
+      }
+    },
+    {
+      "node_id": "judge",
+      "kind": "EVALUATE",
+      "operation": {
+        "capability_id": "com.example.execution.mock",
+        "capability_version": "1"
+      },
+      "upstream_node_ids": [],
+      "upstream_results": {},
+      "input_values": {
+        "subject": {
+          "id": "article-1",
+          "type": "text/plain",
+          "locator": {
+            "host_key": "text"
+          }
+        },
+        "criterion": {
+          "id": "readable-prose",
+          "description": "Contains no banned phrase and is nonempty."
+        }
+      },
+      "input_resolutions": {
+        "subject": {
+          "status": "AVAILABLE",
+          "used_default": false,
+          "source": {
+            "kind": "CONSTANT",
+            "value": {
+              "id": "article-1",
+              "type": "text/plain",
+              "locator": {
+                "host_key": "text"
+              }
+            }
+          },
+          "value": {
+            "id": "article-1",
+            "type": "text/plain",
+            "locator": {
+              "host_key": "text"
+            }
+          }
+        },
+        "criterion": {
+          "status": "AVAILABLE",
+          "used_default": false,
+          "source": {
+            "kind": "CONSTANT",
+            "value": {
+              "id": "readable-prose",
+              "description": "Contains no banned phrase and is nonempty."
+            }
+          },
+          "value": {
+            "id": "readable-prose",
+            "description": "Contains no banned phrase and is nonempty."
+          }
+        }
+      },
+      "started_at": "2026-01-01T00:00:00Z",
+      "finished_at": "2026-01-01T00:00:00Z",
+      "usage": {
+        "wall_time": {
+          "unit": "s",
+          "kind": "EXACT",
+          "value": 0
+        }
+      },
+      "state": "SUCCESS",
+      "information": {},
+      "observation": {
+        "outputs": {
+          "result": {
+            "protocol": "draft",
+            "disposition": "EXECUTED",
+            "execution_outcome": "SUCCESS",
+            "applicability": "APPLICABLE",
+            "determination": "KNOWN",
+            "verdict": "PASS",
+            "evidence": [],
+            "usage": {},
+            "score": 0.75,
+            "severity": {
+              "domain": "custom-v1",
+              "label": "mild"
+            }
+          }
+        },
+        "usage": {},
+        "evidence": []
+      },
+      "result": {
+        "protocol": "draft",
+        "disposition": "EXECUTED",
+        "execution_outcome": "SUCCESS",
+        "applicability": "APPLICABLE",
+        "determination": "KNOWN",
+        "verdict": "PASS",
+        "evidence": [],
+        "usage": {},
+        "score": 0.75,
+        "severity": {
+          "domain": "custom-v1",
+          "label": "mild"
+        }
+      }
+    },
+    {
+      "node_id": "aggregate",
+      "kind": "AGGREGATE",
+      "operation": {
+        "capability_id": "openverify.aggregate",
+        "capability_version": "1"
+      },
+      "upstream_node_ids": [
+        "derive",
+        "judge"
+      ],
+      "upstream_results": {
+        "judge": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS",
+          "evidence": [],
+          "usage": {},
+          "score": 0.75,
+          "severity": {
+            "domain": "custom-v1",
+            "label": "mild"
+          }
+        }
+      },
+      "input_values": {
+        "check": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS",
+          "evidence": [],
+          "usage": {},
+          "score": 0.75,
+          "severity": {
+            "domain": "custom-v1",
+            "label": "mild"
+          }
+        },
+        "subject": {
+          "id": "article-1",
+          "type": "text/plain",
+          "locator": {
+            "host_key": "text"
+          }
+        },
+        "criterion": {
+          "id": "readable-prose",
+          "description": "Contains no banned phrase and is nonempty."
+        },
+        "members": [
+          "check"
+        ]
+      },
+      "input_resolutions": {
+        "check": {
+          "status": "AVAILABLE",
+          "used_default": false,
+          "source": {
+            "kind": "UPSTREAM_OUTPUT",
+            "node_id": "judge",
+            "output": "result"
+          },
+          "value": {
+            "protocol": "draft",
+            "disposition": "EXECUTED",
+            "execution_outcome": "SUCCESS",
+            "applicability": "APPLICABLE",
+            "determination": "KNOWN",
+            "verdict": "PASS",
+            "evidence": [],
+            "usage": {},
+            "score": 0.75,
+            "severity": {
+              "domain": "custom-v1",
+              "label": "mild"
+            }
+          }
+        },
+        "subject": {
+          "status": "AVAILABLE",
+          "used_default": false,
+          "source": {
+            "kind": "CONSTANT",
+            "value": {
+              "id": "article-1",
+              "type": "text/plain",
+              "locator": {
+                "host_key": "text"
+              }
+            }
+          },
+          "value": {
+            "id": "article-1",
+            "type": "text/plain",
+            "locator": {
+              "host_key": "text"
+            }
+          }
+        },
+        "criterion": {
+          "status": "AVAILABLE",
+          "used_default": false,
+          "source": {
+            "kind": "CONSTANT",
+            "value": {
+              "id": "readable-prose",
+              "description": "Contains no banned phrase and is nonempty."
+            }
+          },
+          "value": {
+            "id": "readable-prose",
+            "description": "Contains no banned phrase and is nonempty."
+          }
+        },
+        "members": {
+          "status": "AVAILABLE",
+          "used_default": false,
+          "source": {
+            "kind": "CONSTANT",
+            "value": [
+              "check"
+            ]
+          },
+          "value": [
+            "check"
+          ]
+        }
+      },
+      "started_at": "2026-01-01T00:00:00Z",
+      "finished_at": "2026-01-01T00:00:00Z",
+      "usage": {
+        "wall_time": {
+          "unit": "s",
+          "kind": "EXACT",
+          "value": 0
+        }
+      },
+      "state": "SUCCESS",
+      "information": {},
+      "observation": {
+        "outputs": {
+          "result": {
+            "protocol": "draft",
+            "disposition": "EXECUTED",
+            "execution_outcome": "SUCCESS",
+            "applicability": "APPLICABLE",
+            "determination": "KNOWN",
+            "evidence": [],
+            "usage": {},
+            "score": 0.75
+          }
+        },
+        "usage": {},
+        "evidence": []
+      },
+      "result": {
+        "protocol": "draft",
+        "disposition": "EXECUTED",
+        "execution_outcome": "SUCCESS",
+        "applicability": "APPLICABLE",
+        "determination": "KNOWN",
+        "evidence": [],
+        "usage": {},
+        "score": 0.75
+      }
+    }
+  ],
+  "final_results": {
+    "judge": {
+      "protocol": "draft",
+      "disposition": "EXECUTED",
+      "execution_outcome": "SUCCESS",
+      "applicability": "APPLICABLE",
+      "determination": "KNOWN",
+      "verdict": "PASS",
+      "evidence": [],
+      "usage": {},
+      "score": 0.75,
+      "severity": {
+        "domain": "custom-v1",
+        "label": "mild"
+      }
+    },
+    "aggregate": {
+      "protocol": "draft",
+      "disposition": "EXECUTED",
+      "execution_outcome": "SUCCESS",
+      "applicability": "APPLICABLE",
+      "determination": "KNOWN",
+      "evidence": [],
+      "usage": {},
+      "score": 0.75
+    }
+  }
+}

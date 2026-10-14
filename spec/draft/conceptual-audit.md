@@ -13,7 +13,7 @@ Category representation is distinct from implemented wire and execution support.
 | Concern | Mapping |
 | --- | --- |
 | Meaning | Subject is an article; Criterion is absence of phrase pattern X. |
-| Knowledge | Text Context, artifact identity, matching-span Evidence. |
+| Knowledge | Typed text run input, artifact identity, matching-span Evidence. |
 | Derive | Extract or normalize text information. |
 | Evaluate | Phrase check, uncertainty-producing check if needed, and human judgment. |
 | Control | Route uncertain Results to human review. |
@@ -79,7 +79,7 @@ conversion or treatment of missing readings is defined.
 | Concern | Mapping |
 | --- | --- |
 | Meaning | Document subject and categorical review criterion. |
-| Knowledge | Document reference, reviewer Context, localized Evidence. |
+| Knowledge | Document reference, explicit reviewer inputs, localized Evidence. |
 | Derive | Optional document-information extraction. |
 | Evaluate | Human implementation returns a category matching judgment_schema. |
 | Control | Route to review, continue, or stop based on Results. |
@@ -101,7 +101,7 @@ reviewer identity assurance belong to the host mechanism.
 | Concern | Mapping |
 | --- | --- |
 | Meaning | Artifact subject and externally checked property. |
-| Knowledge | Artifact reference, request Context, response/evidence annotations. |
+| Knowledge | Artifact reference, explicit request inputs, response/evidence annotations. |
 | Derive | Optional request preparation or response-information extraction. |
 | Evaluate | Trusted API adapter normalizes successful judgment or failed execution. |
 | Control | Decide escalation, stop, retry, or defer after Results. |

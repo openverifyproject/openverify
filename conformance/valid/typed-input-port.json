@@ -1,0 +1,8 @@
+{
+  "name": "x",
+  "schema": {
+    "type": "integer"
+  },
+  "required": true,
+  "on_unavailable": "BLOCK"
+}

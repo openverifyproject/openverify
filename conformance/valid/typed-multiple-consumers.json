@@ -1,0 +1,194 @@
+{
+  "nodes": [
+    {
+      "id": "derive",
+      "kind": "DERIVE",
+      "operation": {
+        "capability_id": "com.example.execution.mock",
+        "capability_version": "1"
+      },
+      "inputs": [
+        {
+          "name": "x",
+          "schema": {
+            "type": "integer"
+          },
+          "required": true,
+          "on_unavailable": "BLOCK"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "x",
+          "schema": {
+            "type": "integer"
+          },
+          "role": "INFORMATION"
+        }
+      ],
+      "bindings": {
+        "x": {
+          "kind": "RUN_INPUT",
+          "name": "x"
+        }
+      },
+      "config": {},
+      "aggregate_inputs": []
+    },
+    {
+      "id": "judge",
+      "kind": "EVALUATE",
+      "operation": {
+        "capability_id": "com.example.execution.mock",
+        "capability_version": "1"
+      },
+      "inputs": [
+        {
+          "name": "x",
+          "schema": {
+            "type": "integer"
+          },
+          "required": true,
+          "on_unavailable": "BLOCK"
+        },
+        {
+          "name": "subject",
+          "schema": {
+            "type": "object"
+          },
+          "required": true,
+          "on_unavailable": "BLOCK"
+        },
+        {
+          "name": "criterion",
+          "schema": {
+            "type": "object"
+          },
+          "required": true,
+          "on_unavailable": "BLOCK"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "schema": {
+            "type": "object"
+          },
+          "role": "RESULT"
+        }
+      ],
+      "bindings": {
+        "x": {
+          "kind": "UPSTREAM_OUTPUT",
+          "node_id": "derive",
+          "output": "x"
+        },
+        "subject": {
+          "kind": "CONSTANT",
+          "value": {
+            "id": "article-1",
+            "type": "text/plain",
+            "locator": {
+              "host_key": "text"
+            }
+          }
+        },
+        "criterion": {
+          "kind": "CONSTANT",
+          "value": {
+            "id": "readable-prose",
+            "description": "Contains no banned phrase and is nonempty."
+          }
+        }
+      },
+      "config": {},
+      "aggregate_inputs": []
+    },
+    {
+      "id": "control",
+      "kind": "CONTROL",
+      "operation": {
+        "capability_id": "com.example.execution.mock",
+        "capability_version": "1"
+      },
+      "inputs": [
+        {
+          "name": "check",
+          "schema": {
+            "type": "object"
+          },
+          "required": true,
+          "on_unavailable": "BLOCK"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "decision",
+          "schema": {
+            "type": "object"
+          },
+          "role": "DECISION"
+        }
+      ],
+      "bindings": {
+        "check": {
+          "kind": "UPSTREAM_OUTPUT",
+          "node_id": "judge",
+          "output": "result"
+        }
+      },
+      "config": {},
+      "aggregate_inputs": []
+    },
+    {
+      "id": "other",
+      "kind": "DERIVE",
+      "operation": {
+        "capability_id": "com.example.execution.mock",
+        "capability_version": "1"
+      },
+      "inputs": [
+        {
+          "name": "x",
+          "schema": {
+            "type": "integer"
+          },
+          "required": true,
+          "on_unavailable": "BLOCK"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "copy",
+          "schema": {
+            "type": "integer"
+          },
+          "role": "INFORMATION"
+        }
+      ],
+      "bindings": {
+        "x": {
+          "kind": "UPSTREAM_OUTPUT",
+          "node_id": "derive",
+          "output": "x"
+        }
+      },
+      "config": {},
+      "aggregate_inputs": []
+    }
+  ],
+  "edges": [
+    {
+      "from_node": "derive",
+      "to_node": "judge"
+    },
+    {
+      "from_node": "judge",
+      "to_node": "control"
+    },
+    {
+      "from_node": "derive",
+      "to_node": "other"
+    }
+  ]
+}

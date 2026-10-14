@@ -1,0 +1,19 @@
+{
+  "outputs": {},
+  "usage": {
+    "API_calls": {
+      "unit": "call",
+      "kind": "EXACT",
+      "value": 1
+    }
+  },
+  "evidence": [
+    {
+      "message": "Attempted observation"
+    }
+  ],
+  "error": {
+    "code": "com.example.unavailable",
+    "message": "No observation"
+  }
+}

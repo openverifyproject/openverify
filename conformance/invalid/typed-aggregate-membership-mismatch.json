@@ -1,0 +1,211 @@
+{
+  "protocol": "draft",
+  "id": "prose-criterion",
+  "version": "1",
+  "subject": {
+    "id": "article-1",
+    "type": "text/plain",
+    "locator": {
+      "host_key": "text"
+    }
+  },
+  "criterion": {
+    "id": "readable-prose",
+    "description": "Contains no banned phrase and is nonempty."
+  },
+  "judgment_schema": {},
+  "run_inputs": [],
+  "execution_policy": {
+    "activation": {
+      "executor_ref": "MANUAL"
+    },
+    "selection": {
+      "executor_ref": "EXPLICIT"
+    },
+    "admission": {
+      "strategy": "ALWAYS"
+    }
+  },
+  "graph": {
+    "nodes": [
+      {
+        "id": "derive",
+        "kind": "DERIVE",
+        "operation": {
+          "capability_id": "com.example.execution.mock",
+          "capability_version": "1"
+        },
+        "inputs": [],
+        "outputs": [],
+        "bindings": {},
+        "config": {},
+        "aggregate_inputs": []
+      },
+      {
+        "id": "judge",
+        "kind": "EVALUATE",
+        "operation": {
+          "capability_id": "com.example.execution.mock",
+          "capability_version": "1"
+        },
+        "inputs": [
+          {
+            "name": "subject",
+            "schema": {
+              "type": "object"
+            },
+            "required": true,
+            "on_unavailable": "BLOCK"
+          },
+          {
+            "name": "criterion",
+            "schema": {
+              "type": "object"
+            },
+            "required": true,
+            "on_unavailable": "BLOCK"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "result",
+            "schema": {
+              "type": "object"
+            },
+            "role": "RESULT"
+          }
+        ],
+        "bindings": {
+          "subject": {
+            "kind": "CONSTANT",
+            "value": {
+              "id": "article-1",
+              "type": "text/plain",
+              "locator": {
+                "host_key": "text"
+              }
+            }
+          },
+          "criterion": {
+            "kind": "CONSTANT",
+            "value": {
+              "id": "readable-prose",
+              "description": "Contains no banned phrase and is nonempty."
+            }
+          }
+        },
+        "config": {},
+        "aggregate_inputs": []
+      },
+      {
+        "id": "aggregate",
+        "kind": "AGGREGATE",
+        "operation": {
+          "capability_id": "openverify.aggregate",
+          "capability_version": "1"
+        },
+        "inputs": [
+          {
+            "name": "check",
+            "schema": {
+              "type": "object"
+            },
+            "required": true,
+            "on_unavailable": "BLOCK"
+          },
+          {
+            "name": "subject",
+            "schema": {
+              "type": "object"
+            },
+            "required": true,
+            "on_unavailable": "BLOCK"
+          },
+          {
+            "name": "criterion",
+            "schema": {
+              "type": "object"
+            },
+            "required": true,
+            "on_unavailable": "BLOCK"
+          },
+          {
+            "name": "members",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "required": true,
+            "on_unavailable": "BLOCK"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "result",
+            "schema": {
+              "type": "object"
+            },
+            "role": "RESULT"
+          }
+        ],
+        "bindings": {
+          "check": {
+            "kind": "UPSTREAM_OUTPUT",
+            "node_id": "judge",
+            "output": "result"
+          },
+          "subject": {
+            "kind": "CONSTANT",
+            "value": {
+              "id": "article-1",
+              "type": "text/plain",
+              "locator": {
+                "host_key": "text"
+              }
+            }
+          },
+          "criterion": {
+            "kind": "CONSTANT",
+            "value": {
+              "id": "readable-prose",
+              "description": "Contains no banned phrase and is nonempty."
+            }
+          },
+          "members": {
+            "kind": "CONSTANT",
+            "value": [
+              "check"
+            ]
+          }
+        },
+        "config": {
+          "reducer": "ALL",
+          "handling": {
+            "UNKNOWN": "REJECT",
+            "ERROR": "REJECT",
+            "SKIP": "REJECT",
+            "DEFERRED": "REJECT",
+            "CANCELLED": "REJECT",
+            "NOT_APPLICABLE": "REJECT",
+            "MISSING": "REJECT"
+          }
+        },
+        "aggregate_inputs": [
+          "wrong"
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "from_node": "derive",
+        "to_node": "aggregate"
+      },
+      {
+        "from_node": "judge",
+        "to_node": "aggregate"
+      }
+    ]
+  }
+}
