@@ -143,7 +143,7 @@ def test_control_stop_semantics(kind: str) -> None:
     d = definition("generic").model_copy(update={"graph": graph})
     run = Engine(registry).run(d, context("generic"), opportunity_id="o")
     assert run.final_results["later"].disposition == (
-        "EXECUTED" if kind == "CONTINUE" else "SKIPPED"
+        "EXECUTED" if kind == "CONTINUE" else "DEFERRED" if kind == "DEFER" else "SKIPPED"
     )
     assert run.nodes[0].decision == decision
 

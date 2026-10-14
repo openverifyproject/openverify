@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:verification:draft:selection",
+  "description": "Typed explicit executable dataflow; see spec/draft/dataflow.md.",
+  "type": "object",
+  "properties": {
+    "subjects": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:verification:draft:artifact-ref"
+      }
+    },
+    "reason": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "subjects",
+    "reason"
+  ],
+  "additionalProperties": false
+}

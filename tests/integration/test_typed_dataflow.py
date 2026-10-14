@@ -530,7 +530,7 @@ def test_invalid_policy_information_is_rejected_before_node_invocation() -> None
     with pytest.raises(ProtocolError, match="DATAFLOW_BINDING"):
         Engine(Registry()).run(d, {"x": 0}, opportunity_id="policy")
     policy.bindings["risk"] = Constant(value=0)
-    with pytest.raises(ProtocolError, match="POLICY_UNSUPPORTED"):
+    with pytest.raises(ProtocolError, match="DATAFLOW_BINDING"):
         Engine(Registry()).run(d, {"x": 0}, opportunity_id="policy")
 
 

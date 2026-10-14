@@ -10,24 +10,30 @@ from openverify.adapters import Registry
 from openverify.dataflow import (
     accept_outputs,
     error_result,
-    guards_enabled,
     resolve_inputs,
     validate_run_inputs,
 )
-from openverify.engine.admission import admit
 from openverify.engine.aggregation import aggregate
+from openverify.engine.policy import evaluate
 from openverify.errors import ProtocolError
 from openverify.fingerprint import fingerprint
+from openverify.lifecycle import Cancellation, Lifecycle, nonexecution
 from openverify.model import (
+    Activation,
+    Admission,
+    CancellationEvent,
     Context,
     Decision,
     ExecutionObservation,
     Measurement,
     NodeRecord,
+    PolicyEvaluation,
     Result,
     RunRecord,
+    Selection,
     VerificationDefinition,
 )
+from openverify.policy import ROLES, policies
 from openverify.serialization import decode, to_data
 from openverify.validation import ordered_nodes, parse_object, parse_run_record, validate_definition
 
@@ -58,7 +64,28 @@ class Engine:
         *,
         opportunity_id: str,
         context: Context | None = None,
+        cancellation: Cancellation | None = None,
     ) -> RunRecord:
+        record = self.attempt(
+            definition,
+            run_inputs,
+            opportunity_id=opportunity_id,
+            context=context,
+            cancellation=cancellation,
+        )
+        if record is None:
+            raise ProtocolError("NO_OCCURRENCE", "Opportunity was not activated or selected")
+        return record
+
+    def attempt(
+        self,
+        definition: VerificationDefinition,
+        run_inputs: Context,
+        *,
+        opportunity_id: str,
+        context: Context | None = None,
+        cancellation: Cancellation | None = None,
+    ) -> RunRecord | None:
         definition = deepcopy(definition)
         validate_definition(definition)
         decode(run_inputs)
@@ -66,29 +93,24 @@ class Engine:
         values = validate_run_inputs(definition, supplied)
         ambient = deepcopy(context) if context is not None else {}
         decode(ambient)
-        for capability, supported in (
-            (definition.execution_policy.activation, "MANUAL"),
-            (definition.execution_policy.selection, "EXPLICIT"),
-        ):
-            if (
-                capability.executor_ref != supported
-                or capability.config
-                or capability.inputs
-                or capability.bindings
-            ):
-                raise ProtocolError(
-                    "POLICY_UNSUPPORTED", "Only empty-input MANUAL/EXPLICIT are implemented"
-                )
-        if (
-            definition.execution_policy.admission.inputs
-            or definition.execution_policy.admission.bindings
-        ):
-            raise ProtocolError("POLICY_UNSUPPORTED", "Custom admission inputs are unsupported")
-        admission = admit(definition, opportunity_id)
+        if type(opportunity_id) is not str or not opportunity_id:
+            raise ProtocolError("ADMISSION_POLICY", "A nonempty opportunity identity is required")
+        evaluations: list[PolicyEvaluation] = []
+        for role, policy in zip(ROLES, policies(definition), strict=True):
+            evaluation = evaluate(role, policy, definition, values, opportunity_id, self.registry)
+            evaluations.append(evaluation)
+            if isinstance(evaluation.outcome, Activation):
+                if evaluation.outcome.outcome == "DO_NOT_ACTIVATE":
+                    return None
+            elif isinstance(evaluation.outcome, Selection) and not evaluation.outcome.subjects:
+                return None
+        admission = evaluations[-1].outcome
+        assert isinstance(admission, Admission)
         started = now()
         results: dict[str, Result] = {}
         records: dict[str, NodeRecord] = {}
-        stopped = admission.outcome != "RUN"
+        lifecycle = Lifecycle(admission)
+        cancellation_event: CancellationEvent | None = None
         node_map = {n.id: n for n in definition.graph.nodes}
         for node_id in ordered_nodes(definition.graph):
             node = node_map[node_id]
@@ -105,11 +127,21 @@ class Engine:
             executor_ref: str | None = None
             state = "SUCCESS"
             reason: str | None = None
-            disabled = stopped or not guards_enabled(node_id, definition.graph, values, records)
-            if disabled or blocked:
-                reason = "DISABLED" if disabled else "INPUT_UNAVAILABLE"
+            if (
+                admission.outcome == "RUN"
+                and cancellation is not None
+                and cancellation.reason is not None
+                and cancellation_event is None
+            ):
+                cancellation_event = CancellationEvent(
+                    node_id=node_id, phase="BEFORE_START", reason=cancellation.reason
+                )
+                lifecycle.cancelled = True
+            cause = lifecycle.cause(node_id, definition.graph, values, records, blocked)
+            if cause is not None:
+                reason = cause[1]
                 state = "NONEXECUTED"
-                result = Result(disposition="SKIPPED", output={"reason": reason})
+                result = nonexecution(cause)
             else:
                 try:
                     if (
@@ -146,21 +178,25 @@ class Engine:
                         ExecutionObservation,
                         parse_object("execution-observation", to_data(observed)),
                     )
-                    information, result, decision = accept_outputs(node, observed, definition)
-                    if result is not None and result.execution_outcome == "ERROR":
-                        state = "ERROR"
-                    if decision is not None and decision.kind in (
-                        "STOP_SUCCESS",
-                        "STOP_FAILURE",
-                        "RETRY",
-                        "DEFER",
-                    ):
-                        stopped = True
+                    if cancellation is None or cancellation.reason is None:
+                        information, result, decision = accept_outputs(node, observed, definition)
+                        if result is not None and result.execution_outcome == "ERROR":
+                            state = "ERROR"
                 except Exception as exc:
                     result = error_result(exc)
                     state = "ERROR"
                     reason = exc.code if isinstance(exc, ProtocolError) else "EXECUTOR_ERROR"
                     information, decision = {}, None
+                if cancellation is not None and cancellation.reason is not None:
+                    cancellation_event = CancellationEvent(
+                        node_id=node_id, phase="RUNNING", reason=cancellation.reason
+                    )
+                    lifecycle.cancelled = True
+                    result = nonexecution(("CANCELLED", "CANCELLATION"))
+                    information, decision = {}, None
+                    state, reason = "CANCELLED", "CANCELLATION"
+                if decision is not None:
+                    lifecycle.control(node_id, decision, definition.graph)
             if result is not None:
                 results[node_id] = result
             duration = max(0.0, perf_counter() - clock)
@@ -197,6 +233,8 @@ class Engine:
             run_inputs=supplied,
             opportunity_id=opportunity_id,
             admission=admission,
+            policy_evaluations=evaluations,
+            cancellation=cancellation_event,
             started_at=started,
             finished_at=now(),
             nodes=list(records.values()),

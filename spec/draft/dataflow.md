@@ -138,9 +138,10 @@ The reserved semantic names subject, criterion and members cannot be member name
 
 Execution policies that consume information MUST use the same typed declarations
 and ValueSource bindings (run/constants/external only, before graph execution).
-The reference engine implements only MANUAL/EXPLICIT empty-input policies and
-ALWAYS/PROBABILITY; richer policy execution is explicitly unsupported. It MUST
-reject unsupported policies before any node invocation.
+The reference engine implements MANUAL/EXPLICIT and ALWAYS/PROBABILITY shorthands
+and registered custom operations with role-constrained outcomes; see
+[execution policy](execution-policy.md). It validates the complete definition
+before invoking any policy or node.
 
 Context now means optional ambient NONSEMANTIC host metadata. It is retained as
 initial_context in provenance, never passed as computation input or mutated by

@@ -42,3 +42,16 @@ rejection is SKIPPED. These are independent meanings, not interchangeable labels
 Flattened status for DEFERRED/CANCELLED/NOT_APPLICABLE and KNOWN without verdict;
 partial judgments on UNKNOWN; and generic retry/defer scheduling remain open.
 
+
+## Graph execution boundary
+
+Standalone Result validity does not authorize an invoked graph evaluator to
+report SKIPPED, DEFERRED or CANCELLED. Such output is rejected as OUTPUT_INVALID
+and becomes EXECUTED/ERROR. Runner-generated lifecycle Results follow
+[lifecycle](lifecycle.md); ERROR is never coerced to FAIL, UNKNOWN to DEFERRED,
+or NOT_APPLICABLE to SKIPPED. CANCELLED can represent an interrupted attempt
+as well as prevented execution, without accepted evaluation observations.
+
+Evidence on standalone nonexecution Results may explain nonexecution; it MUST NOT
+claim a successful evaluation. Graph-generated nonexecution Results carry only
+the diagnostic lifecycle reason, without evaluation evidence.

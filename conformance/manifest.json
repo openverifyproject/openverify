@@ -1275,6 +1275,444 @@
       "spec": "spec/draft/dataflow.md",
       "valid": false,
       "error_code": "PROVENANCE_LINEAGE"
+    },
+    {
+      "id": "policy-activate",
+      "description": "policy activate",
+      "object_type": "activation",
+      "input": "valid/policy-activate.json",
+      "expected": "expected/policy-activate.json",
+      "stage": "both",
+      "spec": "spec/draft/execution-policy.md",
+      "valid": true
+    },
+    {
+      "id": "policy-do_not_activate",
+      "description": "policy do_not_activate",
+      "object_type": "activation",
+      "input": "valid/policy-do_not_activate.json",
+      "expected": "expected/policy-do_not_activate.json",
+      "stage": "both",
+      "spec": "spec/draft/execution-policy.md",
+      "valid": true
+    },
+    {
+      "id": "policy-admission-run",
+      "description": "policy admission run",
+      "object_type": "admission",
+      "input": "valid/policy-admission-run.json",
+      "expected": "expected/policy-admission-run.json",
+      "stage": "both",
+      "spec": "spec/draft/execution-policy.md",
+      "valid": true
+    },
+    {
+      "id": "policy-admission-skip",
+      "description": "policy admission skip",
+      "object_type": "admission",
+      "input": "valid/policy-admission-skip.json",
+      "expected": "expected/policy-admission-skip.json",
+      "stage": "both",
+      "spec": "spec/draft/execution-policy.md",
+      "valid": true
+    },
+    {
+      "id": "policy-admission-defer",
+      "description": "policy admission defer",
+      "object_type": "admission",
+      "input": "valid/policy-admission-defer.json",
+      "expected": "expected/policy-admission-defer.json",
+      "stage": "both",
+      "spec": "spec/draft/execution-policy.md",
+      "valid": true
+    },
+    {
+      "id": "policy-activation-boolean",
+      "description": "policy activation boolean",
+      "object_type": "activation",
+      "input": "invalid/policy-activation-boolean.json",
+      "expected": "expected/policy-activation-boolean.json",
+      "stage": "schema",
+      "spec": "spec/draft/execution-policy.md",
+      "valid": false,
+      "error_code": "PROTOCOL_STRUCTURE"
+    },
+    {
+      "id": "policy-admission-fail",
+      "description": "policy admission fail",
+      "object_type": "admission",
+      "input": "invalid/policy-admission-fail.json",
+      "expected": "expected/policy-admission-fail.json",
+      "stage": "schema",
+      "spec": "spec/draft/execution-policy.md",
+      "valid": false,
+      "error_code": "PROTOCOL_STRUCTURE"
+    },
+    {
+      "id": "policy-selection-empty",
+      "description": "policy selection empty",
+      "object_type": "selection",
+      "input": "valid/policy-selection-empty.json",
+      "expected": "expected/policy-selection-empty.json",
+      "stage": "both",
+      "spec": "spec/draft/execution-policy.md",
+      "valid": true
+    },
+    {
+      "id": "policy-selection-subject",
+      "description": "policy selection subject",
+      "object_type": "selection",
+      "input": "valid/policy-selection-subject.json",
+      "expected": "expected/policy-selection-subject.json",
+      "stage": "both",
+      "spec": "spec/draft/execution-policy.md",
+      "valid": true
+    },
+    {
+      "id": "policy-selection-duplicate",
+      "description": "policy selection duplicate",
+      "object_type": "selection",
+      "input": "invalid/policy-selection-duplicate.json",
+      "expected": "expected/policy-selection-duplicate.json",
+      "stage": "semantic",
+      "spec": "spec/draft/execution-policy.md",
+      "valid": false,
+      "error_code": "POLICY_OUTPUT"
+    },
+    {
+      "id": "policy-evaluation",
+      "description": "policy evaluation",
+      "object_type": "policy-evaluation",
+      "input": "valid/policy-evaluation.json",
+      "expected": "expected/policy-evaluation.json",
+      "stage": "both",
+      "spec": "spec/draft/execution-policy.md",
+      "valid": true
+    },
+    {
+      "id": "policy-evaluation-role-mismatch",
+      "description": "policy evaluation role mismatch",
+      "object_type": "policy-evaluation",
+      "input": "invalid/policy-evaluation-role-mismatch.json",
+      "expected": "expected/policy-evaluation-role-mismatch.json",
+      "stage": "semantic",
+      "spec": "spec/draft/execution-policy.md",
+      "valid": false,
+      "error_code": "POLICY_OUTPUT"
+    },
+    {
+      "id": "policy-cancellation-event",
+      "description": "policy cancellation event",
+      "object_type": "cancellation-event",
+      "input": "valid/policy-cancellation-event.json",
+      "expected": "expected/policy-cancellation-event.json",
+      "stage": "both",
+      "spec": "spec/draft/execution-policy.md",
+      "valid": true
+    },
+    {
+      "id": "policy-explicit-run-input",
+      "description": "policy explicit run input",
+      "object_type": "verification-definition",
+      "input": "valid/policy-explicit-run-input.json",
+      "expected": "expected/policy-explicit-run-input.json",
+      "stage": "both",
+      "spec": "spec/draft/execution-policy.md",
+      "valid": true
+    },
+    {
+      "id": "policy-explicit-constant",
+      "description": "policy explicit constant",
+      "object_type": "verification-definition",
+      "input": "valid/policy-explicit-constant.json",
+      "expected": "expected/policy-explicit-constant.json",
+      "stage": "both",
+      "spec": "spec/draft/execution-policy.md",
+      "valid": true
+    },
+    {
+      "id": "policy-explicit-external",
+      "description": "policy explicit external",
+      "object_type": "verification-definition",
+      "input": "valid/policy-explicit-external.json",
+      "expected": "expected/policy-explicit-external.json",
+      "stage": "both",
+      "spec": "spec/draft/execution-policy.md",
+      "valid": true
+    },
+    {
+      "id": "policy-unbound",
+      "description": "policy unbound",
+      "object_type": "verification-definition",
+      "input": "invalid/policy-unbound.json",
+      "expected": "expected/policy-unbound.json",
+      "stage": "semantic",
+      "spec": "spec/draft/execution-policy.md",
+      "valid": false,
+      "error_code": "DATAFLOW_BINDING"
+    },
+    {
+      "id": "policy-unknown-run",
+      "description": "policy unknown run",
+      "object_type": "verification-definition",
+      "input": "invalid/policy-unknown-run.json",
+      "expected": "expected/policy-unknown-run.json",
+      "stage": "semantic",
+      "spec": "spec/draft/execution-policy.md",
+      "valid": false,
+      "error_code": "DATAFLOW_BINDING"
+    },
+    {
+      "id": "policy-upstream",
+      "description": "policy upstream",
+      "object_type": "verification-definition",
+      "input": "invalid/policy-upstream.json",
+      "expected": "expected/policy-upstream.json",
+      "stage": "semantic",
+      "spec": "spec/draft/execution-policy.md",
+      "valid": false,
+      "error_code": "DATAFLOW_BINDING"
+    },
+    {
+      "id": "policy-duplicate",
+      "description": "policy duplicate",
+      "object_type": "verification-definition",
+      "input": "invalid/policy-duplicate.json",
+      "expected": "expected/policy-duplicate.json",
+      "stage": "semantic",
+      "spec": "spec/draft/execution-policy.md",
+      "valid": false,
+      "error_code": "DATAFLOW_BINDING"
+    },
+    {
+      "id": "policy-bad-config",
+      "description": "policy bad config",
+      "object_type": "verification-definition",
+      "input": "invalid/policy-bad-config.json",
+      "expected": "expected/policy-bad-config.json",
+      "stage": "semantic",
+      "spec": "spec/draft/execution-policy.md",
+      "valid": false,
+      "error_code": "DATAFLOW_CONFIG"
+    },
+    {
+      "id": "policy-bad-operation",
+      "description": "policy bad operation",
+      "object_type": "verification-definition",
+      "input": "invalid/policy-bad-operation.json",
+      "expected": "expected/policy-bad-operation.json",
+      "stage": "schema",
+      "spec": "spec/draft/execution-policy.md",
+      "valid": false,
+      "error_code": "PROTOCOL_STRUCTURE"
+    },
+    {
+      "id": "policy-occurrence-skip",
+      "description": "policy occurrence skip",
+      "object_type": "run-record",
+      "input": "valid/policy-occurrence-skip.json",
+      "expected": "expected/policy-occurrence-skip.json",
+      "stage": "both",
+      "spec": "spec/draft/lifecycle.md",
+      "valid": true
+    },
+    {
+      "id": "policy-contradictory-skip",
+      "description": "policy contradictory skip",
+      "object_type": "run-record",
+      "input": "invalid/policy-contradictory-skip.json",
+      "expected": "expected/policy-contradictory-skip.json",
+      "stage": "semantic",
+      "spec": "spec/draft/lifecycle.md",
+      "valid": false,
+      "error_code": "PROVENANCE_LINEAGE"
+    },
+    {
+      "id": "policy-inactive-occurrence",
+      "description": "policy inactive occurrence",
+      "object_type": "run-record",
+      "input": "invalid/policy-inactive-occurrence.json",
+      "expected": "expected/policy-inactive-occurrence.json",
+      "stage": "semantic",
+      "spec": "spec/draft/lifecycle.md",
+      "valid": false,
+      "error_code": "PROVENANCE_LINEAGE"
+    },
+    {
+      "id": "policy-unselected-occurrence",
+      "description": "policy unselected occurrence",
+      "object_type": "run-record",
+      "input": "invalid/policy-unselected-occurrence.json",
+      "expected": "expected/policy-unselected-occurrence.json",
+      "stage": "semantic",
+      "spec": "spec/draft/lifecycle.md",
+      "valid": false,
+      "error_code": "PROVENANCE_LINEAGE"
+    },
+    {
+      "id": "policy-admission-mismatch",
+      "description": "policy admission mismatch",
+      "object_type": "run-record",
+      "input": "invalid/policy-admission-mismatch.json",
+      "expected": "expected/policy-admission-mismatch.json",
+      "stage": "semantic",
+      "spec": "spec/draft/lifecycle.md",
+      "valid": false,
+      "error_code": "PROVENANCE_LINEAGE"
+    },
+    {
+      "id": "policy-occurrence-defer",
+      "description": "policy occurrence defer",
+      "object_type": "run-record",
+      "input": "valid/policy-occurrence-defer.json",
+      "expected": "expected/policy-occurrence-defer.json",
+      "stage": "both",
+      "spec": "spec/draft/lifecycle.md",
+      "valid": true
+    },
+    {
+      "id": "policy-contradictory-defer",
+      "description": "policy contradictory defer",
+      "object_type": "run-record",
+      "input": "invalid/policy-contradictory-defer.json",
+      "expected": "expected/policy-contradictory-defer.json",
+      "stage": "semantic",
+      "spec": "spec/draft/lifecycle.md",
+      "valid": false,
+      "error_code": "PROVENANCE_LINEAGE"
+    },
+    {
+      "id": "policy-cancelled-before_start",
+      "description": "policy cancelled before_start",
+      "object_type": "run-record",
+      "input": "valid/policy-cancelled-before_start.json",
+      "expected": "expected/policy-cancelled-before_start.json",
+      "stage": "both",
+      "spec": "spec/draft/lifecycle.md",
+      "valid": true
+    },
+    {
+      "id": "policy-cancelled-running",
+      "description": "policy cancelled running",
+      "object_type": "run-record",
+      "input": "valid/policy-cancelled-running.json",
+      "expected": "expected/policy-cancelled-running.json",
+      "stage": "both",
+      "spec": "spec/draft/lifecycle.md",
+      "valid": true
+    },
+    {
+      "id": "policy-control-continue",
+      "description": "policy control continue",
+      "object_type": "run-record",
+      "input": "valid/policy-control-continue.json",
+      "expected": "expected/policy-control-continue.json",
+      "stage": "both",
+      "spec": "spec/draft/lifecycle.md",
+      "valid": true
+    },
+    {
+      "id": "policy-control-stop_success",
+      "description": "policy control stop_success",
+      "object_type": "run-record",
+      "input": "valid/policy-control-stop_success.json",
+      "expected": "expected/policy-control-stop_success.json",
+      "stage": "both",
+      "spec": "spec/draft/lifecycle.md",
+      "valid": true
+    },
+    {
+      "id": "policy-control-stop_failure",
+      "description": "policy control stop_failure",
+      "object_type": "run-record",
+      "input": "valid/policy-control-stop_failure.json",
+      "expected": "expected/policy-control-stop_failure.json",
+      "stage": "both",
+      "spec": "spec/draft/lifecycle.md",
+      "valid": true
+    },
+    {
+      "id": "policy-control-defer",
+      "description": "policy control defer",
+      "object_type": "run-record",
+      "input": "valid/policy-control-defer.json",
+      "expected": "expected/policy-control-defer.json",
+      "stage": "both",
+      "spec": "spec/draft/lifecycle.md",
+      "valid": true
+    },
+    {
+      "id": "policy-control-retry",
+      "description": "policy control retry",
+      "object_type": "run-record",
+      "input": "valid/policy-control-retry.json",
+      "expected": "expected/policy-control-retry.json",
+      "stage": "both",
+      "spec": "spec/draft/lifecycle.md",
+      "valid": true
+    },
+    {
+      "id": "policy-route-excluded",
+      "description": "policy route excluded",
+      "object_type": "run-record",
+      "input": "valid/policy-route-excluded.json",
+      "expected": "expected/policy-route-excluded.json",
+      "stage": "both",
+      "spec": "spec/draft/lifecycle.md",
+      "valid": true
+    },
+    {
+      "id": "policy-guard-false",
+      "description": "policy guard false",
+      "object_type": "run-record",
+      "input": "valid/policy-guard-false.json",
+      "expected": "expected/policy-guard-false.json",
+      "stage": "both",
+      "spec": "spec/draft/lifecycle.md",
+      "valid": true
+    },
+    {
+      "id": "policy-wrong-lifecycle-cause",
+      "description": "policy wrong lifecycle cause",
+      "object_type": "run-record",
+      "input": "invalid/policy-wrong-lifecycle-cause.json",
+      "expected": "expected/policy-wrong-lifecycle-cause.json",
+      "stage": "semantic",
+      "spec": "spec/draft/lifecycle.md",
+      "valid": false,
+      "error_code": "PROVENANCE_LINEAGE"
+    },
+    {
+      "id": "policy-typed-policy-provenance",
+      "description": "policy typed policy provenance",
+      "object_type": "run-record",
+      "input": "valid/policy-typed-policy-provenance.json",
+      "expected": "expected/policy-typed-policy-provenance.json",
+      "stage": "both",
+      "spec": "spec/draft/lifecycle.md",
+      "valid": true
+    },
+    {
+      "id": "policy-undeclared-policy-value",
+      "description": "policy undeclared policy value",
+      "object_type": "run-record",
+      "input": "invalid/policy-undeclared-policy-value.json",
+      "expected": "expected/policy-undeclared-policy-value.json",
+      "stage": "semantic",
+      "spec": "spec/draft/lifecycle.md",
+      "valid": false,
+      "error_code": "PROVENANCE_LINEAGE"
+    },
+    {
+      "id": "policy-changed-policy-resolution",
+      "description": "policy changed policy resolution",
+      "object_type": "run-record",
+      "input": "invalid/policy-changed-policy-resolution.json",
+      "expected": "expected/policy-changed-policy-resolution.json",
+      "stage": "semantic",
+      "spec": "spec/draft/lifecycle.md",
+      "valid": false,
+      "error_code": "PROVENANCE_LINEAGE"
     }
   ]
 }

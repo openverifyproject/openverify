@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:verification:draft:policy-evaluation",
+  "description": "Typed explicit executable dataflow; see spec/draft/dataflow.md.",
+  "type": "object",
+  "properties": {
+    "role": {
+      "type": "string",
+      "enum": [
+        "ACTIVATION",
+        "SELECTION",
+        "ADMISSION"
+      ]
+    },
+    "input_values": {
+      "type": "object"
+    },
+    "input_resolutions": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "urn:verification:draft:input-resolution"
+      }
+    },
+    "outcome": {
+      "oneOf": [
+        {
+          "$ref": "urn:verification:draft:activation"
+        },
+        {
+          "$ref": "urn:verification:draft:selection"
+        },
+        {
+          "$ref": "urn:verification:draft:admission"
+        }
+      ]
+    },
+    "executor_ref": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "executor_version": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "required": [
+    "role",
+    "input_values",
+    "input_resolutions",
+    "outcome"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:verification:draft:cancellation-event",
+  "description": "Typed explicit executable dataflow; see spec/draft/dataflow.md.",
+  "type": "object",
+  "properties": {
+    "node_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "phase": {
+      "type": "string",
+      "enum": [
+        "BEFORE_START",
+        "RUNNING"
+      ]
+    },
+    "reason": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "node_id",
+    "phase",
+    "reason"
+  ],
+  "additionalProperties": false
+}

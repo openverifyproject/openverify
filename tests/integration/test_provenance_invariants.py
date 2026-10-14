@@ -42,7 +42,7 @@ def test_admission_skip_rejects_each_node_disposition(index: int, disposition: s
     with pytest.raises(ProtocolError) as error:
         parse_run_record(serialize(bad))
     assert error.value.code == "PROVENANCE_LINEAGE"
-    assert error.value.message == "Admission SKIP requires every node to be SKIPPED"
+    assert error.value.message == "Nonexecuted node has contradictory observations"
 
 
 @pytest.mark.parametrize("index", range(4))

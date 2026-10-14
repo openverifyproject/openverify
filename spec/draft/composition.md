@@ -14,9 +14,10 @@ the reference executor uses definition order among ready nodes.
 
 Equality guards, port identity, availability and aggregate membership follow
 [typed dataflow](dataflow.md). Every node gets a record, including disabled/blocked
-nodes. STOP_SUCCESS/STOP_FAILURE stop remaining invocations; RETRY/DEFER also stop
-this local execution without scheduling. ROUTE requires an existing graph node and
-selects through explicit guards; it does not bypass dependencies. No overall verdict
+nodes. [Lifecycle](lifecycle.md) specifies exact reasons and dispositions for
+admission, routing, guards, control termination, cancellation and input blocking.
+ROUTE names a direct outgoing successor, excludes other exclusive branches and
+preserves shared joins. It never bypasses dependencies or guards. No overall verdict
 is synthesized without Aggregate. Control decisions are verification control, never
 external business actions.
 

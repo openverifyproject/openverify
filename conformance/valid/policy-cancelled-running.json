@@ -1,0 +1,219 @@
+{
+  "protocol": "draft",
+  "run_id": "policy-fixture",
+  "definition": {
+    "protocol": "draft",
+    "id": "prose-criterion",
+    "version": "1",
+    "subject": {
+      "id": "article-1",
+      "type": "text/plain",
+      "locator": {
+        "host_key": "text"
+      }
+    },
+    "criterion": {
+      "id": "readable-prose",
+      "description": "Contains no banned phrase and is nonempty."
+    },
+    "judgment_schema": {},
+    "run_inputs": [],
+    "execution_policy": {
+      "activation": {
+        "executor_ref": "MANUAL"
+      },
+      "selection": {
+        "executor_ref": "EXPLICIT"
+      },
+      "admission": {
+        "operation": {
+          "capability_id": "com.example.policy",
+          "capability_version": "1"
+        }
+      }
+    },
+    "graph": {
+      "nodes": [
+        {
+          "id": "a",
+          "kind": "DERIVE",
+          "operation": {
+            "capability_id": "com.example.execution.mock",
+            "capability_version": "1"
+          },
+          "inputs": [],
+          "outputs": [],
+          "bindings": {},
+          "config": {},
+          "aggregate_inputs": []
+        },
+        {
+          "id": "b",
+          "kind": "DERIVE",
+          "operation": {
+            "capability_id": "com.example.execution.mock",
+            "capability_version": "1"
+          },
+          "inputs": [],
+          "outputs": [],
+          "bindings": {},
+          "config": {},
+          "aggregate_inputs": []
+        }
+      ],
+      "edges": [
+        {
+          "from_node": "a",
+          "to_node": "b"
+        }
+      ]
+    }
+  },
+  "definition_fingerprint": "local-sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "subject": {
+    "id": "article-1",
+    "type": "text/plain",
+    "locator": {
+      "host_key": "text"
+    }
+  },
+  "initial_context": {},
+  "run_inputs": {},
+  "opportunity_id": "fixture",
+  "admission": {
+    "outcome": "RUN",
+    "reason": "policy"
+  },
+  "policy_evaluations": [
+    {
+      "role": "ACTIVATION",
+      "input_values": {},
+      "input_resolutions": {},
+      "outcome": {
+        "outcome": "ACTIVATE",
+        "reason": "MANUAL"
+      }
+    },
+    {
+      "role": "SELECTION",
+      "input_values": {},
+      "input_resolutions": {},
+      "outcome": {
+        "subjects": [
+          {
+            "id": "article-1",
+            "type": "text/plain",
+            "locator": {
+              "host_key": "text"
+            }
+          }
+        ],
+        "reason": "EXPLICIT"
+      }
+    },
+    {
+      "role": "ADMISSION",
+      "input_values": {},
+      "input_resolutions": {},
+      "outcome": {
+        "outcome": "RUN",
+        "reason": "policy"
+      }
+    }
+  ],
+  "started_at": "2026-01-01T00:00:00Z",
+  "finished_at": "2026-01-01T00:00:00Z",
+  "nodes": [
+    {
+      "node_id": "a",
+      "kind": "DERIVE",
+      "operation": {
+        "capability_id": "com.example.execution.mock",
+        "capability_version": "1"
+      },
+      "upstream_node_ids": [],
+      "upstream_results": {},
+      "input_values": {},
+      "input_resolutions": {},
+      "started_at": "2026-01-01T00:00:00Z",
+      "finished_at": "2026-01-01T00:00:00Z",
+      "usage": {},
+      "state": "CANCELLED",
+      "information": {},
+      "reason": "CANCELLATION",
+      "result": {
+        "protocol": "draft",
+        "disposition": "CANCELLED",
+        "output": {
+          "reason": "CANCELLATION"
+        },
+        "evidence": [],
+        "usage": {}
+      }
+    },
+    {
+      "node_id": "b",
+      "kind": "DERIVE",
+      "operation": {
+        "capability_id": "com.example.execution.mock",
+        "capability_version": "1"
+      },
+      "upstream_node_ids": [
+        "a"
+      ],
+      "upstream_results": {
+        "a": {
+          "protocol": "draft",
+          "disposition": "CANCELLED",
+          "output": {
+            "reason": "CANCELLATION"
+          },
+          "evidence": [],
+          "usage": {}
+        }
+      },
+      "input_values": {},
+      "input_resolutions": {},
+      "started_at": "2026-01-01T00:00:00Z",
+      "finished_at": "2026-01-01T00:00:00Z",
+      "usage": {},
+      "state": "NONEXECUTED",
+      "information": {},
+      "reason": "CANCELLATION",
+      "result": {
+        "protocol": "draft",
+        "disposition": "CANCELLED",
+        "output": {
+          "reason": "CANCELLATION"
+        },
+        "evidence": [],
+        "usage": {}
+      }
+    }
+  ],
+  "final_results": {
+    "a": {
+      "protocol": "draft",
+      "disposition": "CANCELLED",
+      "output": {
+        "reason": "CANCELLATION"
+      },
+      "evidence": [],
+      "usage": {}
+    },
+    "b": {
+      "protocol": "draft",
+      "disposition": "CANCELLED",
+      "output": {
+        "reason": "CANCELLATION"
+      },
+      "evidence": [],
+      "usage": {}
+    }
+  },
+  "cancellation": {
+    "node_id": "a",
+    "phase": "RUNNING",
+    "reason": "host request"
+  }
+}

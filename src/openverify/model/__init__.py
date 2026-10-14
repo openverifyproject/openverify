@@ -185,18 +185,21 @@ class Criterion(AnnotatedValue):
     description: str
 
 
-class Capability(Value):
-    executor_ref: str
+class PolicyOperation(Value):
+    operation: OperationRequirement | None = None
     config: Context = Field(default_factory=dict)
+    config_schema: JsonSchema | None = None
     inputs: list[InputPort] = Field(default_factory=lambda: list[InputPort]())
     bindings: dict[str, ValueSource] = Field(default_factory=dict)
 
 
-class AdmissionPolicy(Value):
-    strategy: str
+class Capability(PolicyOperation):
+    executor_ref: str | None = None
+
+
+class AdmissionPolicy(PolicyOperation):
+    strategy: str | None = None
     probability: float | None = None
-    inputs: list[InputPort] = Field(default_factory=lambda: list[InputPort]())
-    bindings: dict[str, ValueSource] = Field(default_factory=dict)
 
 
 class ExecutionPolicy(Value):
@@ -220,6 +223,16 @@ class VerificationDefinition(AnnotatedValue):
 
 class Admission(Value):
     outcome: Literal["RUN", "SKIP", "DEFER"]
+    reason: str
+
+
+class Activation(Value):
+    outcome: Literal["ACTIVATE", "DO_NOT_ACTIVATE"]
+    reason: str
+
+
+class Selection(Value):
+    subjects: list[ArtifactRef]
     reason: str
 
 
@@ -249,6 +262,21 @@ class InputResolution(Value):
     value: JsonValue = None
 
 
+class PolicyEvaluation(Value):
+    role: Literal["ACTIVATION", "SELECTION", "ADMISSION"]
+    input_values: Context
+    input_resolutions: dict[str, InputResolution]
+    outcome: Activation | Selection | Admission
+    executor_ref: str | None = None
+    executor_version: str | None = None
+
+
+class CancellationEvent(Value):
+    node_id: str
+    phase: Literal["BEFORE_START", "RUNNING"]
+    reason: str
+
+
 class NodeRecord(Value):
     node_id: str
     kind: Literal["DERIVE", "EVALUATE", "CONTROL", "AGGREGATE"]
@@ -262,7 +290,7 @@ class NodeRecord(Value):
     started_at: str
     finished_at: str
     usage: ResourceVector
-    state: Literal["SUCCESS", "ERROR", "NONEXECUTED"]
+    state: Literal["SUCCESS", "ERROR", "NONEXECUTED", "CANCELLED"]
     reason: str | None = None
     observation: ExecutionObservation | None = None
     information: Context = Field(default_factory=dict)
@@ -280,6 +308,8 @@ class RunRecord(AnnotatedValue):
     run_inputs: Context
     opportunity_id: str
     admission: Admission
+    policy_evaluations: list[PolicyEvaluation]
+    cancellation: CancellationEvent | None = None
     started_at: str
     finished_at: str
     nodes: list[NodeRecord]

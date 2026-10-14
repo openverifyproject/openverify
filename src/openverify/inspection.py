@@ -6,6 +6,7 @@ from pydantic import JsonValue
 
 from openverify.errors import ProtocolError
 from openverify.model import Result, UpstreamOutput, VerificationDefinition
+from openverify.serialization import to_data
 from openverify.validation import ordered_nodes, validate_definition, validate_result
 
 
@@ -18,6 +19,7 @@ def inspect_definition(definition: VerificationDefinition) -> dict[str, JsonValu
         "criterion": definition.criterion.description,
         "node_order": cast(list[JsonValue], ordered_nodes(definition.graph)),
         "admission": definition.execution_policy.admission.strategy,
+        "execution_policy": to_data(definition.execution_policy),
         "run_inputs": [cast(JsonValue, p.model_dump(by_alias=True)) for p in definition.run_inputs],
         "nodes": {
             n.id: {
