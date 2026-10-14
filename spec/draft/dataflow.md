@@ -160,6 +160,9 @@ ExecutionObservation.usage is authoritative for the attempt. Result.usage, when
 present, MUST agree on its dimensions with that observation and is a repeated
 snapshot, never an additive charge. A mismatch invalidates semantic output without
 erasing the valid execution observation.
+Observation evidence is structurally typed but remains an observation until
+semantic acceptance. Invalid Evidence meaning invalidates acceptance while its
+observed snapshot and valid usage remain recorded, just like invalid port values.
 
 RunRecord stores immutable occurrence run_inputs and ambient initial_context.
 Each NodeRecord stores operation requirement, executor identity/version when known,

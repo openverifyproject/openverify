@@ -182,6 +182,10 @@ def semantic(value: Value) -> None:
     if isinstance(value, Extension) and value.required:
         fail("EXTENSION_UNSUPPORTED", "Required extension is unsupported")
     for field in type(value).model_fields:
+        if isinstance(value, ExecutionObservation) and field == "evidence":
+            # Observations retain structurally valid but semantically rejected
+            # evidence. Acceptance validates it without discarding incurred usage.
+            continue
         item = getattr(value, field)
         if isinstance(item, Value):
             semantic(item)
