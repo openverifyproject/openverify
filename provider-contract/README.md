@@ -55,6 +55,18 @@ The optional `openverify.provider` SDK supplies typed wire objects, parsing,
 validation, lifecycle checking, and a stdio framing/session validation binding.
 It supplies no runner, process launcher, scheduling, selection, or tool providers.
 
+`parse_provider_manifest`, `parse_invocation`, `parse_provider_event`, and
+`parse_outcome` check standalone structure/semantics. Their `validate_*` counterparts
+recheck typed values. `load_provider_schema` supplies offline schemas.
+`LifecycleValidator` adds negotiated versions, capability input/config/output
+validation, correlation, sequencing, and terminal uniqueness. `validate_lifecycle`
+checks portable traces. `serialize`/`wire_data` preserve supplied JSON data.
+`openverify.provider.stdio` exposes `encode_frame`, `FrameDecoder`, and
+`StdioSessionValidator`. The optional `Provider` Python Protocol is an in-process
+convenience, with manifest, async event/Outcome iteration, and cooperative cancel.
+Construction alone does not validate wire boundaries; validators do not execute
+work, enforce timers/budgets, or prove a provider's implementation trustworthy.
+
 To check the portable suite with this implementation:
 
 ```python

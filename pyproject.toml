@@ -28,6 +28,7 @@ where = ["src"]
 
 [tool.setuptools.package-data]
 openverify = ["data/schemas/*.json", "data/profile.json", "py.typed"]
+"openverify.provider" = ["data/schemas/*.json"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
