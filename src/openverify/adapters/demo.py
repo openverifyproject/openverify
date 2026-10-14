@@ -26,19 +26,15 @@ def known(verdict: str | None = None, score: float | None = None) -> Result:
 class ConstantEvaluator:
     version = "1"
 
-    def execute(
-        self, context: Context, prior_results: dict[str, Result], config: Context
-    ) -> Result:
+    def execute(self, inputs: Context, config: Context) -> Result:
         return parse_result(config["result"])
 
 
 class RegexEvaluator:
     version = "1"
 
-    def execute(
-        self, context: Context, prior_results: dict[str, Result], config: Context
-    ) -> Result:
-        text = context[cast(str, config["key"])]
+    def execute(self, inputs: Context, config: Context) -> Result:
+        text = inputs[cast(str, config["key"])]
         pattern = config["pattern"]
         must_match = config["must_match"]
         if (
@@ -59,10 +55,8 @@ class RegexEvaluator:
 class RangeEvaluator:
     version = "1"
 
-    def execute(
-        self, context: Context, prior_results: dict[str, Result], config: Context
-    ) -> Result:
-        value = context[cast(str, config["key"])]
+    def execute(self, inputs: Context, config: Context) -> Result:
+        value = inputs[cast(str, config["key"])]
         low, high = config["minimum"], config["maximum"]
         if any(type(v) not in (int, float) for v in (value, low, high)):
             raise ProtocolError("EXECUTOR_ERROR", "Range demo requires numeric values")
@@ -76,8 +70,8 @@ class RangeEvaluator:
 class LengthDeriver:
     version = "1"
 
-    def execute(self, context: Context, config: Context) -> Context:
-        value = context[cast(str, config["key"])]
+    def execute(self, inputs: Context, config: Context) -> Context:
+        value = inputs[cast(str, config["key"])]
         if not isinstance(value, str):
             raise ProtocolError("EXECUTOR_ERROR", "Length demo requires text")
         return {cast(str, config["output_key"]): len(value)}
@@ -86,8 +80,10 @@ class LengthDeriver:
 class UnknownRouter:
     version = "1"
 
-    def execute(self, context: Context, results: dict[str, Result], config: Context) -> Decision:
-        if any(r.determination == "UNKNOWN" for r in results.values()):
+    def execute(self, inputs: Context, config: Context) -> Decision:
+        if any(
+            isinstance(r, dict) and r.get("determination") == "UNKNOWN" for r in inputs.values()
+        ):
             return Decision(
                 kind="ROUTE",
                 destination=cast(str, config["destination"]),
@@ -98,9 +94,9 @@ class UnknownRouter:
 
 def demo_registry() -> Registry:
     registry = Registry()
-    registry.register_evaluate("demo.constant", ConstantEvaluator())
-    registry.register_evaluate("demo.regex", RegexEvaluator())
-    registry.register_evaluate("demo.range", RangeEvaluator())
-    registry.register_derive("demo.length", LengthDeriver())
-    registry.register_control("demo.unknown-route", UnknownRouter())
+    registry.register_evaluate("com.example.demo.constant", ConstantEvaluator())
+    registry.register_evaluate("com.example.demo.regex", RegexEvaluator())
+    registry.register_evaluate("com.example.demo.range", RangeEvaluator())
+    registry.register_derive("com.example.demo.length", LengthDeriver())
+    registry.register_control("com.example.demo.unknown_route", UnknownRouter())
     return registry

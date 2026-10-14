@@ -6,7 +6,7 @@ from typing import cast
 from pydantic import JsonValue
 
 from openverify.errors import ProtocolError
-from openverify.model import Value
+from openverify.model import InputResolution, Result, Value
 
 
 def json_equal(left: JsonValue, right: JsonValue) -> bool:
@@ -34,9 +34,21 @@ def to_data(value: Value) -> JsonValue:
     result: dict[str, JsonValue] = {}
     for name, field in type(value).model_fields.items():
         item = getattr(value, name)
-        if item is None and not field.is_required():
+        if (
+            name in ("metadata", "extensions")
+            and item in ({}, [])
+            and name not in value.model_fields_set
+        ):
             continue
-        result[name] = _data(item)
+        explicit_json = (
+            isinstance(value, InputResolution)
+            and name == "value"
+            or isinstance(value, Result)
+            and name in ("judgment", "output")
+        ) and name in value.model_fields_set
+        if item is None and not field.is_required() and not explicit_json:
+            continue
+        result[field.alias or name] = _data(item)
     return result
 
 

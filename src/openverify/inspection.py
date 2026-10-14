@@ -5,7 +5,7 @@ from typing import cast
 from pydantic import JsonValue
 
 from openverify.errors import ProtocolError
-from openverify.model import Result, VerificationDefinition
+from openverify.model import Result, UpstreamOutput, VerificationDefinition
 from openverify.validation import ordered_nodes, validate_definition, validate_result
 
 
@@ -18,6 +18,36 @@ def inspect_definition(definition: VerificationDefinition) -> dict[str, JsonValu
         "criterion": definition.criterion.description,
         "node_order": cast(list[JsonValue], ordered_nodes(definition.graph)),
         "admission": definition.execution_policy.admission.strategy,
+        "run_inputs": [cast(JsonValue, p.model_dump(by_alias=True)) for p in definition.run_inputs],
+        "nodes": {
+            n.id: {
+                "operation": cast(JsonValue, n.operation.model_dump()),
+                "inputs": [cast(JsonValue, p.model_dump(by_alias=True)) for p in n.inputs],
+                "outputs": [cast(JsonValue, p.model_dump(by_alias=True)) for p in n.outputs],
+                "bindings": {k: cast(JsonValue, v.model_dump()) for k, v in n.bindings.items()},
+                "consumers": {
+                    p.name: [
+                        consumer.id
+                        for consumer in definition.graph.nodes
+                        if any(
+                            isinstance(s, UpstreamOutput)
+                            and s.node_id == n.id
+                            and s.output == p.name
+                            for s in [
+                                *consumer.bindings.values(),
+                                *[
+                                    e.guard.source
+                                    for e in definition.graph.edges
+                                    if e.to_node == consumer.id and e.guard is not None
+                                ],
+                            ]
+                        )
+                    ]
+                    for p in n.outputs
+                },
+            }
+            for n in definition.graph.nodes
+        },
     }
 
 

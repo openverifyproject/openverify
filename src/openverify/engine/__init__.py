@@ -1,4 +1,4 @@
-"""Small sequential local executor for the documented DAG subset."""
+"""Small sequential reference implementation of typed DAG execution."""
 
 from copy import deepcopy
 from datetime import UTC, datetime
@@ -6,12 +6,14 @@ from time import perf_counter
 from typing import cast
 from uuid import uuid4
 
-from jsonschema import Draft202012Validator
-from pydantic import JsonValue
-from referencing import Registry as SchemaRegistry
-from referencing.jsonschema import Schema
-
 from openverify.adapters import Registry
+from openverify.dataflow import (
+    accept_outputs,
+    error_result,
+    guards_enabled,
+    resolve_inputs,
+    validate_run_inputs,
+)
 from openverify.engine.admission import admit
 from openverify.engine.aggregation import aggregate
 from openverify.errors import ProtocolError
@@ -19,7 +21,7 @@ from openverify.fingerprint import fingerprint
 from openverify.model import (
     Context,
     Decision,
-    Edge,
+    ExecutionObservation,
     Measurement,
     NodeRecord,
     Result,
@@ -27,51 +29,22 @@ from openverify.model import (
     VerificationDefinition,
 )
 from openverify.serialization import decode, to_data
-from openverify.validation import (
-    ValidatorPort,
-    ordered_nodes,
-    parse_object,
-    parse_run_record,
-    validate_definition,
-    validate_result,
-)
+from openverify.validation import ordered_nodes, parse_object, parse_run_record, validate_definition
 
 
 def now() -> str:
     return datetime.now(UTC).isoformat().replace("+00:00", "Z")
 
 
-def _context(value: object) -> Context:
-    decode(cast(JsonValue, value))
-    if not isinstance(value, dict):
-        raise ProtocolError("EXECUTOR_ERROR", "Derive output must be a Context mapping")
-    return cast(Context, value)
-
-
-def error_result(exc: Exception) -> Result:
-    code = exc.code if isinstance(exc, ProtocolError) else "EXECUTOR_ERROR"
-    return Result(
-        disposition="EXECUTED",
-        execution_outcome="ERROR",
-        output={"code": code, "message": str(exc)},
-    )
-
-
-def _version(adapter: object) -> str | None:
-    version = getattr(adapter, "version", None)
-    return version if isinstance(version, str) and version else None
-
-
-def _guard(edge: Edge, results: dict[str, Result], decisions: dict[str, Decision]) -> bool:
-    guard = edge.guard
-    if guard is None:
-        return True
-    if guard.field in ("decision_kind", "decision_destination"):
-        decision = decisions.get(guard.node_id)
-        value = getattr(decision, "kind" if guard.field == "decision_kind" else "destination", None)
-    else:
-        value = getattr(results.get(guard.node_id), guard.field, None)
-    return value == guard.value
+def observation(value: ExecutionObservation | Context | Result | Decision) -> ExecutionObservation:
+    # SDK conveniences all normalize into the same portable observation channel.
+    if isinstance(value, Result):
+        return ExecutionObservation(outputs={"result": to_data(value)}, usage=deepcopy(value.usage))
+    if isinstance(value, Decision):
+        return ExecutionObservation(outputs={"decision": to_data(value)})
+    if isinstance(value, ExecutionObservation):
+        return deepcopy(value)
+    return ExecutionObservation(outputs=deepcopy(value))
 
 
 class Engine:
@@ -79,143 +52,154 @@ class Engine:
         self.registry = registry
 
     def run(
-        self, definition: VerificationDefinition, context: Context, *, opportunity_id: str
+        self,
+        definition: VerificationDefinition,
+        run_inputs: Context,
+        *,
+        opportunity_id: str,
+        context: Context | None = None,
     ) -> RunRecord:
-        # Frozen models are shallow: snapshot caller-owned nested containers before execution.
         definition = deepcopy(definition)
         validate_definition(definition)
-        decode(context)
+        decode(run_inputs)
+        supplied = deepcopy(run_inputs)
+        values = validate_run_inputs(definition, supplied)
+        ambient = deepcopy(context) if context is not None else {}
+        decode(ambient)
         for capability, supported in (
             (definition.execution_policy.activation, "MANUAL"),
             (definition.execution_policy.selection, "EXPLICIT"),
         ):
-            if capability.executor_ref != supported or capability.config:
+            if (
+                capability.executor_ref != supported
+                or capability.config
+                or capability.inputs
+                or capability.bindings
+            ):
                 raise ProtocolError(
-                    "POLICY_UNSUPPORTED", "Only MANUAL/EXPLICIT with empty config are implemented"
+                    "POLICY_UNSUPPORTED", "Only empty-input MANUAL/EXPLICIT are implemented"
                 )
+        if (
+            definition.execution_policy.admission.inputs
+            or definition.execution_policy.admission.bindings
+        ):
+            raise ProtocolError("POLICY_UNSUPPORTED", "Custom admission inputs are unsupported")
         admission = admit(definition, opportunity_id)
-        initial = deepcopy(context)
-        working = deepcopy(context)
         started = now()
         results: dict[str, Result] = {}
-        decisions: dict[str, Decision] = {}
-        records: list[NodeRecord] = []
-        inactive: set[str] = set()
+        records: dict[str, NodeRecord] = {}
         stopped = admission.outcome != "RUN"
         node_map = {n.id: n for n in definition.graph.nodes}
-        for id in ordered_nodes(definition.graph):
-            node = node_map[id]
-            edges = [e for e in definition.graph.edges if e.to_node == id]
-            upstream_ids = [e.from_node for e in edges]
-            prior = {id: results[id] for id in upstream_ids if id in results}
-            before = deepcopy(working)
+        for node_id in ordered_nodes(definition.graph):
+            node = node_map[node_id]
+            upstream_ids = [e.from_node for e in definition.graph.edges if e.to_node == node_id]
+            prior = {key: results[key] for key in upstream_ids if key in results}
+            inputs, resolutions, blocked = resolve_inputs(node, values, records, definition.graph)
             node_started = now()
             clock = perf_counter()
             result: Result | None = None
             decision: Decision | None = None
-            derived: Context | None = None
+            information: Context = {}
+            observed: ExecutionObservation | None = None
             executor_version: str | None = None
-            if stopped or any(
-                e.from_node in inactive or not _guard(e, results, decisions) for e in edges
-            ):
-                result = Result(
-                    disposition="SKIPPED",
-                    output={"reason": "admission/control/guard disabled invocation"},
-                )
-                inactive.add(id)
+            executor_ref: str | None = None
+            state = "SUCCESS"
+            reason: str | None = None
+            disabled = stopped or not guards_enabled(node_id, definition.graph, values, records)
+            if disabled or blocked:
+                reason = "DISABLED" if disabled else "INPUT_UNAVAILABLE"
+                state = "NONEXECUTED"
+                result = Result(disposition="SKIPPED", output={"reason": reason})
             else:
                 try:
-                    adapter: object | None = None
-                    if node.kind == "DERIVE":
-                        adapter = self.registry.derivers.get(node.executor_ref)
-                        if adapter is None:
-                            raise ProtocolError(
-                                "EXECUTOR_UNSUPPORTED", "Unregistered Derive adapter"
-                            )
-                        executor_version = _version(adapter)
-                        update = _context(
-                            self.registry.derivers[node.executor_ref].execute(
-                                deepcopy(working), deepcopy(node.config)
-                            )
-                        )
-                        derived = deepcopy(update)
-                        working.update(deepcopy(update))
-                    elif node.kind == "CONTROL":
-                        adapter = self.registry.controllers.get(node.executor_ref)
-                        if adapter is None:
-                            raise ProtocolError(
-                                "EXECUTOR_UNSUPPORTED", "Unregistered Control adapter"
-                            )
-                        executor_version = _version(adapter)
-                        candidate = self.registry.controllers[node.executor_ref].execute(
-                            deepcopy(working), deepcopy(prior), deepcopy(node.config)
-                        )
-                        validated = cast(Decision, parse_object("decision", to_data(candidate)))
-                        if validated.kind == "ROUTE" and validated.destination not in node_map:
-                            raise ProtocolError(
-                                "GRAPH_REFERENCE", "ROUTE destination is absent from graph"
-                            )
-                        decision = validated
-                        decisions[id] = decision
-                        if decision.kind in ("STOP_SUCCESS", "STOP_FAILURE", "RETRY", "DEFER"):
-                            stopped = True
+                    if (
+                        node.kind == "AGGREGATE"
+                        and node.operation.capability_id == "openverify.aggregate"
+                    ):
+                        executor_ref, executor_version = "openverify.reference.aggregate", "1"
+                        members = [
+                            cast(Result, parse_object("result", inputs[name]))
+                            for name in node.aggregate_inputs
+                        ]
+                        config = deepcopy(node.config)
+                        if config["reducer"] == "WEIGHTED_AVERAGE":
+                            weights = cast(Context, config["weights"])
+                            config["weights"] = [weights[name] for name in node.aggregate_inputs]
+                        observed = observation(aggregate(members, config))
                     else:
-                        if node.kind == "AGGREGATE" and node.executor_ref == "standard.aggregate":
-                            executor_version = "0.1.0"
-                            candidate_result = aggregate(list(prior.values()), node.config)
-                        else:
-                            adapter = self.registry.evaluators.get(node.executor_ref)
-                            if adapter is None:
-                                raise ProtocolError(
-                                    "EXECUTOR_UNSUPPORTED", "Unregistered Evaluate adapter"
-                                )
-                            executor_version = _version(adapter)
-                            candidate_result = self.registry.evaluators[node.executor_ref].execute(
-                                deepcopy(working), deepcopy(prior), deepcopy(node.config)
+                        requirement = node.operation
+                        adapter = self.registry.operations.get(
+                            (requirement.capability_id, requirement.capability_version)
+                        )
+                        if adapter is None:
+                            raise ProtocolError(
+                                "EXECUTOR_UNSUPPORTED", "Unregistered exact operation requirement"
                             )
-                        validate_result(candidate_result)
-                        if candidate_result.judgment is not None:
-                            cast(
-                                ValidatorPort,
-                                Draft202012Validator(
-                                    definition.judgment_schema, registry=SchemaRegistry[Schema]()
-                                ),
-                            ).validate(candidate_result.judgment)
-                        result = deepcopy(candidate_result)
+                        executor_ref = f"{type(adapter).__module__}.{type(adapter).__qualname__}"
+                        version = getattr(adapter, "version", None)
+                        executor_version = version if isinstance(version, str) and version else None
+                        observed = observation(
+                            adapter.execute(deepcopy(inputs), deepcopy(node.config))
+                        )
+                    # Validate observation envelope independently of semantic output acceptance.
+                    observed = cast(
+                        ExecutionObservation,
+                        parse_object("execution-observation", to_data(observed)),
+                    )
+                    information, result, decision = accept_outputs(node, observed, definition)
+                    if result is not None and result.execution_outcome == "ERROR":
+                        state = "ERROR"
+                    if decision is not None and decision.kind in (
+                        "STOP_SUCCESS",
+                        "STOP_FAILURE",
+                        "RETRY",
+                        "DEFER",
+                    ):
+                        stopped = True
                 except Exception as exc:
                     result = error_result(exc)
-                    decision = None
-                    derived = None
+                    state = "ERROR"
+                    reason = exc.code if isinstance(exc, ProtocolError) else "EXECUTOR_ERROR"
+                    information, decision = {}, None
             if result is not None:
-                results[id] = result
+                results[node_id] = result
             duration = max(0.0, perf_counter() - clock)
-            records.append(
-                NodeRecord(
-                    node_id=id,
-                    executor_ref=node.executor_ref,
-                    executor_version=executor_version,
-                    upstream_node_ids=upstream_ids,
-                    upstream_results=deepcopy(prior),
-                    input_context=before,
-                    started_at=node_started,
-                    finished_at=now(),
-                    usage={"wall_time": Measurement(unit="s", kind="EXACT", value=duration)},
-                    result=result,
-                    decision=decision,
-                    derived=derived,
-                )
+            records[node_id] = NodeRecord.model_validate(
+                {
+                    "node_id": node_id,
+                    "kind": node.kind,
+                    "operation": to_data(node.operation),
+                    "executor_ref": executor_ref,
+                    "executor_version": executor_version,
+                    "upstream_node_ids": upstream_ids,
+                    "upstream_results": {k: to_data(v) for k, v in prior.items()},
+                    "input_values": inputs,
+                    "input_resolutions": {k: to_data(v) for k, v in resolutions.items()},
+                    "started_at": node_started,
+                    "finished_at": now(),
+                    "usage": {
+                        "wall_time": to_data(Measurement(unit="s", kind="EXACT", value=duration))
+                    },
+                    "state": state,
+                    "reason": reason,
+                    "observation": to_data(observed) if observed is not None else None,
+                    "information": information,
+                    "result": to_data(result) if result is not None else None,
+                    "decision": to_data(decision) if decision is not None else None,
+                }
             )
         record = RunRecord(
             run_id=str(uuid4()),
             definition=definition,
             definition_fingerprint=fingerprint(definition),
             subject=definition.subject,
-            initial_context=initial,
+            initial_context=ambient,
+            run_inputs=supplied,
             opportunity_id=opportunity_id,
             admission=admission,
             started_at=started,
             finished_at=now(),
-            nodes=records,
+            nodes=list(records.values()),
             final_results=results,
         )
         return parse_run_record(to_data(record))

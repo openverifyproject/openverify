@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:verification:draft:operation-requirement",
+  "description": "Typed explicit executable dataflow; see spec/draft/dataflow.md.",
+  "type": "object",
+  "properties": {
+    "capability_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*){2,})$"
+    },
+    "capability_version": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "capability_id",
+    "capability_version"
+  ],
+  "additionalProperties": false
+}

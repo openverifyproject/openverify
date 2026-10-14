@@ -61,6 +61,12 @@ runner matches the pair to a manifest and validates assembled input/config/outpu
 against capability schemas. No discovery, selection policy, or Relay is introduced.
 The local registry binds that exact pair to trusted host code. The standard reducer
 capability is `openverify.aggregate`, version `1`.
+For direct Provider Contract binding, capability input is the exact port-name
+object, config is the exact declared node config, and COMPLETED output is the
+output-port-name object. A capability specification MUST declare these shapes and
+VCP interchange when applicable. Contract usage/evidence observations populate the
+separate VCP execution observation channel; COMPLETED alone does not imply a valid
+VCP output or a verification PASS. No implicit primitive-to-port mapping exists.
 
 DERIVE outputs have INFORMATION role. EVALUATE/AGGREGATE MUST declare exactly one
 RESULT output named `result`; CONTROL exactly one DECISION output named `decision`.
@@ -68,6 +74,9 @@ These kinds MAY additionally declare INFORMATION outputs. Result and Decision
 values MUST satisfy VCP semantics as well as the port schema. Bookkeeping Results
 for failed/nonexecuted Derive/Control are not declared outputs. Evaluate/Aggregate
 result ports expose recorded ERROR/nonexecuted Results too, for explicit inspection.
+If a node refines its Result-port schema to exclude one of those states, the
+bookkeeping Result remains recorded but that port is INVALID for downstream use.
+Error bookkeeping MUST NOT bypass the producer's declared port schema.
 Information outputs publish atomically only on semantic success. Missing declared
 outputs or extra outputs invalidate the attempt; no partial information leaks.
 Produced information is not forced into Result.output.
@@ -122,6 +131,10 @@ Weights in graph WEIGHTED_AVERAGE are an exact name-to-nonnegative-number mappin
 over aggregate_inputs, with positive total. Filtering preserves identities. The
 direct reducer SDK's ordered sequence API retains aligned positional weights.
 Evidence concatenation follows aggregate_inputs order for all standard reducers.
+Every Aggregate also MUST declare required `members` input bound to a CONSTANT
+equal to aggregate_inputs. This supplies the authored ordering in the exact input
+object received by custom implementations; JSON object member order is irrelevant.
+The reserved semantic names subject, criterion and members cannot be member names.
 
 Execution policies that consume information MUST use the same typed declarations
 and ValueSource bindings (run/constants/external only, before graph execution).
@@ -143,6 +156,10 @@ acceptance, including invalid judgment/output and explicit execution errors.
 Engine timing remains separate from executor usage; units are never merged.
 An implementation that raises without reporting usage cannot have that unknown
 usage reconstructed. It can report an error observation with incurred usage.
+ExecutionObservation.usage is authoritative for the attempt. Result.usage, when
+present, MUST agree on its dimensions with that observation and is a repeated
+snapshot, never an additive charge. A mismatch invalidates semantic output without
+erasing the valid execution observation.
 
 RunRecord stores immutable occurrence run_inputs and ambient initial_context.
 Each NodeRecord stores operation requirement, executor identity/version when known,
