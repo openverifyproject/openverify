@@ -2,11 +2,13 @@
 
 ## NORMATIVE SEMANTICS
 
-Activation(Event, State) -> boolean asks whether an event makes verification
-eligible. Selection(Universe, Context) -> SubjectSet asks which subjects are
-included. Admission(Context, History, Resources, State) -> RUN | SKIP | DEFER
+Activation(explicit inputs) -> boolean asks whether an event makes verification
+eligible. Selection(explicit inputs) -> SubjectSet asks which subjects are
+included. Admission(explicit inputs) -> RUN | SKIP | DEFER
 asks whether resources should be spent on an eligible selected subject.
 These MUST remain distinct. Percentage sampling belongs to Admission.
+
+Any policy consuming event, history, budget, risk, staleness or opportunity facts MUST declare typed inputs and explicit bindings (run/constant/external only) as in [dataflow](dataflow.md). Upstream graph outputs cannot feed pre-execution policy. The reference engine rejects custom policy inputs before invoking nodes. The simple built-ins consume their explicit definition configuration and host opportunity identity only.
 
 execution_policy contains activation and selection capability references with
 configuration, and admission. The standard implemented activation MANUAL means

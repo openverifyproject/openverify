@@ -12,7 +12,7 @@ Units are explicit; incompatible units MUST NOT be summed implicitly.
 Custom identifiers and units are permitted; the core does not prescribe conversion.
 
 ResourceEstimate precedes execution; ResourceUsage records actual consumption.
-Node resource_estimate and Result/RunRecord usage distinguish them.
+Node resource_estimate and Result/RunRecord usage distinguish them. Every node kind reports incurred usage through ExecutionObservation, retained even when output or judgment validation fails; see [dataflow](dataflow.md).
 A reference engine MUST retain adapter usage and record its own duration
 separately in node usage. The reference wall_time measurement is EXACT seconds
 measured by a monotonic clock; it does not claim physical clock precision.
