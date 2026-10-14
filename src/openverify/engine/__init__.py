@@ -14,6 +14,7 @@ from openverify.dataflow import (
     validate_run_inputs,
 )
 from openverify.engine.aggregation import aggregate
+from openverify.engine.binding import BoundProvider, check_payload
 from openverify.engine.policy import evaluate
 from openverify.errors import ProtocolError
 from openverify.fingerprint import fingerprint
@@ -24,10 +25,12 @@ from openverify.model import (
     CancellationEvent,
     Context,
     Decision,
+    ExecutionError,
     ExecutionObservation,
     Measurement,
     NodeRecord,
     PolicyEvaluation,
+    ProviderBinding,
     Result,
     RunRecord,
     Selection,
@@ -54,8 +57,11 @@ def observation(value: ExecutionObservation | Context | Result | Decision) -> Ex
 
 
 class Engine:
-    def __init__(self, registry: Registry):
+    def __init__(
+        self, registry: Registry, *, provider_bindings: dict[str, BoundProvider] | None = None
+    ):
         self.registry = registry
+        self.provider_bindings = provider_bindings
 
     def run(
         self,
@@ -87,7 +93,14 @@ class Engine:
         cancellation: Cancellation | None = None,
     ) -> RunRecord | None:
         definition = deepcopy(definition)
+        bindings = (
+            {key: value.snapshot() for key, value in self.provider_bindings.items()}
+            if self.provider_bindings is not None
+            else None
+        )
         validate_definition(definition)
+        if bindings is not None and bindings.keys() - {n.id for n in definition.graph.nodes}:
+            raise ProtocolError("PROVIDER_BINDING_MISMATCH", "Binding names an unknown node")
         decode(run_inputs)
         supplied = deepcopy(run_inputs)
         values = validate_run_inputs(definition, supplied)
@@ -109,6 +122,7 @@ class Engine:
         started = now()
         results: dict[str, Result] = {}
         records: dict[str, NodeRecord] = {}
+        invoked_bindings: dict[str, ProviderBinding] = {}
         lifecycle = Lifecycle(admission)
         cancellation_event: CancellationEvent | None = None
         node_map = {n.id: n for n in definition.graph.nodes}
@@ -125,6 +139,9 @@ class Engine:
             observed: ExecutionObservation | None = None
             executor_version: str | None = None
             executor_ref: str | None = None
+            provider_binding: ProviderBinding | None = None
+            provider_output_error: ExecutionError | None = None
+            capability = None
             state = "SUCCESS"
             reason: str | None = None
             if (
@@ -144,7 +161,21 @@ class Engine:
                 result = nonexecution(cause)
             else:
                 try:
-                    if (
+                    if bindings is not None:
+                        bound = bindings.get(node_id)
+                        if bound is None:
+                            raise ProtocolError(
+                                "PROVIDER_BINDING_REQUIRED", "Host must explicitly bind this node"
+                            )
+                        capability = bound.prepare(node, inputs)
+                        provider_binding = deepcopy(bound.binding)
+                        invoked_bindings[node_id] = deepcopy(provider_binding)
+                        executor_ref = provider_binding.provider_id
+                        executor_version = provider_binding.provider_version
+                        observed = observation(
+                            bound.adapter.execute(deepcopy(inputs), deepcopy(node.config))
+                        )
+                    elif (
                         node.kind == "AGGREGATE"
                         and node.operation.capability_id == "openverify.aggregate"
                     ):
@@ -178,6 +209,18 @@ class Engine:
                         ExecutionObservation,
                         parse_object("execution-observation", to_data(observed)),
                     )
+                    if capability is not None and observed.error is None:
+                        try:
+                            check_payload(
+                                capability.output_schema,
+                                observed.outputs,
+                                "INVALID_PROVIDER_OUTPUT",
+                            )
+                        except ProtocolError as exc:
+                            provider_output_error = ExecutionError(
+                                code=exc.code, message=exc.message
+                            )
+                            raise
                     if cancellation is None or cancellation.reason is None:
                         information, result, decision = accept_outputs(node, observed, definition)
                         if result is not None and result.execution_outcome == "ERROR":
@@ -207,6 +250,14 @@ class Engine:
                     "operation": to_data(node.operation),
                     "executor_ref": executor_ref,
                     "executor_version": executor_version,
+                    "provider_binding": (
+                        to_data(provider_binding) if provider_binding is not None else None
+                    ),
+                    "provider_output_error": (
+                        to_data(provider_output_error)
+                        if provider_output_error is not None
+                        else None
+                    ),
                     "upstream_node_ids": upstream_ids,
                     "upstream_results": {k: to_data(v) for k, v in prior.items()},
                     "input_values": inputs,
@@ -238,6 +289,7 @@ class Engine:
             started_at=started,
             finished_at=now(),
             nodes=list(records.values()),
+            provider_bindings=invoked_bindings,
             final_results=results,
         )
         return parse_run_record(to_data(record))

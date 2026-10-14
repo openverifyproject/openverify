@@ -61,6 +61,9 @@ runner matches the pair to a manifest and validates assembled input/config/outpu
 against capability schemas. No discovery, selection policy, or Relay is introduced.
 The local registry binds that exact pair to trusted host code. The standard reducer
 capability is `openverify.aggregate`, version `1`.
+An explicit concrete provider binding supplied by the host is occurrence information;
+see [provider binding](provider-binding.md). The reference engine enforces that
+binding and its Provider Contract schemas when the host supplies provider bindings.
 For direct Provider Contract binding, capability input is the exact port-name
 object, config is the exact declared node config, and COMPLETED output is the
 output-port-name object. A capability specification MUST declare these shapes and

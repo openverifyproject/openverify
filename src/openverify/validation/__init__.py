@@ -38,6 +38,7 @@ from openverify.model import (
     PolicyEvaluation,
     PolicyOperation,
     Profile,
+    ProviderBinding,
     ResourceDimension,
     Result,
     RunInput,
@@ -59,6 +60,7 @@ TYPES: dict[str, type[Value]] = {
     "input-port": InputPort,
     "output-port": OutputPort,
     "operation-requirement": OperationRequirement,
+    "provider-binding": ProviderBinding,
     "execution-observation": ExecutionObservation,
     "input-resolution": InputResolution,
     "verification-definition": VerificationDefinition,
@@ -461,6 +463,8 @@ def _lineage(run: RunRecord) -> None:
 
     graph = run.definition.graph
     nodes = {n.id: n for n in graph.nodes}
+    if run.provider_bindings.keys() - nodes.keys():
+        fail("PROVENANCE_LINEAGE", "Provider invocation names an unknown node")
     records: dict[str, NodeRecord] = {}
     seen: dict[str, Result] = {}
     if not json_equal(to_data(run.subject), to_data(run.definition.subject)) or _timestamp(
@@ -493,6 +497,27 @@ def _lineage(run: RunRecord) -> None:
         ):
             fail("PROVENANCE_LINEAGE", "Node dependency lineage mismatch")
         assert node is not None
+        binding = record.provider_binding
+        if binding != run.provider_bindings.get(node.id):
+            fail("PROVENANCE_LINEAGE", "Node provider differs from occurrence invocation binding")
+        if binding is not None and (
+            binding.capability_id != node.operation.capability_id
+            or binding.capability_version != node.operation.capability_version
+            or record.executor_ref != binding.provider_id
+            or record.executor_version != binding.provider_version
+            or record.state == "NONEXECUTED"
+        ):
+            fail(
+                "PROVENANCE_LINEAGE",
+                "Provider binding contradicts requirement or executor identity",
+            )
+        if record.provider_output_error is not None and (
+            binding is None
+            or record.observation is None
+            or record.observation.error is not None
+            or record.provider_output_error.code != "INVALID_PROVIDER_OUTPUT"
+        ):
+            fail("PROVENANCE_LINEAGE", "Invalid host provider-output rejection")
         if (
             record.kind != node.kind
             or record.operation != node.operation
@@ -573,6 +598,10 @@ def _lineage(run: RunRecord) -> None:
                     fail("PROVENANCE_LINEAGE", "Invalid executor failure record")
             else:
                 try:
+                    if record.provider_output_error is not None:
+                        raise ProtocolError(
+                            record.provider_output_error.code, record.provider_output_error.message
+                        )
                     information, result, decision = accept_outputs(
                         node, record.observation, run.definition
                     )

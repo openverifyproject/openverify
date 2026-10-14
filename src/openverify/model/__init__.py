@@ -277,12 +277,23 @@ class CancellationEvent(Value):
     reason: str
 
 
+class ProviderBinding(Value):
+    """Concrete occurrence identity; never a definition-time selection policy."""
+
+    provider_id: str
+    provider_version: str
+    capability_id: str
+    capability_version: str
+
+
 class NodeRecord(Value):
     node_id: str
     kind: Literal["DERIVE", "EVALUATE", "CONTROL", "AGGREGATE"]
     operation: OperationRequirement
     executor_ref: str | None = None
     executor_version: str | None = None
+    provider_binding: ProviderBinding | None = None
+    provider_output_error: ExecutionError | None = None
     upstream_node_ids: list[str]
     input_values: Context
     input_resolutions: dict[str, InputResolution]
@@ -313,6 +324,7 @@ class RunRecord(AnnotatedValue):
     started_at: str
     finished_at: str
     nodes: list[NodeRecord]
+    provider_bindings: dict[str, ProviderBinding] = Field(default_factory=dict)
     final_results: dict[str, Result]
 
 

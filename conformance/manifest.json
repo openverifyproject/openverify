@@ -1713,6 +1713,157 @@
       "spec": "spec/draft/lifecycle.md",
       "valid": false,
       "error_code": "PROVENANCE_LINEAGE"
+    },
+    {
+      "id": "binding-identity",
+      "description": "binding identity",
+      "object_type": "provider-binding",
+      "input": "valid/binding-identity.json",
+      "expected": "expected/binding-identity.json",
+      "stage": "both",
+      "spec": "spec/draft/provider-binding.md",
+      "valid": true
+    },
+    {
+      "id": "binding-malformed-identity",
+      "description": "binding malformed identity",
+      "object_type": "provider-binding",
+      "input": "invalid/binding-malformed-identity.json",
+      "expected": "expected/binding-malformed-identity.json",
+      "stage": "schema",
+      "spec": "spec/draft/provider-binding.md",
+      "valid": false,
+      "error_code": "PROTOCOL_STRUCTURE"
+    },
+    {
+      "id": "binding-missing-version",
+      "description": "binding missing version",
+      "object_type": "provider-binding",
+      "input": "invalid/binding-missing-version.json",
+      "expected": "expected/binding-missing-version.json",
+      "stage": "schema",
+      "spec": "spec/draft/provider-binding.md",
+      "valid": false,
+      "error_code": "PROTOCOL_STRUCTURE"
+    },
+    {
+      "id": "binding-occurrence",
+      "description": "binding occurrence",
+      "object_type": "run-record",
+      "input": "valid/binding-occurrence.json",
+      "expected": "expected/binding-occurrence.json",
+      "stage": "both",
+      "spec": "spec/draft/provider-binding.md",
+      "valid": true
+    },
+    {
+      "id": "binding-changed-provider-id",
+      "description": "binding changed provider id",
+      "object_type": "run-record",
+      "input": "invalid/binding-changed-provider-id.json",
+      "expected": "expected/binding-changed-provider-id.json",
+      "stage": "semantic",
+      "spec": "spec/draft/provider-binding.md",
+      "valid": false,
+      "error_code": "PROVENANCE_LINEAGE"
+    },
+    {
+      "id": "binding-changed-provider-version",
+      "description": "binding changed provider version",
+      "object_type": "run-record",
+      "input": "invalid/binding-changed-provider-version.json",
+      "expected": "expected/binding-changed-provider-version.json",
+      "stage": "semantic",
+      "spec": "spec/draft/provider-binding.md",
+      "valid": false,
+      "error_code": "PROVENANCE_LINEAGE"
+    },
+    {
+      "id": "binding-changed-capability-id",
+      "description": "binding changed capability id",
+      "object_type": "run-record",
+      "input": "invalid/binding-changed-capability-id.json",
+      "expected": "expected/binding-changed-capability-id.json",
+      "stage": "semantic",
+      "spec": "spec/draft/provider-binding.md",
+      "valid": false,
+      "error_code": "PROVENANCE_LINEAGE"
+    },
+    {
+      "id": "binding-changed-capability-version",
+      "description": "binding changed capability version",
+      "object_type": "run-record",
+      "input": "invalid/binding-changed-capability-version.json",
+      "expected": "expected/binding-changed-capability-version.json",
+      "stage": "semantic",
+      "spec": "spec/draft/provider-binding.md",
+      "valid": false,
+      "error_code": "PROVENANCE_LINEAGE"
+    },
+    {
+      "id": "binding-changed-executor-ref",
+      "description": "binding changed executor ref",
+      "object_type": "run-record",
+      "input": "invalid/binding-changed-executor-ref.json",
+      "expected": "expected/binding-changed-executor-ref.json",
+      "stage": "semantic",
+      "spec": "spec/draft/provider-binding.md",
+      "valid": false,
+      "error_code": "PROVENANCE_LINEAGE"
+    },
+    {
+      "id": "binding-changed-executor-version",
+      "description": "binding changed executor version",
+      "object_type": "run-record",
+      "input": "invalid/binding-changed-executor-version.json",
+      "expected": "expected/binding-changed-executor-version.json",
+      "stage": "semantic",
+      "spec": "spec/draft/provider-binding.md",
+      "valid": false,
+      "error_code": "PROVENANCE_LINEAGE"
+    },
+    {
+      "id": "binding-missing-invocation",
+      "description": "binding missing invocation",
+      "object_type": "run-record",
+      "input": "invalid/binding-missing-invocation.json",
+      "expected": "expected/binding-missing-invocation.json",
+      "stage": "semantic",
+      "spec": "spec/draft/provider-binding.md",
+      "valid": false,
+      "error_code": "PROVENANCE_LINEAGE"
+    },
+    {
+      "id": "binding-wrong-required-capability",
+      "description": "binding wrong required capability",
+      "object_type": "run-record",
+      "input": "invalid/binding-wrong-required-capability.json",
+      "expected": "expected/binding-wrong-required-capability.json",
+      "stage": "semantic",
+      "spec": "spec/draft/provider-binding.md",
+      "valid": false,
+      "error_code": "PROVENANCE_LINEAGE"
+    },
+    {
+      "id": "binding-rejected-output-retains-usage",
+      "description": "binding rejected output retains usage",
+      "object_type": "run-record",
+      "input": "valid/binding-rejected-output-retains-usage.json",
+      "expected": "expected/binding-rejected-output-retains-usage.json",
+      "stage": "both",
+      "spec": "spec/draft/provider-binding.md",
+      "valid": true
+    },
+    {
+      "id": "binding-rejected-output-accepted",
+      "description": "binding rejected output accepted",
+      "object_type": "run-record",
+      "input": "invalid/binding-rejected-output-accepted.json",
+      "expected": "expected/binding-rejected-output-accepted.json",
+      "stage": "semantic",
+      "spec": "spec/draft/provider-binding.md",
+      "valid": false,
+      "error_code": "PROVENANCE_LINEAGE"
     }
   ]
 }

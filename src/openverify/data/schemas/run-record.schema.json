@@ -44,6 +44,16 @@
     "cancellation": {
       "$ref": "urn:verification:draft:cancellation-event"
     },
+    "provider_bindings": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "minLength": 1
+      },
+      "additionalProperties": {
+        "$ref": "urn:verification:draft:provider-binding"
+      }
+    },
     "started_at": {
       "type": "string",
       "format": "date-time",
@@ -96,6 +106,26 @@
                 "type": "null"
               }
             ]
+          },
+          "provider_binding": {
+            "$ref": "urn:verification:draft:provider-binding"
+          },
+          "provider_output_error": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "const": "INVALID_PROVIDER_OUTPUT"
+              },
+              "message": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "code",
+              "message"
+            ],
+            "additionalProperties": false
           },
           "upstream_node_ids": {
             "type": "array",

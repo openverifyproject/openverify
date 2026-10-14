@@ -21,7 +21,7 @@ Read in order: [boundary](boundary.md), [meaning](meaning.md),
 [knowledge](knowledge.md), [typed executable dataflow](dataflow.md), [computation](computation.md), [result](result.md),
 [aggregation](aggregation.md), [composition](composition.md),
 [execution policy](execution-policy.md), [lifecycle](lifecycle.md), [resources](resources.md),
-[provenance](provenance.md), [extensions](extensions.md),
+[provenance](provenance.md), [provider binding](provider-binding.md), [extensions](extensions.md),
 [wire format](wire-format.md), [conformance](conformance.md).
 The engine subset is deliberately narrower than the conceptual model.
 
