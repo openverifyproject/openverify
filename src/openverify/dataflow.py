@@ -437,6 +437,8 @@ def accept_outputs(
 
     if observation.error is not None:
         raise ProtocolError(observation.error.code, observation.error.message)
+    for evidence in observation.evidence:
+        parse_object("evidence", to_data(evidence))
     if set(observation.outputs) != {p.name for p in node.outputs}:
         fail("Produced outputs must exactly match declarations", "OUTPUT_MISSING")
     information: Context = {}
