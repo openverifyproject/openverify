@@ -207,6 +207,19 @@ technologies or reducers would not establish exhaustiveness.
 ## Protocol, SDK, and reference engine
 
 ```text
+OpenVerify
+  +-- VCP                 verification semantics
+  +-- Provider Contract   runner/provider interoperability (DRAFT "0.1")
+  +-- Python SDK          types + parsing + validation
+  +-- Reference Engine    current small reference VCP executor
+```
+
+The [Provider Contract](provider-contract/README.md) sits below VCP and lets any
+compatible runner invoke independently implemented capabilities. OpenVerify Relay
+is the planned minimal provider-driven harness/runtime built on that contract;
+Relay does not exist yet. The current Engine retains its existing adapter API.
+
+```text
 PROTOCOL: prose semantics + normative JSON schemas + conformance fixtures
     |
     v
