@@ -1,0 +1,18 @@
+{
+  "integration.python.json": {
+    "contract_reference": "docs/relay/integration.md",
+    "same_vcp_semantics": true
+  },
+  "integration.python.model": {
+    "contract_reference": "docs/relay/integration.md",
+    "same_vcp_semantics": true
+  },
+  "integration.python.sync": {
+    "contract_reference": "docs/relay/integration.md",
+    "same_vcp_semantics": true
+  },
+  "integration.python.builder": {
+    "contract_reference": "docs/relay/integration.md",
+    "same_vcp_semantics": true
+  }
+}

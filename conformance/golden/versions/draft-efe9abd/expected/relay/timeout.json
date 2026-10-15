@@ -1,0 +1,8 @@
+{
+  "runtime.timeout.delayed_provider": {
+    "invariant": "ERROR, never FAIL"
+  },
+  "runtime.timeout.ignores_cancel_stdio": {
+    "invariant": "process terminated, no successful accepted output"
+  }
+}

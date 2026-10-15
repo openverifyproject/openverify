@@ -1,0 +1,270 @@
+{
+  "resource.EXACT.0": {
+    "object_type": "resource",
+    "value": {
+      "unit": "custom",
+      "kind": "EXACT"
+    }
+  },
+  "resource.EXACT.1": {
+    "object_type": "resource",
+    "value": {
+      "unit": "custom",
+      "kind": "EXACT",
+      "value": 0
+    }
+  },
+  "resource.EXACT.2": {
+    "object_type": "resource",
+    "value": {
+      "unit": "custom",
+      "kind": "EXACT",
+      "value": 2
+    }
+  },
+  "resource.EXACT.3": {
+    "object_type": "resource",
+    "value": {
+      "unit": "custom",
+      "kind": "EXACT",
+      "value": true
+    }
+  },
+  "resource.EXACT.4": {
+    "object_type": "resource",
+    "value": {
+      "unit": "custom",
+      "kind": "EXACT",
+      "value": -1
+    }
+  },
+  "resource.EXACT.5": {
+    "object_type": "resource",
+    "value": {
+      "unit": "custom",
+      "kind": "EXACT",
+      "minimum": 0,
+      "maximum": 2
+    }
+  },
+  "resource.EXACT.6": {
+    "object_type": "resource",
+    "value": {
+      "unit": "custom",
+      "kind": "EXACT",
+      "minimum": 2,
+      "maximum": 1
+    }
+  },
+  "resource.EXACT.7": {
+    "object_type": "resource",
+    "value": {
+      "unit": "custom",
+      "kind": "EXACT",
+      "value": 1,
+      "minimum": 0,
+      "maximum": 2
+    }
+  },
+  "resource.ESTIMATED.8": {
+    "object_type": "resource",
+    "value": {
+      "unit": "custom",
+      "kind": "ESTIMATED"
+    }
+  },
+  "resource.ESTIMATED.9": {
+    "object_type": "resource",
+    "value": {
+      "unit": "custom",
+      "kind": "ESTIMATED",
+      "value": 0
+    }
+  },
+  "resource.ESTIMATED.10": {
+    "object_type": "resource",
+    "value": {
+      "unit": "custom",
+      "kind": "ESTIMATED",
+      "value": 2
+    }
+  },
+  "resource.ESTIMATED.11": {
+    "object_type": "resource",
+    "value": {
+      "unit": "custom",
+      "kind": "ESTIMATED",
+      "value": true
+    }
+  },
+  "resource.ESTIMATED.12": {
+    "object_type": "resource",
+    "value": {
+      "unit": "custom",
+      "kind": "ESTIMATED",
+      "value": -1
+    }
+  },
+  "resource.ESTIMATED.13": {
+    "object_type": "resource",
+    "value": {
+      "unit": "custom",
+      "kind": "ESTIMATED",
+      "minimum": 0,
+      "maximum": 2
+    }
+  },
+  "resource.ESTIMATED.14": {
+    "object_type": "resource",
+    "value": {
+      "unit": "custom",
+      "kind": "ESTIMATED",
+      "minimum": 2,
+      "maximum": 1
+    }
+  },
+  "resource.ESTIMATED.15": {
+    "object_type": "resource",
+    "value": {
+      "unit": "custom",
+      "kind": "ESTIMATED",
+      "value": 1,
+      "minimum": 0,
+      "maximum": 2
+    }
+  },
+  "resource.RANGE.16": {
+    "object_type": "resource",
+    "value": {
+      "unit": "custom",
+      "kind": "RANGE"
+    }
+  },
+  "resource.RANGE.17": {
+    "object_type": "resource",
+    "value": {
+      "unit": "custom",
+      "kind": "RANGE",
+      "value": 0
+    }
+  },
+  "resource.RANGE.18": {
+    "object_type": "resource",
+    "value": {
+      "unit": "custom",
+      "kind": "RANGE",
+      "value": 2
+    }
+  },
+  "resource.RANGE.19": {
+    "object_type": "resource",
+    "value": {
+      "unit": "custom",
+      "kind": "RANGE",
+      "value": true
+    }
+  },
+  "resource.RANGE.20": {
+    "object_type": "resource",
+    "value": {
+      "unit": "custom",
+      "kind": "RANGE",
+      "value": -1
+    }
+  },
+  "resource.RANGE.21": {
+    "object_type": "resource",
+    "value": {
+      "unit": "custom",
+      "kind": "RANGE",
+      "minimum": 0,
+      "maximum": 2
+    }
+  },
+  "resource.RANGE.22": {
+    "object_type": "resource",
+    "value": {
+      "unit": "custom",
+      "kind": "RANGE",
+      "minimum": 2,
+      "maximum": 1
+    }
+  },
+  "resource.RANGE.23": {
+    "object_type": "resource",
+    "value": {
+      "unit": "custom",
+      "kind": "RANGE",
+      "value": 1,
+      "minimum": 0,
+      "maximum": 2
+    }
+  },
+  "resource.UNKNOWN.24": {
+    "object_type": "resource",
+    "value": {
+      "unit": "custom",
+      "kind": "UNKNOWN"
+    }
+  },
+  "resource.UNKNOWN.25": {
+    "object_type": "resource",
+    "value": {
+      "unit": "custom",
+      "kind": "UNKNOWN",
+      "value": 0
+    }
+  },
+  "resource.UNKNOWN.26": {
+    "object_type": "resource",
+    "value": {
+      "unit": "custom",
+      "kind": "UNKNOWN",
+      "value": 2
+    }
+  },
+  "resource.UNKNOWN.27": {
+    "object_type": "resource",
+    "value": {
+      "unit": "custom",
+      "kind": "UNKNOWN",
+      "value": true
+    }
+  },
+  "resource.UNKNOWN.28": {
+    "object_type": "resource",
+    "value": {
+      "unit": "custom",
+      "kind": "UNKNOWN",
+      "value": -1
+    }
+  },
+  "resource.UNKNOWN.29": {
+    "object_type": "resource",
+    "value": {
+      "unit": "custom",
+      "kind": "UNKNOWN",
+      "minimum": 0,
+      "maximum": 2
+    }
+  },
+  "resource.UNKNOWN.30": {
+    "object_type": "resource",
+    "value": {
+      "unit": "custom",
+      "kind": "UNKNOWN",
+      "minimum": 2,
+      "maximum": 1
+    }
+  },
+  "resource.UNKNOWN.31": {
+    "object_type": "resource",
+    "value": {
+      "unit": "custom",
+      "kind": "UNKNOWN",
+      "value": 1,
+      "minimum": 0,
+      "maximum": 2
+    }
+  }
+}

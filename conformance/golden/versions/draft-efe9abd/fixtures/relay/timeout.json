@@ -1,0 +1,10 @@
+{
+  "runtime.timeout.delayed_provider": {
+    "experiment": "timeout",
+    "variant": "delayed_provider"
+  },
+  "runtime.timeout.ignores_cancel_stdio": {
+    "experiment": "timeout",
+    "variant": "ignores_cancel_stdio"
+  }
+}

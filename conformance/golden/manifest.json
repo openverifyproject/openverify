@@ -1,0 +1,8 @@
+{
+  "suite_id": "openverify-golden-current",
+  "current": "versions/draft-efe9abd",
+  "suite_version": "0.1.0",
+  "releases": [
+    "versions/draft-efe9abd"
+  ]
+}

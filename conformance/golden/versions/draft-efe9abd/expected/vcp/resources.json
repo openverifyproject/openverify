@@ -1,0 +1,98 @@
+{
+  "resource.EXACT.0": {
+    "error_code": "RESOURCE_MEASUREMENT"
+  },
+  "resource.EXACT.1": {
+    "accept": true
+  },
+  "resource.EXACT.2": {
+    "accept": true
+  },
+  "resource.EXACT.3": {
+    "error_code": "PROTOCOL_STRUCTURE"
+  },
+  "resource.EXACT.4": {
+    "error_code": "PROTOCOL_STRUCTURE"
+  },
+  "resource.EXACT.5": {
+    "error_code": "RESOURCE_MEASUREMENT"
+  },
+  "resource.EXACT.6": {
+    "error_code": "RESOURCE_MEASUREMENT"
+  },
+  "resource.EXACT.7": {
+    "error_code": "RESOURCE_MEASUREMENT"
+  },
+  "resource.ESTIMATED.8": {
+    "error_code": "RESOURCE_MEASUREMENT"
+  },
+  "resource.ESTIMATED.9": {
+    "accept": true
+  },
+  "resource.ESTIMATED.10": {
+    "accept": true
+  },
+  "resource.ESTIMATED.11": {
+    "error_code": "PROTOCOL_STRUCTURE"
+  },
+  "resource.ESTIMATED.12": {
+    "error_code": "PROTOCOL_STRUCTURE"
+  },
+  "resource.ESTIMATED.13": {
+    "error_code": "RESOURCE_MEASUREMENT"
+  },
+  "resource.ESTIMATED.14": {
+    "error_code": "RESOURCE_MEASUREMENT"
+  },
+  "resource.ESTIMATED.15": {
+    "error_code": "RESOURCE_MEASUREMENT"
+  },
+  "resource.RANGE.16": {
+    "error_code": "RESOURCE_MEASUREMENT"
+  },
+  "resource.RANGE.17": {
+    "error_code": "RESOURCE_MEASUREMENT"
+  },
+  "resource.RANGE.18": {
+    "error_code": "RESOURCE_MEASUREMENT"
+  },
+  "resource.RANGE.19": {
+    "error_code": "PROTOCOL_STRUCTURE"
+  },
+  "resource.RANGE.20": {
+    "error_code": "PROTOCOL_STRUCTURE"
+  },
+  "resource.RANGE.21": {
+    "accept": true
+  },
+  "resource.RANGE.22": {
+    "error_code": "RESOURCE_MEASUREMENT"
+  },
+  "resource.RANGE.23": {
+    "error_code": "RESOURCE_MEASUREMENT"
+  },
+  "resource.UNKNOWN.24": {
+    "accept": true
+  },
+  "resource.UNKNOWN.25": {
+    "error_code": "RESOURCE_MEASUREMENT"
+  },
+  "resource.UNKNOWN.26": {
+    "error_code": "RESOURCE_MEASUREMENT"
+  },
+  "resource.UNKNOWN.27": {
+    "error_code": "PROTOCOL_STRUCTURE"
+  },
+  "resource.UNKNOWN.28": {
+    "error_code": "PROTOCOL_STRUCTURE"
+  },
+  "resource.UNKNOWN.29": {
+    "error_code": "RESOURCE_MEASUREMENT"
+  },
+  "resource.UNKNOWN.30": {
+    "error_code": "RESOURCE_MEASUREMENT"
+  },
+  "resource.UNKNOWN.31": {
+    "error_code": "RESOURCE_MEASUREMENT"
+  }
+}

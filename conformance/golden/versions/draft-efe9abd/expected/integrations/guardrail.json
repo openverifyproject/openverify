@@ -1,0 +1,38 @@
+{
+  "integration.guardrail.PASS": {
+    "contract_reference": "docs/relay/integration.md",
+    "same_vcp_semantics": true
+  },
+  "integration.guardrail.FAIL": {
+    "contract_reference": "docs/relay/integration.md",
+    "same_vcp_semantics": true
+  },
+  "integration.guardrail.UNKNOWN": {
+    "contract_reference": "docs/relay/integration.md",
+    "same_vcp_semantics": true
+  },
+  "integration.guardrail.ERROR": {
+    "contract_reference": "docs/relay/integration.md",
+    "same_vcp_semantics": true
+  },
+  "integration.guardrail.SKIP": {
+    "contract_reference": "docs/relay/integration.md",
+    "same_vcp_semantics": true
+  },
+  "integration.guardrail.DEFERRED": {
+    "contract_reference": "docs/relay/integration.md",
+    "same_vcp_semantics": true
+  },
+  "integration.guardrail.CANCELLED": {
+    "contract_reference": "docs/relay/integration.md",
+    "same_vcp_semantics": true
+  },
+  "integration.guardrail.NOT_APPLICABLE": {
+    "contract_reference": "docs/relay/integration.md",
+    "same_vcp_semantics": true
+  },
+  "integration.guardrail.KNOWN": {
+    "contract_reference": "docs/relay/integration.md",
+    "same_vcp_semantics": true
+  }
+}
