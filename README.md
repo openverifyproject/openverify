@@ -7,6 +7,29 @@ preserving provenance across runs.
 **Protocol status: DRAFT. Implementation: 0.1.0.** JSON is the only implemented
 normative wire format. The package name is not part of protocol meaning.
 
+## Run verification with Relay
+
+OpenVerify now includes **Relay v0.1**, an independent provider-driven asyncio
+runtime. Use the same typed VCP graphs for code, documents, arbitrary JSON,
+application guardrails, agents, CLI, MCP, or a Python harness.
+
+```sh
+python -m pip install .
+openverify run text --inputs examples/first-run/fail.json --json
+openverify run text --inputs examples/first-run/pass.json --json
+python -m pip install '.[code,mcp,http]'
+python examples/code-verification/run.py
+openverify mcp
+```
+
+The text commands demonstrate FAIL (exit 1) then PASS (exit 0). Install this
+checkout; this task does not publish a package. Python 3.13 is required.
+[Five-minute quickstart](docs/relay/quickstart.md) ?
+[Graph authoring](docs/relay/graph-authoring.md) ?
+[Providers](docs/relay/providers.md) ? [Integrations](docs/relay/integration.md) ?
+[Architecture](docs/relay/architecture.md) ? [Security](docs/relay/security.md) ?
+[Limitations](docs/relay/limitations.md).
+
 ## Why it exists
 
 Different domains already have excellent specialized mechanisms: regex, scripts,
@@ -219,8 +242,9 @@ OpenVerify
 
 The [Provider Contract](provider-contract/README.md) sits below VCP and lets any
 compatible runner invoke independently implemented capabilities. OpenVerify Relay
-is the planned minimal provider-driven harness/runtime built on that contract;
-Relay does not exist yet. The Engine uses a small local registry of exact capability ID/version implementations, with no discovery or provider transport runtime.
+is the implemented provider-driven asyncio runtime built on that contract, with
+explicit trusted provider discovery, deterministic binding, local Python/stdio
+transports, and CLI/MCP/HTTP entrypoints. The Engine uses a small local registry of exact capability ID/version implementations, with no discovery or provider transport runtime.
 Hosts can also supply explicit graph-node `BoundProvider` values through
 `Engine(registry, provider_bindings=...)`. The engine checks manifest compatibility
 and declared input/config/output contracts, and records the exact concrete binding
@@ -301,7 +325,8 @@ edges, guards, and reducer policies.
 
 Definitions are **data**: no eval, expressions, arbitrary imports, or automatic artifact
 fetching. Hosts explicitly register trusted capabilities. Demo adapters are trusted
-host code, not a security sandbox. CLI `run` uses only the local demo registry.
+host code, not a security sandbox. Relay CLI `run` uses its trusted provider catalog. The legacy Reference Engine
+demo registry remains a separate Python convenience.
 
 [Open questions](spec/draft/open-questions.md) document portable canonical hashing
 and numeric precision, general guards, cycles/expansion, remaining status projections,
@@ -316,13 +341,14 @@ With uv and Python 3.13, run from the root:
 
 ```sh
 uv sync
-uv run openverify validate examples/prose/definition.json
-uv run openverify inspect examples/prose/definition.json
-uv run openverify run examples/prose/definition.json --run-inputs examples/prose/context.json --opportunity-id article-draft-1 --output run.json
+uv run openverify validate examples/first-run/definition.json
+uv run openverify inspect text
+uv run openverify run text --inputs examples/first-run/pass.json --json --output run.json
 ```
 
-The prose graph derives length, checks a banned phrase and length, then aggregates
-ALL. The supplied input produces PASS. The same SDK works locally:
+The Relay text graph checks required/prohibited terms and aggregates ALL. The
+supplied input produces PASS. The pre-existing prose graph remains executable
+through the unchanged Reference Engine Python API:
 
 ```python
 from pathlib import Path
@@ -346,9 +372,9 @@ Path("run.json").write_text(serialize(record), encoding="utf-8")
 
 See [examples](examples/README.md) for a temperature measurement and mock AI judges
 with UNKNOWN-to-human routing. No model provider is required. Validation accepts
-`--type result` and `--type run-record`; invalid input prints a stable error object
-and exits 1. A completed `run` exits 0 even when its record contains ERROR/FAIL;
-callers inspect the Results.
+`--type result` and `--type run-record`; invalid input prints a stable error object on stderr and exits 2. Relay run exits
+0 for terminal PASS, 1 for terminal FAIL, 2 for errors, 3 for other determinations
+or nonexecution. Callers can always inspect the full Results.
 
 ## Development
 
@@ -404,4 +430,6 @@ Valid RUN/SKIP/DEFER admission creates a RunRecord with all three policy evaluat
 See [execution policy](spec/draft/execution-policy.md) and
 [lifecycle](spec/draft/lifecycle.md) for reason codes, routing and cooperative
 Cancellation tokens. This is a breaking DRAFT provenance revision.
-No Relay, provider discovery, cycles, iteration or dynamic expansion is implemented.
+Relay and trusted provider discovery are implemented; cycles, iteration and
+dynamic expansion remain unsupported. See the Relay docs for its API and
+conservative control/cancellation scheduling boundaries.

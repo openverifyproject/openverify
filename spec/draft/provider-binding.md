@@ -79,4 +79,6 @@ INVALID_PROVIDER_OUTPUT for declared output-schema rejection. Messages are diagn
 
 Portable provider attestation, independently verifying host schema-rejection claims
 without a manifest, and provenance for future transport/session invocations remain
-open. No discovery, provider selection or Relay is implemented.
+open. Relay v0.1 implements trusted discovery/selection and transports without
+changing this normative graph-node binding object. Its optional correlation
+annotations do not resolve portable transport/policy provenance.
