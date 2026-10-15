@@ -1,0 +1,173 @@
+{
+  "v02.provider.error_code.CONTRACT_VERSION_UNSUPPORTED": {
+    "accept": true,
+    "preserve": {
+      "invocation_id": "attempt-1",
+      "state": "ERROR",
+      "error": {
+        "code": "CONTRACT_VERSION_UNSUPPORTED",
+        "message": "informative",
+        "details": {
+          "identity": [
+            false,
+            0,
+            null
+          ]
+        }
+      }
+    }
+  },
+  "v02.provider.error_code.CAPABILITY_UNAVAILABLE": {
+    "accept": true,
+    "preserve": {
+      "invocation_id": "attempt-1",
+      "state": "ERROR",
+      "error": {
+        "code": "CAPABILITY_UNAVAILABLE",
+        "message": "informative",
+        "details": {
+          "identity": [
+            false,
+            0,
+            null
+          ]
+        }
+      }
+    }
+  },
+  "v02.provider.error_code.CAPABILITY_VERSION_UNSUPPORTED": {
+    "accept": true,
+    "preserve": {
+      "invocation_id": "attempt-1",
+      "state": "ERROR",
+      "error": {
+        "code": "CAPABILITY_VERSION_UNSUPPORTED",
+        "message": "informative",
+        "details": {
+          "identity": [
+            false,
+            0,
+            null
+          ]
+        }
+      }
+    }
+  },
+  "v02.provider.error_code.INVALID_INVOCATION": {
+    "accept": true,
+    "preserve": {
+      "invocation_id": "attempt-1",
+      "state": "ERROR",
+      "error": {
+        "code": "INVALID_INVOCATION",
+        "message": "informative",
+        "details": {
+          "identity": [
+            false,
+            0,
+            null
+          ]
+        }
+      }
+    }
+  },
+  "v02.provider.error_code.INVALID_CONFIG": {
+    "accept": true,
+    "preserve": {
+      "invocation_id": "attempt-1",
+      "state": "ERROR",
+      "error": {
+        "code": "INVALID_CONFIG",
+        "message": "informative",
+        "details": {
+          "identity": [
+            false,
+            0,
+            null
+          ]
+        }
+      }
+    }
+  },
+  "v02.provider.error_code.INVALID_INPUT": {
+    "accept": true,
+    "preserve": {
+      "invocation_id": "attempt-1",
+      "state": "ERROR",
+      "error": {
+        "code": "INVALID_INPUT",
+        "message": "informative",
+        "details": {
+          "identity": [
+            false,
+            0,
+            null
+          ]
+        }
+      }
+    }
+  },
+  "v02.provider.error_code.INVALID_PROVIDER_OUTPUT": {
+    "accept": true,
+    "preserve": {
+      "invocation_id": "attempt-1",
+      "state": "ERROR",
+      "error": {
+        "code": "INVALID_PROVIDER_OUTPUT",
+        "message": "informative",
+        "details": {
+          "identity": [
+            false,
+            0,
+            null
+          ]
+        }
+      }
+    }
+  },
+  "v02.provider.error_code.PROTOCOL_VIOLATION": {
+    "accept": true,
+    "preserve": {
+      "invocation_id": "attempt-1",
+      "state": "ERROR",
+      "error": {
+        "code": "PROTOCOL_VIOLATION",
+        "message": "informative",
+        "details": {
+          "identity": [
+            false,
+            0,
+            null
+          ]
+        }
+      }
+    }
+  },
+  "v02.provider.error_code.com.example.failed": {
+    "accept": true,
+    "preserve": {
+      "invocation_id": "attempt-1",
+      "state": "ERROR",
+      "error": {
+        "code": "com.example.failed",
+        "message": "informative",
+        "details": {
+          "identity": [
+            false,
+            0,
+            null
+          ]
+        }
+      }
+    }
+  },
+  "v02.provider.error_code.AGGREGATE_INPUT": {
+    "error_code": "INVALID_PROVIDER_OUTPUT"
+  },
+  "v02.provider.error_code.ERROR": {
+    "error_code": "INVALID_PROVIDER_OUTPUT"
+  },
+  "v02.provider.error_code.foo.failed": {
+    "error_code": "INVALID_PROVIDER_OUTPUT"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "v02.result.disposition.omitted": {
+    "error_code": "PROTOCOL_STRUCTURE"
+  },
+  "v02.result.disposition.null": {
+    "error_code": "PROTOCOL_STRUCTURE"
+  }
+}

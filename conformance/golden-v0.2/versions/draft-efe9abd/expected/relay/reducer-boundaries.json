@@ -1,0 +1,1617 @@
+{
+  "v02.graph.reducer.ALL.valid": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "q": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "a": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "evidence": [],
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "v02.graph.reducer.ALL.reverse_edges": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "q": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "a": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "evidence": [],
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "v02.graph.reducer.ALL.provider_error": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "q": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "a": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      }
+    }
+  },
+  "v02.graph.reducer.ALL.wrong_output": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "q": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "a": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      }
+    }
+  },
+  "v02.graph.reducer.ALL.custom": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "q": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "a": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "evidence": [],
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "v02.graph.reducer.ANY.valid": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "q": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "a": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "evidence": [],
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "v02.graph.reducer.ANY.reverse_edges": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "q": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "a": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "evidence": [],
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "v02.graph.reducer.ANY.provider_error": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "q": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "a": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      }
+    }
+  },
+  "v02.graph.reducer.ANY.wrong_output": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "q": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "a": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      }
+    }
+  },
+  "v02.graph.reducer.ANY.custom": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "q": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "a": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "evidence": [],
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "v02.graph.reducer.MAJORITY.valid": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "q": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "a": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "evidence": [],
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "v02.graph.reducer.MAJORITY.reverse_edges": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "q": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "a": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "evidence": [],
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "v02.graph.reducer.MAJORITY.provider_error": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "q": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "a": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      }
+    }
+  },
+  "v02.graph.reducer.MAJORITY.wrong_output": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "q": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "a": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      }
+    }
+  },
+  "v02.graph.reducer.MAJORITY.custom": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "q": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "a": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "evidence": [],
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "v02.graph.reducer.MIN_SCORE.valid": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "score": 0
+        }
+      },
+      "q": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "score": 1
+        }
+      },
+      "a": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "evidence": [],
+          "score": 0.0
+        }
+      }
+    }
+  },
+  "v02.graph.reducer.MIN_SCORE.reverse_edges": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "score": 0
+        }
+      },
+      "q": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "score": 1
+        }
+      },
+      "a": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "evidence": [],
+          "score": 0.0
+        }
+      }
+    }
+  },
+  "v02.graph.reducer.MIN_SCORE.provider_error": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "score": 0
+        }
+      },
+      "q": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "score": 1
+        }
+      },
+      "a": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      }
+    }
+  },
+  "v02.graph.reducer.MIN_SCORE.wrong_output": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "score": 0
+        }
+      },
+      "q": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "score": 1
+        }
+      },
+      "a": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      }
+    }
+  },
+  "v02.graph.reducer.MIN_SCORE.custom": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "score": 0
+        }
+      },
+      "q": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "score": 1
+        }
+      },
+      "a": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "evidence": [],
+          "score": 0.0
+        }
+      }
+    }
+  },
+  "v02.graph.reducer.MAX_SCORE.valid": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "score": 0
+        }
+      },
+      "q": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "score": 1
+        }
+      },
+      "a": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "evidence": [],
+          "score": 1.0
+        }
+      }
+    }
+  },
+  "v02.graph.reducer.MAX_SCORE.reverse_edges": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "score": 0
+        }
+      },
+      "q": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "score": 1
+        }
+      },
+      "a": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "evidence": [],
+          "score": 1.0
+        }
+      }
+    }
+  },
+  "v02.graph.reducer.MAX_SCORE.provider_error": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "score": 0
+        }
+      },
+      "q": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "score": 1
+        }
+      },
+      "a": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      }
+    }
+  },
+  "v02.graph.reducer.MAX_SCORE.wrong_output": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "score": 0
+        }
+      },
+      "q": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "score": 1
+        }
+      },
+      "a": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      }
+    }
+  },
+  "v02.graph.reducer.MAX_SCORE.custom": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "score": 0
+        }
+      },
+      "q": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "score": 1
+        }
+      },
+      "a": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "evidence": [],
+          "score": 1.0
+        }
+      }
+    }
+  },
+  "v02.graph.reducer.AVERAGE.valid": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "score": 0
+        }
+      },
+      "q": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "score": 1
+        }
+      },
+      "a": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "evidence": [],
+          "score": 0.5
+        }
+      }
+    }
+  },
+  "v02.graph.reducer.AVERAGE.reverse_edges": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "score": 0
+        }
+      },
+      "q": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "score": 1
+        }
+      },
+      "a": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "evidence": [],
+          "score": 0.5
+        }
+      }
+    }
+  },
+  "v02.graph.reducer.AVERAGE.provider_error": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "score": 0
+        }
+      },
+      "q": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "score": 1
+        }
+      },
+      "a": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      }
+    }
+  },
+  "v02.graph.reducer.AVERAGE.wrong_output": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "score": 0
+        }
+      },
+      "q": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "score": 1
+        }
+      },
+      "a": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      }
+    }
+  },
+  "v02.graph.reducer.AVERAGE.custom": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "score": 0
+        }
+      },
+      "q": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "score": 1
+        }
+      },
+      "a": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "evidence": [],
+          "score": 0.5
+        }
+      }
+    }
+  },
+  "v02.graph.reducer.WEIGHTED_AVERAGE.valid": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "score": 0
+        }
+      },
+      "q": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "score": 1
+        }
+      },
+      "a": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "evidence": [],
+          "score": 0.75
+        }
+      }
+    }
+  },
+  "v02.graph.reducer.WEIGHTED_AVERAGE.reverse_edges": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "score": 0
+        }
+      },
+      "q": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "score": 1
+        }
+      },
+      "a": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "evidence": [],
+          "score": 0.75
+        }
+      }
+    }
+  },
+  "v02.graph.reducer.WEIGHTED_AVERAGE.provider_error": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "score": 0
+        }
+      },
+      "q": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "score": 1
+        }
+      },
+      "a": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      }
+    }
+  },
+  "v02.graph.reducer.WEIGHTED_AVERAGE.wrong_output": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "score": 0
+        }
+      },
+      "q": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "score": 1
+        }
+      },
+      "a": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      }
+    }
+  },
+  "v02.graph.reducer.WEIGHTED_AVERAGE.custom": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "score": 0
+        }
+      },
+      "q": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "score": 1
+        }
+      },
+      "a": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "evidence": [],
+          "score": 0.75
+        }
+      }
+    }
+  },
+  "v02.graph.reducer.WORST_SEVERITY.valid": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "severity": {
+            "domain": "golden.domain",
+            "label": "low"
+          }
+        }
+      },
+      "q": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "severity": {
+            "domain": "golden.domain",
+            "label": "high"
+          }
+        }
+      },
+      "a": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "evidence": [],
+          "severity": {
+            "domain": "golden.domain",
+            "label": "high"
+          }
+        }
+      }
+    }
+  },
+  "v02.graph.reducer.WORST_SEVERITY.reverse_edges": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "severity": {
+            "domain": "golden.domain",
+            "label": "low"
+          }
+        }
+      },
+      "q": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "severity": {
+            "domain": "golden.domain",
+            "label": "high"
+          }
+        }
+      },
+      "a": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "evidence": [],
+          "severity": {
+            "domain": "golden.domain",
+            "label": "high"
+          }
+        }
+      }
+    }
+  },
+  "v02.graph.reducer.WORST_SEVERITY.provider_error": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "severity": {
+            "domain": "golden.domain",
+            "label": "low"
+          }
+        }
+      },
+      "q": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "severity": {
+            "domain": "golden.domain",
+            "label": "high"
+          }
+        }
+      },
+      "a": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      }
+    }
+  },
+  "v02.graph.reducer.WORST_SEVERITY.wrong_output": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "severity": {
+            "domain": "golden.domain",
+            "label": "low"
+          }
+        }
+      },
+      "q": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "severity": {
+            "domain": "golden.domain",
+            "label": "high"
+          }
+        }
+      },
+      "a": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      }
+    }
+  },
+  "v02.graph.reducer.WORST_SEVERITY.custom": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "severity": {
+            "domain": "golden.domain",
+            "label": "low"
+          }
+        }
+      },
+      "q": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "severity": {
+            "domain": "golden.domain",
+            "label": "high"
+          }
+        }
+      },
+      "a": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "evidence": [],
+          "severity": {
+            "domain": "golden.domain",
+            "label": "high"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,342 @@
+{
+  "standard.read_text.utf8": {
+    "capability": "read_text",
+    "variant": "utf8",
+    "external_tool": null
+  },
+  "standard.read_text.missing": {
+    "capability": "read_text",
+    "variant": "missing",
+    "external_tool": null
+  },
+  "standard.read_text.binary": {
+    "capability": "read_text",
+    "variant": "binary",
+    "external_tool": null
+  },
+  "standard.read_text.oversized": {
+    "capability": "read_text",
+    "variant": "oversized",
+    "external_tool": null
+  },
+  "standard.read_file.binary": {
+    "capability": "read_file",
+    "variant": "binary",
+    "external_tool": null
+  },
+  "standard.read_file.bounded": {
+    "capability": "read_file",
+    "variant": "bounded",
+    "external_tool": null
+  },
+  "standard.select_files.files": {
+    "capability": "select_files",
+    "variant": "files",
+    "external_tool": null
+  },
+  "standard.select_files.glob": {
+    "capability": "select_files",
+    "variant": "glob",
+    "external_tool": null
+  },
+  "standard.select_files.directory": {
+    "capability": "select_files",
+    "variant": "directory",
+    "external_tool": null
+  },
+  "standard.git_scope.WORKTREE": {
+    "capability": "git_scope",
+    "variant": "WORKTREE",
+    "external_tool": "git"
+  },
+  "standard.git_scope.STAGED": {
+    "capability": "git_scope",
+    "variant": "STAGED",
+    "external_tool": "git"
+  },
+  "standard.git_scope.UNSTAGED": {
+    "capability": "git_scope",
+    "variant": "UNSTAGED",
+    "external_tool": "git"
+  },
+  "standard.git_scope.untracked": {
+    "capability": "git_scope",
+    "variant": "untracked",
+    "external_tool": "git"
+  },
+  "standard.git_scope.rename": {
+    "capability": "git_scope",
+    "variant": "rename",
+    "external_tool": "git"
+  },
+  "standard.git_scope.deleted": {
+    "capability": "git_scope",
+    "variant": "deleted",
+    "external_tool": "git"
+  },
+  "standard.candidate_unchanged.fresh": {
+    "capability": "candidate_unchanged",
+    "variant": "fresh",
+    "external_tool": "git"
+  },
+  "standard.candidate_unchanged.content_changed": {
+    "capability": "candidate_unchanged",
+    "variant": "content_changed",
+    "external_tool": "git"
+  },
+  "standard.candidate_unchanged.head_changed": {
+    "capability": "candidate_unchanged",
+    "variant": "head_changed",
+    "external_tool": "git"
+  },
+  "standard.ruff.violation": {
+    "capability": "ruff",
+    "variant": "violation",
+    "external_tool": "ruff"
+  },
+  "standard.ruff.corrected": {
+    "capability": "ruff",
+    "variant": "corrected",
+    "external_tool": "ruff"
+  },
+  "standard.pytest.pass": {
+    "capability": "pytest",
+    "variant": "pass",
+    "external_tool": "pytest"
+  },
+  "standard.pytest.fail": {
+    "capability": "pytest",
+    "variant": "fail",
+    "external_tool": "pytest"
+  },
+  "standard.pytest.collection_error": {
+    "capability": "pytest",
+    "variant": "collection_error",
+    "external_tool": "pytest"
+  },
+  "standard.astgrep.violation": {
+    "capability": "astgrep",
+    "variant": "violation",
+    "external_tool": "ast-grep"
+  },
+  "standard.astgrep.corrected": {
+    "capability": "astgrep",
+    "variant": "corrected",
+    "external_tool": "ast-grep"
+  },
+  "standard.scope.files": {
+    "capability": "scope",
+    "variant": "files",
+    "external_tool": null
+  },
+  "standard.scope.changed_files": {
+    "capability": "scope",
+    "variant": "changed_files",
+    "external_tool": null
+  },
+  "standard.scope.directory": {
+    "capability": "scope",
+    "variant": "directory",
+    "external_tool": null
+  },
+  "standard.scope.changed_spans": {
+    "capability": "scope",
+    "variant": "changed_spans",
+    "external_tool": null
+  },
+  "standard.scope.ast_ranges": {
+    "capability": "scope",
+    "variant": "ast_ranges",
+    "external_tool": null
+  },
+  "standard.scope.zero_deletion": {
+    "capability": "scope",
+    "variant": "zero_deletion",
+    "external_tool": null
+  },
+  "standard.scope.half_open_boundary": {
+    "capability": "scope",
+    "variant": "half_open_boundary",
+    "external_tool": null
+  },
+  "standard.no_findings.empty": {
+    "capability": "no_findings",
+    "variant": "empty",
+    "external_tool": null
+  },
+  "standard.no_findings.nonempty": {
+    "capability": "no_findings",
+    "variant": "nonempty",
+    "external_tool": null
+  },
+  "standard.text.pass": {
+    "capability": "text",
+    "variant": "pass",
+    "external_tool": null
+  },
+  "standard.text.fail": {
+    "capability": "text",
+    "variant": "fail",
+    "external_tool": null
+  },
+  "standard.text.unicode_offsets": {
+    "capability": "text",
+    "variant": "unicode_offsets",
+    "external_tool": null
+  },
+  "standard.text.missing": {
+    "capability": "text",
+    "variant": "missing",
+    "external_tool": null
+  },
+  "standard.text.terms_combine": {
+    "capability": "text",
+    "variant": "terms_combine",
+    "external_tool": null
+  },
+  "standard.json_parse.valid": {
+    "capability": "json_parse",
+    "variant": "valid",
+    "external_tool": null
+  },
+  "standard.json_parse.duplicate": {
+    "capability": "json_parse",
+    "variant": "duplicate",
+    "external_tool": null
+  },
+  "standard.json_parse.nonfinite": {
+    "capability": "json_parse",
+    "variant": "nonfinite",
+    "external_tool": null
+  },
+  "standard.json_parse.malformed": {
+    "capability": "json_parse",
+    "variant": "malformed",
+    "external_tool": null
+  },
+  "standard.schema.valid": {
+    "capability": "schema",
+    "variant": "valid",
+    "external_tool": null
+  },
+  "standard.schema.invalid": {
+    "capability": "schema",
+    "variant": "invalid",
+    "external_tool": null
+  },
+  "standard.schema.bool_number": {
+    "capability": "schema",
+    "variant": "bool_number",
+    "external_tool": null
+  },
+  "standard.action_policy.allowed": {
+    "capability": "action_policy",
+    "variant": "allowed",
+    "external_tool": null
+  },
+  "standard.action_policy.denied": {
+    "capability": "action_policy",
+    "variant": "denied",
+    "external_tool": null
+  },
+  "standard.action_policy.traversal": {
+    "capability": "action_policy",
+    "variant": "traversal",
+    "external_tool": null
+  },
+  "standard.action_policy.absolute": {
+    "capability": "action_policy",
+    "variant": "absolute",
+    "external_tool": null
+  },
+  "standard.gate.PASS": {
+    "capability": "gate",
+    "variant": "PASS",
+    "external_tool": null
+  },
+  "standard.gate.FAIL": {
+    "capability": "gate",
+    "variant": "FAIL",
+    "external_tool": null
+  },
+  "standard.gate.UNKNOWN": {
+    "capability": "gate",
+    "variant": "UNKNOWN",
+    "external_tool": null
+  },
+  "standard.gate.ERROR": {
+    "capability": "gate",
+    "variant": "ERROR",
+    "external_tool": null
+  },
+  "standard.gate.SKIP": {
+    "capability": "gate",
+    "variant": "SKIP",
+    "external_tool": null
+  },
+  "standard.gate.DEFERRED": {
+    "capability": "gate",
+    "variant": "DEFERRED",
+    "external_tool": null
+  },
+  "standard.gate.CANCELLED": {
+    "capability": "gate",
+    "variant": "CANCELLED",
+    "external_tool": null
+  },
+  "standard.gate.NOT_APPLICABLE": {
+    "capability": "gate",
+    "variant": "NOT_APPLICABLE",
+    "external_tool": null
+  },
+  "standard.gate.KNOWN": {
+    "capability": "gate",
+    "variant": "KNOWN",
+    "external_tool": null
+  },
+  "standard.command.argv": {
+    "capability": "command",
+    "variant": "argv",
+    "external_tool": null
+  },
+  "standard.command.stdout_stderr": {
+    "capability": "command",
+    "variant": "stdout_stderr",
+    "external_tool": null
+  },
+  "standard.command.nonzero": {
+    "capability": "command",
+    "variant": "nonzero",
+    "external_tool": null
+  },
+  "standard.command.missing_executable": {
+    "capability": "command",
+    "variant": "missing_executable",
+    "external_tool": null
+  },
+  "standard.command.bounded_output": {
+    "capability": "command",
+    "variant": "bounded_output",
+    "external_tool": null
+  },
+  "standard.command.descendant_cleanup": {
+    "capability": "command",
+    "variant": "descendant_cleanup",
+    "external_tool": null
+  },
+  "standard.command_check.pass": {
+    "capability": "command_check",
+    "variant": "pass",
+    "external_tool": null
+  },
+  "standard.command_check.fail": {
+    "capability": "command_check",
+    "variant": "fail",
+    "external_tool": null
+  },
+  "standard.aggregate.ALL": {
+    "capability": "aggregate",
+    "variant": "ALL",
+    "external_tool": null
+  }
+}

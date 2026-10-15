@@ -1,0 +1,30 @@
+{
+  "integration.cli.pass_stdin": {
+    "entrypoint": "cli",
+    "variant": "pass_stdin"
+  },
+  "integration.cli.fail_stdin": {
+    "entrypoint": "cli",
+    "variant": "fail_stdin"
+  },
+  "integration.cli.invalid_input": {
+    "entrypoint": "cli",
+    "variant": "invalid_input"
+  },
+  "integration.cli.graph_stdin": {
+    "entrypoint": "cli",
+    "variant": "graph_stdin"
+  },
+  "integration.cli.both_stdin_reject": {
+    "entrypoint": "cli",
+    "variant": "both_stdin_reject"
+  },
+  "integration.cli.error_exit": {
+    "entrypoint": "cli",
+    "variant": "error_exit"
+  },
+  "integration.cli.unknown_exit": {
+    "entrypoint": "cli",
+    "variant": "unknown_exit"
+  }
+}

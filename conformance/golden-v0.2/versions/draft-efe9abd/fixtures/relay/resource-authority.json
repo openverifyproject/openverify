@@ -1,0 +1,567 @@
+{
+  "v02.usage.final_authority.DERIVE": {
+    "definition": {
+      "protocol": "draft",
+      "id": "golden.definition",
+      "version": "1",
+      "subject": {
+        "id": "golden.subject",
+        "type": "application/json",
+        "locator": {
+          "host_supplied": true
+        }
+      },
+      "criterion": {
+        "id": "golden.criterion",
+        "description": "The explicitly supplied deterministic criterion holds"
+      },
+      "judgment_schema": true,
+      "run_inputs": [],
+      "graph": {
+        "nodes": [
+          {
+            "id": "n",
+            "kind": "DERIVE",
+            "operation": {
+              "capability_id": "com.example.golden.derive",
+              "capability_version": "1"
+            },
+            "inputs": [],
+            "bindings": {},
+            "outputs": [
+              {
+                "name": "value",
+                "schema": true,
+                "role": "INFORMATION"
+              }
+            ],
+            "config": {}
+          }
+        ],
+        "edges": []
+      },
+      "execution_policy": {
+        "activation": {
+          "executor_ref": "MANUAL"
+        },
+        "selection": {
+          "executor_ref": "EXPLICIT"
+        },
+        "admission": {
+          "strategy": "ALWAYS"
+        }
+      }
+    },
+    "inputs": {},
+    "behaviors": {
+      "n": {
+        "outputs": {
+          "value": 1
+        },
+        "events": [
+          {
+            "kind": "resource_usage",
+            "payload": {
+              "com.example.calls": {
+                "kind": "EXACT",
+                "unit": "call",
+                "value": 3
+              }
+            }
+          }
+        ],
+        "usage": {
+          "com.example.calls": {
+            "kind": "EXACT",
+            "unit": "call",
+            "value": 7
+          }
+        }
+      }
+    },
+    "nodes": {
+      "n": {
+        "state": "SUCCESS",
+        "information": {
+          "value": 1
+        }
+      }
+    }
+  },
+  "v02.usage.final_authority.EVALUATE": {
+    "definition": {
+      "protocol": "draft",
+      "id": "golden.definition",
+      "version": "1",
+      "subject": {
+        "id": "golden.subject",
+        "type": "application/json",
+        "locator": {
+          "host_supplied": true
+        }
+      },
+      "criterion": {
+        "id": "golden.criterion",
+        "description": "The explicitly supplied deterministic criterion holds"
+      },
+      "judgment_schema": true,
+      "run_inputs": [],
+      "graph": {
+        "nodes": [
+          {
+            "id": "n",
+            "kind": "EVALUATE",
+            "operation": {
+              "capability_id": "com.example.golden.evaluate",
+              "capability_version": "1"
+            },
+            "inputs": [
+              {
+                "name": "subject",
+                "schema": {
+                  "type": "object"
+                },
+                "required": true,
+                "on_unavailable": "BLOCK"
+              },
+              {
+                "name": "criterion",
+                "schema": {
+                  "type": "object"
+                },
+                "required": true,
+                "on_unavailable": "BLOCK"
+              }
+            ],
+            "bindings": {
+              "subject": {
+                "kind": "CONSTANT",
+                "value": {
+                  "id": "golden.subject",
+                  "type": "application/json",
+                  "locator": {
+                    "host_supplied": true
+                  }
+                }
+              },
+              "criterion": {
+                "kind": "CONSTANT",
+                "value": {
+                  "id": "golden.criterion",
+                  "description": "The explicitly supplied deterministic criterion holds"
+                }
+              }
+            },
+            "outputs": [
+              {
+                "name": "result",
+                "schema": true,
+                "role": "RESULT"
+              }
+            ],
+            "config": {}
+          }
+        ],
+        "edges": []
+      },
+      "execution_policy": {
+        "activation": {
+          "executor_ref": "MANUAL"
+        },
+        "selection": {
+          "executor_ref": "EXPLICIT"
+        },
+        "admission": {
+          "strategy": "ALWAYS"
+        }
+      }
+    },
+    "inputs": {},
+    "behaviors": {
+      "n": {
+        "outputs": {
+          "result": {
+            "protocol": "draft",
+            "disposition": "EXECUTED",
+            "execution_outcome": "SUCCESS",
+            "applicability": "APPLICABLE",
+            "determination": "KNOWN",
+            "verdict": "PASS"
+          }
+        },
+        "events": [
+          {
+            "kind": "resource_usage",
+            "payload": {
+              "com.example.calls": {
+                "kind": "EXACT",
+                "unit": "call",
+                "value": 3
+              }
+            }
+          }
+        ],
+        "usage": {
+          "com.example.calls": {
+            "kind": "EXACT",
+            "unit": "call",
+            "value": 7
+          }
+        }
+      }
+    },
+    "nodes": {
+      "n": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "v02.usage.final_authority.AGGREGATE": {
+    "definition": {
+      "protocol": "draft",
+      "id": "golden.definition",
+      "version": "1",
+      "subject": {
+        "id": "golden.subject",
+        "type": "application/json",
+        "locator": {
+          "host_supplied": true
+        }
+      },
+      "criterion": {
+        "id": "golden.criterion",
+        "description": "The explicitly supplied deterministic criterion holds"
+      },
+      "judgment_schema": true,
+      "run_inputs": [],
+      "graph": {
+        "nodes": [
+          {
+            "id": "p",
+            "kind": "EVALUATE",
+            "operation": {
+              "capability_id": "com.example.golden.evaluate",
+              "capability_version": "1"
+            },
+            "inputs": [
+              {
+                "name": "subject",
+                "schema": {
+                  "type": "object"
+                },
+                "required": true,
+                "on_unavailable": "BLOCK"
+              },
+              {
+                "name": "criterion",
+                "schema": {
+                  "type": "object"
+                },
+                "required": true,
+                "on_unavailable": "BLOCK"
+              }
+            ],
+            "bindings": {
+              "subject": {
+                "kind": "CONSTANT",
+                "value": {
+                  "id": "golden.subject",
+                  "type": "application/json",
+                  "locator": {
+                    "host_supplied": true
+                  }
+                }
+              },
+              "criterion": {
+                "kind": "CONSTANT",
+                "value": {
+                  "id": "golden.criterion",
+                  "description": "The explicitly supplied deterministic criterion holds"
+                }
+              }
+            },
+            "outputs": [
+              {
+                "name": "result",
+                "schema": true,
+                "role": "RESULT"
+              }
+            ],
+            "config": {}
+          },
+          {
+            "id": "n",
+            "kind": "AGGREGATE",
+            "operation": {
+              "capability_id": "com.example.golden.aggregate",
+              "capability_version": "1"
+            },
+            "inputs": [
+              {
+                "name": "subject",
+                "schema": {
+                  "type": "object"
+                },
+                "required": true,
+                "on_unavailable": "BLOCK"
+              },
+              {
+                "name": "criterion",
+                "schema": {
+                  "type": "object"
+                },
+                "required": true,
+                "on_unavailable": "BLOCK"
+              },
+              {
+                "name": "member",
+                "schema": true,
+                "required": true,
+                "on_unavailable": "BLOCK"
+              },
+              {
+                "name": "members",
+                "schema": true,
+                "required": true,
+                "on_unavailable": "BLOCK"
+              }
+            ],
+            "bindings": {
+              "subject": {
+                "kind": "CONSTANT",
+                "value": {
+                  "id": "golden.subject",
+                  "type": "application/json",
+                  "locator": {
+                    "host_supplied": true
+                  }
+                }
+              },
+              "criterion": {
+                "kind": "CONSTANT",
+                "value": {
+                  "id": "golden.criterion",
+                  "description": "The explicitly supplied deterministic criterion holds"
+                }
+              },
+              "member": {
+                "kind": "UPSTREAM_OUTPUT",
+                "node_id": "p",
+                "output": "result"
+              },
+              "members": {
+                "kind": "CONSTANT",
+                "value": [
+                  "member"
+                ]
+              }
+            },
+            "outputs": [
+              {
+                "name": "result",
+                "schema": true,
+                "role": "RESULT"
+              }
+            ],
+            "config": {},
+            "aggregate_inputs": [
+              "member"
+            ]
+          }
+        ],
+        "edges": [
+          {
+            "from_node": "p",
+            "to_node": "n"
+          }
+        ]
+      },
+      "execution_policy": {
+        "activation": {
+          "executor_ref": "MANUAL"
+        },
+        "selection": {
+          "executor_ref": "EXPLICIT"
+        },
+        "admission": {
+          "strategy": "ALWAYS"
+        }
+      }
+    },
+    "inputs": {},
+    "behaviors": {
+      "p": {
+        "outputs": {
+          "result": {
+            "protocol": "draft",
+            "disposition": "EXECUTED",
+            "execution_outcome": "SUCCESS",
+            "applicability": "APPLICABLE",
+            "determination": "KNOWN",
+            "verdict": "PASS"
+          }
+        }
+      },
+      "n": {
+        "outputs": {
+          "result": {
+            "protocol": "draft",
+            "disposition": "EXECUTED",
+            "execution_outcome": "SUCCESS",
+            "applicability": "APPLICABLE",
+            "determination": "KNOWN",
+            "verdict": "PASS"
+          }
+        },
+        "events": [
+          {
+            "kind": "resource_usage",
+            "payload": {
+              "com.example.calls": {
+                "kind": "EXACT",
+                "unit": "call",
+                "value": 3
+              }
+            }
+          }
+        ],
+        "usage": {
+          "com.example.calls": {
+            "kind": "EXACT",
+            "unit": "call",
+            "value": 7
+          }
+        }
+      }
+    },
+    "nodes": {
+      "n": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "p": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "v02.usage.final_authority.CONTROL": {
+    "definition": {
+      "protocol": "draft",
+      "id": "golden.definition",
+      "version": "1",
+      "subject": {
+        "id": "golden.subject",
+        "type": "application/json",
+        "locator": {
+          "host_supplied": true
+        }
+      },
+      "criterion": {
+        "id": "golden.criterion",
+        "description": "The explicitly supplied deterministic criterion holds"
+      },
+      "judgment_schema": true,
+      "run_inputs": [],
+      "graph": {
+        "nodes": [
+          {
+            "id": "n",
+            "kind": "CONTROL",
+            "operation": {
+              "capability_id": "com.example.golden.control",
+              "capability_version": "1"
+            },
+            "inputs": [],
+            "bindings": {},
+            "outputs": [
+              {
+                "name": "decision",
+                "schema": true,
+                "role": "DECISION"
+              }
+            ],
+            "config": {}
+          }
+        ],
+        "edges": []
+      },
+      "execution_policy": {
+        "activation": {
+          "executor_ref": "MANUAL"
+        },
+        "selection": {
+          "executor_ref": "EXPLICIT"
+        },
+        "admission": {
+          "strategy": "ALWAYS"
+        }
+      }
+    },
+    "inputs": {},
+    "behaviors": {
+      "n": {
+        "outputs": {
+          "decision": {
+            "protocol": "draft",
+            "kind": "CONTINUE"
+          }
+        },
+        "events": [
+          {
+            "kind": "resource_usage",
+            "payload": {
+              "com.example.calls": {
+                "kind": "EXACT",
+                "unit": "call",
+                "value": 3
+              }
+            }
+          }
+        ],
+        "usage": {
+          "com.example.calls": {
+            "kind": "EXACT",
+            "unit": "call",
+            "value": 7
+          }
+        }
+      }
+    },
+    "nodes": {
+      "n": {
+        "state": "SUCCESS",
+        "information": {},
+        "decision": {
+          "protocol": "draft",
+          "kind": "CONTINUE"
+        }
+      }
+    }
+  }
+}

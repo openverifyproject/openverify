@@ -1,0 +1,10 @@
+{
+  "integration.multi_agent.two_graphs": {
+    "contract_reference": "docs/relay/integration.md",
+    "same_vcp_semantics": true
+  },
+  "integration.multi_agent.worktrees": {
+    "contract_reference": "docs/relay/integration.md",
+    "same_vcp_semantics": true
+  }
+}

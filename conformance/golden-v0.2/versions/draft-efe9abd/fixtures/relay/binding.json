@@ -1,0 +1,34 @@
+{
+  "runtime.binding.no_match": {
+    "experiment": "binding",
+    "variant": "no_match"
+  },
+  "runtime.binding.unique": {
+    "experiment": "binding",
+    "variant": "unique"
+  },
+  "runtime.binding.ambiguous": {
+    "experiment": "binding",
+    "variant": "ambiguous"
+  },
+  "runtime.binding.explicit_correct": {
+    "experiment": "binding",
+    "variant": "explicit_correct"
+  },
+  "runtime.binding.explicit_incompatible": {
+    "experiment": "binding",
+    "variant": "explicit_incompatible"
+  },
+  "runtime.binding.provider_version": {
+    "experiment": "binding",
+    "variant": "provider_version"
+  },
+  "runtime.binding.capability_version": {
+    "experiment": "binding",
+    "variant": "capability_version"
+  },
+  "runtime.binding.identity_substitution": {
+    "experiment": "binding",
+    "variant": "identity_substitution"
+  }
+}

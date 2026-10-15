@@ -1,0 +1,38 @@
+{
+  "integration.guardrail.PASS": {
+    "entrypoint": "guardrail",
+    "variant": "PASS"
+  },
+  "integration.guardrail.FAIL": {
+    "entrypoint": "guardrail",
+    "variant": "FAIL"
+  },
+  "integration.guardrail.UNKNOWN": {
+    "entrypoint": "guardrail",
+    "variant": "UNKNOWN"
+  },
+  "integration.guardrail.ERROR": {
+    "entrypoint": "guardrail",
+    "variant": "ERROR"
+  },
+  "integration.guardrail.SKIP": {
+    "entrypoint": "guardrail",
+    "variant": "SKIP"
+  },
+  "integration.guardrail.DEFERRED": {
+    "entrypoint": "guardrail",
+    "variant": "DEFERRED"
+  },
+  "integration.guardrail.CANCELLED": {
+    "entrypoint": "guardrail",
+    "variant": "CANCELLED"
+  },
+  "integration.guardrail.NOT_APPLICABLE": {
+    "entrypoint": "guardrail",
+    "variant": "NOT_APPLICABLE"
+  },
+  "integration.guardrail.KNOWN": {
+    "entrypoint": "guardrail",
+    "variant": "KNOWN"
+  }
+}

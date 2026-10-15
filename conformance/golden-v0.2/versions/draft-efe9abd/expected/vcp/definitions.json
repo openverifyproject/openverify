@@ -1,0 +1,107 @@
+{
+  "definition.minimum.DERIVE": {
+    "accept": true
+  },
+  "definition.full.DERIVE": {
+    "accept": true
+  },
+  "definition.minimum.EVALUATE": {
+    "accept": true
+  },
+  "definition.full.EVALUATE": {
+    "accept": true
+  },
+  "definition.minimum.AGGREGATE": {
+    "accept": true
+  },
+  "definition.full.AGGREGATE": {
+    "accept": true
+  },
+  "definition.minimum.CONTROL": {
+    "accept": true
+  },
+  "definition.full.CONTROL": {
+    "accept": true
+  },
+  "definition.invalid.duplicate_node": {
+    "error_code": "GRAPH_DUPLICATE"
+  },
+  "definition.invalid.missing_endpoint": {
+    "error_code": "GRAPH_REFERENCE"
+  },
+  "definition.invalid.duplicate_edge": {
+    "error_code": "GRAPH_DUPLICATE"
+  },
+  "definition.invalid.self": {
+    "error_code": "GRAPH_UNSUPPORTED"
+  },
+  "definition.invalid.cycle": {
+    "error_code": "GRAPH_UNSUPPORTED"
+  },
+  "definition.invalid.expansion": {
+    "error_code": "GRAPH_UNSUPPORTED"
+  },
+  "definition.invalid.iteration": {
+    "error_code": "GRAPH_UNSUPPORTED"
+  },
+  "definition.invalid.no_order_path": {
+    "error_code": "DATAFLOW_BINDING"
+  },
+  "definition.invalid.wrong_port": {
+    "error_code": "DATAFLOW_BINDING"
+  },
+  "definition.invalid.undeclared_target": {
+    "error_code": "DATAFLOW_BINDING"
+  },
+  "definition.invalid.required_unbound": {
+    "error_code": "DATAFLOW_BINDING"
+  },
+  "definition.invalid.wrong_const": {
+    "error_code": "DATAFLOW_SCHEMA"
+  },
+  "definition.invalid.wrong_config": {
+    "error_code": "DATAFLOW_CONFIG"
+  },
+  "definition.invalid.missing_run_declaration": {
+    "error_code": "DATAFLOW_BINDING"
+  },
+  "definition.invalid.wrong_protocol": {
+    "error_code": "PROTOCOL_VERSION"
+  },
+  "definition.invalid.unknown_core": {
+    "error_code": "PROTOCOL_STRUCTURE"
+  },
+  "definition.unsupported_schema.0": {
+    "error_code": "SCHEMA_UNSUPPORTED"
+  },
+  "definition.unsupported_schema.1": {
+    "error_code": "SCHEMA_UNSUPPORTED"
+  },
+  "definition.unsupported_schema.2": {
+    "error_code": "SCHEMA_UNSUPPORTED"
+  },
+  "definition.unsupported_schema.3": {
+    "error_code": "SCHEMA_UNSUPPORTED"
+  },
+  "definition.unsupported_schema.4": {
+    "error_code": "SCHEMA_UNSUPPORTED"
+  },
+  "definition.schema.valid.29": {
+    "accept": true
+  },
+  "definition.schema.valid.30": {
+    "accept": true
+  },
+  "definition.schema.valid.31": {
+    "accept": true
+  },
+  "definition.schema.valid.32": {
+    "accept": true
+  },
+  "semantic.subject_mismatch.EVALUATE": {
+    "error_code": "SEMANTIC_BINDING"
+  },
+  "semantic.subject_mismatch.AGGREGATE": {
+    "error_code": "SEMANTIC_BINDING"
+  }
+}

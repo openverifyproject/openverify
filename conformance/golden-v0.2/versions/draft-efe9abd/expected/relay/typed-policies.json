@@ -1,0 +1,137 @@
+{
+  "v02.policy.typed.ACTIVATION.CONSTANT": {
+    "nodes": {
+      "n": {
+        "state": "SUCCESS",
+        "information": {
+          "value": 1
+        }
+      }
+    },
+    "policy_input": {
+      "remaining": 0,
+      "unit": "call"
+    }
+  },
+  "v02.policy.typed.ACTIVATION.RUN_INPUT": {
+    "nodes": {
+      "n": {
+        "state": "SUCCESS",
+        "information": {
+          "value": 1
+        }
+      }
+    },
+    "policy_input": {
+      "remaining": 0,
+      "unit": "call"
+    }
+  },
+  "v02.policy.typed.ACTIVATION.EXTERNAL_REFERENCE": {
+    "nodes": {
+      "n": {
+        "state": "SUCCESS",
+        "information": {
+          "value": 1
+        }
+      }
+    },
+    "policy_input": {
+      "id": "external.reference",
+      "type": "application/json",
+      "locator": {
+        "uri": "https://invalid.example/no-fetch"
+      }
+    }
+  },
+  "v02.policy.typed.SELECTION.CONSTANT": {
+    "nodes": {
+      "n": {
+        "state": "SUCCESS",
+        "information": {
+          "value": 1
+        }
+      }
+    },
+    "policy_input": {
+      "remaining": 0,
+      "unit": "call"
+    }
+  },
+  "v02.policy.typed.SELECTION.RUN_INPUT": {
+    "nodes": {
+      "n": {
+        "state": "SUCCESS",
+        "information": {
+          "value": 1
+        }
+      }
+    },
+    "policy_input": {
+      "remaining": 0,
+      "unit": "call"
+    }
+  },
+  "v02.policy.typed.SELECTION.EXTERNAL_REFERENCE": {
+    "nodes": {
+      "n": {
+        "state": "SUCCESS",
+        "information": {
+          "value": 1
+        }
+      }
+    },
+    "policy_input": {
+      "id": "external.reference",
+      "type": "application/json",
+      "locator": {
+        "uri": "https://invalid.example/no-fetch"
+      }
+    }
+  },
+  "v02.policy.typed.ADMISSION.CONSTANT": {
+    "nodes": {
+      "n": {
+        "state": "SUCCESS",
+        "information": {
+          "value": 1
+        }
+      }
+    },
+    "policy_input": {
+      "remaining": 0,
+      "unit": "call"
+    }
+  },
+  "v02.policy.typed.ADMISSION.RUN_INPUT": {
+    "nodes": {
+      "n": {
+        "state": "SUCCESS",
+        "information": {
+          "value": 1
+        }
+      }
+    },
+    "policy_input": {
+      "remaining": 0,
+      "unit": "call"
+    }
+  },
+  "v02.policy.typed.ADMISSION.EXTERNAL_REFERENCE": {
+    "nodes": {
+      "n": {
+        "state": "SUCCESS",
+        "information": {
+          "value": 1
+        }
+      }
+    },
+    "policy_input": {
+      "id": "external.reference",
+      "type": "application/json",
+      "locator": {
+        "uri": "https://invalid.example/no-fetch"
+      }
+    }
+  }
+}

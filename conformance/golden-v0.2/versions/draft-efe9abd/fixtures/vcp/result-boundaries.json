@@ -1,0 +1,9 @@
+{
+  "v02.result.disposition.omitted": {
+    "protocol": "draft"
+  },
+  "v02.result.disposition.null": {
+    "protocol": "draft",
+    "disposition": null
+  }
+}

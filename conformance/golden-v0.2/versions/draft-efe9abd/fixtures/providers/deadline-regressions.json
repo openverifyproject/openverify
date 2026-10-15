@@ -1,0 +1,2504 @@
+{
+  "v02.provider.deadline.0001.20.before.COMPLETED": {
+    "manifest": {
+      "provider_id": "com.example.golden.provider",
+      "provider_version": "1",
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ],
+      "capabilities": [
+        {
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input_schema": true,
+          "config_schema": true,
+          "output_schema": true,
+          "lifecycle_features": {
+            "streaming": true,
+            "cancellation": true,
+            "deadlines": true,
+            "resource_reporting": true
+          }
+        }
+      ]
+    },
+    "initialize": {
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ]
+    },
+    "steps": [
+      {
+        "action": "accept",
+        "invocation": {
+          "invocation_id": "attempt-1",
+          "contract_version": "0.1",
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input": {
+            "v": [
+              true,
+              1,
+              null
+            ]
+          },
+          "config": {},
+          "vcp_version": "draft",
+          "deadline": "0001-01-01T00:00:00.000000000000000000002Z"
+        },
+        "now": "0001-01-01T00:00:00Z"
+      },
+      {
+        "action": "outcome",
+        "outcome": {
+          "invocation_id": "attempt-1",
+          "state": "COMPLETED",
+          "output": {
+            "v": [
+              true,
+              1,
+              null
+            ]
+          }
+        },
+        "now": "0001-01-01T00:00:00.000000000000000000001Z"
+      }
+    ],
+    "finish": true
+  },
+  "v02.provider.deadline.0001.20.before.DEADLINE_EXCEEDED": {
+    "manifest": {
+      "provider_id": "com.example.golden.provider",
+      "provider_version": "1",
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ],
+      "capabilities": [
+        {
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input_schema": true,
+          "config_schema": true,
+          "output_schema": true,
+          "lifecycle_features": {
+            "streaming": true,
+            "cancellation": true,
+            "deadlines": true,
+            "resource_reporting": true
+          }
+        }
+      ]
+    },
+    "initialize": {
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ]
+    },
+    "steps": [
+      {
+        "action": "accept",
+        "invocation": {
+          "invocation_id": "attempt-1",
+          "contract_version": "0.1",
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input": {
+            "v": [
+              true,
+              1,
+              null
+            ]
+          },
+          "config": {},
+          "vcp_version": "draft",
+          "deadline": "0001-01-01T00:00:00.000000000000000000002Z"
+        },
+        "now": "0001-01-01T00:00:00Z"
+      },
+      {
+        "action": "outcome",
+        "outcome": {
+          "invocation_id": "attempt-1",
+          "state": "DEADLINE_EXCEEDED"
+        },
+        "now": "0001-01-01T00:00:00.000000000000000000001Z"
+      }
+    ],
+    "finish": true
+  },
+  "v02.provider.deadline.0001.20.equal.COMPLETED": {
+    "manifest": {
+      "provider_id": "com.example.golden.provider",
+      "provider_version": "1",
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ],
+      "capabilities": [
+        {
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input_schema": true,
+          "config_schema": true,
+          "output_schema": true,
+          "lifecycle_features": {
+            "streaming": true,
+            "cancellation": true,
+            "deadlines": true,
+            "resource_reporting": true
+          }
+        }
+      ]
+    },
+    "initialize": {
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ]
+    },
+    "steps": [
+      {
+        "action": "accept",
+        "invocation": {
+          "invocation_id": "attempt-1",
+          "contract_version": "0.1",
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input": {
+            "v": [
+              true,
+              1,
+              null
+            ]
+          },
+          "config": {},
+          "vcp_version": "draft",
+          "deadline": "0001-01-01T00:00:00.000000000000000000002Z"
+        },
+        "now": "0001-01-01T00:00:00Z"
+      },
+      {
+        "action": "outcome",
+        "outcome": {
+          "invocation_id": "attempt-1",
+          "state": "COMPLETED",
+          "output": {
+            "v": [
+              true,
+              1,
+              null
+            ]
+          }
+        },
+        "now": "0001-01-01T00:00:00.000000000000000000002Z"
+      }
+    ],
+    "finish": true
+  },
+  "v02.provider.deadline.0001.20.equal.DEADLINE_EXCEEDED": {
+    "manifest": {
+      "provider_id": "com.example.golden.provider",
+      "provider_version": "1",
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ],
+      "capabilities": [
+        {
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input_schema": true,
+          "config_schema": true,
+          "output_schema": true,
+          "lifecycle_features": {
+            "streaming": true,
+            "cancellation": true,
+            "deadlines": true,
+            "resource_reporting": true
+          }
+        }
+      ]
+    },
+    "initialize": {
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ]
+    },
+    "steps": [
+      {
+        "action": "accept",
+        "invocation": {
+          "invocation_id": "attempt-1",
+          "contract_version": "0.1",
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input": {
+            "v": [
+              true,
+              1,
+              null
+            ]
+          },
+          "config": {},
+          "vcp_version": "draft",
+          "deadline": "0001-01-01T00:00:00.000000000000000000002Z"
+        },
+        "now": "0001-01-01T00:00:00Z"
+      },
+      {
+        "action": "outcome",
+        "outcome": {
+          "invocation_id": "attempt-1",
+          "state": "DEADLINE_EXCEEDED"
+        },
+        "now": "0001-01-01T00:00:00.000000000000000000002Z"
+      }
+    ],
+    "finish": true
+  },
+  "v02.provider.deadline.0001.20.after.COMPLETED": {
+    "manifest": {
+      "provider_id": "com.example.golden.provider",
+      "provider_version": "1",
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ],
+      "capabilities": [
+        {
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input_schema": true,
+          "config_schema": true,
+          "output_schema": true,
+          "lifecycle_features": {
+            "streaming": true,
+            "cancellation": true,
+            "deadlines": true,
+            "resource_reporting": true
+          }
+        }
+      ]
+    },
+    "initialize": {
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ]
+    },
+    "steps": [
+      {
+        "action": "accept",
+        "invocation": {
+          "invocation_id": "attempt-1",
+          "contract_version": "0.1",
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input": {
+            "v": [
+              true,
+              1,
+              null
+            ]
+          },
+          "config": {},
+          "vcp_version": "draft",
+          "deadline": "0001-01-01T00:00:00.000000000000000000002Z"
+        },
+        "now": "0001-01-01T00:00:00Z"
+      },
+      {
+        "action": "outcome",
+        "outcome": {
+          "invocation_id": "attempt-1",
+          "state": "COMPLETED",
+          "output": {
+            "v": [
+              true,
+              1,
+              null
+            ]
+          }
+        },
+        "now": "0001-01-01T00:00:00.000000000000000000003Z"
+      }
+    ],
+    "finish": true
+  },
+  "v02.provider.deadline.0001.20.after.DEADLINE_EXCEEDED": {
+    "manifest": {
+      "provider_id": "com.example.golden.provider",
+      "provider_version": "1",
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ],
+      "capabilities": [
+        {
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input_schema": true,
+          "config_schema": true,
+          "output_schema": true,
+          "lifecycle_features": {
+            "streaming": true,
+            "cancellation": true,
+            "deadlines": true,
+            "resource_reporting": true
+          }
+        }
+      ]
+    },
+    "initialize": {
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ]
+    },
+    "steps": [
+      {
+        "action": "accept",
+        "invocation": {
+          "invocation_id": "attempt-1",
+          "contract_version": "0.1",
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input": {
+            "v": [
+              true,
+              1,
+              null
+            ]
+          },
+          "config": {},
+          "vcp_version": "draft",
+          "deadline": "0001-01-01T00:00:00.000000000000000000002Z"
+        },
+        "now": "0001-01-01T00:00:00Z"
+      },
+      {
+        "action": "outcome",
+        "outcome": {
+          "invocation_id": "attempt-1",
+          "state": "DEADLINE_EXCEEDED"
+        },
+        "now": "0001-01-01T00:00:00.000000000000000000003Z"
+      }
+    ],
+    "finish": true
+  },
+  "v02.provider.deadline.0001.80.before.COMPLETED": {
+    "manifest": {
+      "provider_id": "com.example.golden.provider",
+      "provider_version": "1",
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ],
+      "capabilities": [
+        {
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input_schema": true,
+          "config_schema": true,
+          "output_schema": true,
+          "lifecycle_features": {
+            "streaming": true,
+            "cancellation": true,
+            "deadlines": true,
+            "resource_reporting": true
+          }
+        }
+      ]
+    },
+    "initialize": {
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ]
+    },
+    "steps": [
+      {
+        "action": "accept",
+        "invocation": {
+          "invocation_id": "attempt-1",
+          "contract_version": "0.1",
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input": {
+            "v": [
+              true,
+              1,
+              null
+            ]
+          },
+          "config": {},
+          "vcp_version": "draft",
+          "deadline": "0001-01-01T00:00:00.000000000000000000000000000000000000000000000000000000000000000000000000000000002Z"
+        },
+        "now": "0001-01-01T00:00:00Z"
+      },
+      {
+        "action": "outcome",
+        "outcome": {
+          "invocation_id": "attempt-1",
+          "state": "COMPLETED",
+          "output": {
+            "v": [
+              true,
+              1,
+              null
+            ]
+          }
+        },
+        "now": "0001-01-01T00:00:00.000000000000000000000000000000000000000000000000000000000000000000000000000000001Z"
+      }
+    ],
+    "finish": true
+  },
+  "v02.provider.deadline.0001.80.before.DEADLINE_EXCEEDED": {
+    "manifest": {
+      "provider_id": "com.example.golden.provider",
+      "provider_version": "1",
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ],
+      "capabilities": [
+        {
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input_schema": true,
+          "config_schema": true,
+          "output_schema": true,
+          "lifecycle_features": {
+            "streaming": true,
+            "cancellation": true,
+            "deadlines": true,
+            "resource_reporting": true
+          }
+        }
+      ]
+    },
+    "initialize": {
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ]
+    },
+    "steps": [
+      {
+        "action": "accept",
+        "invocation": {
+          "invocation_id": "attempt-1",
+          "contract_version": "0.1",
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input": {
+            "v": [
+              true,
+              1,
+              null
+            ]
+          },
+          "config": {},
+          "vcp_version": "draft",
+          "deadline": "0001-01-01T00:00:00.000000000000000000000000000000000000000000000000000000000000000000000000000000002Z"
+        },
+        "now": "0001-01-01T00:00:00Z"
+      },
+      {
+        "action": "outcome",
+        "outcome": {
+          "invocation_id": "attempt-1",
+          "state": "DEADLINE_EXCEEDED"
+        },
+        "now": "0001-01-01T00:00:00.000000000000000000000000000000000000000000000000000000000000000000000000000000001Z"
+      }
+    ],
+    "finish": true
+  },
+  "v02.provider.deadline.0001.80.equal.COMPLETED": {
+    "manifest": {
+      "provider_id": "com.example.golden.provider",
+      "provider_version": "1",
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ],
+      "capabilities": [
+        {
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input_schema": true,
+          "config_schema": true,
+          "output_schema": true,
+          "lifecycle_features": {
+            "streaming": true,
+            "cancellation": true,
+            "deadlines": true,
+            "resource_reporting": true
+          }
+        }
+      ]
+    },
+    "initialize": {
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ]
+    },
+    "steps": [
+      {
+        "action": "accept",
+        "invocation": {
+          "invocation_id": "attempt-1",
+          "contract_version": "0.1",
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input": {
+            "v": [
+              true,
+              1,
+              null
+            ]
+          },
+          "config": {},
+          "vcp_version": "draft",
+          "deadline": "0001-01-01T00:00:00.000000000000000000000000000000000000000000000000000000000000000000000000000000002Z"
+        },
+        "now": "0001-01-01T00:00:00Z"
+      },
+      {
+        "action": "outcome",
+        "outcome": {
+          "invocation_id": "attempt-1",
+          "state": "COMPLETED",
+          "output": {
+            "v": [
+              true,
+              1,
+              null
+            ]
+          }
+        },
+        "now": "0001-01-01T00:00:00.000000000000000000000000000000000000000000000000000000000000000000000000000000002Z"
+      }
+    ],
+    "finish": true
+  },
+  "v02.provider.deadline.0001.80.equal.DEADLINE_EXCEEDED": {
+    "manifest": {
+      "provider_id": "com.example.golden.provider",
+      "provider_version": "1",
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ],
+      "capabilities": [
+        {
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input_schema": true,
+          "config_schema": true,
+          "output_schema": true,
+          "lifecycle_features": {
+            "streaming": true,
+            "cancellation": true,
+            "deadlines": true,
+            "resource_reporting": true
+          }
+        }
+      ]
+    },
+    "initialize": {
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ]
+    },
+    "steps": [
+      {
+        "action": "accept",
+        "invocation": {
+          "invocation_id": "attempt-1",
+          "contract_version": "0.1",
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input": {
+            "v": [
+              true,
+              1,
+              null
+            ]
+          },
+          "config": {},
+          "vcp_version": "draft",
+          "deadline": "0001-01-01T00:00:00.000000000000000000000000000000000000000000000000000000000000000000000000000000002Z"
+        },
+        "now": "0001-01-01T00:00:00Z"
+      },
+      {
+        "action": "outcome",
+        "outcome": {
+          "invocation_id": "attempt-1",
+          "state": "DEADLINE_EXCEEDED"
+        },
+        "now": "0001-01-01T00:00:00.000000000000000000000000000000000000000000000000000000000000000000000000000000002Z"
+      }
+    ],
+    "finish": true
+  },
+  "v02.provider.deadline.0001.80.after.COMPLETED": {
+    "manifest": {
+      "provider_id": "com.example.golden.provider",
+      "provider_version": "1",
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ],
+      "capabilities": [
+        {
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input_schema": true,
+          "config_schema": true,
+          "output_schema": true,
+          "lifecycle_features": {
+            "streaming": true,
+            "cancellation": true,
+            "deadlines": true,
+            "resource_reporting": true
+          }
+        }
+      ]
+    },
+    "initialize": {
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ]
+    },
+    "steps": [
+      {
+        "action": "accept",
+        "invocation": {
+          "invocation_id": "attempt-1",
+          "contract_version": "0.1",
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input": {
+            "v": [
+              true,
+              1,
+              null
+            ]
+          },
+          "config": {},
+          "vcp_version": "draft",
+          "deadline": "0001-01-01T00:00:00.000000000000000000000000000000000000000000000000000000000000000000000000000000002Z"
+        },
+        "now": "0001-01-01T00:00:00Z"
+      },
+      {
+        "action": "outcome",
+        "outcome": {
+          "invocation_id": "attempt-1",
+          "state": "COMPLETED",
+          "output": {
+            "v": [
+              true,
+              1,
+              null
+            ]
+          }
+        },
+        "now": "0001-01-01T00:00:00.000000000000000000000000000000000000000000000000000000000000000000000000000000003Z"
+      }
+    ],
+    "finish": true
+  },
+  "v02.provider.deadline.0001.80.after.DEADLINE_EXCEEDED": {
+    "manifest": {
+      "provider_id": "com.example.golden.provider",
+      "provider_version": "1",
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ],
+      "capabilities": [
+        {
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input_schema": true,
+          "config_schema": true,
+          "output_schema": true,
+          "lifecycle_features": {
+            "streaming": true,
+            "cancellation": true,
+            "deadlines": true,
+            "resource_reporting": true
+          }
+        }
+      ]
+    },
+    "initialize": {
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ]
+    },
+    "steps": [
+      {
+        "action": "accept",
+        "invocation": {
+          "invocation_id": "attempt-1",
+          "contract_version": "0.1",
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input": {
+            "v": [
+              true,
+              1,
+              null
+            ]
+          },
+          "config": {},
+          "vcp_version": "draft",
+          "deadline": "0001-01-01T00:00:00.000000000000000000000000000000000000000000000000000000000000000000000000000000002Z"
+        },
+        "now": "0001-01-01T00:00:00Z"
+      },
+      {
+        "action": "outcome",
+        "outcome": {
+          "invocation_id": "attempt-1",
+          "state": "DEADLINE_EXCEEDED"
+        },
+        "now": "0001-01-01T00:00:00.000000000000000000000000000000000000000000000000000000000000000000000000000000003Z"
+      }
+    ],
+    "finish": true
+  },
+  "v02.provider.deadline.2026.20.before.COMPLETED": {
+    "manifest": {
+      "provider_id": "com.example.golden.provider",
+      "provider_version": "1",
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ],
+      "capabilities": [
+        {
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input_schema": true,
+          "config_schema": true,
+          "output_schema": true,
+          "lifecycle_features": {
+            "streaming": true,
+            "cancellation": true,
+            "deadlines": true,
+            "resource_reporting": true
+          }
+        }
+      ]
+    },
+    "initialize": {
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ]
+    },
+    "steps": [
+      {
+        "action": "accept",
+        "invocation": {
+          "invocation_id": "attempt-1",
+          "contract_version": "0.1",
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input": {
+            "v": [
+              true,
+              1,
+              null
+            ]
+          },
+          "config": {},
+          "vcp_version": "draft",
+          "deadline": "2026-01-01T00:00:00.000000000000000000002Z"
+        },
+        "now": "2026-01-01T00:00:00Z"
+      },
+      {
+        "action": "outcome",
+        "outcome": {
+          "invocation_id": "attempt-1",
+          "state": "COMPLETED",
+          "output": {
+            "v": [
+              true,
+              1,
+              null
+            ]
+          }
+        },
+        "now": "2026-01-01T00:00:00.000000000000000000001Z"
+      }
+    ],
+    "finish": true
+  },
+  "v02.provider.deadline.2026.20.before.DEADLINE_EXCEEDED": {
+    "manifest": {
+      "provider_id": "com.example.golden.provider",
+      "provider_version": "1",
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ],
+      "capabilities": [
+        {
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input_schema": true,
+          "config_schema": true,
+          "output_schema": true,
+          "lifecycle_features": {
+            "streaming": true,
+            "cancellation": true,
+            "deadlines": true,
+            "resource_reporting": true
+          }
+        }
+      ]
+    },
+    "initialize": {
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ]
+    },
+    "steps": [
+      {
+        "action": "accept",
+        "invocation": {
+          "invocation_id": "attempt-1",
+          "contract_version": "0.1",
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input": {
+            "v": [
+              true,
+              1,
+              null
+            ]
+          },
+          "config": {},
+          "vcp_version": "draft",
+          "deadline": "2026-01-01T00:00:00.000000000000000000002Z"
+        },
+        "now": "2026-01-01T00:00:00Z"
+      },
+      {
+        "action": "outcome",
+        "outcome": {
+          "invocation_id": "attempt-1",
+          "state": "DEADLINE_EXCEEDED"
+        },
+        "now": "2026-01-01T00:00:00.000000000000000000001Z"
+      }
+    ],
+    "finish": true
+  },
+  "v02.provider.deadline.2026.20.equal.COMPLETED": {
+    "manifest": {
+      "provider_id": "com.example.golden.provider",
+      "provider_version": "1",
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ],
+      "capabilities": [
+        {
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input_schema": true,
+          "config_schema": true,
+          "output_schema": true,
+          "lifecycle_features": {
+            "streaming": true,
+            "cancellation": true,
+            "deadlines": true,
+            "resource_reporting": true
+          }
+        }
+      ]
+    },
+    "initialize": {
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ]
+    },
+    "steps": [
+      {
+        "action": "accept",
+        "invocation": {
+          "invocation_id": "attempt-1",
+          "contract_version": "0.1",
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input": {
+            "v": [
+              true,
+              1,
+              null
+            ]
+          },
+          "config": {},
+          "vcp_version": "draft",
+          "deadline": "2026-01-01T00:00:00.000000000000000000002Z"
+        },
+        "now": "2026-01-01T00:00:00Z"
+      },
+      {
+        "action": "outcome",
+        "outcome": {
+          "invocation_id": "attempt-1",
+          "state": "COMPLETED",
+          "output": {
+            "v": [
+              true,
+              1,
+              null
+            ]
+          }
+        },
+        "now": "2026-01-01T00:00:00.000000000000000000002Z"
+      }
+    ],
+    "finish": true
+  },
+  "v02.provider.deadline.2026.20.equal.DEADLINE_EXCEEDED": {
+    "manifest": {
+      "provider_id": "com.example.golden.provider",
+      "provider_version": "1",
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ],
+      "capabilities": [
+        {
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input_schema": true,
+          "config_schema": true,
+          "output_schema": true,
+          "lifecycle_features": {
+            "streaming": true,
+            "cancellation": true,
+            "deadlines": true,
+            "resource_reporting": true
+          }
+        }
+      ]
+    },
+    "initialize": {
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ]
+    },
+    "steps": [
+      {
+        "action": "accept",
+        "invocation": {
+          "invocation_id": "attempt-1",
+          "contract_version": "0.1",
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input": {
+            "v": [
+              true,
+              1,
+              null
+            ]
+          },
+          "config": {},
+          "vcp_version": "draft",
+          "deadline": "2026-01-01T00:00:00.000000000000000000002Z"
+        },
+        "now": "2026-01-01T00:00:00Z"
+      },
+      {
+        "action": "outcome",
+        "outcome": {
+          "invocation_id": "attempt-1",
+          "state": "DEADLINE_EXCEEDED"
+        },
+        "now": "2026-01-01T00:00:00.000000000000000000002Z"
+      }
+    ],
+    "finish": true
+  },
+  "v02.provider.deadline.2026.20.after.COMPLETED": {
+    "manifest": {
+      "provider_id": "com.example.golden.provider",
+      "provider_version": "1",
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ],
+      "capabilities": [
+        {
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input_schema": true,
+          "config_schema": true,
+          "output_schema": true,
+          "lifecycle_features": {
+            "streaming": true,
+            "cancellation": true,
+            "deadlines": true,
+            "resource_reporting": true
+          }
+        }
+      ]
+    },
+    "initialize": {
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ]
+    },
+    "steps": [
+      {
+        "action": "accept",
+        "invocation": {
+          "invocation_id": "attempt-1",
+          "contract_version": "0.1",
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input": {
+            "v": [
+              true,
+              1,
+              null
+            ]
+          },
+          "config": {},
+          "vcp_version": "draft",
+          "deadline": "2026-01-01T00:00:00.000000000000000000002Z"
+        },
+        "now": "2026-01-01T00:00:00Z"
+      },
+      {
+        "action": "outcome",
+        "outcome": {
+          "invocation_id": "attempt-1",
+          "state": "COMPLETED",
+          "output": {
+            "v": [
+              true,
+              1,
+              null
+            ]
+          }
+        },
+        "now": "2026-01-01T00:00:00.000000000000000000003Z"
+      }
+    ],
+    "finish": true
+  },
+  "v02.provider.deadline.2026.20.after.DEADLINE_EXCEEDED": {
+    "manifest": {
+      "provider_id": "com.example.golden.provider",
+      "provider_version": "1",
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ],
+      "capabilities": [
+        {
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input_schema": true,
+          "config_schema": true,
+          "output_schema": true,
+          "lifecycle_features": {
+            "streaming": true,
+            "cancellation": true,
+            "deadlines": true,
+            "resource_reporting": true
+          }
+        }
+      ]
+    },
+    "initialize": {
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ]
+    },
+    "steps": [
+      {
+        "action": "accept",
+        "invocation": {
+          "invocation_id": "attempt-1",
+          "contract_version": "0.1",
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input": {
+            "v": [
+              true,
+              1,
+              null
+            ]
+          },
+          "config": {},
+          "vcp_version": "draft",
+          "deadline": "2026-01-01T00:00:00.000000000000000000002Z"
+        },
+        "now": "2026-01-01T00:00:00Z"
+      },
+      {
+        "action": "outcome",
+        "outcome": {
+          "invocation_id": "attempt-1",
+          "state": "DEADLINE_EXCEEDED"
+        },
+        "now": "2026-01-01T00:00:00.000000000000000000003Z"
+      }
+    ],
+    "finish": true
+  },
+  "v02.provider.deadline.2026.80.before.COMPLETED": {
+    "manifest": {
+      "provider_id": "com.example.golden.provider",
+      "provider_version": "1",
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ],
+      "capabilities": [
+        {
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input_schema": true,
+          "config_schema": true,
+          "output_schema": true,
+          "lifecycle_features": {
+            "streaming": true,
+            "cancellation": true,
+            "deadlines": true,
+            "resource_reporting": true
+          }
+        }
+      ]
+    },
+    "initialize": {
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ]
+    },
+    "steps": [
+      {
+        "action": "accept",
+        "invocation": {
+          "invocation_id": "attempt-1",
+          "contract_version": "0.1",
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input": {
+            "v": [
+              true,
+              1,
+              null
+            ]
+          },
+          "config": {},
+          "vcp_version": "draft",
+          "deadline": "2026-01-01T00:00:00.000000000000000000000000000000000000000000000000000000000000000000000000000000002Z"
+        },
+        "now": "2026-01-01T00:00:00Z"
+      },
+      {
+        "action": "outcome",
+        "outcome": {
+          "invocation_id": "attempt-1",
+          "state": "COMPLETED",
+          "output": {
+            "v": [
+              true,
+              1,
+              null
+            ]
+          }
+        },
+        "now": "2026-01-01T00:00:00.000000000000000000000000000000000000000000000000000000000000000000000000000000001Z"
+      }
+    ],
+    "finish": true
+  },
+  "v02.provider.deadline.2026.80.before.DEADLINE_EXCEEDED": {
+    "manifest": {
+      "provider_id": "com.example.golden.provider",
+      "provider_version": "1",
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ],
+      "capabilities": [
+        {
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input_schema": true,
+          "config_schema": true,
+          "output_schema": true,
+          "lifecycle_features": {
+            "streaming": true,
+            "cancellation": true,
+            "deadlines": true,
+            "resource_reporting": true
+          }
+        }
+      ]
+    },
+    "initialize": {
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ]
+    },
+    "steps": [
+      {
+        "action": "accept",
+        "invocation": {
+          "invocation_id": "attempt-1",
+          "contract_version": "0.1",
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input": {
+            "v": [
+              true,
+              1,
+              null
+            ]
+          },
+          "config": {},
+          "vcp_version": "draft",
+          "deadline": "2026-01-01T00:00:00.000000000000000000000000000000000000000000000000000000000000000000000000000000002Z"
+        },
+        "now": "2026-01-01T00:00:00Z"
+      },
+      {
+        "action": "outcome",
+        "outcome": {
+          "invocation_id": "attempt-1",
+          "state": "DEADLINE_EXCEEDED"
+        },
+        "now": "2026-01-01T00:00:00.000000000000000000000000000000000000000000000000000000000000000000000000000000001Z"
+      }
+    ],
+    "finish": true
+  },
+  "v02.provider.deadline.2026.80.equal.COMPLETED": {
+    "manifest": {
+      "provider_id": "com.example.golden.provider",
+      "provider_version": "1",
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ],
+      "capabilities": [
+        {
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input_schema": true,
+          "config_schema": true,
+          "output_schema": true,
+          "lifecycle_features": {
+            "streaming": true,
+            "cancellation": true,
+            "deadlines": true,
+            "resource_reporting": true
+          }
+        }
+      ]
+    },
+    "initialize": {
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ]
+    },
+    "steps": [
+      {
+        "action": "accept",
+        "invocation": {
+          "invocation_id": "attempt-1",
+          "contract_version": "0.1",
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input": {
+            "v": [
+              true,
+              1,
+              null
+            ]
+          },
+          "config": {},
+          "vcp_version": "draft",
+          "deadline": "2026-01-01T00:00:00.000000000000000000000000000000000000000000000000000000000000000000000000000000002Z"
+        },
+        "now": "2026-01-01T00:00:00Z"
+      },
+      {
+        "action": "outcome",
+        "outcome": {
+          "invocation_id": "attempt-1",
+          "state": "COMPLETED",
+          "output": {
+            "v": [
+              true,
+              1,
+              null
+            ]
+          }
+        },
+        "now": "2026-01-01T00:00:00.000000000000000000000000000000000000000000000000000000000000000000000000000000002Z"
+      }
+    ],
+    "finish": true
+  },
+  "v02.provider.deadline.2026.80.equal.DEADLINE_EXCEEDED": {
+    "manifest": {
+      "provider_id": "com.example.golden.provider",
+      "provider_version": "1",
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ],
+      "capabilities": [
+        {
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input_schema": true,
+          "config_schema": true,
+          "output_schema": true,
+          "lifecycle_features": {
+            "streaming": true,
+            "cancellation": true,
+            "deadlines": true,
+            "resource_reporting": true
+          }
+        }
+      ]
+    },
+    "initialize": {
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ]
+    },
+    "steps": [
+      {
+        "action": "accept",
+        "invocation": {
+          "invocation_id": "attempt-1",
+          "contract_version": "0.1",
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input": {
+            "v": [
+              true,
+              1,
+              null
+            ]
+          },
+          "config": {},
+          "vcp_version": "draft",
+          "deadline": "2026-01-01T00:00:00.000000000000000000000000000000000000000000000000000000000000000000000000000000002Z"
+        },
+        "now": "2026-01-01T00:00:00Z"
+      },
+      {
+        "action": "outcome",
+        "outcome": {
+          "invocation_id": "attempt-1",
+          "state": "DEADLINE_EXCEEDED"
+        },
+        "now": "2026-01-01T00:00:00.000000000000000000000000000000000000000000000000000000000000000000000000000000002Z"
+      }
+    ],
+    "finish": true
+  },
+  "v02.provider.deadline.2026.80.after.COMPLETED": {
+    "manifest": {
+      "provider_id": "com.example.golden.provider",
+      "provider_version": "1",
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ],
+      "capabilities": [
+        {
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input_schema": true,
+          "config_schema": true,
+          "output_schema": true,
+          "lifecycle_features": {
+            "streaming": true,
+            "cancellation": true,
+            "deadlines": true,
+            "resource_reporting": true
+          }
+        }
+      ]
+    },
+    "initialize": {
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ]
+    },
+    "steps": [
+      {
+        "action": "accept",
+        "invocation": {
+          "invocation_id": "attempt-1",
+          "contract_version": "0.1",
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input": {
+            "v": [
+              true,
+              1,
+              null
+            ]
+          },
+          "config": {},
+          "vcp_version": "draft",
+          "deadline": "2026-01-01T00:00:00.000000000000000000000000000000000000000000000000000000000000000000000000000000002Z"
+        },
+        "now": "2026-01-01T00:00:00Z"
+      },
+      {
+        "action": "outcome",
+        "outcome": {
+          "invocation_id": "attempt-1",
+          "state": "COMPLETED",
+          "output": {
+            "v": [
+              true,
+              1,
+              null
+            ]
+          }
+        },
+        "now": "2026-01-01T00:00:00.000000000000000000000000000000000000000000000000000000000000000000000000000000003Z"
+      }
+    ],
+    "finish": true
+  },
+  "v02.provider.deadline.2026.80.after.DEADLINE_EXCEEDED": {
+    "manifest": {
+      "provider_id": "com.example.golden.provider",
+      "provider_version": "1",
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ],
+      "capabilities": [
+        {
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input_schema": true,
+          "config_schema": true,
+          "output_schema": true,
+          "lifecycle_features": {
+            "streaming": true,
+            "cancellation": true,
+            "deadlines": true,
+            "resource_reporting": true
+          }
+        }
+      ]
+    },
+    "initialize": {
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ]
+    },
+    "steps": [
+      {
+        "action": "accept",
+        "invocation": {
+          "invocation_id": "attempt-1",
+          "contract_version": "0.1",
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input": {
+            "v": [
+              true,
+              1,
+              null
+            ]
+          },
+          "config": {},
+          "vcp_version": "draft",
+          "deadline": "2026-01-01T00:00:00.000000000000000000000000000000000000000000000000000000000000000000000000000000002Z"
+        },
+        "now": "2026-01-01T00:00:00Z"
+      },
+      {
+        "action": "outcome",
+        "outcome": {
+          "invocation_id": "attempt-1",
+          "state": "DEADLINE_EXCEEDED"
+        },
+        "now": "2026-01-01T00:00:00.000000000000000000000000000000000000000000000000000000000000000000000000000000003Z"
+      }
+    ],
+    "finish": true
+  },
+  "v02.provider.deadline.9999.20.before.COMPLETED": {
+    "manifest": {
+      "provider_id": "com.example.golden.provider",
+      "provider_version": "1",
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ],
+      "capabilities": [
+        {
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input_schema": true,
+          "config_schema": true,
+          "output_schema": true,
+          "lifecycle_features": {
+            "streaming": true,
+            "cancellation": true,
+            "deadlines": true,
+            "resource_reporting": true
+          }
+        }
+      ]
+    },
+    "initialize": {
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ]
+    },
+    "steps": [
+      {
+        "action": "accept",
+        "invocation": {
+          "invocation_id": "attempt-1",
+          "contract_version": "0.1",
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input": {
+            "v": [
+              true,
+              1,
+              null
+            ]
+          },
+          "config": {},
+          "vcp_version": "draft",
+          "deadline": "9999-01-01T00:00:00.000000000000000000002Z"
+        },
+        "now": "9999-01-01T00:00:00Z"
+      },
+      {
+        "action": "outcome",
+        "outcome": {
+          "invocation_id": "attempt-1",
+          "state": "COMPLETED",
+          "output": {
+            "v": [
+              true,
+              1,
+              null
+            ]
+          }
+        },
+        "now": "9999-01-01T00:00:00.000000000000000000001Z"
+      }
+    ],
+    "finish": true
+  },
+  "v02.provider.deadline.9999.20.before.DEADLINE_EXCEEDED": {
+    "manifest": {
+      "provider_id": "com.example.golden.provider",
+      "provider_version": "1",
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ],
+      "capabilities": [
+        {
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input_schema": true,
+          "config_schema": true,
+          "output_schema": true,
+          "lifecycle_features": {
+            "streaming": true,
+            "cancellation": true,
+            "deadlines": true,
+            "resource_reporting": true
+          }
+        }
+      ]
+    },
+    "initialize": {
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ]
+    },
+    "steps": [
+      {
+        "action": "accept",
+        "invocation": {
+          "invocation_id": "attempt-1",
+          "contract_version": "0.1",
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input": {
+            "v": [
+              true,
+              1,
+              null
+            ]
+          },
+          "config": {},
+          "vcp_version": "draft",
+          "deadline": "9999-01-01T00:00:00.000000000000000000002Z"
+        },
+        "now": "9999-01-01T00:00:00Z"
+      },
+      {
+        "action": "outcome",
+        "outcome": {
+          "invocation_id": "attempt-1",
+          "state": "DEADLINE_EXCEEDED"
+        },
+        "now": "9999-01-01T00:00:00.000000000000000000001Z"
+      }
+    ],
+    "finish": true
+  },
+  "v02.provider.deadline.9999.20.equal.COMPLETED": {
+    "manifest": {
+      "provider_id": "com.example.golden.provider",
+      "provider_version": "1",
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ],
+      "capabilities": [
+        {
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input_schema": true,
+          "config_schema": true,
+          "output_schema": true,
+          "lifecycle_features": {
+            "streaming": true,
+            "cancellation": true,
+            "deadlines": true,
+            "resource_reporting": true
+          }
+        }
+      ]
+    },
+    "initialize": {
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ]
+    },
+    "steps": [
+      {
+        "action": "accept",
+        "invocation": {
+          "invocation_id": "attempt-1",
+          "contract_version": "0.1",
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input": {
+            "v": [
+              true,
+              1,
+              null
+            ]
+          },
+          "config": {},
+          "vcp_version": "draft",
+          "deadline": "9999-01-01T00:00:00.000000000000000000002Z"
+        },
+        "now": "9999-01-01T00:00:00Z"
+      },
+      {
+        "action": "outcome",
+        "outcome": {
+          "invocation_id": "attempt-1",
+          "state": "COMPLETED",
+          "output": {
+            "v": [
+              true,
+              1,
+              null
+            ]
+          }
+        },
+        "now": "9999-01-01T00:00:00.000000000000000000002Z"
+      }
+    ],
+    "finish": true
+  },
+  "v02.provider.deadline.9999.20.equal.DEADLINE_EXCEEDED": {
+    "manifest": {
+      "provider_id": "com.example.golden.provider",
+      "provider_version": "1",
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ],
+      "capabilities": [
+        {
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input_schema": true,
+          "config_schema": true,
+          "output_schema": true,
+          "lifecycle_features": {
+            "streaming": true,
+            "cancellation": true,
+            "deadlines": true,
+            "resource_reporting": true
+          }
+        }
+      ]
+    },
+    "initialize": {
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ]
+    },
+    "steps": [
+      {
+        "action": "accept",
+        "invocation": {
+          "invocation_id": "attempt-1",
+          "contract_version": "0.1",
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input": {
+            "v": [
+              true,
+              1,
+              null
+            ]
+          },
+          "config": {},
+          "vcp_version": "draft",
+          "deadline": "9999-01-01T00:00:00.000000000000000000002Z"
+        },
+        "now": "9999-01-01T00:00:00Z"
+      },
+      {
+        "action": "outcome",
+        "outcome": {
+          "invocation_id": "attempt-1",
+          "state": "DEADLINE_EXCEEDED"
+        },
+        "now": "9999-01-01T00:00:00.000000000000000000002Z"
+      }
+    ],
+    "finish": true
+  },
+  "v02.provider.deadline.9999.20.after.COMPLETED": {
+    "manifest": {
+      "provider_id": "com.example.golden.provider",
+      "provider_version": "1",
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ],
+      "capabilities": [
+        {
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input_schema": true,
+          "config_schema": true,
+          "output_schema": true,
+          "lifecycle_features": {
+            "streaming": true,
+            "cancellation": true,
+            "deadlines": true,
+            "resource_reporting": true
+          }
+        }
+      ]
+    },
+    "initialize": {
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ]
+    },
+    "steps": [
+      {
+        "action": "accept",
+        "invocation": {
+          "invocation_id": "attempt-1",
+          "contract_version": "0.1",
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input": {
+            "v": [
+              true,
+              1,
+              null
+            ]
+          },
+          "config": {},
+          "vcp_version": "draft",
+          "deadline": "9999-01-01T00:00:00.000000000000000000002Z"
+        },
+        "now": "9999-01-01T00:00:00Z"
+      },
+      {
+        "action": "outcome",
+        "outcome": {
+          "invocation_id": "attempt-1",
+          "state": "COMPLETED",
+          "output": {
+            "v": [
+              true,
+              1,
+              null
+            ]
+          }
+        },
+        "now": "9999-01-01T00:00:00.000000000000000000003Z"
+      }
+    ],
+    "finish": true
+  },
+  "v02.provider.deadline.9999.20.after.DEADLINE_EXCEEDED": {
+    "manifest": {
+      "provider_id": "com.example.golden.provider",
+      "provider_version": "1",
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ],
+      "capabilities": [
+        {
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input_schema": true,
+          "config_schema": true,
+          "output_schema": true,
+          "lifecycle_features": {
+            "streaming": true,
+            "cancellation": true,
+            "deadlines": true,
+            "resource_reporting": true
+          }
+        }
+      ]
+    },
+    "initialize": {
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ]
+    },
+    "steps": [
+      {
+        "action": "accept",
+        "invocation": {
+          "invocation_id": "attempt-1",
+          "contract_version": "0.1",
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input": {
+            "v": [
+              true,
+              1,
+              null
+            ]
+          },
+          "config": {},
+          "vcp_version": "draft",
+          "deadline": "9999-01-01T00:00:00.000000000000000000002Z"
+        },
+        "now": "9999-01-01T00:00:00Z"
+      },
+      {
+        "action": "outcome",
+        "outcome": {
+          "invocation_id": "attempt-1",
+          "state": "DEADLINE_EXCEEDED"
+        },
+        "now": "9999-01-01T00:00:00.000000000000000000003Z"
+      }
+    ],
+    "finish": true
+  },
+  "v02.provider.deadline.9999.80.before.COMPLETED": {
+    "manifest": {
+      "provider_id": "com.example.golden.provider",
+      "provider_version": "1",
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ],
+      "capabilities": [
+        {
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input_schema": true,
+          "config_schema": true,
+          "output_schema": true,
+          "lifecycle_features": {
+            "streaming": true,
+            "cancellation": true,
+            "deadlines": true,
+            "resource_reporting": true
+          }
+        }
+      ]
+    },
+    "initialize": {
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ]
+    },
+    "steps": [
+      {
+        "action": "accept",
+        "invocation": {
+          "invocation_id": "attempt-1",
+          "contract_version": "0.1",
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input": {
+            "v": [
+              true,
+              1,
+              null
+            ]
+          },
+          "config": {},
+          "vcp_version": "draft",
+          "deadline": "9999-01-01T00:00:00.000000000000000000000000000000000000000000000000000000000000000000000000000000002Z"
+        },
+        "now": "9999-01-01T00:00:00Z"
+      },
+      {
+        "action": "outcome",
+        "outcome": {
+          "invocation_id": "attempt-1",
+          "state": "COMPLETED",
+          "output": {
+            "v": [
+              true,
+              1,
+              null
+            ]
+          }
+        },
+        "now": "9999-01-01T00:00:00.000000000000000000000000000000000000000000000000000000000000000000000000000000001Z"
+      }
+    ],
+    "finish": true
+  },
+  "v02.provider.deadline.9999.80.before.DEADLINE_EXCEEDED": {
+    "manifest": {
+      "provider_id": "com.example.golden.provider",
+      "provider_version": "1",
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ],
+      "capabilities": [
+        {
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input_schema": true,
+          "config_schema": true,
+          "output_schema": true,
+          "lifecycle_features": {
+            "streaming": true,
+            "cancellation": true,
+            "deadlines": true,
+            "resource_reporting": true
+          }
+        }
+      ]
+    },
+    "initialize": {
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ]
+    },
+    "steps": [
+      {
+        "action": "accept",
+        "invocation": {
+          "invocation_id": "attempt-1",
+          "contract_version": "0.1",
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input": {
+            "v": [
+              true,
+              1,
+              null
+            ]
+          },
+          "config": {},
+          "vcp_version": "draft",
+          "deadline": "9999-01-01T00:00:00.000000000000000000000000000000000000000000000000000000000000000000000000000000002Z"
+        },
+        "now": "9999-01-01T00:00:00Z"
+      },
+      {
+        "action": "outcome",
+        "outcome": {
+          "invocation_id": "attempt-1",
+          "state": "DEADLINE_EXCEEDED"
+        },
+        "now": "9999-01-01T00:00:00.000000000000000000000000000000000000000000000000000000000000000000000000000000001Z"
+      }
+    ],
+    "finish": true
+  },
+  "v02.provider.deadline.9999.80.equal.COMPLETED": {
+    "manifest": {
+      "provider_id": "com.example.golden.provider",
+      "provider_version": "1",
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ],
+      "capabilities": [
+        {
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input_schema": true,
+          "config_schema": true,
+          "output_schema": true,
+          "lifecycle_features": {
+            "streaming": true,
+            "cancellation": true,
+            "deadlines": true,
+            "resource_reporting": true
+          }
+        }
+      ]
+    },
+    "initialize": {
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ]
+    },
+    "steps": [
+      {
+        "action": "accept",
+        "invocation": {
+          "invocation_id": "attempt-1",
+          "contract_version": "0.1",
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input": {
+            "v": [
+              true,
+              1,
+              null
+            ]
+          },
+          "config": {},
+          "vcp_version": "draft",
+          "deadline": "9999-01-01T00:00:00.000000000000000000000000000000000000000000000000000000000000000000000000000000002Z"
+        },
+        "now": "9999-01-01T00:00:00Z"
+      },
+      {
+        "action": "outcome",
+        "outcome": {
+          "invocation_id": "attempt-1",
+          "state": "COMPLETED",
+          "output": {
+            "v": [
+              true,
+              1,
+              null
+            ]
+          }
+        },
+        "now": "9999-01-01T00:00:00.000000000000000000000000000000000000000000000000000000000000000000000000000000002Z"
+      }
+    ],
+    "finish": true
+  },
+  "v02.provider.deadline.9999.80.equal.DEADLINE_EXCEEDED": {
+    "manifest": {
+      "provider_id": "com.example.golden.provider",
+      "provider_version": "1",
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ],
+      "capabilities": [
+        {
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input_schema": true,
+          "config_schema": true,
+          "output_schema": true,
+          "lifecycle_features": {
+            "streaming": true,
+            "cancellation": true,
+            "deadlines": true,
+            "resource_reporting": true
+          }
+        }
+      ]
+    },
+    "initialize": {
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ]
+    },
+    "steps": [
+      {
+        "action": "accept",
+        "invocation": {
+          "invocation_id": "attempt-1",
+          "contract_version": "0.1",
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input": {
+            "v": [
+              true,
+              1,
+              null
+            ]
+          },
+          "config": {},
+          "vcp_version": "draft",
+          "deadline": "9999-01-01T00:00:00.000000000000000000000000000000000000000000000000000000000000000000000000000000002Z"
+        },
+        "now": "9999-01-01T00:00:00Z"
+      },
+      {
+        "action": "outcome",
+        "outcome": {
+          "invocation_id": "attempt-1",
+          "state": "DEADLINE_EXCEEDED"
+        },
+        "now": "9999-01-01T00:00:00.000000000000000000000000000000000000000000000000000000000000000000000000000000002Z"
+      }
+    ],
+    "finish": true
+  },
+  "v02.provider.deadline.9999.80.after.COMPLETED": {
+    "manifest": {
+      "provider_id": "com.example.golden.provider",
+      "provider_version": "1",
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ],
+      "capabilities": [
+        {
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input_schema": true,
+          "config_schema": true,
+          "output_schema": true,
+          "lifecycle_features": {
+            "streaming": true,
+            "cancellation": true,
+            "deadlines": true,
+            "resource_reporting": true
+          }
+        }
+      ]
+    },
+    "initialize": {
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ]
+    },
+    "steps": [
+      {
+        "action": "accept",
+        "invocation": {
+          "invocation_id": "attempt-1",
+          "contract_version": "0.1",
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input": {
+            "v": [
+              true,
+              1,
+              null
+            ]
+          },
+          "config": {},
+          "vcp_version": "draft",
+          "deadline": "9999-01-01T00:00:00.000000000000000000000000000000000000000000000000000000000000000000000000000000002Z"
+        },
+        "now": "9999-01-01T00:00:00Z"
+      },
+      {
+        "action": "outcome",
+        "outcome": {
+          "invocation_id": "attempt-1",
+          "state": "COMPLETED",
+          "output": {
+            "v": [
+              true,
+              1,
+              null
+            ]
+          }
+        },
+        "now": "9999-01-01T00:00:00.000000000000000000000000000000000000000000000000000000000000000000000000000000003Z"
+      }
+    ],
+    "finish": true
+  },
+  "v02.provider.deadline.9999.80.after.DEADLINE_EXCEEDED": {
+    "manifest": {
+      "provider_id": "com.example.golden.provider",
+      "provider_version": "1",
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ],
+      "capabilities": [
+        {
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input_schema": true,
+          "config_schema": true,
+          "output_schema": true,
+          "lifecycle_features": {
+            "streaming": true,
+            "cancellation": true,
+            "deadlines": true,
+            "resource_reporting": true
+          }
+        }
+      ]
+    },
+    "initialize": {
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [
+        "draft"
+      ]
+    },
+    "steps": [
+      {
+        "action": "accept",
+        "invocation": {
+          "invocation_id": "attempt-1",
+          "contract_version": "0.1",
+          "capability_id": "com.example.golden.echo",
+          "capability_version": "1",
+          "input": {
+            "v": [
+              true,
+              1,
+              null
+            ]
+          },
+          "config": {},
+          "vcp_version": "draft",
+          "deadline": "9999-01-01T00:00:00.000000000000000000000000000000000000000000000000000000000000000000000000000000002Z"
+        },
+        "now": "9999-01-01T00:00:00Z"
+      },
+      {
+        "action": "outcome",
+        "outcome": {
+          "invocation_id": "attempt-1",
+          "state": "DEADLINE_EXCEEDED"
+        },
+        "now": "9999-01-01T00:00:00.000000000000000000000000000000000000000000000000000000000000000000000000000000003Z"
+      }
+    ],
+    "finish": true
+  }
+}

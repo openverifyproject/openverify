@@ -1,0 +1,127 @@
+{
+  "evidence.0": {
+    "error_code": "EVIDENCE_EMPTY"
+  },
+  "evidence.1": {
+    "error_code": "EVIDENCE_EMPTY"
+  },
+  "evidence.2": {
+    "error_code": "EVIDENCE_EMPTY"
+  },
+  "evidence.3": {
+    "accept": true
+  },
+  "evidence.4": {
+    "accept": true
+  },
+  "evidence.5": {
+    "accept": true
+  },
+  "evidence.6": {
+    "accept": true
+  },
+  "evidence.7": {
+    "error_code": "PROTOCOL_STRUCTURE"
+  },
+  "provenance.mutation.run_identity": {
+    "blocked_by_spec": "No portable authenticated run identity/hash or promise to rerun provider/reducer computation; a consistent identity/config rewrite alone is not a lineage contradiction",
+    "mutation": "run_identity"
+  },
+  "provenance.mutation.subject": {
+    "error_code": "PROVENANCE_LINEAGE",
+    "single_contradiction": true
+  },
+  "provenance.mutation.definition_identity": {
+    "blocked_by_spec": "No portable authenticated run identity/hash or promise to rerun provider/reducer computation; a consistent identity/config rewrite alone is not a lineage contradiction",
+    "mutation": "definition_identity"
+  },
+  "provenance.mutation.selected_subject": {
+    "error_code": "PROVENANCE_LINEAGE",
+    "single_contradiction": true
+  },
+  "provenance.mutation.admission": {
+    "error_code": "PROVENANCE_LINEAGE",
+    "single_contradiction": true
+  },
+  "provenance.mutation.node_identity": {
+    "error_code": "PROVENANCE_LINEAGE",
+    "single_contradiction": true
+  },
+  "provenance.mutation.disposition": {
+    "error_code": "PROVENANCE_LINEAGE",
+    "single_contradiction": true
+  },
+  "provenance.mutation.provider_id": {
+    "error_code": "PROVENANCE_LINEAGE",
+    "single_contradiction": true
+  },
+  "provenance.mutation.capability_id": {
+    "error_code": "PROVENANCE_LINEAGE",
+    "single_contradiction": true
+  },
+  "provenance.mutation.provider_version": {
+    "error_code": "PROVENANCE_LINEAGE",
+    "single_contradiction": true
+  },
+  "provenance.mutation.capability_version": {
+    "error_code": "PROVENANCE_LINEAGE",
+    "single_contradiction": true
+  },
+  "provenance.mutation.input_binding": {
+    "error_code": "PROVENANCE_LINEAGE",
+    "single_contradiction": true
+  },
+  "provenance.mutation.input_source": {
+    "error_code": "PROVENANCE_LINEAGE",
+    "single_contradiction": true
+  },
+  "provenance.mutation.consumed_value": {
+    "error_code": "PROVENANCE_LINEAGE",
+    "single_contradiction": true
+  },
+  "provenance.mutation.producer_output": {
+    "error_code": "PROVENANCE_LINEAGE",
+    "single_contradiction": true
+  },
+  "provenance.mutation.upstream_snapshot": {
+    "error_code": "PROVENANCE_LINEAGE",
+    "single_contradiction": true
+  },
+  "provenance.mutation.guard": {
+    "error_code": "PROVENANCE_LINEAGE",
+    "single_contradiction": true
+  },
+  "provenance.mutation.route": {
+    "error_code": "PROVENANCE_LINEAGE",
+    "single_contradiction": true
+  },
+  "provenance.mutation.aggregate_members": {
+    "error_code": "PROVENANCE_LINEAGE",
+    "single_contradiction": true
+  },
+  "provenance.mutation.weights": {
+    "blocked_by_spec": "No portable authenticated run identity/hash or promise to rerun provider/reducer computation; a consistent identity/config rewrite alone is not a lineage contradiction",
+    "mutation": "weights"
+  },
+  "provenance.mutation.final_result": {
+    "error_code": "PROVENANCE_LINEAGE",
+    "single_contradiction": true
+  },
+  "provenance.mutation.timing": {
+    "error_code": "PROVENANCE_LINEAGE",
+    "single_contradiction": true
+  },
+  "provenance.mutation.cancellation": {
+    "error_code": "PROVENANCE_LINEAGE",
+    "single_contradiction": true
+  },
+  "provenance.allowed.metadata": {
+    "accept": true
+  },
+  "provenance.allowed.independent_overlap": {
+    "accept": true
+  },
+  "provenance.allowed.optional_null": {
+    "accept": true
+  }
+}

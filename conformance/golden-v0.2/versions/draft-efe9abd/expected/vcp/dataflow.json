@@ -1,0 +1,261 @@
+{
+  "producer.failure.ERROR": {
+    "nodes": {
+      "p": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      },
+      "c": {
+        "state": "NONEXECUTED",
+        "reason": "INPUT_UNAVAILABLE",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "INPUT_UNAVAILABLE"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      }
+    }
+  },
+  "producer.failure.SKIP": {
+    "nodes": {
+      "p": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      },
+      "c": {
+        "state": "NONEXECUTED",
+        "reason": "INPUT_UNAVAILABLE",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "INPUT_UNAVAILABLE"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      }
+    }
+  },
+  "producer.failure.DEFERRED": {
+    "nodes": {
+      "p": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      },
+      "c": {
+        "state": "NONEXECUTED",
+        "reason": "INPUT_UNAVAILABLE",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "INPUT_UNAVAILABLE"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      }
+    }
+  },
+  "producer.failure.CANCELLED": {
+    "nodes": {
+      "p": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      },
+      "c": {
+        "state": "NONEXECUTED",
+        "reason": "INPUT_UNAVAILABLE",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "INPUT_UNAVAILABLE"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      }
+    }
+  },
+  "producer.failure.OUTPUT_MISSING": {
+    "nodes": {
+      "p": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      },
+      "c": {
+        "state": "NONEXECUTED",
+        "reason": "INPUT_UNAVAILABLE",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "INPUT_UNAVAILABLE"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      }
+    }
+  },
+  "producer.failure.INVALID": {
+    "nodes": {
+      "p": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      },
+      "c": {
+        "state": "NONEXECUTED",
+        "reason": "INPUT_UNAVAILABLE",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "INPUT_UNAVAILABLE"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      }
+    }
+  },
+  "availability.producer_not_executed": {
+    "nodes": {
+      "root": {
+        "state": "SUCCESS",
+        "information": {
+          "value": 1
+        }
+      },
+      "p": {
+        "state": "NONEXECUTED",
+        "reason": "GUARD_FALSE",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "GUARD_FALSE"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      },
+      "c": {
+        "state": "NONEXECUTED",
+        "reason": "INPUT_UNAVAILABLE",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "INPUT_UNAVAILABLE"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      }
+    }
+  },
+  "availability.error_result_available": {
+    "nodes": {
+      "p": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      },
+      "c": {
+        "state": "SUCCESS",
+        "information": {
+          "value": "inspected error"
+        }
+      }
+    }
+  }
+}

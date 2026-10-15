@@ -1,0 +1,126 @@
+{
+  "evidence.0": {
+    "object_type": "evidence",
+    "value": {}
+  },
+  "evidence.1": {
+    "object_type": "evidence",
+    "value": {
+      "id": "alone"
+    }
+  },
+  "evidence.2": {
+    "object_type": "evidence",
+    "value": {
+      "message": null
+    }
+  },
+  "evidence.3": {
+    "object_type": "evidence",
+    "value": {
+      "structured_data": {}
+    }
+  },
+  "evidence.4": {
+    "object_type": "evidence",
+    "value": {
+      "structured_data": []
+    }
+  },
+  "evidence.5": {
+    "object_type": "evidence",
+    "value": {
+      "locator": 0
+    }
+  },
+  "evidence.6": {
+    "object_type": "evidence",
+    "value": {
+      "message": "supports"
+    }
+  },
+  "evidence.7": {
+    "object_type": "evidence",
+    "value": {
+      "message": ""
+    }
+  },
+  "provenance.mutation.run_identity": {
+    "mutation": "run_identity"
+  },
+  "provenance.mutation.subject": {
+    "mutation": "subject"
+  },
+  "provenance.mutation.definition_identity": {
+    "mutation": "definition_identity"
+  },
+  "provenance.mutation.selected_subject": {
+    "mutation": "selected_subject"
+  },
+  "provenance.mutation.admission": {
+    "mutation": "admission"
+  },
+  "provenance.mutation.node_identity": {
+    "mutation": "node_identity"
+  },
+  "provenance.mutation.disposition": {
+    "mutation": "disposition"
+  },
+  "provenance.mutation.provider_id": {
+    "mutation": "provider_id"
+  },
+  "provenance.mutation.capability_id": {
+    "mutation": "capability_id"
+  },
+  "provenance.mutation.provider_version": {
+    "mutation": "provider_version"
+  },
+  "provenance.mutation.capability_version": {
+    "mutation": "capability_version"
+  },
+  "provenance.mutation.input_binding": {
+    "mutation": "input_binding"
+  },
+  "provenance.mutation.input_source": {
+    "mutation": "input_source"
+  },
+  "provenance.mutation.consumed_value": {
+    "mutation": "consumed_value"
+  },
+  "provenance.mutation.producer_output": {
+    "mutation": "producer_output"
+  },
+  "provenance.mutation.upstream_snapshot": {
+    "mutation": "upstream_snapshot"
+  },
+  "provenance.mutation.guard": {
+    "mutation": "guard"
+  },
+  "provenance.mutation.route": {
+    "mutation": "route"
+  },
+  "provenance.mutation.aggregate_members": {
+    "mutation": "aggregate_members"
+  },
+  "provenance.mutation.weights": {
+    "mutation": "weights"
+  },
+  "provenance.mutation.final_result": {
+    "mutation": "final_result"
+  },
+  "provenance.mutation.timing": {
+    "mutation": "timing"
+  },
+  "provenance.mutation.cancellation": {
+    "mutation": "cancellation"
+  },
+  "provenance.allowed.metadata": {
+    "mutation": "metadata"
+  },
+  "provenance.allowed.independent_overlap": {
+    "mutation": "independent_overlap"
+  },
+  "provenance.allowed.optional_null": {
+    "mutation": "optional_null"
+  }
+}

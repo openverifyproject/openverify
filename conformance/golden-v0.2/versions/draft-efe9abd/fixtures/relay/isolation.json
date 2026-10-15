@@ -1,0 +1,18 @@
+{
+  "runtime.isolation.distinct_inputs": {
+    "experiment": "isolation",
+    "variant": "distinct_inputs"
+  },
+  "runtime.isolation.distinct_bindings": {
+    "experiment": "isolation",
+    "variant": "distinct_bindings"
+  },
+  "runtime.isolation.cancel_one_run": {
+    "experiment": "isolation",
+    "variant": "cancel_one_run"
+  },
+  "runtime.isolation.separate_worktrees": {
+    "experiment": "isolation",
+    "variant": "separate_worktrees"
+  }
+}

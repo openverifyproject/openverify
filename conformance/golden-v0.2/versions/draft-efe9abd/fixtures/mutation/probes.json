@@ -1,0 +1,44 @@
+{
+  "mutant.pass_as_fail": {
+    "mutant": "pass_as_fail"
+  },
+  "mutant.unknown_as_pass": {
+    "mutant": "unknown_as_pass"
+  },
+  "mutant.stale_output": {
+    "mutant": "stale_output"
+  },
+  "mutant.ignored_guard": {
+    "mutant": "ignored_guard"
+  },
+  "mutant.wrong_provider": {
+    "mutant": "wrong_provider"
+  },
+  "mutant.schema_bypass": {
+    "mutant": "schema_bypass"
+  },
+  "mutant.swapped_weights": {
+    "mutant": "swapped_weights"
+  },
+  "mutant.ignored_stop": {
+    "mutant": "ignored_stop"
+  },
+  "mutant.fabricated_usage": {
+    "mutant": "fabricated_usage"
+  },
+  "mutant.missing_provenance": {
+    "mutant": "missing_provenance"
+  },
+  "mutant.provider_substitution": {
+    "mutant": "provider_substitution"
+  },
+  "mutant.cancel_as_success": {
+    "mutant": "cancel_as_success"
+  },
+  "mutant.cross_run_leak": {
+    "mutant": "cross_run_leak"
+  },
+  "v02.mutant.contradictory_availability": {
+    "mutant": "contradictory_availability"
+  }
+}
