@@ -19,7 +19,7 @@ implicitly answered by reference Python behavior.
 | Retry/defer scheduling and history/cache equivalence | Decisions serialize; engine does not schedule retries |
 | External artifact integrity and schema resolution | No fetching; self-contained judgment schemas only |
 | Provider authenticity and independent reproduction of host contract-rejection claims | Exact occurrence binding and structural consistency only; no binary/endpoint attestation or manifest snapshot in VCP records |
-| Future provider transport/session provenance and policy provider bindings | Graph-node bindings use trusted local execute(inputs, config); policy operations remain local; no transport runner or Relay |
+| Future provider transport/session provenance and policy provider bindings | Graph-node bindings are normative; Relay retains extra transport/policy correlation as optional unauthenticated annotations, not new portable fields |
 
 No missing top-level category was established by the conceptual audit. Category
 coverage does not imply portable syntax or runtime support for every example.
@@ -62,3 +62,25 @@ retain the existing explicit-dataflow behavior, with no implicit edge propagatio
 This is a breaking DRAFT clarification, not stable 1.0 compatibility. Provider
 selection, asynchronous/distributed cancellation, scheduling retries/deferred work,
 cycles/iteration and dynamic expansion remain unsupported.
+
+## Relay v0.1 implementation boundaries (not new VCP semantics)
+
+Relay implements trusted provider selection and asynchronous finite DAG execution.
+The existing cancellation event represents one interrupted attempt followed by
+unstarted nodes. Portable provenance for **multiple simultaneously interrupted
+attempts** remains OPEN. Relay serializes occurrences that request a recorded
+host Cancellation token. Task cancellation aborts the API call after process
+cleanup; it does not fabricate a completed RunRecord. Other runs remain independent.
+
+Independent non-Control nodes execute in deterministic ready waves. A Control
+node is a scheduling barrier; no other wave member can be concurrently affected
+by its stop/route decision. Parallel completion order never determines control
+meaning or record ordering. This is a conservative scheduling choice permitted
+by the existing acyclic semantics, not a new graph feature.
+
+Portable transport/session and custom-policy provider provenance fields remain
+OPEN. Relay retains additional invocation correlation and diagnostic traces in
+an optional `urn:openverify:relay` extension. These annotations do not replace
+the normative graph-node ProviderBinding or change SDK lineage validation. The
+SDK does not authenticate or independently validate these optional annotations.
+No cryptographic provider attestation or coherent-forgery detection is claimed.
