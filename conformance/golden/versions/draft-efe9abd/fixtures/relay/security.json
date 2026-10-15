@@ -1,0 +1,18 @@
+{
+  "runtime.security.untrusted_command": {
+    "experiment": "security",
+    "variant": "untrusted_command"
+  },
+  "runtime.security.outside_root": {
+    "experiment": "security",
+    "variant": "outside_root"
+  },
+  "runtime.security.symlink_escape": {
+    "experiment": "security",
+    "variant": "symlink_escape"
+  },
+  "runtime.security.argv_no_shell": {
+    "experiment": "security",
+    "variant": "argv_no_shell"
+  }
+}

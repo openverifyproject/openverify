@@ -1,0 +1,146 @@
+{
+  "port.ProviderCatalog.default": {
+    "port": "ProviderCatalog",
+    "variant": "default"
+  },
+  "port.ProviderCatalog.replacement": {
+    "port": "ProviderCatalog",
+    "variant": "replacement"
+  },
+  "port.ProviderCatalog.valid": {
+    "port": "ProviderCatalog",
+    "variant": "valid"
+  },
+  "port.ProviderCatalog.invalid": {
+    "port": "ProviderCatalog",
+    "variant": "invalid"
+  },
+  "port.ProviderCatalog.exception": {
+    "port": "ProviderCatalog",
+    "variant": "exception"
+  },
+  "port.ProviderCatalog.isolation": {
+    "port": "ProviderCatalog",
+    "variant": "isolation"
+  },
+  "port.ProviderBinder.default": {
+    "port": "ProviderBinder",
+    "variant": "default"
+  },
+  "port.ProviderBinder.replacement": {
+    "port": "ProviderBinder",
+    "variant": "replacement"
+  },
+  "port.ProviderBinder.valid": {
+    "port": "ProviderBinder",
+    "variant": "valid"
+  },
+  "port.ProviderBinder.invalid": {
+    "port": "ProviderBinder",
+    "variant": "invalid"
+  },
+  "port.ProviderBinder.exception": {
+    "port": "ProviderBinder",
+    "variant": "exception"
+  },
+  "port.ProviderBinder.isolation": {
+    "port": "ProviderBinder",
+    "variant": "isolation"
+  },
+  "port.ExecutionDriver.default": {
+    "port": "ExecutionDriver",
+    "variant": "default"
+  },
+  "port.ExecutionDriver.replacement": {
+    "port": "ExecutionDriver",
+    "variant": "replacement"
+  },
+  "port.ExecutionDriver.valid": {
+    "port": "ExecutionDriver",
+    "variant": "valid"
+  },
+  "port.ExecutionDriver.invalid": {
+    "port": "ExecutionDriver",
+    "variant": "invalid"
+  },
+  "port.ExecutionDriver.exception": {
+    "port": "ExecutionDriver",
+    "variant": "exception"
+  },
+  "port.ExecutionDriver.isolation": {
+    "port": "ExecutionDriver",
+    "variant": "isolation"
+  },
+  "port.ProviderTransport.default": {
+    "port": "ProviderTransport",
+    "variant": "default"
+  },
+  "port.ProviderTransport.replacement": {
+    "port": "ProviderTransport",
+    "variant": "replacement"
+  },
+  "port.ProviderTransport.valid": {
+    "port": "ProviderTransport",
+    "variant": "valid"
+  },
+  "port.ProviderTransport.invalid": {
+    "port": "ProviderTransport",
+    "variant": "invalid"
+  },
+  "port.ProviderTransport.exception": {
+    "port": "ProviderTransport",
+    "variant": "exception"
+  },
+  "port.ProviderTransport.isolation": {
+    "port": "ProviderTransport",
+    "variant": "isolation"
+  },
+  "port.RecordStore.default": {
+    "port": "RecordStore",
+    "variant": "default"
+  },
+  "port.RecordStore.replacement": {
+    "port": "RecordStore",
+    "variant": "replacement"
+  },
+  "port.RecordStore.valid": {
+    "port": "RecordStore",
+    "variant": "valid"
+  },
+  "port.RecordStore.invalid": {
+    "port": "RecordStore",
+    "variant": "invalid"
+  },
+  "port.RecordStore.exception": {
+    "port": "RecordStore",
+    "variant": "exception"
+  },
+  "port.RecordStore.isolation": {
+    "port": "RecordStore",
+    "variant": "isolation"
+  },
+  "port.EventObserver.default": {
+    "port": "EventObserver",
+    "variant": "default"
+  },
+  "port.EventObserver.replacement": {
+    "port": "EventObserver",
+    "variant": "replacement"
+  },
+  "port.EventObserver.valid": {
+    "port": "EventObserver",
+    "variant": "valid"
+  },
+  "port.EventObserver.invalid": {
+    "port": "EventObserver",
+    "variant": "invalid"
+  },
+  "port.EventObserver.exception": {
+    "port": "EventObserver",
+    "variant": "exception"
+  },
+  "port.EventObserver.isolation": {
+    "port": "EventObserver",
+    "variant": "isolation"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "runtime.concurrency.ready_overlap": {
+    "invariant": "both providers enter before either is released"
+  },
+  "runtime.concurrency.dependency_barrier": {
+    "invariant": "successor has not entered at predecessor barrier"
+  },
+  "runtime.concurrency.completion_order": {
+    "invariant": "semantic records identical under reversed release order"
+  },
+  "runtime.concurrency.control_barrier": {
+    "invariant": "Control executes without other active work"
+  },
+  "runtime.concurrency.shared_provider_serial": {
+    "invariant": "default provider invocations do not overlap"
+  }
+}
