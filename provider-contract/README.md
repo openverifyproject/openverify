@@ -22,8 +22,8 @@ estimate resources, analyze dependencies, or perform future kinds of work.
 ```
 
 VCP defines what verification means. This contract defines invocation and runtime
-interoperability below VCP. OpenVerify Relay is a planned runner implementing both;
-it does not exist yet. Competing runners use the exact same public contract and
+interoperability below VCP. OpenVerify Relay is an implemented independent runner
+using both. Competing runners use the exact same public contract and
 providers. There is no private OpenVerify provider path.
 
 ```text

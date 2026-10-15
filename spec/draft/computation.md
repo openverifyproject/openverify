@@ -14,4 +14,6 @@ registered; operation requirements never authorize imports or expressions.
 
 ## OPEN QUESTIONS
 
-Provider discovery and selection belong to a future runtime. No Relay is implemented.
+Provider discovery and selection are implementation responsibilities outside VCP
+meaning. Relay v0.1 implements a trusted catalog and exact deterministic binding;
+see [Relay architecture](../../docs/relay/architecture.md) for the non-normative runtime boundary.
