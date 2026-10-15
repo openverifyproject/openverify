@@ -1,0 +1,87 @@
+{
+  "passed": true,
+  "checks": [
+    "JSON distinction",
+    "JSON distinction",
+    "JSON distinction",
+    "JSON distinction",
+    "all categorical Result states",
+    "independent weighted 0.75 regression",
+    "majority tie rejection",
+    "complete bounded DAG count",
+    "seeded graph generation and shrink validity",
+    "abstract transitions obey all prerequisites",
+    "UTF-8 byte framing and decimal deadlines",
+    "13 assertion-sensitivity probes"
+  ],
+  "mutants": [
+    {
+      "detected": true,
+      "mutant": "pass_as_fail",
+      "invariant": "/verdict: expected 'PASS', observed 'FAIL'"
+    },
+    {
+      "detected": true,
+      "mutant": "unknown_as_pass",
+      "invariant": ": keys expected=['applicability', 'determination', 'disposition', 'execution_outcome', 'protocol'] observed=['applicability', 'determination', 'disposition', 'execution_outcome', 'protocol', 'verdict']"
+    },
+    {
+      "detected": true,
+      "mutant": "stale_output",
+      "invariant": ": keys expected=['status'] observed=['status', 'value']"
+    },
+    {
+      "detected": true,
+      "mutant": "ignored_guard",
+      "invariant": ": keys expected=['reason', 'state'] observed=['state']"
+    },
+    {
+      "detected": true,
+      "mutant": "wrong_provider",
+      "invariant": ": expected 'com.example.expected', observed 'com.example.other'"
+    },
+    {
+      "detected": true,
+      "mutant": "schema_bypass",
+      "invariant": ": JSON type boolean != number"
+    },
+    {
+      "detected": true,
+      "mutant": "swapped_weights",
+      "invariant": "/result/score: expected 0.75, observed 0.25"
+    },
+    {
+      "detected": true,
+      "mutant": "ignored_stop",
+      "invariant": ": JSON type string != null"
+    },
+    {
+      "detected": true,
+      "mutant": "fabricated_usage",
+      "invariant": "/value: expected 2, observed 3"
+    },
+    {
+      "detected": true,
+      "mutant": "missing_provenance",
+      "invariant": ": keys expected=['source'] observed=['value']"
+    },
+    {
+      "detected": true,
+      "mutant": "provider_substitution",
+      "invariant": "/provider_id: expected 'com.example.correct', observed 'com.example.wrong'"
+    },
+    {
+      "detected": true,
+      "mutant": "cancel_as_success",
+      "invariant": ": keys expected=['disposition', 'protocol'] observed=['applicability', 'determination', 'disposition', 'execution_outcome', 'protocol', 'verdict']"
+    },
+    {
+      "detected": true,
+      "mutant": "cross_run_leak",
+      "invariant": "/run: expected 'first', observed 'second'"
+    }
+  ],
+  "surviving_assertion_probes": [],
+  "sut_executed": false,
+  "limitations": "These probes exercise assertions; they are not a production mutation-testing campaign."
+}
