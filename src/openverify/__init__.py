@@ -2,10 +2,12 @@
 
 __version__ = "0.1.0"
 
+from openverify.authoring import Graph
 from openverify.dataflow import validate_run_inputs
 from openverify.errors import ProtocolError
 from openverify.fingerprint import fingerprint
 from openverify.inspection import flattened_status, inspect_definition
+from openverify.relay import Relay
 from openverify.serialization import serialize
 from openverify.validation import (
     load_schema,
@@ -18,6 +20,8 @@ from openverify.validation import (
 )
 
 __all__ = [
+    "Graph",
+    "Relay",
     "ProtocolError",
     "fingerprint",
     "flattened_status",
