@@ -1,0 +1,207 @@
+{
+  "standard.read_text.utf8": {
+    "contract_reference": "docs/relay/providers.md#read_text"
+  },
+  "standard.read_text.missing": {
+    "contract_reference": "docs/relay/providers.md#read_text"
+  },
+  "standard.read_text.binary": {
+    "contract_reference": "docs/relay/providers.md#read_text"
+  },
+  "standard.read_text.oversized": {
+    "contract_reference": "docs/relay/providers.md#read_text"
+  },
+  "standard.read_file.binary": {
+    "contract_reference": "docs/relay/providers.md#read_file"
+  },
+  "standard.read_file.bounded": {
+    "contract_reference": "docs/relay/providers.md#read_file"
+  },
+  "standard.select_files.files": {
+    "contract_reference": "docs/relay/providers.md#select_files"
+  },
+  "standard.select_files.glob": {
+    "contract_reference": "docs/relay/providers.md#select_files"
+  },
+  "standard.select_files.directory": {
+    "contract_reference": "docs/relay/providers.md#select_files"
+  },
+  "standard.git_scope.WORKTREE": {
+    "contract_reference": "docs/relay/providers.md#git_scope"
+  },
+  "standard.git_scope.STAGED": {
+    "contract_reference": "docs/relay/providers.md#git_scope"
+  },
+  "standard.git_scope.UNSTAGED": {
+    "contract_reference": "docs/relay/providers.md#git_scope"
+  },
+  "standard.git_scope.untracked": {
+    "contract_reference": "docs/relay/providers.md#git_scope"
+  },
+  "standard.git_scope.rename": {
+    "contract_reference": "docs/relay/providers.md#git_scope"
+  },
+  "standard.git_scope.deleted": {
+    "contract_reference": "docs/relay/providers.md#git_scope"
+  },
+  "standard.candidate_unchanged.fresh": {
+    "contract_reference": "docs/relay/providers.md#candidate_unchanged"
+  },
+  "standard.candidate_unchanged.content_changed": {
+    "contract_reference": "docs/relay/providers.md#candidate_unchanged"
+  },
+  "standard.candidate_unchanged.head_changed": {
+    "contract_reference": "docs/relay/providers.md#candidate_unchanged"
+  },
+  "standard.ruff.violation": {
+    "contract_reference": "docs/relay/providers.md#ruff"
+  },
+  "standard.ruff.corrected": {
+    "contract_reference": "docs/relay/providers.md#ruff"
+  },
+  "standard.pytest.pass": {
+    "contract_reference": "docs/relay/providers.md#pytest"
+  },
+  "standard.pytest.fail": {
+    "contract_reference": "docs/relay/providers.md#pytest"
+  },
+  "standard.pytest.collection_error": {
+    "contract_reference": "docs/relay/providers.md#pytest"
+  },
+  "standard.astgrep.violation": {
+    "contract_reference": "docs/relay/providers.md#astgrep"
+  },
+  "standard.astgrep.corrected": {
+    "contract_reference": "docs/relay/providers.md#astgrep"
+  },
+  "standard.scope.files": {
+    "contract_reference": "docs/relay/providers.md#scope"
+  },
+  "standard.scope.changed_files": {
+    "contract_reference": "docs/relay/providers.md#scope"
+  },
+  "standard.scope.directory": {
+    "contract_reference": "docs/relay/providers.md#scope"
+  },
+  "standard.scope.changed_spans": {
+    "contract_reference": "docs/relay/providers.md#scope"
+  },
+  "standard.scope.ast_ranges": {
+    "contract_reference": "docs/relay/providers.md#scope"
+  },
+  "standard.scope.zero_deletion": {
+    "contract_reference": "docs/relay/providers.md#scope"
+  },
+  "standard.scope.half_open_boundary": {
+    "contract_reference": "docs/relay/providers.md#scope"
+  },
+  "standard.no_findings.empty": {
+    "contract_reference": "docs/relay/providers.md#no_findings"
+  },
+  "standard.no_findings.nonempty": {
+    "contract_reference": "docs/relay/providers.md#no_findings"
+  },
+  "standard.text.pass": {
+    "contract_reference": "docs/relay/providers.md#text"
+  },
+  "standard.text.fail": {
+    "contract_reference": "docs/relay/providers.md#text"
+  },
+  "standard.text.unicode_offsets": {
+    "contract_reference": "docs/relay/providers.md#text"
+  },
+  "standard.text.missing": {
+    "contract_reference": "docs/relay/providers.md#text"
+  },
+  "standard.text.terms_combine": {
+    "contract_reference": "docs/relay/providers.md#text"
+  },
+  "standard.json_parse.valid": {
+    "contract_reference": "docs/relay/providers.md#json_parse"
+  },
+  "standard.json_parse.duplicate": {
+    "contract_reference": "docs/relay/providers.md#json_parse"
+  },
+  "standard.json_parse.nonfinite": {
+    "contract_reference": "docs/relay/providers.md#json_parse"
+  },
+  "standard.json_parse.malformed": {
+    "contract_reference": "docs/relay/providers.md#json_parse"
+  },
+  "standard.schema.valid": {
+    "contract_reference": "docs/relay/providers.md#schema"
+  },
+  "standard.schema.invalid": {
+    "contract_reference": "docs/relay/providers.md#schema"
+  },
+  "standard.schema.bool_number": {
+    "contract_reference": "docs/relay/providers.md#schema"
+  },
+  "standard.action_policy.allowed": {
+    "blocked_by_spec": "directory_prefix_trailing_separator",
+    "required_semantics": "Only directory members may be allowed; tmp versus tmp/ spelling unspecified"
+  },
+  "standard.action_policy.denied": {
+    "contract_reference": "docs/relay/providers.md#action_policy"
+  },
+  "standard.action_policy.traversal": {
+    "contract_reference": "docs/relay/providers.md#action_policy"
+  },
+  "standard.action_policy.absolute": {
+    "contract_reference": "docs/relay/providers.md#action_policy"
+  },
+  "standard.gate.PASS": {
+    "contract_reference": "docs/relay/providers.md#gate"
+  },
+  "standard.gate.FAIL": {
+    "contract_reference": "docs/relay/providers.md#gate"
+  },
+  "standard.gate.UNKNOWN": {
+    "contract_reference": "docs/relay/providers.md#gate"
+  },
+  "standard.gate.ERROR": {
+    "contract_reference": "docs/relay/providers.md#gate"
+  },
+  "standard.gate.SKIP": {
+    "contract_reference": "docs/relay/providers.md#gate"
+  },
+  "standard.gate.DEFERRED": {
+    "contract_reference": "docs/relay/providers.md#gate"
+  },
+  "standard.gate.CANCELLED": {
+    "contract_reference": "docs/relay/providers.md#gate"
+  },
+  "standard.gate.NOT_APPLICABLE": {
+    "contract_reference": "docs/relay/providers.md#gate"
+  },
+  "standard.gate.KNOWN": {
+    "contract_reference": "docs/relay/providers.md#gate"
+  },
+  "standard.command.argv": {
+    "contract_reference": "docs/relay/providers.md#command"
+  },
+  "standard.command.stdout_stderr": {
+    "contract_reference": "docs/relay/providers.md#command"
+  },
+  "standard.command.nonzero": {
+    "contract_reference": "docs/relay/providers.md#command"
+  },
+  "standard.command.missing_executable": {
+    "contract_reference": "docs/relay/providers.md#command"
+  },
+  "standard.command.bounded_output": {
+    "contract_reference": "docs/relay/providers.md#command"
+  },
+  "standard.command.descendant_cleanup": {
+    "contract_reference": "docs/relay/providers.md#command"
+  },
+  "standard.command_check.pass": {
+    "contract_reference": "docs/relay/providers.md#command_check"
+  },
+  "standard.command_check.fail": {
+    "contract_reference": "docs/relay/providers.md#command_check"
+  },
+  "standard.aggregate.ALL": {
+    "contract_reference": "docs/relay/providers.md#aggregate"
+  }
+}

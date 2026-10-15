@@ -1,0 +1,45 @@
+{
+  "mutant.pass_as_fail": {
+    "must_detect": true
+  },
+  "mutant.unknown_as_pass": {
+    "must_detect": true
+  },
+  "mutant.stale_output": {
+    "must_detect": true
+  },
+  "mutant.ignored_guard": {
+    "must_detect": true
+  },
+  "mutant.wrong_provider": {
+    "must_detect": true
+  },
+  "mutant.schema_bypass": {
+    "must_detect": true
+  },
+  "mutant.swapped_weights": {
+    "must_detect": true
+  },
+  "mutant.ignored_stop": {
+    "must_detect": true
+  },
+  "mutant.fabricated_usage": {
+    "must_detect": true
+  },
+  "mutant.missing_provenance": {
+    "must_detect": true
+  },
+  "mutant.provider_substitution": {
+    "must_detect": true
+  },
+  "mutant.cancel_as_success": {
+    "must_detect": true
+  },
+  "mutant.cross_run_leak": {
+    "must_detect": true
+  },
+  "v02.mutant.contradictory_availability": {
+    "must_detect": true,
+    "contract": "A consumed valid constant cannot be INVALID"
+  }
+}

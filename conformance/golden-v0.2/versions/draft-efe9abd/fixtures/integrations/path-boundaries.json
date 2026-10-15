@@ -1,0 +1,22 @@
+{
+  "v02.standard.action_policy.directory_child": {
+    "capability": "action_policy",
+    "variant": "directory_child",
+    "external_tool": null
+  },
+  "v02.standard.action_policy.sibling": {
+    "capability": "action_policy",
+    "variant": "sibling",
+    "external_tool": null
+  },
+  "v02.standard.action_policy.trailing_traversal": {
+    "capability": "action_policy",
+    "variant": "trailing_traversal",
+    "external_tool": null
+  },
+  "v02.standard.action_policy.backslash_traversal": {
+    "capability": "action_policy",
+    "variant": "backslash_traversal",
+    "external_tool": null
+  }
+}

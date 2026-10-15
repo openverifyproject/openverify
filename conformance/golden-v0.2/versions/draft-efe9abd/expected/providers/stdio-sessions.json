@@ -1,0 +1,51 @@
+{
+  "v02.provider.stdio.valid": {
+    "state": "SUCCESS",
+    "information": {
+      "value": "a"
+    },
+    "contract": "Real initialized external peer; invalid messages/outcomes must not become accepted verification"
+  },
+  "v02.provider.stdio.stderr": {
+    "state": "SUCCESS",
+    "information": {
+      "value": "a"
+    },
+    "contract": "Real initialized external peer; invalid messages/outcomes must not become accepted verification"
+  },
+  "v02.provider.stdio.failing": {
+    "state": "ERROR",
+    "information": {},
+    "contract": "Real initialized external peer; invalid messages/outcomes must not become accepted verification"
+  },
+  "v02.provider.stdio.crash": {
+    "state": "ERROR",
+    "information": {},
+    "contract": "Real initialized external peer; invalid messages/outcomes must not become accepted verification"
+  },
+  "v02.provider.stdio.malformed": {
+    "state": "ERROR",
+    "information": {},
+    "contract": "Real initialized external peer; invalid messages/outcomes must not become accepted verification"
+  },
+  "v02.provider.stdio.wrong_correlation": {
+    "state": "ERROR",
+    "information": {},
+    "contract": "Real initialized external peer; invalid messages/outcomes must not become accepted verification"
+  },
+  "v02.provider.stdio.missing_terminal": {
+    "state": "ERROR",
+    "information": {},
+    "contract": "Real initialized external peer; invalid messages/outcomes must not become accepted verification"
+  },
+  "v02.provider.stdio.duplicate": {
+    "state": "ERROR",
+    "information": {},
+    "contract": "Real initialized external peer; invalid messages/outcomes must not become accepted verification"
+  },
+  "v02.provider.stdio.event_after_terminal": {
+    "state": "ERROR",
+    "information": {},
+    "contract": "Real initialized external peer; invalid messages/outcomes must not become accepted verification"
+  }
+}

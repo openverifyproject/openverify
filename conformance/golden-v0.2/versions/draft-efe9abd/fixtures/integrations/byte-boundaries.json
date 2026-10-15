@@ -1,0 +1,7 @@
+{
+  "v02.standard.read_text.utf8_crlf": {
+    "capability": "read_text",
+    "variant": "utf8_crlf",
+    "external_tool": null
+  }
+}

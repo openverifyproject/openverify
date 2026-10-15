@@ -1,0 +1,953 @@
+{
+  "unique_cases": 12151,
+  "executed_cases": 0,
+  "execution_stage": "NOT_RUN_STAGE_A",
+  "result_enumeration": {
+    "total": 1024,
+    "valid": 66,
+    "invalid": 958,
+    "optional_presence_masks": 256,
+    "representative_result_states": 9
+  },
+  "graph_enumeration": {
+    "all_labeled_dags_bound": 4,
+    "topology_counts_by_n": {
+      "0": 1,
+      "1": 1,
+      "2": 3,
+      "3": 25,
+      "4": 543
+    },
+    "topologies": 573,
+    "kind_assignment_bound": 2,
+    "kind_assignments_including_inapplicable": 52,
+    "abstract_bound": 3,
+    "abstract_states": 290,
+    "abstract_transitions": 364,
+    "random_seed": 71717,
+    "random_graphs": 32,
+    "random_node_bound": 12,
+    "terminal_outcome_coloring": "separate Result cases; not multiplied into scheduler states"
+  },
+  "reducer_enumeration": {
+    "standard_reducer_generated_cases": 7280,
+    "handling_masks_per_exceptional_partition": 128
+  },
+  "categories": {
+    "vcp/results": 3405,
+    "vcp/resources": 32,
+    "vcp/provenance": 34,
+    "vcp/definitions": 35,
+    "relay/graphs": 661,
+    "relay/scheduling": 30,
+    "vcp/reducers": 7289,
+    "vcp/inputs": 102,
+    "vcp/dataflow": 8,
+    "vcp/graph-control": 10,
+    "vcp/policies": 14,
+    "providers/lifecycle": 132,
+    "providers/framing": 6,
+    "relay/concurrency": 5,
+    "relay/isolation": 4,
+    "relay/cancellation": 5,
+    "relay/timeout": 2,
+    "relay/binding": 8,
+    "relay/security": 4,
+    "relay/extension-ports": 36,
+    "mutation/probes": 14,
+    "integrations/standard-providers": 68,
+    "integrations/python": 4,
+    "integrations/cli": 7,
+    "integrations/mcp": 7,
+    "integrations/http": 6,
+    "integrations/guardrail": 9,
+    "integrations/multi_agent": 2,
+    "vcp/result-boundaries": 2,
+    "relay/typed-policies": 9,
+    "relay/invalid-policies": 15,
+    "integrations/byte-boundaries": 1,
+    "integrations/path-boundaries": 4,
+    "providers/stdio-sessions": 9,
+    "providers/schema-regressions": 3,
+    "providers/deadline-regressions": 36,
+    "providers/error-vocabulary": 12,
+    "relay/reducer-boundaries": 40,
+    "relay/availability-matrix": 72,
+    "relay/resource-authority": 4,
+    "blocked/specification": 5
+  },
+  "profiles": {
+    "vcp": 3501,
+    "relay-local": 8344,
+    "provider": 198,
+    "integration": 108
+  },
+  "features": {
+    "result.axes": {
+      "valid": 70,
+      "invalid": 965,
+      "boundary": 1035,
+      "interaction": 0,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "result.observations": {
+      "valid": 996,
+      "invalid": 1344,
+      "boundary": 36,
+      "interaction": 2304,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "result.projection": {
+      "valid": 66,
+      "invalid": 958,
+      "boundary": 1024,
+      "interaction": 0,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "json.types": {
+      "valid": 1107,
+      "invalid": 1346,
+      "boundary": 39,
+      "interaction": 2400,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "wire.strict": {
+      "valid": 0,
+      "invalid": 7,
+      "boundary": 0,
+      "interaction": 0,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "definitions": {
+      "valid": 8,
+      "invalid": 7,
+      "boundary": 0,
+      "interaction": 0,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "evidence": {
+      "valid": 4,
+      "invalid": 4,
+      "boundary": 0,
+      "interaction": 0,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "extensions": {
+      "valid": 1,
+      "invalid": 1,
+      "boundary": 0,
+      "interaction": 0,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "schemas.self_contained": {
+      "valid": 4,
+      "invalid": 6,
+      "boundary": 0,
+      "interaction": 0,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "resources": {
+      "valid": 14,
+      "invalid": 26,
+      "boundary": 36,
+      "interaction": 4,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "semantic.binding": {
+      "valid": 0,
+      "invalid": 2,
+      "boundary": 0,
+      "interaction": 0,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "guards": {
+      "valid": 4,
+      "invalid": 1,
+      "boundary": 3,
+      "interaction": 1,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "graphs.topology": {
+      "valid": 603,
+      "invalid": 22,
+      "boundary": 0,
+      "interaction": 573,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "graphs.interleavings": {
+      "valid": 30,
+      "invalid": 0,
+      "boundary": 0,
+      "interaction": 0,
+      "transitions": 30,
+      "uncovered_obligations": []
+    },
+    "graphs.metamorphic": {
+      "valid": 32,
+      "invalid": 0,
+      "boundary": 0,
+      "interaction": 32,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "provenance": {
+      "valid": 109,
+      "invalid": 20,
+      "boundary": 5,
+      "interaction": 108,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "aggregate.membership": {
+      "valid": 3722,
+      "invalid": 3607,
+      "boundary": 5,
+      "interaction": 7324,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "reducer.handling": {
+      "valid": 3676,
+      "invalid": 3604,
+      "boundary": 0,
+      "interaction": 7280,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "policies": {
+      "valid": 12,
+      "invalid": 24,
+      "boundary": 15,
+      "interaction": 9,
+      "transitions": 12,
+      "uncovered_obligations": []
+    },
+    "lifecycle.precedence": {
+      "valid": 6,
+      "invalid": 0,
+      "boundary": 0,
+      "interaction": 6,
+      "transitions": 6,
+      "uncovered_obligations": []
+    },
+    "node.DERIVE": {
+      "valid": 641,
+      "invalid": 6,
+      "boundary": 1,
+      "interaction": 622,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "node.EVALUATE": {
+      "valid": 68,
+      "invalid": 6,
+      "boundary": 1,
+      "interaction": 49,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "node.AGGREGATE": {
+      "valid": 89,
+      "invalid": 22,
+      "boundary": 1,
+      "interaction": 86,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "node.CONTROL": {
+      "valid": 65,
+      "invalid": 6,
+      "boundary": 1,
+      "interaction": 46,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "source.CONSTANT": {
+      "valid": 24,
+      "invalid": 0,
+      "boundary": 0,
+      "interaction": 24,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "source.RUN_INPUT": {
+      "valid": 27,
+      "invalid": 3,
+      "boundary": 3,
+      "interaction": 24,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "source.EXTERNAL_REFERENCE": {
+      "valid": 24,
+      "invalid": 0,
+      "boundary": 0,
+      "interaction": 24,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "source.UPSTREAM_OUTPUT": {
+      "valid": 24,
+      "invalid": 2,
+      "boundary": 0,
+      "interaction": 24,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "availability.AVAILABLE": {
+      "valid": 110,
+      "invalid": 0,
+      "boundary": 1,
+      "interaction": 109,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "availability.ABSENT": {
+      "valid": 15,
+      "invalid": 0,
+      "boundary": 3,
+      "interaction": 12,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "availability.PRODUCER_NOT_EXECUTED": {
+      "valid": 13,
+      "invalid": 0,
+      "boundary": 0,
+      "interaction": 13,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "availability.PRODUCER_ERROR": {
+      "valid": 19,
+      "invalid": 0,
+      "boundary": 0,
+      "interaction": 19,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "availability.OUTPUT_MISSING": {
+      "valid": 17,
+      "invalid": 0,
+      "boundary": 0,
+      "interaction": 17,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "availability.INVALID": {
+      "valid": 13,
+      "invalid": 0,
+      "boundary": 0,
+      "interaction": 13,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "reducer.ALL": {
+      "valid": 465,
+      "invalid": 450,
+      "boundary": 0,
+      "interaction": 915,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "reducer.ANY": {
+      "valid": 465,
+      "invalid": 450,
+      "boundary": 0,
+      "interaction": 915,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "reducer.MAJORITY": {
+      "valid": 461,
+      "invalid": 454,
+      "boundary": 0,
+      "interaction": 915,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "reducer.MIN_SCORE": {
+      "valid": 465,
+      "invalid": 450,
+      "boundary": 0,
+      "interaction": 915,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "reducer.MAX_SCORE": {
+      "valid": 465,
+      "invalid": 450,
+      "boundary": 0,
+      "interaction": 915,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "reducer.AVERAGE": {
+      "valid": 465,
+      "invalid": 450,
+      "boundary": 0,
+      "interaction": 915,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "reducer.WEIGHTED_AVERAGE": {
+      "valid": 467,
+      "invalid": 453,
+      "boundary": 5,
+      "interaction": 915,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "reducer.WORST_SEVERITY": {
+      "valid": 466,
+      "invalid": 453,
+      "boundary": 4,
+      "interaction": 915,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "reducer.CUSTOM": {
+      "valid": 4,
+      "invalid": 0,
+      "boundary": 0,
+      "interaction": 4,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "control.CONTINUE": {
+      "valid": 3,
+      "invalid": 2,
+      "boundary": 0,
+      "interaction": 1,
+      "transitions": 1,
+      "uncovered_obligations": []
+    },
+    "control.ROUTE": {
+      "valid": 2,
+      "invalid": 3,
+      "boundary": 0,
+      "interaction": 1,
+      "transitions": 1,
+      "uncovered_obligations": []
+    },
+    "control.STOP_SUCCESS": {
+      "valid": 3,
+      "invalid": 2,
+      "boundary": 0,
+      "interaction": 1,
+      "transitions": 1,
+      "uncovered_obligations": []
+    },
+    "control.STOP_FAILURE": {
+      "valid": 3,
+      "invalid": 2,
+      "boundary": 0,
+      "interaction": 1,
+      "transitions": 1,
+      "uncovered_obligations": []
+    },
+    "control.RETRY": {
+      "valid": 3,
+      "invalid": 2,
+      "boundary": 0,
+      "interaction": 1,
+      "transitions": 1,
+      "uncovered_obligations": []
+    },
+    "control.DEFER": {
+      "valid": 3,
+      "invalid": 2,
+      "boundary": 0,
+      "interaction": 1,
+      "transitions": 1,
+      "uncovered_obligations": []
+    },
+    "policy.activation": {
+      "valid": 6,
+      "invalid": 14,
+      "boundary": 5,
+      "interaction": 3,
+      "transitions": 12,
+      "uncovered_obligations": []
+    },
+    "policy.selection": {
+      "valid": 6,
+      "invalid": 14,
+      "boundary": 5,
+      "interaction": 3,
+      "transitions": 12,
+      "uncovered_obligations": []
+    },
+    "policy.admission": {
+      "valid": 8,
+      "invalid": 14,
+      "boundary": 7,
+      "interaction": 3,
+      "transitions": 12,
+      "uncovered_obligations": []
+    },
+    "provider.manifests": {
+      "valid": 1,
+      "invalid": 3,
+      "boundary": 3,
+      "interaction": 0,
+      "transitions": 1,
+      "uncovered_obligations": []
+    },
+    "provider.negotiation": {
+      "valid": 0,
+      "invalid": 1,
+      "boundary": 0,
+      "interaction": 0,
+      "transitions": 1,
+      "uncovered_obligations": []
+    },
+    "provider.invocation": {
+      "valid": 1,
+      "invalid": 5,
+      "boundary": 0,
+      "interaction": 0,
+      "transitions": 6,
+      "uncovered_obligations": []
+    },
+    "provider.events": {
+      "valid": 47,
+      "invalid": 58,
+      "boundary": 0,
+      "interaction": 0,
+      "transitions": 105,
+      "uncovered_obligations": []
+    },
+    "provider.lifecycle": {
+      "valid": 5,
+      "invalid": 2,
+      "boundary": 0,
+      "interaction": 0,
+      "transitions": 7,
+      "uncovered_obligations": []
+    },
+    "provider.cancellation": {
+      "valid": 2,
+      "invalid": 2,
+      "boundary": 0,
+      "interaction": 0,
+      "transitions": 4,
+      "uncovered_obligations": []
+    },
+    "provider.deadlines": {
+      "valid": 23,
+      "invalid": 22,
+      "boundary": 36,
+      "interaction": 0,
+      "transitions": 9,
+      "uncovered_obligations": []
+    },
+    "provider.faults": {
+      "valid": 19,
+      "invalid": 4,
+      "boundary": 12,
+      "interaction": 9,
+      "transitions": 2,
+      "uncovered_obligations": []
+    },
+    "provider.framing": {
+      "valid": 11,
+      "invalid": 4,
+      "boundary": 6,
+      "interaction": 9,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "provider.correlation": {
+      "valid": 3,
+      "invalid": 7,
+      "boundary": 0,
+      "interaction": 0,
+      "transitions": 10,
+      "uncovered_obligations": []
+    },
+    "relay.binding": {
+      "valid": 17,
+      "invalid": 0,
+      "boundary": 0,
+      "interaction": 17,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "relay.concurrency": {
+      "valid": 5,
+      "invalid": 0,
+      "boundary": 0,
+      "interaction": 5,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "relay.isolation": {
+      "valid": 4,
+      "invalid": 0,
+      "boundary": 0,
+      "interaction": 4,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "relay.cancellation": {
+      "valid": 5,
+      "invalid": 0,
+      "boundary": 0,
+      "interaction": 5,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "relay.timeout": {
+      "valid": 2,
+      "invalid": 0,
+      "boundary": 0,
+      "interaction": 2,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "relay.security": {
+      "valid": 4,
+      "invalid": 0,
+      "boundary": 0,
+      "interaction": 4,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "relay.observer_failure": {
+      "valid": 1,
+      "invalid": 0,
+      "boundary": 0,
+      "interaction": 1,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "relay.store_failure": {
+      "valid": 1,
+      "invalid": 0,
+      "boundary": 0,
+      "interaction": 1,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "port.ProviderCatalog": {
+      "valid": 6,
+      "invalid": 0,
+      "boundary": 0,
+      "interaction": 6,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "port.ProviderBinder": {
+      "valid": 6,
+      "invalid": 0,
+      "boundary": 0,
+      "interaction": 6,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "port.ExecutionDriver": {
+      "valid": 6,
+      "invalid": 0,
+      "boundary": 0,
+      "interaction": 6,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "port.ProviderTransport": {
+      "valid": 6,
+      "invalid": 0,
+      "boundary": 0,
+      "interaction": 6,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "port.RecordStore": {
+      "valid": 6,
+      "invalid": 0,
+      "boundary": 0,
+      "interaction": 6,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "port.EventObserver": {
+      "valid": 6,
+      "invalid": 0,
+      "boundary": 0,
+      "interaction": 6,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "integration.python": {
+      "valid": 4,
+      "invalid": 0,
+      "boundary": 0,
+      "interaction": 4,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "integration.cli": {
+      "valid": 7,
+      "invalid": 0,
+      "boundary": 0,
+      "interaction": 7,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "integration.mcp": {
+      "valid": 7,
+      "invalid": 0,
+      "boundary": 0,
+      "interaction": 7,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "integration.http": {
+      "valid": 6,
+      "invalid": 0,
+      "boundary": 0,
+      "interaction": 6,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "integration.guardrail": {
+      "valid": 9,
+      "invalid": 0,
+      "boundary": 0,
+      "interaction": 9,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "integration.multi_agent": {
+      "valid": 2,
+      "invalid": 0,
+      "boundary": 0,
+      "interaction": 2,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "standard.read_text": {
+      "valid": 5,
+      "invalid": 0,
+      "boundary": 5,
+      "interaction": 0,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "standard.read_file": {
+      "valid": 2,
+      "invalid": 0,
+      "boundary": 2,
+      "interaction": 0,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "standard.select_files": {
+      "valid": 3,
+      "invalid": 0,
+      "boundary": 3,
+      "interaction": 0,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "standard.git_scope": {
+      "valid": 6,
+      "invalid": 0,
+      "boundary": 6,
+      "interaction": 0,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "standard.candidate_unchanged": {
+      "valid": 3,
+      "invalid": 0,
+      "boundary": 3,
+      "interaction": 0,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "standard.ruff": {
+      "valid": 2,
+      "invalid": 0,
+      "boundary": 2,
+      "interaction": 0,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "standard.pytest": {
+      "valid": 3,
+      "invalid": 0,
+      "boundary": 3,
+      "interaction": 0,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "standard.astgrep": {
+      "valid": 2,
+      "invalid": 0,
+      "boundary": 2,
+      "interaction": 0,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "standard.scope": {
+      "valid": 7,
+      "invalid": 0,
+      "boundary": 7,
+      "interaction": 0,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "standard.no_findings": {
+      "valid": 2,
+      "invalid": 0,
+      "boundary": 2,
+      "interaction": 0,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "standard.text": {
+      "valid": 5,
+      "invalid": 0,
+      "boundary": 5,
+      "interaction": 0,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "standard.json_parse": {
+      "valid": 4,
+      "invalid": 0,
+      "boundary": 4,
+      "interaction": 0,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "standard.schema": {
+      "valid": 3,
+      "invalid": 0,
+      "boundary": 3,
+      "interaction": 0,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "standard.action_policy": {
+      "valid": 8,
+      "invalid": 0,
+      "boundary": 8,
+      "interaction": 0,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "standard.gate": {
+      "valid": 9,
+      "invalid": 0,
+      "boundary": 9,
+      "interaction": 0,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "standard.command": {
+      "valid": 6,
+      "invalid": 0,
+      "boundary": 6,
+      "interaction": 0,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "standard.command_check": {
+      "valid": 2,
+      "invalid": 0,
+      "boundary": 2,
+      "interaction": 0,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "standard.aggregate": {
+      "valid": 1,
+      "invalid": 0,
+      "boundary": 1,
+      "interaction": 0,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "unsupported.CYCLES": {
+      "valid": 0,
+      "invalid": 2,
+      "boundary": 0,
+      "interaction": 0,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "unsupported.DYNAMIC_EXPANSION": {
+      "valid": 0,
+      "invalid": 1,
+      "boundary": 0,
+      "interaction": 0,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "unsupported.ITERATION": {
+      "valid": 0,
+      "invalid": 1,
+      "boundary": 0,
+      "interaction": 0,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "open.numeric_portability": {
+      "valid": 1,
+      "invalid": 0,
+      "boundary": 0,
+      "interaction": 0,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "open.sampling_identity": {
+      "valid": 1,
+      "invalid": 0,
+      "boundary": 0,
+      "interaction": 0,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "open.parallel_cancellation_provenance": {
+      "valid": 1,
+      "invalid": 0,
+      "boundary": 0,
+      "interaction": 0,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "open.transport_policy_provenance": {
+      "valid": 1,
+      "invalid": 0,
+      "boundary": 0,
+      "interaction": 0,
+      "transitions": 0,
+      "uncovered_obligations": []
+    },
+    "open.authenticity": {
+      "valid": 1,
+      "invalid": 0,
+      "boundary": 0,
+      "interaction": 0,
+      "transitions": 0,
+      "uncovered_obligations": []
+    }
+  },
+  "finite_scope_complete": false,
+  "reason": "Adapter and audit execution are separate stages; experiment declarations require operational verification. See coverage.md for exact limits."
+}

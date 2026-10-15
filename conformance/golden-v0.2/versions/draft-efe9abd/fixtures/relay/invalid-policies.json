@@ -1,0 +1,1168 @@
+{
+  "v02.policy.invalid.ACTIVATION.0": {
+    "definition": {
+      "protocol": "draft",
+      "id": "golden.definition",
+      "version": "1",
+      "subject": {
+        "id": "golden.subject",
+        "type": "application/json",
+        "locator": {
+          "host_supplied": true
+        }
+      },
+      "criterion": {
+        "id": "golden.criterion",
+        "description": "The explicitly supplied deterministic criterion holds"
+      },
+      "judgment_schema": true,
+      "run_inputs": [],
+      "graph": {
+        "nodes": [
+          {
+            "id": "n",
+            "kind": "DERIVE",
+            "operation": {
+              "capability_id": "com.example.golden.derive",
+              "capability_version": "1"
+            },
+            "inputs": [],
+            "bindings": {},
+            "outputs": [
+              {
+                "name": "value",
+                "schema": true,
+                "role": "INFORMATION"
+              }
+            ],
+            "config": {}
+          }
+        ],
+        "edges": []
+      },
+      "execution_policy": {
+        "activation": {
+          "operation": {
+            "capability_id": "com.example.golden.policy_activation",
+            "capability_version": "1"
+          },
+          "inputs": [],
+          "bindings": {},
+          "config": {}
+        },
+        "selection": {
+          "executor_ref": "EXPLICIT"
+        },
+        "admission": {
+          "strategy": "ALWAYS"
+        }
+      }
+    },
+    "inputs": {},
+    "behaviors": {
+      "n": {
+        "outputs": {
+          "value": 1
+        }
+      }
+    },
+    "nodes": {},
+    "policies": {
+      "ACTIVATION": {}
+    }
+  },
+  "v02.policy.invalid.ACTIVATION.1": {
+    "definition": {
+      "protocol": "draft",
+      "id": "golden.definition",
+      "version": "1",
+      "subject": {
+        "id": "golden.subject",
+        "type": "application/json",
+        "locator": {
+          "host_supplied": true
+        }
+      },
+      "criterion": {
+        "id": "golden.criterion",
+        "description": "The explicitly supplied deterministic criterion holds"
+      },
+      "judgment_schema": true,
+      "run_inputs": [],
+      "graph": {
+        "nodes": [
+          {
+            "id": "n",
+            "kind": "DERIVE",
+            "operation": {
+              "capability_id": "com.example.golden.derive",
+              "capability_version": "1"
+            },
+            "inputs": [],
+            "bindings": {},
+            "outputs": [
+              {
+                "name": "value",
+                "schema": true,
+                "role": "INFORMATION"
+              }
+            ],
+            "config": {}
+          }
+        ],
+        "edges": []
+      },
+      "execution_policy": {
+        "activation": {
+          "operation": {
+            "capability_id": "com.example.golden.policy_activation",
+            "capability_version": "1"
+          },
+          "inputs": [],
+          "bindings": {},
+          "config": {}
+        },
+        "selection": {
+          "executor_ref": "EXPLICIT"
+        },
+        "admission": {
+          "strategy": "ALWAYS"
+        }
+      }
+    },
+    "inputs": {},
+    "behaviors": {
+      "n": {
+        "outputs": {
+          "value": 1
+        }
+      }
+    },
+    "nodes": {},
+    "policies": {
+      "ACTIVATION": {
+        "outcome": "INVALID",
+        "reason": "known"
+      }
+    }
+  },
+  "v02.policy.invalid.ACTIVATION.2": {
+    "definition": {
+      "protocol": "draft",
+      "id": "golden.definition",
+      "version": "1",
+      "subject": {
+        "id": "golden.subject",
+        "type": "application/json",
+        "locator": {
+          "host_supplied": true
+        }
+      },
+      "criterion": {
+        "id": "golden.criterion",
+        "description": "The explicitly supplied deterministic criterion holds"
+      },
+      "judgment_schema": true,
+      "run_inputs": [],
+      "graph": {
+        "nodes": [
+          {
+            "id": "n",
+            "kind": "DERIVE",
+            "operation": {
+              "capability_id": "com.example.golden.derive",
+              "capability_version": "1"
+            },
+            "inputs": [],
+            "bindings": {},
+            "outputs": [
+              {
+                "name": "value",
+                "schema": true,
+                "role": "INFORMATION"
+              }
+            ],
+            "config": {}
+          }
+        ],
+        "edges": []
+      },
+      "execution_policy": {
+        "activation": {
+          "operation": {
+            "capability_id": "com.example.golden.policy_activation",
+            "capability_version": "1"
+          },
+          "inputs": [],
+          "bindings": {},
+          "config": {}
+        },
+        "selection": {
+          "executor_ref": "EXPLICIT"
+        },
+        "admission": {
+          "strategy": "ALWAYS"
+        }
+      }
+    },
+    "inputs": {},
+    "behaviors": {
+      "n": {
+        "outputs": {
+          "value": 1
+        }
+      }
+    },
+    "nodes": {},
+    "policies": {
+      "ACTIVATION": {
+        "outcome": "RUN",
+        "reason": ""
+      }
+    }
+  },
+  "v02.policy.invalid.ACTIVATION.3": {
+    "definition": {
+      "protocol": "draft",
+      "id": "golden.definition",
+      "version": "1",
+      "subject": {
+        "id": "golden.subject",
+        "type": "application/json",
+        "locator": {
+          "host_supplied": true
+        }
+      },
+      "criterion": {
+        "id": "golden.criterion",
+        "description": "The explicitly supplied deterministic criterion holds"
+      },
+      "judgment_schema": true,
+      "run_inputs": [],
+      "graph": {
+        "nodes": [
+          {
+            "id": "n",
+            "kind": "DERIVE",
+            "operation": {
+              "capability_id": "com.example.golden.derive",
+              "capability_version": "1"
+            },
+            "inputs": [],
+            "bindings": {},
+            "outputs": [
+              {
+                "name": "value",
+                "schema": true,
+                "role": "INFORMATION"
+              }
+            ],
+            "config": {}
+          }
+        ],
+        "edges": []
+      },
+      "execution_policy": {
+        "activation": {
+          "operation": {
+            "capability_id": "com.example.golden.policy_activation",
+            "capability_version": "1"
+          },
+          "inputs": [],
+          "bindings": {},
+          "config": {}
+        },
+        "selection": {
+          "executor_ref": "EXPLICIT"
+        },
+        "admission": {
+          "strategy": "ALWAYS"
+        }
+      }
+    },
+    "inputs": {},
+    "behaviors": {
+      "n": {
+        "outputs": {
+          "value": 1
+        }
+      }
+    },
+    "nodes": {},
+    "policies": {
+      "ACTIVATION": {
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "v02.policy.failure.ACTIVATION": {
+    "definition": {
+      "protocol": "draft",
+      "id": "golden.definition",
+      "version": "1",
+      "subject": {
+        "id": "golden.subject",
+        "type": "application/json",
+        "locator": {
+          "host_supplied": true
+        }
+      },
+      "criterion": {
+        "id": "golden.criterion",
+        "description": "The explicitly supplied deterministic criterion holds"
+      },
+      "judgment_schema": true,
+      "run_inputs": [],
+      "graph": {
+        "nodes": [
+          {
+            "id": "n",
+            "kind": "DERIVE",
+            "operation": {
+              "capability_id": "com.example.golden.derive",
+              "capability_version": "1"
+            },
+            "inputs": [],
+            "bindings": {},
+            "outputs": [
+              {
+                "name": "value",
+                "schema": true,
+                "role": "INFORMATION"
+              }
+            ],
+            "config": {}
+          }
+        ],
+        "edges": []
+      },
+      "execution_policy": {
+        "activation": {
+          "operation": {
+            "capability_id": "com.example.golden.policy_activation",
+            "capability_version": "1"
+          },
+          "inputs": [],
+          "bindings": {},
+          "config": {}
+        },
+        "selection": {
+          "executor_ref": "EXPLICIT"
+        },
+        "admission": {
+          "strategy": "ALWAYS"
+        }
+      }
+    },
+    "inputs": {},
+    "behaviors": {
+      "n": {
+        "outputs": {
+          "value": 1
+        }
+      }
+    },
+    "nodes": {},
+    "policies": {
+      "ACTIVATION": {
+        "outcome": "ACTIVATE",
+        "reason": "known"
+      }
+    },
+    "policy_behaviors": {
+      "ACTIVATION": {
+        "error": {
+          "code": "com.example.policy_failed",
+          "message": "known failure"
+        }
+      }
+    }
+  },
+  "v02.policy.invalid.SELECTION.5": {
+    "definition": {
+      "protocol": "draft",
+      "id": "golden.definition",
+      "version": "1",
+      "subject": {
+        "id": "golden.subject",
+        "type": "application/json",
+        "locator": {
+          "host_supplied": true
+        }
+      },
+      "criterion": {
+        "id": "golden.criterion",
+        "description": "The explicitly supplied deterministic criterion holds"
+      },
+      "judgment_schema": true,
+      "run_inputs": [],
+      "graph": {
+        "nodes": [
+          {
+            "id": "n",
+            "kind": "DERIVE",
+            "operation": {
+              "capability_id": "com.example.golden.derive",
+              "capability_version": "1"
+            },
+            "inputs": [],
+            "bindings": {},
+            "outputs": [
+              {
+                "name": "value",
+                "schema": true,
+                "role": "INFORMATION"
+              }
+            ],
+            "config": {}
+          }
+        ],
+        "edges": []
+      },
+      "execution_policy": {
+        "activation": {
+          "executor_ref": "MANUAL"
+        },
+        "selection": {
+          "operation": {
+            "capability_id": "com.example.golden.policy_selection",
+            "capability_version": "1"
+          },
+          "inputs": [],
+          "bindings": {},
+          "config": {}
+        },
+        "admission": {
+          "strategy": "ALWAYS"
+        }
+      }
+    },
+    "inputs": {},
+    "behaviors": {
+      "n": {
+        "outputs": {
+          "value": 1
+        }
+      }
+    },
+    "nodes": {},
+    "policies": {
+      "SELECTION": {}
+    }
+  },
+  "v02.policy.invalid.SELECTION.6": {
+    "definition": {
+      "protocol": "draft",
+      "id": "golden.definition",
+      "version": "1",
+      "subject": {
+        "id": "golden.subject",
+        "type": "application/json",
+        "locator": {
+          "host_supplied": true
+        }
+      },
+      "criterion": {
+        "id": "golden.criterion",
+        "description": "The explicitly supplied deterministic criterion holds"
+      },
+      "judgment_schema": true,
+      "run_inputs": [],
+      "graph": {
+        "nodes": [
+          {
+            "id": "n",
+            "kind": "DERIVE",
+            "operation": {
+              "capability_id": "com.example.golden.derive",
+              "capability_version": "1"
+            },
+            "inputs": [],
+            "bindings": {},
+            "outputs": [
+              {
+                "name": "value",
+                "schema": true,
+                "role": "INFORMATION"
+              }
+            ],
+            "config": {}
+          }
+        ],
+        "edges": []
+      },
+      "execution_policy": {
+        "activation": {
+          "executor_ref": "MANUAL"
+        },
+        "selection": {
+          "operation": {
+            "capability_id": "com.example.golden.policy_selection",
+            "capability_version": "1"
+          },
+          "inputs": [],
+          "bindings": {},
+          "config": {}
+        },
+        "admission": {
+          "strategy": "ALWAYS"
+        }
+      }
+    },
+    "inputs": {},
+    "behaviors": {
+      "n": {
+        "outputs": {
+          "value": 1
+        }
+      }
+    },
+    "nodes": {},
+    "policies": {
+      "SELECTION": {
+        "outcome": "INVALID",
+        "reason": "known"
+      }
+    }
+  },
+  "v02.policy.invalid.SELECTION.7": {
+    "definition": {
+      "protocol": "draft",
+      "id": "golden.definition",
+      "version": "1",
+      "subject": {
+        "id": "golden.subject",
+        "type": "application/json",
+        "locator": {
+          "host_supplied": true
+        }
+      },
+      "criterion": {
+        "id": "golden.criterion",
+        "description": "The explicitly supplied deterministic criterion holds"
+      },
+      "judgment_schema": true,
+      "run_inputs": [],
+      "graph": {
+        "nodes": [
+          {
+            "id": "n",
+            "kind": "DERIVE",
+            "operation": {
+              "capability_id": "com.example.golden.derive",
+              "capability_version": "1"
+            },
+            "inputs": [],
+            "bindings": {},
+            "outputs": [
+              {
+                "name": "value",
+                "schema": true,
+                "role": "INFORMATION"
+              }
+            ],
+            "config": {}
+          }
+        ],
+        "edges": []
+      },
+      "execution_policy": {
+        "activation": {
+          "executor_ref": "MANUAL"
+        },
+        "selection": {
+          "operation": {
+            "capability_id": "com.example.golden.policy_selection",
+            "capability_version": "1"
+          },
+          "inputs": [],
+          "bindings": {},
+          "config": {}
+        },
+        "admission": {
+          "strategy": "ALWAYS"
+        }
+      }
+    },
+    "inputs": {},
+    "behaviors": {
+      "n": {
+        "outputs": {
+          "value": 1
+        }
+      }
+    },
+    "nodes": {},
+    "policies": {
+      "SELECTION": {
+        "outcome": "RUN",
+        "reason": ""
+      }
+    }
+  },
+  "v02.policy.invalid.SELECTION.8": {
+    "definition": {
+      "protocol": "draft",
+      "id": "golden.definition",
+      "version": "1",
+      "subject": {
+        "id": "golden.subject",
+        "type": "application/json",
+        "locator": {
+          "host_supplied": true
+        }
+      },
+      "criterion": {
+        "id": "golden.criterion",
+        "description": "The explicitly supplied deterministic criterion holds"
+      },
+      "judgment_schema": true,
+      "run_inputs": [],
+      "graph": {
+        "nodes": [
+          {
+            "id": "n",
+            "kind": "DERIVE",
+            "operation": {
+              "capability_id": "com.example.golden.derive",
+              "capability_version": "1"
+            },
+            "inputs": [],
+            "bindings": {},
+            "outputs": [
+              {
+                "name": "value",
+                "schema": true,
+                "role": "INFORMATION"
+              }
+            ],
+            "config": {}
+          }
+        ],
+        "edges": []
+      },
+      "execution_policy": {
+        "activation": {
+          "executor_ref": "MANUAL"
+        },
+        "selection": {
+          "operation": {
+            "capability_id": "com.example.golden.policy_selection",
+            "capability_version": "1"
+          },
+          "inputs": [],
+          "bindings": {},
+          "config": {}
+        },
+        "admission": {
+          "strategy": "ALWAYS"
+        }
+      }
+    },
+    "inputs": {},
+    "behaviors": {
+      "n": {
+        "outputs": {
+          "value": 1
+        }
+      }
+    },
+    "nodes": {},
+    "policies": {
+      "SELECTION": {
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "v02.policy.failure.SELECTION": {
+    "definition": {
+      "protocol": "draft",
+      "id": "golden.definition",
+      "version": "1",
+      "subject": {
+        "id": "golden.subject",
+        "type": "application/json",
+        "locator": {
+          "host_supplied": true
+        }
+      },
+      "criterion": {
+        "id": "golden.criterion",
+        "description": "The explicitly supplied deterministic criterion holds"
+      },
+      "judgment_schema": true,
+      "run_inputs": [],
+      "graph": {
+        "nodes": [
+          {
+            "id": "n",
+            "kind": "DERIVE",
+            "operation": {
+              "capability_id": "com.example.golden.derive",
+              "capability_version": "1"
+            },
+            "inputs": [],
+            "bindings": {},
+            "outputs": [
+              {
+                "name": "value",
+                "schema": true,
+                "role": "INFORMATION"
+              }
+            ],
+            "config": {}
+          }
+        ],
+        "edges": []
+      },
+      "execution_policy": {
+        "activation": {
+          "executor_ref": "MANUAL"
+        },
+        "selection": {
+          "operation": {
+            "capability_id": "com.example.golden.policy_selection",
+            "capability_version": "1"
+          },
+          "inputs": [],
+          "bindings": {},
+          "config": {}
+        },
+        "admission": {
+          "strategy": "ALWAYS"
+        }
+      }
+    },
+    "inputs": {},
+    "behaviors": {
+      "n": {
+        "outputs": {
+          "value": 1
+        }
+      }
+    },
+    "nodes": {},
+    "policies": {
+      "SELECTION": {
+        "subjects": [
+          {
+            "id": "golden.subject",
+            "type": "application/json",
+            "locator": {
+              "host_supplied": true
+            }
+          }
+        ],
+        "reason": "known"
+      }
+    },
+    "policy_behaviors": {
+      "SELECTION": {
+        "error": {
+          "code": "com.example.policy_failed",
+          "message": "known failure"
+        }
+      }
+    }
+  },
+  "v02.policy.invalid.ADMISSION.10": {
+    "definition": {
+      "protocol": "draft",
+      "id": "golden.definition",
+      "version": "1",
+      "subject": {
+        "id": "golden.subject",
+        "type": "application/json",
+        "locator": {
+          "host_supplied": true
+        }
+      },
+      "criterion": {
+        "id": "golden.criterion",
+        "description": "The explicitly supplied deterministic criterion holds"
+      },
+      "judgment_schema": true,
+      "run_inputs": [],
+      "graph": {
+        "nodes": [
+          {
+            "id": "n",
+            "kind": "DERIVE",
+            "operation": {
+              "capability_id": "com.example.golden.derive",
+              "capability_version": "1"
+            },
+            "inputs": [],
+            "bindings": {},
+            "outputs": [
+              {
+                "name": "value",
+                "schema": true,
+                "role": "INFORMATION"
+              }
+            ],
+            "config": {}
+          }
+        ],
+        "edges": []
+      },
+      "execution_policy": {
+        "activation": {
+          "executor_ref": "MANUAL"
+        },
+        "selection": {
+          "executor_ref": "EXPLICIT"
+        },
+        "admission": {
+          "operation": {
+            "capability_id": "com.example.golden.policy_admission",
+            "capability_version": "1"
+          },
+          "inputs": [],
+          "bindings": {},
+          "config": {}
+        }
+      }
+    },
+    "inputs": {},
+    "behaviors": {
+      "n": {
+        "outputs": {
+          "value": 1
+        }
+      }
+    },
+    "nodes": {},
+    "policies": {
+      "ADMISSION": {}
+    }
+  },
+  "v02.policy.invalid.ADMISSION.11": {
+    "definition": {
+      "protocol": "draft",
+      "id": "golden.definition",
+      "version": "1",
+      "subject": {
+        "id": "golden.subject",
+        "type": "application/json",
+        "locator": {
+          "host_supplied": true
+        }
+      },
+      "criterion": {
+        "id": "golden.criterion",
+        "description": "The explicitly supplied deterministic criterion holds"
+      },
+      "judgment_schema": true,
+      "run_inputs": [],
+      "graph": {
+        "nodes": [
+          {
+            "id": "n",
+            "kind": "DERIVE",
+            "operation": {
+              "capability_id": "com.example.golden.derive",
+              "capability_version": "1"
+            },
+            "inputs": [],
+            "bindings": {},
+            "outputs": [
+              {
+                "name": "value",
+                "schema": true,
+                "role": "INFORMATION"
+              }
+            ],
+            "config": {}
+          }
+        ],
+        "edges": []
+      },
+      "execution_policy": {
+        "activation": {
+          "executor_ref": "MANUAL"
+        },
+        "selection": {
+          "executor_ref": "EXPLICIT"
+        },
+        "admission": {
+          "operation": {
+            "capability_id": "com.example.golden.policy_admission",
+            "capability_version": "1"
+          },
+          "inputs": [],
+          "bindings": {},
+          "config": {}
+        }
+      }
+    },
+    "inputs": {},
+    "behaviors": {
+      "n": {
+        "outputs": {
+          "value": 1
+        }
+      }
+    },
+    "nodes": {},
+    "policies": {
+      "ADMISSION": {
+        "outcome": "INVALID",
+        "reason": "known"
+      }
+    }
+  },
+  "v02.policy.invalid.ADMISSION.12": {
+    "definition": {
+      "protocol": "draft",
+      "id": "golden.definition",
+      "version": "1",
+      "subject": {
+        "id": "golden.subject",
+        "type": "application/json",
+        "locator": {
+          "host_supplied": true
+        }
+      },
+      "criterion": {
+        "id": "golden.criterion",
+        "description": "The explicitly supplied deterministic criterion holds"
+      },
+      "judgment_schema": true,
+      "run_inputs": [],
+      "graph": {
+        "nodes": [
+          {
+            "id": "n",
+            "kind": "DERIVE",
+            "operation": {
+              "capability_id": "com.example.golden.derive",
+              "capability_version": "1"
+            },
+            "inputs": [],
+            "bindings": {},
+            "outputs": [
+              {
+                "name": "value",
+                "schema": true,
+                "role": "INFORMATION"
+              }
+            ],
+            "config": {}
+          }
+        ],
+        "edges": []
+      },
+      "execution_policy": {
+        "activation": {
+          "executor_ref": "MANUAL"
+        },
+        "selection": {
+          "executor_ref": "EXPLICIT"
+        },
+        "admission": {
+          "operation": {
+            "capability_id": "com.example.golden.policy_admission",
+            "capability_version": "1"
+          },
+          "inputs": [],
+          "bindings": {},
+          "config": {}
+        }
+      }
+    },
+    "inputs": {},
+    "behaviors": {
+      "n": {
+        "outputs": {
+          "value": 1
+        }
+      }
+    },
+    "nodes": {},
+    "policies": {
+      "ADMISSION": {
+        "outcome": "RUN",
+        "reason": ""
+      }
+    }
+  },
+  "v02.policy.invalid.ADMISSION.13": {
+    "definition": {
+      "protocol": "draft",
+      "id": "golden.definition",
+      "version": "1",
+      "subject": {
+        "id": "golden.subject",
+        "type": "application/json",
+        "locator": {
+          "host_supplied": true
+        }
+      },
+      "criterion": {
+        "id": "golden.criterion",
+        "description": "The explicitly supplied deterministic criterion holds"
+      },
+      "judgment_schema": true,
+      "run_inputs": [],
+      "graph": {
+        "nodes": [
+          {
+            "id": "n",
+            "kind": "DERIVE",
+            "operation": {
+              "capability_id": "com.example.golden.derive",
+              "capability_version": "1"
+            },
+            "inputs": [],
+            "bindings": {},
+            "outputs": [
+              {
+                "name": "value",
+                "schema": true,
+                "role": "INFORMATION"
+              }
+            ],
+            "config": {}
+          }
+        ],
+        "edges": []
+      },
+      "execution_policy": {
+        "activation": {
+          "executor_ref": "MANUAL"
+        },
+        "selection": {
+          "executor_ref": "EXPLICIT"
+        },
+        "admission": {
+          "operation": {
+            "capability_id": "com.example.golden.policy_admission",
+            "capability_version": "1"
+          },
+          "inputs": [],
+          "bindings": {},
+          "config": {}
+        }
+      }
+    },
+    "inputs": {},
+    "behaviors": {
+      "n": {
+        "outputs": {
+          "value": 1
+        }
+      }
+    },
+    "nodes": {},
+    "policies": {
+      "ADMISSION": {
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "v02.policy.failure.ADMISSION": {
+    "definition": {
+      "protocol": "draft",
+      "id": "golden.definition",
+      "version": "1",
+      "subject": {
+        "id": "golden.subject",
+        "type": "application/json",
+        "locator": {
+          "host_supplied": true
+        }
+      },
+      "criterion": {
+        "id": "golden.criterion",
+        "description": "The explicitly supplied deterministic criterion holds"
+      },
+      "judgment_schema": true,
+      "run_inputs": [],
+      "graph": {
+        "nodes": [
+          {
+            "id": "n",
+            "kind": "DERIVE",
+            "operation": {
+              "capability_id": "com.example.golden.derive",
+              "capability_version": "1"
+            },
+            "inputs": [],
+            "bindings": {},
+            "outputs": [
+              {
+                "name": "value",
+                "schema": true,
+                "role": "INFORMATION"
+              }
+            ],
+            "config": {}
+          }
+        ],
+        "edges": []
+      },
+      "execution_policy": {
+        "activation": {
+          "executor_ref": "MANUAL"
+        },
+        "selection": {
+          "executor_ref": "EXPLICIT"
+        },
+        "admission": {
+          "operation": {
+            "capability_id": "com.example.golden.policy_admission",
+            "capability_version": "1"
+          },
+          "inputs": [],
+          "bindings": {},
+          "config": {}
+        }
+      }
+    },
+    "inputs": {},
+    "behaviors": {
+      "n": {
+        "outputs": {
+          "value": 1
+        }
+      }
+    },
+    "nodes": {},
+    "policies": {
+      "ADMISSION": {
+        "outcome": "RUN",
+        "reason": "known"
+      }
+    },
+    "policy_behaviors": {
+      "ADMISSION": {
+        "error": {
+          "code": "com.example.policy_failed",
+          "message": "known failure"
+        }
+      }
+    }
+  }
+}

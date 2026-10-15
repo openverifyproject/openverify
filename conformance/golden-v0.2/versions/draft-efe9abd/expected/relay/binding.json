@@ -1,0 +1,26 @@
+{
+  "runtime.binding.no_match": {
+    "invariant": "error before invocation"
+  },
+  "runtime.binding.unique": {
+    "invariant": "one exact provider invoked"
+  },
+  "runtime.binding.ambiguous": {
+    "invariant": "explicit binding required"
+  },
+  "runtime.binding.explicit_correct": {
+    "invariant": "chosen exact binding recorded"
+  },
+  "runtime.binding.explicit_incompatible": {
+    "invariant": "reject before invocation"
+  },
+  "runtime.binding.provider_version": {
+    "invariant": "exact version required"
+  },
+  "runtime.binding.capability_version": {
+    "invariant": "no version fallback"
+  },
+  "runtime.binding.identity_substitution": {
+    "invariant": "reject mismatched trusted manifest"
+  }
+}

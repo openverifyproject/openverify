@@ -1,0 +1,14 @@
+{
+  "runtime.isolation.distinct_inputs": {
+    "invariant": "no input or result crosses runs"
+  },
+  "runtime.isolation.distinct_bindings": {
+    "invariant": "each record identifies its configured provider"
+  },
+  "runtime.isolation.cancel_one_run": {
+    "invariant": "only addressed run cancels"
+  },
+  "runtime.isolation.separate_worktrees": {
+    "invariant": "candidate paths and content remain run-local"
+  }
+}
