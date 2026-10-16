@@ -109,7 +109,7 @@ def _json_value(value: object) -> JsonValue:
         # Bypass overridden display/equality methods; JSON carries the string.
         return str.__str__(value)
     if type(value) is float and math.isfinite(value):
-        return cast(float, value)
+        return value
     if type(value) is list:
         items = cast(list[object], value)
         normalized = [_json_value(item) for item in items]
