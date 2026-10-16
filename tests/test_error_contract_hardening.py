@@ -1,5 +1,6 @@
 """Registry/wire compatibility and demonstrated public boundary regressions."""
 
+import ast
 import asyncio
 import json
 import re
@@ -17,6 +18,32 @@ from openverify.relay.errors import RelayError
 from openverify.relay.templates import text_graph
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+def test_error_code_literals_match_owned_registries():
+    known = {
+        c.value
+        for vocabulary in (VcpErrorCode, ProviderErrorCode, RelayErrorCode)
+        for c in vocabulary
+    }
+    for path in (ROOT / "src/openverify").rglob("*.py"):
+        for node in ast.walk(ast.parse(path.read_text(encoding="utf-8"))):
+            if not isinstance(node, ast.Call):
+                continue
+            callee = node.func.id if isinstance(node.func, ast.Name) else ""
+            values = [kw.value for kw in node.keywords if kw.arg == "code"]
+            if (
+                callee in ("ProtocolError", "ProviderContractError", "RelayError", "fail")
+                and node.args
+            ):
+                values.append(node.args[0])
+            for value in values:
+                if (
+                    isinstance(value, ast.Constant)
+                    and isinstance(value.value, str)
+                    and re.fullmatch(r"[A-Z][A-Z_]+", value.value)
+                ):
+                    assert value.value in known, (path, value.lineno, value.value)
 
 
 def test_reserved_provider_registry_matches_normative_table():
