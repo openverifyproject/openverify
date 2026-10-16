@@ -21,7 +21,7 @@ from openverify.model import (
     VerificationDefinition,
 )
 from openverify.policy import ROLES, policies
-from openverify.provider import ProviderEvent, wire_data
+from openverify.provider import ProviderEvent, ProviderManifest, parse_provider_manifest, wire_data
 from openverify.relay.application.binding import bind
 from openverify.relay.application.execution import execute_node, now
 from openverify.relay.application.policies import evaluate_policies
@@ -51,14 +51,24 @@ def validate_catalog(values: object) -> Sequence[AvailableProvider]:
 
     if not isinstance(values, Sequence):
         raise RelayError(RelayErrorCode.CATALOG_INVALID, "Catalog must return a provider sequence")
+    snapshot: list[AvailableProvider] = []
+    identities: set[tuple[str, str]] = set()
     for value in cast(Sequence[object], values):
-        if not isinstance(value, AvailableProvider) or not callable(
-            getattr(value.transport, "invoke", None)
+        if (
+            not isinstance(value, AvailableProvider)
+            or not isinstance(cast(object, value.manifest), ProviderManifest)
+            or not callable(getattr(value.transport, "invoke", None))
         ):
             raise RelayError(
                 RelayErrorCode.CATALOG_INVALID, "Catalog returned an invalid provider value"
             )
-    return cast(Sequence[AvailableProvider], values)
+        manifest = parse_provider_manifest(wire_data(value.manifest))
+        key = (manifest.provider_id, manifest.provider_version)
+        if key in identities:
+            raise RelayError("PROVIDER_CONFLICT", f"Provider already registered: {key}")
+        identities.add(key)
+        snapshot.append(AvailableProvider(manifest, value.transport))
+    return tuple(snapshot)
 
 
 async def coordinate(
@@ -111,7 +121,7 @@ async def coordinate(
     from openverify.relay.error_codes import RelayErrorCode
 
     try:
-        available = catalog.providers()
+        available = validate_catalog(catalog.providers())
     except (ProtocolError, ProviderContractError):
         raise
     except Exception as exc:
@@ -120,7 +130,6 @@ async def coordinate(
             "Provider catalog failed",
             details={"cause_type": type(exc).__name__, "cause_message": str(exc)},
         ) from exc
-    available = validate_catalog(available)
     # Bind all requirements before admission, so selection is not affected by scheduler timing.
     bound = {
         n.id: bind(n.operation, available, binder, config.bindings.get(n.id))
