@@ -110,6 +110,12 @@ No category is selected from observed implementation behavior.
   does not define equivalence of `tmp` and `tmp/`, whether the directory itself is
   eligible, or separator normalization. Keep the original `tmp` spelling case
   explicitly blocked; add unambiguous `tmp/` child, sibling and traversal examples.
+  Production follow-up resolves this for the local standard provider only:
+  `tmp` and `tmp/` name the same relative directory; descendants are eligible,
+  the directory itself and siblings are not. Native platform separators/case
+  rules apply, with traversal and ambiguous paths rejected. The complete local
+  contract is documented in docs/relay/providers.md. This does not change VCP or
+  Provider Contract, or revise historical frozen Golden expectations/blockers.
 - **Local finding/range wire profile:** published standard capability schemas
   declare arrays without complete finding/range object schemas. Golden uses
   independently constructed one-based half-open coordinates, Git-relative hunk

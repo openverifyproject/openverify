@@ -1,19 +1,28 @@
 """Findings use one-based lines/columns and half-open end coordinates."""
 
-from pathlib import PurePosixPath
 from typing import cast
 
 from pydantic import JsonValue
 
 from openverify.model import Context, Result
 from openverify.standard.common import ARRAY, STRING, STRINGS, judge, object_schema, standard
+from openverify.standard.paths import in_directory, path_key
 
 
 def intersects(finding: dict[str, JsonValue], hunk: dict[str, JsonValue]) -> bool:
-    if finding["file"] != hunk["file"] or hunk["count"] == 0:
+    if (
+        path_key(cast(str, finding["file"])) != path_key(cast(str, hunk["file"]))
+        or hunk["count"] == 0
+    ):
         return False
     start = cast(int, finding["line"])
     end = cast(int, finding.get("end_line", start))
+    if (
+        end == start
+        and "end_column" in finding
+        and cast(int, finding["end_column"]) <= cast(int, finding.get("column", 1))
+    ):
+        return False
     if end > start and finding.get("end_column") == 1:
         end -= 1
     return start < cast(int, hunk["start"]) + cast(int, hunk["count"]) and end >= cast(
@@ -35,18 +44,25 @@ def span_intersects(finding: Context, span: Context) -> bool:
 
     a, b = coordinates(finding)
     c, d = coordinates(span)
-    return finding["file"] == span["file"] and a < d and c < b
+    return (
+        path_key(cast(str, finding["file"])) == path_key(cast(str, span["file"]))
+        and a < b
+        and c < d
+        and a < d
+        and c < b
+    )
 
 
 async def filter_findings(inputs: Context, config: Context) -> Context:
     findings = cast(list[dict[str, JsonValue]], inputs["findings"])
     mode = config["mode"]
     if mode in ("files", "changed_files"):
-        files = set(cast(list[str], inputs.get("files", [])))
-        selected = [f for f in findings if f["file"] in files]
+        files = {path_key(f) for f in cast(list[str], inputs.get("files", []))}
+        selected = [f for f in findings if path_key(cast(str, f["file"])) in files]
     elif mode == "directory":
-        root = PurePosixPath(cast(str, config["directory"]))
-        selected = [f for f in findings if PurePosixPath(cast(str, f["file"])).is_relative_to(root)]
+        directory = cast(str, config["directory"])
+        path_key(directory)
+        selected = [f for f in findings if in_directory(cast(str, f["file"]), directory)]
     elif mode in ("changed_spans", "ast_ranges"):
         hunks = cast(list[dict[str, JsonValue]], inputs.get("ranges", []))
         compare = span_intersects if mode == "ast_ranges" else intersects
