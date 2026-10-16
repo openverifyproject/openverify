@@ -14,7 +14,7 @@ class ProtocolError(ValueError):
         self.code: VcpErrorCode | ProviderErrorCode | str = code
         for vocabulary in (VcpErrorCode, ProviderErrorCode):
             try:
-                self.code = vocabulary(code)
+                self.code = vocabulary(str.__str__(code))
                 break
             except ValueError:
                 continue
@@ -24,7 +24,7 @@ class ProtocolError(ValueError):
 
     def as_dict(self) -> dict[str, JsonValue]:
         return {
-            "code": str(self.code),
+            "code": str.__str__(self.code),
             "message": self.message,
             "path": self.path,
             "details": self.details,

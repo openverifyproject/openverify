@@ -83,9 +83,9 @@ class ProviderError(ProviderValue):
     def typed_reserved_code(cls, value: object) -> object:
         if isinstance(value, str):
             try:
-                return ProviderErrorCode(value)
+                return ProviderErrorCode(str.__str__(value))
             except ValueError:
-                pass
+                return str.__str__(value)
         return value
 
 
