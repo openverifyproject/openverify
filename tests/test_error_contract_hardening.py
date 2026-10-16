@@ -236,7 +236,14 @@ def test_existing_structured_catalog_error_is_preserved():
     assert caught.value is failure
 
 
-@pytest.mark.parametrize("identity", ["ACTIVATION.0", "SELECTION.5", "ADMISSION.10"])
+@pytest.mark.parametrize(
+    "identity",
+    [
+        f"{role}.{i}"
+        for role, start in (("ACTIVATION", 0), ("SELECTION", 5), ("ADMISSION", 10))
+        for i in range(start, start + 4)
+    ],
+)
 def test_policy_boundary_preserves_structured_cause_and_prevents_graph_execution(identity: str):
     from copy import deepcopy
 
