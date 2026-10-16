@@ -53,14 +53,14 @@ class ProviderContractError(ValueError):
     def __init__(self, code: str, message: str, details: JsonValue = None):
         super().__init__(f"{code}: {message}")
         try:
-            self.code: ProviderErrorCode | str = ProviderErrorCode(code)
+            self.code: ProviderErrorCode | str = ProviderErrorCode(str.__str__(code))
         except ValueError:
             self.code = code
         self.message = message
         self.details = details
 
     def as_dict(self) -> dict[str, JsonValue]:
-        return {"code": str(self.code), "message": self.message, "details": self.details}
+        return {"code": str.__str__(self.code), "message": self.message, "details": self.details}
 
 
 def fail(code: str, message: str) -> None:

@@ -158,6 +158,33 @@ def test_non_string_enums_remain_non_json():
     assert caught.value.code is VcpErrorCode.PROTOCOL_JSON
 
 
+def test_string_enum_methods_do_not_change_json_values():
+    from enum import StrEnum
+    from openverify.serialization import decode, json_equal
+
+    class DisplayCode(StrEnum):
+        FAILURE = "com.example.actual_failure"
+
+        def __str__(self):
+            return "Human display only"
+
+        def __eq__(self, other):
+            return True
+
+        __hash__ = str.__hash__
+
+    original = {"code": DisplayCode.FAILURE}
+    decoded = decode(original)
+    assert type(decoded["code"]) is str
+    assert decoded["code"] == "com.example.actual_failure"
+    assert original["code"] is DisplayCode.FAILURE
+    assert not json_equal(decoded, {"code": "unrelated"})
+    assert (
+        ProviderContractError(DisplayCode.FAILURE, "diagnostic").as_dict()["code"]
+        == "com.example.actual_failure"
+    )
+
+
 @pytest.mark.parametrize("port", ["catalog", "binder"])
 def test_infrastructure_exception_has_typed_code_and_original_cause(port: str):
     failure = RuntimeError("host diagnostic")

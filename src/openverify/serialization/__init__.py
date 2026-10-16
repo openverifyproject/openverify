@@ -19,7 +19,7 @@ def json_equal(left: JsonValue, right: JsonValue) -> bool:
     if type(left) in (int, float) and type(right) in (int, float):
         return left == right
     if isinstance(left, str) and isinstance(right, str):
-        return left == right
+        return str.__eq__(left, right)
     if type(left) is not type(right):
         return False
     if isinstance(left, list) and isinstance(right, list):
@@ -97,27 +97,38 @@ def decode(value: str | bytes | JsonValue) -> JsonValue:
             raise ProtocolError("PROTOCOL_JSON", "Invalid UTF-8 JSON") from exc
     else:
         parsed = value
-    _json_value(parsed)
-    return parsed
+    return _json_value(parsed)
 
 
-def _json_value(value: object) -> None:
+def _json_value(value: object) -> JsonValue:
     import math
 
-    # StrEnum is a transparent JSON string representation, including the SDK's
-    # typed error codes. Do not broaden numeric/boolean coercion or other enums.
-    if value is None or type(value) in (str, bool, int) or isinstance(value, StrEnum):
-        return
+    if value is None or type(value) in (str, bool, int):
+        return cast(JsonValue, value)
+    if isinstance(value, StrEnum):
+        # Bypass overridden display/equality methods; JSON carries the string.
+        return str.__str__(value)
     if type(value) is float and math.isfinite(value):
-        return
+        return cast(float, value)
     if type(value) is list:
-        for item in cast(list[object], value):
-            _json_value(item)
-        return
+        items = cast(list[object], value)
+        normalized = [_json_value(item) for item in items]
+        return (
+            cast(JsonValue, value)
+            if all(a is b for a, b in zip(items, normalized, strict=True))
+            else normalized
+        )
     if type(value) is dict:
+        normalized_mapping: dict[str, JsonValue] = {}
+        changed = False
         for key, item in cast(dict[object, object], value).items():
             if not isinstance(key, str):
                 raise ProtocolError("PROTOCOL_JSON", "JSON mapping keys must be strings")
-            _json_value(item)
-        return
+            plain_key = str.__str__(key)
+            if plain_key in normalized_mapping:
+                raise ProtocolError("PROTOCOL_JSON", "Duplicate mapping key", details=plain_key)
+            plain_item = _json_value(item)
+            normalized_mapping[plain_key] = plain_item
+            changed = changed or plain_key is not key or plain_item is not item
+        return normalized_mapping if changed else cast(JsonValue, value)
     raise ProtocolError("PROTOCOL_JSON", "Non-JSON or nonfinite value")

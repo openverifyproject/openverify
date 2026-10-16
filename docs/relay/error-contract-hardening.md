@@ -38,3 +38,7 @@ Store failure propagation and Observer isolation are unchanged. No FAIL, UNKNOWN
 ERROR, nonexecution, resource or graph scheduling meaning changes. Production
 mutation testing and universal correctness of arbitrary custom ports are not
 claimed. Frozen Golden failures and coverage gaps remain reported separately.
+
+String enum inputs normalize to their underlying strings without invoking custom
+display or equality methods. Normalization copies only changed containers and
+does not mutate caller data.

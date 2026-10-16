@@ -11,7 +11,7 @@ class RelayError(ProtocolError):
 
     def __init__(self, code: str, message: str, path: str = "", details: JsonValue = None):
         try:
-            typed: str = RelayErrorCode(code)
+            typed: str = RelayErrorCode(str.__str__(code))
         except ValueError:
             typed = code
         super().__init__(typed, message, path, details)
