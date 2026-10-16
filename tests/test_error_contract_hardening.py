@@ -160,6 +160,7 @@ def test_non_string_enums_remain_non_json():
 
 def test_string_enum_methods_do_not_change_json_values():
     from enum import StrEnum
+
     from openverify.serialization import decode, json_equal
 
     class DisplayCode(StrEnum):
