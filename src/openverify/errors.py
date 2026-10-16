@@ -8,6 +8,7 @@ from openverify.provider_codes import ProviderErrorCode
 
 class ProtocolError(ValueError):
     def __init__(self, code: str, message: str, path: str = "", details: JsonValue = None):
+        code = str.__str__(code)
         super().__init__(f"{code} at {path or '/'}: {message}")
         # Provider-bound VCP execution may expose Provider Contract codes. Keep
         # ownership typed without merging the vocabularies or changing strings.

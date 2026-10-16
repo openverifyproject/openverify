@@ -51,6 +51,7 @@ TYPES: dict[str, type[ProviderValue]] = {
 
 class ProviderContractError(ValueError):
     def __init__(self, code: str, message: str, details: JsonValue = None):
+        code = str.__str__(code)
         super().__init__(f"{code}: {message}")
         try:
             self.code: ProviderErrorCode | str = ProviderErrorCode(str.__str__(code))

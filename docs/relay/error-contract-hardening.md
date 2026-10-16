@@ -42,3 +42,19 @@ claimed. Frozen Golden failures and coverage gaps remain reported separately.
 String enum inputs normalize to their underlying strings without invoking custom
 display or equality methods. Normalization copies only changed containers and
 does not mutate caller data.
+
+The production boundary follow-up snapshots and validates injected catalog
+sequences inside the catalog exception boundary, including lazy iteration and
+lookup. A generator is an invalid return type: the port requires a Sequence.
+Invalid entries use CATALOG_INVALID; unexpected lookup/iteration exceptions use
+CATALOG_FAILURE with chained cause and structured cause type/message. Duplicate
+identities use PROVIDER_CONFLICT. Manifest validation retains Provider Contract
+errors. Binder return validation and compatibility/trust checks are inside the
+binder boundary, so unexpected return-value failures use BINDER_FAILURE and
+existing structured errors keep their codes. Catalog initialization failures
+from provider manifest discovery and Relay's default catalog are wrapped too.
+Binder candidates have independent manifest containers, preventing a replacement
+binder from rewriting the trusted schema snapshot used to check its choice.
+Unknown error-code inputs now also normalize to plain strings in exception
+objects, so custom string-enum equality/display cannot impersonate a reserved
+code. Known codes retain their layer's enum identity and exact wire spelling.
