@@ -7,6 +7,7 @@ from typing import TypeVar
 from uuid import uuid4
 
 from openverify.authoring import Graph
+from openverify.errors import ProtocolError
 from openverify.lifecycle import Cancellation
 from openverify.model import (
     Context,
@@ -17,6 +18,7 @@ from openverify.model import (
     RunRecord,
     VerificationDefinition,
 )
+from openverify.provider import ProviderContractError
 from openverify.relay.adapters.binder import DeterministicBinder
 from openverify.relay.adapters.local import LocalDriver
 from openverify.relay.adapters.logging import LoggingObserver
@@ -94,7 +96,16 @@ class Relay:
         if catalog is None:
             from openverify.standard import standard_catalog
 
-            catalog = standard_catalog()
+            try:
+                catalog = standard_catalog()
+            except (ProtocolError, ProviderContractError):
+                raise
+            except Exception as exc:
+                raise RelayError(
+                    "CATALOG_FAILURE",
+                    "Default provider catalog initialization failed",
+                    details={"cause_type": type(exc).__name__, "cause_message": str(exc)},
+                ) from exc
         self.catalog = catalog
         self.binder = binder if binder is not None else DeterministicBinder()
         self.driver = driver if driver is not None else LocalDriver()
