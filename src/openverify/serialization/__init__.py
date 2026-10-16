@@ -1,6 +1,7 @@
 """Strict JSON interchange, without claiming canonical cross-language bytes."""
 
 import json
+from enum import StrEnum
 from typing import cast
 
 from pydantic import JsonValue
@@ -16,6 +17,8 @@ def json_equal(left: JsonValue, right: JsonValue) -> bool:
     new cross-engine precision/rounding rule. Callers supply validated JSON.
     """
     if type(left) in (int, float) and type(right) in (int, float):
+        return left == right
+    if isinstance(left, str) and isinstance(right, str):
         return left == right
     if type(left) is not type(right):
         return False
@@ -101,7 +104,9 @@ def decode(value: str | bytes | JsonValue) -> JsonValue:
 def _json_value(value: object) -> None:
     import math
 
-    if value is None or type(value) in (str, bool, int):
+    # StrEnum is a transparent JSON string representation, including the SDK's
+    # typed error codes. Do not broaden numeric/boolean coercion or other enums.
+    if value is None or type(value) in (str, bool, int) or isinstance(value, StrEnum):
         return
     if type(value) is float and math.isfinite(value):
         return

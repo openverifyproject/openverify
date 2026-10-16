@@ -123,6 +123,13 @@ def test_provider_code_wire_roundtrip(code: ProviderErrorCode):
     parsed = parse_outcome(raw)
     assert parsed.error is not None and parsed.error.code is code
     assert json.loads(serialize(parsed)) == raw
+    # Existing callers copy error.code directly into Python wire dictionaries.
+    # Typed str enums must retain that supported string behavior.
+    raw["error"]["code"] = error.code
+    assert parse_outcome(raw).error.code is code
+    from openverify.serialization import decode, json_equal
+
+    assert json_equal(decode({"code": code}), {"code": code.value})
 
 
 @pytest.mark.parametrize("code", list(RelayErrorCode))
@@ -136,6 +143,19 @@ def test_provider_namespaced_errors_stay_extensible():
     error = ProviderError(code="com.example.tool_failed", message="diagnostic")
     assert error.code == "com.example.tool_failed"
     assert isinstance(error.code, str)
+
+
+def test_non_string_enums_remain_non_json():
+    from enum import IntEnum
+
+    from openverify.serialization import decode
+
+    class Numeric(IntEnum):
+        ONE = 1
+
+    with pytest.raises(ProtocolError) as caught:
+        decode({"value": Numeric.ONE})
+    assert caught.value.code is VcpErrorCode.PROTOCOL_JSON
 
 
 @pytest.mark.parametrize("port", ["catalog", "binder"])
