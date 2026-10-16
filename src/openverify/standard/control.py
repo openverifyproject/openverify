@@ -1,21 +1,26 @@
 """Explicit fail-closed action policy and Result-to-Decision provider."""
 
-from pathlib import PurePosixPath
 from typing import cast
 
 from openverify.model import Context, Result
 from openverify.standard.common import STRING, STRINGS, judge, standard
+from openverify.standard.paths import local_path
 from openverify.validation import parse_result
 
 
 async def action_policy(inputs: Context, config: Context) -> Result:
-    target = cast(str, inputs["target"]).replace("\\", "/")
-    path = PurePosixPath(target)
-    safe = not path.is_absolute() and ".." not in path.parts and ":" not in target
-    allowed = safe and any(
-        target.startswith(prefix) and prefix.endswith("/")
-        for prefix in cast(list[str], inputs["allowed_prefixes"])
-    )
+    target = cast(str, inputs["target"])
+    try:
+        path = local_path(target)
+        prefixes = [local_path(p) for p in cast(list[str], inputs["allowed_prefixes"])]
+        allowed = (
+            not path.is_absolute()
+            and bool(path.parts)
+            and all(not p.is_absolute() and bool(p.parts) for p in prefixes)
+            and any(path != p and path.is_relative_to(p) for p in prefixes)
+        )
+    except ValueError:
+        allowed = False
     return judge(
         []
         if inputs["action"] == "delete" and allowed

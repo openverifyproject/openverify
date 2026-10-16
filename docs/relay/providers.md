@@ -97,6 +97,35 @@ coordinates. Changed Git hunks use one-based new-file start/count; zero-count
 deletions contain no new-file lines. AST intersection compares full half-open
 ranges; changed-line filtering compares occupied lines.
 
+### Local path comparisons
+
+The local `scope` provider accepts native paths on the running platform and
+relative POSIX paths (`selected/nested/file.py`). Windows accepts both separators
+and mixed separators; POSIX keeps backslashes as literal filename characters and
+remains case-sensitive. Comparisons use path components with the platform's case
+rules, resolving relative spellings against the process working directory.
+Trailing separators do not change directory membership. `selected` includes its
+children and nested descendants, but excludes `selected-other`. Exact file and
+range comparisons use the same normalization. Returned findings retain their
+original file strings and coordinates.
+
+Scope filtering is lexical: it does not require paths to exist, read files, or
+resolve symlinks. Deleted/missing locations can still match. An empty file list
+selects nothing. An empty directory, NUL, parent traversal (`..` components), or
+Windows drive-relative/root-relative or reserved path is rejected, rather than broadening
+the selection. Use `.` explicitly for the current directory. FileAccess remains
+responsible for authorizing actual filesystem I/O and resolving symlinks.
+Zero-length ranges intersect nothing; end coordinates are exclusive.
+
+`action_policy.allowed_prefixes` names relative directories: `tmp` and `tmp/`
+both permit `tmp/item` and `tmp/nested/item`, and exclude `tmp-other/item` and
+the directory `tmp` itself. Absolute targets/prefixes, empty or `.` prefixes,
+ambiguous Windows paths and traversal fail closed. All supplied prefixes must
+be valid. This policy compares local names, without granting filesystem access
+or authenticating a later action's resolved target. It preserves supplied target
+strings in denial findings. These are local standard-provider rules, not changes
+to VCP or Provider Contract.
+
 Git WORKTREE compares explicit base commit to tracked working content; STAGED
 compares base to the index; UNSTAGED compares index to worktree and requires empty
 base. `include_untracked` is explicit in every scope config. Untracked files get
