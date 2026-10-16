@@ -18,6 +18,10 @@ The exception constructors continue accepting existing string callers. Underlyin
 causes remain chained; structured boundary diagnostics retain their cause type
 and message. No enum merges VCP, Provider and Relay categories.
 
+Python wire dictionaries also accept StrEnum as its existing JSON string value,
+so copying `error.code` directly remains compatible. Numeric enums and other
+non-JSON Python values remain rejected; boolean/number distinctions are unchanged.
+
 Two targeted correctness repairs accompany the types:
 
 - Malformed custom policy outcomes now raise the existing normative POLICY_OUTPUT
