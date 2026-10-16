@@ -1,6 +1,7 @@
 """Run-local state machine with deterministic parallel waves and explicit barriers."""
 
 import asyncio
+from collections.abc import Sequence
 from copy import deepcopy
 from typing import cast
 from uuid import uuid4
@@ -42,6 +43,22 @@ from openverify.relay.ports import (
 )
 from openverify.serialization import serialize, to_data
 from openverify.validation import parse_run_record
+
+
+def validate_catalog(values: object) -> Sequence[AvailableProvider]:
+    """An injected port's runtime value must satisfy its declared public type."""
+    from openverify.relay.error_codes import RelayErrorCode
+
+    if not isinstance(values, Sequence):
+        raise RelayError(RelayErrorCode.CATALOG_INVALID, "Catalog must return a provider sequence")
+    for value in cast(Sequence[object], values):
+        if not isinstance(value, AvailableProvider) or not callable(
+            getattr(value.transport, "invoke", None)
+        ):
+            raise RelayError(
+                RelayErrorCode.CATALOG_INVALID, "Catalog returned an invalid provider value"
+            )
+    return cast(Sequence[AvailableProvider], values)
 
 
 async def coordinate(
@@ -89,7 +106,21 @@ async def coordinate(
             trace["transport_error"] = to_data(report.error) if report.error else None
         traces[key] = trace
 
-    available = catalog.providers()
+    from openverify.errors import ProtocolError
+    from openverify.provider import ProviderContractError
+    from openverify.relay.error_codes import RelayErrorCode
+
+    try:
+        available = catalog.providers()
+    except (ProtocolError, ProviderContractError):
+        raise
+    except Exception as exc:
+        raise RelayError(
+            RelayErrorCode.CATALOG_FAILURE,
+            "Provider catalog failed",
+            details={"cause_type": type(exc).__name__, "cause_message": str(exc)},
+        ) from exc
+    available = validate_catalog(available)
     # Bind all requirements before admission, so selection is not affected by scheduler timing.
     bound = {
         n.id: bind(n.operation, available, binder, config.bindings.get(n.id))

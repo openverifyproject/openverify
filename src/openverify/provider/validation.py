@@ -18,6 +18,7 @@ from referencing import Registry, Resource
 from referencing.jsonschema import Schema
 
 from openverify.errors import ProtocolError
+from openverify.provider_codes import ProviderErrorCode
 from openverify.serialization import decode
 from openverify.validation import ValidatorPort
 from openverify.validation import parse_object as parse_vcp
@@ -51,12 +52,15 @@ TYPES: dict[str, type[ProviderValue]] = {
 class ProviderContractError(ValueError):
     def __init__(self, code: str, message: str, details: JsonValue = None):
         super().__init__(f"{code}: {message}")
-        self.code = code
+        try:
+            self.code: ProviderErrorCode | str = ProviderErrorCode(code)
+        except ValueError:
+            self.code = code
         self.message = message
         self.details = details
 
     def as_dict(self) -> dict[str, JsonValue]:
-        return {"code": self.code, "message": self.message, "details": self.details}
+        return {"code": str(self.code), "message": self.message, "details": self.details}
 
 
 def fail(code: str, message: str) -> None:

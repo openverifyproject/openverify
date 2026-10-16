@@ -4,6 +4,8 @@ from typing import Literal
 
 from pydantic import BaseModel, ConfigDict, Field, JsonValue, field_validator
 
+from openverify.provider_codes import ProviderErrorCode
+
 
 class ProviderValue(BaseModel):
     model_config = ConfigDict(strict=True, frozen=True, extra="forbid", allow_inf_nan=False)
@@ -72,9 +74,19 @@ class CancelRequest(Extensible):
 
 
 class ProviderError(ProviderValue):
-    code: str
+    code: ProviderErrorCode | str
     message: str
     details: JsonValue = None
+
+    @field_validator("code", mode="before")
+    @classmethod
+    def typed_reserved_code(cls, value: object) -> object:
+        if isinstance(value, str):
+            try:
+                return ProviderErrorCode(value)
+            except ValueError:
+                pass
+        return value
 
 
 class Outcome(Extensible):

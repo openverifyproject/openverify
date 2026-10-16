@@ -66,10 +66,18 @@ async def evaluate_policies(
                 raise ProtocolError(
                     "POLICY_OUTPUT", f"{role} provider did not complete successfully"
                 )
-            outcome = cast(
-                Activation | Selection | Admission,
-                parse_object(role.lower(), report.outcome.output),
-            )
+            try:
+                outcome = cast(
+                    Activation | Selection | Admission,
+                    parse_object(role.lower(), report.outcome.output),
+                )
+            except ProtocolError as exc:
+                raise ProtocolError(
+                    "POLICY_OUTPUT",
+                    f"Invalid {role} policy outcome",
+                    exc.path,
+                    details={"cause": exc.as_dict()},
+                ) from exc
             executor_ref = provider.manifest.provider_id
             executor_version = provider.manifest.provider_version
         elif (
