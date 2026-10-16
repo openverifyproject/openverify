@@ -49,6 +49,14 @@ def test_error_code_literals_match_owned_registries():
 def test_reserved_provider_registry_matches_normative_table():
     text = (ROOT / "provider-contract/spec/draft/errors.md").read_text(encoding="utf-8")
     assert set(re.findall(r"\| ([A-Z_]+) \|", text)) == {c.value for c in ProviderErrorCode}
+    schema = json.loads(
+        (ROOT / "provider-contract/schemas/draft/provider-error.schema.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    assert set(schema["properties"]["code"]["anyOf"][0]["enum"]) == {
+        c.value for c in ProviderErrorCode
+    }
     assert not (set(VcpErrorCode) & set(ProviderErrorCode))
     assert not (set(RelayErrorCode) & set(ProviderErrorCode))
     assert not (set(RelayErrorCode) & set(VcpErrorCode))
@@ -178,3 +186,25 @@ def test_existing_structured_catalog_error_is_preserved():
             Relay(catalog=Broken()).run(text_graph(), inputs={"text": "Migration Rollback"})
         )
     assert caught.value is failure
+
+
+@pytest.mark.parametrize("identity", ["ACTIVATION.0", "SELECTION.5", "ADMISSION.10"])
+def test_policy_boundary_preserves_structured_cause_and_prevents_graph_execution(identity: str):
+    from copy import deepcopy
+
+    from tests.golden_v02.adapters.public import prepare
+    from tools.golden_v02.verify_manifest import resolve
+
+    stimulus = deepcopy(
+        resolve("fixtures/relay/invalid-policies.json#/v02.policy.invalid." + identity)
+    )
+    bound = prepare(stimulus)
+    with pytest.raises(ProtocolError) as caught:
+        asyncio.run(bound.invoke())
+    error = caught.value
+    assert error.code is VcpErrorCode.POLICY_OUTPUT
+    assert isinstance(error.__cause__, ProtocolError)
+    assert error.__cause__.code is VcpErrorCode.PROTOCOL_STRUCTURE
+    assert error.path == error.__cause__.path
+    assert error.details == {"cause": error.__cause__.as_dict()}
+    assert not any(call["provider_id"] == "com.example.golden.p_n" for call in bound.calls)
