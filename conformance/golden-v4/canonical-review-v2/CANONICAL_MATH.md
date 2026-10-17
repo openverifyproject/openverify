@@ -2,7 +2,7 @@
 
 86 named finite projections; 150 symbolic domains; 1 conditional domains. In addition, 44 leaf-specific finite quotients and 54 declared-name presence projections within the 18 standard capability contracts are nested, explicitly scoped projections. The retained schema components have 543 local logical finite projections and 181 symbolic predicates. These categories overlap and are not one global combination count.
 
-Every named finite projection was independently recalculated. Every finite leaf quotient reconciles C=V+I+N. The full InputPort default/handler domain is corrected to 12=5 valid+7 invalid+0 inapplicable, with zero unresolved coordinates. The source-derived implication is DEFAULT -> Constant present, not the SDK's additional converse. This finite domain is now included among the named finite projections. Typed availability is a dependent relation with explicit ambiguous status coordinates, not a raw Cartesian count.
+Every named finite projection was independently recalculated. Every finite leaf quotient reconciles C=V+I+N. The full InputPort default/handler domain is corrected to 12=5 valid+7 invalid+0 inapplicable, with zero unresolved coordinates. The source-derived implication is DEFAULT -> Constant present, not the SDK's additional converse. This finite domain is now included among the named finite projections. Typed availability is a total snapshot-based dependent relation over the declared supported domain, not a raw Cartesian count.
 
 Counts mean validity of the stated projection under its assumptions, never complete arbitrary JSON validity, implementation correctness or executed coverage. Domain links to a joint family do not copy its count into every leaf. Each JSONL semantic record retains its own predicate/applicability, and leaf-specific counts are labeled as such.
 
@@ -44910,28 +44910,18 @@ For Result calculations controls=[execution_outcome,applicability,determination,
 
 Supplementary literal diagnostics include DATAFLOW_VALUE, TIMEOUT, TRANSPORT_ERROR, PROVIDER_CONFIG, RELAY_ERROR, IO_ERROR and HTTP UNAUTHORIZED/BODY_TOO_LARGE/INVALID_REQUEST. They are separate from the three declared enums; no global error alphabet or mandatory total precedence is asserted.
 
-## Unclosed/unsupported mathematical boundaries
+## Current scope boundaries and resolved questions
 
-| Question | Classification | Effect |
+| ID | Status | Effect |
 | --- | --- | --- |
-| Q.CUSTOM_AGG_EMPTY | GENUINE_NORMATIVE_AMBIGUITY | Only custom zero-member acceptance/rejection and its phase remain blocked. Standard nonempty/rejection and membership-completeness rules are not blocked. |
+| Q.CUSTOM_AGG_EMPTY | RESOLVED_BY_EXPLICIT_NORMATIVE_DECISION | Resolved; no blocked supported semantic subspace. |
 | Q.RELAY_TIMING_KEY | RESOLVED_AUTHORITY_AND_OPTIONAL_NAMING | Remove the ambiguity from CM.RELAY.API.VIEWS.USAGE and CM.VCP.RES.WALL_TIME.SEPARATE. Do not declare implementation correctness: the two-key overwrite counterexample remains. |
-| Q.AVAILABILITY_OVERLAP | GENUINE_NORMATIVE_AMBIGUITY | The dependent typed reachability relation is complete only on disjoint specified contexts. Handler value/noninvocation/record effects are determined after availability; the exact original status for overlapping causes and interrupted producers remains blocked. |
+| Q.AVAILABILITY_OVERLAP | RESOLVED_BY_EXPLICIT_NORMATIVE_DECISION | Resolved; no blocked supported semantic subspace. |
 | Q.ROUNDING | UNBOUNDED_PRECISION_LIMIT_NO_BITWISE_REQUIREMENT | Keep the algebraic oracle; exclude a universal portable float-bit/tolerance oracle. Local reference arithmetic may be checked as a local algorithm only. Domain still unbounded. |
 | Q.DEFAULT_UNUSED | RESOLVED_BY_STRUCTURAL_AND_PROSE_CONJUNCTION | Close the two portable coordinates. Correct D.PORT.REQUIREDNESS_DEFAULT_JOINT from V3/I7/Q2 to V5/I7/Q0; preserve DEFAULT-only presence projection and schema-value obligations. This is a justified canonical interpretation correction, not a normative source edit. |
 | Q.VERSION_FUTURE_INTERSECTION | UNSUPPORTED_FUTURE_PROFILE_LIMIT | Retain current supported behavior and exact local helper algorithm. Future protocol session semantics excluded; arbitrary string/list cardinality unbounded. |
 | Q.NONPROGRESSING_SCHEMA_REFERENCE | EXTERNAL_UNDEFINED_SCOPE_EXCLUSION | Exclude only the upstream-undefined Boolean-result subspace from portable result classification; retain the no-infinite-loop safety requirement. This does not prove current validators terminate or that a recursion exception is an appropriate portable error. |
 | Q.BOOLEAN_ANNOTATION_REFERENCE | EXTERNAL_UNDEFINED_SCOPE_EXCLUSION | Portable Provider evaluation result for annotation Boolean targets is excluded, not counted invalid by inference. VCP annotation-target rejection remains source-supported. SDK source admits those Boolean targets at the position-membership check; that is local behavior and does not define portable semantics. |
-
-No production reducer/validator/resolution/lifecycle function was imported or executed for these calculations. The conditional DAG argument proves a theorem under its listed premises; it is not a universal proof of the implementation scheduler or shared mutable state. No sample graph bound is used to establish arbitrary-size correctness.
-
-## Final-blocker mathematical reconciliation
-
-D.PORT.REQUIREDNESS_DEFAULT_JOINT now enumerates all12 exact coordinates from the written one-way implication, C=12,V=5,I=7,N=0,Q=0. The two SDK-only rejected coordinates are required/BLOCK/default-present and optional/OMIT/default-present. All Constant payloads are assumed valid; malformed or schema-rejected payloads are a different dimension.
-
-D.TYPED_AVAILABILITY remains a dependent unbounded reachability relation; no complete numeric cause-priority classification is claimed. Custom n=0 contributes one empty structural list but its custom semantic classification remains unresolved. The33 shipped root predicates are unchanged. Undefined nonprogressing/Provider non-schema-target evaluation results are excluded with external authority; this is not a blanket invalid-schema classification or a proof that implementation evaluation terminates.
-
-CM.SHARED.SCHEMA.EVALUATION.NONLOOPING owns the independent unbounded trace invariant. Finite stopping satisfies that one invariant, not every validator rule. There is no normative finite time/step bound; finite probes alone cannot prove universal termination. CANONICAL_AUDIT.md contains exact examples and decisions for every remaining boundary.
 
 ## Final normative snapshot proof (supersedes earlier blocked-scope commentary)
 
