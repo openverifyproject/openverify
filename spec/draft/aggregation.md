@@ -7,7 +7,7 @@ signature, not because a list of reducers exhausts possible aggregation.
 The standard draft supplies ALL, ANY, MAJORITY, MIN_SCORE, MAX_SCORE, AVERAGE,
 WEIGHTED_AVERAGE, WORST_SEVERITY. Its operation requirement is openverify.aggregate, exact version 1.
 
-Every invocation MUST provide reducer and handling. handling is a mapping
+Every standard reducer invocation MUST provide reducer and handling. handling is a mapping
 with keys UNKNOWN, ERROR, SKIP, DEFERRED, CANCELLED, NOT_APPLICABLE, MISSING.
 Every key MUST have REJECT or IGNORE. No hidden default is permitted.
 REJECT makes the reference aggregator raise AGGREGATE_INPUT (the engine records
@@ -15,7 +15,11 @@ an ERROR). IGNORE excludes that input. Neither invents a satisfaction value.
 Known logical inputs require verdict; numeric inputs require score; severity
 inputs require severity. Absent required value uses MISSING handling.
 A KNOWN result with no binary verdict is not UNKNOWN.
-Empty input, including empty after filtering, MUST be rejected.
+For standard reducers, empty input, including empty after filtering, MUST be rejected.
+Custom Aggregate may declare an explicitly empty membership; its capability
+input schema and implementation own eligibility and Result behavior, as specified
+in [typed dataflow](dataflow.md). No standard reducer's vacuous result or failure
+is implicitly imposed on a custom capability.
 
 ALL passes iff all retained verdicts PASS. ANY passes iff at least one PASS.
 MAJORITY passes iff PASS count exceeds FAIL count, fails iff FAIL exceeds PASS.

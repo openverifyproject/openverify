@@ -2102,112 +2102,847 @@ Canonical links: CM.VCP.DATA.BOOKKEEPING, CM.VCP.DATA.RESOLVE_ALL, CM.VCP.DATA.R
   "inapplicable_set": "Producer dimensions do not apply to non-upstream sources; missing required run values reject occurrence before node resolution.",
   "invalid_set": "Required unbound input, nonancestor/missing output identity, invalid source schema, forged resolution/value/default snapshot.",
   "kind": "CONDITIONAL",
-  "mathematics_status": "DISJOINT_CONTEXT_RELATION_DERIVED; NORMATIVE_STATUS_AMBIGUITIES_EXPLICIT",
+  "mathematics_status": "TOTAL_DISJOINT_SNAPSHOT_RELATION_PROVED",
   "partitions": [
     {
-      "classification": "REACHABLE",
-      "context": "Optional unbound input",
-      "source_snapshot": "source field absent, not a fabricated fifth ValueSource wire kind",
-      "status": "ABSENT",
-      "value": "no source value"
+      "candidate": "VALUE",
+      "cause": null,
+      "id": "CONSTANT.VALUE",
+      "kind": null,
+      "role": null,
+      "source": "CONSTANT",
+      "state": null,
+      "validation": "PASS"
     },
     {
-      "classification": "INVALID_DEFINITION",
-      "context": "Required unbound input",
-      "reason": "Required input must be bound; not a runtime ABSENT path."
+      "candidate": "VALUE",
+      "cause": null,
+      "id": "EXTERNAL_REFERENCE.VALUE",
+      "kind": null,
+      "role": null,
+      "source": "EXTERNAL_REFERENCE",
+      "state": null,
+      "validation": "PASS"
     },
     {
-      "classification": "REACHABLE",
-      "context": "CONSTANT after valid complete preflight",
-      "reason": "Invalid constant/default/known schema constraints reject definition before invocation.",
-      "status": "AVAILABLE",
-      "value": "exact authored Constant JSON including null"
+      "candidate": "ABSENT",
+      "cause": null,
+      "id": "RUN_INPUT.ABSENT.None",
+      "kind": null,
+      "role": null,
+      "source": "RUN_INPUT",
+      "state": null,
+      "validation": null
     },
     {
-      "classification": "REACHABLE",
-      "context": "EXTERNAL_REFERENCE after valid source/target preflight",
-      "status": "AVAILABLE",
-      "value": "exact authored ArtifactRef snapshot, never fetched bytes"
+      "candidate": "VALUE",
+      "cause": null,
+      "id": "RUN_INPUT.VALUE.PASS",
+      "kind": null,
+      "role": null,
+      "source": "RUN_INPUT",
+      "state": null,
+      "validation": "PASS"
     },
     {
-      "classification": "REACHABLE",
-      "context": "RUN_INPUT declared, effective normalized value present and target accepts",
-      "status": "AVAILABLE",
-      "value": "exact effective run input"
+      "candidate": "VALUE",
+      "cause": null,
+      "id": "RUN_INPUT.VALUE.FAIL",
+      "kind": null,
+      "role": null,
+      "source": "RUN_INPUT",
+      "state": null,
+      "validation": "FAIL"
     },
     {
-      "classification": "REACHABLE",
-      "context": "RUN_INPUT declared optional with effective value omitted",
-      "status": "ABSENT"
+      "candidate": "ABSENT",
+      "cause": null,
+      "id": "UNBOUND",
+      "kind": null,
+      "role": null,
+      "source": "UNBOUND",
+      "state": null,
+      "validation": null
     },
     {
-      "classification": "REACHABLE_UNLESS_STATIC_CONTRADICTION_REJECTS_DEFINITION",
-      "context": "RUN_INPUT present passes run declaration but violates narrower target schema",
-      "status": "INVALID"
+      "candidate": "ACCEPTED",
+      "cause": null,
+      "id": "DERIVE.INFORMATION.SUCCESS.PASS",
+      "kind": "DERIVE",
+      "role": "INFORMATION",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "SUCCESS",
+      "validation": "PASS"
     },
     {
-      "classification": "INVALID_OCCURRENCE_INPUT",
-      "context": "Missing required supplied run input, unknown supplied name, or invalid supplied declaration value",
-      "reason": "Rejected before any implementation; not node-level runtime status."
+      "candidate": "ACCEPTED",
+      "cause": null,
+      "id": "DERIVE.INFORMATION.SUCCESS.CONSUMER_FAIL",
+      "kind": "DERIVE",
+      "role": "INFORMATION",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "SUCCESS",
+      "validation": "CONSUMER_FAIL"
     },
     {
-      "classification": "INVALID_DEFINITION",
-      "context": "UPSTREAM_OUTPUT missing producer, missing declared output, self/nonancestor reference",
-      "reason": "No valid-ready runtime source coordinate."
+      "candidate": "NONE",
+      "cause": null,
+      "id": "DERIVE.INFORMATION.UNSTARTED",
+      "kind": "DERIVE",
+      "role": "INFORMATION",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "NONEXECUTED",
+      "validation": null
     },
     {
-      "classification": "REACHABLE",
-      "context": "UPSTREAM RESULT role from EVALUATE/AGGREGATE with recorded Result; producer port and target admit it",
-      "status": "AVAILABLE",
-      "value": "exact recorded bookkeeping/semantic Result even ERROR or nonexecution"
+      "candidate": "NONE",
+      "cause": "RAW_ABSENT",
+      "id": "DERIVE.INFORMATION.CANCELLED.ABSENT",
+      "kind": "DERIVE",
+      "role": "INFORMATION",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "CANCELLED",
+      "validation": null
     },
     {
-      "classification": "REACHABLE",
-      "context": "UPSTREAM RESULT role candidate rejected by producer port or target schema",
-      "status": "INVALID"
+      "candidate": "NONE",
+      "cause": "RAW_VALID",
+      "id": "DERIVE.INFORMATION.CANCELLED.VALID",
+      "kind": "DERIVE",
+      "role": "INFORMATION",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "CANCELLED",
+      "validation": null
     },
     {
-      "classification": "REACHABLE",
-      "context": "UPSTREAM INFORMATION/DECISION accepted and published on semantic SUCCESS; target accepts",
-      "status": "AVAILABLE",
-      "value": "exact accepted authored-source output"
+      "candidate": "NONE",
+      "cause": "RAW_INVALID",
+      "id": "DERIVE.INFORMATION.CANCELLED.INVALID",
+      "kind": "DERIVE",
+      "role": "INFORMATION",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "CANCELLED",
+      "validation": null
     },
     {
-      "classification": "REACHABLE",
-      "context": "Accepted published candidate violates target schema despite no known static incompatibility",
-      "status": "INVALID"
+      "candidate": "NONE",
+      "cause": "REJECTED_PRESENT",
+      "id": "DERIVE.INFORMATION.ERROR.REJECTED_PRESENT",
+      "kind": "DERIVE",
+      "role": "INFORMATION",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "ERROR",
+      "validation": null
     },
     {
-      "classification": "DISJOINT_NONEXECUTION_CONTEXT",
-      "context": "Unstarted upstream producer NONEXECUTED, INFORMATION or DECISION not published",
-      "status": "PRODUCER_NOT_EXECUTED"
+      "candidate": "NONE",
+      "cause": "EXPLICIT_MISSING",
+      "id": "DERIVE.INFORMATION.ERROR.EXPLICIT_MISSING",
+      "kind": "DERIVE",
+      "role": "INFORMATION",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "ERROR",
+      "validation": null
     },
     {
-      "classification": "DISJOINT_ERROR_CONTEXT",
-      "context": "Upstream ERROR with no accepted INFORMATION/DECISION and no competing missing/invalid cause",
-      "status": "PRODUCER_ERROR"
+      "candidate": "NONE",
+      "cause": "RAISED",
+      "id": "DERIVE.INFORMATION.ERROR.RAISED",
+      "kind": "DERIVE",
+      "role": "INFORMATION",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "ERROR",
+      "validation": null
     },
     {
-      "classification": "AMBIGUOUS_STATUS_PRIORITY",
-      "context": "Declared output missing in observed successful attempt mapping",
-      "question_id": "Q.AVAILABILITY_OVERLAP",
-      "status": "OUTPUT_MISSING is named, but atomic semantic rejection also establishes ERROR/no publication"
+      "candidate": "NONE",
+      "cause": "EXECUTION_ERROR",
+      "id": "DERIVE.INFORMATION.ERROR.EXECUTION_ERROR",
+      "kind": "DERIVE",
+      "role": "INFORMATION",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "ERROR",
+      "validation": null
     },
     {
-      "classification": "AMBIGUOUS_STATUS_MAPPING",
-      "context": "Interrupted CANCELLED producer, no accepted information/Decision",
-      "question_id": "Q.AVAILABILITY_OVERLAP",
-      "reason": "Cancellation can interrupt started work; prose lists statuses but does not specify whether nonexecuted/error/missing classification wins here."
+      "candidate": "ACCEPTED",
+      "cause": null,
+      "id": "EVALUATE.INFORMATION.SUCCESS.PASS",
+      "kind": "EVALUATE",
+      "role": "INFORMATION",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "SUCCESS",
+      "validation": "PASS"
     },
     {
-      "classification": "UNUSABLE_OBSERVATION",
-      "context": "Raw invalid observed output never accepted",
-      "status": "No published AVAILABLE information; exact competing unavailable status not universally prioritized."
+      "candidate": "ACCEPTED",
+      "cause": null,
+      "id": "EVALUATE.INFORMATION.SUCCESS.CONSUMER_FAIL",
+      "kind": "EVALUATE",
+      "role": "INFORMATION",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "SUCCESS",
+      "validation": "CONSUMER_FAIL"
+    },
+    {
+      "candidate": "NONE",
+      "cause": null,
+      "id": "EVALUATE.INFORMATION.UNSTARTED",
+      "kind": "EVALUATE",
+      "role": "INFORMATION",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "NONEXECUTED",
+      "validation": null
+    },
+    {
+      "candidate": "NONE",
+      "cause": "RAW_ABSENT",
+      "id": "EVALUATE.INFORMATION.CANCELLED.ABSENT",
+      "kind": "EVALUATE",
+      "role": "INFORMATION",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "CANCELLED",
+      "validation": null
+    },
+    {
+      "candidate": "NONE",
+      "cause": "RAW_VALID",
+      "id": "EVALUATE.INFORMATION.CANCELLED.VALID",
+      "kind": "EVALUATE",
+      "role": "INFORMATION",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "CANCELLED",
+      "validation": null
+    },
+    {
+      "candidate": "NONE",
+      "cause": "RAW_INVALID",
+      "id": "EVALUATE.INFORMATION.CANCELLED.INVALID",
+      "kind": "EVALUATE",
+      "role": "INFORMATION",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "CANCELLED",
+      "validation": null
+    },
+    {
+      "candidate": "NONE",
+      "cause": "REJECTED_PRESENT",
+      "id": "EVALUATE.INFORMATION.ERROR.REJECTED_PRESENT",
+      "kind": "EVALUATE",
+      "role": "INFORMATION",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "ERROR",
+      "validation": null
+    },
+    {
+      "candidate": "NONE",
+      "cause": "EXPLICIT_MISSING",
+      "id": "EVALUATE.INFORMATION.ERROR.EXPLICIT_MISSING",
+      "kind": "EVALUATE",
+      "role": "INFORMATION",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "ERROR",
+      "validation": null
+    },
+    {
+      "candidate": "NONE",
+      "cause": "RAISED",
+      "id": "EVALUATE.INFORMATION.ERROR.RAISED",
+      "kind": "EVALUATE",
+      "role": "INFORMATION",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "ERROR",
+      "validation": null
+    },
+    {
+      "candidate": "NONE",
+      "cause": "EXECUTION_ERROR",
+      "id": "EVALUATE.INFORMATION.ERROR.EXECUTION_ERROR",
+      "kind": "EVALUATE",
+      "role": "INFORMATION",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "ERROR",
+      "validation": null
+    },
+    {
+      "candidate": "NONE",
+      "cause": "VALID_ERROR_RESULT",
+      "id": "EVALUATE.INFORMATION.ERROR.VALID_ERROR_RESULT",
+      "kind": "EVALUATE",
+      "role": "INFORMATION",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "ERROR",
+      "validation": null
+    },
+    {
+      "candidate": "BOOKKEEPING",
+      "cause": null,
+      "id": "EVALUATE.SUCCESS.RESULT.PASS",
+      "kind": "EVALUATE",
+      "role": "RESULT",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "SUCCESS",
+      "validation": "PASS"
+    },
+    {
+      "candidate": "BOOKKEEPING",
+      "cause": null,
+      "id": "EVALUATE.SUCCESS.RESULT.PRODUCER_FAIL",
+      "kind": "EVALUATE",
+      "role": "RESULT",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "SUCCESS",
+      "validation": "PRODUCER_FAIL"
+    },
+    {
+      "candidate": "BOOKKEEPING",
+      "cause": null,
+      "id": "EVALUATE.SUCCESS.RESULT.CONSUMER_FAIL",
+      "kind": "EVALUATE",
+      "role": "RESULT",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "SUCCESS",
+      "validation": "CONSUMER_FAIL"
+    },
+    {
+      "candidate": "BOOKKEEPING",
+      "cause": null,
+      "id": "EVALUATE.ERROR.RESULT.PASS",
+      "kind": "EVALUATE",
+      "role": "RESULT",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "ERROR",
+      "validation": "PASS"
+    },
+    {
+      "candidate": "BOOKKEEPING",
+      "cause": null,
+      "id": "EVALUATE.ERROR.RESULT.PRODUCER_FAIL",
+      "kind": "EVALUATE",
+      "role": "RESULT",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "ERROR",
+      "validation": "PRODUCER_FAIL"
+    },
+    {
+      "candidate": "BOOKKEEPING",
+      "cause": null,
+      "id": "EVALUATE.ERROR.RESULT.CONSUMER_FAIL",
+      "kind": "EVALUATE",
+      "role": "RESULT",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "ERROR",
+      "validation": "CONSUMER_FAIL"
+    },
+    {
+      "candidate": "BOOKKEEPING",
+      "cause": null,
+      "id": "EVALUATE.NONEXECUTED.RESULT.PASS",
+      "kind": "EVALUATE",
+      "role": "RESULT",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "NONEXECUTED",
+      "validation": "PASS"
+    },
+    {
+      "candidate": "BOOKKEEPING",
+      "cause": null,
+      "id": "EVALUATE.NONEXECUTED.RESULT.PRODUCER_FAIL",
+      "kind": "EVALUATE",
+      "role": "RESULT",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "NONEXECUTED",
+      "validation": "PRODUCER_FAIL"
+    },
+    {
+      "candidate": "BOOKKEEPING",
+      "cause": null,
+      "id": "EVALUATE.NONEXECUTED.RESULT.CONSUMER_FAIL",
+      "kind": "EVALUATE",
+      "role": "RESULT",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "NONEXECUTED",
+      "validation": "CONSUMER_FAIL"
+    },
+    {
+      "candidate": "BOOKKEEPING",
+      "cause": null,
+      "id": "EVALUATE.CANCELLED.RESULT.PASS",
+      "kind": "EVALUATE",
+      "role": "RESULT",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "CANCELLED",
+      "validation": "PASS"
+    },
+    {
+      "candidate": "BOOKKEEPING",
+      "cause": null,
+      "id": "EVALUATE.CANCELLED.RESULT.PRODUCER_FAIL",
+      "kind": "EVALUATE",
+      "role": "RESULT",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "CANCELLED",
+      "validation": "PRODUCER_FAIL"
+    },
+    {
+      "candidate": "BOOKKEEPING",
+      "cause": null,
+      "id": "EVALUATE.CANCELLED.RESULT.CONSUMER_FAIL",
+      "kind": "EVALUATE",
+      "role": "RESULT",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "CANCELLED",
+      "validation": "CONSUMER_FAIL"
+    },
+    {
+      "candidate": "ACCEPTED",
+      "cause": null,
+      "id": "AGGREGATE.INFORMATION.SUCCESS.PASS",
+      "kind": "AGGREGATE",
+      "role": "INFORMATION",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "SUCCESS",
+      "validation": "PASS"
+    },
+    {
+      "candidate": "ACCEPTED",
+      "cause": null,
+      "id": "AGGREGATE.INFORMATION.SUCCESS.CONSUMER_FAIL",
+      "kind": "AGGREGATE",
+      "role": "INFORMATION",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "SUCCESS",
+      "validation": "CONSUMER_FAIL"
+    },
+    {
+      "candidate": "NONE",
+      "cause": null,
+      "id": "AGGREGATE.INFORMATION.UNSTARTED",
+      "kind": "AGGREGATE",
+      "role": "INFORMATION",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "NONEXECUTED",
+      "validation": null
+    },
+    {
+      "candidate": "NONE",
+      "cause": "RAW_ABSENT",
+      "id": "AGGREGATE.INFORMATION.CANCELLED.ABSENT",
+      "kind": "AGGREGATE",
+      "role": "INFORMATION",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "CANCELLED",
+      "validation": null
+    },
+    {
+      "candidate": "NONE",
+      "cause": "RAW_VALID",
+      "id": "AGGREGATE.INFORMATION.CANCELLED.VALID",
+      "kind": "AGGREGATE",
+      "role": "INFORMATION",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "CANCELLED",
+      "validation": null
+    },
+    {
+      "candidate": "NONE",
+      "cause": "RAW_INVALID",
+      "id": "AGGREGATE.INFORMATION.CANCELLED.INVALID",
+      "kind": "AGGREGATE",
+      "role": "INFORMATION",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "CANCELLED",
+      "validation": null
+    },
+    {
+      "candidate": "NONE",
+      "cause": "REJECTED_PRESENT",
+      "id": "AGGREGATE.INFORMATION.ERROR.REJECTED_PRESENT",
+      "kind": "AGGREGATE",
+      "role": "INFORMATION",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "ERROR",
+      "validation": null
+    },
+    {
+      "candidate": "NONE",
+      "cause": "EXPLICIT_MISSING",
+      "id": "AGGREGATE.INFORMATION.ERROR.EXPLICIT_MISSING",
+      "kind": "AGGREGATE",
+      "role": "INFORMATION",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "ERROR",
+      "validation": null
+    },
+    {
+      "candidate": "NONE",
+      "cause": "RAISED",
+      "id": "AGGREGATE.INFORMATION.ERROR.RAISED",
+      "kind": "AGGREGATE",
+      "role": "INFORMATION",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "ERROR",
+      "validation": null
+    },
+    {
+      "candidate": "NONE",
+      "cause": "EXECUTION_ERROR",
+      "id": "AGGREGATE.INFORMATION.ERROR.EXECUTION_ERROR",
+      "kind": "AGGREGATE",
+      "role": "INFORMATION",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "ERROR",
+      "validation": null
+    },
+    {
+      "candidate": "NONE",
+      "cause": "VALID_ERROR_RESULT",
+      "id": "AGGREGATE.INFORMATION.ERROR.VALID_ERROR_RESULT",
+      "kind": "AGGREGATE",
+      "role": "INFORMATION",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "ERROR",
+      "validation": null
+    },
+    {
+      "candidate": "BOOKKEEPING",
+      "cause": null,
+      "id": "AGGREGATE.SUCCESS.RESULT.PASS",
+      "kind": "AGGREGATE",
+      "role": "RESULT",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "SUCCESS",
+      "validation": "PASS"
+    },
+    {
+      "candidate": "BOOKKEEPING",
+      "cause": null,
+      "id": "AGGREGATE.SUCCESS.RESULT.PRODUCER_FAIL",
+      "kind": "AGGREGATE",
+      "role": "RESULT",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "SUCCESS",
+      "validation": "PRODUCER_FAIL"
+    },
+    {
+      "candidate": "BOOKKEEPING",
+      "cause": null,
+      "id": "AGGREGATE.SUCCESS.RESULT.CONSUMER_FAIL",
+      "kind": "AGGREGATE",
+      "role": "RESULT",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "SUCCESS",
+      "validation": "CONSUMER_FAIL"
+    },
+    {
+      "candidate": "BOOKKEEPING",
+      "cause": null,
+      "id": "AGGREGATE.ERROR.RESULT.PASS",
+      "kind": "AGGREGATE",
+      "role": "RESULT",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "ERROR",
+      "validation": "PASS"
+    },
+    {
+      "candidate": "BOOKKEEPING",
+      "cause": null,
+      "id": "AGGREGATE.ERROR.RESULT.PRODUCER_FAIL",
+      "kind": "AGGREGATE",
+      "role": "RESULT",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "ERROR",
+      "validation": "PRODUCER_FAIL"
+    },
+    {
+      "candidate": "BOOKKEEPING",
+      "cause": null,
+      "id": "AGGREGATE.ERROR.RESULT.CONSUMER_FAIL",
+      "kind": "AGGREGATE",
+      "role": "RESULT",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "ERROR",
+      "validation": "CONSUMER_FAIL"
+    },
+    {
+      "candidate": "BOOKKEEPING",
+      "cause": null,
+      "id": "AGGREGATE.NONEXECUTED.RESULT.PASS",
+      "kind": "AGGREGATE",
+      "role": "RESULT",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "NONEXECUTED",
+      "validation": "PASS"
+    },
+    {
+      "candidate": "BOOKKEEPING",
+      "cause": null,
+      "id": "AGGREGATE.NONEXECUTED.RESULT.PRODUCER_FAIL",
+      "kind": "AGGREGATE",
+      "role": "RESULT",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "NONEXECUTED",
+      "validation": "PRODUCER_FAIL"
+    },
+    {
+      "candidate": "BOOKKEEPING",
+      "cause": null,
+      "id": "AGGREGATE.NONEXECUTED.RESULT.CONSUMER_FAIL",
+      "kind": "AGGREGATE",
+      "role": "RESULT",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "NONEXECUTED",
+      "validation": "CONSUMER_FAIL"
+    },
+    {
+      "candidate": "BOOKKEEPING",
+      "cause": null,
+      "id": "AGGREGATE.CANCELLED.RESULT.PASS",
+      "kind": "AGGREGATE",
+      "role": "RESULT",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "CANCELLED",
+      "validation": "PASS"
+    },
+    {
+      "candidate": "BOOKKEEPING",
+      "cause": null,
+      "id": "AGGREGATE.CANCELLED.RESULT.PRODUCER_FAIL",
+      "kind": "AGGREGATE",
+      "role": "RESULT",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "CANCELLED",
+      "validation": "PRODUCER_FAIL"
+    },
+    {
+      "candidate": "BOOKKEEPING",
+      "cause": null,
+      "id": "AGGREGATE.CANCELLED.RESULT.CONSUMER_FAIL",
+      "kind": "AGGREGATE",
+      "role": "RESULT",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "CANCELLED",
+      "validation": "CONSUMER_FAIL"
+    },
+    {
+      "candidate": "ACCEPTED",
+      "cause": null,
+      "id": "CONTROL.INFORMATION.SUCCESS.PASS",
+      "kind": "CONTROL",
+      "role": "INFORMATION",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "SUCCESS",
+      "validation": "PASS"
+    },
+    {
+      "candidate": "ACCEPTED",
+      "cause": null,
+      "id": "CONTROL.INFORMATION.SUCCESS.CONSUMER_FAIL",
+      "kind": "CONTROL",
+      "role": "INFORMATION",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "SUCCESS",
+      "validation": "CONSUMER_FAIL"
+    },
+    {
+      "candidate": "NONE",
+      "cause": null,
+      "id": "CONTROL.INFORMATION.UNSTARTED",
+      "kind": "CONTROL",
+      "role": "INFORMATION",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "NONEXECUTED",
+      "validation": null
+    },
+    {
+      "candidate": "NONE",
+      "cause": "RAW_ABSENT",
+      "id": "CONTROL.INFORMATION.CANCELLED.ABSENT",
+      "kind": "CONTROL",
+      "role": "INFORMATION",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "CANCELLED",
+      "validation": null
+    },
+    {
+      "candidate": "NONE",
+      "cause": "RAW_VALID",
+      "id": "CONTROL.INFORMATION.CANCELLED.VALID",
+      "kind": "CONTROL",
+      "role": "INFORMATION",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "CANCELLED",
+      "validation": null
+    },
+    {
+      "candidate": "NONE",
+      "cause": "RAW_INVALID",
+      "id": "CONTROL.INFORMATION.CANCELLED.INVALID",
+      "kind": "CONTROL",
+      "role": "INFORMATION",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "CANCELLED",
+      "validation": null
+    },
+    {
+      "candidate": "NONE",
+      "cause": "REJECTED_PRESENT",
+      "id": "CONTROL.INFORMATION.ERROR.REJECTED_PRESENT",
+      "kind": "CONTROL",
+      "role": "INFORMATION",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "ERROR",
+      "validation": null
+    },
+    {
+      "candidate": "NONE",
+      "cause": "EXPLICIT_MISSING",
+      "id": "CONTROL.INFORMATION.ERROR.EXPLICIT_MISSING",
+      "kind": "CONTROL",
+      "role": "INFORMATION",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "ERROR",
+      "validation": null
+    },
+    {
+      "candidate": "NONE",
+      "cause": "RAISED",
+      "id": "CONTROL.INFORMATION.ERROR.RAISED",
+      "kind": "CONTROL",
+      "role": "INFORMATION",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "ERROR",
+      "validation": null
+    },
+    {
+      "candidate": "NONE",
+      "cause": "EXECUTION_ERROR",
+      "id": "CONTROL.INFORMATION.ERROR.EXECUTION_ERROR",
+      "kind": "CONTROL",
+      "role": "INFORMATION",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "ERROR",
+      "validation": null
+    },
+    {
+      "candidate": "ACCEPTED",
+      "cause": null,
+      "id": "CONTROL.DECISION.SUCCESS.PASS",
+      "kind": "CONTROL",
+      "role": "DECISION",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "SUCCESS",
+      "validation": "PASS"
+    },
+    {
+      "candidate": "ACCEPTED",
+      "cause": null,
+      "id": "CONTROL.DECISION.SUCCESS.CONSUMER_FAIL",
+      "kind": "CONTROL",
+      "role": "DECISION",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "SUCCESS",
+      "validation": "CONSUMER_FAIL"
+    },
+    {
+      "candidate": "NONE",
+      "cause": null,
+      "id": "CONTROL.DECISION.UNSTARTED",
+      "kind": "CONTROL",
+      "role": "DECISION",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "NONEXECUTED",
+      "validation": null
+    },
+    {
+      "candidate": "NONE",
+      "cause": "RAW_ABSENT",
+      "id": "CONTROL.DECISION.CANCELLED.ABSENT",
+      "kind": "CONTROL",
+      "role": "DECISION",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "CANCELLED",
+      "validation": null
+    },
+    {
+      "candidate": "NONE",
+      "cause": "RAW_VALID",
+      "id": "CONTROL.DECISION.CANCELLED.VALID",
+      "kind": "CONTROL",
+      "role": "DECISION",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "CANCELLED",
+      "validation": null
+    },
+    {
+      "candidate": "NONE",
+      "cause": "RAW_INVALID",
+      "id": "CONTROL.DECISION.CANCELLED.INVALID",
+      "kind": "CONTROL",
+      "role": "DECISION",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "CANCELLED",
+      "validation": null
+    },
+    {
+      "candidate": "NONE",
+      "cause": "REJECTED_PRESENT",
+      "id": "CONTROL.DECISION.ERROR.REJECTED_PRESENT",
+      "kind": "CONTROL",
+      "role": "DECISION",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "ERROR",
+      "validation": null
+    },
+    {
+      "candidate": "NONE",
+      "cause": "EXPLICIT_MISSING",
+      "id": "CONTROL.DECISION.ERROR.EXPLICIT_MISSING",
+      "kind": "CONTROL",
+      "role": "DECISION",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "ERROR",
+      "validation": null
+    },
+    {
+      "candidate": "NONE",
+      "cause": "RAISED",
+      "id": "CONTROL.DECISION.ERROR.RAISED",
+      "kind": "CONTROL",
+      "role": "DECISION",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "ERROR",
+      "validation": null
+    },
+    {
+      "candidate": "NONE",
+      "cause": "EXECUTION_ERROR",
+      "id": "CONTROL.DECISION.ERROR.EXECUTION_ERROR",
+      "kind": "CONTROL",
+      "role": "DECISION",
+      "source": "UPSTREAM_OUTPUT",
+      "state": "ERROR",
+      "validation": null
     }
   ],
+  "proof_summary": {
+    "context_quotient_count": 82,
+    "handler_relation_count": 246,
+    "mutual_exclusivity": true,
+    "proof_id": "P.AVAILABILITY.SNAPSHOT.PARTITION",
+    "status_context_counts": {
+      "ABSENT": 2,
+      "AVAILABLE": 16,
+      "INVALID": 27,
+      "OUTPUT_MISSING": 20,
+      "PRODUCER_ERROR": 12,
+      "PRODUCER_NOT_EXECUTED": 5
+    },
+    "totality": true,
+    "unbounded_source_total_claimed": false
+  },
   "remaining_limits": [
-    "Q.AVAILABILITY_OVERLAP: exact original status priority and interrupted INFORMATION/DECISION mapping.",
-    "No raw Cartesian applicability count or portable arbitrary forged record-prefix semantics."
+    "Unbounded arbitrary schema/JSON/graph domains; supported schema evaluation assumed defined; malformed/inconsistent records rejected separately."
   ],
   "requirement_ids": [
     "CM.VCP.DATA.BOOKKEEPING",
@@ -2217,6 +2952,16 @@ Canonical links: CM.VCP.DATA.BOOKKEEPING, CM.VCP.DATA.RESOLVE_ALL, CM.VCP.DATA.R
     "CM.VCP.DATA.RESOLVE_OMIT.PROVENANCE",
     "CM.VCP.DATA.RESOLVE_AVAILABLE.VALIDATION",
     "CM.VCP.DATA.RESOLVE_AVAILABLE.PROVENANCE"
+  ],
+  "snapshot_classifier": [
+    "NONUPSTREAM_ABSENT -> ABSENT; nonupstream existing value -> schema PASS AVAILABLE, FAIL INVALID.",
+    "DECLARED_RESULT -> recorded Result first; producer/consumer schema FAIL INVALID, both PASS AVAILABLE, independent of lifecycle.",
+    "OTHER_ACCEPTED -> schema PASS AVAILABLE, FAIL INVALID.",
+    "NO_ACCEPTED + NONEXECUTED -> PRODUCER_NOT_EXECUTED.",
+    "NO_ACCEPTED + CANCELLED -> OUTPUT_MISSING; raw observation ignored.",
+    "NO_ACCEPTED + ERROR + rejected completed output attempt -> present candidate INVALID, missing port OUTPUT_MISSING.",
+    "NO_ACCEPTED + ERROR + no preceding rejection/missing cause -> PRODUCER_ERROR.",
+    "OTHER_FINALIZED_NO_ACCEPTED -> OUTPUT_MISSING."
   ],
   "valid_set": "A well-typed reachable binding resolves a value or one of the explicitly supported unavailable states; handler preserves original status, value/default presence and noninvocation semantics."
 }
@@ -2701,7 +3446,7 @@ Canonical links: CM.VCP.AGG.EVIDENCE_ORDER, CM.VCP.AGG.IGNORE, CM.VCP.AGG.MISSIN
   "candidate_count": "unbounded",
   "derivation": "For fixed n distinct eligible member identities, n! possible orders; order is semantically observable through members/evidence/weights, so no permutation collapse is justified.",
   "domain_id": "D.AGG.MEMBERSHIP",
-  "inapplicable_set": "Producer-specific dimensions are absent when n=0. Custom zero-member semantic scope remains Q.CUSTOM_AGG_EMPTY, not silently INAPPLICABLE or INVALID.",
+  "inapplicable_set": "No producer dimensions for intentionally empty custom membership. Standard reducer empty retained input is invalid, not inapplicable.",
   "invalid_set": "Duplicate, omitted, reserved, non-Result, unbound or nonancestor member, wrong requiredness/order snapshot.",
   "kind": "SYMBOLIC",
   "mathematics_status": "DERIVED",
@@ -2713,8 +3458,8 @@ Canonical links: CM.VCP.AGG.EVIDENCE_ORDER, CM.VCP.AGG.IGNORE, CM.VCP.AGG.MISSIN
     "identity-preserving versus shifted",
     "all members included versus omitted"
   ],
-  "remaining_question": "Custom structural empty-list/invocation nonemptiness scope and rejection phase remain unresolved.",
-  "valid_set": "M unique and exactly all upstream RESULT bindings; members required BLOCK; reserved semantic names excluded; Constant members equals M."
+  "remaining_question": "None for structural custom emptiness.",
+  "valid_set": "M unique, exactly all upstream RESULT bindings, required BLOCK members, semantic names excluded, Constant members equals M. Custom n=0 is legal; declared capability input schema controls eligibility. Standard n=0/retained0 rejects."
 }
 ```
 
@@ -39131,10 +39876,10 @@ Canonical links: Related projection; not counted as a separate requirement.
           "sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24"
         },
         {
-          "line_end": 95,
-          "line_start": 95,
+          "line_end": 108,
+          "line_start": 108,
           "path": "spec/draft/open-questions.md",
-          "sha256": "d172d96b92104a6de8eabb1541cdd3bf598b30f076730cb2dbc095ee2f129546"
+          "sha256": "4148b6067d1c707c92137da906fe77f3fcfb6fd7c8acdf63b10d5afbb8fd3d3b"
         }
       ]
     },
@@ -39153,7 +39898,7 @@ Canonical links: Related projection; not counted as a separate requirement.
           "line_end": 13,
           "line_start": 13,
           "path": "spec/draft/aggregation.md",
-          "sha256": "a627fc3bd6f8509d1f231caf3d919e16d88c33057b6f144e37e30d715165507e"
+          "sha256": "b23aba6282f5043566f00800e678abe6db3c25fd23b06d1d553f82ea41f36e69"
         },
         {
           "line_end": 22,
@@ -39181,10 +39926,10 @@ Canonical links: Related projection; not counted as a separate requirement.
           "sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24"
         },
         {
-          "line_end": 95,
-          "line_start": 95,
+          "line_end": 108,
+          "line_start": 108,
           "path": "spec/draft/open-questions.md",
-          "sha256": "d172d96b92104a6de8eabb1541cdd3bf598b30f076730cb2dbc095ee2f129546"
+          "sha256": "4148b6067d1c707c92137da906fe77f3fcfb6fd7c8acdf63b10d5afbb8fd3d3b"
         }
       ]
     },
@@ -39225,10 +39970,10 @@ Canonical links: Related projection; not counted as a separate requirement.
           "sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24"
         },
         {
-          "line_end": 106,
-          "line_start": 106,
+          "line_end": 119,
+          "line_start": 119,
           "path": "spec/draft/open-questions.md",
-          "sha256": "d172d96b92104a6de8eabb1541cdd3bf598b30f076730cb2dbc095ee2f129546"
+          "sha256": "4148b6067d1c707c92137da906fe77f3fcfb6fd7c8acdf63b10d5afbb8fd3d3b"
         }
       ]
     },
@@ -39351,10 +40096,10 @@ Canonical links: Related projection; not counted as a separate requirement.
           "sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24"
         },
         {
-          "line_end": 106,
-          "line_start": 106,
+          "line_end": 119,
+          "line_start": 119,
           "path": "spec/draft/open-questions.md",
-          "sha256": "d172d96b92104a6de8eabb1541cdd3bf598b30f076730cb2dbc095ee2f129546"
+          "sha256": "4148b6067d1c707c92137da906fe77f3fcfb6fd7c8acdf63b10d5afbb8fd3d3b"
         }
       ]
     },
@@ -39385,7 +40130,7 @@ Canonical links: Related projection; not counted as a separate requirement.
           "line_end": 11,
           "line_start": 11,
           "path": "spec/draft/open-questions.md",
-          "sha256": "d172d96b92104a6de8eabb1541cdd3bf598b30f076730cb2dbc095ee2f129546"
+          "sha256": "4148b6067d1c707c92137da906fe77f3fcfb6fd7c8acdf63b10d5afbb8fd3d3b"
         }
       ]
     },
@@ -39473,7 +40218,7 @@ Canonical links: Related projection; not counted as a separate requirement.
           "line_end": 109,
           "line_start": 109,
           "path": "spec/draft/dataflow.md",
-          "sha256": "10399b6c1ad0754d63b50404d060e8fcb6c362246d5d793d05c18e55f68074eb"
+          "sha256": "292d3edfaffd7a9b0a5d697f414858938d3d1579d7c8d1e45f13dbb11932f36c"
         }
       ]
     },
@@ -39799,7 +40544,7 @@ Canonical links: Related projection; not counted as a separate requirement.
           "line_end": 38,
           "line_start": 38,
           "path": "spec/draft/dataflow.md",
-          "sha256": "10399b6c1ad0754d63b50404d060e8fcb6c362246d5d793d05c18e55f68074eb"
+          "sha256": "292d3edfaffd7a9b0a5d697f414858938d3d1579d7c8d1e45f13dbb11932f36c"
         },
         {
           "line_end": 11,
@@ -39830,7 +40575,7 @@ Canonical links: Related projection; not counted as a separate requirement.
           "line_end": 99,
           "line_start": 99,
           "path": "spec/draft/dataflow.md",
-          "sha256": "10399b6c1ad0754d63b50404d060e8fcb6c362246d5d793d05c18e55f68074eb"
+          "sha256": "292d3edfaffd7a9b0a5d697f414858938d3d1579d7c8d1e45f13dbb11932f36c"
         }
       ]
     },
@@ -43925,13 +44670,13 @@ Canonical links: CM.VCP.DATA.PORT_HANDLING, CM.VCP.DATA.DEFAULT.CONSTANT, CM.VCP
       "line_end": 33,
       "line_start": 20,
       "path": "spec/draft/dataflow.md",
-      "sha256": "10399b6c1ad0754d63b50404d060e8fcb6c362246d5d793d05c18e55f68074eb"
+      "sha256": "292d3edfaffd7a9b0a5d697f414858938d3d1579d7c8d1e45f13dbb11932f36c"
     },
     {
       "line_end": 105,
       "line_start": 97,
       "path": "spec/draft/dataflow.md",
-      "sha256": "10399b6c1ad0754d63b50404d060e8fcb6c362246d5d793d05c18e55f68074eb"
+      "sha256": "292d3edfaffd7a9b0a5d697f414858938d3d1579d7c8d1e45f13dbb11932f36c"
     }
   ],
   "unresolved_count": 0,
@@ -44207,3 +44952,80 @@ D.PORT.REQUIREDNESS_DEFAULT_JOINT now enumerates all12 exact coordinates from th
 D.TYPED_AVAILABILITY remains a dependent unbounded reachability relation; no complete numeric cause-priority classification is claimed. Custom n=0 contributes one empty structural list but its custom semantic classification remains unresolved. The33 shipped root predicates are unchanged. Undefined nonprogressing/Provider non-schema-target evaluation results are excluded with external authority; this is not a blanket invalid-schema classification or a proof that implementation evaluation terminates.
 
 CM.SHARED.SCHEMA.EVALUATION.NONLOOPING owns the independent unbounded trace invariant. Finite stopping satisfies that one invariant, not every validator rule. There is no normative finite time/step bound; finite probes alone cannot prove universal termination. CANONICAL_AUDIT.md contains exact examples and decisions for every remaining boundary.
+
+## Final normative snapshot proof (supersedes earlier blocked-scope commentary)
+
+The two previous normative blockers are resolved. Existing582 IDs and33 roots are preserved. The finite82-context semantic quotient has16 AVAILABLE,27 INVALID,2 ABSENT,5 PRODUCER_NOT_EXECUTED,20 OUTPUT_MISSING and12 PRODUCER_ERROR representatives. Each of3 legal handlers applies, giving246 proof checks. These are quotient counts, not arbitrary JSON/trace totals.
+
+Totality proof: valid definitions partition by the four disjoint ValueSource discriminants or optional unbound. Nonupstream values partition into absent/present, then the applicable target predicate. Upstream ports partition into declared Result versus other roles; persisted recorded Result is checked first. Other outputs partition accepted/unaccepted. Accepted values partition schema true/false. Unaccepted outputs partition NONEXECUTED/CANCELLED/ERROR/other finalized. ERROR partitions rejected completed attempt versus execution error; rejected attempts partition present/omitted. Every decision is persisted or reconstructed from declared acceptance predicates; no historical event order is used. Each complement excludes all earlier cells, so the predicates are disjoint. Unknown schemas/invalid definitions are preflight failures, not extra runtime statuses. Valid finalized records and atomic publication exclude combinations such as NONEXECUTED with accepted information. Schema instances are unbounded, reduced only to their actual applicable truth predicate. Producer-state/kind/role constraints are retained; unrelated axes are not multiplied.
+
+Mutual exclusivity is checked by asserting exactly one independently written predicate per supported normalized context. Handler effects are functions of the already fixed original status: they cannot replace it. BLOCK input-based noninvocation does not override a higher lifecycle reason. OPTIONAL unbound is not a fifth wire source. Bookkeeping Result branches are tested across all four terminal states and producer/consumer validation stages. The fallback is specified but a SUCCESS node missing its required accepted semantic output is an inconsistent record, not a reachable success case.
+
+Reproduce with Python3.13; no production imports:
+
+```python
+
+import itertools,collections,json
+ROLES=[('DERIVE','INFORMATION'),('EVALUATE','INFORMATION'),('EVALUATE','RESULT'),('AGGREGATE','INFORMATION'),('AGGREGATE','RESULT'),('CONTROL','INFORMATION'),('CONTROL','DECISION')]
+contexts=[]
+def add(label,source,state=None,kind=None,role=None,candidate=None,validation=None,cause=None):
+ contexts.append(dict(id=label,source=source,state=state,kind=kind,role=role,candidate=candidate,validation=validation,cause=cause))
+for s in ['CONSTANT','EXTERNAL_REFERENCE']:
+ add(s+'.VALUE',''+s,candidate='VALUE',validation='PASS')
+for c,v in [('ABSENT',None),('VALUE','PASS'),('VALUE','FAIL')]:
+ add('RUN_INPUT.'+c+'.'+str(v),'RUN_INPUT',candidate=c,validation=v)
+add('UNBOUND','UNBOUND',candidate='ABSENT')
+for k,role in ROLES:
+ if role=='RESULT':
+  for state,v in itertools.product(['SUCCESS','ERROR','NONEXECUTED','CANCELLED'],['PASS','PRODUCER_FAIL','CONSUMER_FAIL']):
+   add(k+'.'+state+'.RESULT.'+v,'UPSTREAM_OUTPUT',state,k,role,'BOOKKEEPING',v)
+ else:
+  for v in ['PASS','CONSUMER_FAIL']:add(k+'.'+role+'.SUCCESS.'+v,'UPSTREAM_OUTPUT','SUCCESS',k,role,'ACCEPTED',v)
+  add(k+'.'+role+'.UNSTARTED','UPSTREAM_OUTPUT','NONEXECUTED',k,role,'NONE')
+  for raw in ['ABSENT','VALID','INVALID']:add(k+'.'+role+'.CANCELLED.'+raw,'UPSTREAM_OUTPUT','CANCELLED',k,role,'NONE',cause='RAW_'+raw)
+  for cause in ['REJECTED_PRESENT','EXPLICIT_MISSING','RAISED','EXECUTION_ERROR']:
+   add(k+'.'+role+'.ERROR.'+cause,'UPSTREAM_OUTPUT','ERROR',k,role,'NONE',cause=cause)
+  if k in ['EVALUATE','AGGREGATE']:add(k+'.'+role+'.ERROR.VALID_ERROR_RESULT','UPSTREAM_OUTPUT','ERROR',k,role,'NONE',cause='VALID_ERROR_RESULT')
+def cells(c):
+ upstream=c['source']=='UPSTREAM_OUTPUT'
+ supplied=c['candidate'] in ['VALUE','ACCEPTED','BOOKKEEPING']
+ is_result=upstream and c['role']=='RESULT'
+ accepted=upstream and supplied and not is_result
+ no_output=upstream and not supplied
+ v=c['validation']=='PASS'
+ return [
+ ('AVAILABLE',not upstream and supplied and v),
+ ('INVALID',not upstream and supplied and not v),
+ ('ABSENT',not upstream and not supplied),
+ ('AVAILABLE',is_result and v),
+ ('INVALID',is_result and not v),
+ ('AVAILABLE',accepted and v),
+ ('INVALID',accepted and not v),
+ ('PRODUCER_NOT_EXECUTED',no_output and c['state']=='NONEXECUTED'),
+ ('OUTPUT_MISSING',no_output and c['state']=='CANCELLED'),
+ ('INVALID',no_output and c['state']=='ERROR' and c['cause']=='REJECTED_PRESENT'),
+ ('OUTPUT_MISSING',no_output and c['state']=='ERROR' and c['cause']=='EXPLICIT_MISSING'),
+ ('PRODUCER_ERROR',no_output and c['state']=='ERROR' and c['cause'] not in ['REJECTED_PRESENT','EXPLICIT_MISSING']),
+ ('OUTPUT_MISSING',no_output and c['state'] not in ['NONEXECUTED','CANCELLED','ERROR'])]
+rows=[]
+for c in contexts:
+ winners=[s for s,p in cells(c) if p]
+ assert len(winners)==1,(c,winners)
+ for required,handler in [(True,'BLOCK'),(False,'OMIT'),(False,'DEFAULT')]:
+  status=winners[0];available=status=='AVAILABLE'
+  rows.append(dict(context=c['id'],status=status,required=required,handler=handler,
+   used_default=not available and handler=='DEFAULT',value_present=available or handler=='DEFAULT',
+   invocation_permitted_by_input=available or handler!='BLOCK'))
+assert len(contexts)==82 and len(rows)==246
+assert len({c['id'] for c in contexts})==82
+assert set(r['status'] for r in rows)=={'AVAILABLE','INVALID','ABSENT','PRODUCER_NOT_EXECUTED','PRODUCER_ERROR','OUTPUT_MISSING'}
+# Cancellation raw payloads and handler choices cannot change original status.
+for k,role in ROLES:
+ if role=='RESULT':continue
+ assert {r['status'] for r in rows if r['context'].startswith(k+'.'+role+'.CANCELLED.')}=={'OUTPUT_MISSING'}
+PROOF=dict(proof_id='P.AVAILABILITY.SNAPSHOT.PARTITION',context_quotient_count=82,handler_relation_count=246,
+ status_context_counts=dict(collections.Counter(r['status'] for r in rows if r['handler']=='BLOCK')),
+ totality=True,mutual_exclusivity=True,unbounded_source_total_claimed=False,contexts=contexts,handler_rows=rows)
+
+print({k:v for k,v in PROOF.items() if k not in ["contexts","handler_rows"]})
+```
