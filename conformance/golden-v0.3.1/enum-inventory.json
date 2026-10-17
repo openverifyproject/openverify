@@ -1,0 +1,204 @@
+[
+  {
+    "source": "schemas/draft/activation.schema.json",
+    "pointer": "/properties/outcome",
+    "all_declared_states": [
+      "ACTIVATE",
+      "DO_NOT_ACTIVATE"
+    ]
+  },
+  {
+    "source": "schemas/draft/admission.schema.json",
+    "pointer": "/properties/outcome",
+    "all_declared_states": [
+      "RUN",
+      "SKIP",
+      "DEFER"
+    ]
+  },
+  {
+    "source": "schemas/draft/cancellation-event.schema.json",
+    "pointer": "/properties/phase",
+    "all_declared_states": [
+      "BEFORE_START",
+      "RUNNING"
+    ]
+  },
+  {
+    "source": "schemas/draft/decision.schema.json",
+    "pointer": "/properties/kind",
+    "all_declared_states": [
+      "CONTINUE",
+      "STOP_SUCCESS",
+      "STOP_FAILURE",
+      "ROUTE",
+      "RETRY",
+      "DEFER"
+    ]
+  },
+  {
+    "source": "schemas/draft/graph.schema.json",
+    "pointer": "/properties/nodes/items/properties/kind",
+    "all_declared_states": [
+      "DERIVE",
+      "EVALUATE",
+      "CONTROL",
+      "AGGREGATE"
+    ]
+  },
+  {
+    "source": "schemas/draft/graph.schema.json",
+    "pointer": "/properties/features/items",
+    "all_declared_states": [
+      "CYCLES",
+      "DYNAMIC_EXPANSION"
+    ]
+  },
+  {
+    "source": "schemas/draft/input-port.schema.json",
+    "pointer": "/properties/on_unavailable",
+    "all_declared_states": [
+      "BLOCK",
+      "OMIT",
+      "DEFAULT"
+    ]
+  },
+  {
+    "source": "schemas/draft/input-resolution.schema.json",
+    "pointer": "/properties/status",
+    "all_declared_states": [
+      "AVAILABLE",
+      "ABSENT",
+      "PRODUCER_NOT_EXECUTED",
+      "PRODUCER_ERROR",
+      "OUTPUT_MISSING",
+      "INVALID"
+    ]
+  },
+  {
+    "source": "schemas/draft/output-port.schema.json",
+    "pointer": "/properties/role",
+    "all_declared_states": [
+      "INFORMATION",
+      "RESULT",
+      "DECISION"
+    ]
+  },
+  {
+    "source": "schemas/draft/policy-evaluation.schema.json",
+    "pointer": "/properties/role",
+    "all_declared_states": [
+      "ACTIVATION",
+      "SELECTION",
+      "ADMISSION"
+    ]
+  },
+  {
+    "source": "schemas/draft/resource.schema.json",
+    "pointer": "/properties/kind",
+    "all_declared_states": [
+      "EXACT",
+      "ESTIMATED",
+      "RANGE",
+      "UNKNOWN"
+    ]
+  },
+  {
+    "source": "schemas/draft/result.schema.json",
+    "pointer": "/properties/disposition",
+    "all_declared_states": [
+      "EXECUTED",
+      "SKIPPED",
+      "DEFERRED",
+      "CANCELLED"
+    ]
+  },
+  {
+    "source": "schemas/draft/result.schema.json",
+    "pointer": "/properties/execution_outcome/anyOf/0",
+    "all_declared_states": [
+      "SUCCESS",
+      "ERROR"
+    ]
+  },
+  {
+    "source": "schemas/draft/result.schema.json",
+    "pointer": "/properties/applicability/anyOf/0",
+    "all_declared_states": [
+      "APPLICABLE",
+      "NOT_APPLICABLE"
+    ]
+  },
+  {
+    "source": "schemas/draft/result.schema.json",
+    "pointer": "/properties/determination/anyOf/0",
+    "all_declared_states": [
+      "KNOWN",
+      "UNKNOWN"
+    ]
+  },
+  {
+    "source": "schemas/draft/result.schema.json",
+    "pointer": "/properties/verdict/anyOf/0",
+    "all_declared_states": [
+      "PASS",
+      "FAIL"
+    ]
+  },
+  {
+    "source": "schemas/draft/run-record.schema.json",
+    "pointer": "/properties/nodes/items/properties/kind",
+    "all_declared_states": [
+      "DERIVE",
+      "EVALUATE",
+      "CONTROL",
+      "AGGREGATE"
+    ]
+  },
+  {
+    "source": "schemas/draft/run-record.schema.json",
+    "pointer": "/properties/nodes/items/properties/state",
+    "all_declared_states": [
+      "SUCCESS",
+      "ERROR",
+      "NONEXECUTED",
+      "CANCELLED"
+    ]
+  },
+  {
+    "source": "provider-contract/schemas/draft/outcome.schema.json",
+    "pointer": "/properties/state",
+    "all_declared_states": [
+      "COMPLETED",
+      "ERROR",
+      "CANCELLED",
+      "DEADLINE_EXCEEDED"
+    ]
+  },
+  {
+    "source": "provider-contract/schemas/draft/provider-error.schema.json",
+    "pointer": "/properties/code/anyOf/0",
+    "all_declared_states": [
+      "CONTRACT_VERSION_UNSUPPORTED",
+      "CAPABILITY_UNAVAILABLE",
+      "CAPABILITY_VERSION_UNSUPPORTED",
+      "INVALID_INVOCATION",
+      "INVALID_CONFIG",
+      "INVALID_INPUT",
+      "INVALID_PROVIDER_OUTPUT",
+      "PROTOCOL_VIOLATION"
+    ]
+  },
+  {
+    "source": "provider-contract/schemas/draft/provider-event.schema.json",
+    "pointer": "/properties/kind",
+    "all_declared_states": [
+      "progress",
+      "evidence",
+      "artifact",
+      "resource_usage",
+      "diagnostic",
+      "extension"
+    ]
+  }
+]
