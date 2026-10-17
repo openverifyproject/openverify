@@ -1,0 +1,16 @@
+{
+  "master.timeout": {
+    "D1": "ERROR/TIMEOUT",
+    "E2": "NONEXECUTED/INPUT_UNAVAILABLE"
+  },
+  "master.cancellation_isolation": {
+    "cancelled_run": "all NONEXECUTED/CANCELLED",
+    "other_run": "all SUCCESS",
+    "run_ids": "distinct"
+  },
+  "master.running_cancellation": {
+    "D1": "CANCELLED/CANCELLATION",
+    "later_nodes": "NONEXECUTED/CANCELLED",
+    "phase": "RUNNING"
+  }
+}
