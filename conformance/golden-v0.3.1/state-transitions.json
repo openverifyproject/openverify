@@ -1,0 +1,203 @@
+{
+  "provider": {
+    "states": [
+      "UNSEEN",
+      "RUNNING",
+      "CANCEL_REQUESTED",
+      "TERMINAL"
+    ],
+    "events": [
+      "accept",
+      "event",
+      "cancel",
+      "complete",
+      "error",
+      "cancelled",
+      "deadline"
+    ],
+    "transitions": [
+      {
+        "case_id": "transition.UNSEEN.accept",
+        "outcome": {
+          "accept": true
+        }
+      },
+      {
+        "case_id": "transition.UNSEEN.event",
+        "outcome": {
+          "error_code": "PROTOCOL_VIOLATION"
+        }
+      },
+      {
+        "case_id": "transition.UNSEEN.cancel",
+        "outcome": {
+          "error_code": "PROTOCOL_VIOLATION"
+        }
+      },
+      {
+        "case_id": "transition.UNSEEN.complete",
+        "outcome": {
+          "error_code": "PROTOCOL_VIOLATION"
+        }
+      },
+      {
+        "case_id": "transition.UNSEEN.error",
+        "outcome": {
+          "error_code": "PROTOCOL_VIOLATION"
+        }
+      },
+      {
+        "case_id": "transition.UNSEEN.cancelled",
+        "outcome": {
+          "error_code": "PROTOCOL_VIOLATION"
+        }
+      },
+      {
+        "case_id": "transition.UNSEEN.deadline",
+        "outcome": {
+          "error_code": "PROTOCOL_VIOLATION"
+        }
+      },
+      {
+        "case_id": "transition.RUNNING.accept",
+        "outcome": {
+          "error_code": "PROTOCOL_VIOLATION"
+        }
+      },
+      {
+        "case_id": "transition.RUNNING.event",
+        "outcome": {
+          "accept": true
+        }
+      },
+      {
+        "case_id": "transition.RUNNING.cancel",
+        "outcome": {
+          "accept": true
+        }
+      },
+      {
+        "case_id": "transition.RUNNING.complete",
+        "outcome": {
+          "accept": true
+        }
+      },
+      {
+        "case_id": "transition.RUNNING.error",
+        "outcome": {
+          "accept": true
+        }
+      },
+      {
+        "case_id": "transition.RUNNING.cancelled",
+        "outcome": {
+          "error_code": "PROTOCOL_VIOLATION"
+        }
+      },
+      {
+        "case_id": "transition.RUNNING.deadline",
+        "outcome": {
+          "error_code": "PROTOCOL_VIOLATION"
+        }
+      },
+      {
+        "case_id": "transition.CANCEL_REQUESTED.accept",
+        "outcome": {
+          "error_code": "PROTOCOL_VIOLATION"
+        }
+      },
+      {
+        "case_id": "transition.CANCEL_REQUESTED.event",
+        "outcome": {
+          "accept": true
+        }
+      },
+      {
+        "case_id": "transition.CANCEL_REQUESTED.cancel",
+        "outcome": {
+          "accept": true
+        }
+      },
+      {
+        "case_id": "transition.CANCEL_REQUESTED.complete",
+        "outcome": {
+          "accept": true
+        }
+      },
+      {
+        "case_id": "transition.CANCEL_REQUESTED.error",
+        "outcome": {
+          "accept": true
+        }
+      },
+      {
+        "case_id": "transition.CANCEL_REQUESTED.cancelled",
+        "outcome": {
+          "accept": true
+        }
+      },
+      {
+        "case_id": "transition.CANCEL_REQUESTED.deadline",
+        "outcome": {
+          "error_code": "PROTOCOL_VIOLATION"
+        }
+      },
+      {
+        "case_id": "transition.TERMINAL.accept",
+        "outcome": {
+          "error_code": "PROTOCOL_VIOLATION"
+        }
+      },
+      {
+        "case_id": "transition.TERMINAL.event",
+        "outcome": {
+          "error_code": "PROTOCOL_VIOLATION"
+        }
+      },
+      {
+        "case_id": "transition.TERMINAL.cancel",
+        "outcome": {
+          "accept": true
+        }
+      },
+      {
+        "case_id": "transition.TERMINAL.complete",
+        "outcome": {
+          "error_code": "PROTOCOL_VIOLATION"
+        }
+      },
+      {
+        "case_id": "transition.TERMINAL.error",
+        "outcome": {
+          "error_code": "PROTOCOL_VIOLATION"
+        }
+      },
+      {
+        "case_id": "transition.TERMINAL.cancelled",
+        "outcome": {
+          "error_code": "PROTOCOL_VIOLATION"
+        }
+      },
+      {
+        "case_id": "transition.TERMINAL.deadline",
+        "outcome": {
+          "error_code": "PROTOCOL_VIOLATION"
+        }
+      }
+    ]
+  },
+  "node": {
+    "states": [
+      "PENDING",
+      "READY",
+      "RUNNING",
+      "TERMINAL"
+    ],
+    "terminal_record_states": [
+      "SUCCESS",
+      "ERROR",
+      "NONEXECUTED",
+      "CANCELLED"
+    ]
+  }
+}

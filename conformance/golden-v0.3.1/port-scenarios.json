@@ -1,0 +1,878 @@
+[
+  {
+    "id": "port031.Catalog.valid",
+    "port": "Catalog",
+    "variant": "valid",
+    "category": "ports031.Catalog",
+    "expected": "SUCCESS",
+    "stimulus": {
+      "input": 11,
+      "output": 11,
+      "provider_id": "com.example.golden.port",
+      "provider_version": "1"
+    },
+    "requirement": "docs/relay/architecture.md#relay-architecture-and-contracts",
+    "mutation_witness": "Accept substituted identity/output, lose correlation or incurred usage, fabricate an outcome, or swallow the declared error"
+  },
+  {
+    "id": "port031.Catalog.invalid_return",
+    "port": "Catalog",
+    "variant": "invalid_return",
+    "category": "ports031.Catalog",
+    "expected": "CATALOG_INVALID",
+    "stimulus": {
+      "input": 11,
+      "output": 11,
+      "provider_id": "com.example.golden.port",
+      "provider_version": "1"
+    },
+    "requirement": "docs/relay/architecture.md#relay-architecture-and-contracts",
+    "mutation_witness": "Accept substituted identity/output, lose correlation or incurred usage, fabricate an outcome, or swallow the declared error"
+  },
+  {
+    "id": "port031.Catalog.bad_manifest",
+    "port": "Catalog",
+    "variant": "bad_manifest",
+    "category": "ports031.Catalog",
+    "expected": "INVALID_PROVIDER_OUTPUT",
+    "stimulus": {
+      "input": 11,
+      "output": 11,
+      "provider_id": "com.example.golden.port",
+      "provider_version": "1"
+    },
+    "requirement": "docs/relay/architecture.md#relay-architecture-and-contracts",
+    "mutation_witness": "Accept substituted identity/output, lose correlation or incurred usage, fabricate an outcome, or swallow the declared error"
+  },
+  {
+    "id": "port031.Catalog.duplicate_identity",
+    "port": "Catalog",
+    "variant": "duplicate_identity",
+    "category": "ports031.Catalog",
+    "expected": "PROVIDER_CONFLICT",
+    "stimulus": {
+      "input": 11,
+      "output": 11,
+      "provider_id": "com.example.golden.port",
+      "provider_version": "1"
+    },
+    "requirement": "docs/relay/architecture.md#relay-architecture-and-contracts",
+    "mutation_witness": "Accept substituted identity/output, lose correlation or incurred usage, fabricate an outcome, or swallow the declared error"
+  },
+  {
+    "id": "port031.Catalog.exception",
+    "port": "Catalog",
+    "variant": "exception",
+    "category": "ports031.Catalog",
+    "expected": "CATALOG_FAILURE",
+    "stimulus": {
+      "input": 11,
+      "output": 11,
+      "provider_id": "com.example.golden.port",
+      "provider_version": "1"
+    },
+    "requirement": "docs/relay/architecture.md#relay-architecture-and-contracts",
+    "mutation_witness": "Accept substituted identity/output, lose correlation or incurred usage, fabricate an outcome, or swallow the declared error"
+  },
+  {
+    "id": "port031.Catalog.iteration_failure",
+    "port": "Catalog",
+    "variant": "iteration_failure",
+    "category": "ports031.Catalog",
+    "expected": "CATALOG_FAILURE",
+    "stimulus": {
+      "input": 11,
+      "output": 11,
+      "provider_id": "com.example.golden.port",
+      "provider_version": "1"
+    },
+    "requirement": "docs/relay/architecture.md#relay-architecture-and-contracts",
+    "mutation_witness": "Accept substituted identity/output, lose correlation or incurred usage, fabricate an outcome, or swallow the declared error"
+  },
+  {
+    "id": "port031.Catalog.structured_error",
+    "port": "Catalog",
+    "variant": "structured_error",
+    "category": "ports031.Catalog",
+    "expected": "INVALID_INPUT",
+    "stimulus": {
+      "input": 11,
+      "output": 11,
+      "provider_id": "com.example.golden.port",
+      "provider_version": "1"
+    },
+    "requirement": "docs/relay/architecture.md#relay-architecture-and-contracts",
+    "mutation_witness": "Accept substituted identity/output, lose correlation or incurred usage, fabricate an outcome, or swallow the declared error"
+  },
+  {
+    "id": "port031.Catalog.generator",
+    "port": "Catalog",
+    "variant": "generator",
+    "category": "ports031.Catalog",
+    "expected": "CATALOG_INVALID",
+    "stimulus": {
+      "input": 11,
+      "output": 11,
+      "provider_id": "com.example.golden.port",
+      "provider_version": "1"
+    },
+    "requirement": "docs/relay/architecture.md#relay-architecture-and-contracts",
+    "mutation_witness": "Accept substituted identity/output, lose correlation or incurred usage, fabricate an outcome, or swallow the declared error"
+  },
+  {
+    "id": "port031.Catalog.cancellation",
+    "port": "Catalog",
+    "variant": "cancellation",
+    "category": "ports031.Catalog",
+    "expected": "CANCELLED_API",
+    "stimulus": {
+      "input": 11,
+      "other_input": 22
+    },
+    "requirement": "docs/relay/limitations.md",
+    "mutation_witness": "Cancel the other run, store an aborted occurrence, mix inputs/run identities or reuse cancellation state"
+  },
+  {
+    "id": "port031.Catalog.concurrency_isolation",
+    "port": "Catalog",
+    "variant": "concurrency_isolation",
+    "category": "ports031.Catalog",
+    "expected": "ISOLATED_RUNS",
+    "stimulus": {
+      "input": 11,
+      "other_input": 22
+    },
+    "requirement": "docs/relay/limitations.md",
+    "mutation_witness": "Cancel the other run, store an aborted occurrence, mix inputs/run identities or reuse cancellation state"
+  },
+  {
+    "id": "port031.Binder.valid",
+    "port": "Binder",
+    "variant": "valid",
+    "category": "ports031.Binder",
+    "expected": "SUCCESS",
+    "stimulus": {
+      "input": 11,
+      "output": 11,
+      "provider_id": "com.example.golden.port",
+      "provider_version": "1"
+    },
+    "requirement": "docs/relay/architecture.md#relay-architecture-and-contracts",
+    "mutation_witness": "Accept substituted identity/output, lose correlation or incurred usage, fabricate an outcome, or swallow the declared error"
+  },
+  {
+    "id": "port031.Binder.invalid_return",
+    "port": "Binder",
+    "variant": "invalid_return",
+    "category": "ports031.Binder",
+    "expected": "PROVIDER_BINDING_MISMATCH",
+    "stimulus": {
+      "input": 11,
+      "output": 11,
+      "provider_id": "com.example.golden.port",
+      "provider_version": "1"
+    },
+    "requirement": "docs/relay/architecture.md#relay-architecture-and-contracts",
+    "mutation_witness": "Accept substituted identity/output, lose correlation or incurred usage, fabricate an outcome, or swallow the declared error"
+  },
+  {
+    "id": "port031.Binder.bad_manifest",
+    "port": "Binder",
+    "variant": "bad_manifest",
+    "category": "ports031.Binder",
+    "expected": "INVALID_PROVIDER_OUTPUT",
+    "stimulus": {
+      "input": 11,
+      "output": 11,
+      "provider_id": "com.example.golden.port",
+      "provider_version": "1"
+    },
+    "requirement": "docs/relay/architecture.md#relay-architecture-and-contracts",
+    "mutation_witness": "Accept substituted identity/output, lose correlation or incurred usage, fabricate an outcome, or swallow the declared error"
+  },
+  {
+    "id": "port031.Binder.wrong_capability",
+    "port": "Binder",
+    "variant": "wrong_capability",
+    "category": "ports031.Binder",
+    "expected": "PROVIDER_BINDING_MISMATCH",
+    "stimulus": {
+      "input": 11,
+      "output": 11,
+      "provider_id": "com.example.golden.port",
+      "provider_version": "1"
+    },
+    "requirement": "docs/relay/architecture.md#relay-architecture-and-contracts",
+    "mutation_witness": "Accept substituted identity/output, lose correlation or incurred usage, fabricate an outcome, or swallow the declared error"
+  },
+  {
+    "id": "port031.Binder.wrong_version",
+    "port": "Binder",
+    "variant": "wrong_version",
+    "category": "ports031.Binder",
+    "expected": "PROVIDER_BINDING_MISMATCH",
+    "stimulus": {
+      "input": 11,
+      "output": 11,
+      "provider_id": "com.example.golden.port",
+      "provider_version": "1"
+    },
+    "requirement": "docs/relay/architecture.md#relay-architecture-and-contracts",
+    "mutation_witness": "Accept substituted identity/output, lose correlation or incurred usage, fabricate an outcome, or swallow the declared error"
+  },
+  {
+    "id": "port031.Binder.untrusted_transport",
+    "port": "Binder",
+    "variant": "untrusted_transport",
+    "category": "ports031.Binder",
+    "expected": "PROVIDER_UNTRUSTED",
+    "stimulus": {
+      "input": 11,
+      "output": 11,
+      "provider_id": "com.example.golden.port",
+      "provider_version": "1"
+    },
+    "requirement": "docs/relay/architecture.md#relay-architecture-and-contracts",
+    "mutation_witness": "Accept substituted identity/output, lose correlation or incurred usage, fabricate an outcome, or swallow the declared error"
+  },
+  {
+    "id": "port031.Binder.rewrite_manifest",
+    "port": "Binder",
+    "variant": "rewrite_manifest",
+    "category": "ports031.Binder",
+    "expected": "PROVIDER_UNTRUSTED",
+    "stimulus": {
+      "input": 11,
+      "output": 11,
+      "provider_id": "com.example.golden.port",
+      "provider_version": "1"
+    },
+    "requirement": "docs/relay/architecture.md#relay-architecture-and-contracts",
+    "mutation_witness": "Accept substituted identity/output, lose correlation or incurred usage, fabricate an outcome, or swallow the declared error"
+  },
+  {
+    "id": "port031.Binder.exception",
+    "port": "Binder",
+    "variant": "exception",
+    "category": "ports031.Binder",
+    "expected": "BINDER_FAILURE",
+    "stimulus": {
+      "input": 11,
+      "output": 11,
+      "provider_id": "com.example.golden.port",
+      "provider_version": "1"
+    },
+    "requirement": "docs/relay/architecture.md#relay-architecture-and-contracts",
+    "mutation_witness": "Accept substituted identity/output, lose correlation or incurred usage, fabricate an outcome, or swallow the declared error"
+  },
+  {
+    "id": "port031.Binder.structured_error",
+    "port": "Binder",
+    "variant": "structured_error",
+    "category": "ports031.Binder",
+    "expected": "INVALID_INPUT",
+    "stimulus": {
+      "input": 11,
+      "output": 11,
+      "provider_id": "com.example.golden.port",
+      "provider_version": "1"
+    },
+    "requirement": "docs/relay/architecture.md#relay-architecture-and-contracts",
+    "mutation_witness": "Accept substituted identity/output, lose correlation or incurred usage, fabricate an outcome, or swallow the declared error"
+  },
+  {
+    "id": "port031.Binder.cancellation",
+    "port": "Binder",
+    "variant": "cancellation",
+    "category": "ports031.Binder",
+    "expected": "CANCELLED_API",
+    "stimulus": {
+      "input": 11,
+      "other_input": 22
+    },
+    "requirement": "docs/relay/limitations.md",
+    "mutation_witness": "Cancel the other run, store an aborted occurrence, mix inputs/run identities or reuse cancellation state"
+  },
+  {
+    "id": "port031.Binder.concurrency_isolation",
+    "port": "Binder",
+    "variant": "concurrency_isolation",
+    "category": "ports031.Binder",
+    "expected": "ISOLATED_RUNS",
+    "stimulus": {
+      "input": 11,
+      "other_input": 22
+    },
+    "requirement": "docs/relay/limitations.md",
+    "mutation_witness": "Cancel the other run, store an aborted occurrence, mix inputs/run identities or reuse cancellation state"
+  },
+  {
+    "id": "port031.Driver.valid",
+    "port": "Driver",
+    "variant": "valid",
+    "category": "ports031.Driver",
+    "expected": "SUCCESS",
+    "stimulus": {
+      "input": 11,
+      "output": 11,
+      "provider_id": "com.example.golden.port",
+      "provider_version": "1"
+    },
+    "requirement": "docs/relay/architecture.md#relay-architecture-and-contracts",
+    "mutation_witness": "Accept substituted identity/output, lose correlation or incurred usage, fabricate an outcome, or swallow the declared error"
+  },
+  {
+    "id": "port031.Driver.invalid_return",
+    "port": "Driver",
+    "variant": "invalid_return",
+    "category": "ports031.Driver",
+    "expected": "NODE_ERROR",
+    "stimulus": {
+      "input": 11,
+      "output": 11,
+      "provider_id": "com.example.golden.port",
+      "provider_version": "1"
+    },
+    "requirement": "docs/relay/architecture.md#relay-architecture-and-contracts",
+    "mutation_witness": "Accept substituted identity/output, lose correlation or incurred usage, fabricate an outcome, or swallow the declared error"
+  },
+  {
+    "id": "port031.Driver.malformed_events",
+    "port": "Driver",
+    "variant": "malformed_events",
+    "category": "ports031.Driver",
+    "expected": "NODE_ERROR",
+    "stimulus": {
+      "input": 11,
+      "output": 11,
+      "provider_id": "com.example.golden.port",
+      "provider_version": "1"
+    },
+    "requirement": "docs/relay/architecture.md#relay-architecture-and-contracts",
+    "mutation_witness": "Accept substituted identity/output, lose correlation or incurred usage, fabricate an outcome, or swallow the declared error"
+  },
+  {
+    "id": "port031.Driver.wrong_correlation",
+    "port": "Driver",
+    "variant": "wrong_correlation",
+    "category": "ports031.Driver",
+    "expected": "PROTOCOL_VIOLATION",
+    "stimulus": {
+      "input": 11,
+      "output": 11,
+      "provider_id": "com.example.golden.port",
+      "provider_version": "1"
+    },
+    "requirement": "docs/relay/architecture.md#relay-architecture-and-contracts",
+    "mutation_witness": "Accept substituted identity/output, lose correlation or incurred usage, fabricate an outcome, or swallow the declared error"
+  },
+  {
+    "id": "port031.Driver.missing_terminal",
+    "port": "Driver",
+    "variant": "missing_terminal",
+    "category": "ports031.Driver",
+    "expected": "PROTOCOL_VIOLATION",
+    "stimulus": {
+      "input": 11,
+      "output": 11,
+      "provider_id": "com.example.golden.port",
+      "provider_version": "1"
+    },
+    "requirement": "docs/relay/architecture.md#relay-architecture-and-contracts",
+    "mutation_witness": "Accept substituted identity/output, lose correlation or incurred usage, fabricate an outcome, or swallow the declared error"
+  },
+  {
+    "id": "port031.Driver.forged_output_error",
+    "port": "Driver",
+    "variant": "forged_output_error",
+    "category": "ports031.Driver",
+    "expected": "PROTOCOL_VIOLATION",
+    "stimulus": {
+      "input": 11,
+      "output": 11,
+      "provider_id": "com.example.golden.port",
+      "provider_version": "1"
+    },
+    "requirement": "docs/relay/architecture.md#relay-architecture-and-contracts",
+    "mutation_witness": "Accept substituted identity/output, lose correlation or incurred usage, fabricate an outcome, or swallow the declared error"
+  },
+  {
+    "id": "port031.Driver.bad_output",
+    "port": "Driver",
+    "variant": "bad_output",
+    "category": "ports031.Driver",
+    "expected": "INVALID_PROVIDER_OUTPUT",
+    "stimulus": {
+      "input": 11,
+      "output": 11,
+      "provider_id": "com.example.golden.port",
+      "provider_version": "1"
+    },
+    "requirement": "docs/relay/architecture.md#relay-architecture-and-contracts",
+    "mutation_witness": "Accept substituted identity/output, lose correlation or incurred usage, fabricate an outcome, or swallow the declared error"
+  },
+  {
+    "id": "port031.Driver.exception",
+    "port": "Driver",
+    "variant": "exception",
+    "category": "ports031.Driver",
+    "expected": "NODE_ERROR",
+    "stimulus": {
+      "input": 11,
+      "output": 11,
+      "provider_id": "com.example.golden.port",
+      "provider_version": "1"
+    },
+    "requirement": "docs/relay/architecture.md#relay-architecture-and-contracts",
+    "mutation_witness": "Accept substituted identity/output, lose correlation or incurred usage, fabricate an outcome, or swallow the declared error"
+  },
+  {
+    "id": "port031.Driver.iteration_failure",
+    "port": "Driver",
+    "variant": "iteration_failure",
+    "category": "ports031.Driver",
+    "expected": "NODE_ERROR",
+    "stimulus": {
+      "input": 11,
+      "output": 11,
+      "provider_id": "com.example.golden.port",
+      "provider_version": "1"
+    },
+    "requirement": "docs/relay/architecture.md#relay-architecture-and-contracts",
+    "mutation_witness": "Accept substituted identity/output, lose correlation or incurred usage, fabricate an outcome, or swallow the declared error"
+  },
+  {
+    "id": "port031.Driver.event_after_terminal",
+    "port": "Driver",
+    "variant": "event_after_terminal",
+    "category": "ports031.Driver",
+    "expected": "PROTOCOL_VIOLATION",
+    "stimulus": {
+      "input": 11,
+      "output": 11,
+      "provider_id": "com.example.golden.port",
+      "provider_version": "1"
+    },
+    "requirement": "docs/relay/architecture.md#relay-architecture-and-contracts",
+    "mutation_witness": "Accept substituted identity/output, lose correlation or incurred usage, fabricate an outcome, or swallow the declared error"
+  },
+  {
+    "id": "port031.Driver.cancellation",
+    "port": "Driver",
+    "variant": "cancellation",
+    "category": "ports031.Driver",
+    "expected": "CANCELLED_API",
+    "stimulus": {
+      "input": 11,
+      "other_input": 22
+    },
+    "requirement": "docs/relay/limitations.md",
+    "mutation_witness": "Cancel the other run, store an aborted occurrence, mix inputs/run identities or reuse cancellation state"
+  },
+  {
+    "id": "port031.Driver.concurrency_isolation",
+    "port": "Driver",
+    "variant": "concurrency_isolation",
+    "category": "ports031.Driver",
+    "expected": "ISOLATED_RUNS",
+    "stimulus": {
+      "input": 11,
+      "other_input": 22
+    },
+    "requirement": "docs/relay/limitations.md",
+    "mutation_witness": "Cancel the other run, store an aborted occurrence, mix inputs/run identities or reuse cancellation state"
+  },
+  {
+    "id": "port031.Transport.valid",
+    "port": "Transport",
+    "variant": "valid",
+    "category": "ports031.Transport",
+    "expected": "SUCCESS",
+    "stimulus": {
+      "input": 11,
+      "output": 11,
+      "provider_id": "com.example.golden.port",
+      "provider_version": "1"
+    },
+    "requirement": "docs/relay/architecture.md#relay-architecture-and-contracts",
+    "mutation_witness": "Accept substituted identity/output, lose correlation or incurred usage, fabricate an outcome, or swallow the declared error"
+  },
+  {
+    "id": "port031.Transport.invalid_return",
+    "port": "Transport",
+    "variant": "invalid_return",
+    "category": "ports031.Transport",
+    "expected": "NODE_ERROR",
+    "stimulus": {
+      "input": 11,
+      "output": 11,
+      "provider_id": "com.example.golden.port",
+      "provider_version": "1"
+    },
+    "requirement": "docs/relay/architecture.md#relay-architecture-and-contracts",
+    "mutation_witness": "Accept substituted identity/output, lose correlation or incurred usage, fabricate an outcome, or swallow the declared error"
+  },
+  {
+    "id": "port031.Transport.wrong_correlation",
+    "port": "Transport",
+    "variant": "wrong_correlation",
+    "category": "ports031.Transport",
+    "expected": "PROTOCOL_VIOLATION",
+    "stimulus": {
+      "input": 11,
+      "output": 11,
+      "provider_id": "com.example.golden.port",
+      "provider_version": "1"
+    },
+    "requirement": "docs/relay/architecture.md#relay-architecture-and-contracts",
+    "mutation_witness": "Accept substituted identity/output, lose correlation or incurred usage, fabricate an outcome, or swallow the declared error"
+  },
+  {
+    "id": "port031.Transport.bad_output",
+    "port": "Transport",
+    "variant": "bad_output",
+    "category": "ports031.Transport",
+    "expected": "INVALID_PROVIDER_OUTPUT",
+    "stimulus": {
+      "input": 11,
+      "output": 11,
+      "provider_id": "com.example.golden.port",
+      "provider_version": "1"
+    },
+    "requirement": "docs/relay/architecture.md#relay-architecture-and-contracts",
+    "mutation_witness": "Accept substituted identity/output, lose correlation or incurred usage, fabricate an outcome, or swallow the declared error"
+  },
+  {
+    "id": "port031.Transport.exception",
+    "port": "Transport",
+    "variant": "exception",
+    "category": "ports031.Transport",
+    "expected": "NODE_ERROR",
+    "stimulus": {
+      "input": 11,
+      "output": 11,
+      "provider_id": "com.example.golden.port",
+      "provider_version": "1"
+    },
+    "requirement": "docs/relay/architecture.md#relay-architecture-and-contracts",
+    "mutation_witness": "Accept substituted identity/output, lose correlation or incurred usage, fabricate an outcome, or swallow the declared error"
+  },
+  {
+    "id": "port031.Transport.stream_failure",
+    "port": "Transport",
+    "variant": "stream_failure",
+    "category": "ports031.Transport",
+    "expected": "NODE_ERROR",
+    "stimulus": {
+      "input": 11,
+      "output": 11,
+      "provider_id": "com.example.golden.port",
+      "provider_version": "1"
+    },
+    "requirement": "docs/relay/architecture.md#relay-architecture-and-contracts",
+    "mutation_witness": "Accept substituted identity/output, lose correlation or incurred usage, fabricate an outcome, or swallow the declared error"
+  },
+  {
+    "id": "port031.Transport.duplicate_event",
+    "port": "Transport",
+    "variant": "duplicate_event",
+    "category": "ports031.Transport",
+    "expected": "PROTOCOL_VIOLATION",
+    "stimulus": {
+      "input": 11,
+      "output": 11,
+      "provider_id": "com.example.golden.port",
+      "provider_version": "1"
+    },
+    "requirement": "docs/relay/architecture.md#relay-architecture-and-contracts",
+    "mutation_witness": "Accept substituted identity/output, lose correlation or incurred usage, fabricate an outcome, or swallow the declared error"
+  },
+  {
+    "id": "port031.Transport.wrong_sequence",
+    "port": "Transport",
+    "variant": "wrong_sequence",
+    "category": "ports031.Transport",
+    "expected": "PROTOCOL_VIOLATION",
+    "stimulus": {
+      "input": 11,
+      "output": 11,
+      "provider_id": "com.example.golden.port",
+      "provider_version": "1"
+    },
+    "requirement": "docs/relay/architecture.md#relay-architecture-and-contracts",
+    "mutation_witness": "Accept substituted identity/output, lose correlation or incurred usage, fabricate an outcome, or swallow the declared error"
+  },
+  {
+    "id": "port031.Transport.wrong_event_correlation",
+    "port": "Transport",
+    "variant": "wrong_event_correlation",
+    "category": "ports031.Transport",
+    "expected": "PROTOCOL_VIOLATION",
+    "stimulus": {
+      "input": 11,
+      "output": 11,
+      "provider_id": "com.example.golden.port",
+      "provider_version": "1"
+    },
+    "requirement": "docs/relay/architecture.md#relay-architecture-and-contracts",
+    "mutation_witness": "Accept substituted identity/output, lose correlation or incurred usage, fabricate an outcome, or swallow the declared error"
+  },
+  {
+    "id": "port031.Transport.cancellation",
+    "port": "Transport",
+    "variant": "cancellation",
+    "category": "ports031.Transport",
+    "expected": "CANCELLED_API",
+    "stimulus": {
+      "input": 11,
+      "other_input": 22
+    },
+    "requirement": "docs/relay/limitations.md",
+    "mutation_witness": "Cancel the other run, store an aborted occurrence, mix inputs/run identities or reuse cancellation state"
+  },
+  {
+    "id": "port031.Transport.concurrency_isolation",
+    "port": "Transport",
+    "variant": "concurrency_isolation",
+    "category": "ports031.Transport",
+    "expected": "ISOLATED_RUNS",
+    "stimulus": {
+      "input": 11,
+      "other_input": 22
+    },
+    "requirement": "docs/relay/limitations.md",
+    "mutation_witness": "Cancel the other run, store an aborted occurrence, mix inputs/run identities or reuse cancellation state"
+  },
+  {
+    "id": "port031.Store.valid",
+    "port": "Store",
+    "variant": "valid",
+    "category": "ports031.Store",
+    "expected": "SUCCESS",
+    "stimulus": {
+      "input": 11,
+      "output": 11,
+      "provider_id": "com.example.golden.port",
+      "provider_version": "1"
+    },
+    "requirement": "docs/relay/architecture.md#relay-architecture-and-contracts",
+    "mutation_witness": "Accept substituted identity/output, lose correlation or incurred usage, fabricate an outcome, or swallow the declared error"
+  },
+  {
+    "id": "port031.Store.put_exception",
+    "port": "Store",
+    "variant": "put_exception",
+    "category": "ports031.Store",
+    "expected": "PROPAGATE",
+    "stimulus": {
+      "input": 11,
+      "output": 11,
+      "provider_id": "com.example.golden.port",
+      "provider_version": "1"
+    },
+    "requirement": "docs/relay/architecture.md#relay-architecture-and-contracts",
+    "mutation_witness": "Accept substituted identity/output, lose correlation or incurred usage, fabricate an outcome, or swallow the declared error"
+  },
+  {
+    "id": "port031.Store.put_return",
+    "port": "Store",
+    "variant": "put_return",
+    "category": "ports031.Store",
+    "expected": "IGNORED_RETURN",
+    "stimulus": {
+      "input": 11,
+      "output": 11,
+      "provider_id": "com.example.golden.port",
+      "provider_version": "1"
+    },
+    "requirement": "docs/relay/architecture.md#relay-architecture-and-contracts",
+    "mutation_witness": "Accept substituted identity/output, lose correlation or incurred usage, fabricate an outcome, or swallow the declared error"
+  },
+  {
+    "id": "port031.Store.get_valid",
+    "port": "Store",
+    "variant": "get_valid",
+    "category": "ports031.Store",
+    "expected": "SUCCESS",
+    "stimulus": {
+      "input": 11,
+      "output": 11,
+      "provider_id": "com.example.golden.port",
+      "provider_version": "1"
+    },
+    "requirement": "docs/relay/architecture.md#relay-architecture-and-contracts",
+    "mutation_witness": "Accept substituted identity/output, lose correlation or incurred usage, fabricate an outcome, or swallow the declared error"
+  },
+  {
+    "id": "port031.Store.get_absent",
+    "port": "Store",
+    "variant": "get_absent",
+    "category": "ports031.Store",
+    "expected": "SUCCESS",
+    "stimulus": {
+      "input": 11,
+      "output": 11,
+      "provider_id": "com.example.golden.port",
+      "provider_version": "1"
+    },
+    "requirement": "docs/relay/architecture.md#relay-architecture-and-contracts",
+    "mutation_witness": "Accept substituted identity/output, lose correlation or incurred usage, fabricate an outcome, or swallow the declared error"
+  },
+  {
+    "id": "port031.Store.get_exception",
+    "port": "Store",
+    "variant": "get_exception",
+    "category": "ports031.Store",
+    "expected": "HOST_PROPAGATE",
+    "stimulus": {
+      "input": 11,
+      "output": 11,
+      "provider_id": "com.example.golden.port",
+      "provider_version": "1"
+    },
+    "requirement": "docs/relay/architecture.md#relay-architecture-and-contracts",
+    "mutation_witness": "Accept substituted identity/output, lose correlation or incurred usage, fabricate an outcome, or swallow the declared error"
+  },
+  {
+    "id": "port031.Store.get_invalid",
+    "port": "Store",
+    "variant": "get_invalid",
+    "category": "ports031.Store",
+    "expected": "HOST_CONTRACT_VIOLATION",
+    "stimulus": {
+      "input": 11,
+      "output": 11,
+      "provider_id": "com.example.golden.port",
+      "provider_version": "1"
+    },
+    "requirement": "docs/relay/architecture.md#relay-architecture-and-contracts",
+    "mutation_witness": "Accept substituted identity/output, lose correlation or incurred usage, fabricate an outcome, or swallow the declared error"
+  },
+  {
+    "id": "port031.Store.get_malformed",
+    "port": "Store",
+    "variant": "get_malformed",
+    "category": "ports031.Store",
+    "expected": "HOST_CONTRACT_VIOLATION",
+    "stimulus": {
+      "input": 11,
+      "output": 11,
+      "provider_id": "com.example.golden.port",
+      "provider_version": "1"
+    },
+    "requirement": "docs/relay/architecture.md#relay-architecture-and-contracts",
+    "mutation_witness": "Accept substituted identity/output, lose correlation or incurred usage, fabricate an outcome, or swallow the declared error"
+  },
+  {
+    "id": "port031.Store.cancellation",
+    "port": "Store",
+    "variant": "cancellation",
+    "category": "ports031.Store",
+    "expected": "CANCELLED_API",
+    "stimulus": {
+      "input": 11,
+      "other_input": 22
+    },
+    "requirement": "docs/relay/limitations.md",
+    "mutation_witness": "Cancel the other run, store an aborted occurrence, mix inputs/run identities or reuse cancellation state"
+  },
+  {
+    "id": "port031.Store.concurrency_isolation",
+    "port": "Store",
+    "variant": "concurrency_isolation",
+    "category": "ports031.Store",
+    "expected": "ISOLATED_RUNS",
+    "stimulus": {
+      "input": 11,
+      "other_input": 22
+    },
+    "requirement": "docs/relay/limitations.md",
+    "mutation_witness": "Cancel the other run, store an aborted occurrence, mix inputs/run identities or reuse cancellation state"
+  },
+  {
+    "id": "port031.Observer.valid",
+    "port": "Observer",
+    "variant": "valid",
+    "category": "ports031.Observer",
+    "expected": "SUCCESS",
+    "stimulus": {
+      "input": 11,
+      "output": 11,
+      "provider_id": "com.example.golden.port",
+      "provider_version": "1"
+    },
+    "requirement": "docs/relay/architecture.md#relay-architecture-and-contracts",
+    "mutation_witness": "Accept substituted identity/output, lose correlation or incurred usage, fabricate an outcome, or swallow the declared error"
+  },
+  {
+    "id": "port031.Observer.exception",
+    "port": "Observer",
+    "variant": "exception",
+    "category": "ports031.Observer",
+    "expected": "ISOLATED",
+    "stimulus": {
+      "input": 11,
+      "output": 11,
+      "provider_id": "com.example.golden.port",
+      "provider_version": "1"
+    },
+    "requirement": "docs/relay/architecture.md#relay-architecture-and-contracts",
+    "mutation_witness": "Accept substituted identity/output, lose correlation or incurred usage, fabricate an outcome, or swallow the declared error"
+  },
+  {
+    "id": "port031.Observer.invalid_return",
+    "port": "Observer",
+    "variant": "invalid_return",
+    "category": "ports031.Observer",
+    "expected": "IGNORED_RETURN",
+    "stimulus": {
+      "input": 11,
+      "output": 11,
+      "provider_id": "com.example.golden.port",
+      "provider_version": "1"
+    },
+    "requirement": "docs/relay/architecture.md#relay-architecture-and-contracts",
+    "mutation_witness": "Accept substituted identity/output, lose correlation or incurred usage, fabricate an outcome, or swallow the declared error"
+  },
+  {
+    "id": "port031.Observer.mutate_event",
+    "port": "Observer",
+    "variant": "mutate_event",
+    "category": "ports031.Observer",
+    "expected": "SUCCESS",
+    "stimulus": {
+      "input": 11,
+      "output": 11,
+      "provider_id": "com.example.golden.port",
+      "provider_version": "1"
+    },
+    "requirement": "docs/relay/architecture.md#relay-architecture-and-contracts",
+    "mutation_witness": "Accept substituted identity/output, lose correlation or incurred usage, fabricate an outcome, or swallow the declared error"
+  },
+  {
+    "id": "port031.Observer.cancellation",
+    "port": "Observer",
+    "variant": "cancellation",
+    "category": "ports031.Observer",
+    "expected": "CANCELLED_API",
+    "stimulus": {
+      "input": 11,
+      "other_input": 22
+    },
+    "requirement": "docs/relay/limitations.md",
+    "mutation_witness": "Cancel the other run, store an aborted occurrence, mix inputs/run identities or reuse cancellation state"
+  },
+  {
+    "id": "port031.Observer.concurrency_isolation",
+    "port": "Observer",
+    "variant": "concurrency_isolation",
+    "category": "ports031.Observer",
+    "expected": "ISOLATED_RUNS",
+    "stimulus": {
+      "input": 11,
+      "other_input": 22
+    },
+    "requirement": "docs/relay/limitations.md",
+    "mutation_witness": "Cancel the other run, store an aborted occurrence, mix inputs/run identities or reuse cancellation state"
+  }
+]

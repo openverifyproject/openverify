@@ -1,0 +1,1832 @@
+{
+  "criterion": {
+    "description": "The explicitly supplied deterministic criterion holds",
+    "id": "golden.criterion"
+  },
+  "execution_policy": {
+    "activation": {
+      "bindings": {
+        "choice": {
+          "kind": "RUN_INPUT",
+          "name": "activation"
+        }
+      },
+      "config": {},
+      "inputs": [
+        {
+          "name": "choice",
+          "on_unavailable": "BLOCK",
+          "required": true,
+          "schema": true
+        }
+      ],
+      "operation": {
+        "capability_id": "com.example.golden.policy_activation",
+        "capability_version": "1"
+      }
+    },
+    "admission": {
+      "bindings": {
+        "choice": {
+          "kind": "RUN_INPUT",
+          "name": "admission"
+        }
+      },
+      "config": {},
+      "inputs": [
+        {
+          "name": "choice",
+          "on_unavailable": "BLOCK",
+          "required": true,
+          "schema": true
+        }
+      ],
+      "operation": {
+        "capability_id": "com.example.golden.policy_admission",
+        "capability_version": "1"
+      }
+    },
+    "selection": {
+      "bindings": {
+        "choice": {
+          "kind": "RUN_INPUT",
+          "name": "selection"
+        }
+      },
+      "config": {},
+      "inputs": [
+        {
+          "name": "choice",
+          "on_unavailable": "BLOCK",
+          "required": true,
+          "schema": true
+        }
+      ],
+      "operation": {
+        "capability_id": "com.example.golden.policy_selection",
+        "capability_version": "1"
+      }
+    }
+  },
+  "graph": {
+    "edges": [
+      {
+        "from_node": "D1",
+        "to_node": "E2"
+      },
+      {
+        "from_node": "D2",
+        "to_node": "E2"
+      },
+      {
+        "from_node": "E2",
+        "to_node": "E3"
+      },
+      {
+        "from_node": "E1",
+        "to_node": "C"
+      },
+      {
+        "from_node": "E3",
+        "to_node": "C"
+      },
+      {
+        "from_node": "C",
+        "guard": {
+          "pointer": "",
+          "source": {
+            "kind": "RUN_INPUT",
+            "name": "guard"
+          },
+          "value": true
+        },
+        "to_node": "left"
+      },
+      {
+        "from_node": "C",
+        "to_node": "right"
+      },
+      {
+        "from_node": "E1",
+        "to_node": "A_ALL"
+      },
+      {
+        "from_node": "E2",
+        "to_node": "A_ALL"
+      },
+      {
+        "from_node": "E3",
+        "to_node": "A_ALL"
+      },
+      {
+        "from_node": "left",
+        "to_node": "A_ALL"
+      },
+      {
+        "from_node": "right",
+        "to_node": "A_ALL"
+      },
+      {
+        "from_node": "E1",
+        "to_node": "A_ANY"
+      },
+      {
+        "from_node": "E2",
+        "to_node": "A_ANY"
+      },
+      {
+        "from_node": "E3",
+        "to_node": "A_ANY"
+      },
+      {
+        "from_node": "left",
+        "to_node": "A_ANY"
+      },
+      {
+        "from_node": "right",
+        "to_node": "A_ANY"
+      },
+      {
+        "from_node": "E1",
+        "to_node": "A_MAJORITY"
+      },
+      {
+        "from_node": "E2",
+        "to_node": "A_MAJORITY"
+      },
+      {
+        "from_node": "E3",
+        "to_node": "A_MAJORITY"
+      },
+      {
+        "from_node": "left",
+        "to_node": "A_MAJORITY"
+      },
+      {
+        "from_node": "right",
+        "to_node": "A_MAJORITY"
+      },
+      {
+        "from_node": "E1",
+        "to_node": "A_MIN_SCORE"
+      },
+      {
+        "from_node": "E2",
+        "to_node": "A_MIN_SCORE"
+      },
+      {
+        "from_node": "E3",
+        "to_node": "A_MIN_SCORE"
+      },
+      {
+        "from_node": "left",
+        "to_node": "A_MIN_SCORE"
+      },
+      {
+        "from_node": "right",
+        "to_node": "A_MIN_SCORE"
+      },
+      {
+        "from_node": "E1",
+        "to_node": "A_MAX_SCORE"
+      },
+      {
+        "from_node": "E2",
+        "to_node": "A_MAX_SCORE"
+      },
+      {
+        "from_node": "E3",
+        "to_node": "A_MAX_SCORE"
+      },
+      {
+        "from_node": "left",
+        "to_node": "A_MAX_SCORE"
+      },
+      {
+        "from_node": "right",
+        "to_node": "A_MAX_SCORE"
+      },
+      {
+        "from_node": "E1",
+        "to_node": "A_AVERAGE"
+      },
+      {
+        "from_node": "E2",
+        "to_node": "A_AVERAGE"
+      },
+      {
+        "from_node": "E3",
+        "to_node": "A_AVERAGE"
+      },
+      {
+        "from_node": "left",
+        "to_node": "A_AVERAGE"
+      },
+      {
+        "from_node": "right",
+        "to_node": "A_AVERAGE"
+      },
+      {
+        "from_node": "E1",
+        "to_node": "A_WEIGHTED_AVERAGE"
+      },
+      {
+        "from_node": "E2",
+        "to_node": "A_WEIGHTED_AVERAGE"
+      },
+      {
+        "from_node": "E3",
+        "to_node": "A_WEIGHTED_AVERAGE"
+      },
+      {
+        "from_node": "left",
+        "to_node": "A_WEIGHTED_AVERAGE"
+      },
+      {
+        "from_node": "right",
+        "to_node": "A_WEIGHTED_AVERAGE"
+      },
+      {
+        "from_node": "E1",
+        "to_node": "A_WORST_SEVERITY"
+      },
+      {
+        "from_node": "E2",
+        "to_node": "A_WORST_SEVERITY"
+      },
+      {
+        "from_node": "E3",
+        "to_node": "A_WORST_SEVERITY"
+      },
+      {
+        "from_node": "left",
+        "to_node": "A_WORST_SEVERITY"
+      },
+      {
+        "from_node": "right",
+        "to_node": "A_WORST_SEVERITY"
+      },
+      {
+        "from_node": "E1",
+        "to_node": "A_CUSTOM"
+      },
+      {
+        "from_node": "E2",
+        "to_node": "A_CUSTOM"
+      },
+      {
+        "from_node": "E3",
+        "to_node": "A_CUSTOM"
+      },
+      {
+        "from_node": "left",
+        "to_node": "A_CUSTOM"
+      },
+      {
+        "from_node": "right",
+        "to_node": "A_CUSTOM"
+      }
+    ],
+    "nodes": [
+      {
+        "bindings": {
+          "constant": {
+            "kind": "CONSTANT",
+            "value": 3
+          },
+          "external": {
+            "kind": "EXTERNAL_REFERENCE",
+            "reference": {
+              "id": "external.reference",
+              "locator": {
+                "uri": "https://invalid.example/no-fetch"
+              },
+              "type": "application/json"
+            }
+          },
+          "run": {
+            "kind": "RUN_INPUT",
+            "name": "payload"
+          }
+        },
+        "config": {},
+        "id": "D1",
+        "inputs": [
+          {
+            "name": "run",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "constant",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": true
+          },
+          {
+            "name": "external",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": true
+          }
+        ],
+        "kind": "DERIVE",
+        "operation": {
+          "capability_id": "com.example.golden.derive",
+          "capability_version": "1"
+        },
+        "outputs": [
+          {
+            "name": "value",
+            "role": "INFORMATION",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ]
+      },
+      {
+        "bindings": {
+          "omitted": {
+            "kind": "RUN_INPUT",
+            "name": "omitted"
+          },
+          "optional": {
+            "kind": "RUN_INPUT",
+            "name": "optional"
+          }
+        },
+        "config": {},
+        "id": "D2",
+        "inputs": [
+          {
+            "default": {
+              "kind": "CONSTANT",
+              "value": 7
+            },
+            "name": "optional",
+            "on_unavailable": "DEFAULT",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "omitted",
+            "on_unavailable": "OMIT",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "kind": "DERIVE",
+        "operation": {
+          "capability_id": "com.example.golden.derive",
+          "capability_version": "1"
+        },
+        "outputs": [
+          {
+            "name": "value",
+            "role": "INFORMATION",
+            "schema": true
+          }
+        ]
+      },
+      {
+        "bindings": {
+          "criterion": {
+            "kind": "CONSTANT",
+            "value": {
+              "description": "The explicitly supplied deterministic criterion holds",
+              "id": "golden.criterion"
+            }
+          },
+          "shared": {
+            "kind": "RUN_INPUT",
+            "name": "payload"
+          },
+          "subject": {
+            "kind": "CONSTANT",
+            "value": {
+              "id": "golden.subject",
+              "locator": {
+                "host_supplied": true
+              },
+              "type": "application/json"
+            }
+          }
+        },
+        "config": {},
+        "id": "E1",
+        "inputs": [
+          {
+            "name": "shared",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": true
+          },
+          {
+            "name": "subject",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "name": "criterion",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          }
+        ],
+        "kind": "EVALUATE",
+        "operation": {
+          "capability_id": "com.example.golden.evaluate",
+          "capability_version": "1"
+        },
+        "outputs": [
+          {
+            "name": "result",
+            "role": "RESULT",
+            "schema": true
+          }
+        ]
+      },
+      {
+        "bindings": {
+          "criterion": {
+            "kind": "CONSTANT",
+            "value": {
+              "description": "The explicitly supplied deterministic criterion holds",
+              "id": "golden.criterion"
+            }
+          },
+          "data": {
+            "kind": "UPSTREAM_OUTPUT",
+            "node_id": "D1",
+            "output": "value"
+          },
+          "defaulted": {
+            "kind": "UPSTREAM_OUTPUT",
+            "node_id": "D1",
+            "output": "value"
+          },
+          "omitted": {
+            "kind": "UPSTREAM_OUTPUT",
+            "node_id": "D1",
+            "output": "value"
+          },
+          "other": {
+            "kind": "UPSTREAM_OUTPUT",
+            "node_id": "D2",
+            "output": "value"
+          },
+          "subject": {
+            "kind": "CONSTANT",
+            "value": {
+              "id": "golden.subject",
+              "locator": {
+                "host_supplied": true
+              },
+              "type": "application/json"
+            }
+          }
+        },
+        "config": {},
+        "id": "E2",
+        "inputs": [
+          {
+            "name": "data",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": true
+          },
+          {
+            "name": "other",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": true
+          },
+          {
+            "default": {
+              "kind": "CONSTANT",
+              "value": 11
+            },
+            "name": "defaulted",
+            "on_unavailable": "DEFAULT",
+            "required": false,
+            "schema": true
+          },
+          {
+            "name": "omitted",
+            "on_unavailable": "OMIT",
+            "required": false,
+            "schema": true
+          },
+          {
+            "name": "subject",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "name": "criterion",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          }
+        ],
+        "kind": "EVALUATE",
+        "operation": {
+          "capability_id": "com.example.golden.evaluate",
+          "capability_version": "1"
+        },
+        "outputs": [
+          {
+            "name": "result",
+            "role": "RESULT",
+            "schema": true
+          }
+        ]
+      },
+      {
+        "bindings": {
+          "criterion": {
+            "kind": "CONSTANT",
+            "value": {
+              "description": "The explicitly supplied deterministic criterion holds",
+              "id": "golden.criterion"
+            }
+          },
+          "subject": {
+            "kind": "CONSTANT",
+            "value": {
+              "id": "golden.subject",
+              "locator": {
+                "host_supplied": true
+              },
+              "type": "application/json"
+            }
+          }
+        },
+        "config": {},
+        "id": "E3",
+        "inputs": [
+          {
+            "name": "subject",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "name": "criterion",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          }
+        ],
+        "kind": "EVALUATE",
+        "operation": {
+          "capability_id": "com.example.golden.evaluate",
+          "capability_version": "1"
+        },
+        "outputs": [
+          {
+            "name": "result",
+            "role": "RESULT",
+            "schema": true
+          }
+        ]
+      },
+      {
+        "bindings": {
+          "checked": {
+            "kind": "UPSTREAM_OUTPUT",
+            "node_id": "E3",
+            "output": "result"
+          }
+        },
+        "config": {},
+        "id": "C",
+        "inputs": [
+          {
+            "name": "checked",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": true
+          }
+        ],
+        "kind": "CONTROL",
+        "operation": {
+          "capability_id": "com.example.golden.control",
+          "capability_version": "1"
+        },
+        "outputs": [
+          {
+            "name": "decision",
+            "role": "DECISION",
+            "schema": true
+          }
+        ]
+      },
+      {
+        "bindings": {},
+        "config": {},
+        "id": "left",
+        "inputs": [],
+        "kind": "DERIVE",
+        "operation": {
+          "capability_id": "com.example.golden.derive",
+          "capability_version": "1"
+        },
+        "outputs": [
+          {
+            "name": "value",
+            "role": "INFORMATION",
+            "schema": true
+          }
+        ]
+      },
+      {
+        "bindings": {},
+        "config": {},
+        "id": "right",
+        "inputs": [],
+        "kind": "DERIVE",
+        "operation": {
+          "capability_id": "com.example.golden.derive",
+          "capability_version": "1"
+        },
+        "outputs": [
+          {
+            "name": "value",
+            "role": "INFORMATION",
+            "schema": true
+          }
+        ]
+      },
+      {
+        "aggregate_inputs": [
+          "a",
+          "b",
+          "c"
+        ],
+        "bindings": {
+          "a": {
+            "kind": "UPSTREAM_OUTPUT",
+            "node_id": "E1",
+            "output": "result"
+          },
+          "b": {
+            "kind": "UPSTREAM_OUTPUT",
+            "node_id": "E2",
+            "output": "result"
+          },
+          "c": {
+            "kind": "UPSTREAM_OUTPUT",
+            "node_id": "E3",
+            "output": "result"
+          },
+          "criterion": {
+            "kind": "CONSTANT",
+            "value": {
+              "description": "The explicitly supplied deterministic criterion holds",
+              "id": "golden.criterion"
+            }
+          },
+          "members": {
+            "kind": "CONSTANT",
+            "value": [
+              "a",
+              "b",
+              "c"
+            ]
+          },
+          "subject": {
+            "kind": "CONSTANT",
+            "value": {
+              "id": "golden.subject",
+              "locator": {
+                "host_supplied": true
+              },
+              "type": "application/json"
+            }
+          }
+        },
+        "config": {
+          "handling": {
+            "CANCELLED": "IGNORE",
+            "DEFERRED": "IGNORE",
+            "ERROR": "IGNORE",
+            "MISSING": "IGNORE",
+            "NOT_APPLICABLE": "IGNORE",
+            "SKIP": "IGNORE",
+            "UNKNOWN": "IGNORE"
+          },
+          "reducer": "ALL"
+        },
+        "id": "A_ALL",
+        "inputs": [
+          {
+            "name": "a",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": true
+          },
+          {
+            "name": "b",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": true
+          },
+          {
+            "name": "c",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": true
+          },
+          {
+            "name": "members",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": true
+          },
+          {
+            "name": "subject",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "name": "criterion",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          }
+        ],
+        "kind": "AGGREGATE",
+        "operation": {
+          "capability_id": "openverify.aggregate",
+          "capability_version": "1"
+        },
+        "outputs": [
+          {
+            "name": "result",
+            "role": "RESULT",
+            "schema": true
+          }
+        ]
+      },
+      {
+        "aggregate_inputs": [
+          "a",
+          "b",
+          "c"
+        ],
+        "bindings": {
+          "a": {
+            "kind": "UPSTREAM_OUTPUT",
+            "node_id": "E1",
+            "output": "result"
+          },
+          "b": {
+            "kind": "UPSTREAM_OUTPUT",
+            "node_id": "E2",
+            "output": "result"
+          },
+          "c": {
+            "kind": "UPSTREAM_OUTPUT",
+            "node_id": "E3",
+            "output": "result"
+          },
+          "criterion": {
+            "kind": "CONSTANT",
+            "value": {
+              "description": "The explicitly supplied deterministic criterion holds",
+              "id": "golden.criterion"
+            }
+          },
+          "members": {
+            "kind": "CONSTANT",
+            "value": [
+              "a",
+              "b",
+              "c"
+            ]
+          },
+          "subject": {
+            "kind": "CONSTANT",
+            "value": {
+              "id": "golden.subject",
+              "locator": {
+                "host_supplied": true
+              },
+              "type": "application/json"
+            }
+          }
+        },
+        "config": {
+          "handling": {
+            "CANCELLED": "IGNORE",
+            "DEFERRED": "IGNORE",
+            "ERROR": "IGNORE",
+            "MISSING": "IGNORE",
+            "NOT_APPLICABLE": "IGNORE",
+            "SKIP": "IGNORE",
+            "UNKNOWN": "IGNORE"
+          },
+          "reducer": "ANY"
+        },
+        "id": "A_ANY",
+        "inputs": [
+          {
+            "name": "a",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": true
+          },
+          {
+            "name": "b",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": true
+          },
+          {
+            "name": "c",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": true
+          },
+          {
+            "name": "members",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": true
+          },
+          {
+            "name": "subject",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "name": "criterion",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          }
+        ],
+        "kind": "AGGREGATE",
+        "operation": {
+          "capability_id": "openverify.aggregate",
+          "capability_version": "1"
+        },
+        "outputs": [
+          {
+            "name": "result",
+            "role": "RESULT",
+            "schema": true
+          }
+        ]
+      },
+      {
+        "aggregate_inputs": [
+          "a",
+          "b",
+          "c"
+        ],
+        "bindings": {
+          "a": {
+            "kind": "UPSTREAM_OUTPUT",
+            "node_id": "E1",
+            "output": "result"
+          },
+          "b": {
+            "kind": "UPSTREAM_OUTPUT",
+            "node_id": "E2",
+            "output": "result"
+          },
+          "c": {
+            "kind": "UPSTREAM_OUTPUT",
+            "node_id": "E3",
+            "output": "result"
+          },
+          "criterion": {
+            "kind": "CONSTANT",
+            "value": {
+              "description": "The explicitly supplied deterministic criterion holds",
+              "id": "golden.criterion"
+            }
+          },
+          "members": {
+            "kind": "CONSTANT",
+            "value": [
+              "a",
+              "b",
+              "c"
+            ]
+          },
+          "subject": {
+            "kind": "CONSTANT",
+            "value": {
+              "id": "golden.subject",
+              "locator": {
+                "host_supplied": true
+              },
+              "type": "application/json"
+            }
+          }
+        },
+        "config": {
+          "handling": {
+            "CANCELLED": "IGNORE",
+            "DEFERRED": "IGNORE",
+            "ERROR": "IGNORE",
+            "MISSING": "IGNORE",
+            "NOT_APPLICABLE": "IGNORE",
+            "SKIP": "IGNORE",
+            "UNKNOWN": "IGNORE"
+          },
+          "reducer": "MAJORITY"
+        },
+        "id": "A_MAJORITY",
+        "inputs": [
+          {
+            "name": "a",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": true
+          },
+          {
+            "name": "b",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": true
+          },
+          {
+            "name": "c",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": true
+          },
+          {
+            "name": "members",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": true
+          },
+          {
+            "name": "subject",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "name": "criterion",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          }
+        ],
+        "kind": "AGGREGATE",
+        "operation": {
+          "capability_id": "openverify.aggregate",
+          "capability_version": "1"
+        },
+        "outputs": [
+          {
+            "name": "result",
+            "role": "RESULT",
+            "schema": true
+          }
+        ]
+      },
+      {
+        "aggregate_inputs": [
+          "a",
+          "b",
+          "c"
+        ],
+        "bindings": {
+          "a": {
+            "kind": "UPSTREAM_OUTPUT",
+            "node_id": "E1",
+            "output": "result"
+          },
+          "b": {
+            "kind": "UPSTREAM_OUTPUT",
+            "node_id": "E2",
+            "output": "result"
+          },
+          "c": {
+            "kind": "UPSTREAM_OUTPUT",
+            "node_id": "E3",
+            "output": "result"
+          },
+          "criterion": {
+            "kind": "CONSTANT",
+            "value": {
+              "description": "The explicitly supplied deterministic criterion holds",
+              "id": "golden.criterion"
+            }
+          },
+          "members": {
+            "kind": "CONSTANT",
+            "value": [
+              "a",
+              "b",
+              "c"
+            ]
+          },
+          "subject": {
+            "kind": "CONSTANT",
+            "value": {
+              "id": "golden.subject",
+              "locator": {
+                "host_supplied": true
+              },
+              "type": "application/json"
+            }
+          }
+        },
+        "config": {
+          "handling": {
+            "CANCELLED": "IGNORE",
+            "DEFERRED": "IGNORE",
+            "ERROR": "IGNORE",
+            "MISSING": "IGNORE",
+            "NOT_APPLICABLE": "IGNORE",
+            "SKIP": "IGNORE",
+            "UNKNOWN": "IGNORE"
+          },
+          "reducer": "MIN_SCORE"
+        },
+        "id": "A_MIN_SCORE",
+        "inputs": [
+          {
+            "name": "a",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": true
+          },
+          {
+            "name": "b",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": true
+          },
+          {
+            "name": "c",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": true
+          },
+          {
+            "name": "members",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": true
+          },
+          {
+            "name": "subject",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "name": "criterion",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          }
+        ],
+        "kind": "AGGREGATE",
+        "operation": {
+          "capability_id": "openverify.aggregate",
+          "capability_version": "1"
+        },
+        "outputs": [
+          {
+            "name": "result",
+            "role": "RESULT",
+            "schema": true
+          }
+        ]
+      },
+      {
+        "aggregate_inputs": [
+          "a",
+          "b",
+          "c"
+        ],
+        "bindings": {
+          "a": {
+            "kind": "UPSTREAM_OUTPUT",
+            "node_id": "E1",
+            "output": "result"
+          },
+          "b": {
+            "kind": "UPSTREAM_OUTPUT",
+            "node_id": "E2",
+            "output": "result"
+          },
+          "c": {
+            "kind": "UPSTREAM_OUTPUT",
+            "node_id": "E3",
+            "output": "result"
+          },
+          "criterion": {
+            "kind": "CONSTANT",
+            "value": {
+              "description": "The explicitly supplied deterministic criterion holds",
+              "id": "golden.criterion"
+            }
+          },
+          "members": {
+            "kind": "CONSTANT",
+            "value": [
+              "a",
+              "b",
+              "c"
+            ]
+          },
+          "subject": {
+            "kind": "CONSTANT",
+            "value": {
+              "id": "golden.subject",
+              "locator": {
+                "host_supplied": true
+              },
+              "type": "application/json"
+            }
+          }
+        },
+        "config": {
+          "handling": {
+            "CANCELLED": "IGNORE",
+            "DEFERRED": "IGNORE",
+            "ERROR": "IGNORE",
+            "MISSING": "IGNORE",
+            "NOT_APPLICABLE": "IGNORE",
+            "SKIP": "IGNORE",
+            "UNKNOWN": "IGNORE"
+          },
+          "reducer": "MAX_SCORE"
+        },
+        "id": "A_MAX_SCORE",
+        "inputs": [
+          {
+            "name": "a",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": true
+          },
+          {
+            "name": "b",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": true
+          },
+          {
+            "name": "c",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": true
+          },
+          {
+            "name": "members",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": true
+          },
+          {
+            "name": "subject",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "name": "criterion",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          }
+        ],
+        "kind": "AGGREGATE",
+        "operation": {
+          "capability_id": "openverify.aggregate",
+          "capability_version": "1"
+        },
+        "outputs": [
+          {
+            "name": "result",
+            "role": "RESULT",
+            "schema": true
+          }
+        ]
+      },
+      {
+        "aggregate_inputs": [
+          "a",
+          "b",
+          "c"
+        ],
+        "bindings": {
+          "a": {
+            "kind": "UPSTREAM_OUTPUT",
+            "node_id": "E1",
+            "output": "result"
+          },
+          "b": {
+            "kind": "UPSTREAM_OUTPUT",
+            "node_id": "E2",
+            "output": "result"
+          },
+          "c": {
+            "kind": "UPSTREAM_OUTPUT",
+            "node_id": "E3",
+            "output": "result"
+          },
+          "criterion": {
+            "kind": "CONSTANT",
+            "value": {
+              "description": "The explicitly supplied deterministic criterion holds",
+              "id": "golden.criterion"
+            }
+          },
+          "members": {
+            "kind": "CONSTANT",
+            "value": [
+              "a",
+              "b",
+              "c"
+            ]
+          },
+          "subject": {
+            "kind": "CONSTANT",
+            "value": {
+              "id": "golden.subject",
+              "locator": {
+                "host_supplied": true
+              },
+              "type": "application/json"
+            }
+          }
+        },
+        "config": {
+          "handling": {
+            "CANCELLED": "IGNORE",
+            "DEFERRED": "IGNORE",
+            "ERROR": "IGNORE",
+            "MISSING": "IGNORE",
+            "NOT_APPLICABLE": "IGNORE",
+            "SKIP": "IGNORE",
+            "UNKNOWN": "IGNORE"
+          },
+          "reducer": "AVERAGE"
+        },
+        "id": "A_AVERAGE",
+        "inputs": [
+          {
+            "name": "a",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": true
+          },
+          {
+            "name": "b",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": true
+          },
+          {
+            "name": "c",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": true
+          },
+          {
+            "name": "members",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": true
+          },
+          {
+            "name": "subject",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "name": "criterion",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          }
+        ],
+        "kind": "AGGREGATE",
+        "operation": {
+          "capability_id": "openverify.aggregate",
+          "capability_version": "1"
+        },
+        "outputs": [
+          {
+            "name": "result",
+            "role": "RESULT",
+            "schema": true
+          }
+        ]
+      },
+      {
+        "aggregate_inputs": [
+          "a",
+          "b",
+          "c"
+        ],
+        "bindings": {
+          "a": {
+            "kind": "UPSTREAM_OUTPUT",
+            "node_id": "E1",
+            "output": "result"
+          },
+          "b": {
+            "kind": "UPSTREAM_OUTPUT",
+            "node_id": "E2",
+            "output": "result"
+          },
+          "c": {
+            "kind": "UPSTREAM_OUTPUT",
+            "node_id": "E3",
+            "output": "result"
+          },
+          "criterion": {
+            "kind": "CONSTANT",
+            "value": {
+              "description": "The explicitly supplied deterministic criterion holds",
+              "id": "golden.criterion"
+            }
+          },
+          "members": {
+            "kind": "CONSTANT",
+            "value": [
+              "a",
+              "b",
+              "c"
+            ]
+          },
+          "subject": {
+            "kind": "CONSTANT",
+            "value": {
+              "id": "golden.subject",
+              "locator": {
+                "host_supplied": true
+              },
+              "type": "application/json"
+            }
+          }
+        },
+        "config": {
+          "handling": {
+            "CANCELLED": "IGNORE",
+            "DEFERRED": "IGNORE",
+            "ERROR": "IGNORE",
+            "MISSING": "IGNORE",
+            "NOT_APPLICABLE": "IGNORE",
+            "SKIP": "IGNORE",
+            "UNKNOWN": "IGNORE"
+          },
+          "reducer": "WEIGHTED_AVERAGE",
+          "weights": {
+            "a": 1,
+            "b": 2,
+            "c": 3
+          }
+        },
+        "id": "A_WEIGHTED_AVERAGE",
+        "inputs": [
+          {
+            "name": "a",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": true
+          },
+          {
+            "name": "b",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": true
+          },
+          {
+            "name": "c",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": true
+          },
+          {
+            "name": "members",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": true
+          },
+          {
+            "name": "subject",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "name": "criterion",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          }
+        ],
+        "kind": "AGGREGATE",
+        "operation": {
+          "capability_id": "openverify.aggregate",
+          "capability_version": "1"
+        },
+        "outputs": [
+          {
+            "name": "result",
+            "role": "RESULT",
+            "schema": true
+          }
+        ]
+      },
+      {
+        "aggregate_inputs": [
+          "a",
+          "b",
+          "c"
+        ],
+        "bindings": {
+          "a": {
+            "kind": "UPSTREAM_OUTPUT",
+            "node_id": "E1",
+            "output": "result"
+          },
+          "b": {
+            "kind": "UPSTREAM_OUTPUT",
+            "node_id": "E2",
+            "output": "result"
+          },
+          "c": {
+            "kind": "UPSTREAM_OUTPUT",
+            "node_id": "E3",
+            "output": "result"
+          },
+          "criterion": {
+            "kind": "CONSTANT",
+            "value": {
+              "description": "The explicitly supplied deterministic criterion holds",
+              "id": "golden.criterion"
+            }
+          },
+          "members": {
+            "kind": "CONSTANT",
+            "value": [
+              "a",
+              "b",
+              "c"
+            ]
+          },
+          "subject": {
+            "kind": "CONSTANT",
+            "value": {
+              "id": "golden.subject",
+              "locator": {
+                "host_supplied": true
+              },
+              "type": "application/json"
+            }
+          }
+        },
+        "config": {
+          "handling": {
+            "CANCELLED": "IGNORE",
+            "DEFERRED": "IGNORE",
+            "ERROR": "IGNORE",
+            "MISSING": "IGNORE",
+            "NOT_APPLICABLE": "IGNORE",
+            "SKIP": "IGNORE",
+            "UNKNOWN": "IGNORE"
+          },
+          "reducer": "WORST_SEVERITY",
+          "severity_domain": {
+            "id": "golden.severity",
+            "levels": [
+              {
+                "label": "low",
+                "rank": 1
+              },
+              {
+                "label": "high",
+                "rank": 2
+              }
+            ]
+          }
+        },
+        "id": "A_WORST_SEVERITY",
+        "inputs": [
+          {
+            "name": "a",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": true
+          },
+          {
+            "name": "b",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": true
+          },
+          {
+            "name": "c",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": true
+          },
+          {
+            "name": "members",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": true
+          },
+          {
+            "name": "subject",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "name": "criterion",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          }
+        ],
+        "kind": "AGGREGATE",
+        "operation": {
+          "capability_id": "openverify.aggregate",
+          "capability_version": "1"
+        },
+        "outputs": [
+          {
+            "name": "result",
+            "role": "RESULT",
+            "schema": true
+          }
+        ]
+      },
+      {
+        "aggregate_inputs": [
+          "a",
+          "b",
+          "c"
+        ],
+        "bindings": {
+          "a": {
+            "kind": "UPSTREAM_OUTPUT",
+            "node_id": "E1",
+            "output": "result"
+          },
+          "b": {
+            "kind": "UPSTREAM_OUTPUT",
+            "node_id": "E2",
+            "output": "result"
+          },
+          "c": {
+            "kind": "UPSTREAM_OUTPUT",
+            "node_id": "E3",
+            "output": "result"
+          },
+          "criterion": {
+            "kind": "CONSTANT",
+            "value": {
+              "description": "The explicitly supplied deterministic criterion holds",
+              "id": "golden.criterion"
+            }
+          },
+          "members": {
+            "kind": "CONSTANT",
+            "value": [
+              "a",
+              "b",
+              "c"
+            ]
+          },
+          "subject": {
+            "kind": "CONSTANT",
+            "value": {
+              "id": "golden.subject",
+              "locator": {
+                "host_supplied": true
+              },
+              "type": "application/json"
+            }
+          }
+        },
+        "config": {},
+        "id": "A_CUSTOM",
+        "inputs": [
+          {
+            "name": "a",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": true
+          },
+          {
+            "name": "b",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": true
+          },
+          {
+            "name": "c",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": true
+          },
+          {
+            "name": "members",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": true
+          },
+          {
+            "name": "subject",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "name": "criterion",
+            "on_unavailable": "BLOCK",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          }
+        ],
+        "kind": "AGGREGATE",
+        "operation": {
+          "capability_id": "com.example.golden.custom_aggregate",
+          "capability_version": "1"
+        },
+        "outputs": [
+          {
+            "name": "result",
+            "role": "RESULT",
+            "schema": true
+          }
+        ]
+      }
+    ]
+  },
+  "id": "golden.v03.master",
+  "judgment_schema": true,
+  "protocol": "draft",
+  "run_inputs": [
+    {
+      "name": "payload",
+      "on_unavailable": "BLOCK",
+      "required": true,
+      "schema": {
+        "type": "integer"
+      }
+    },
+    {
+      "name": "optional",
+      "on_unavailable": "OMIT",
+      "required": false,
+      "schema": {
+        "type": "integer"
+      }
+    },
+    {
+      "name": "omitted",
+      "on_unavailable": "OMIT",
+      "required": false,
+      "schema": {
+        "type": "integer"
+      }
+    },
+    {
+      "default": {
+        "kind": "CONSTANT",
+        "value": true
+      },
+      "name": "guard",
+      "on_unavailable": "DEFAULT",
+      "required": false,
+      "schema": {
+        "type": "boolean"
+      }
+    },
+    {
+      "default": {
+        "kind": "CONSTANT",
+        "value": {
+          "outcome": "ACTIVATE",
+          "reason": "scripted"
+        }
+      },
+      "name": "activation",
+      "on_unavailable": "DEFAULT",
+      "required": false,
+      "schema": true
+    },
+    {
+      "default": {
+        "kind": "CONSTANT",
+        "value": {
+          "reason": "scripted",
+          "subjects": [
+            {
+              "id": "golden.subject",
+              "locator": {
+                "host_supplied": true
+              },
+              "type": "application/json"
+            }
+          ]
+        }
+      },
+      "name": "selection",
+      "on_unavailable": "DEFAULT",
+      "required": false,
+      "schema": true
+    },
+    {
+      "default": {
+        "kind": "CONSTANT",
+        "value": {
+          "outcome": "RUN",
+          "reason": "scripted"
+        }
+      },
+      "name": "admission",
+      "on_unavailable": "DEFAULT",
+      "required": false,
+      "schema": true
+    }
+  ],
+  "subject": {
+    "id": "golden.subject",
+    "locator": {
+      "host_supplied": true
+    },
+    "type": "application/json"
+  },
+  "version": "0.3.0"
+}
