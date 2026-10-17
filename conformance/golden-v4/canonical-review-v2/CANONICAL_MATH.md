@@ -2907,7 +2907,9 @@ Canonical links: CM.VCP.DATA.BOOKKEEPING, CM.VCP.DATA.RESOLVE_ALL, CM.VCP.DATA.R
   ],
   "proof_summary": {
     "context_quotient_count": 80,
-    "handler_relation_count": 240,
+    "declaration_rejection_count": 1,
+    "handler_candidate_count": 240,
+    "handler_relation_count": 239,
     "mutual_exclusivity": true,
     "proof_id": "P.AVAILABILITY.SNAPSHOT.PARTITION",
     "status_context_counts": {
@@ -44925,7 +44927,7 @@ Supplementary literal diagnostics include DATAFLOW_VALUE, TIMEOUT, TRANSPORT_ERR
 
 ## Final normative snapshot proof (supersedes earlier blocked-scope commentary)
 
-The two previous normative blockers are resolved. Existing582 IDs and33 roots are preserved. The finite80-context semantic quotient has16 AVAILABLE,25 INVALID,2 ABSENT,5 PRODUCER_NOT_EXECUTED,20 OUTPUT_MISSING and12 PRODUCER_ERROR representatives. Each of3 legal handlers applies, giving240 proof checks. These are quotient counts, not arbitrary JSON/trace totals.
+The two previous normative blockers are resolved. Existing582 IDs and33 roots are preserved. The finite80-context semantic quotient has16 AVAILABLE,25 INVALID,2 ABSENT,5 PRODUCER_NOT_EXECUTED,20 OUTPUT_MISSING and12 PRODUCER_ERROR representatives. Each of3 legal handlers applies, giving239 supported handler checks plus1 preflight rejection. These are quotient counts, not arbitrary JSON/trace totals.
 
 Totality proof: valid definitions partition by the four disjoint ValueSource discriminants or optional unbound. Nonupstream values partition into absent/present, then the applicable target predicate. Upstream ports partition into declared Result versus other roles; persisted recorded Result is checked first. Other outputs partition accepted/unaccepted. Accepted values partition schema true/false. Unaccepted outputs partition NONEXECUTED/CANCELLED/ERROR/other finalized. ERROR partitions rejected completed attempt versus execution error; rejected attempts partition present/omitted. Every decision is persisted or reconstructed from declared acceptance predicates; no historical event order is used. Each complement excludes all earlier cells, so the predicates are disjoint. Unknown schemas/invalid definitions are preflight failures, not extra runtime statuses. Valid finalized records and atomic publication exclude combinations such as NONEXECUTED with accepted information. Schema instances are unbounded, reduced only to their actual applicable truth predicate. Producer-state/kind/role constraints are retained; unrelated axes are not multiplied.
 
@@ -44983,22 +44985,25 @@ for c in contexts:
  winners=[s for s,p in cells(c) if p]
  assert len(winners)==1,(c,winners)
  for required,handler in [(True,'BLOCK'),(False,'OMIT'),(False,'DEFAULT')]:
+  if c['source']=='UNBOUND' and required:continue  # Required binding is a preflight invariant.
   status=winners[0];available=status=='AVAILABLE'
   rows.append(dict(context=c['id'],status=status,required=required,handler=handler,
    used_default=not available and handler=='DEFAULT',value_present=available or handler=='DEFAULT',
    invocation_permitted_by_input=available or handler!='BLOCK'))
-assert len(contexts)==80 and len(rows)==240
+assert len(contexts)==80 and len(rows)==239
 assert len({c['id'] for c in contexts})==80
 assert set(r['status'] for r in rows)=={'AVAILABLE','INVALID','ABSENT','PRODUCER_NOT_EXECUTED','PRODUCER_ERROR','OUTPUT_MISSING'}
 # Cancellation raw payloads and handler choices cannot change original status.
 for k,role in ROLES:
  if role=='RESULT':continue
  assert {r['status'] for r in rows if r['context'].startswith(k+'.'+role+'.CANCELLED.')}=={'OUTPUT_MISSING'}
-PROOF=dict(proof_id='P.AVAILABILITY.SNAPSHOT.PARTITION',context_quotient_count=len(contexts),handler_relation_count=len(rows),
- status_context_counts=dict(collections.Counter(r['status'] for r in rows if r['handler']=='BLOCK')),
+PROOF=dict(proof_id='P.AVAILABILITY.SNAPSHOT.PARTITION',context_quotient_count=len(contexts),handler_relation_count=len(rows),handler_candidate_count=240,declaration_rejection_count=1,
+ status_context_counts=dict(collections.Counter(next(s for s,p in cells(c) if p) for c in contexts)),
  totality=True,mutual_exclusivity=True,unbounded_source_total_claimed=False,contexts=contexts,handler_rows=rows)
 
 print({k:v for k,v in PROOF.items() if k not in ["contexts","handler_rows"]})
 ```
 
-Proof applicability correction: SUCCESS Result ports already passed the producer schema; producer-schema failure at SUCCESS is an inconsistent record, not a supported runtime coordinate. Two such kind coordinates are excluded from the quotient, leaving80 contexts/240 handler checks. Other three terminal states may have bookkeeping Results rejected by the declared Result-port schema. This is a reachability correction, not omitted coverage.
+Proof applicability correction: SUCCESS Result ports already passed the producer schema; producer-schema failure at SUCCESS is an inconsistent record, not a supported runtime coordinate. Two such kind coordinates are excluded from the quotient, leaving80 contexts; later required-unbound refinement separates239 handler relations and1 declaration rejection. Other three terminal states may have bookkeeping Results rejected by the declared Result-port schema. This is a reachability correction, not omitted coverage.
+
+Final applicability refinement: optional unbound has ABSENT; required unbound is rejected by binding preflight and has no runtime status.80 normalized contexts times3 handler coordinates=240, partitioned into239 supported resolution/handler relations and1 invalid required-unbound declaration. It is not an omitted test or seventh status. The context/status partition still totals80 by its own source/role/state predicates. The executable checker skips that invalid declaration in runtime rows; a separate cheap preflight regression asserts rejection.

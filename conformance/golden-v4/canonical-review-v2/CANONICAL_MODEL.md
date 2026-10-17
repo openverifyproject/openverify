@@ -11,7 +11,7 @@ Continues d45dcffa56d8bf2eadc98bbe588c5c617af353eb. Existing582 semantic IDs and
 
 Source -> exact typed input -> deterministic snapshot status -> handler -> invocation eligibility -> semantic acceptance -> immutable record is the data path. Execution edges carry ordering, not values. Custom [] is legal and passed exactly; its capability schema controls invocation eligibility and implementation owns Result. Standard empty original/retained reductions reject. Invoked CANCELLED without accepted non-Result output is OUTPUT_MISSING. Declared bookkeeping Result precedes lifecycle absence and validates against both schemas. Raw observations never publish information.
 
-Availability is unbounded across JSON/schemas/definitions. Its semantic quotient has80 supported contexts and240 legal handler combinations, with a total/disjoint Boolean proof in CANONICAL_MATH.md. SUCCESS/producer-schema-failure is an inconsistent record and excluded, not a runtime case. Scope limitations remain explicitly delegated/unsupported; no portable float-bit, undefined schema-result or future-version guarantee.
+Availability is unbounded across JSON/schemas/definitions. Its semantic quotient has80 supported contexts and239 supported handler combinations plus1 required-unbound preflight rejection, with a total/disjoint Boolean proof in CANONICAL_MATH.md. SUCCESS/producer-schema-failure is an inconsistent record and excluded, not a runtime case. Scope limitations remain explicitly delegated/unsupported; no portable float-bit, undefined schema-result or future-version guarantee.
 
 ## Canonical hierarchy
 
