@@ -2906,8 +2906,8 @@ Canonical links: CM.VCP.DATA.BOOKKEEPING, CM.VCP.DATA.RESOLVE_ALL, CM.VCP.DATA.R
     }
   ],
   "proof_summary": {
-    "context_quotient_count": 82,
-    "handler_relation_count": 246,
+    "context_quotient_count": 80,
+    "handler_relation_count": 240,
     "mutual_exclusivity": true,
     "proof_id": "P.AVAILABILITY.SNAPSHOT.PARTITION",
     "status_context_counts": {
@@ -45004,7 +45004,7 @@ assert set(r['status'] for r in rows)=={'AVAILABLE','INVALID','ABSENT','PRODUCER
 for k,role in ROLES:
  if role=='RESULT':continue
  assert {r['status'] for r in rows if r['context'].startswith(k+'.'+role+'.CANCELLED.')}=={'OUTPUT_MISSING'}
-PROOF=dict(proof_id='P.AVAILABILITY.SNAPSHOT.PARTITION',context_quotient_count=82,handler_relation_count=246,
+PROOF=dict(proof_id='P.AVAILABILITY.SNAPSHOT.PARTITION',context_quotient_count=len(contexts),handler_relation_count=len(rows),
  status_context_counts=dict(collections.Counter(r['status'] for r in rows if r['handler']=='BLOCK')),
  totality=True,mutual_exclusivity=True,unbounded_source_total_claimed=False,contexts=contexts,handler_rows=rows)
 
