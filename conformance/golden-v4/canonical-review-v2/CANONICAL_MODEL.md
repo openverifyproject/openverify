@@ -1,4409 +1,4323 @@
 # Canonical contract model v2
 
-CURRENT NORMATIVE UPDATE: both supported blockers are resolved by explicit approved prose. All four canonical gates PASS for the declared supported semantic domain. This is not implementation certification. Existing scope exclusions (undefined schema evaluation, future versions, portable float bits) remain. Counts:582 semantic IDs,33 whole-root predicates,86 finite/150 symbolic/1 dependent conditional domains; no new IDs.
+Continues d45dcffa56d8bf2eadc98bbe588c5c617af353eb. Existing582 semantic IDs and33 whole-root predicates are preserved; no new inventory or version directory.582 semantic requirements remain separate from724 local schema components and source positions. All four canonical model gates PASS for the declared supported semantic scope; this is not Golden certification.
 
+| Layer | Semantic requirements | Whole-root predicates |
+| --- | --- | --- |
+| VCP | 242 | 24 |
+| PROVIDER | 106 | 9 |
+| RELAY | 161 | 0 |
+| SHARED | 73 | 0 |
 
-Continued from 0723fa8a8766bcfdd3c2c5e5a8559a70befca3b7 in the isolated .worktrees/canonical-v2-blockers worktree on review/canonical-v2-blockers. This directory is the existing review, updated in place. The earlier canonical-review artifacts remain historical provisional inputs and were not edited.
+Source -> exact typed input -> deterministic snapshot status -> handler -> invocation eligibility -> semantic acceptance -> immutable record is the data path. Execution edges carry ordering, not values. Custom [] is legal and passed exactly; its capability schema controls invocation eligibility and implementation owns Result. Standard empty original/retained reductions reject. Invoked CANCELLED without accepted non-Result output is OUTPUT_MISSING. Declared bookkeeping Result precedes lifecycle absence and validates against both schemas. Raw observations never publish information.
 
-Source inventory and second source-first traversal are reconciled. Full semantic closure remains CLOSED BY APPROVED SNAPSHOT/CUSTOM DECISION in the explicitly listed question subspaces. This is a contract model, not implementation certification or test coverage.
-
-The model counts 582 semantic propositions and 33 complete root structural predicates separately. The 724 local schema components are parameterized parts of those roots, not additional independent semantic requirements. 74 groups and 12 aliases preserve retired/split IDs without increasing the denominator.
-
-Source meaning has three authorities: portable VCP, portable Provider Contract and the documented local Relay profile. Public SDK behavior is a separate implementation contract. Examples, aliases, annotations, unsupported features and open questions are classified without becoming requirements by default.
-
-The data path is explicit: run inputs/constants/external references or ancestor outputs -> declared input bindings -> typed availability and handling -> exact invocation input/config -> Provider Outcome/observations -> VCP port and semantic acceptance -> immutable occurrence provenance. Execution edges impose readiness; they carry no values. Guards gate eligibility; Control changes verification reachability; ordered aggregate membership is independently authored.
-
-Each counted proposition is an applicability-qualified relation or independently accountable effect. A public operation may have a structured output relation; distinct observable lifecycle effects were split, including BLOCK noninvocation/state/reason/resolution/provenance. A schema root is one complete Boolean predicate with individually addressable components. Neither source positions nor callable names become one required obligation by default.
-
-Related finite projection counts are not leaf-validity counts. A leaf's full value/record/trace relation can be unbounded; its exact argument classes, predicate and semantic partitions are in JSONL and its named domain. The 44 explicit leaf quotients additionally show their own C/V/I/N. No overlapping projection totals are summed.
-
-
-## Layer counts
-
-| Layer | Semantic propositions | Whole-root predicates | Canonical primary records |
-| --- | --- | --- | --- |
-| VCP | 242 | 24 | 266 |
-| PROVIDER | 106 | 9 | 115 |
-| RELAY | 161 | 0 | 161 |
-| SHARED | 73 | 0 | 73 |
-
-## Branch closure
-
-Domain-reference counts are sets within each row and overlap across branches. Requirement counts roll up by unique canonical ID. CLOSED BY APPROVED SNAPSHOT/CUSTOM DECISION means an explicit blocked input/scope remains; it does not mean an unreviewed source paragraph.
-
-| Branch | Semantic | Roots | Finite domains | Symbolic domains | Conditional domains | Blocking questions | Status |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| VCP/Aggregation | 33 | 0 | 1 | 5 | 0 | 1 | CLOSED BY APPROVED SNAPSHOT/CUSTOM DECISION |
-| VCP/Composition | 12 | 0 | 0 | 3 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| VCP/Computation | 13 | 0 | 5 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| VCP/Conformance | 2 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| VCP/Dataflow | 37 | 0 | 6 | 8 | 1 | 1 | CLOSED BY APPROVED SNAPSHOT/CUSTOM DECISION |
-| VCP/Decisions | 1 | 0 | 1 | 0 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| VCP/Extensions | 2 | 0 | 1 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| VCP/Knowledge | 3 | 0 | 1 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| VCP/Lifecycle | 22 | 0 | 3 | 2 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| VCP/Meaning | 6 | 0 | 1 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| VCP/Policies | 22 | 0 | 4 | 2 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| VCP/Profiles | 1 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| VCP/Provenance | 28 | 0 | 0 | 2 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| VCP/Provider binding | 12 | 0 | 0 | 2 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| VCP/Resources | 5 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| VCP/Result | 1 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| VCP/Results | 30 | 0 | 3 | 2 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| VCP/Schemas | 3 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| VCP/Wire roots | 0 | 24 | 0 | 24 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| VCP/Wire semantics | 9 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| PROVIDER/Capabilities | 1 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| PROVIDER/Compatibility | 10 | 0 | 0 | 2 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| PROVIDER/Control | 18 | 0 | 1 | 2 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| PROVIDER/Discovery | 4 | 0 | 0 | 2 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| PROVIDER/Errors | 12 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| PROVIDER/Events | 1 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| PROVIDER/Extensions | 3 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| PROVIDER/Invocation | 6 | 0 | 1 | 2 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| PROVIDER/Lifecycle | 5 | 0 | 1 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| PROVIDER/Meaning | 1 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| PROVIDER/Resources | 7 | 0 | 1 | 2 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| PROVIDER/Schemas | 4 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| PROVIDER/Streaming | 11 | 0 | 2 | 2 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| PROVIDER/Transport | 21 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| PROVIDER/Wire | 2 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| PROVIDER/Wire roots | 0 | 9 | 0 | 9 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| RELAY/Architecture | 1 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| RELAY/Binding | 4 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| RELAY/Binding and execution | 1 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| RELAY/Cancellation | 2 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| RELAY/Discovery | 3 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| RELAY/Entrypoints | 17 | 0 | 1 | 2 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| RELAY/Execution | 3 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| RELAY/Extension ports | 7 | 0 | 0 | 3 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| RELAY/Invocation callbacks | 1 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| RELAY/Observability | 1 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| RELAY/Policies | 2 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| RELAY/Preparation | 2 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| RELAY/Process execution | 2 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| RELAY/Providers | 1 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| RELAY/Public API | 9 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| RELAY/Public SDK | 48 | 0 | 0 | 21 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| RELAY/Records | 6 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| RELAY/Scheduler | 5 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| RELAY/Standard providers | 42 | 0 | 0 | 19 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| RELAY/Transport | 4 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| SHARED/JSON value and schema semantics | 3 | 0 | 0 | 2 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| SHARED/Public SDK | 70 | 0 | 2 | 40 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
+Availability is unbounded across JSON/schemas/definitions. Its semantic quotient has80 supported contexts and240 legal handler combinations, with a total/disjoint Boolean proof in CANONICAL_MATH.md. SUCCESS/producer-schema-failure is an inconsistent record and excluded, not a runtime case. Scope limitations remain explicitly delegated/unsupported; no portable float-bit, undefined schema-result or future-version guarantee.
 
 ## Canonical hierarchy
 
-- **PROVIDER** — 115 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-  - **Capabilities** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **Published meaning** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.PROVIDER.CAPABILITY.PUBLISHED_SPEC` — Publish that capability specification with its adapter; its schemas and specification define actual input/config/output meaning, not its identifier alone.
-        - Applicability: A capability is published with a provider adapter.
-        - Required/observable: Inspectable published capability contract.. Forbidden: Do not treat a conceptual capability family name or namespace syntax as executable semantic definition.
-        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/capabilities.md:24-35.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.NAMESPACE. Domain `D.PROVIDER.NAMESPACE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-  - **Compatibility** — 10 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **Initialization** — 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.PROVIDER.INIT.SELECT` — Select first runner contract version supported by provider; this draft selects only 0.1
-        - Applicability: Runner initializes with ordered exact versions.
-        - Required/observable: CONTRACT_VERSION_UNSUPPORTED with no work if no intersection. Forbidden: Do not use SemVer ordering/ranges/coercion/fallback
-        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/versioning.md:6-14.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.INITIALIZATION. Domain `D.PROVIDER.INITIALIZATION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.PROVIDER.INIT.VERIFY` — Recompute first common selection against returned manifest
-        - Applicability: Runner receives InitializeResult.
-        - Required/observable: Reject invalid initialization result. Forbidden: Do not trust an incompatible selected version
-        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/versioning.md:6-14.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.INITIALIZATION. Domain `D.PROVIDER.INITIALIZATION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Matching** — 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **CONTRACT_VERSION** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.COMPAT.CAPABILITY.CONTRACT_VERSION` — Invocation contract_version equals selected session contract version.
-          - Applicability: Invocation submitted in initialized session.
-          - Required/observable: Wrong version is CONTRACT_VERSION_UNSUPPORTED.. Forbidden: Do not accept a different version even if advertised elsewhere.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/versioning.md:16-20.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.INITIALIZATION. Domain `D.PROVIDER.INITIALIZATION`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **IDENTITY** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.COMPAT.CAPABILITY.IDENTITY` — Use the exact advertised capability identity pair.
-          - Applicability: Invocation selects a capability ID/version.
-          - Required/observable: Missing ID is CAPABILITY_UNAVAILABLE; existing ID with missing exact version is CAPABILITY_VERSION_UNSUPPORTED.. Forbidden: No fallback to another version or capability.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/versioning.md:16-20.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.INITIALIZATION. Domain `D.PROVIDER.INITIALIZATION`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **VCP** — 6 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **ADVERTISEMENT** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.COMPAT.CAPABILITY_VCP.ADVERTISEMENT` — That exact version belongs to manifest.supported_vcp_versions.
-          - Applicability: Capability declares vcp_version.
-          - Required/observable: Manifest semantic acceptance.. Forbidden: No unsupported declaration.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/capabilities.md:47-51.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.MANIFEST. Domain `D.PROVIDER.MANIFEST`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **CAPABILITY** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.COMPAT.VCP_INTERSECTION.CAPABILITY` — Invocation.vcp_version equals that exact declaration.
-          - Applicability: Matched capability declares vcp_version.
-          - Required/observable: INVALID_INVOCATION on mismatch.. Forbidden: No missing/different invocation version.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/versioning.md:16-20.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.INITIALIZATION. Domain `D.PROVIDER.INITIALIZATION`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **DECLARATION** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.COMPAT.CAPABILITY_VCP.DECLARATION` — Declare applicable vcp_version in capability specification/manifest.
-          - Applicability: Capability specification contains VCP objects in I/O/config/events.
-          - Required/observable: Published contract consistency.. Forbidden: No unadvertised VCP interchange.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/capabilities.md:47-51.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.MANIFEST. Domain `D.PROVIDER.MANIFEST`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **INTERSECTION** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.COMPAT.VCP_INTERSECTION.INTERSECTION` — It belongs to both initialized peers supported VCP lists.
-          - Applicability: Invocation contains vcp_version.
-          - Required/observable: INVALID_INVOCATION if absent from intersection.. Forbidden: No one-sided version acceptance.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/versioning.md:16-20.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.INITIALIZATION. Domain `D.PROVIDER.INITIALIZATION`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.PROVIDER.COMPAT.REVISION` — Use the same specification/schema revision and capability specification
-        - Applicability: Peers exchange VCP draft objects.
-        - Required/observable: Deployment compatibility obligation; portable revision ID remains open. Forbidden: Do not infer revision equivalence from literal draft marker
-        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/versioning.md:30-34.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.INITIALIZATION. Domain `D.PROVIDER.INITIALIZATION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.PROVIDER.COMPAT.VCP_FIELDS` — Invocation declares available draft VCP interchange
-        - Applicability: Budget or VCP evidence/artifact/usage is exchanged.
-        - Required/observable: INVALID_INVOCATION or INVALID_PROVIDER_OUTPUT according to side. Forbidden: Do not transmit standard VCP fields without negotiated invocation version
-        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/versioning.md:22-28.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.INITIALIZATION. Domain `D.PROVIDER.INITIALIZATION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-  - **Control** — 18 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **Cancellation** — 6 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **NO_BOUND** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.CANCEL.RUNNING.NO_BOUND` — No fixed portable stop-time guarantee; prompt stopping is SHOULD.
-          - Applicability: A valid cooperative cancel is pending.
-          - Required/observable: Allowed race with prior lawful terminal.. Forbidden: Do not turn recommendation into hard latency requirement.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:20-27.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.CANCEL. Domain `D.PROVIDER.CANCEL`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **REPEAT** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.CANCEL.RUNNING.REPEAT` — Permit repeated request.
-          - Applicability: Supported running attempt receives another cancel.
-          - Required/observable: Still one eventual terminal.. Forbidden: No duplicate-request protocol error solely for repetition.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:20-27.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.CANCEL. Domain `D.PROVIDER.CANCEL`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **REQUEST** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.CANCEL.RUNNING.REQUEST` — Request cooperative termination, remain running until Outcome.
-          - Applicability: Running cancellation-supported attempt receives cancel.
-          - Required/observable: Cancel-request state effect.. Forbidden: No immediate terminal merely from request.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:20-27.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.CANCEL. Domain `D.PROVIDER.CANCEL`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.PROVIDER.CANCEL.CAUSE` — A runner cancel request caused termination
-        - Applicability: Outcome state is CANCELLED.
-        - Required/observable: Unsolicited cancellation invalid; internal failure ERROR. Forbidden: Do not use CANCELLED for internal provider failure
-        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:20-27.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.CANCEL. Domain `D.PROVIDER.CANCEL`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.PROVIDER.CANCEL.TERMINAL` — Acknowledge as no-op even without running-cancel support
-        - Applicability: Cancel targets terminal attempt.
-        - Required/observable: Successful no-op acknowledgement. Forbidden: Do not change terminal outcome
-        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:20-27.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.CANCEL. Domain `D.PROVIDER.CANCEL`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.PROVIDER.CANCEL.UNKNOWN` — Reject without inventing a running attempt
-        - Applicability: Cancel targets unknown/rejected attempt.
-        - Required/observable: PROTOCOL_VIOLATION. Forbidden: Do not accept unknown cancellation
-        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:20-27.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.CANCEL. Domain `D.PROVIDER.CANCEL`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Deadlines** — 10 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **ACCEPT** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.DEADLINE.ACCEPT.ACCEPT` — Accept the attempt rather than reject solely for expiry.
-          - Applicability: Invocation is otherwise valid but already expired.
-          - Required/observable: Accepted deadline attempt.. Forbidden: No preaccept unsupported/invalid error for expiry alone.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:29-39.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.DEADLINE. Domain `D.PROVIDER.DEADLINE`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **CALENDAR** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.DEADLINE.PRECISION.CALENDAR` — Supported dates have years 0001 through 9999 and seconds 00 through 59.
-          - Applicability: Deadline timestamp supplied.
-          - Required/observable: Reject unsupported date/time syntax rather than truncate or normalize it.. Forbidden: Leap-second notation is unsupported.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:41-45.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.DEADLINE. Domain `D.PROVIDER.DEADLINE`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **COMMIT** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.DEADLINE.ACTIVE.COMMIT` — Commit DEADLINE_EXCEEDED.
-          - Applicability: Expiry occurs with no earlier terminal committed.
-          - Required/observable: Deadline terminal Outcome.. Forbidden: No later different terminal or clock rollback reversal.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:29-39.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.DEADLINE. Domain `D.PROVIDER.DEADLINE`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **FRACTION** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.DEADLINE.PRECISION.FRACTION` — Compare instants preserving all supplied decimal fractional digits.
-          - Applicability: UTC deadline and clock observations compared.
-          - Required/observable: Order/equality corresponds to exact decimal instants.. Forbidden: No millisecond or microsecond rounding.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:41-45.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.DEADLINE. Domain `D.PROVIDER.DEADLINE`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **MONITOR** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.DEADLINE.ACTIVE.MONITOR` — Monitor provider local UTC deadline expiry.
-          - Applicability: Accepted deadline invocation has no terminal commit.
-          - Required/observable: Expiry observed under provider clock.. Forbidden: No ignoring or moving deadline for transport delay.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:29-39.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.DEADLINE. Domain `D.PROVIDER.DEADLINE`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **NO_LATE_COMPLETE** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.DEADLINE.ACTIVE.NO_LATE_COMPLETE` — Do not commit COMPLETED.
-          - Applicability: Terminal commit time is at/after supplied deadline.
-          - Required/observable: COMPLETED ineligible at expiry.. Forbidden: Delivery time does not change commit-time condition.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:29-39.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.DEADLINE. Domain `D.PROVIDER.DEADLINE`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **NO_WORK** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.DEADLINE.ACCEPT.NO_WORK` — Start no capability work.
-          - Applicability: Accepted attempt was expired at acceptance.
-          - Required/observable: Zero capability work.. Forbidden: No work past known deadline.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:29-39.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.DEADLINE. Domain `D.PROVIDER.DEADLINE`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **STOP_WORK** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.DEADLINE.ACTIVE.STOP_WORK` — Stop capability work at expiry.
-          - Applicability: Expiry observed before a terminal commit.
-          - Required/observable: Work stop; no claimed network/OS latency bound.. Forbidden: Do not continue capability work through expired deadline.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:29-39.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.DEADLINE. Domain `D.PROVIDER.DEADLINE`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **TERMINAL** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.DEADLINE.ACCEPT.TERMINAL` — Commit DEADLINE_EXCEEDED.
-          - Applicability: Accepted attempt was expired at acceptance.
-          - Required/observable: One deadline terminal Outcome.. Forbidden: No COMPLETED/CANCELLED/ERROR replacing already-observed expiry.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:29-39.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.DEADLINE. Domain `D.PROVIDER.DEADLINE`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.PROVIDER.DEADLINE.IRREVERSIBLE` — Attempt remains ended despite clock rollback
-        - Applicability: Expiry has been observed.
-        - Required/observable: Terminal immutability under clock adjustment. Forbidden: Do not resurrect expired work
-        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:41-45.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.DEADLINE. Domain `D.PROVIDER.DEADLINE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Eligibility** — 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.PROVIDER.FEATURE.CANCEL` — Reject running cancellation without ending invocation
-        - Applicability: Running capability has cancellation=false.
-        - Required/observable: Cancellation semantics depend on state and feature. Forbidden: Do not remove the universal cancel surface or reject terminal no-op solely for missing feature
-        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/capabilities.md:37-45.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.CONSTRAINTS. Domain `D.PROVIDER.CONSTRAINTS`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.PROVIDER.FEATURE.DEADLINE` — Capability supports and can enforce deadline semantics
-        - Applicability: Invocation includes deadline.
-        - Required/observable: Reject before accepting work. Forbidden: Do not accept a deadline that cannot be honored
-        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/capabilities.md:37-45.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.CONSTRAINTS. Domain `D.PROVIDER.CONSTRAINTS`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-  - **Discovery** — 4 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **Identifiers** — 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.PROVIDER.NAMESPACE.OWNERSHIP` — Third-party publisher controls the reversed-domain prefix of at least two segments used by its identifier; syntax cannot establish this ownership.
-        - Applicability: Third-party publisher chooses an identifier.
-        - Required/observable: Publisher obligation distinct from parser checks. Forbidden: Do not claim syntax validation proves ownership or online registration
-        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/capabilities.md:24-35.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.NAMESPACE. Domain `D.PROVIDER.NAMESPACE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.PROVIDER.NAMESPACE.SYNTAX` — Lowercase ASCII dot segments; third parties have at least three segments; openverify namespace reserved
-        - Applicability: Provider/capability/extension/provider-error identifier is authored.
-        - Required/observable: Lexical rejection for invalid identifiers. Forbidden: Do not treat an ID alone as a capability specification
-        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/capabilities.md:24-35.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.NAMESPACE. Domain `D.PROVIDER.NAMESPACE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Manifest** — 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.PROVIDER.MANIFEST.CAPABILITY_IDENTITY` — Each capability ID/version pair is unique; multiple exact versions of one ID are allowed
-        - Applicability: Manifest advertises capabilities.
-        - Required/observable: Invalid manifest rejects. Forbidden: Do not deduplicate by capability ID alone or accept duplicate pairs
-        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/capabilities.md:9-22.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.MANIFEST. Domain `D.PROVIDER.MANIFEST`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.PROVIDER.MANIFEST.SNAPSHOT` — Keep manifest fixed throughout that initialized session
-        - Applicability: A session initializes.
-        - Required/observable: Stable compatibility and invocation validation. Forbidden: Do not silently substitute identities or capability contracts mid-session
-        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/capabilities.md:3-7.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.MANIFEST. Domain `D.PROVIDER.MANIFEST`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-  - **Errors** — 12 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **Codes** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.PROVIDER.ERROR.CLASSIFY` — Programmatic classification uses stable code; provider failures use namespaced codes outside reserved set
-        - Applicability: ProviderError is consumed.
-        - Required/observable: Reserved vocabulary plus extensible provider namespace. Forbidden: Do not classify from diagnostic message/details or accept unknown bare uppercase codes
-        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/errors.md:3-4.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ERROR.AUTHORITY. Domain `D.ERROR.AUTHORITY`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Peer validation** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.PROVIDER.ERROR.NO_REWRITE` — Report peer validation failure separately
-        - Applicability: Peer emits invalid output.
-        - Required/observable: Preserve distinction between received data and runner diagnosis. Forbidden: Do not rewrite received bytes into fabricated Outcome or FAIL
-        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/errors.md:29-33.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ERROR.AUTHORITY. Domain `D.ERROR.AUTHORITY`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Precedence** — 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **CORRELATION_SCOPE** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.ERROR.PRECEDENCE.CORRELATION_SCOPE` — Correlation/lifecycle is checked before body decoding in the stated correlation cases.
-          - Applicability: Documented conformance correlation/lifecycle case with invalid body..
-          - Required/observable: Correlation-category diagnosis remains independently accountable within its stated scope.. Forbidden: Do not generalize this fixture-protocol statement into a total order among unrelated validation errors.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/errors.md:23-27.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ERROR.AUTHORITY. Domain `D.ERROR.AUTHORITY`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **RECOMMENDED** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.ERROR.PRECEDENCE.RECOMMENDED` — SHOULD report first in JSON/structure/version, manifest, compatibility, capability matching, input, config, constraints, lifecycle, output order unless documented reason.
-          - Applicability: Multiple independent validation failures coexist..
-          - Required/observable: Preferred stable category; no invented universal tie-break.. Forbidden: Do not elevate this recommendation to unconditional MUST precedence.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/errors.md:23-27.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ERROR.AUTHORITY. Domain `D.ERROR.AUTHORITY`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Reserved code** — 8 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **CAPABILITY_UNAVAILABLE** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.ERROR.CAPABILITY_UNAVAILABLE` — Use CAPABILITY_UNAVAILABLE for this declared category; retain diagnostic message/details without classifying from them.
-          - Applicability: A ProviderError is classifying requested capability ID absent..
-          - Required/observable: {'category': 'requested capability ID absent', 'code': 'CAPABILITY_UNAVAILABLE'}. Forbidden: Do not convert this category into verification FAIL or infer unconditional precedence over independent coexisting errors.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/errors.md:9-9.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ERROR.AUTHORITY. Domain `D.ERROR.AUTHORITY`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **CAPABILITY_VERSION_UNSUPPORTED** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.ERROR.CAPABILITY_VERSION_UNSUPPORTED` — Use CAPABILITY_VERSION_UNSUPPORTED for this declared category; retain diagnostic message/details without classifying from them.
-          - Applicability: A ProviderError is classifying ID exists but exact version absent..
-          - Required/observable: {'category': 'ID exists but exact version absent', 'code': 'CAPABILITY_VERSION_UNSUPPORTED'}. Forbidden: Do not convert this category into verification FAIL or infer unconditional precedence over independent coexisting errors.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/errors.md:10-10.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ERROR.AUTHORITY. Domain `D.ERROR.AUTHORITY`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **CONTRACT_VERSION_UNSUPPORTED** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.ERROR.CONTRACT_VERSION_UNSUPPORTED` — Use CONTRACT_VERSION_UNSUPPORTED for this declared category; retain diagnostic message/details without classifying from them.
-          - Applicability: A ProviderError is classifying no common or wrong session contract version..
-          - Required/observable: {'category': 'no common or wrong session contract version', 'code': 'CONTRACT_VERSION_UNSUPPORTED'}. Forbidden: Do not convert this category into verification FAIL or infer unconditional precedence over independent coexisting errors.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/errors.md:8-8.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ERROR.AUTHORITY. Domain `D.ERROR.AUTHORITY`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **INVALID_CONFIG** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.ERROR.INVALID_CONFIG` — Use INVALID_CONFIG for this declared category; retain diagnostic message/details without classifying from them.
-          - Applicability: A ProviderError is classifying config violates declared schema..
-          - Required/observable: {'category': 'config violates declared schema', 'code': 'INVALID_CONFIG'}. Forbidden: Do not convert this category into verification FAIL or infer unconditional precedence over independent coexisting errors.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/errors.md:12-12.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ERROR.AUTHORITY. Domain `D.ERROR.AUTHORITY`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **INVALID_INPUT** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.ERROR.INVALID_INPUT` — Use INVALID_INPUT for this declared category; retain diagnostic message/details without classifying from them.
-          - Applicability: A ProviderError is classifying input violates declared schema..
-          - Required/observable: {'category': 'input violates declared schema', 'code': 'INVALID_INPUT'}. Forbidden: Do not convert this category into verification FAIL or infer unconditional precedence over independent coexisting errors.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/errors.md:13-13.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ERROR.AUTHORITY. Domain `D.ERROR.AUTHORITY`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **INVALID_INVOCATION** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.ERROR.INVALID_INVOCATION` — Use INVALID_INVOCATION for this declared category; retain diagnostic message/details without classifying from them.
-          - Applicability: A ProviderError is classifying malformed invocation, unsupported constraint or VCP version..
-          - Required/observable: {'category': 'malformed invocation, unsupported constraint or VCP version', 'code': 'INVALID_INVOCATION'}. Forbidden: Do not convert this category into verification FAIL or infer unconditional precedence over independent coexisting errors.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/errors.md:11-11.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ERROR.AUTHORITY. Domain `D.ERROR.AUTHORITY`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **INVALID_PROVIDER_OUTPUT** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.ERROR.INVALID_PROVIDER_OUTPUT` — Use INVALID_PROVIDER_OUTPUT for this declared category; retain diagnostic message/details without classifying from them.
-          - Applicability: A ProviderError is classifying malformed manifest/event/outcome, invalid declared output or embedded VCP data..
-          - Required/observable: {'category': 'malformed manifest/event/outcome, invalid declared output or embedded VCP data', 'code': 'INVALID_PROVIDER_OUTPUT'}. Forbidden: Do not convert this category into verification FAIL or infer unconditional precedence over independent coexisting errors.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/errors.md:14-14.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ERROR.AUTHORITY. Domain `D.ERROR.AUTHORITY`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **PROTOCOL_VIOLATION** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.ERROR.PROTOCOL_VIOLATION` — Use PROTOCOL_VIOLATION for this declared category; retain diagnostic message/details without classifying from them.
-          - Applicability: A ProviderError is classifying correlation, sequence, lifecycle, framing, or session rule violated..
-          - Required/observable: {'category': 'correlation, sequence, lifecycle, framing, or session rule violated', 'code': 'PROTOCOL_VIOLATION'}. Forbidden: Do not convert this category into verification FAIL or infer unconditional precedence over independent coexisting errors.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/errors.md:15-15.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ERROR.AUTHORITY. Domain `D.ERROR.AUTHORITY`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-  - **Events** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **Timestamp** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **Advisory clock** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.EVENT.TIMESTAMP` — Timestamp follows the same UTC RFC3339 syntax as deadline; it does not define event ordering.
-          - Applicability: Event optional timestamp supplied..
-          - Required/observable: Sequence/history still determine ordering.. Forbidden: Do not substitute timestamp ordering for sequence order.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/wire-format.md:45-46.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.PAYLOAD. Domain `D.PROVIDER.PAYLOAD`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-  - **Extensions** — 3 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **Optional maps** — 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **ANNOTATION_ONLY** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.EXT.ROUNDTRIP.ANNOTATION_ONLY` — Extension entries are optional annotations and do not alter core meaning.
-          - Applicability: Provider extension data accompanies a core object.
-          - Required/observable: Core interpretation is invariant under optional extension annotations.. Forbidden: Do not smuggle mandatory core-changing semantics into optional entries.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/wire-format.md:57-65.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.EXTENSIONS.ANNOTATIONS. Domain `D.EXTENSIONS.ANNOTATIONS`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **PRESERVE** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.EXT.ROUNDTRIP.PRESERVE` — Preserve its JSON types and values.
-          - Applicability: Unknown optional extension entry parsed and serialized.
-          - Required/observable: Parsed roundtrip JSON equals authored extension data using JSON equality.. Forbidden: No dropping or coercion of unknown data; whitespace/key order are not promised.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/wire-format.md:57-65.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.EXTENSIONS.ANNOTATIONS. Domain `D.EXTENSIONS.ANNOTATIONS`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Scope** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.PROVIDER.EXT.MANDATORY` — Reject operation as PROTOCOL_VIOLATION
-        - Applicability: An implementation requires unnegotiated mandatory extension semantics.
-        - Required/observable: No mandatory extension negotiation in this version. Forbidden: Do not encode required meaning as ignored optional data
-        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/wire-format.md:57-65.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.EXTENSIONS.ANNOTATIONS. Domain `D.EXTENSIONS.ANNOTATIONS`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-  - **Invocation** — 6 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **Acceptance** — 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **CONFIG** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.INVOKE.VALIDATE.CONFIG` — Validate exact config under required matched config_schema before work/events.
-          - Applicability: Matched capability invocation about to be accepted.
-          - Required/observable: INVALID_CONFIG and no capability work.. Forbidden: No absent config schema assumption or overrides.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/wire-format.md:24-33.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.PAYLOAD. Domain `D.PROVIDER.PAYLOAD`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **INPUT** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.INVOKE.VALIDATE.INPUT` — Validate exact input under matched input_schema before work/events.
-          - Applicability: Matched capability invocation about to be accepted.
-          - Required/observable: INVALID_INPUT and no capability work.. Forbidden: No incompatible accepted input or coercion.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/wire-format.md:24-33.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.PAYLOAD. Domain `D.PROVIDER.PAYLOAD`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Context** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **Opaque data** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.INVOKE.CONTEXT_OPAQUE` — Context is arbitrary JSON reference/context data and contains no implicit resolution instruction.
-          - Applicability: Invocation.context supplied..
-          - Required/observable: Exact context JSON remains data.. Forbidden: Do not automatically fetch context reference or treat it as ambient execution authority.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/wire-format.md:24-29.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.WIRE. Domain `D.PROVIDER.WIRE`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Identity** — 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **RETRY** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.WIRE.ATTEMPT_ID.RETRY` — A retry is a new attempt with a new invocation identity.
-          - Applicability: Runner retries capability work.
-          - Required/observable: No portable exactly-once side-effect or replay guarantee.. Forbidden: Do not treat identifier reuse as idempotent replay.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/wire-format.md:19-22.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.WIRE. Domain `D.PROVIDER.WIRE`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **SESSION_UNIQUENESS** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.WIRE.ATTEMPT_ID.SESSION_UNIQUENESS` — Use a nonempty case-sensitive identity not used by an earlier attempt in that session.
-          - Applicability: Invocation offered in one session, including previously rejected attempts.
-          - Required/observable: Reuse is PROTOCOL_VIOLATION.. Forbidden: Do not reuse identifiers after rejection or termination.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/wire-format.md:19-22.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.WIRE. Domain `D.PROVIDER.WIRE`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Outcome** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.PROVIDER.LIFE.OUTPUT` — Validate output against advertised output_schema
-        - Applicability: COMPLETED outcome is emitted.
-        - Required/observable: INVALID_PROVIDER_OUTPUT peer validation failure. Forbidden: Do not turn malformed provider data into verification FAIL
-        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:10-18.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.PAYLOAD. Domain `D.PROVIDER.PAYLOAD`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-  - **Lifecycle** — 5 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **Attempts** — 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **EXACTLY_ONCE** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.LIFE.TERMINAL.EXACTLY_ONCE` — Emit exactly one terminal Outcome for that accepted attempt.
-          - Applicability: Functioning session accepts an invocation.
-          - Required/observable: Terminal cardinality one.. Forbidden: No missing or duplicate terminal.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:10-18.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.ATTEMPT_ACTION. Domain `D.PROVIDER.ATTEMPT_ACTION`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **ZERO_EVENTS** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.LIFE.TERMINAL.ZERO_EVENTS` — Zero intermediate events are permitted.
-          - Applicability: Accepted functioning invocation completes.
-          - Required/observable: Terminal-only attempt legal.. Forbidden: Do not require a progress/evidence heartbeat before outcome.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:10-18.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.ATTEMPT_ACTION. Domain `D.PROVIDER.ATTEMPT_ACTION`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Session** — 3 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.PROVIDER.INIT.ONCE.FAIL_CLOSE` — Close session and begin no work.
-        - Applicability: Initialization rejects.
-        - Required/observable: Closed session.. Forbidden: Do not retain usable failed session.
-        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/versioning.md:6-14.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.INITIALIZATION. Domain `D.PROVIDER.INITIALIZATION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.PROVIDER.INIT.ONCE.ONCE` — No second initialization succeeds; repeated initialization is PROTOCOL_VIOLATION.
-        - Applicability: Session initialized or initialization already attempted.
-        - Required/observable: Session violation.. Forbidden: Do not negotiate again inside same session.
-        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/versioning.md:6-14.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.INITIALIZATION. Domain `D.PROVIDER.INITIALIZATION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.PROVIDER.INIT.ONCE.PREWORK` — No capability work begins.
-        - Applicability: Session not successfully initialized.
-        - Required/observable: No operation work.. Forbidden: Do not invoke before initialization.
-        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/versioning.md:6-14.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.INITIALIZATION. Domain `D.PROVIDER.INITIALIZATION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-  - **Meaning** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **VCP separation** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.PROVIDER.SEMANTIC_BOUNDARY` — Provider completion/error controls operation lifecycle only; VCP owns Subject/Criterion/judgment/control/provenance
-        - Applicability: Provider outcomes/observations are interpreted.
-        - Required/observable: Provider completion/error controls operation lifecycle only; VCP owns Subject/Criterion/judgment/control/provenance. Forbidden: Do not automatically translate Provider ERROR to verification FAIL
-        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/overview.md:11-15.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.CONFORMANCE.SCOPE. Domain `D.CONFORMANCE.SCOPE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-  - **Resources** — 7 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **Budget** — 4 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **PREACCEPT** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.BUDGET.ENFORCE.PREACCEPT` — Reject before accepting work.
-          - Applicability: Provider cannot enforce a supplied budget constraint.
-          - Required/observable: Preaccept rejection.. Forbidden: No silent dimension dropping or promised unenforceable limit.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/wire-format.md:24-33.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.CONSTRAINTS. Domain `D.PROVIDER.CONSTRAINTS`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **TERMINAL** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.BUDGET.ENFORCE.TERMINAL` — End with ERROR and provider-namespaced error.
-          - Applicability: Accepted enforceable budget prevents completion.
-          - Required/observable: ERROR Outcome.. Forbidden: No verification FAIL or fabricated completion.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/wire-format.md:24-33.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.CONSTRAINTS. Domain `D.PROVIDER.CONSTRAINTS`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **UNITS** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.BUDGET.ENFORCE.UNITS` — Honor exact declared dimensions and explicit units without implicit conversion.
-          - Applicability: Resource budget is consumed.
-          - Required/observable: Constraint identity preserved.. Forbidden: No silently dropped constraint or converted unit.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/wire-format.md:24-33.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.CONSTRAINTS. Domain `D.PROVIDER.CONSTRAINTS`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.PROVIDER.BUDGET.EXACT` — Every dimension is an EXACT upper consumption limit in its explicit unit
-        - Applicability: Invocation contains resource_budget.
-        - Required/observable: INVALID_INVOCATION for unsupported constraint. Forbidden: Do not accept estimated/range/unknown limits as enforceable exact budgets
-        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/wire-format.md:24-33.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.CONSTRAINTS. Domain `D.PROVIDER.CONSTRAINTS`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Eligibility** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.PROVIDER.FEATURE.RESOURCE` — No resource_usage event or final usage
-        - Applicability: Capability resource_reporting=false.
-        - Required/observable: Reject forbidden reporting. Forbidden: Do not infer budget enforcement or estimation from reporting=true
-        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/capabilities.md:37-45.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.EVENT_FEATURES. Domain `D.PROVIDER.EVENT_FEATURES`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Usage** — 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **AUTHORITY** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.USAGE.FINAL.AUTHORITY` — Final usage is authoritative for that attempt.
-          - Applicability: Final usage and earlier partial vectors observed.
-          - Required/observable: Final observed vector retained as authoritative.. Forbidden: Do not infer final usage by summing partial snapshots.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:56-59.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.OBSERVATION.USAGE. Domain `D.OBSERVATION.USAGE`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **SNAPSHOTS** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.USAGE.FINAL.SNAPSHOTS` — Each vector is a possibly partial observation snapshot, not an additive delta.
-          - Applicability: Intermediate resource_usage events observed.
-          - Required/observable: No duplicated charge; dimension units and kinds retain VCP meanings.. Forbidden: Do not add snapshots automatically to final usage.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:56-59.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.OBSERVATION.USAGE. Domain `D.OBSERVATION.USAGE`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-  - **Schemas** — 4 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **Capability schemas** — 4 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **LOCAL** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.SCHEMA.REFERENCES.LOCAL` — Only # or #/... JSON Pointer references resolving within its own root are supported.
-          - Applicability: Capability schema contains a reference.
-          - Required/observable: Reject unsupported reference resource; offline validation only.. Forbidden: No external resolution.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/capabilities.md:9-22.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SCHEMA.EMBEDDED. Domain `D.SCHEMA.EMBEDDED`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **RESOURCE_SCOPE** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.SCHEMA.REFERENCES.RESOURCE_SCOPE` — Root $id is allowed; nested resource $id, dynamic references and anchors are unsupported.
-          - Applicability: Capability schema defines resource or dynamic scope.
-          - Required/observable: Reject unsupported schema scope features.. Forbidden: Do not silently enable unsupported dynamic/resource resolution.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/capabilities.md:9-22.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SCHEMA.EMBEDDED. Domain `D.SCHEMA.EMBEDDED`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **SCHEMA_TARGET** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.SCHEMA.REFERENCES.SCHEMA_TARGET` — Resolved object reference targets must occupy schema positions under standard Draft 2020-12 keywords or $defs; arbitrary annotation objects are not schema targets.
-          - Applicability: Capability local reference resolves.
-          - Required/observable: Reject annotation-object reference targets; recognized Boolean schema targets remain valid; annotation-Boolean interpretation is outside defined portable scope.. Forbidden: Do not treat arbitrary annotation objects as schemas or infer a portable Boolean-annotation target result from the SDK.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/capabilities.md:9-22.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SCHEMA.EMBEDDED. Domain `D.SCHEMA.EMBEDDED`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.PROVIDER.SCHEMA.VALIDITY` — Each is a valid self-contained Draft 2020-12 object/boolean schema
-        - Applicability: Capability input/config/output schemas are published.
-        - Required/observable: Reject invalid provider data. Forbidden: Do not accept invalid schemas merely because a field has object type
-        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/capabilities.md:9-22.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SCHEMA.EMBEDDED. Domain `D.SCHEMA.EMBEDDED`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-  - **Streaming** — 11 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **Concurrency** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.PROVIDER.LIFE.INTERLEAVING` — Per-attempt event order holds while different attempts may interleave
-        - Applicability: Several accepted invocations share a functioning session.
-        - Required/observable: Independent correlation histories. Forbidden: Do not impose a portable global event order
-        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:10-18.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.ATTEMPT_ACTION. Domain `D.PROVIDER.ATTEMPT_ACTION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Correlation** — 3 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.PROVIDER.LIFE.CORRELATION.AFTER_TERMINAL` — Reject event after terminal.
-        - Applicability: An event arrives for a terminal attempt.
-        - Required/observable: PROTOCOL_VIOLATION.. Forbidden: Do not reopen attempt.
-        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:10-18.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.ATTEMPT_ACTION. Domain `D.PROVIDER.ATTEMPT_ACTION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.PROVIDER.LIFE.CORRELATION.DUPLICATE_OUTCOME` — Reject duplicate Outcome.
-        - Applicability: Another Outcome arrives after terminal.
-        - Required/observable: PROTOCOL_VIOLATION.. Forbidden: Do not overwrite the original terminal state.
-        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:10-18.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.ATTEMPT_ACTION. Domain `D.PROVIDER.ATTEMPT_ACTION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.PROVIDER.LIFE.CORRELATION.UNKNOWN` — Reject correlation.
-        - Applicability: Event/outcome correlation names unknown or rejected attempt.
-        - Required/observable: PROTOCOL_VIOLATION.. Forbidden: Do not create implicit accepted attempt.
-        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:10-18.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.ATTEMPT_ACTION. Domain `D.PROVIDER.ATTEMPT_ACTION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Eligibility** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.PROVIDER.FEATURE.STREAM` — No events may be emitted
-        - Applicability: Capability has streaming=false.
-        - Required/observable: Forbidden stream is invalid provider behavior. Forbidden: Do not infer event support from other feature flags
-        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/capabilities.md:37-45.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.EVENT_FEATURES. Domain `D.PROVIDER.EVENT_FEATURES`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Ordering** — 5 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.PROVIDER.LIFE.SEQUENCE.DUPLICATE` — Reject duplicate sequence.
-        - Applicability: Later event repeats preceding/previous sequence.
-        - Required/observable: PROTOCOL_VIOLATION.. Forbidden: Do not silently drop duplicate or treat it as replay.
-        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:10-18.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.EVENT.SEQUENCE. Domain `D.EVENT.SEQUENCE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.PROVIDER.LIFE.SEQUENCE.FIRST` — sequence equals 1.
-        - Applicability: First event for accepted invocation.
-        - Required/observable: PROTOCOL_VIOLATION for validly typed but wrong first sequence.. Forbidden: Do not start at zero, a larger value or missing sequence.
-        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:10-18.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.EVENT.SEQUENCE. Domain `D.EVENT.SEQUENCE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.PROVIDER.LIFE.SEQUENCE.GAPS` — Accept the sequence gap as legal.
-        - Applicability: Later event with q > p+1 within numeric bounds.
-        - Required/observable: Event remains permitted.. Forbidden: Do not demand contiguous numbering or imply replay.
-        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:10-18.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.EVENT.SEQUENCE. Domain `D.EVENT.SEQUENCE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.PROVIDER.LIFE.SEQUENCE.INCREASE` — sequence q is strictly greater than p.
-        - Applicability: A later event has preceding sequence p.
-        - Required/observable: Per-invocation monotonic order.. Forbidden: Do not accept q <= p.
-        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:10-18.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.EVENT.SEQUENCE. Domain `D.EVENT.SEQUENCE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.PROVIDER.LIFE.SEQUENCE.REORDER` — Reject reordered event.
-        - Applicability: A lower sequence arrives after a higher sequence.
-        - Required/observable: PROTOCOL_VIOLATION.. Forbidden: Do not sort received events to conceal violation.
-        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:10-18.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.EVENT.SEQUENCE. Domain `D.EVENT.SEQUENCE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Payloads** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.PROVIDER.EVENT.PAYLOAD` — progress/diagnostic arbitrary JSON; evidence VCP Evidence; artifact VCP ArtifactRef; resource_usage VCP ResourceVector; extension namespaced namespace plus data
-        - Applicability: A standard event is emitted.
-        - Required/observable: Validate payload using kind-dependent contract. Forbidden: Do not masquerade nonverification observations as VCP Evidence
-        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/wire-format.md:35-35.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.PAYLOAD. Domain `D.PROVIDER.PAYLOAD`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-  - **Transport** — 21 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **Channels** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.PROVIDER.STDIO.CHANNELS` — stdout contains frames only; logs use stderr
-        - Applicability: Provider uses stdio.
-        - Required/observable: Protocol stream remains parseable. Forbidden: Do not mix arbitrary logs into frame stream
-        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/transports.md:8-20.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.TRANSPORT. Domain `D.PROVIDER.TRANSPORT`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Errors** — 5 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **CONTRACT_REJECTION** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.RPC.RESERVED_ERRORS.CONTRACT_REJECTION` — Use application numeric code -32000, ProviderError message, and ProviderError in data.
-          - Applicability: Contract rejects a JSON-RPC request other than invalid params category.
-          - Required/observable: Two authority-separated error classifications in the same response.. Forbidden: Do not conflate string ProviderError.code with numeric RPC code.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/transports.md:48-55.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.TRANSPORT. Domain `D.PROVIDER.TRANSPORT`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **INVALID_INVOKE_PARAMS** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.RPC.RESERVED_ERRORS.INVALID_INVOKE_PARAMS` — Use -32602, with INVALID_INVOCATION data when available.
-          - Applicability: Invoke params invalid.
-          - Required/observable: Invalid params response; no accepted invocation.. Forbidden: Do not require unavailable diagnostic data.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/transports.md:48-55.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.TRANSPORT. Domain `D.PROVIDER.TRANSPORT`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **INVALID_NOTIFICATION** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.RPC.RESERVED_ERRORS.INVALID_NOTIFICATION` — Send no response, record violation and close session.
-          - Applicability: Receiver gets invalid notification.
-          - Required/observable: Session closes; no fabricated request ID or outcome.. Forbidden: Do not reply to a notification even when invalid.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/transports.md:48-55.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.TRANSPORT. Domain `D.PROVIDER.TRANSPORT`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **NUMERIC_CODES** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.RPC.RESERVED_ERRORS.NUMERIC_CODES` — Use -32700 parse, -32600 invalid request, -32601 unknown method, -32602 invalid params, -32603 internal RPC failure.
-          - Applicability: JSON-RPC reports a protocol error.
-          - Required/observable: Corresponding JSON-RPC error object.. Forbidden: Do not replace reserved numeric categories with contract string identifiers.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/transports.md:48-55.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.TRANSPORT. Domain `D.PROVIDER.TRANSPORT`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.PROVIDER.RPC.ERROR_CHANNEL` — Before acceptance use JSON-RPC error; after acceptance execution failures are Outcome in successful result
-        - Applicability: An invoke is accepted or rejected.
-        - Required/observable: Distinct invocation and RPC failure channels. Forbidden: Do not send accepted execution failure as RPC error
-        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/transports.md:33-41.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.TRANSPORT. Domain `D.PROVIDER.TRANSPORT`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Framing** — 5 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **CLOSE** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.STDIO.RECEIVE.CLOSE` — Close as PROTOCOL_VIOLATION without resynchronization.
-          - Applicability: Framing invalid/oversized/truncated.
-          - Required/observable: Failed/closed session state.. Forbidden: No scanning for a later plausible header.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/transports.md:8-20.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.TRANSPORT. Domain `D.PROVIDER.TRANSPORT`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **COALESCED** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.STDIO.RECEIVE.COALESCED` — Decode all complete frames in wire order and retain any partial suffix.
-          - Applicability: One read contains multiple complete frames.
-          - Required/observable: Ordered decoded messages.. Forbidden: Do not discard later frame or combine JSON bodies.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/transports.md:8-20.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.TRANSPORT. Domain `D.PROVIDER.TRANSPORT`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **HEADER** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.STDIO.RECEIVE.HEADER` — Accept ASCII case-insensitive Content-Length with one space and CRLF separator, one header only.
-          - Applicability: Receive a standard frame header.
-          - Required/observable: Header accept/reject.. Forbidden: No Content-Type/duplicate/extra headers.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/transports.md:8-20.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.TRANSPORT. Domain `D.PROVIDER.TRANSPORT`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **PARTIAL** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.STDIO.RECEIVE.PARTIAL` — Buffer valid prefix until complete frame or EOF; EOF truncation violates.
-          - Applicability: Read ends before complete header/body.
-          - Required/observable: No premature decoded message.. Forbidden: No newline-based truncation or speculative result.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/transports.md:8-20.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.TRANSPORT. Domain `D.PROVIDER.TRANSPORT`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.PROVIDER.STDIO.FRAME` — ASCII Content-Length: N CRLF CRLF then exactly N positive UTF-8 JSON-object bytes
-        - Applicability: A stdio frame is sent.
-        - Required/observable: Exact baseline frame encoding. Forbidden: Do not count characters or append newline delimiter
-        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/transports.md:8-20.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.TRANSPORT. Domain `D.PROVIDER.TRANSPORT`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Loss** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.PROVIDER.LOSS.SEPARATE` — Report transport failure separately
-        - Applicability: Process or transport loses pending invocation.
-        - Required/observable: Exactly-once emission does not promise durable delivery/recovery. Forbidden: Do not fabricate Provider Outcome or VCP FAIL
-        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:61-64.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.TRANSPORT. Domain `D.PROVIDER.TRANSPORT`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Methods** — 5 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **IDS** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.RPC.METHODS.IDS` — Use nonempty string RPC id unique for entire session and distinct correlation role from invocation_id.
-          - Applicability: Runner sends baseline request.
-          - Required/observable: RPC correlation identity.. Forbidden: No id reuse including completed requests.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/transports.md:22-24.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.TRANSPORT. Domain `D.PROVIDER.TRANSPORT`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **NULL** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.RPC.CANCEL_ACK.NULL` — Return JSON null acknowledgement.
-          - Applicability: A supported or terminal-no-op cancel processed.
-          - Required/observable: RPC cancel result null.. Forbidden: No synthetic cancelled Outcome as acknowledgement value.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/transports.md:43-46.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.TRANSPORT. Domain `D.PROVIDER.TRANSPORT`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **OPERATIONS** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.RPC.METHODS.OPERATIONS` — initialize/invoke/cancel are runner requests with their declared results; event is provider notification with no response.
-          - Applicability: Baseline binding exchanges method messages.
-          - Required/observable: Four declared method shapes.. Forbidden: No invented describe/pause/resume/checkpoint methods or common host parity.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/transports.md:22-24.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.TRANSPORT. Domain `D.PROVIDER.TRANSPORT`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **PARAMS** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.RPC.METHODS.PARAMS` — Use one object-params message, no batches.
-          - Applicability: Baseline request received.
-          - Required/observable: Request-shape acceptance.. Forbidden: No array params/batch requests under this binding.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/transports.md:22-24.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.TRANSPORT. Domain `D.PROVIDER.TRANSPORT`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **RACE** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.RPC.CANCEL_ACK.RACE` — Either acknowledgement order relative to terminal is permitted.
-          - Applicability: Cancel acknowledgement and invoke terminal delivered.
-          - Required/observable: Two legal interleavings.. Forbidden: No guaranteed cancelled termination or fixed ack ordering.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/transports.md:43-46.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.TRANSPORT. Domain `D.PROVIDER.TRANSPORT`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Ordering** — 4 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **CONTROL_PROGRESS** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.RPC.ACCEPT_ORDER.CONTROL_PROGRESS` — Continue reading control requests while invokes are pending.
-          - Applicability: Accepted invoke remains pending.
-          - Required/observable: Cancel can be processed during execution; no timing bound invented.. Forbidden: Do not block all control reception behind terminal completion.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/transports.md:33-41.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.TRANSPORT. Domain `D.PROVIDER.TRANSPORT`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **DUAL_CORRELATION** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.RPC.EVENT_BEFORE_RESULT.DUAL_CORRELATION` — Correlate response RPC ID and invocation_id with established requests/attempts.
-          - Applicability: Runner receives response or event.
-          - Required/observable: Violation if either correlation is invalid.. Forbidden: No unsolicited response or unknown/rejected-attempt notification.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/transports.md:33-41.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.TRANSPORT. Domain `D.PROVIDER.TRANSPORT`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **EVENT_ORDER** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.RPC.EVENT_BEFORE_RESULT.EVENT_ORDER` — Write every event for that invocation before its terminal invoke response.
-          - Applicability: Invocation events and its terminal response written.
-          - Required/observable: Per-attempt frame order events before response.. Forbidden: No event after terminal response.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/transports.md:33-41.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.TRANSPORT. Domain `D.PROVIDER.TRANSPORT`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **RECEIVE_ORDER** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.PROVIDER.RPC.ACCEPT_ORDER.RECEIVE_ORDER` — Validate and accept or reject invoke in receive order before processing later cancel.
-          - Applicability: Invoke and subsequent cancel received.
-          - Required/observable: Cancellation correlation observes prior invoke disposition.. Forbidden: Do not let later cancel overtake attempt establishment.
-          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/transports.md:33-41.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.TRANSPORT. Domain `D.PROVIDER.TRANSPORT`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-  - **Wire** — 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **Numbers** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.PROVIDER.WIRE.NUMBERS` — Integral numeric notation counts as integer; preserve faithful JSON mathematical value
-        - Applicability: A numeric value is consumed.
-        - Required/observable: Reject unfaithfully representable values. Forbidden: Do not coerce booleans/strings or silently round unrepresentable data
-        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/wire-format.md:12-17.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.WIRE. Domain `D.PROVIDER.WIRE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Optional fields** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.PROVIDER.WIRE.NULL` — Optional typed core fields are absent rather than null, except arbitrary JSON value payloads where null is data
-        - Applicability: Optional Provider core field is absent or supplied.
-        - Required/observable: Structural/semantic rejection or exact payload preservation. Forbidden: Do not normalize arbitrary null input/config/output/context/details/payload/extension data to absence
-        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/wire-format.md:3-10.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.WIRE. Domain `D.PROVIDER.WIRE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-  - **Wire roots** — 9 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **cancel-request** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.PROVIDER.ROOT.CANCEL_REQUEST` — Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
-        - Applicability: Wire object submitted to this named root.
-        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
-        - Authority: NORMATIVE_SCHEMA_ROOT; source provider-contract/schemas/draft/cancel-request.schema.json:1-28.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.PROVIDER.cancel-request. Domain `D.ROOT.PROVIDER.cancel-request`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **capability** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.PROVIDER.ROOT.CAPABILITY` — Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
-        - Applicability: Wire object submitted to this named root.
-        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
-        - Authority: NORMATIVE_SCHEMA_ROOT; source provider-contract/schemas/draft/capability.schema.json:1-80.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.PROVIDER.capability. Domain `D.ROOT.PROVIDER.capability`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **initialize-request** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.PROVIDER.ROOT.INITIALIZE_REQUEST` — Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
-        - Applicability: Wire object submitted to this named root.
-        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
-        - Authority: NORMATIVE_SCHEMA_ROOT; source provider-contract/schemas/draft/initialize-request.schema.json:1-38.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.PROVIDER.initialize-request. Domain `D.ROOT.PROVIDER.initialize-request`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **initialize-result** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.PROVIDER.ROOT.INITIALIZE_RESULT` — Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
-        - Applicability: Wire object submitted to this named root.
-        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
-        - Authority: NORMATIVE_SCHEMA_ROOT; source provider-contract/schemas/draft/initialize-result.schema.json:1-27.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.PROVIDER.initialize-result. Domain `D.ROOT.PROVIDER.initialize-result`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **invocation** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.PROVIDER.ROOT.INVOCATION` — Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
-        - Applicability: Wire object submitted to this named root.
-        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
-        - Authority: NORMATIVE_SCHEMA_ROOT; source provider-contract/schemas/draft/invocation.schema.json:1-60.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.PROVIDER.invocation. Domain `D.ROOT.PROVIDER.invocation`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **outcome** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.PROVIDER.ROOT.OUTCOME` — Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
-        - Applicability: Wire object submitted to this named root.
-        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
-        - Authority: NORMATIVE_SCHEMA_ROOT; source provider-contract/schemas/draft/outcome.schema.json:1-92.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.PROVIDER.outcome. Domain `D.ROOT.PROVIDER.outcome`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **provider-error** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.PROVIDER.ROOT.PROVIDER_ERROR` — Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
-        - Applicability: Wire object submitted to this named root.
-        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
-        - Authority: NORMATIVE_SCHEMA_ROOT; source provider-contract/schemas/draft/provider-error.schema.json:1-38.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.PROVIDER.provider-error. Domain `D.ROOT.PROVIDER.provider-error`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **provider-event** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.PROVIDER.ROOT.PROVIDER_EVENT` — Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
-        - Applicability: Wire object submitted to this named root.
-        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
-        - Authority: NORMATIVE_SCHEMA_ROOT; source provider-contract/schemas/draft/provider-event.schema.json:1-131.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.PROVIDER.provider-event. Domain `D.ROOT.PROVIDER.provider-event`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **provider-manifest** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.PROVIDER.ROOT.PROVIDER_MANIFEST` — Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
-        - Applicability: Wire object submitted to this named root.
-        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
-        - Authority: NORMATIVE_SCHEMA_ROOT; source provider-contract/schemas/draft/provider-manifest.schema.json:1-56.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.PROVIDER.provider-manifest. Domain `D.ROOT.PROVIDER.provider-manifest`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-- **RELAY** — 161 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-  - **Architecture** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **Module boundaries** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.ARCH.DEPENDENCIES` — Core depends on SDK rules; application depends on core/ports/SDK without infrastructure or standard providers; adapters implement ports; entrypoints/facade compose; authoring depends on VCP SDK.
-        - Applicability: Maintain Relay module structure.
-        - Required/observable: Static module dependency boundaries.. Forbidden: No Reference Engine imports or global mutable run containers introduced into Relay.
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/architecture.md:24-29.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.ARCHITECTURE. Domain `D.RELAY.ARCHITECTURE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-  - **Binding** — 4 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **Binder errors** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.BINDER.FAILURE_CLASS` — Guard choice/trust/compatibility validation; preserve structured errors; unexpected failures become BINDER_FAILURE retaining cause; candidates carry independent manifests without replacing trusted catalog snapshot.
-        - Applicability: Binder invocation and returned choice validation executes.
-        - Required/observable: Exact Relay error/cause and no invocation.. Forbidden: No untrusted substituted identity/schema or invocation following rejection.
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/error-contract-hardening.md:46-60.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.BINDING. Domain `D.RELAY.BINDING`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Catalog errors** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.CATALOG.FAILURE_CLASS` — Preserve structured protocol errors; classify invalid returned type/entry as CATALOG_INVALID, unexpected discovery/iteration failure as CATALOG_FAILURE with chained type/message cause, duplicate provider identity as PROVIDER_CONFLICT.
-        - Applicability: Catalog registration/discovery/Sequence snapshot or iteration executes.
-        - Required/observable: Exact local Relay error category and retained cause.. Forbidden: Do not invoke a provider after catalog rejection or merge these into portable VCP codes.
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/error-contract-hardening.md:46-60.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.BINDING. Domain `D.RELAY.BINDING`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **DeterministicBinder** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.BIND.SELECT` — Unique compatible provider or exact explicit identity
-        - Applicability: Requirement is matched.
-        - Required/observable: Unique compatible provider or exact explicit identity; No range/fallback; ambiguity/unavailable/mismatch rejects. Forbidden: No range/fallback; ambiguity/unavailable/mismatch rejects
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/providers.md:31-37.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.BINDING. Domain `D.RELAY.BINDING`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Injected binder** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.BIND.CHECK` — Independently check trusted catalog and exact manifest/capability identities
-        - Applicability: Injected binder returns provider.
-        - Required/observable: Independently check trusted catalog and exact manifest/capability identities; Replacement binder does not bypass trust. Forbidden: Replacement binder does not bypass trust
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/architecture.md:49-53.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.BINDING. Domain `D.RELAY.BINDING`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-  - **Binding and execution** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **Invocation** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **Supported constraint surface** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.RELAY.INVOCATION.CONSTRAINT_SCOPE` — Generated invocation contains exact input/config, selected pair, contract0.1 and VCPdraft; it supplies no Provider deadline or resource_budget. Runtime host timeout remains separate and node resource_estimate is not converted to budget.
-          - Applicability: Relay.run creates graph or custom-policy InvocationRequest..
-          - Required/observable: Provider deadline traces belong to standalone Provider Contract SDK domain; host cancellation remains explicit Relay/VCP event.. Forbidden: Do not promise Provider deadline/budget entrypoint parity or expect unsolicited DEADLINE_EXCEEDED/CANCELLED from a correct provider on an unrequested path.
-          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/relay/application/execution.py:42-68.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.DRIVER. Domain `D.RELAY.DRIVER`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-  - **Cancellation** — 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **Recorded token** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.CANCEL.TOKEN` — Serialize occurrence to fit one-interrupted-attempt provenance
-        - Applicability: Host uses recorded Cancellation token.
-        - Required/observable: Serialize occurrence to fit one-interrupted-attempt provenance; No simultaneous multi-attempt VCP cancellation claim. Forbidden: No simultaneous multi-attempt VCP cancellation claim
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/architecture.md:72-76.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.SCHEDULER. Domain `D.RELAY.SCHEDULER`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Task** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.CANCEL.TASK` — Clean up processes; raise CancelledError
-        - Applicability: Host task cancelled.
-        - Required/observable: Clean up processes; raise CancelledError; No fabricated completed record; unrelated runs unaffected. Forbidden: No fabricated completed record; unrelated runs unaffected
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/architecture.md:72-76.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.SCHEDULER. Domain `D.RELAY.SCHEDULER`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-  - **Discovery** — 3 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **Catalog** — 3 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **DUPLICATE** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.RELAY.CATALOG.TRUST.DUPLICATE` — Reject duplicate identity pair.
-          - Applicability: Catalog registration repeats provider_id/provider_version.
-          - Required/observable: Catalog registration error.. Forbidden: No silent replacement or duplicate compatible provider.
-          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/providers.md:31-37.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.BINDING. Domain `D.RELAY.BINDING`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **HOST** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.RELAY.CATALOG.TRUST.HOST` — Only explicit trusted host registration/configuration authorizes execution.
-          - Applicability: Provider registered or transport configured.
-          - Required/observable: Trusted catalog authority independent of graph data.. Forbidden: Graph JSON cannot authorize executable loading.
-          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/providers.md:31-37.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.BINDING. Domain `D.RELAY.BINDING`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.CATALOG.ENTRYPOINTS` — Only host-approved names execute factories
-        - Applicability: Host loads package provider entry points.
-        - Required/observable: Only host-approved names execute factories; No ownership authentication from entry name. Forbidden: No ownership authentication from entry name
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/providers.md:39-41.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.BINDING. Domain `D.RELAY.BINDING`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-  - **Entrypoints** — 17 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **CLI** — 6 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **ERROR** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.RELAY.CLI.EXIT.ERROR` — Return exit 2 if any recorded Result is execution ERROR.
-          - Applicability: CLI has valid RunRecord.
-          - Required/observable: Error has precedence over ordinary judgment failure.. Forbidden: Do not return FAIL or success exit instead.
-          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/quickstart.md:55-58.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.CLI.EXIT_QUOTIENT. Domain `D.RELAY.CLI.EXIT_QUOTIENT`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **FAIL** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.RELAY.CLI.EXIT.FAIL` — Return exit 1 if any selected terminal Result has verdict FAIL, after checking execution ERROR anywhere. Terminal selection excludes Results with a strict descendant represented in final_results.
-          - Applicability: No execution ERROR and a terminal judgment FAIL exists.
-          - Required/observable: Fail exit.. Forbidden: Do not claim overall semantic verdict from code alone.
-          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/quickstart.md:55-58.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.CLI.EXIT_QUOTIENT. Domain `D.RELAY.CLI.EXIT_QUOTIENT`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **OTHER** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.RELAY.CLI.EXIT.OTHER` — Return exit 3 after no execution ERROR anywhere, no selected terminal FAIL, and selected set empty or not all selected verdicts PASS.
-          - Applicability: Record satisfies none of ERROR, FAIL or nonempty all-PASS conditions.
-          - Required/observable: Undetermined exit.. Forbidden: No success for unknown, score-only, nonexecution or partial determination.
-          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/quickstart.md:55-58.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.CLI.EXIT_QUOTIENT. Domain `D.RELAY.CLI.EXIT_QUOTIENT`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **PASS** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.RELAY.CLI.EXIT.PASS` — Return exit 0 iff every selected Result has verdict PASS; selected Results have no strict graph descendant represented in final_results.
-          - Applicability: No execution ERROR anywhere, no FAIL in selected terminal Result subgraph, selected set nonempty..
-          - Required/observable: Exit 0 for all-PASS terminal Result subgraph.. Forbidden: Do not reuse passing_gate over every recorded Result: earlier nonterminal Results may differ.
-          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/quickstart.md:55-58.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.CLI.EXIT_QUOTIENT. Domain `D.RELAY.CLI.EXIT_QUOTIENT`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.CLI.JSON` — stdout only RunRecord; diagnostics stderr; output option stores record
-        - Applicability: CLI run uses --json.
-        - Required/observable: stdout only RunRecord; diagnostics stderr; output option stores record; No diagnostic prose mixed into JSON stdout. Forbidden: No diagnostic prose mixed into JSON stdout
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/quickstart.md:14-16.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.ENTRYPOINTS. Domain `D.RELAY.ENTRYPOINTS`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.CLI.STDIN` — Exactly one stdin consumer; --run-inputs aliases --inputs
-        - Applicability: stdin used for graph or inputs.
-        - Required/observable: Exactly one stdin consumer; --run-inputs aliases --inputs; Reject both consumers on stdin. Forbidden: Reject both consumers on stdin
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/quickstart.md:43-46.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.ENTRYPOINTS. Domain `D.RELAY.ENTRYPOINTS`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **CLI operations** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.CLI.OPERATIONS` — Expose validate/inspect/run, providers list/inspect, examples/templates alias, mcp and http. Validation named type defaults Definition; inspect returns validated summary; provider commands return standard manifests or unknown-id error; examples return named authored summaries; run uses exact trusted config/roots/bindings and documented stdout/exit map.
-        - Applicability: Installed openverify command invoked.
-        - Required/observable: JSON/summary, process host error exit2; mcp/http start configured local service.. Forbidden: No arbitrary graph-authorized executable, invented MCP/HTTP parity or portable CLI semantics.
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/relay/entrypoints/cli.py:95-204.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.ENTRYPOINTS. Domain `D.RELAY.ENTRYPOINTS`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **GraphService** — 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.SERVICE.ALLOWLIST` — Host-authorized names only; defaults text/guardrail
-        - Applicability: Named graph requested.
-        - Required/observable: Host-authorized names only; defaults text/guardrail; No arbitrary graph paths or executable-config tools. Forbidden: No arbitrary graph paths or executable-config tools
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/integration.md:39-45.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.ENTRYPOINTS. Domain `D.RELAY.ENTRYPOINTS`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.SERVICE.CONCURRENCY` — Bound active service runs, default eight, separately from per-run waves
-        - Applicability: Concurrent service requests.
-        - Required/observable: Bound active service runs, default eight, separately from per-run waves; No automatic provider concurrency safety. Forbidden: No automatic provider concurrency safety
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/integration.md:59-63.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.ENTRYPOINTS. Domain `D.RELAY.ENTRYPOINTS`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **HTTP** — 6 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **INVALID_INPUT** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.RELAY.HTTP.SHAPE.INVALID_INPUT` — Return exception as_dict with HTTP 400.
-          - Applicability: ProtocolError raised while parsing request/authorized run input.
-          - Required/observable: Structured diagnostic response.. Forbidden: Do not run action or disguise invalid request as Result FAIL.
-          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/integration.md:72-74.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.ENTRYPOINTS. Domain `D.RELAY.ENTRYPOINTS`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **REQUEST** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.RELAY.HTTP.SHAPE.REQUEST` — Accept exactly graph string and inputs JSON object naming host-authorized graph.
-          - Applicability: POST /verify after authorization and body bound.
-          - Required/observable: Malformed shape/request is HTTP 400 INVALID_REQUEST.. Forbidden: No extra keys, arbitrary graph paths or executable config.
-          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/integration.md:72-74.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.ENTRYPOINTS. Domain `D.RELAY.ENTRYPOINTS`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **SEMANTIC_FAILURE** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.RELAY.HTTP.SHAPE.SEMANTIC_FAILURE` — Return HTTP 200 with full RunRecord.
-          - Applicability: Authorized valid run completes with verification FAIL.
-          - Required/observable: Completed FAIL remains inspectable.. Forbidden: Do not conflate verification failure with request/transport error.
-          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/integration.md:72-74.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.ENTRYPOINTS. Domain `D.RELAY.ENTRYPOINTS`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.HTTP.AUTH` — Require matching Bearer token before execution
-        - Applicability: Host configured token.
-        - Required/observable: Require matching Bearer token before execution; Missing/bad token HTTP 401. Forbidden: Missing/bad token HTTP 401
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/integration.md:86-91.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.ENTRYPOINTS. Domain `D.RELAY.ENTRYPOINTS`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.HTTP.BOUND` — HTTP 413, default 1 MiB
-        - Applicability: Body exceeds configured bound.
-        - Required/observable: HTTP 413, default 1 MiB; Do not execute oversized body. Forbidden: Do not execute oversized body
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/integration.md:86-91.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.ENTRYPOINTS. Domain `D.RELAY.ENTRYPOINTS`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.HTTP.HEALTH` — Report health; supplied server binds localhost
-        - Applicability: Health requested.
-        - Required/observable: Report health; supplied server binds localhost; No tenant/TLS/public-service promise. Forbidden: No tenant/TLS/public-service promise
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/integration.md:72-74.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.ENTRYPOINTS. Domain `D.RELAY.ENTRYPOINTS`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **MCP** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.MCP.TOOLS` — list_graphs, describe_graph, run_graph, inspect_result expose structured records
-        - Applicability: MCP client connects.
-        - Required/observable: list_graphs, describe_graph, run_graph, inspect_result expose structured records; No automatic host hooks/Python execution tool. Forbidden: No automatic host hooks/Python execution tool
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/integration.md:39-45.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.ENTRYPOINTS. Domain `D.RELAY.ENTRYPOINTS`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Trusted provider configuration** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.PROVIDER_CONFIG.TRUST` — Read stdio manifest/argv/cwd and optional entry-point allowlist and exact four-field bindings as trusted host configuration, independent of graph JSON.
-        - Applicability: Host supplies CLI provider configuration.
-        - Required/observable: Explicit configured catalog and binding choices.. Forbidden: Never authorize an executable from graph input/config; do not authenticate a package from its entry name.
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/providers.md:52-65.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.BINDING. Domain `D.RELAY.BINDING`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-  - **Execution** — 3 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **Driver** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.DRIVER.CHECK` — Recheck Provider lifecycle/correlation/output and VCP acceptance
-        - Applicability: Driver returns report.
-        - Required/observable: Recheck Provider lifecycle/correlation/output and VCP acceptance; No bypass through injected driver. Forbidden: No bypass through injected driver
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/architecture.md:49-53.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.DRIVER. Domain `D.RELAY.DRIVER`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Event capture** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.DRIVER.BOUNDS` — Configured count/byte bounds, default 10000 events and 16 MiB
-        - Applicability: Events captured.
-        - Required/observable: Configured count/byte bounds, default 10000 events and 16 MiB; No unbounded capture or resource-cost interpretation. Forbidden: No unbounded capture or resource-cost interpretation
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/security.md:35-42.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.DRIVER. Domain `D.RELAY.DRIVER`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Timeout** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.DRIVER.TIMEOUT` — Independent host timeout, default 30 seconds
-        - Applicability: Invocation active.
-        - Required/observable: Independent host timeout, default 30 seconds; Do not invent provider deadline/budget; timeout ERROR not FAIL. Forbidden: Do not invent provider deadline/budget; timeout ERROR not FAIL
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/security.md:35-42.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.DRIVER. Domain `D.RELAY.DRIVER`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-  - **Extension ports** — 7 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **EventObserver** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **observe** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.RELAY.PORT.EventObserver.observe` — Receive occurrence/node/provider notification and return None; Relay isolates callback exceptions and annotates diagnostics.
-          - Applicability: Host supplies a conforming replacement and otherwise-valid boundary inputs..
-          - Required/observable: Receive occurrence/node/provider notification and return None; Relay isolates callback exceptions and annotates diagnostics.. Forbidden: Do not make observer diagnostics semantic Evidence or a mandatory closed event alphabet.
-          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/relay/ports/__init__.py:74-75.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.STORAGE_OBSERVATION. Domain `D.RELAY.STORAGE_OBSERVATION`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **ExecutionDriver** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **execute** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.RELAY.PORT.ExecutionDriver.execute` — Given provider, manifest/invocation request, host timeout and sink, return InvocationReport retaining legal events and terminal outcome or separate execution/transport error. Application revalidates report.
-          - Applicability: Host supplies a conforming replacement and otherwise-valid boundary inputs..
-          - Required/observable: Given provider, manifest/invocation request, host timeout and sink, return InvocationReport retaining legal events and terminal outcome or separate execution/transport error. Application revalidates report.. Forbidden: Do not fabricate a provider Outcome for transport failure or bypass contract validation.
-          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/relay/ports/__init__.py:59-75.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.DRIVER. Domain `D.RELAY.DRIVER`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **ProviderBinder** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **bind** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.RELAY.PORT.ProviderBinder.bind` — Given validated requirement/providers and optional explicit binding, return the exact compatible trusted choice or declared binding/unavailable/ambiguity failure.
-          - Applicability: Host supplies a conforming replacement and otherwise-valid boundary inputs..
-          - Required/observable: Given validated requirement/providers and optional explicit binding, return the exact compatible trusted choice or declared binding/unavailable/ambiguity failure.. Forbidden: No silent fallback or untrusted identity substitution.
-          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/relay/ports/__init__.py:50-68.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.BINDING. Domain `D.RELAY.BINDING`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **ProviderCatalog** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **providers** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.RELAY.PORT.ProviderCatalog.providers` — Returns the trusted AvailableProvider sequence with valid manifest snapshots; registration/discovery is host-owned.
-          - Applicability: Host supplies a conforming replacement and otherwise-valid boundary inputs..
-          - Required/observable: Returns the trusted AvailableProvider sequence with valid manifest snapshots; registration/discovery is host-owned.. Forbidden: Do not infer a portable discovery policy or execute unapproved factories.
-          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/relay/ports/__init__.py:46-64.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.BINDING. Domain `D.RELAY.BINDING`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **ProviderTransport** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **invoke** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.RELAY.PORT.ProviderTransport.invoke` — Given one validated invocation request and sink, deliver permitted ProviderEvents and return terminal Outcome under the supported transport.
-          - Applicability: Host supplies a conforming replacement and otherwise-valid boundary inputs..
-          - Required/observable: Given one validated invocation request and sink, deliver permitted ProviderEvents and return terminal Outcome under the supported transport.. Forbidden: No Provider semantic redefinition or primitive port auto-wrapping.
-          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/relay/ports/__init__.py:19-37.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.DRIVER. Domain `D.RELAY.DRIVER`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **RecordStore** — 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **get** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.RELAY.PORT.RecordStore.get` — Return retained RunRecord snapshot or None when unavailable.
-          - Applicability: Host supplies a conforming replacement and otherwise-valid boundary inputs..
-          - Required/observable: Return retained RunRecord snapshot or None when unavailable.. Forbidden: Do not fabricate missing records or share mutable stored instances.
-          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/relay/ports/__init__.py:69-75.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.STORAGE_OBSERVATION. Domain `D.RELAY.STORAGE_OBSERVATION`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **put** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.RELAY.PORT.RecordStore.put` — Given a valid completed record, persist a snapshot or propagate storage failure.
-          - Applicability: Host supplies a conforming replacement and otherwise-valid boundary inputs..
-          - Required/observable: Given a valid completed record, persist a snapshot or propagate storage failure.. Forbidden: No claim of universal durability or accepting mutation as stored state.
-          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/relay/ports/__init__.py:69-75.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.STORAGE_OBSERVATION. Domain `D.RELAY.STORAGE_OBSERVATION`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-  - **Invocation callbacks** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **EventSink** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **emit(event)** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.RELAY.PORT.EventSink.emit` — For this invocation, synchronously report validated correlated events to the runner callback.
-          - Applicability: Host supplies a conforming replacement and otherwise-valid boundary inputs..
-          - Required/observable: For this invocation, synchronously report validated correlated events to the runner callback.. Forbidden: Callback is not an eighth extension port or a terminal Outcome.
-          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/relay/ports/__init__.py:10-28.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.DRIVER. Domain `D.RELAY.DRIVER`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-  - **Observability** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **Observer** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.OBSERVER.ERROR` — Isolate and annotate diagnostic
-        - Applicability: Observer callback raises.
-        - Required/observable: Isolate and annotate diagnostic; Do not abort semantic run solely for observer failure. Forbidden: Do not abort semantic run solely for observer failure
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/architecture.md:85-89.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.STORAGE_OBSERVATION. Domain `D.RELAY.STORAGE_OBSERVATION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-  - **Policies** — 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **Occurrence** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.POLICY.NO_RECORD` — Raise NO_OCCURRENCE with no RunRecord
-        - Applicability: Opportunity inactive or unselected.
-        - Required/observable: Raise NO_OCCURRENCE with no RunRecord; Do not fabricate occurrence. Forbidden: Do not fabricate occurrence
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/architecture.md:55-62.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.HOST_API. Domain `D.RELAY.HOST_API`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Opportunity** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.POLICY.IDENTITY` — Generate fresh UUID; explicit identity supports local repeatability
-        - Applicability: Relay host omits opportunity identity.
-        - Required/observable: Generate fresh UUID; explicit identity supports local repeatability; No portable probability bucket promise. Forbidden: No portable probability bucket promise
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/architecture.md:55-62.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.HOST_API. Domain `D.RELAY.HOST_API`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-  - **Preparation** — 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **Inputs** — 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **BIND_BEFORE_POLICIES** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.RELAY.PREP.SNAPSHOT.BIND_BEFORE_POLICIES` — Resolve graph and policy operation bindings before invoking policies.
-          - Applicability: Definition and inputs valid.
-          - Required/observable: Binding failure precedes any policy execution.. Forbidden: Scheduling must not perform hidden selection or defer required binding validation.
-          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/architecture.md:55-62.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.BINDING. Domain `D.RELAY.BINDING`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **SNAPSHOT** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.RELAY.PREP.SNAPSHOT.SNAPSHOT` — Snapshot and validate definition and supplied JSON inputs.
-          - Applicability: Relay run begins.
-          - Required/observable: Occurrence retains prepared snapshots.. Forbidden: No caller mutation may change authored occurrence stimulus after preparation.
-          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/architecture.md:55-62.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.BINDING. Domain `D.RELAY.BINDING`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-  - **Process execution** — 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **Host configuration** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.PROCESS.ARGV_ENV` — Use argv and explicit absolute cwd without shell=True; inherit host environment unless complete env supplied, supplement only required Windows SystemRoot.
-        - Applicability: Launch a trusted configured subprocess.
-        - Required/observable: Actual launch arguments/environment and host-owned privileges.. Forbidden: Graph configuration never grants executable authorization; do not silently copy ambient secrets into semantic inputs/log payloads.
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/security.md:27-33.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.PROCESS. Domain `D.RELAY.PROCESS`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Windows lifetime** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.PROCESS.WINDOWS_PRESTART` — Establish kill-on-close Job Object before tool code starts; descendants remain in job after parent exit.
-        - Applicability: A Windows tool is launched under Relay supervision.
-        - Required/observable: Prestart supervision and tree cleanup boundary.. Forbidden: Do not claim containment against hostile process escaping OS mechanisms or cross-platform test execution.
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/security.md:44-50.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.PROCESS. Domain `D.RELAY.PROCESS`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-  - **Providers** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **Concurrency** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.PROVIDER.SHARING` — Serialize unless explicit concurrency_safe=True
-        - Applicability: Host shares Python provider.
-        - Required/observable: Serialize unless explicit concurrency_safe=True; No implicit provider state safety. Forbidden: No implicit provider state safety
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/architecture.md:72-76.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.SCHEDULER. Domain `D.RELAY.SCHEDULER`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-  - **Public API** — 9 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **Relay.run** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.API.RUN` — Accept Graph/Definition/serialized VCP through same validation path; return Run(record)
-        - Applicability: Host submits graph representation and explicit inputs.
-        - Required/observable: Accept Graph/Definition/serialized VCP through same validation path; return Run(record); No representation-specific semantics or fabricated global verdict. Forbidden: No representation-specific semantics or fabricated global verdict
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/architecture.md:8-22.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.HOST_API. Domain `D.RELAY.HOST_API`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Run** — 5 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **DECISIONS** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.RELAY.API.VIEWS.DECISIONS` — decisions returns exactly NodeRecord decisions that are present, keyed by node_id.
-          - Applicability: Run returned.
-          - Required/observable: Accepted recorded Decisions only.. Forbidden: No synthesized decisions for other nodes.
-          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/architecture.md:31-38.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.HOST_API. Domain `D.RELAY.HOST_API`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **EVIDENCE** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.RELAY.API.VIEWS.EVIDENCE` — evidence returns each node observation evidence followed by its Result evidence.
-          - Applicability: Run returned.
-          - Required/observable: Ordered evidence snapshots per node.. Forbidden: Repeated snapshots do not imply additional measurements.
-          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/architecture.md:31-38.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.HOST_API. Domain `D.RELAY.HOST_API`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **RESULTS** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.RELAY.API.VIEWS.RESULTS` — results returns complete final_results mapping including bookkeeping states.
-          - Applicability: Run returned.
-          - Required/observable: Per-node final Results.. Forbidden: No fabricated overall verdict.
-          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/architecture.md:31-38.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.HOST_API. Domain `D.RELAY.HOST_API`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **SERIALIZATION** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.RELAY.API.VIEWS.SERIALIZATION` — to_json serializes complete SDK RunRecord.
-          - Applicability: Run returned.
-          - Required/observable: Wire-compatible complete record JSON.. Forbidden: No lossy display-only summary as serialized provenance.
-          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/architecture.md:31-38.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.HOST_API. Domain `D.RELAY.HOST_API`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **USAGE** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.RELAY.API.VIEWS.USAGE` — usage returns per-node node usage preserving dimensions/units.
-          - Applicability: Run returned.
-          - Required/observable: Per-node ResourceVector mapping.. Forbidden: No automatic global summation or conversion.
-          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/architecture.md:31-38.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.HOST_API. Domain `D.RELAY.HOST_API`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **verify_before** — 3 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **ACTION** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.RELAY.API.GATE.ACTION` — Invoke and await provided action once and return its result.
-          - Applicability: Verification passes selected gate.
-          - Required/observable: Action result or action exception delivered to caller.. Forbidden: No promise to mediate unrelated host actions.
-          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/integration.md:16-25.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.HOST_API. Domain `D.RELAY.HOST_API`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **POLICY** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.RELAY.API.GATE.POLICY` — Require nonempty Results and every Result EXECUTED SUCCESS APPLICABLE KNOWN PASS.
-          - Applicability: Default passing_gate applied to Run.
-          - Required/observable: Boolean acceptance exactly equals this conjunction.. Forbidden: Reject FAIL, UNKNOWN, ERROR, nonexecution, NOT_APPLICABLE and score-only outcomes.
-          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/integration.md:16-25.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.HOST_API. Domain `D.RELAY.HOST_API`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **WAIT** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.RELAY.API.GATE.WAIT` — Await verification and gate before invoking action.
-          - Applicability: verify_before called with zero-argument async action.
-          - Required/observable: GATE_REJECTED on rejected gate; verification errors propagate.. Forbidden: Do not invoke action on gate rejection or verification failure.
-          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/integration.md:16-25.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.HOST_API. Domain `D.RELAY.HOST_API`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-  - **Public SDK** — 48 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **FileAccess** — 4 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **BOUNDS** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.SDK.FILEACCESS.BOUNDS` — Default max_bytes2MiB and max_files10000; enforce configured bounds.
-          - Applicability: Read/selection performed.
-          - Required/observable: Bounded data or error.. Forbidden: No unbounded file observation or selection.
-          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/standard/filesystem.py:17-61.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.READ_FILE. Domain `D.STANDARD.READ_FILE`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **RELATIVE** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.SDK.FILEACCESS.RELATIVE` — Require explicit base or exactly one configured root.
-          - Applicability: Relative path supplied.
-          - Required/observable: Deterministic anchored path or ValueError.. Forbidden: No ambient choice among multiple roots.
-          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/standard/filesystem.py:17-61.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.READ_FILE. Domain `D.STANDARD.READ_FILE`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **ROOTS** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.SDK.FILEACCESS.ROOTS` — Resolve symlinks and require containment in a resolved authorized root.
-          - Applicability: FileAccess authorizes a local path.
-          - Required/observable: Authorized resolved path or rejection.. Forbidden: No escaping symlink or unauthored root authorization.
-          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/standard/filesystem.py:17-61.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.READ_FILE. Domain `D.STANDARD.READ_FILE`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **SNAPSHOT** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.SDK.FILEACCESS.SNAPSHOT` — Return exact bounded bytes and identity path,sha256,size from the same read bytes.
-          - Applicability: File bytes successfully read.
-          - Required/observable: Hash and size identify returned byte sequence.. Forbidden: No second changing read for identity.
-          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/standard/filesystem.py:17-61.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.READ_FILE. Domain `D.STANDARD.READ_FILE`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **FunctionProvider** — 9 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.FUNCTION_PROVIDER.ASYNC` — Reject non-coroutine functions with TypeError.
-        - Applicability: A computation is decorated.
-        - Required/observable: Decorator failure before registration.. Forbidden: Do not run blocking sync callback inside wrapper.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/relay/providers.py:127-166.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.FUNCTION_PROVIDER. Domain `D.SDK.FUNCTION_PROVIDER`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.FUNCTION_PROVIDER.BUDGET` — Reject before computation because wrapper cannot enforce budgets.
-        - Applicability: Invocation contains resource_budget.
-        - Required/observable: Pre-work rejection.. Forbidden: Do not silently ignore upper limits.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/relay/providers.py:56-124.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.FUNCTION_PROVIDER. Domain `D.SDK.FUNCTION_PROVIDER`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.FUNCTION_PROVIDER.DECISION` — Normalize to decision port mapping.
-        - Applicability: Coroutine returns Decision.
-        - Required/observable: Output object.. Forbidden: Do not coerce Decision into Result.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/relay/providers.py:56-124.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.FUNCTION_PROVIDER. Domain `D.SDK.FUNCTION_PROVIDER`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.FUNCTION_PROVIDER.EXCEPTION` — Yield ERROR with openverify.computation_error.
-        - Applicability: Computation raises ordinary exception.
-        - Required/observable: ERROR Outcome.. Forbidden: Do not convert exception into binary FAIL.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/relay/providers.py:56-124.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.FUNCTION_PROVIDER. Domain `D.SDK.FUNCTION_PROVIDER`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.FUNCTION_PROVIDER.MANIFEST` — Validate and publish the exact supplied identity/schemas with Contract 0.1, VCP draft and streaming/cancellation/resource reporting enabled, deadlines disabled.
-        - Applicability: Decorator has explicit schemas/kind/identities.
-        - Required/observable: Validated manifest.. Forbidden: Do not advertise deadline enforcement.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/relay/providers.py:127-166.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.FUNCTION_PROVIDER. Domain `D.SDK.FUNCTION_PROVIDER`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.FUNCTION_PROVIDER.OBSERVATION` — Emit observation evidence and nonempty usage before terminal; preserve usage on explicit execution error.
-        - Applicability: Coroutine returns ExecutionObservation.
-        - Required/observable: Events plus final usage.. Forbidden: Do not lose valid reported incurred usage because semantic outputs fail later.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/relay/providers.py:56-124.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.FUNCTION_PROVIDER. Domain `D.SDK.FUNCTION_PROVIDER`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.FUNCTION_PROVIDER.POLICY` — Return outcome as the direct output object.
-        - Applicability: Coroutine returns Activation/Selection/Admission.
-        - Required/observable: Policy wire object.. Forbidden: Do not wrap as result/decision port mapping.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/relay/providers.py:56-124.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.FUNCTION_PROVIDER. Domain `D.SDK.FUNCTION_PROVIDER`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.FUNCTION_PROVIDER.RESULT` — Normalize to result port mapping; retain Result usage as observation usage.
-        - Applicability: Coroutine returns Result.
-        - Required/observable: COMPLETED output object or later contract validation.. Forbidden: Do not apply this wrapping rule to arbitrary external transport output.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/relay/providers.py:56-124.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.FUNCTION_PROVIDER. Domain `D.SDK.FUNCTION_PROVIDER`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.FUNCTION_PROVIDER.TASK_CANCEL` — Propagate CancelledError.
-        - Applicability: Invocation coroutine is cancelled by asyncio.
-        - Required/observable: Task cancellation.. Forbidden: Do not fabricate provider COMPLETED Outcome.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/relay/providers.py:56-124.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.FUNCTION_PROVIDER. Domain `D.SDK.FUNCTION_PROVIDER`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Graph constructor** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.AUTHORING.CONSTRUCTOR` — Default exact version1, declared-input subject {id,type,locator.graph}, Criterion tied to id, judgment schema true and MANUAL/EXPLICIT/ALWAYS policy are materialized; explicit supplied objects replace corresponding defaults.
-        - Applicability: Host authors Graph(id,...).
-        - Required/observable: Authored portable Definition after build validation.. Forbidden: No hidden runtime semantic inputs or automatic executable authorization.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/authoring/graph.py:72-99.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.AUTHORING. Domain `D.SDK.AUTHORING`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Graph.add_node** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.AUTHORING.GRAPH.ADD_NODE` — Add a deep copy of an explicitly supplied SDK graph node.
-        - Applicability: Host authors a graph.
-        - Required/observable: Documented local authoring result or validation error.. Forbidden: Do not create a second protocol semantics or bypass ordinary validation.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/authoring/graph.py:232-240.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.AUTHORING.GRAPH.ADD_NODE. Domain `D.SDK.AUTHORING.GRAPH.ADD_NODE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Graph.aggregate** — 3 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **CONFIG** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.SDK.AUTHORING.GRAPH.AGGREGATE.CONFIG` — For openverify.aggregate write explicit reducer and handling; missing or empty supplied handling convenience authors REJECT for every exceptional class. Custom capability retains supplied config.
-          - Applicability: Graph.aggregate capability/config supplied.
-          - Required/observable: Complete authored config in resulting definition.. Forbidden: Do not call this builder default a hidden portable reducer default.
-          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/authoring/graph.py:192-224.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.AUTHORING. Domain `D.SDK.AUTHORING`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **ORDER** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.SDK.AUTHORING.GRAPH.AGGREGATE.ORDER` — Declare aggregate_inputs in authored map order and members Constant equal to that name list.
-          - Applicability: Graph.aggregate members ordered map supplied.
-          - Required/observable: Custom and standard Aggregate receive explicit member order.. Forbidden: No edge-order or JSON key-order implicit membership.
-          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/authoring/graph.py:192-224.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.AUTHORING. Domain `D.SDK.AUTHORING`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **RESERVED** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.SDK.AUTHORING.GRAPH.AGGREGATE.RESERVED` — Reject subject, criterion or members as member names.
-          - Applicability: Graph.aggregate member name supplied.
-          - Required/observable: ValueError.. Forbidden: No collision with reserved semantic inputs.
-          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/authoring/graph.py:192-224.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.AUTHORING. Domain `D.SDK.AUTHORING`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Graph.build** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.AUTHORING.GRAPH.BUILD` — Construct, serialize and parse a validated portable VerificationDefinition snapshot.
-        - Applicability: Host authors a graph.
-        - Required/observable: Documented local authoring result or validation error.. Forbidden: Do not create a second protocol semantics or bypass ordinary validation.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/authoring/graph.py:242-253.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.AUTHORING.GRAPH.BUILD. Domain `D.SDK.AUTHORING.GRAPH.BUILD`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Graph.edge** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.AUTHORING.GRAPH.EDGE` — Append dependency edge; replacing the same source/destination pair updates its guard.
-        - Applicability: Host authors a graph.
-        - Required/observable: Documented local authoring result or validation error.. Forbidden: Do not create a second protocol semantics or bypass ordinary validation.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/authoring/graph.py:226-230.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.AUTHORING.GRAPH.EDGE. Domain `D.SDK.AUTHORING.GRAPH.EDGE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Graph.input** — 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **PORT** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.SDK.AUTHORING.GRAPH.INPUT.PORT` — Append port with copied schema; required uses BLOCK; optional with explicit Constant uses DEFAULT, otherwise OMIT.
-          - Applicability: Graph.input called.
-          - Required/observable: Typed declaration in builder.. Forbidden: No implicit schema default insertion.
-          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/authoring/graph.py:94-111.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.AUTHORING. Domain `D.SDK.AUTHORING`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **REF** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.SDK.AUTHORING.GRAPH.INPUT.REF` — Return RUN_INPUT Ref naming declared input with copied schema.
-          - Applicability: Graph.input called.
-          - Required/observable: Explicit reusable Ref.. Forbidden: No ambient Context lookup source.
-          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/authoring/graph.py:94-111.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.AUTHORING. Domain `D.SDK.AUTHORING`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Graph.inspect** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.AUTHORING.GRAPH.INSPECT` — Build and call inspect_definition on the validated snapshot.
-        - Applicability: Host authors a graph.
-        - Required/observable: Documented local authoring result or validation error.. Forbidden: Do not create a second protocol semantics or bypass ordinary validation.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/authoring/graph.py:258-259.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.AUTHORING.GRAPH.INSPECT. Domain `D.SDK.AUTHORING.GRAPH.INSPECT`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Graph.node** — 6 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **BINDINGS** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.SDK.AUTHORING.GRAPH.NODE.BINDINGS` — Deepcopy source constructors into bindings; synthesize required BLOCK ports from Ref schema unless explicit input_port with that name supplied.
-          - Applicability: Graph.node input Refs supplied.
-          - Required/observable: Authored typed port/binding pair.. Forbidden: Do not derive data from dependency edges.
-          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/authoring/graph.py:113-181.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.AUTHORING. Domain `D.SDK.AUTHORING`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **CONFIG_SNAPSHOT** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.SDK.AUTHORING.GRAPH.NODE.CONFIG_SNAPSHOT` — Deepcopy config, optional config_schema and estimate into authored node.
-          - Applicability: Graph.node config/schema/estimate supplied.
-          - Required/observable: Independent node settings snapshot.. Forbidden: Later caller mutation cannot replace copied authored fields.
-          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/authoring/graph.py:113-181.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.AUTHORING. Domain `D.SDK.AUTHORING`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **DEPENDENCIES** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.SDK.AUTHORING.GRAPH.NODE.DEPENDENCIES` — Add prerequisite edges to authored predecessor identities, once per distinct predecessor in this call.
-          - Applicability: Input Ref is UPSTREAM_OUTPUT or explicit dependencies supplied.
-          - Required/observable: Required ordering paths materialized.. Forbidden: Dependencies alone do not transfer values.
-          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/authoring/graph.py:113-181.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.AUTHORING. Domain `D.SDK.AUTHORING`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **OPERATION** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.SDK.AUTHORING.GRAPH.NODE.OPERATION` — Materialize exact capability_id/version and selected node kind.
-          - Applicability: Graph.node called with typed arguments.
-          - Required/observable: New SDK Node in builder state.. Forbidden: Operation identity never authorizes imports or fallback.
-          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/authoring/graph.py:113-181.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.AUTHORING. Domain `D.SDK.AUTHORING`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **OUTPUTS** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.SDK.AUTHORING.GRAPH.NODE.OUTPUTS` — Declare INFORMATION outputs plus result RESULT for EVAL/AGG or decision DECISION forCONTROL.
-          - Applicability: Graph.node declared information outputs supplied.
-          - Required/observable: Returned NodeRef exposes exactly declared output names.. Forbidden: Do not fabricate primary Result for DERIVE.
-          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/authoring/graph.py:113-181.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.AUTHORING. Domain `D.SDK.AUTHORING`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **SEMANTIC_INPUTS** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.SDK.AUTHORING.GRAPH.NODE.SEMANTIC_INPUTS` — Bind exact definition subject and criterion Constants as explicit semantic ports; reject caller overriding either reserved binding.
-          - Applicability: Builder authors EVALUATE or AGGREGATE.
-          - Required/observable: ValueError on reserved override; exact authored snapshots otherwise.. Forbidden: No implicit ambient subject or criterion selected from config.
-          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/authoring/graph.py:113-181.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.AUTHORING. Domain `D.SDK.AUTHORING`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Graph.to_json** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.AUTHORING.GRAPH.TO_JSON` — Serialize the built validated definition.
-        - Applicability: Host authors a graph.
-        - Required/observable: Documented local authoring result or validation error.. Forbidden: Do not create a second protocol semantics or bypass ordinary validation.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/authoring/graph.py:261-262.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.AUTHORING.GRAPH.TO_JSON. Domain `D.SDK.AUTHORING.GRAPH.TO_JSON`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Graph.validate** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.AUTHORING.GRAPH.VALIDATE` — Build and validate; return None if successful.
-        - Applicability: Host authors a graph.
-        - Required/observable: Documented local authoring result or validation error.. Forbidden: Do not create a second protocol semantics or bypass ordinary validation.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/authoring/graph.py:255-256.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.AUTHORING.GRAPH.VALIDATE. Domain `D.SDK.AUTHORING.GRAPH.VALIDATE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **GraphService.definition** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.SERVICE.GRAPHSERVICE.DEFINITION` — Return a newly parsed stored graph snapshot; unauthorized name raises GRAPH_UNAVAILABLE.
-        - Applicability: Authorized name.
-        - Required/observable: Definition or RelayError.. Forbidden: Do not expose arbitrary executable or graph-path loading.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/relay/entrypoints/service.py:35-38.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.SERVICE.GRAPHSERVICE.DEFINITION. Domain `D.SDK.SERVICE.GRAPHSERVICE.DEFINITION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **GraphService.describe_graph** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.SERVICE.GRAPHSERVICE.DESCRIBE_GRAPH` — Inspect authorized definition without invocation.
-        - Applicability: Graph name.
-        - Required/observable: Definition summary or GRAPH_UNAVAILABLE.. Forbidden: Do not expose arbitrary executable or graph-path loading.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/relay/entrypoints/service.py:43-44.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.SERVICE.GRAPHSERVICE.DESCRIBE_GRAPH. Domain `D.SDK.SERVICE.GRAPHSERVICE.DESCRIBE_GRAPH`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **GraphService.inspect_result** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.SERVICE.GRAPHSERVICE.INSPECT_RESULT` — Read service store; absent record raises RUN_UNAVAILABLE, otherwise return record data.
-        - Applicability: Run id.
-        - Required/observable: Record or RelayError.. Forbidden: Do not expose arbitrary executable or graph-path loading.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/relay/entrypoints/service.py:53-59.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.SERVICE.GRAPHSERVICE.INSPECT_RESULT. Domain `D.SDK.SERVICE.GRAPHSERVICE.INSPECT_RESULT`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **GraphService.list_graphs** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.SERVICE.GRAPHSERVICE.LIST_GRAPHS` — Return sorted authorized graph names.
-        - Applicability: Service constructed.
-        - Required/observable: Sorted list.. Forbidden: Do not expose arbitrary executable or graph-path loading.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/relay/entrypoints/service.py:40-41.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.SERVICE.GRAPHSERVICE.LIST_GRAPHS. Domain `D.SDK.SERVICE.GRAPHSERVICE.LIST_GRAPHS`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **GraphService.run_graph** — 3 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **AUTHORIZATION** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.SDK.SERVICE.GRAPHSERVICE.RUN_GRAPH.AUTHORIZATION` — Resolve only host-authorized named graph.
-          - Applicability: run_graph called.
-          - Required/observable: GRAPH_UNAVAILABLE for unknown name.. Forbidden: No arbitrary file path or graph JSON service execution.
-          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/relay/entrypoints/service.py:46-51.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.ENTRYPOINTS. Domain `D.RELAY.ENTRYPOINTS`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **LIMIT** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.SDK.SERVICE.GRAPHSERVICE.RUN_GRAPH.LIMIT` — Hold service semaphore during awaited Relay.run.
-          - Applicability: Authorized run requested.
-          - Required/observable: Active run bound respected.. Forbidden: No promise that service limit replaces provider concurrency safety.
-          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/relay/entrypoints/service.py:46-51.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.ENTRYPOINTS. Domain `D.RELAY.ENTRYPOINTS`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **RESULT** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.SDK.SERVICE.GRAPHSERVICE.RUN_GRAPH.RESULT` — Return full RunRecord wire data.
-          - Applicability: Authorized run completes.
-          - Required/observable: Structured complete provenance JSON.. Forbidden: Do not convert completed verification FAIL into service exception.
-          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/relay/entrypoints/service.py:46-51.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.ENTRYPOINTS. Domain `D.RELAY.ENTRYPOINTS`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **NodeRef.__getitem__** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.NODE.OUTPUT` — Return the declared output Ref; undeclared name raises KeyError.
-        - Applicability: Output name requested.
-        - Required/observable: Ref or KeyError.. Forbidden: Do not synthesize undeclared output.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/authoring/graph.py:45-46.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.NODE.OUTPUT. Domain `D.SDK.NODE.OUTPUT`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Relay.run_sync** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.RELAY.RUN_SYNC` — Execute Relay.run through asyncio.run and return Run.
-        - Applicability: No already-running event loop in this calling thread.
-        - Required/observable: Run or propagated error.. Forbidden: Do not claim compatibility with nested event loops or expose a cancellation argument absent from this signature.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/relay/api.py:143-150.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.RELAY.RUN_SYNC. Domain `D.SDK.RELAY.RUN_SYNC`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **RuntimeConfig.__post_init__** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.RELAY.CONFIG` — Require exact positive integer max_concurrency and finite positive timeout; reject invalid settings with ValueError.
-        - Applicability: Host configuration constructed.
-        - Required/observable: Constructed config or ValueError.. Forbidden: Do not accept Boolean max_concurrency as an integer.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/relay/config.py:17-21.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.RELAY.CONFIG. Domain `D.SDK.RELAY.CONFIG`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Shipped graph builders** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.TEMPLATES` — Return ordinary authored Graph. text requires Migration/Rollback and prohibits TODO/TBD with ALL; document adds read_text. guardrail action_policy->ALL->gate. code WORKTREE/untracked captures scope, Ruff F and Python print AST, AST changed-line filtering, post-tool freshness and ALL; code_spans also filters Ruff.
-        - Applicability: Host requests text/document/guardrail/code/code_spans template.
-        - Required/observable: Inspectable ordinary VCP graph with declared inputs and exact typed links.. Forbidden: No hidden index bytes, factual/semantic checking, host-action execution, different graph language or auto tool installation.
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/relay/templates.py:1-129.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.STANDARD_HOST. Domain `D.RELAY.STANDARD_HOST`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Tools** — 3 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **DISCOVERY** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.SDK.TOOLS.DISCOVERY` — Resolve active Python scripts directory then PATH; explicit host paths remain authoritative.
-          - Applicability: installed_tools invoked.
-          - Required/observable: Tools configuration, with missing tools diagnosable.. Forbidden: Do not infer a successful tool run from discovery.
-          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/standard/tools.py:1-52.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.STANDARD_HOST. Domain `D.RELAY.STANDARD_HOST`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **EXECUTABLE** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.SDK.TOOLS.EXECUTABLE` — Select configured named Ruff/pytest/astgrep executable or raise actionable FileNotFoundError.
-          - Applicability: Tool executable requested.
-          - Required/observable: Configured executable path or missing-tool error.. Forbidden: No tool emulation.
-          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/standard/tools.py:1-52.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.STANDARD_HOST. Domain `D.RELAY.STANDARD_HOST`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **FILES** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.SDK.TOOLS.FILES` — Authorize cwd and each target inside cwd, keep existing files in authored input order and skip absent/nonfile candidates.
-          - Applicability: Tool target list supplied.
-          - Required/observable: Ordered authorized existing file list.. Forbidden: No target outside cwd or unauthorized root.
-          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/standard/tools.py:1-52.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.STANDARD_HOST. Domain `D.RELAY.STANDARD_HOST`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **constant** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.REFERENCE.CONSTANT` — Return Ref carrying a CONSTANT ValueSource and the supplied schema.
-        - Applicability: JSON value and optional schema.
-        - Required/observable: Ref value/schema.. Forbidden: Do not infer hidden runtime context.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/authoring/references.py:16-17.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.REFERENCE.CONSTANT. Domain `D.SDK.REFERENCE.CONSTANT`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **external** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.REFERENCE.EXTERNAL` — Return Ref carrying an EXTERNAL_REFERENCE source and object schema.
-        - Applicability: ArtifactRef supplied.
-        - Required/observable: Ref preserving reference.. Forbidden: Do not fetch referenced bytes.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/authoring/references.py:20-21.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.REFERENCE.EXTERNAL. Domain `D.SDK.REFERENCE.EXTERNAL`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **serve_stdio** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.SERVE_STDIO` — Read and emit published framed requests/events/results with observed session/lifecycle validation; accept/reject controls in receive order, active invokes are tasks; cancel delegates and emits requested CANCELLED when helper interrupts; EOF awaits/validates completion, finally cancels remaining tasks.
-        - Applicability: Trusted SDK Provider is served on stdio under supported helper constraints.
-        - Required/observable: Framed standard binding exchange or propagated helper/protocol failure.. Forbidden: No discovery/pooling/replay/physical deadline or budget enforcement promised; logs cannot enter stdout framing; failure is not a fabricated VCP FAIL.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/relay/adapters/server.py:25-125.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PROVIDER_SERVER. Domain `D.SDK.PROVIDER_SERVER`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-  - **Records** — 6 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **Acceptance** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.STORE.VALIDATE` — Parse RunRecord before storage and return
-        - Applicability: Occurrence finishes.
-        - Required/observable: Parse RunRecord before storage and return; Do not persist/return contradictory record as valid. Forbidden: Do not persist/return contradictory record as valid
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/architecture.md:85-89.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.STORAGE_OBSERVATION. Domain `D.RELAY.STORAGE_OBSERVATION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Annotations** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.ANNOTATION.SCOPE` — Optional unauthenticated annotation supplements normative ProviderBinding
-        - Applicability: Invocation correlation metadata retained.
-        - Required/observable: Optional unauthenticated annotation supplements normative ProviderBinding; No replacement of graph binding or VCP authentication/replay promise. Forbidden: No replacement of graph binding or VCP authentication/replay promise
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/architecture.md:85-89.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.STORAGE_OBSERVATION. Domain `D.RELAY.STORAGE_OBSERVATION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Default stores** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.STORE.DUPLICATE` — Reject duplicate identity with ValueError and preserve existing snapshot. JsonlStore loads every existing line at construction and propagates malformed/duplicate/I/O errors; get returns new parsed snapshot or None.
-        - Applicability: Default MemoryStore or JsonlStore receives a RunRecord whose run_id is already retained.
-        - Required/observable: Stored snapshot/get/None or propagated store error.. Forbidden: No silent overwrite, deep mutable history rewriting, fsync/transaction/multiprocess guarantee.
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/relay/adapters/memory.py:8-21.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.STORAGE_OBSERVATION. Domain `D.RELAY.STORAGE_OBSERVATION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Stores** — 3 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.STORE.COPY` — Snapshot both directions
-        - Applicability: Memory/JSONL store writes or retrieves.
-        - Required/observable: Snapshot both directions; Caller mutation must not alter retained record. Forbidden: Caller mutation must not alter retained record
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/integration.md:113-119.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.STORAGE_OBSERVATION. Domain `D.RELAY.STORAGE_OBSERVATION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.STORE.ERROR` — Propagate to host
-        - Applicability: Store operation fails.
-        - Required/observable: Propagate to host; Do not claim persistence success. Forbidden: Do not claim persistence success
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/integration.md:113-119.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.STORAGE_OBSERVATION. Domain `D.RELAY.STORAGE_OBSERVATION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.STORE.SCOPE` — Memory volatile; JSONL single-process nontransactional append/reload
-        - Applicability: Host chooses supplied store.
-        - Required/observable: Memory volatile; JSONL single-process nontransactional append/reload; No fsync/multiprocess/durable recovery promise. Forbidden: No fsync/multiprocess/durable recovery promise
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/limitations.md:7-40.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.STORAGE_OBSERVATION. Domain `D.RELAY.STORAGE_OBSERVATION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-  - **Scheduler** — 5 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **Acceptance** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.SCHED.ORDER` — Accept records in definition order within wave
-        - Applicability: Wave tasks finish in arbitrary order.
-        - Required/observable: Accept records in definition order within wave; Completion order must not change Control semantics. Forbidden: Completion order must not change Control semantics
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/architecture.md:64-70.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.SCHEDULER. Domain `D.RELAY.SCHEDULER`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Barriers** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.SCHED.CONTROL` — Serial barrier without concurrently affected wave peers
-        - Applicability: Control is ready.
-        - Required/observable: Serial barrier without concurrently affected wave peers; Do not race STOP/ROUTE/RETRY/DEFER with active independent work. Forbidden: Do not race STOP/ROUTE/RETRY/DEFER with active independent work
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/architecture.md:64-70.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.SCHEDULER. Domain `D.RELAY.SCHEDULER`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Concurrent runs** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.SCHED.ISOLATION` — Keep states/inputs/records/cancellation occurrence-local
-        - Applicability: Relay serves concurrent runs on one event loop.
-        - Required/observable: Keep states/inputs/records/cancellation occurrence-local; Do not share mutable run state. Forbidden: Do not share mutable run state
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/architecture.md:72-76.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.SCHEDULER. Domain `D.RELAY.SCHEDULER`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Waves** — 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **BARRIER** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.RELAY.SCHED.WAVE.BARRIER` — Wait for every wave member before starting successors.
-          - Applicability: At least one wave member still unsettled.
-          - Required/observable: Whole-wave completion precedes successor invocation.. Forbidden: No early consumer start after only one producer settles.
-          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/architecture.md:64-70.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.SCHEDULER. Domain `D.RELAY.SCHEDULER`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **MEMBERSHIP** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.RELAY.SCHED.WAVE.MEMBERSHIP` — Select a ready wave bounded by configured max_concurrency.
-          - Applicability: Ready independent non-Control nodes eligible.
-          - Required/observable: Wave consists only of currently eligible non-Control nodes.. Forbidden: No unready node or Control peer in parallel wave.
-          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/architecture.md:64-70.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.SCHEDULER. Domain `D.RELAY.SCHEDULER`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-  - **Standard providers** — 42 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **Action policy** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.ACTION.PREFIX` — Only descendants of valid relative prefixes pass; tmp and tmp/ equivalent; prefix itself, siblings, absolute/traversal/ambiguous paths fail
-        - Applicability: Action policy authorizes delete target.
-        - Required/observable: Only descendants of valid relative prefixes pass; tmp and tmp/ equivalent; prefix itself, siblings, absolute/traversal/ambiguous paths fail. Forbidden: Do not grant filesystem access or authenticate a later resolved target
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/providers.md:72-91.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.ACTION_POLICY. Domain `D.STANDARD.ACTION_POLICY`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Coordinates** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.SCOPE.RANGES` — Half-open end coordinates; zero-length ranges intersect nothing; return original finding file strings/coordinates
-        - Applicability: Scope compares source ranges.
-        - Required/observable: Half-open end coordinates; zero-length ranges intersect nothing; return original finding file strings/coordinates. Forbidden: Do not mutate reported coordinates via lexical normalization
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/providers.md:112-118.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.SCOPE. Domain `D.STANDARD.SCOPE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Default catalog** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.STANDARD.CATALOG` — Create 17 standard providers: text; json_parse/schema; read_text/read_file/select_files; scope/no_findings; git_scope/candidate_unchanged; action_policy/gate; command_check; ruff; pytest; astgrep; aggregate. Register concurrency_safe=True; roots default construction cwd, supplied Tools.access takes precedence.
-        - Applicability: Host constructs standard_catalog with optional roots/Tools.
-        - Required/observable: Trusted Catalog with exact version1 standard capabilities.. Forbidden: No generic command launcher or unbundled external engine automatically registered.
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/standard/__init__.py:21-65.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.STANDARD_HOST. Domain `D.RELAY.STANDARD_HOST`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **FileAccess** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.SECURITY.FILES` — Authorize resolved roots/cwd, reject escaping symlinks and enforce read/selection bounds
-        - Applicability: Filesystem provider reads/selects.
-        - Required/observable: Authorize resolved roots/cwd, reject escaping symlinks and enforce read/selection bounds; No graph-granted access or atomic hostile-race sandbox. Forbidden: No graph-granted access or atomic hostile-race sandbox
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/security.md:18-25.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.READ_FILE. Domain `D.STANDARD.READ_FILE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Git** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.SECURITY.FRESHNESS` — Compare observed worktree/HEAD/content identities later
-        - Applicability: Candidate freshness checked.
-        - Required/observable: Compare observed worktree/HEAD/content identities later; No atomic snapshot or guaranteed change/revert detection. Forbidden: No atomic snapshot or guaranteed change/revert detection
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/security.md:60-66.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.CANDIDATE_UNCHANGED. Domain `D.STANDARD.CANDIDATE_UNCHANGED`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Git scope** — 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.GIT.CHANGES` — Untracked gets whole-file new ranges; renames retain old/new identities; deletions reported separately/excluded from executable file scope
-        - Applicability: git_scope observes changes.
-        - Required/observable: Untracked gets whole-file new ranges; renames retain old/new identities; deletions reported separately/excluded from executable file scope. Forbidden: Do not assign new-file lines to zero-count deletions
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/providers.md:129-136.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.GIT_SCOPE. Domain `D.STANDARD.GIT_SCOPE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.GIT.MODES` — WORKTREE compares base to tracked worktree; STAGED base to index; UNSTAGED index to worktree with empty base; include_untracked explicit
-        - Applicability: git_scope is configured.
-        - Required/observable: WORKTREE compares base to tracked worktree; STAGED base to index; UNSTAGED index to worktree with empty base; include_untracked explicit. Forbidden: Do not claim tools checked index bytes merely from STAGED scope
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/providers.md:129-136.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.GIT_SCOPE. Domain `D.STANDARD.GIT_SCOPE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Scope paths** — 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.SCOPE.INVALID` — Empty file list selects nothing; empty directory, NUL, traversal, ambiguous Windows paths/reserved paths reject; dot explicitly selects cwd
-        - Applicability: Scope provider validates selection.
-        - Required/observable: Empty file list selects nothing; empty directory, NUL, traversal, ambiguous Windows paths/reserved paths reject; dot explicitly selects cwd. Forbidden: Do not broaden invalid input into unrestricted selection
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/providers.md:112-118.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.SCOPE. Domain `D.STANDARD.SCOPE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.SCOPE.PATH` — Platform-native component/case rules; relative paths use cwd; trailing separator preserves directory membership; POSIX backslash literal
-        - Applicability: Scope provider compares paths.
-        - Required/observable: Platform-native component/case rules; relative paths use cwd; trailing separator preserves directory membership; POSIX backslash literal. Forbidden: Do not use string prefix matching that includes selected-other or require files to exist
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/providers.md:102-110.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.SCOPE. Domain `D.STANDARD.SCOPE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Text** — 4 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **LINECOL** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.RELAY.TEXT.COORDINATES.LINECOL` — Lines and columns are one-based.
-          - Applicability: Text finding has line/column coordinates.
-          - Required/observable: Line counts newlines before offset; column is offset since preceding newline plus one.. Forbidden: Do not expose zero-based tool coordinates directly.
-          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/providers.md:93-98.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.TEXT. Domain `D.STANDARD.TEXT`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **OFFSETS** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.RELAY.TEXT.COORDINATES.OFFSETS` — Offsets are zero-based Unicode character indexes with exclusive end.
-          - Applicability: Text finding has start/end offsets.
-          - Required/observable: Exact character range identifies the literal occurrence.. Forbidden: Do not count UTF8 bytes.
-          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/providers.md:93-98.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.TEXT. Domain `D.STANDARD.TEXT`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **TERMS** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.RELAY.TEXT.COORDINATES.TERMS` — Concatenate declared bound terms and configured terms in their respective order.
-          - Applicability: Text input and config terms supplied.
-          - Required/observable: Both sets participate in literal checks.. Forbidden: Config cannot replace bound terms.
-          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/providers.md:93-98.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.TEXT. Domain `D.STANDARD.TEXT`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.SECURITY.TEXT` — Bounded regex worker and capped findings
-        - Applicability: Regex/literal capability executes.
-        - Required/observable: Bounded regex worker and capped findings; Deterministic text properties are not factual truth. Forbidden: Deterministic text properties are not factual truth
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/security.md:52-58.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.TEXT. Domain `D.STANDARD.TEXT`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Tool selection** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.STANDARD.TOOLS_DISCOVERY` — Find tools in active Python scripts directory then PATH unless host Tools specifies executable paths; Git separately installed; missing tool is actionable execution ERROR.
-        - Applicability: Trusted standard catalog locates installed tools.
-        - Required/observable: Chosen executable or execution ERROR.. Forbidden: Do not emulate missing tools, change tool-selection order or infer tool success from installation.
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/providers.md:138-144.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.STANDARD_HOST. Domain `D.RELAY.STANDARD_HOST`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Tools** — 3 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.TOOL.AST` — Actual installed ast-grep patterns/authorized rule files; whole-file findings and half-open range intersection
-        - Applicability: astgrep capability executes.
-        - Required/observable: Actual installed ast-grep patterns/authorized rule files; whole-file findings and half-open range intersection. Forbidden: Do not substitute a custom parser or line-only overlap for full AST ranges
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/providers.md:138-144.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.ASTGREP. Domain `D.STANDARD.ASTGREP`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.TOOL.PYTEST` — Run actual configured tests/plugins with process privileges; default full scope; exit 1 FAIL and exits 2-5 ERROR
-        - Applicability: pytest capability executes.
-        - Required/observable: Run actual configured tests/plugins with process privileges; default full scope; exit 1 FAIL and exits 2-5 ERROR. Forbidden: Do not claim Python execution is sandboxed
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/providers.md:138-144.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.PYTEST. Domain `D.STANDARD.PYTEST`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.TOOL.RUFF` — Use actual isolated tool and explicit diagnostic codes; lint exit 1 means FAIL
-        - Applicability: Ruff capability executes.
-        - Required/observable: Use actual isolated tool and explicit diagnostic codes; lint exit 1 means FAIL. Forbidden: Do not execute repository Ruff config implicitly or replace execution error with FAIL
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/providers.md:138-144.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.RUFF. Domain `D.STANDARD.RUFF`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **action_policy** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.STANDARD.ACTION_POLICY` — Only delete with a nonempty relative target strictly below a valid relative directory prefix passes. Invalid supplied prefix, traversal, absolute/ambiguous path or a prefix itself fails closed.
-        - Applicability: Exact version 1 standard capability with validated input/config and trusted host resources..
-        - Required/observable: result:Result; valid FAIL remains an ordinary completed verification operation.. Forbidden: Do not substitute a different mechanism, silently broaden scope or turn execution failure into a verification FAIL.
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/standard/control.py:1-53.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.ACTION_POLICY. Domain `D.STANDARD.ACTION_POLICY`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **aggregate** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.STANDARD.AGGREGATE` — Use explicit ordered members and the declared standard VCP reducer laws. Member values remain tied to names when filtering/weighting.
-        - Applicability: Exact version 1 standard capability with validated input/config and trusted host resources..
-        - Required/observable: result:Result; valid FAIL remains an ordinary completed verification operation.. Forbidden: Do not substitute a different mechanism, silently broaden scope or turn execution failure into a verification FAIL.
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/standard/__init__.py:1-68.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.AGGREGATE. Domain `D.STANDARD.AGGREGATE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **astgrep** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.STANDARD.ASTGREP` — Run actual ast-grep pattern or authorized rule file on selected whole files; normalize zero-based tool coordinates to one-based half-open findings. Invalid option combination/tool failure is ERROR.
-        - Applicability: Exact version 1 standard capability with validated input/config and trusted host resources..
-        - Required/observable: findings:array; valid FAIL remains an ordinary completed verification operation.. Forbidden: Do not substitute a different mechanism, silently broaden scope or turn execution failure into a verification FAIL.
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/standard/astgrep.py:15-75.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.ASTGREP. Domain `D.STANDARD.ASTGREP`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **candidate_unchanged** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.STANDARD.CANDIDATE_UNCHANGED` — Recheck supplied worktree identity, file content identities, HEAD, compared diff and untracked scope. Changed checked state yields stale_candidate; mismatched cwd yields candidate_worktree_mismatch.
-        - Applicability: Exact version 1 standard capability with validated input/config and trusted host resources..
-        - Required/observable: result:Result; valid FAIL remains an ordinary completed verification operation.. Forbidden: Do not substitute a different mechanism, silently broaden scope or turn execution failure into a verification FAIL.
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/standard/git.py:1-210.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.CANDIDATE_UNCHANGED. Domain `D.STANDARD.CANDIDATE_UNCHANGED`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **command** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.STANDARD.COMMAND` — Run only the host-authored command, bounded by timeout/output limits, and return its observation without deriving a verification verdict.
-        - Applicability: Exact version 1 standard capability with validated input/config and trusted host resources..
-        - Required/observable: observation:{argv,cwd,returncode,stdout,stderr}; valid FAIL remains an ordinary completed verification operation.. Forbidden: Do not substitute a different mechanism, silently broaden scope or turn execution failure into a verification FAIL.
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/standard/command.py:25-44.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.COMMAND. Domain `D.STANDARD.COMMAND`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **command_check** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.STANDARD.COMMAND_CHECK` — Compare exact return code and optional required substrings. Produce unexpected_exit/output_missing findings for mismatches, preserving the checked observation.
-        - Applicability: Exact version 1 standard capability with validated input/config and trusted host resources..
-        - Required/observable: result:Result; valid FAIL remains an ordinary completed verification operation.. Forbidden: Do not substitute a different mechanism, silently broaden scope or turn execution failure into a verification FAIL.
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/standard/command.py:1-86.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.COMMAND_CHECK. Domain `D.STANDARD.COMMAND_CHECK`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **gate** — 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.STANDARD.GATE` — Parse checked as a Result, then CONTINUE only for EXECUTED/SUCCESS/APPLICABLE/KNOWN/PASS; every other valid Result yields STOP_FAILURE.
-        - Applicability: Exact version 1 standard capability with validated input/config and trusted host resources..
-        - Required/observable: decision:Decision; valid FAIL remains an ordinary completed verification operation.. Forbidden: Do not substitute a different mechanism, silently broaden scope or turn execution failure into a verification FAIL.
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/standard/control.py:1-53.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.GATE. Domain `D.STANDARD.GATE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.STANDARD.GATE.INVALID` — Reject operation input; do not produce an ordinary denial Decision.
-        - Applicability: checked object violates VCP Result semantics.
-        - Required/observable: Provider ERROR.. Forbidden: Do not coerce invalid Result into STOP_FAILURE.
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/standard/control.py:1-53.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.GATE. Domain `D.STANDARD.GATE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **git_scope** — 3 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.STANDARD.GIT.DELETE` — Keep deletion identities separate; zero-count hunk contains no new-file lines.
-        - Applicability: A deleted path or zero-count new-file hunk.
-        - Required/observable: deleted_files, changed_files, changed_hunks.. Forbidden: Do not invoke tools on deleted paths through executable scopes.
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/standard/git.py:1-210.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.GIT_SCOPE. Domain `D.STANDARD.GIT_SCOPE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.STANDARD.GIT.FRESHNESS` — Reject the detected inconsistent capture.
-        - Applicability: Workspace changes during a scope capture and mismatch is observed.
-        - Required/observable: Execution ERROR or coherent observed candidate.. Forbidden: Do not promise atomic filesystem snapshot or detect change-and-revert.
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/standard/git.py:1-210.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.GIT_SCOPE. Domain `D.STANDARD.GIT_SCOPE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.STANDARD.GIT_SCOPE` — WORKTREE compares base to worktree, STAGED base to index, UNSTAGED index to worktree with empty base. Preserve rename identities, separate deletions, include explicit untracked policy and reject detected changes during capture.
-        - Applicability: Exact version 1 standard capability with validated input/config and trusted host resources..
-        - Required/observable: changed_files,changed_hunks,diff,candidate,changes,deleted_files; valid FAIL remains an ordinary completed verification operation.. Forbidden: Do not substitute a different mechanism, silently broaden scope or turn execution failure into a verification FAIL.
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/standard/git.py:1-210.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.GIT_SCOPE. Domain `D.STANDARD.GIT_SCOPE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **json_parse** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.STANDARD.JSON_PARSE` — Parse strict JSON, rejecting duplicate keys, malformed text and nonfinite tokens. Preserve parsed JSON type/value.
-        - Applicability: Exact version 1 standard capability with validated input/config and trusted host resources..
-        - Required/observable: value:any JSON; valid FAIL remains an ordinary completed verification operation.. Forbidden: Do not substitute a different mechanism, silently broaden scope or turn execution failure into a verification FAIL.
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/standard/structured.py:1-37.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.JSON_PARSE. Domain `D.STANDARD.JSON_PARSE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **no_findings** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.STANDARD.NO_FINDINGS` — PASS iff the supplied findings list is empty; otherwise FAIL retaining structured finding evidence.
-        - Applicability: Exact version 1 standard capability with validated input/config and trusted host resources..
-        - Required/observable: result:Result; valid FAIL remains an ordinary completed verification operation.. Forbidden: Do not substitute a different mechanism, silently broaden scope or turn execution failure into a verification FAIL.
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/standard/scope.py:1-105.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.NO_FINDINGS. Domain `D.STANDARD.NO_FINDINGS`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **pytest** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.STANDARD.PYTEST` — Run real pytest with supplied selectors; no selectors means full scope. Exit 0 passes, 1 fails, 2 through 5 are execution ERROR; Python/plugins execute with host privileges.
-        - Applicability: Exact version 1 standard capability with validated input/config and trusted host resources..
-        - Required/observable: result:Result; valid FAIL remains an ordinary completed verification operation.. Forbidden: Do not substitute a different mechanism, silently broaden scope or turn execution failure into a verification FAIL.
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/standard/pytest.py:11-44.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.PYTEST. Domain `D.STANDARD.PYTEST`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **read_file** — 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.STANDARD.FILES.IDENTITY` — sha256 and size describe precisely the same byte snapshot returned through base64.
-        - Applicability: Bytes successfully read.
-        - Required/observable: identity.size and sha256.. Forbidden: Do not hash a second changing read.
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/standard/filesystem.py:1-124.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.READ_FILE. Domain `D.STANDARD.READ_FILE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.STANDARD.READ_FILE` — Read bounded authorized bytes; base64 encodes those bytes, sha256 and size describe the same bytes.
-        - Applicability: Exact version 1 standard capability with validated input/config and trusted host resources..
-        - Required/observable: base64:string; identity:{path,sha256,size}; valid FAIL remains an ordinary completed verification operation.. Forbidden: Do not substitute a different mechanism, silently broaden scope or turn execution failure into a verification FAIL.
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/standard/filesystem.py:1-124.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.READ_FILE. Domain `D.STANDARD.READ_FILE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **read_text** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.STANDARD.READ_TEXT` — Read bounded authorized bytes, reject NUL/binary and invalid UTF-8, return decoded text and identity over the exact read bytes.
-        - Applicability: Exact version 1 standard capability with validated input/config and trusted host resources..
-        - Required/observable: text:string; identity:{path,sha256,size}; valid FAIL remains an ordinary completed verification operation.. Forbidden: Do not substitute a different mechanism, silently broaden scope or turn execution failure into a verification FAIL.
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/standard/filesystem.py:1-124.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.READ_TEXT. Domain `D.STANDARD.READ_TEXT`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **ruff** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.STANDARD.RUFF` — Run installed Ruff isolated with explicit select codes on authorized Python files; report normalized actual diagnostics. Empty scope passes without process invocation; tool failures are ERROR.
-        - Applicability: Exact version 1 standard capability with validated input/config and trusted host resources..
-        - Required/observable: findings:array; result:Result; valid FAIL remains an ordinary completed verification operation.. Forbidden: Do not substitute a different mechanism, silently broaden scope or turn execution failure into a verification FAIL.
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/standard/ruff.py:15-86.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.RUFF. Domain `D.STANDARD.RUFF`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **schema** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.STANDARD.SCHEMA` — Validate the configured self-contained schema, then check supplied value offline. A valid-schema instance mismatch is a schema_mismatch finding, not an execution failure.
-        - Applicability: Exact version 1 standard capability with validated input/config and trusted host resources..
-        - Required/observable: result:Result; valid FAIL remains an ordinary completed verification operation.. Forbidden: Do not substitute a different mechanism, silently broaden scope or turn execution failure into a verification FAIL.
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/standard/structured.py:1-37.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.SCHEMA. Domain `D.STANDARD.SCHEMA`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **scope** — 4 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.STANDARD.SCOPE` — Filter supplied findings in their original order using normalized local file identity or half-open ranges. Preserve original finding strings and coordinates.
-        - Applicability: Exact version 1 standard capability with validated input/config and trusted host resources..
-        - Required/observable: findings:array; valid FAIL remains an ordinary completed verification operation.. Forbidden: Do not substitute a different mechanism, silently broaden scope or turn execution failure into a verification FAIL.
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/standard/scope.py:1-105.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.SCOPE. Domain `D.STANDARD.SCOPE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.STANDARD.SCOPE.EMPTY` — Return no selected findings.
-        - Applicability: Mode files/changed_files and empty files.
-        - Required/observable: Empty list.. Forbidden: Do not treat empty as unrestricted.
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/standard/scope.py:1-105.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.SCOPE. Domain `D.STANDARD.SCOPE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.STANDARD.SCOPE.LEXICAL` — Compare lexical platform-normalized components without reading files or resolving symlinks.
-        - Applicability: Paths used only for finding comparison.
-        - Required/observable: Finding selection.. Forbidden: Do not require missing/deleted paths to exist.
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/standard/scope.py:1-105.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.SCOPE. Domain `D.STANDARD.SCOPE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.STANDARD.SCOPE.ORDER` — Return selected values in original input order with original file strings and coordinates.
-        - Applicability: Input findings selected by predicate.
-        - Required/observable: Exact returned subsequence.. Forbidden: Do not sort/rewrite findings.
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/standard/scope.py:1-105.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.SCOPE. Domain `D.STANDARD.SCOPE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **select_files** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.STANDARD.SELECT_FILES` — Authorize selected files within host roots; choose explicit files, supplied/default glob or recursive directory traversal; return sorted paths bounded by file limit.
-        - Applicability: Exact version 1 standard capability with validated input/config and trusted host resources..
-        - Required/observable: files:array; valid FAIL remains an ordinary completed verification operation.. Forbidden: Do not substitute a different mechanism, silently broaden scope or turn execution failure into a verification FAIL.
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/standard/filesystem.py:1-124.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.SELECT_FILES. Domain `D.STANDARD.SELECT_FILES`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **text** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.RELAY.STANDARD.TEXT` — Combine bound and configured terms. Missing required literals, present prohibited literals and unmatched required regex produce structured findings; PASS iff no findings.
-        - Applicability: Exact version 1 standard capability with validated input/config and trusted host resources..
-        - Required/observable: result:Result; valid FAIL remains an ordinary completed verification operation.. Forbidden: Do not substitute a different mechanism, silently broaden scope or turn execution failure into a verification FAIL.
-        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/standard/text.py:72-84.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.TEXT. Domain `D.STANDARD.TEXT`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-  - **Transport** — 4 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **Processes** — 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **LAUNCH** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.RELAY.PROCESS.CLEANUP.LAUNCH` — Use argv array and absolute cwd, without shell.
-          - Applicability: Host-authorized external process starts.
-          - Required/observable: Host-selected process execution.. Forbidden: No graph-derived executable authorization or command-string shell interpretation.
-          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/security.md:27-33.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.PROCESS. Domain `D.RELAY.PROCESS`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **TEARDOWN** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.RELAY.PROCESS.CLEANUP.TEARDOWN` — Clean up process tree using supported platform lifecycle mechanism.
-          - Applicability: Timeout, cancellation or process completion requires cleanup.
-          - Required/observable: Process descendants terminated according to local supported cleanup contract.. Forbidden: Do not claim hostile-code sandbox or isolation from process privileges.
-          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/security.md:27-33.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.PROCESS. Domain `D.RELAY.PROCESS`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Stdio** — 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **FRESH** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.RELAY.STDIO.SESSION.FRESH` — Create a fresh initialized isolated session for that invocation.
-          - Applicability: Registered stdio provider invoked.
-          - Required/observable: Invocation-local session/process lifecycle.. Forbidden: No pooling, restart, replay or remote discovery promised.
-          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/providers.md:43-50.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.PROCESS. Domain `D.RELAY.PROCESS`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **MANIFEST** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.RELAY.STDIO.SESSION.MANIFEST` — Require manifest equality with trusted catalog snapshot.
-          - Applicability: Stdio initialization returns manifest.
-          - Required/observable: Reject mismatched returned manifest before work.. Forbidden: No mid-session schema/identity substitution.
-          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/providers.md:43-50.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.PROCESS. Domain `D.RELAY.PROCESS`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-- **SHARED** — 73 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-  - **JSON value and schema semantics** — 3 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **JSON_EQUALITY** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SHARED.JSON_EQUALITY` — JSON booleans and numbers are distinct; numbers compare by JSON numeric value; arrays are ordered; object member ordering does not alter object value. This same equality is used for reconstructed provenance snapshots.
-        - Applicability: Evaluate a declared JSON/schema predicate in its applicator context..
-        - Required/observable: Type-aware and context-correct predicate evaluation. Forbidden: Do not use Python True==1 or stringify values for identity.
-        - Authority: SHARED_JSON_OR_SCHEMA_SEMANTICS; source provider-contract/spec/draft/capabilities.md:1-51.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.WIRE.JSON. Domain `D.WIRE.JSON`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **SCHEMA_APPLICATORS** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SHARED.SCHEMA_APPLICATORS` — Evaluate allOf conjunctively, anyOf existentially, oneOf with exactly one successful child, not by negation, and if solely as a branch selector; apply child properties/items/propertyNames only at their actual locations.
-        - Applicability: Evaluate a declared JSON/schema predicate in its applicator context..
-        - Required/observable: Type-aware and context-correct predicate evaluation. Forbidden: Do not turn branch constraints or annotations into unconditional root predicates.
-        - Authority: SHARED_JSON_OR_SCHEMA_SEMANTICS; source provider-contract/schemas/draft/outcome.schema.json:1-92.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SCHEMA.EMBEDDED. Domain `D.SCHEMA.EMBEDDED`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Schema evaluation** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **Nonlooping** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.SHARED.SCHEMA.EVALUATION.NONLOOPING` — Schema evaluation must not run into an infinite loop against an instance.
-          - Applicability: A schema is evaluated against an instance, including a reference cycle..
-          - Required/observable: Evaluation terminates or is safely stopped; correctness of a chosen result/error is governed separately.. Forbidden: Do not evaluate references/applicators indefinitely; do not invent a universal finite timeout or reject every syntactic cycle as a portable rule.
-          - Authority: SHARED_JSON_OR_SCHEMA_SEMANTICS; source https://json-schema.org/draft/2020-12/json-schema-core#section-9.4.1.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SCHEMA.EMBEDDED. Domain `D.SCHEMA.EMBEDDED`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-  - **Public SDK** — 70 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **Aggregation** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **Exact local configuration** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.SDK.AGGREGATE.CONFIGURATION` — Require exact config keys reducer/handling, plus weights only for WEIGHTED_AVERAGE or severity_domain only for WORST_SEVERITY. Handling keys exactly7 with REJECT/IGNORE. Ordered weights nonempty/nonnegative/positive and match provided count; severity domain parsed.
-          - Applicability: Direct SDK aggregate configuration validator or local standard reducer validates config..
-          - Required/observable: AGGREGATE_CONFIG for local configuration rejection.. Forbidden: Do not generalize this local exact key whitelist to arbitrary custom Aggregate config or every portable capability.
-          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/validation/__init__.py:368-400.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.CONFIGURATION. Domain `D.AGG.CONFIGURATION`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Cancellation** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.CANCELLATION.TOKEN` — Token starts without reason; cancel requires exact nonempty string and retains the first reason; repeated valid cancel does not replace it.
-        - Applicability: Host constructs/cancels a cooperative token.
-        - Required/observable: Stable first explicit reason or ValueError for invalid reason.. Forbidden: No provider Result inference, forced blocking-code preemption or ambient semantic input.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/lifecycle.py:74-84.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.CANCELLATION. Domain `D.SDK.CANCELLATION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Extensions** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **Unsupported required meaning** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.SDK.EXTENSIONS.NONE` — No required extension capability implementations exist, so reject required extensions as EXTENSION_UNSUPPORTED.
-          - Applicability: Reference SDK or Engine consumes a required VCP extension..
-          - Required/observable: Local unsupported-extension rejection.. Forbidden: Do not imply every portable consumer must reject a supported required extension.
-          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source spec/draft/extensions.md:11-13.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.EXT.REQUIRED_SUPPORT. Domain `D.EXT.REQUIRED_SUPPORT`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Frame codec** — 4 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **DECODE** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.SDK.PROVIDER.FRAME.DECODE` — Buffer partial frames and emit all complete coalesced JSON-object messages in order.
-          - Applicability: Byte chunks fed to FrameDecoder.
-          - Required/observable: Ordered decoded message list, remainder retained.. Forbidden: No speculative resynchronization.
-          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/stdio.py:25-109.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.TRANSPORT. Domain `D.PROVIDER.TRANSPORT`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **ENCODE** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.SDK.PROVIDER.FRAME.ENCODE` — Encode UTF8 body and exact ASCII Content-Length header measured in bytes.
-          - Applicability: JSON object frame authored.
-          - Required/observable: One complete frame bytes.. Forbidden: No newline delimiter or character-count length.
-          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/stdio.py:25-109.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.TRANSPORT. Domain `D.PROVIDER.TRANSPORT`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **FAILURE** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.SDK.PROVIDER.FRAME.FAILURE` — Failure poisons decoder; finish rejects failed or partial state.
-          - Applicability: Framing/JSON fails or EOF declared.
-          - Required/observable: ProviderContractError and closed decoding path.. Forbidden: Do not resume parsing after failure or accept truncated EOF.
-          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/stdio.py:25-109.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.TRANSPORT. Domain `D.PROVIDER.TRANSPORT`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **LIMITS** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.SDK.PROVIDER.FRAME.LIMITS` — Require positive message/header limits; defaults 16MiB and8192 bytes.
-          - Applicability: FrameDecoder configured.
-          - Required/observable: ValueError on invalid limits.. Forbidden: No zero/negative configured limit.
-          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/stdio.py:25-109.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.TRANSPORT. Domain `D.PROVIDER.TRANSPORT`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Integer normalization** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.MODEL.INTEGRAL_NORMALIZATION` — Normalize integral float notation to SDK int while retaining strict rejection of Boolean/string by typed model; fractional values remain noninteger and fail.
-        - Applicability: SDK constructs SeverityLevel.rank or ProviderEvent.sequence from an integral finite float.
-        - Required/observable: Local integer representation implementing JSON integer notation.. Forbidden: No Boolean/numeric-string coercion or new portable integer semantics.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/model/__init__.py:68-76.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.MODEL. Domain `D.SDK.MODEL`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **LifecycleValidator** — 7 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **ACCEPT** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.SDK.PROVIDER.LIFECYCLE.ACCEPT` — Validate exact capability/version/input/config/constraints before running; reserve attempt identity including rejected attempt.
-          - Applicability: Observed invocation offered.
-          - Required/observable: Accepted state or structured rejection, no capability execution by validator.. Forbidden: No acceptance of invalid request or replay of rejected identity.
-          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/lifecycle.py:43-190.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PROVIDER_OBSERVER. Domain `D.SDK.PROVIDER_OBSERVER`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **CANCEL** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.SDK.PROVIDER.LIFECYCLE.CANCEL` — Running supported request records cancellation; terminal request succeeds without mutation.
-          - Applicability: Observed cancellation offered.
-          - Required/observable: Requested state stays nonterminal.. Forbidden: Unknown/rejected or unsupported running cancellation rejects.
-          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/lifecycle.py:43-190.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PROVIDER_OBSERVER. Domain `D.SDK.PROVIDER_OBSERVER`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **EVENT** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.SDK.PROVIDER.LIFECYCLE.EVENT` — Validate correlation, feature eligibility, payload and increasing per-attempt sequence.
-          - Applicability: Observed event offered.
-          - Required/observable: Accepted event advances sequence history only.. Forbidden: No unknown, duplicate, reordered or after-terminal event.
-          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/lifecycle.py:43-190.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PROVIDER_OBSERVER. Domain `D.SDK.PROVIDER_OBSERVER`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **FINISH** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.SDK.PROVIDER.LIFECYCLE.FINISH` — Reject uninitialized session or unfinished accepted attempts.
-          - Applicability: Observed trace declared finished.
-          - Required/observable: None on completed valid trace; structured error otherwise.. Forbidden: No assumed terminal completion from silence.
-          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/lifecycle.py:43-190.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PROVIDER_OBSERVER. Domain `D.SDK.PROVIDER_OBSERVER`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **INITIALIZE** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.SDK.PROVIDER.LIFECYCLE.INITIALIZE` — Validate offered lists, negotiate exact supported version and latch one successful initialization; failure closes session.
-          - Applicability: Initialization attempted.
-          - Required/observable: Structured ProviderContractError for illegal session operation.. Forbidden: No repeated initialization or work before initialization.
-          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/lifecycle.py:43-190.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PROVIDER_OBSERVER. Domain `D.SDK.PROVIDER_OBSERVER`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **MANIFEST** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.SDK.PROVIDER.LIFECYCLE.MANIFEST` — Snapshot and validate manifest for observed session.
-          - Applicability: ProviderLifecycle constructed.
-          - Required/observable: Session validates against retained exact manifest.. Forbidden: Do not let caller mutation change validation authority.
-          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/lifecycle.py:43-190.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PROVIDER_OBSERVER. Domain `D.SDK.PROVIDER_OBSERVER`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **OUTCOME** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.SDK.PROVIDER.LIFECYCLE.OUTCOME` — Check correlation, cancellation cause, clock/deadline, output and usage; latch terminal once.
-          - Applicability: Observed terminal outcome offered.
-          - Required/observable: One accepted terminal state.. Forbidden: No unsolicited CANCELLED, premature deadline, late nondeadline outcome or duplicate terminal.
-          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/lifecycle.py:43-190.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PROVIDER_OBSERVER. Domain `D.SDK.PROVIDER_OBSERVER`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Portable harness helpers** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.CONFORMANCE.HARNESS` — VCP check_manifest parses each documented object case and compares actual structured code with declared expected code, returning mismatched case IDs; Provider additionally dispatches documented lifecycle/session/framing forms, including EOF completion.
-        - Applicability: Host explicitly supplies portable manifest directory/case.
-        - Required/observable: Failure-ID list/None case check or propagated malformed-harness/I/O error.. Forbidden: No fixture corpus determines semantics, messages not compared, no implicit provider execution or mutation of expected files.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/conformance.py:1-67.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.CONFORMANCE_HARNESS. Domain `D.SDK.CONFORMANCE_HARNESS`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **ProtocolError.as_dict** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.ERROR.ASDICT` — Return code,message,path,details preserving string code and diagnostic fields.
-        - Applicability: ProtocolError instance.
-        - Required/observable: Four-key mapping.. Forbidden: Do not classify from diagnostic wording.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/errors.py:26-32.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.ERROR.ASDICT. Domain `D.SDK.ERROR.ASDICT`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Provider Protocol** — 3 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **cancel** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.SDK.PROVIDER.INTERFACE.CANCEL` — cancel(invocation_id,reason) is an async None-returning control method, with Provider Contract state/feature/cause semantics.
-          - Applicability: Caller routes cooperative cancellation concurrently with invocation as supported..
-          - Required/observable: Cancellation acknowledgement and final operation outcome remain separate.. Forbidden: Return is not a terminal Outcome or guarantee physical interruption.
-          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/__init__.py:40-52.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PROVIDER_INTERFACE. Domain `D.SDK.PROVIDER_INTERFACE`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **invoke** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.SDK.PROVIDER.INTERFACE.INVOKE` — invoke(invocation) asynchronously yields zero or more events followed by exactly one Outcome; before-acceptance exceptions reject, accepted failures yield ERROR.
-          - Applicability: Caller supplies initialization and validates matched invocation boundaries..
-          - Required/observable: Actual stream conforms to Provider Contract under caller lifecycle/correlation checks.. Forbidden: No missing/duplicate terminal or postterminal item; no VCP verdict inferred from lifecycle completion.
-          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/__init__.py:40-50.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PROVIDER_INTERFACE. Domain `D.SDK.PROVIDER_INTERFACE`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **manifest** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.SDK.PROVIDER.INTERFACE.MANIFEST` — manifest() returns ProviderManifest describing its advertised identities/schemas/features.
-          - Applicability: Host obtains an in-process Provider description..
-          - Required/observable: Caller validates manifest and supplies initialization/session handling.. Forbidden: Do not infer automatic discovery, authentication or provider execution from description.
-          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/__init__.py:40-48.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PROVIDER_INTERFACE. Domain `D.SDK.PROVIDER_INTERFACE`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **ProviderContractError.as_dict** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.PROVIDER.ERROR.ASDICT` — Return code,message,details without a VCP path field.
-        - Applicability: ProviderContractError instance.
-        - Required/observable: Three-key mapping.. Forbidden: Do not collapse Provider and VCP vocabularies.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/validation.py:63-64.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PROVIDER.ERROR.ASDICT. Domain `D.SDK.PROVIDER.ERROR.ASDICT`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Reference Engine** — 5 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **FINALIZE** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.SDK.ENGINE.ATTEMPT.FINALIZE` — Apply cooperative cancellation and validate complete RunRecord before return.
-          - Applicability: Attempt completes.
-          - Required/observable: Validated complete occurrence record.. Forbidden: No accepted output after observed cancellation; no incomplete record.
-          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/engine/__init__.py:86-135.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.ENGINE. Domain `D.SDK.ENGINE`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **POLICIES** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.SDK.ENGINE.ATTEMPT.POLICIES` — Run ordered policies; return None on inactive/unselected, otherwise create occurrence after valid admission.
-          - Applicability: Definition/input preflight succeeds.
-          - Required/observable: None or complete RunRecord.. Forbidden: No fabricated occurrence before admission.
-          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/engine/__init__.py:86-135.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.ENGINE. Domain `D.SDK.ENGINE`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **SCHEDULER** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.SDK.ENGINE.ATTEMPT.SCHEDULER` — Execute sequentially in topological order, using definition order among ready nodes.
-          - Applicability: Occurrence admission RUN.
-          - Required/observable: Dependency-respecting terminal record order.. Forbidden: No parallel execution promise for reference Engine.
-          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/engine/__init__.py:86-135.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.ENGINE. Domain `D.SDK.ENGINE`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **SNAPSHOTS** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.SDK.ENGINE.ATTEMPT.SNAPSHOTS` — Snapshot definition, run inputs, ambient metadata and supplied bindings.
-          - Applicability: Engine attempt begins.
-          - Required/observable: Independent occurrence state.. Forbidden: Caller mutation cannot alter retained authored occurrence stimulus.
-          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/engine/__init__.py:86-135.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.ENGINE. Domain `D.SDK.ENGINE`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.ENGINE.RUN` — Engine.run returns its occurrence record; None from attempt becomes NO_OCCURRENCE.
-        - Applicability: Same arguments as Engine.attempt.
-        - Required/observable: RunRecord or ProtocolError(NO_OCCURRENCE).. Forbidden: Do not invent an occurrence for inactive/unselected opportunities.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/engine/__init__.py:66-84.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.ENGINE. Domain `D.SDK.ENGINE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Reference registry** — 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **IDENTITY** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.SDK.REGISTRY.REGISTER.IDENTITY` — Store adapter under exact capability_id/capability_version pair; replace existing same pair.
-          - Applicability: Registry.register called.
-          - Required/observable: Subsequent exact lookup sees most recently registered adapter.. Forbidden: No version range or fallback.
-          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/adapters/__init__.py:14-28.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.REGISTRY. Domain `D.SDK.REGISTRY`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **ROLE_ALIASES** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.SDK.REGISTRY.REGISTER.ROLE_ALIASES` — Delegate to exact pair registration with default version1.
-          - Applicability: Role-named registry convenience called.
-          - Required/observable: Same stored adapter as explicit register call.. Forbidden: No role-specific hidden operation semantics.
-          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/adapters/__init__.py:14-28.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.REGISTRY. Domain `D.SDK.REGISTRY`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Reference stores** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.LEGACY_STORE` — append validates and serializes snapshot; records returns newly parsed independent records in append order. JsonlStore uses UTF8 newline records; blank lines ignored on retrieval; I/O/validation errors propagate.
-        - Applicability: Valid RunRecord supplied to legacy MemoryStore/JsonlStore.
-        - Required/observable: Stored snapshot or propagated error.. Forbidden: No mutable history rewriting, remote backend/durable/multiprocess/transaction promise.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provenance/__init__.py:1-41.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.LEGACY_STORAGE. Domain `D.SDK.LEGACY_STORAGE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **StdioSessionValidator** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.PROVIDER.SESSION` — Track unique RPC and attempt identities, one initialize/version verification, provisional invoke accept/reject, event-before-terminal and contract cancellation acknowledgement; finish requires no pending RPC or accepted attempts; malformed/correlation/closed-session errors reject.
-        - Applicability: Observed declared JSON-RPC messages supplied in direction order.
-        - Required/observable: Stateful None/ProviderContractError validation result.. Forbidden: No process execution, network-clock claim or acceptance message added to protocol.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/stdio.py:109-250.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PROVIDER_OBSERVER. Domain `D.SDK.PROVIDER_OBSERVER`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **String normalization** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.JSON.NORMALIZE` — Accept exact JSON primitive/container types; normalize StrEnum values and string-subclass mapping keys using their underlying string rather than overridden display/equality. Reject other non-JSON value subclasses. Reuse unchanged containers, copy only changed containers and leave caller data untouched.
-        - Applicability: SDK JSON normalization receives strings/StrEnum nested in lists or string-keyed mappings.
-        - Required/observable: Plain-string JSON snapshot, caller preservation, rejection of invalid types.. Forbidden: No numeric Enum/nonJSON admission, Boolean/number coercion or reserved-code impersonation.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source docs/relay/error-contract-hardening.md:21-23.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.WIRE.JSON. Domain `D.WIRE.JSON`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Typed value construction** — 4 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **EXTRA** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.SDK.MODEL.CONSTRUCTION.EXTRA` — Forbid extra attributes.
-          - Applicability: SDK object constructed with undeclared field.
-          - Required/observable: Model validation failure.. Forbidden: Do not retain unknown core attributes silently.
-          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/model/__init__.py:8-9.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.MODEL. Domain `D.SDK.MODEL`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **FROZEN** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.SDK.MODEL.CONSTRUCTION.FROZEN` — Forbid field reassignment; nested mutable containers remain mutable.
-          - Applicability: SDK object already constructed.
-          - Required/observable: Assignment failure, nested mutability requires caller snapshot boundaries.. Forbidden: Do not claim recursive deep immutability.
-          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/model/__init__.py:8-9.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.MODEL. Domain `D.SDK.MODEL`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **SEMANTIC_BOUNDARY** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.SDK.MODEL.CONSTRUCTION.SEMANTIC_BOUNDARY` — Explicit parse/validate boundary still enforces root schemas and prose invariants.
-          - Applicability: Typed model construction succeeds.
-          - Required/observable: Constructed object may still fail explicit semantic validation.. Forbidden: Typed construction alone is not complete contract acceptance.
-          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/model/__init__.py:8-9.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.MODEL. Domain `D.SDK.MODEL`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **TYPES** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.SDK.MODEL.CONSTRUCTION.TYPES` — Apply declared strict model field types and reject nonfinite model numbers.
-          - Applicability: SDK object constructed.
-          - Required/observable: Typed object or model validation error, not full portable semantic validation.. Forbidden: No Boolean/string coercion into numeric semantic fields.
-          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/model/__init__.py:8-9.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.MODEL. Domain `D.SDK.MODEL`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Wire validation** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **Shipped timestamp format** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.SDK.WIRE.TIME_FORMAT` — Apply SDK registered date-time checker using explicit syntax and Python calendar validation, alongside root UTC suffix pattern. Embedded capability/port format remains annotation-only.
-          - Applicability: Validate shipped VCP root containing date-time format fields..
-          - Required/observable: Invalid SDK timestamp field fails wire validation with PROTOCOL_STRUCTURE.. Forbidden: Do not generalize shipped-root format assertion to embedded schemas or claim Python datetime precision/calendar limits are portable numeric canonicalization.
-          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/validation/__init__.py:96-130.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.VALIDATION. Domain `D.SDK.VALIDATION`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **check_schema** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.SCHEMA.CHECK` — Require Draft2020-12-valid Boolean/object schema and supported local schema-position references; unsupported dialect/nestedIDs/anchors/dynamic/external/invalid pointers reject SCHEMA_UNSUPPORTED; root ID allowed.
-        - Applicability: Embedded schema supplied.
-        - Required/observable: None or ProtocolError.. Forbidden: No annotation target execution/network fetching or instance default insertion.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/json_schema.py:62-127.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SCHEMA.EMBEDDED. Domain `D.SCHEMA.EMBEDDED`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **fingerprint** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.FINGERPRINT` — Return local-sha256: followed by SHA256 hex of the SDK serialized UTF-8 bytes.
-        - Applicability: VerificationDefinition supplied.
-        - Required/observable: Opaque reference-only string.. Forbidden: Do not infer authenticity or cross-language canonical identity.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/fingerprint/__init__.py:9-11.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.FINGERPRINT. Domain `D.SDK.FINGERPRINT`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **flattened_status** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.FLATTEN` — Validate Result, then use the partial standard projection; undefined states raise SDK RESULT_PROJECTION.
-        - Applicability: Result supplied.
-        - Required/observable: String or ProtocolError.. Forbidden: Do not add portable statuses for unprojectable states.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/inspection.py:56-68.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RESULT.FLATTENED. Domain `D.RESULT.FLATTENED`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **inspect_definition** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.INSPECT` — Validate definition, then expose id/version/subject/criterion, topological node order, policy/run-input/port/binding data and declared upstream consumers including guards.
-        - Applicability: Definition supplied.
-        - Required/observable: Definition summary mapping.. Forbidden: Do not inspect by executing providers.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/inspection.py:13-53.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.INSPECT. Domain `D.SDK.INSPECT`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **json_equal** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.JSON.EQUALITY` — Compare numbers numerically, Boolean separately; lists positionally; object key order immaterial.
-        - Applicability: Validated parsed JSON values.
-        - Required/observable: Boolean equality.. Forbidden: Do not identify true and 1.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/serialization/__init__.py:13-33.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.JSON.EQUALITY. Domain `D.SDK.JSON.EQUALITY`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **load_provider_schema** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.PROVIDER.SCHEMA.LOAD` — Return one of the nine packaged Provider schemas; unknown root raises PROTOCOL_VIOLATION.
-        - Applicability: Requested Provider root name.
-        - Required/observable: Schema mapping.. Forbidden: Do not import remote schemas.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/validation.py:80-90.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PROVIDER.SCHEMA.LOAD. Domain `D.SDK.PROVIDER.SCHEMA.LOAD`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **load_schema** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.SCHEMA.LOAD` — Return packaged named schema, including value-source; unknown root raises PROTOCOL_STRUCTURE.
-        - Applicability: Requested root name string.
-        - Required/observable: Schema mapping.. Forbidden: Do not retrieve schemas from a network.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/validation/__init__.py:81-91.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.SCHEMA.LOAD. Domain `D.SDK.SCHEMA.LOAD`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **negotiate_contract_version** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.PROVIDER.NEGOTIATE` — SDK selects first list element present in provider list, then requires that element equal 0.1 or raises CONTRACT_VERSION_UNSUPPORTED.
-        - Applicability: Ordered exact version string lists supplied.
-        - Required/observable: 0.1 or ProviderContractError.. Forbidden: No SemVer/coercion/fallback; portable mixed future-version interpretation remains separately reviewed rather than inferred from this local helper.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/lifecycle.py:25-30.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PROVIDER_NEGOTIATION. Domain `D.SDK.PROVIDER_NEGOTIATION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **obvious_incompatible** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.SCHEMA.INCOMPATIBLE` — Return true for a false schema, disjoint explicit primitive types with integer/number overlap, or finite source const/enum with no target-accepted candidate; otherwise false means no established contradiction.
-        - Applicability: Valid supported source and target schemas supplied.
-        - Required/observable: Conservative compatibility Boolean.. Forbidden: False is not a proof of arbitrary schema subsumption or actual value validity.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/json_schema.py:130-156.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SCHEMA.EMBEDDED. Domain `D.SCHEMA.EMBEDDED`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **parse_cancel_request** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.PROVIDER.PARSE_CANCEL_REQUEST` — Delegate to parse_provider_object for cancel-request; return its typed value after structure and local semantic validation.
-        - Applicability: str/bytes/JSON value.
-        - Required/observable: Typed value or ProviderContractError.. Forbidden: Do not treat object parsing as a complete session/manifest-dependent lifecycle validation.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/validation.py:347-348.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PROVIDER.PARSE_CANCEL_REQUEST. Domain `D.SDK.PROVIDER.PARSE_CANCEL_REQUEST`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **parse_definition** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.PARSE.DEFINITION` — Decode strict JSON, validate the named shipped root and its prose semantics, return the typed verification-definition value.
-        - Applicability: str/bytes/parsed JSON supplied.
-        - Required/observable: Typed value or ProtocolError.. Forbidden: Do not accept construction alone as full validation or execute providers.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/validation/__init__.py:168-169.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PARSE.DEFINITION. Domain `D.SDK.PARSE.DEFINITION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **parse_invocation** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.PROVIDER.PARSE_INVOCATION` — Delegate to parse_provider_object for invocation; return its typed value after structure and local semantic validation.
-        - Applicability: str/bytes/JSON value.
-        - Required/observable: Typed value or ProviderContractError.. Forbidden: Do not treat object parsing as a complete session/manifest-dependent lifecycle validation.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/validation.py:335-336.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PROVIDER.PARSE_INVOCATION. Domain `D.SDK.PROVIDER.PARSE_INVOCATION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **parse_object** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.PARSE.OBJECT` — Decode strict JSON, validate named root, construct appropriate typed SDK object and apply prose semantic checks; value-source dispatches exact kind; unknown names PROTOCOL_STRUCTURE.
-        - Applicability: Named wire root and str/bytes/parsed JSON supplied.
-        - Required/observable: Typed value or exact applicable structural/semantic ProtocolError.. Forbidden: No construction-only acceptance, provider execution or metadata-as-schema traversal.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/validation/__init__.py:142-165.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.VALIDATION. Domain `D.SDK.VALIDATION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **parse_outcome** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.PROVIDER.PARSE_OUTCOME` — Delegate to parse_provider_object for outcome; return its typed value after structure and local semantic validation.
-        - Applicability: str/bytes/JSON value.
-        - Required/observable: Typed value or ProviderContractError.. Forbidden: Do not treat object parsing as a complete session/manifest-dependent lifecycle validation.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/validation.py:343-344.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PROVIDER.PARSE_OUTCOME. Domain `D.SDK.PROVIDER.PARSE_OUTCOME`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **parse_provider_event** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.PROVIDER.PARSE_PROVIDER_EVENT` — Delegate to parse_provider_object for provider-event; return its typed value after structure and local semantic validation.
-        - Applicability: str/bytes/JSON value.
-        - Required/observable: Typed value or ProviderContractError.. Forbidden: Do not treat object parsing as a complete session/manifest-dependent lifecycle validation.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/validation.py:339-340.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PROVIDER.PARSE_PROVIDER_EVENT. Domain `D.SDK.PROVIDER.PARSE_PROVIDER_EVENT`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **parse_provider_manifest** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.PROVIDER.PARSE_PROVIDER_MANIFEST` — Delegate to parse_provider_object for provider-manifest; return its typed value after structure and local semantic validation.
-        - Applicability: str/bytes/JSON value.
-        - Required/observable: Typed value or ProviderContractError.. Forbidden: Do not treat object parsing as a complete session/manifest-dependent lifecycle validation.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/validation.py:331-332.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PROVIDER.PARSE_PROVIDER_MANIFEST. Domain `D.SDK.PROVIDER.PARSE_PROVIDER_MANIFEST`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **parse_provider_object** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.PROVIDER.PARSE_OBJECT` — Validate strict JSON/root/model/standalone semantics offline; unknown root PROTOCOL_VIOLATION, present wrong contract version CONTRACT_VERSION_UNSUPPORTED; malformed invocation INVALID_INVOCATION, malformed cancel/initialize request PROTOCOL_VIOLATION, other peer objects INVALID_PROVIDER_OUTPUT.
-        - Applicability: Named Provider root and encoded/parsed JSON supplied.
-        - Required/observable: Typed Provider value or ProviderContractError with diagnostic cause.. Forbidden: No session/capability-dependent acceptance inferred from standalone parsing; preserve explicit null payloads.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/validation.py:146-201.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.VALIDATION. Domain `D.SDK.VALIDATION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **parse_result** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.PARSE.RESULT` — Decode strict JSON, validate the named shipped root and its prose semantics, return the typed result value.
-        - Applicability: str/bytes/parsed JSON supplied.
-        - Required/observable: Typed value or ProtocolError.. Forbidden: Do not accept construction alone as full validation or execute providers.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/validation/__init__.py:172-173.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PARSE.RESULT. Domain `D.SDK.PARSE.RESULT`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **parse_run_record** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.PARSE.RECORD` — Decode strict JSON, validate the named shipped root and its prose semantics, return the typed run-record value.
-        - Applicability: str/bytes/parsed JSON supplied.
-        - Required/observable: Typed value or ProtocolError.. Forbidden: Do not accept construction alone as full validation or execute providers.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/validation/__init__.py:176-177.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PARSE.RECORD. Domain `D.SDK.PARSE.RECORD`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **serialize** — 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.PROVIDER.SERIALIZE` — Return compact ensure_ascii JSON of wire_data with nonfinite values prohibited.
-        - Applicability: ProviderValue supplied.
-        - Required/observable: String.. Forbidden: Do not claim sorted keys or portable canonical bytes.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/validation.py:76-77.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PROVIDER.SERIALIZE. Domain `D.SDK.PROVIDER.SERIALIZE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.SERIALIZE.BYTES` — Return compact sorted-key ensure_ascii JSON with nonfinite output prohibited.
-        - Applicability: SDK Value supplied.
-        - Required/observable: String bytes determined by local serializer.. Forbidden: Do not promise portable canonical bytes or signing.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/serialization/__init__.py:68-71.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.SERIALIZE.BYTES. Domain `D.SDK.SERIALIZE.BYTES`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **to_data** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.SERIALIZE.DATA` — Recursively materialize wire fields; omit unsupplied empty metadata/extensions and optional null controls; retain explicitly set Result judgment/output and InputResolution value, including null.
-        - Applicability: SDK Value supplied.
-        - Required/observable: JSON-compatible wire snapshot.. Forbidden: Do not erase explicitly emitted null payload or invent default annotations.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/serialization/__init__.py:36-55.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.SERIALIZE.DATA. Domain `D.SDK.SERIALIZE.DATA`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **validate_definition** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.VALIDATE.DEFINITION` — Validate by serializing to wire data and applying parse_definition; return None on success.
-        - Applicability: Typed value supplied.
-        - Required/observable: None or ProtocolError.. Forbidden: Do not assume a typed model is semantically valid.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/validation/__init__.py:180-181.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.VALIDATE.DEFINITION. Domain `D.SDK.VALIDATE.DEFINITION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **validate_invocation** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.PROVIDER.VALIDATE_INVOCATION` — Reparse wire_data through the corresponding object parser and return None on success.
-        - Applicability: Typed Invocation.
-        - Required/observable: None or ProviderContractError.. Forbidden: Do not skip validation because a typed instance exists.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/validation.py:355-356.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PROVIDER.VALIDATE_INVOCATION. Domain `D.SDK.PROVIDER.VALIDATE_INVOCATION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **validate_lifecycle** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.PROVIDER.TRACE` — Require exactly manifest/initialize/steps/finish with typed action payload/optional clock, run observed validation steps, call finish only when true; return None for accepted complete trace or permitted unfinished prefix.
-        - Applicability: Portable trace object supplied.
-        - Required/observable: None or ProviderContractError.. Forbidden: No RPC execution, missing deadline clock or fabricated finish terminal.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/lifecycle.py:193-229.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PROVIDER_OBSERVER. Domain `D.SDK.PROVIDER_OBSERVER`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **validate_outcome** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.PROVIDER.VALIDATE_OUTCOME` — Reparse wire_data through the corresponding object parser and return None on success.
-        - Applicability: Typed Outcome.
-        - Required/observable: None or ProviderContractError.. Forbidden: Do not skip validation because a typed instance exists.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/validation.py:363-364.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PROVIDER.VALIDATE_OUTCOME. Domain `D.SDK.PROVIDER.VALIDATE_OUTCOME`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **validate_payload** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.PROVIDER.PAYLOAD` — Validate offline Draft2020-12 instance; return None or ProviderContractError using caller code and cause/details.
-        - Applicability: Supported checked capability schema and JSON value/caller code supplied.
-        - Required/observable: None or caller-classified failure.. Forbidden: No network/schema-default insertion, standalone payload validation does not initialize/invoke a provider.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/validation.py:322-328.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.VALIDATION. Domain `D.SDK.VALIDATION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **validate_provider_event** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.PROVIDER.VALIDATE_PROVIDER_EVENT` — Reparse wire_data through the corresponding object parser and return None on success.
-        - Applicability: Typed ProviderEvent.
-        - Required/observable: None or ProviderContractError.. Forbidden: Do not skip validation because a typed instance exists.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/validation.py:359-360.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PROVIDER.VALIDATE_PROVIDER_EVENT. Domain `D.SDK.PROVIDER.VALIDATE_PROVIDER_EVENT`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **validate_provider_manifest** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.PROVIDER.VALIDATE_PROVIDER_MANIFEST` — Reparse wire_data through the corresponding object parser and return None on success.
-        - Applicability: Typed ProviderManifest.
-        - Required/observable: None or ProviderContractError.. Forbidden: Do not skip validation because a typed instance exists.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/validation.py:351-352.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PROVIDER.VALIDATE_PROVIDER_MANIFEST. Domain `D.SDK.PROVIDER.VALIDATE_PROVIDER_MANIFEST`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **validate_result** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.VALIDATE.RESULT` — Validate by serializing to wire data and applying parse_result; return None on success.
-        - Applicability: Typed value supplied.
-        - Required/observable: None or ProtocolError.. Forbidden: Do not assume a typed model is semantically valid.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/validation/__init__.py:184-185.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.VALIDATE.RESULT. Domain `D.SDK.VALIDATE.RESULT`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **validate_run_inputs** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.RUN_INPUTS` — Reject unknown names/missing required/schema-invalid supplied values as RUN_INPUT; return a deep snapshot with declared explicit optional Constant defaults inserted, omitted optional ports absent.
-        - Applicability: A validated Definition and supplied JSON object are provided.
-        - Required/observable: Normalized mapping or ProtocolError before invocation.. Forbidden: No schema-default insertion, caller mutation or null fallback; this helper does not independently validate the entire Definition.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/dataflow.py:322-334.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RUN_INPUT.NORMALIZATION. Domain `D.RUN_INPUT.NORMALIZATION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **validate_value** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.SCHEMA.VALUE` — Offline Draft2020-12 evaluation returns None on acceptance; validation/evaluation exception raises ProtocolError using caller code, default local DATAFLOW_VALUE, retaining cause/details.
-        - Applicability: A checked supported schema and JSON instance are supplied.
-        - Required/observable: None or caller-classified ProtocolError.. Forbidden: Do not treat this default SDK diagnostic as portable VCP error; format annotations not enforced here.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/json_schema.py:134-139.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.VALIDATION. Domain `D.SDK.VALIDATION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **validate_wire** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.VALIDATE.WIRE` — Check strict JSON; wrong present protocol marker PROTOCOL_VERSION before root validation; schema failure PROTOCOL_STRUCTURE with escaped JSON Pointer path. Return None if structural check passes.
-        - Applicability: Named VCP root and parsed JSON supplied.
-        - Required/observable: None or ProtocolError with path.. Forbidden: Do not imply full prose semantics from this structural helper.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/validation/__init__.py:127-139.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.VALIDATION. Domain `D.SDK.VALIDATION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **wire_data** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.SDK.PROVIDER.WIRE_DATA` — Use JSON model dump with exclude_unset=True, preserving explicitly supplied null and extension values.
-        - Applicability: ProviderValue supplied.
-        - Required/observable: JSON object.. Forbidden: Do not erase explicit null output or invent unsupplied optional fields.
-        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/validation.py:71-73.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PROVIDER.WIRE_DATA. Domain `D.SDK.PROVIDER.WIRE_DATA`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-- **VCP** — 266 canonical primary records; CLOSED BY APPROVED SNAPSHOT/CUSTOM DECISION.
-  - **Aggregation** — 33 canonical primary records; CLOSED BY APPROVED SNAPSHOT/CUSTOM DECISION.
-    - **Evidence** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.AGG.EVIDENCE_ORDER` — Concatenate retained evidence in authored membership order
-        - Applicability: Any standard reducer succeeds.
-        - Required/observable: Stable evidence sequence. Forbidden: Do not reorder evidence using commutativity of numeric/verdict calculation
-        - Authority: NORMATIVE_VCP; source spec/draft/aggregation.md:20-38.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.MEMBERSHIP. Domain `D.AGG.MEMBERSHIP`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Handling** — 3 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.AGG.IGNORE` — Exclude that member only; retain order and identities of others
-        - Applicability: A member matches exceptional class handled IGNORE.
-        - Required/observable: Reduction uses retained sequence. Forbidden: Do not turn ignored members into scores/verdicts
-        - Authority: NORMATIVE_VCP; source spec/draft/aggregation.md:10-18.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.EXCEPTION_ACTION. Domain `D.AGG.EXCEPTION_ACTION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.AGG.MISSING` — Use MISSING handling
-        - Applicability: A KNOWN member lacks reducer-required verdict/score/severity.
-        - Required/observable: Configured missing-observation path. Forbidden: Do not recategorize KNOWN without verdict as UNKNOWN
-        - Authority: NORMATIVE_VCP; source spec/draft/aggregation.md:10-18.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.EXCEPTION_ACTION. Domain `D.AGG.EXCEPTION_ACTION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.AGG.REJECT` — Reject reduction with AGGREGATE_INPUT and record ERROR
-        - Applicability: A member matches an exceptional class handled REJECT.
-        - Required/observable: Explicit aggregate failure. Forbidden: Do not invent satisfaction value
-        - Authority: NORMATIVE_VCP; source spec/draft/aggregation.md:10-18.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.EXCEPTION_ACTION. Domain `D.AGG.EXCEPTION_ACTION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Logical reducers** — 5 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.AGG.ALL` — PASS iff every retained verdict is PASS
-        - Applicability: ALL has retained binary verdicts.
-        - Required/observable: Successful applicable KNOWN logical Result. Forbidden: Do not return PASS when any retained verdict is FAIL
-        - Authority: NORMATIVE_VCP; source spec/draft/aggregation.md:20-38.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.LOGICAL. Domain `D.AGG.LOGICAL`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.AGG.ANY` — PASS iff at least one retained verdict is PASS
-        - Applicability: ANY has retained binary verdicts.
-        - Required/observable: Successful applicable KNOWN logical Result. Forbidden: Do not pass an all-FAIL retained sequence
-        - Authority: NORMATIVE_VCP; source spec/draft/aggregation.md:20-38.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.LOGICAL. Domain `D.AGG.LOGICAL`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.AGG.MAJORITY.FAIL` — Return FAIL.
-        - Applicability: Retained binary verdicts have more FAIL than PASS.
-        - Required/observable: Successful applicable KNOWN Result.. Forbidden: Do not choose PASS or a tie policy.
-        - Authority: NORMATIVE_VCP; source spec/draft/aggregation.md:20-38.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.LOGICAL. Domain `D.AGG.LOGICAL`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.AGG.MAJORITY.PASS` — Return PASS.
-        - Applicability: Retained binary verdicts have more PASS than FAIL.
-        - Required/observable: Successful applicable KNOWN Result.. Forbidden: Do not choose FAIL or a tie policy.
-        - Authority: NORMATIVE_VCP; source spec/draft/aggregation.md:20-38.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.LOGICAL. Domain `D.AGG.LOGICAL`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.AGG.MAJORITY.TIE` — Reject reduction.
-        - Applicability: Retained binary verdict counts tie.
-        - Required/observable: Aggregate error.. Forbidden: Do not invent deterministic or random tie break.
-        - Authority: NORMATIVE_VCP; source spec/draft/aggregation.md:20-38.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.LOGICAL. Domain `D.AGG.LOGICAL`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Membership** — 8 canonical primary records; CLOSED BY APPROVED SNAPSHOT/CUSTOM DECISION.
-      - `CM.VCP.AGG.MEMBERS.COMPLETE` — Include that binding in aggregate_inputs.
-        - Applicability: An Aggregate input binds a RESULT-role output.
-        - Required/observable: Reject incomplete structural membership.. Forbidden: Do not silently omit declared Result binding.
-        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:127-140.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.MEMBERSHIP. Domain `D.AGG.MEMBERSHIP`. No test/proof coverage is claimed.
-        - Review status: CLOSED BY APPROVED SNAPSHOT/CUSTOM DECISION — Q.CUSTOM_AGG_EMPTY.
-      - `CM.VCP.AGG.MEMBERS.ORDER` — aggregate_inputs is an authored ordered list.
-        - Applicability: An Aggregate membership is declared.
-        - Required/observable: Stable ordered membership input.. Forbidden: Do not derive order from predecessor edges or JSON object order.
-        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:127-140.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.MEMBERSHIP. Domain `D.AGG.MEMBERSHIP`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.AGG.MEMBERS.REQUIREDNESS` — Input is required BLOCK.
-        - Applicability: An Aggregate member input is declared.
-        - Required/observable: Reject invalid member declaration.. Forbidden: Do not OMIT/DEFAULT a structural Result member.
-        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:127-140.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.MEMBERSHIP. Domain `D.AGG.MEMBERSHIP`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.AGG.MEMBERS.SOURCE_ROLE` — Member binds existing upstream RESULT-role output.
-        - Applicability: A member name is declared.
-        - Required/observable: Reject invalid typed membership.. Forbidden: Do not include INFORMATION/DECISION or Derive/Control bookkeeping as Result members.
-        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:127-140.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.MEMBERSHIP. Domain `D.AGG.MEMBERSHIP`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.AGG.MEMBERS.UNIQUE` — Member input names are unique.
-        - Applicability: An Aggregate membership is declared.
-        - Required/observable: Reject duplicate membership.. Forbidden: Do not include same input identity twice.
-        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:127-140.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.MEMBERSHIP. Domain `D.AGG.MEMBERSHIP`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.AGG.MEMBERS_INPUT.CONSTANT` — Required members input is CONSTANT equal to aggregate_inputs.
-        - Applicability: An Aggregate is declared.
-        - Required/observable: Provider receives exact ordered membership.. Forbidden: Do not rely on object-key order or inconsistent copied list.
-        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:127-140.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.MEMBERSHIP. Domain `D.AGG.MEMBERSHIP`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.AGG.MEMBERS_INPUT.RESERVED` — subject, criterion and members are not member names.
-        - Applicability: An Aggregate member input is named.
-        - Required/observable: Reject reserved member identity.. Forbidden: Do not conflate semantic or ordering ports with reducer members.
-        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:127-140.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.MEMBERSHIP. Domain `D.AGG.MEMBERSHIP`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.AGG.MEMBER_STATES` — Keep it in membership and apply handling; unavailable values block
-        - Applicability: A Result member is ERROR or nonexecuted.
-        - Required/observable: Exact retained/rejected member set. Forbidden: Do not silently discard exceptional members before configured handling
-        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:127-140.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.MEMBERSHIP. Domain `D.AGG.MEMBERSHIP`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Numeric reducers** — 6 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **ORIGINAL_WEIGHTS** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.AGG.WEIGHTED.ORIGINAL_WEIGHTS` — Exactly n finite nonnegative weights aligned with original positions.
-          - Applicability: Direct weighted reduction has n original members.
-          - Required/observable: AGGREGATE_CONFIG/INPUT as scoped.. Forbidden: No missing/negative/nonfinite weight.
-          - Authority: NORMATIVE_VCP; source spec/draft/aggregation.md:20-38.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.NUMERIC. Domain `D.AGG.NUMERIC`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **RETAINED_TOTAL** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.AGG.WEIGHTED.RETAINED_TOTAL` — sum(w_i,i in K)>0.
-          - Applicability: Filtering retains member set K.
-          - Required/observable: AGGREGATE_INPUT on zero.. Forbidden: No zero retained total or invented normalization.
-          - Authority: NORMATIVE_VCP; source spec/draft/aggregation.md:20-38.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.NUMERIC. Domain `D.AGG.NUMERIC`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **SCORE** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.AGG.WEIGHTED.SCORE` — score=sum(w_i*s_i,i in K)/sum(w_i,i in K).
-          - Applicability: Weighted reduction has valid retained scores/weights.
-          - Required/observable: Successful applicable KNOWN score.. Forbidden: No verdict inference or weight reindexing.
-          - Authority: NORMATIVE_VCP; source spec/draft/aggregation.md:20-38.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.NUMERIC. Domain `D.AGG.NUMERIC`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.AGG.MAX` — Output score is mathematical maximum
-        - Applicability: MAX_SCORE has retained scores.
-        - Required/observable: Successful applicable KNOWN score Result. Forbidden: Do not imply verdict from score
-        - Authority: NORMATIVE_VCP; source spec/draft/aggregation.md:20-38.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.NUMERIC. Domain `D.AGG.NUMERIC`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.AGG.MEAN` — Output score is arithmetic mean sum(x_i)/n
-        - Applicability: AVERAGE has retained scores x_i.
-        - Required/observable: Mathematical mean within implementation representability limits. Forbidden: Do not require portable binary64 bit identity
-        - Authority: NORMATIVE_VCP; source spec/draft/aggregation.md:20-38.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.NUMERIC. Domain `D.AGG.NUMERIC`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.AGG.MIN` — Output score is mathematical minimum
-        - Applicability: MIN_SCORE has retained scores.
-        - Required/observable: Successful applicable KNOWN score Result. Forbidden: Do not imply verdict from score
-        - Authority: NORMATIVE_VCP; source spec/draft/aggregation.md:20-38.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.NUMERIC. Domain `D.AGG.NUMERIC`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Severity** — 6 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **EXPLICIT** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.AGG.SEVERITY_DOMAIN.EXPLICIT` — Explicit severity_domain id/levels supplied and structurally valid.
-          - Applicability: WORST_SEVERITY configured.
-          - Required/observable: AGGREGATE_CONFIG or PROFILE_DOMAIN at declared boundary.. Forbidden: No global/implicit registry fallback.
-          - Authority: NORMATIVE_VCP; source spec/draft/aggregation.md:20-38.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SEVERITY.DOMAIN. Domain `D.SEVERITY.DOMAIN`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **LABEL_UNIQUE** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.AGG.SEVERITY_DOMAIN.LABEL_UNIQUE` — Labels are nonempty and unique.
-          - Applicability: Explicit severity levels declared.
-          - Required/observable: PROFILE_DOMAIN rejection.. Forbidden: No ambiguous duplicate/empty label.
-          - Authority: NORMATIVE_VCP; source spec/draft/aggregation.md:20-38.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SEVERITY.DOMAIN. Domain `D.SEVERITY.DOMAIN`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **MEMBER_DOMAIN** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.AGG.SEVERITY_DOMAIN.MEMBER_DOMAIN` — Member.domain equals explicit domain.id.
-          - Applicability: Retained severity member examined.
-          - Required/observable: AGGREGATE_INPUT otherwise.. Forbidden: No foreign domain comparison.
-          - Authority: NORMATIVE_VCP; source spec/draft/aggregation.md:20-38.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SEVERITY.DOMAIN. Domain `D.SEVERITY.DOMAIN`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **MEMBER_LABEL** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.AGG.SEVERITY_DOMAIN.MEMBER_LABEL` — Member.label belongs to explicit domain levels.
-          - Applicability: Retained severity member examined.
-          - Required/observable: AGGREGATE_INPUT otherwise.. Forbidden: No unresolved label ordering.
-          - Authority: NORMATIVE_VCP; source spec/draft/aggregation.md:20-38.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SEVERITY.DOMAIN. Domain `D.SEVERITY.DOMAIN`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **RANK_UNIQUE** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.AGG.SEVERITY_DOMAIN.RANK_UNIQUE` — Ranks satisfy JSON integer semantics and are pairwise distinct; higher is worse.
-          - Applicability: Explicit severity levels declared.
-          - Required/observable: PROFILE_DOMAIN rejection.. Forbidden: No Boolean/string/fractional/duplicate rank.
-          - Authority: NORMATIVE_VCP; source spec/draft/aggregation.md:20-38.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SEVERITY.DOMAIN. Domain `D.SEVERITY.DOMAIN`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.AGG.SEVERITY_RESULT` — Output label has greatest rank in explicit domain
-        - Applicability: WORST_SEVERITY has valid retained members.
-        - Required/observable: Successful applicable KNOWN severity Result. Forbidden: Do not imply binary verdict
-        - Authority: NORMATIVE_VCP; source spec/draft/aggregation.md:20-38.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SEVERITY.DOMAIN. Domain `D.SEVERITY.DOMAIN`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Standard config** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.AGG.CONFIG` — Provide reducer and handling with every exceptional category explicitly REJECT or IGNORE
-        - Applicability: Standard openverify.aggregate version 1 is invoked.
-        - Required/observable: AGGREGATE_CONFIG for invalid configuration; exact coexistence precedence unspecified. Forbidden: Do not insert hidden handling defaults
-        - Authority: NORMATIVE_VCP; source spec/draft/aggregation.md:10-18.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.CONFIGURATION. Domain `D.AGG.CONFIGURATION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Standard domain** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.AGG.NONEMPTY` — Reject empty reduction
-        - Applicability: Standard reduction has empty original or retained input.
-        - Required/observable: Aggregate error; custom-definition scope is not inferred here. Forbidden: Do not return vacuous PASS or invented score
-        - Authority: NORMATIVE_VCP; source spec/draft/aggregation.md:10-18.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.MEMBERSHIP. Domain `D.AGG.MEMBERSHIP`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Weights** — 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **EXACT_KEYS** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.AGG.WEIGHT_KEYS.EXACT_KEYS` — Weight mapping key set equals ordered aggregate_inputs member identity set.
-          - Applicability: Graph reducer WEIGHTED_AVERAGE.
-          - Required/observable: Graph config validity.. Forbidden: No extra/missing name or object-order positional identity.
-          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:127-140.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.NUMERIC. Domain `D.AGG.NUMERIC`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **IDENTITY** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.AGG.WEIGHT_KEYS.IDENTITY` — Retained member keeps its originally authored named weight.
-          - Applicability: Weighted members are filtered.
-          - Required/observable: Identity-preserving score law.. Forbidden: Do not shift weights onto neighbors.
-          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:127-140.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.NUMERIC. Domain `D.AGG.NUMERIC`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-  - **Composition** — 12 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **Control scope** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.BOUNDARY.NO_ACTION` — Control Decisions affect verification eligibility only; the host owns arbitrary external business actions.
-        - Applicability: Portable verification execution is requested.
-        - Required/observable: Verification state/Decision, no automatically authorized external action.. Forbidden: Do not execute an external business action solely because a Control Decision names a route/stop/retry/defer.
-        - Authority: NORMATIVE_VCP; source spec/draft/boundary.md:5-10.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.CONFORMANCE.SCOPE. Domain `D.CONFORMANCE.SCOPE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Dependencies** — 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.GRAPH.NO_DATA` — The edge only imposes dependency/eligibility
-        - Applicability: An execution edge exists.
-        - Required/observable: Only explicit bindings and guards transport/gate semantics. Forbidden: Do not inject values or implicitly propagate predecessor failure/nonexecution
-        - Authority: NORMATIVE_VCP; source spec/draft/composition.md:5-9.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.COMPOSITION. Domain `D.COMPOSITION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.GRAPH.READINESS` — Every incoming predecessor has reached a terminal occurrence state
-        - Applicability: A node may begin execution.
-        - Required/observable: Dependency-respecting execution and recorded timing. Forbidden: Do not start a consumer early
-        - Authority: NORMATIVE_VCP; source spec/draft/composition.md:5-9.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.COMPOSITION. Domain `D.COMPOSITION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Features** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.GRAPH.UNSUPPORTED` — Reject unsupported executable features
-        - Applicability: A graph requests cycles/iteration or DYNAMIC_EXPANSION.
-        - Required/observable: GRAPH_UNSUPPORTED. Forbidden: Do not assign invented iteration semantics
-        - Authority: NORMATIVE_VCP; source spec/draft/composition.md:24-24.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.COMPOSITION. Domain `D.COMPOSITION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Guards** — 3 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.GUARD.ABSENT` — Guard evaluates false
-        - Applicability: A valid runtime guard pointer encounters unavailable optional data.
-        - Required/observable: GUARD_FALSE nonexecution. Forbidden: Do not invoke the gated node using an invented operand
-        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:120-125.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.COMPOSITION. Domain `D.COMPOSITION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.GUARD.EQUALITY` — Compare its explicit source at JSON Pointer with authored JSON literal; empty pointer selects entire value
-        - Applicability: A guard is evaluated.
-        - Required/observable: Boolean equality result gates eligibility. Forbidden: Do not evaluate expressions or global Context lookups
-        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:120-125.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.COMPOSITION. Domain `D.COMPOSITION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.GUARD.VALIDITY` — Validate source ancestry, pointer and known operand types before execution
-        - Applicability: A guard source/pointer/operand is statically known.
-        - Required/observable: Reject invalid definition. Forbidden: Do not defer statically invalid guards into runtime false
-        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:120-125.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.COMPOSITION. Domain `D.COMPOSITION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Ordering** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.GRAPH.ORDER` — Any topologically valid order is portable
-        - Applicability: Several independent nodes are ready.
-        - Required/observable: Portable order constraints are partial. Forbidden: Do not treat definition-array order as data identity or universal execution sequence
-        - Authority: NORMATIVE_VCP; source spec/draft/composition.md:11-13.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.COMPOSITION. Domain `D.COMPOSITION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Results** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.GRAPH.NO_VERDICT` — Retain per-node Results without synthesizing an overall verdict
-        - Applicability: A graph has no explicit aggregate.
-        - Required/observable: Per-node final Results remain distinct. Forbidden: Do not equate STOP_SUCCESS with verification PASS
-        - Authority: NORMATIVE_VCP; source spec/draft/composition.md:15-22.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.COMPOSITION. Domain `D.COMPOSITION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Topology** — 3 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.GRAPH.IDENTITY.EDGE_ID` — Directed execution edges are unique.
-        - Applicability: A finite graph is validated.
-        - Required/observable: Graph identity rejection.. Forbidden: Do not accept duplicate directed pair.
-        - Authority: NORMATIVE_VCP; source spec/draft/composition.md:5-9.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.GRAPH.IDENTITY. Domain `D.GRAPH.IDENTITY`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.GRAPH.IDENTITY.ENDPOINT` — Every edge endpoint names an existing node.
-        - Applicability: A finite graph is validated.
-        - Required/observable: GRAPH_REFERENCE.. Forbidden: Do not accept dangling execution endpoints.
-        - Authority: NORMATIVE_VCP; source spec/draft/composition.md:5-9.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.GRAPH.IDENTITY. Domain `D.GRAPH.IDENTITY`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.GRAPH.IDENTITY.NODE_ID` — Node IDs are unique.
-        - Applicability: A finite graph is validated.
-        - Required/observable: GRAPH_DUPLICATE/GRAPH_REFERENCE category as specified, no invented coexistence precedence.. Forbidden: Do not overwrite duplicate node identities.
-        - Authority: NORMATIVE_VCP; source spec/draft/composition.md:5-9.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.GRAPH.IDENTITY. Domain `D.GRAPH.IDENTITY`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-  - **Computation** — 13 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **Acceptance** — 4 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.DATA.ATOMIC_OUTPUT.ATOMIC` — Publish no partial accepted INFORMATION mapping.
-        - Applicability: At least one output/judgment/Result/Decision fails acceptance.
-        - Required/observable: Information publication is all-or-nothing.. Forbidden: Do not leak values validated before a later failure.
-        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:74-85.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.OUTPUT.ACCEPTANCE. Domain `D.OUTPUT.ACCEPTANCE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.DATA.ATOMIC_OUTPUT.EXTRA` — Reject semantic output acceptance.
-        - Applicability: An invoked node returns any undeclared output.
-        - Required/observable: Semantic output rejection; this prose does not mandate a unique code between OUTPUT_MISSING/OUTPUT_INVALID for extra names, or precedence against another invalid output.. Forbidden: Do not expose additional semantic outputs.
-        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:74-85.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.OUTPUT.ACCEPTANCE. Domain `D.OUTPUT.ACCEPTANCE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.DATA.ATOMIC_OUTPUT.MISSING` — Reject semantic output acceptance.
-        - Applicability: An invoked node omits any declared output.
-        - Required/observable: OUTPUT_MISSING where specified.. Forbidden: Do not mark incomplete output successful.
-        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:74-85.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.OUTPUT.ACCEPTANCE. Domain `D.OUTPUT.ACCEPTANCE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.DATA.JUDGMENT` — Validate that value against the definition judgment_schema
-        - Applicability: A Result explicitly emits judgment, including null.
-        - Required/observable: JUDGMENT_INVALID and unsuccessful acceptance on failure. Forbidden: Do not validate an absent judgment as if it were emitted null
-        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:87-94.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.JUDGMENT.ACCEPTANCE. Domain `D.JUDGMENT.ACCEPTANCE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Evaluator** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.RESULT.INVOKED` — Only EXECUTED SUCCESS or ERROR may be returned
-        - Applicability: EVALUATE or AGGREGATE actually invokes an implementation.
-        - Required/observable: OUTPUT_INVALID becomes EXECUTED/ERROR. Forbidden: Do not accept standalone SKIPPED, DEFERRED or CANCELLED output as provider-claimed nonexecution
-        - Authority: NORMATIVE_VCP; source spec/draft/result.md:48-53.
-        - Mathematics: Own finite quotient C=18, V/I/N=12/6/0. Domain `D.RESULT.INVOKED`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Node outputs** — 8 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **CARDINALITY** — 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.DATA.PRIMARY_DECISION.CARDINALITY` — Exactly one DECISION-role output exists.
-          - Applicability: Node kind CONTROL.
-          - Required/observable: Definition validity predicate.. Forbidden: No zero/multiple primary Decisions.
-          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:74-85.
-          - Mathematics: Own finite quotient C=3, V/I/N=1/2/0. Domain `D.PORT.DECLARATIONS`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.DATA.PRIMARY_RESULT.CARDINALITY` — Exactly one RESULT-role output exists.
-          - Applicability: Node kind EVALUATE or AGGREGATE.
-          - Required/observable: Definition validity predicate.. Forbidden: No zero/multiple primary Results.
-          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:74-85.
-          - Mathematics: Own finite quotient C=3, V/I/N=1/2/0. Domain `D.PORT.DECLARATIONS`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **NAME** — 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.DATA.PRIMARY_DECISION.NAME` — That primary output name is decision.
-          - Applicability: Control declares its DECISION output.
-          - Required/observable: Definition validity predicate.. Forbidden: No renamed primary output.
-          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:74-85.
-          - Mathematics: Own finite quotient C=2, V/I/N=1/1/0. Domain `D.PORT.DECLARATIONS`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.DATA.PRIMARY_RESULT.NAME` — That primary output name is result.
-          - Applicability: Evaluator declares its RESULT output.
-          - Required/observable: Definition validity predicate.. Forbidden: No renamed primary output.
-          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:74-85.
-          - Mathematics: Own finite quotient C=2, V/I/N=1/1/0. Domain `D.PORT.DECLARATIONS`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **ROLES** — 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.DATA.PRIMARY_DECISION.ROLES` — Every other output role is INFORMATION.
-          - Applicability: Control declares additional outputs.
-          - Required/observable: Definition validity predicate.. Forbidden: No RESULT output.
-          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:74-85.
-          - Mathematics: Own finite quotient C=3, V/I/N=1/2/0. Domain `D.PORT.DECLARATIONS`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.DATA.PRIMARY_RESULT.ROLES` — Every other output role is INFORMATION.
-          - Applicability: Evaluator declares additional outputs.
-          - Required/observable: Definition validity predicate.. Forbidden: No DECISION output.
-          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:74-85.
-          - Mathematics: Own finite quotient C=3, V/I/N=1/2/0. Domain `D.PORT.DECLARATIONS`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.DATA.DERIVE_ROLE` — Every declared output role is INFORMATION
-        - Applicability: Node kind is DERIVE.
-        - Required/observable: Reject forbidden role. Forbidden: Do not expose bookkeeping Result as a declared Result port
-        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:74-85.
-        - Mathematics: Own finite quotient C=3, V/I/N=1/2/0. Domain `D.NODE.OUTPUT_ROLE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.DATA.PRIMARY_VALIDITY` — Value validates against VCP semantics and its port schema
-        - Applicability: A Result/Decision output is emitted.
-        - Required/observable: Reject invalid attempt output. Forbidden: Do not let structurally typed envelopes bypass semantic validation
-        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:74-85.
-        - Mathematics: Own finite quotient C=4, V/I/N=1/3/0. Domain `D.PORT.DECLARATIONS`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-  - **Conformance** — 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **Consumer stages** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.CONFORMANCE.STAGES` — Check shipped structural schema and semantic invariants; unsupported execution rejects distinctly
-        - Applicability: A VCP consumer receives interchange.
-        - Required/observable: Check shipped structural schema and semantic invariants; unsupported execution rejects distinctly. Forbidden: Do not infer supported execution from structurally valid data
-        - Authority: NORMATIVE_VCP; source spec/draft/conformance.md:5-8.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.CONFORMANCE.SCOPE. Domain `D.CONFORMANCE.SCOPE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Portable harness** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.CONFORMANCE.FIXTURE_PROTOCOL` — Valid manifest entries pass structure and semantics; invalid entries fail declared stage/code
-        - Applicability: An implementation voluntarily claims this revision conformance suite.
-        - Required/observable: Valid manifest entries pass structure and semantics; invalid entries fail declared stage/code. Forbidden: Do not derive semantic requirements from fixture existence; corpus content is not read in this assignment
-        - Authority: NORMATIVE_VCP; source spec/draft/conformance.md:10-14.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.CONFORMANCE.SCOPE. Domain `D.CONFORMANCE.SCOPE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-  - **Dataflow** — 37 canonical primary records; CLOSED BY APPROVED SNAPSHOT/CUSTOM DECISION.
-    - **Availability** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.DATA.BOOKKEEPING` — Its declared Result port exposes the recorded Result only if that port schema accepts it
-        - Applicability: A producer records ERROR or nonexecution.
-        - Required/observable: Result may be AVAILABLE or INVALID independently of producer execution success. Forbidden: Do not let bookkeeping bypass producer schema or publish bookkeeping from Derive/Control as ports
-        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:74-85.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.TYPED_AVAILABILITY. Domain `D.TYPED_AVAILABILITY`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Bindings** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.DATA.BIND_TARGET` — Every required input has exactly one binding; binding targets name declared inputs
-        - Applicability: A node or typed policy binds input sources.
-        - Required/observable: Reject binding before execution. Forbidden: Do not accept unknown targets or multiple source constructors for one binding
-        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:27-33.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PORT.DECLARATIONS. Domain `D.PORT.DECLARATIONS`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Configuration** — 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **SCHEMA** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.DATA.CONFIG.SCHEMA` — Validate config under that valid supported schema before invocation.
-          - Applicability: Definition declares config_schema.
-          - Required/observable: DATAFLOW_CONFIG where specified; noninvocation.. Forbidden: No runtime work with rejected config.
-          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:42-47.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PORT.DECLARATIONS. Domain `D.PORT.DECLARATIONS`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **SEPARATE** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.DATA.CONFIG.SEPARATE` — Pass definition config separately without overriding any bound value.
-          - Applicability: Invocation has bound values and config.
-          - Required/observable: Exact input/config snapshots.. Forbidden: No semantic input replacement by config.
-          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:42-47.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PORT.DECLARATIONS. Domain `D.PORT.DECLARATIONS`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Input ports** — 3 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **CONSTANT** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.DATA.DEFAULT.CONSTANT` — An explicit Constant default must be supplied, including possible JSON null.
-          - Applicability: A port uses DEFAULT.
-          - Required/observable: Definition validity; unused-default portability separate.. Forbidden: No absent default or schema-annotation fallback.
-          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:20-25.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.DEFAULT.PRESENCE. Domain `D.DEFAULT.PRESENCE`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **VALUE_SCHEMA** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.DATA.DEFAULT.VALUE_SCHEMA` — Its exact value validates against the port schema before invocation.
-          - Applicability: A DEFAULT Constant is supplied.
-          - Required/observable: Typed default acceptance.. Forbidden: No unvalidated default payload.
-          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:20-25.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SCHEMA.EMBEDDED. Domain `D.SCHEMA.EMBEDDED`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.DATA.PORT_HANDLING` — Required ports use BLOCK; optional ports use OMIT or DEFAULT
-        - Applicability: An input port is declared.
-        - Required/observable: Reject invalid declaration. Forbidden: Do not permit required OMIT/DEFAULT or optional BLOCK
-        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:27-33.
-        - Mathematics: Own finite quotient C=6, V/I/N=3/3/0. Domain `D.PORT.HANDLER`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Isolation** — 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **AMBIENT** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.DATA.CONTEXT.AMBIENT` — Retain Context only as nonsemantic host metadata.
-          - Applicability: Occurrence has initial_context.
-          - Required/observable: Authored initial_context retained separately from input_values.. Forbidden: Derive must not mutate ambient Context or consume it as hidden semantic input.
-          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:149-153.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.WIRE.JSON. Domain `D.WIRE.JSON`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **ISOLATION** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.DATA.CONTEXT.ISOLATION` — Pass a fresh exact resolved input object and separate config.
-          - Applicability: Operation invoked.
-          - Required/observable: One invocation cannot mutate another semantic input object.. Forbidden: No injected predecessor Results or initial_context.
-          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:149-153.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.WIRE.JSON. Domain `D.WIRE.JSON`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Operation** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.DATA.OPERATION` — Use exact capability_id/version pair with no provider identity in the requirement
-        - Applicability: An operation requirement is matched.
-        - Required/observable: Provider-neutral exact match. Forbidden: Do not treat versions as ranges or operation strings as executable imports
-        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:57-72.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.OPERATION.IDENTITY. Domain `D.OPERATION.IDENTITY`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Ports** — 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **INPUT** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.DATA.PORT_NAMES.INPUT` — Input names are unique within that sequence.
-          - Applicability: Node input port sequence declared.
-          - Required/observable: Definition rejection on duplicate.. Forbidden: No positional/duplicate input identity.
-          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:27-33.
-          - Mathematics: Own finite quotient C=2, V/I/N=1/1/0. Domain `D.PORT.DECLARATIONS`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **OUTPUT** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.DATA.PORT_NAMES.OUTPUT` — Output names are unique within that sequence.
-          - Applicability: Node output sequence declared.
-          - Required/observable: Definition rejection on duplicate.. Forbidden: No duplicate output identity.
-          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:27-33.
-          - Mathematics: Own finite quotient C=2, V/I/N=1/1/0. Domain `D.PORT.DECLARATIONS`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Provider boundary** — 3 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **CONFIG** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.DATA.CAPABILITY_SHAPE.CONFIG` — Capability config is exactly node config, separate from bound inputs.
-          - Applicability: Direct capability invocation from graph node.
-          - Required/observable: Provider receives separate authored config snapshot.. Forbidden: No config override of bound inputs.
-          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:57-72.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.OPERATION.IDENTITY. Domain `D.OPERATION.IDENTITY`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **INPUT** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.DATA.CAPABILITY_SHAPE.INPUT` — Capability input is exactly the resolved port-name object.
-          - Applicability: Direct capability invocation from graph ports.
-          - Required/observable: Provider receives authored resolved JSON object.. Forbidden: No primitive wrapping or injected ambient context.
-          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:57-72.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.OPERATION.IDENTITY. Domain `D.OPERATION.IDENTITY`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **OUTPUT** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.DATA.CAPABILITY_SHAPE.OUTPUT` — Capability output is the output-port-name object.
-          - Applicability: Direct capability COMPLETED outcome.
-          - Required/observable: Provider output schema acceptance precedes port and semantic acceptance.. Forbidden: COMPLETED alone does not imply VCP success or verification PASS.
-          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:57-72.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.OPERATION.IDENTITY. Domain `D.OPERATION.IDENTITY`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Resolution** — 14 canonical primary records; CLOSED BY APPROVED SNAPSHOT/CUSTOM DECISION.
-      - **INPUT** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.DATA.RESOLVE_OMIT.INPUT` — Exclude that key from invocation input object.
-          - Applicability: Optional input has OMIT handling and unavailable/invalid source.
-          - Required/observable: Exact consumed object lacks the key.. Forbidden: Do not insert null.
-          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:107-118.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.TYPED_AVAILABILITY. Domain `D.TYPED_AVAILABILITY`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **PROVENANCE** — 3 canonical primary records; CLOSED BY APPROVED SNAPSHOT/CUSTOM DECISION.
-        - `CM.VCP.DATA.RESOLVE_AVAILABLE.PROVENANCE` — Record exact source identity, AVAILABLE status, exact value and used_default=false.
-          - Applicability: Available schema-valid input consumed.
-          - Required/observable: input_values equals exact authored/reconstructed source value.. Forbidden: No stale/unrelated source substitution.
-          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:107-118.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.TYPED_AVAILABILITY. Domain `D.TYPED_AVAILABILITY`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.DATA.RESOLVE_DEFAULT.PROVENANCE` — Retain original source and availability with used_default=true and explicit consumed value.
-          - Applicability: Default substituted for unavailable/invalid bound source.
-          - Required/observable: InputResolution explains why and what default was consumed.. Forbidden: Do not replace original status with AVAILABLE.
-          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:107-118.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.TYPED_AVAILABILITY. Domain `D.TYPED_AVAILABILITY`. No test/proof coverage is claimed.
-          - Review status: CLOSED BY APPROVED SNAPSHOT/CUSTOM DECISION — Q.AVAILABILITY_OVERLAP.
-        - `CM.VCP.DATA.RESOLVE_OMIT.PROVENANCE` — Retain original availability and source in resolution with no usable value and used_default=false.
-          - Applicability: Optional input omitted.
-          - Required/observable: InputResolution records omission.. Forbidden: Do not erase resolution or claim a consumed value.
-          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:107-118.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.TYPED_AVAILABILITY. Domain `D.TYPED_AVAILABILITY`. No test/proof coverage is claimed.
-          - Review status: CLOSED BY APPROVED SNAPSHOT/CUSTOM DECISION — Q.AVAILABILITY_OVERLAP.
-      - **SUBSTITUTE** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.DATA.RESOLVE_DEFAULT.SUBSTITUTE` — Use the authored validated Constant as the consumed value.
-          - Applicability: Input has DEFAULT handling and original availability is not AVAILABLE.
-          - Required/observable: Exact default value appears in assembled invocation inputs.. Forbidden: No stale value, implicit null, or other producer fallback.
-          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:107-118.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.TYPED_AVAILABILITY. Domain `D.TYPED_AVAILABILITY`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **VALIDATION** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.DATA.RESOLVE_AVAILABLE.VALIDATION` — Validate the value against target port schema before use.
-          - Applicability: Resolved source supplies a candidate value.
-          - Required/observable: Invalid value follows configured unavailable handler.. Forbidden: Do not consume schema-invalid value.
-          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:107-118.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.TYPED_AVAILABILITY. Domain `D.TYPED_AVAILABILITY`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.DATA.RESOLVE_ALL` — Retain a resolution for every declared input
-        - Applicability: A node is disabled or enabled.
-        - Required/observable: Complete resolution snapshot. Forbidden: Do not erase resolution evidence merely because lifecycle prevents invocation
-        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:107-118.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.TYPED_AVAILABILITY. Domain `D.TYPED_AVAILABILITY`. No test/proof coverage is claimed.
-        - Review status: CLOSED BY APPROVED SNAPSHOT/CUSTOM DECISION — Q.AVAILABILITY_OVERLAP.
-      - `CM.VCP.DATA.RESOLVE_BLOCK.DOWNSTREAM` — Execution edges themselves do not disable descendants; explicit bindings/guards determine downstream eligibility.
-        - Applicability: Blocked predecessor settles terminal with typed declared outputs.
-        - Required/observable: Downstream readiness and availability follow their own contracts.. Forbidden: Do not propagate nonexecution implicitly on dependency edges.
-        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:107-118.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.COMPOSITION. Domain `D.COMPOSITION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.DATA.RESOLVE_BLOCK.NONINVOCATION` — Do not invoke the graph provider.
-        - Applicability: Required BLOCK input unavailable/invalid; no higher-precedence lifecycle cause.
-        - Required/observable: Zero invocation for this node.. Forbidden: Do not spend provider work despite blocked input.
-        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:107-118.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.HANDLING.EFFECTS. Domain `D.HANDLING.EFFECTS`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.DATA.RESOLVE_BLOCK.PROVENANCE` — No executor identity, observation, Decision or accepted information/executor usage.
-        - Applicability: Blocked node never invoked.
-        - Required/observable: RunRecord lineage consistent with noninvocation.. Forbidden: Do not fabricate incurred provider work.
-        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:107-118.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.DATA.RESOLVE_BLOCK.REASON` — NodeRecord.reason and diagnostic Result.output.reason equal INPUT_UNAVAILABLE.
-        - Applicability: Required BLOCK input unavailable/invalid; no higher-precedence lifecycle cause.
-        - Required/observable: Machine-readable reason and repeated diagnostic.. Forbidden: Do not erase the exact cause.
-        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:107-118.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.HANDLING.EFFECTS. Domain `D.HANDLING.EFFECTS`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.DATA.RESOLVE_BLOCK.RESOLUTION` — Preserve source and original availability, used_default=false, no usable input value.
-        - Applicability: Required BLOCK input unavailable/invalid.
-        - Required/observable: Exact input resolution and assembled input omission.. Forbidden: Do not substitute stale/null/unrelated values.
-        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:107-118.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.TYPED_AVAILABILITY. Domain `D.TYPED_AVAILABILITY`. No test/proof coverage is claimed.
-        - Review status: CLOSED BY APPROVED SNAPSHOT/CUSTOM DECISION — Q.AVAILABILITY_OVERLAP.
-      - `CM.VCP.DATA.RESOLVE_BLOCK.RESULT` — Synthesized Result disposition is SKIPPED.
-        - Applicability: Required BLOCK input unavailable/invalid; no higher-precedence lifecycle cause.
-        - Required/observable: SKIPPED Result.. Forbidden: Do not synthesize FAIL or UNKNOWN.
-        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:107-118.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.HANDLING.EFFECTS. Domain `D.HANDLING.EFFECTS`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.DATA.RESOLVE_BLOCK.STATE` — NodeRecord.state is NONEXECUTED.
-        - Applicability: Required BLOCK input unavailable/invalid; no higher-precedence lifecycle cause.
-        - Required/observable: Terminal nonexecution state.. Forbidden: Do not record SUCCESS or executed ERROR for prevented work.
-        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:107-118.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.HANDLING.EFFECTS. Domain `D.HANDLING.EFFECTS`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Run inputs** — 4 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.DATA.RUN_ACCEPT.MISSING_REQUIRED` — Reject occurrence inputs before policy/node invocation.
-        - Applicability: Host omits required run-input value.
-        - Required/observable: RUN_INPUT.. Forbidden: Do not invent null/default for a required missing value.
-        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:20-25.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RUN_INPUT.PREFLIGHT. Domain `D.RUN_INPUT.PREFLIGHT`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.DATA.RUN_ACCEPT.UNKNOWN_NAME` — Reject occurrence inputs before policy/node invocation.
-        - Applicability: Host supplies run-input key absent from declarations.
-        - Required/observable: RUN_INPUT.. Forbidden: Do not inject unknown names.
-        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:20-25.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RUN_INPUT.PREFLIGHT. Domain `D.RUN_INPUT.PREFLIGHT`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.DATA.RUN_ACCEPT.VALUE_SCHEMA` — Reject occurrence inputs before policy/node invocation.
-        - Applicability: Host supplies value violating declared run-input schema.
-        - Required/observable: RUN_INPUT.. Forbidden: Do not coerce or postpone actual input validation.
-        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:20-25.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RUN_INPUT.PREFLIGHT. Domain `D.RUN_INPUT.PREFLIGHT`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.DATA.RUN_NAMES` — Run input names are unique
-        - Applicability: Run inputs are declared.
-        - Required/observable: Reject definition before implementation invocation. Forbidden: Do not resolve duplicate declarations by array order
-        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:20-25.
-        - Mathematics: Own finite quotient C=2, V/I/N=1/1/0. Domain `D.RUN_INPUT.NORMALIZATION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Sources** — 4 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.DATA.ANCESTOR.OUTPUT_EXISTS` — Named declared output exists.
-        - Applicability: UPSTREAM_OUTPUT producer exists.
-        - Required/observable: Definition binding rejection.. Forbidden: Do not use undeclared output names or bookkeeping-only values as ports.
-        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:49-55.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SOURCE.REACHABILITY. Domain `D.SOURCE.REACHABILITY`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.DATA.ANCESTOR.PRODUCER_EXISTS` — Producer node exists.
-        - Applicability: UPSTREAM_OUTPUT source is declared.
-        - Required/observable: Definition binding rejection.. Forbidden: Do not accept dangling node_id.
-        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:49-55.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SOURCE.REACHABILITY. Domain `D.SOURCE.REACHABILITY`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.DATA.ANCESTOR.STRICT_ANCESTRY` — Producer is strict execution ancestor of consumer.
-        - Applicability: UPSTREAM_OUTPUT producer/output exist.
-        - Required/observable: Definition binding rejection.. Forbidden: Do not infer ancestry from array position or bind self/unordered peer.
-        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:49-55.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SOURCE.REACHABILITY. Domain `D.SOURCE.REACHABILITY`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.DATA.RUN_SOURCE` — Name refers to a declared run input
-        - Applicability: Source kind is RUN_INPUT.
-        - Required/observable: Reject source identity before execution. Forbidden: Do not consult ambient names or undeclared inputs
-        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:37-40.
-        - Mathematics: Own finite quotient C=2, V/I/N=1/1/0. Domain `D.RUN_INPUT.NORMALIZATION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-  - **Decisions** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **Shape** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.DECISION.DESTINATION` — ROUTE has a nonempty destination; every other kind has no non-null destination
-        - Applicability: Decision is validated.
-        - Required/observable: Reject invalid Decision semantics. Forbidden: Do not treat Decision as a judgment or infer PASS from STOP_SUCCESS
-        - Authority: NORMATIVE_VCP; source spec/draft/result.md:30-33.
-        - Mathematics: Own finite quotient C=24, V/I/N=11/13/0. Domain `D.DECISION.DESTINATION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-  - **Extensions** — 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **Optional** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.EXT.PRESERVE` — Preserve data without interpreting unknown semantics
-        - Applicability: Unknown optional VCP extension is consumed.
-        - Required/observable: Lossless optional extension handling. Forbidden: Do not let metadata/extension data override core meaning
-        - Authority: NORMATIVE_VCP; source spec/draft/extensions.md:5-13.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.EXTENSIONS.ANNOTATIONS. Domain `D.EXTENSIONS.ANNOTATIONS`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Required** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.EXT.REQUIRED` — Report EXTENSION_UNSUPPORTED
-        - Applicability: Required VCP extension lacks implementation support.
-        - Required/observable: Reject unsupported capability. Forbidden: Do not silently consume required unknown meaning
-        - Authority: NORMATIVE_VCP; source spec/draft/extensions.md:5-13.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.EXT.REQUIRED_SUPPORT. Domain `D.EXT.REQUIRED_SUPPORT`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-  - **Knowledge** — 3 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **ArtifactRef** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.KNOWLEDGE.REFERENCE` — Pass its exact reference snapshot as information; locator is opaque
-        - Applicability: An ArtifactRef is consumed.
-        - Required/observable: Explicit retrieval is host/provider owned. Forbidden: Do not assume bytes or fetch content automatically
-        - Authority: NORMATIVE_VCP; source spec/draft/knowledge.md:5-9.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.REFERENCES.OPAQUE. Domain `D.REFERENCES.OPAQUE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Evidence** — 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.KNOWLEDGE.EVIDENCE` — At least one of message, artifact_ref, locator, structured_data is non-null; message is nonempty; empty containers count
-        - Applicability: Evidence is validated.
-        - Required/observable: EVIDENCE_EMPTY when meaning is absent. Forbidden: Do not let id, metadata or extensions alone establish meaningful evidence
-        - Authority: NORMATIVE_VCP; source spec/draft/knowledge.md:11-14.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.EVIDENCE.MEANING. Domain `D.EVIDENCE.MEANING`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.KNOWLEDGE.NEUTRAL` — Core property vocabulary remains domain-neutral; code-specific coordinates belong in opaque locator/structured data
-        - Applicability: A portable Evidence object is authored.
-        - Required/observable: Core property vocabulary remains domain-neutral; code-specific coordinates belong in opaque locator/structured data. Forbidden: Do not introduce file/line-specific fundamental Evidence fields
-        - Authority: NORMATIVE_VCP; source spec/draft/knowledge.md:16-17.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.REFERENCES.OPAQUE. Domain `D.REFERENCES.OPAQUE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-  - **Lifecycle** — 22 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **Cancellation** — 8 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **EVENT** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.LIFECYCLE.CANCEL_BEFORE.EVENT` — Record first affected node, BEFORE_START phase and explicit host reason.
-          - Applicability: Host cancellation first affects unstarted work.
-          - Required/observable: RunRecord.cancellation identifies actual host event.. Forbidden: No inferred cancellation origin.
-          - Authority: NORMATIVE_VCP; source spec/draft/lifecycle.md:61-67.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.COMPOSITION. Domain `D.COMPOSITION`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **NODE** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.LIFECYCLE.CANCEL_BEFORE.NODE` — Affected and subsequent unstarted nodes are NONEXECUTED with CANCELLED Result and CANCELLATION reason.
-          - Applicability: Host cancellation first affects an unstarted node.
-          - Required/observable: Complete cancelled nonexecution records.. Forbidden: No executor identity, observations or usage on unstarted nodes.
-          - Authority: NORMATIVE_VCP; source spec/draft/lifecycle.md:61-67.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.COMPOSITION. Domain `D.COMPOSITION`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.LIFECYCLE.CANCEL_ADMISSION` — Admission must be RUN
-        - Applicability: Host records occurrence cancellation.
-        - Required/observable: Reject contradictory cancellation provenance. Forbidden: Do not attach a cancellation event to SKIP/DEFER occurrence
-        - Authority: NORMATIVE_VCP; source spec/draft/lifecycle.md:61-67.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.COMPOSITION. Domain `D.COMPOSITION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.LIFECYCLE.CANCEL_ORIGIN` — Only explicit host cancellation establishes occurrence cancellation
-        - Applicability: A provider supplies a Result.
-        - Required/observable: No invented cancellation provenance. Forbidden: Do not infer host cancellation from a provider Result
-        - Authority: NORMATIVE_VCP; source spec/draft/lifecycle.md:61-67.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.COMPOSITION. Domain `D.COMPOSITION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.LIFECYCLE.CANCEL_RUNNING.LATER` — Later unstarted nodes are NONEXECUTED with CANCELLED Results.
-        - Applicability: Host cancellation has interrupted the first affected attempt.
-        - Required/observable: No further invocation.. Forbidden: Do not start remaining providers.
-        - Authority: NORMATIVE_VCP; source spec/draft/lifecycle.md:61-67.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.COMPOSITION. Domain `D.COMPOSITION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.LIFECYCLE.CANCEL_RUNNING.OBSERVATION` — Retain valid unaccepted observations and incurred usage separately.
-        - Applicability: Cancelled attempt incurred observable usage/evidence.
-        - Required/observable: Cancellation does not erase incurred resources.. Forbidden: Do not publish accepted information or Decision from cancelled attempt.
-        - Authority: NORMATIVE_VCP; source spec/draft/lifecycle.md:61-67.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.OBSERVATION.USAGE. Domain `D.OBSERVATION.USAGE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.LIFECYCLE.CANCEL_RUNNING.RESULT` — Affected Result disposition is CANCELLED with no accepted evaluation fields.
-        - Applicability: Host cancellation interrupts the affected attempt.
-        - Required/observable: Cancellation Result.. Forbidden: Do not convert interruption into FAIL or accepted UNKNOWN.
-        - Authority: NORMATIVE_VCP; source spec/draft/lifecycle.md:61-67.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.NODE.TERMINAL_RESULT. Domain `D.NODE.TERMINAL_RESULT`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.LIFECYCLE.CANCEL_RUNNING.STATE` — Affected NodeRecord.state is CANCELLED.
-        - Applicability: Host cancellation interrupts the affected attempt.
-        - Required/observable: Interrupted terminal state.. Forbidden: Do not record completed success after observed cancellation.
-        - Authority: NORMATIVE_VCP; source spec/draft/lifecycle.md:61-67.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.CANCEL.ADMISSION. Domain `D.CANCEL.ADMISSION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Causes** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.LIFECYCLE.NONEXEC_CAUSE` — Result.output.reason repeats NodeRecord.reason using the cause table
-        - Applicability: Runner synthesizes nonexecution.
-        - Required/observable: Exact cause/disposition mapping in the lifecycle table. Forbidden: Do not conflate admission, guard, route, control, cancellation or blocked-input reasons
-        - Authority: NORMATIVE_VCP; source spec/draft/lifecycle.md:26-27.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.COMPOSITION. Domain `D.COMPOSITION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Control** — 4 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.LIFECYCLE.CONTINUE` — Leave other eligibility unchanged
-        - Applicability: Control returns CONTINUE.
-        - Required/observable: Existing readiness rules continue. Forbidden: Do not invent a verification verdict
-        - Authority: NORMATIVE_VCP; source spec/draft/lifecycle.md:41-44.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.COMPOSITION. Domain `D.COMPOSITION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.LIFECYCLE.DEFER` — Prevent further work in this occurrence with DEFERRED/CONTROL_DEFER
-        - Applicability: Control returns DEFER.
-        - Required/observable: Deferred remainder. Forbidden: Do not create external scheduling
-        - Authority: NORMATIVE_VCP; source spec/draft/lifecycle.md:41-44.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.COMPOSITION. Domain `D.COMPOSITION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.LIFECYCLE.RETRY` — End local pass, retain Decision and mark remaining work SKIPPED/RETRY_REQUESTED
-        - Applicability: Control returns RETRY.
-        - Required/observable: Explicit retry request only. Forbidden: Do not run an implicit new attempt or occurrence
-        - Authority: NORMATIVE_VCP; source spec/draft/lifecycle.md:41-44.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.COMPOSITION. Domain `D.COMPOSITION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.LIFECYCLE.STOP` — End further work as specified with SKIPPED/CONTROL_STOP
-        - Applicability: Control returns STOP_SUCCESS or STOP_FAILURE.
-        - Required/observable: Remaining unstarted work has diagnostic nonexecution. Forbidden: Do not synthesize a PASS/FAIL judgment
-        - Authority: NORMATIVE_VCP; source spec/draft/lifecycle.md:41-44.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.COMPOSITION. Domain `D.COMPOSITION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Eligibility** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.LIFECYCLE.PRECEDENCE` — Select admission non-RUN, observed cancellation, terminating control, route exclusion, false guard, blocked input in that order
-        - Applicability: Multiple nonexecution causes apply to an unstarted node.
-        - Required/observable: Stable highest-precedence lifecycle reason. Forbidden: Do not collapse cancellation/DEFER into INPUT_UNAVAILABLE
-        - Authority: NORMATIVE_VCP; source spec/draft/lifecycle.md:54-57.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.COMPOSITION. Domain `D.COMPOSITION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Guards** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.LIFECYCLE.GUARD_JOIN` — Every incoming guard must hold
-        - Applicability: A node has multiple guarded incoming edges.
-        - Required/observable: GUARD_FALSE only where eligibility requires it. Forbidden: Do not use any-guard semantics or implicitly disable all unguarded descendants after false guard
-        - Authority: NORMATIVE_VCP; source spec/draft/lifecycle.md:46-52.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.COMPOSITION. Domain `D.COMPOSITION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Logical phases** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.LIFECYCLE.PHASES` — Pending awaits all predecessors; Ready additionally satisfies eligibility; starting the attempt is Running; completion/nonexecution is Terminal. Pending/Ready may terminate without invocation; terminal records are SUCCESS/ERROR/NONEXECUTED/CANCELLED.
-        - Applicability: Observe one node within an admitted occurrence.
-        - Required/observable: Trace/readiness and terminal-record compatibility.. Forbidden: Do not treat these logical phases as a new wire enum, start before prerequisites/eligibility, or reopen a terminal attempt.
-        - Authority: NORMATIVE_VCP; source spec/draft/lifecycle.md:9-13.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.LIFECYCLE.PHASE. Domain `D.LIFECYCLE.PHASE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Nodes** — 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **CARDINALITY** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.LIFECYCLE.TERMINAL.CARDINALITY` — Exactly one terminal NodeRecord for every definition node, including noninvoked nodes.
-          - Applicability: Occurrence exists.
-          - Required/observable: Definition node identities equal terminal record identities.. Forbidden: No missing or duplicated terminal records.
-          - Authority: NORMATIVE_VCP; source spec/draft/lifecycle.md:5-7.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.COMPOSITION. Domain `D.COMPOSITION`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **IMMUTABILITY** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.LIFECYCLE.TERMINAL.IMMUTABILITY` — Terminal record never changes retroactively.
-          - Applicability: Node has reached terminal state.
-          - Required/observable: Stable terminal snapshot.. Forbidden: No later control, cancellation or output can overwrite it.
-          - Authority: NORMATIVE_VCP; source spec/draft/lifecycle.md:5-7.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.COMPOSITION. Domain `D.COMPOSITION`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Routing** — 4 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **ACCUMULATE** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.LIFECYCLE.ROUTE_EXCLUSION.ACCUMULATE` — Accumulate exclusions; later routing cannot undo prior exclusion.
-          - Applicability: Multiple routing controls apply.
-          - Required/observable: Monotone excluded set.. Forbidden: Do not re-enable previously excluded node.
-          - Authority: NORMATIVE_VCP; source spec/draft/lifecycle.md:29-39.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.COMPOSITION. Domain `D.COMPOSITION`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **BRANCHES** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.LIFECYCLE.ROUTE_EXCLUSION.BRANCHES` — Exclude other successors and descendants except nodes also reachable from selected successor.
-          - Applicability: Control emits valid ROUTE to direct successor.
-          - Required/observable: Only exclusive competing branches receive ROUTE_EXCLUDED.. Forbidden: Do not exclude shared reachable joins or independent work outside branches.
-          - Authority: NORMATIVE_VCP; source spec/draft/lifecycle.md:29-39.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.COMPOSITION. Domain `D.COMPOSITION`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **DEPENDENCIES** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.LIFECYCLE.ROUTE_EXCLUSION.DEPENDENCIES` — Still require ordinary prerequisites and all incoming guards.
-          - Applicability: ROUTE-selected successor considered for execution.
-          - Required/observable: Selected branch obeys dependency/guard eligibility.. Forbidden: Routing cannot bypass readiness or guards.
-          - Authority: NORMATIVE_VCP; source spec/draft/lifecycle.md:29-39.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.COMPOSITION. Domain `D.COMPOSITION`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.LIFECYCLE.ROUTE_TARGET` — Destination is a direct outgoing execution successor
-        - Applicability: Control returns ROUTE.
-        - Required/observable: Reject invalid Control output. Forbidden: Do not accept a mere transitive descendant or unknown target
-        - Authority: NORMATIVE_VCP; source spec/draft/lifecycle.md:46-52.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.COMPOSITION. Domain `D.COMPOSITION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-  - **Meaning** — 6 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **Capability behavior** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.DATA.HONEST_EVALUATION` — Evaluate the subject/criterion actually supplied in semantic ports
-        - Applicability: A trusted capability implements evaluation.
-        - Required/observable: Capability semantic conformance, not cryptographic authentication. Forbidden: Do not claim arbitrary provider honesty is proven by record validation
-        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:87-94.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.CONFORMANCE.SCOPE. Domain `D.CONFORMANCE.SCOPE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Criterion** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **Declarative identity** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.MEANING.CRITERION_DATA` — Criterion id/description/metadata identify and describe the property; they are not executable expressions. Evaluate implementation executes declared criterion.
-          - Applicability: Criterion metadata consumed..
-          - Required/observable: Portable meaning tied to explicitly supplied Criterion snapshot.. Forbidden: Do not interpret criterion metadata as expression language or executable import.
-          - Authority: NORMATIVE_VCP; source spec/draft/meaning.md:16-20.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.CONFORMANCE.SCOPE. Domain `D.CONFORMANCE.SCOPE`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Evaluator inputs** — 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.DATA.SEMANTIC_SUBJECT.CRITERION` — Required criterion input is CONSTANT-bound to the exact definition criterion snapshot.
-        - Applicability: Node kind EVALUATE or AGGREGATE.
-        - Required/observable: SEMANTIC_BINDING on mismatch; provider input contains authored semantic snapshot.. Forbidden: Do not omit, change or source criterion from an unrelated value.
-        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:87-94.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SEMANTIC_BINDING. Domain `D.SEMANTIC_BINDING`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.DATA.SEMANTIC_SUBJECT.SUBJECT` — Required subject input is CONSTANT-bound to the exact definition subject snapshot.
-        - Applicability: Node kind EVALUATE or AGGREGATE.
-        - Required/observable: SEMANTIC_BINDING on mismatch; provider input contains authored semantic snapshot.. Forbidden: Do not omit, change or source subject from an unrelated value.
-        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:87-94.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SEMANTIC_BINDING. Domain `D.SEMANTIC_BINDING`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Satisfaction mapping** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **Adapter ownership** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.MEANING.SATISFACTION_MAPPING` — It describes mapping identity/configuration; execution is adapter-owned and core derives no verdict automatically.
-          - Applicability: Optional satisfaction_mapping supplied..
-          - Required/observable: Known judgment may remain without verdict or score.. Forbidden: Do not execute an invented portable mapping language.
-          - Authority: NORMATIVE_VCP; source spec/draft/meaning.md:10-14.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.CONFORMANCE.SCOPE. Domain `D.CONFORMANCE.SCOPE`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Selection versus criterion** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.MEANING.SELECTION_DISTINCT` — Selection chooses subject inclusion; Criterion identifies property to establish
-        - Applicability: A definition chooses subjects and evaluates a criterion.
-        - Required/observable: Selection chooses subject inclusion; Criterion identifies property to establish. Forbidden: Do not change criterion through selection or treat selection as evaluation
-        - Authority: NORMATIVE_VCP; source spec/draft/meaning.md:5-7.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.CONFORMANCE.SCOPE. Domain `D.CONFORMANCE.SCOPE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-  - **Policies** — 22 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **Built-ins** — 6 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **BOUNDARIES** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.POLICY.PROBABILITY.BOUNDARIES` — p=0 returns SKIP; p=1 returns RUN.
-          - Applicability: PROBABILITY evaluated with valid explicit p.
-          - Required/observable: Exact endpoint admission.. Forbidden: Do not sample contrary endpoint outcome.
-          - Authority: NORMATIVE_VCP; source spec/draft/execution-policy.md:36-43.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.POLICY.PROBABILITY. Domain `D.POLICY.PROBABILITY`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **DOMAIN** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.POLICY.PROBABILITY.DOMAIN` — Probability is a finite JSON number p in [0,1].
-          - Applicability: PROBABILITY admission declared.
-          - Required/observable: Invalid policy declaration rejected.. Forbidden: No bool, nonfinite, out-of-range or implicit probability.
-          - Authority: NORMATIVE_VCP; source spec/draft/execution-policy.md:36-43.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.POLICY.PROBABILITY. Domain `D.POLICY.PROBABILITY`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **INTERIOR** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.POLICY.PROBABILITY.INTERIOR` — Return RUN or SKIP using explicit structural sampler inputs.
-          - Applicability: 0<p<1 with definition fingerprint, subject identity, opportunity_id and explicit p.
-          - Required/observable: Recorded admission stays in RUN/SKIP; reference-only bucket not enforced portably.. Forbidden: No hidden budget/history/clock/environment; portable bucket identity not promised.
-          - Authority: NORMATIVE_VCP; source spec/draft/execution-policy.md:36-43.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.POLICY.PROBABILITY. Domain `D.POLICY.PROBABILITY`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.POLICY.ALWAYS` — Return RUN
-        - Applicability: Built-in ALWAYS admission is evaluated.
-        - Required/observable: Admission outcome. Forbidden: Do not silently sample
-        - Authority: NORMATIVE_VCP; source spec/draft/execution-policy.md:36-43.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.POLICY.SEQUENTIAL. Domain `D.POLICY.SEQUENTIAL`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.POLICY.EXPLICIT` — Select the exact definition subject snapshot
-        - Applicability: Built-in EXPLICIT selection is evaluated.
-        - Required/observable: Selection outcome. Forbidden: Do not invent a candidate universe
-        - Authority: NORMATIVE_VCP; source spec/draft/execution-policy.md:36-43.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.POLICY.SEQUENTIAL. Domain `D.POLICY.SEQUENTIAL`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.POLICY.MANUAL` — Return ACTIVATE
-        - Applicability: Built-in MANUAL activation receives a host opportunity.
-        - Required/observable: Activation outcome. Forbidden: Do not schedule a periodic trigger implicitly
-        - Authority: NORMATIVE_VCP; source spec/draft/execution-policy.md:36-43.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.POLICY.SEQUENTIAL. Domain `D.POLICY.SEQUENTIAL`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Declarations** — 3 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.POLICY.DECLARATION.BUILTIN_INPUTS` — No ports, bindings or config are attached.
-        - Applicability: A built-in shorthand is authored.
-        - Required/observable: Reject mixed declaration.. Forbidden: Do not add hidden typed/custom computation to shorthand.
-        - Authority: NORMATIVE_VCP; source spec/draft/execution-policy.md:36-43.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.POLICY.BUILTIN_FIELDS. Domain `D.POLICY.BUILTIN_FIELDS`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.POLICY.DECLARATION.DISCRIMINATOR` — Exactly one custom operation or built-in discriminator.
-        - Applicability: A policy is authored.
-        - Required/observable: Policy declaration rejection.. Forbidden: Do not omit both or mix both.
-        - Authority: NORMATIVE_VCP; source spec/draft/execution-policy.md:36-43.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.POLICY.DECLARATION. Domain `D.POLICY.DECLARATION`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.POLICY.DECLARATION.PROBABILITY_FIELD` — No probability field is used.
-        - Applicability: A policy other than built-in PROBABILITY is authored.
-        - Required/observable: Reject invalid declaration.. Forbidden: Do not attach probability to custom/other built-in roles.
-        - Authority: NORMATIVE_VCP; source spec/draft/execution-policy.md:36-43.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.POLICY.BUILTIN_FIELDS. Domain `D.POLICY.BUILTIN_FIELDS`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Failure** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.POLICY.FAILURE` — Abort policy evaluation without decision or occurrence
-        - Applicability: Policy input is required unavailable/invalid, implementation raises, or outcome invalid.
-        - Required/observable: POLICY_INPUT/POLICY_OUTPUT where specified; no RunRecord. Forbidden: Do not invent admission or fabricate a record
-        - Authority: NORMATIVE_VCP; source spec/draft/execution-policy.md:9-17.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.POLICY.SEQUENTIAL. Domain `D.POLICY.SEQUENTIAL`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Identity** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.POLICY.OPPORTUNITY` — Supply nonempty opportunity_id
-        - Applicability: VCP occurrence opportunity is offered.
-        - Required/observable: Reject empty identity; Relay may explicitly generate one as host behavior. Forbidden: Do not derive semantic opportunity identity from hidden ambient state
-        - Authority: NORMATIVE_VCP; source spec/draft/execution-policy.md:45-51.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.POLICY.OPPORTUNITY. Domain `D.POLICY.OPPORTUNITY`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Inputs** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.POLICY.SOURCES` — Only CONSTANT, RUN_INPUT and EXTERNAL_REFERENCE bindings are legal
-        - Applicability: Custom typed policy is declared.
-        - Required/observable: Reject policy definition. Forbidden: Do not allow pre-graph UPSTREAM_OUTPUT or undeclared Context
-        - Authority: NORMATIVE_VCP; source spec/draft/execution-policy.md:9-17.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.POLICY.SOURCE. Domain `D.POLICY.SOURCE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Occurrence boundary** — 5 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.POLICY.ADMISSION` — Create occurrence for RUN, SKIP or DEFER
-        - Applicability: Activated selected subject receives valid admission.
-        - Required/observable: RunRecord exists after valid admission. Forbidden: Do not require actual graph execution to call it an occurrence
-        - Authority: NORMATIVE_VCP; source spec/draft/execution-policy.md:60-65.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.POLICY.SEQUENTIAL. Domain `D.POLICY.SEQUENTIAL`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.POLICY.DEFER` — Every node terminal DEFERRED with ADMISSION_DEFER without invocation
-        - Applicability: Admission returns DEFER.
-        - Required/observable: Complete deferred records. Forbidden: Do not execute graph providers or schedule invisible retries
-        - Authority: NORMATIVE_VCP; source spec/draft/execution-policy.md:60-65.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.POLICY.SEQUENTIAL. Domain `D.POLICY.SEQUENTIAL`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.POLICY.INACTIVE` — Stop before selection with no occurrence
-        - Applicability: Activation returns DO_NOT_ACTIVATE.
-        - Required/observable: No occurrence. Forbidden: Do not create RunRecord or node records
-        - Authority: NORMATIVE_VCP; source spec/draft/execution-policy.md:55-58.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.POLICY.SEQUENTIAL. Domain `D.POLICY.SEQUENTIAL`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.POLICY.SKIP` — Every node terminal SKIPPED with ADMISSION_SKIP without invocation
-        - Applicability: Admission returns SKIP.
-        - Required/observable: Complete nonexecution records. Forbidden: Do not label this FAIL, UNKNOWN or execution ERROR
-        - Authority: NORMATIVE_VCP; source spec/draft/execution-policy.md:60-65.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.POLICY.SEQUENTIAL. Domain `D.POLICY.SEQUENTIAL`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.POLICY.UNSELECTED` — Stop before admission with no occurrence
-        - Applicability: Selection returns empty set.
-        - Required/observable: No occurrence. Forbidden: Do not create RunRecord or node records
-        - Authority: NORMATIVE_VCP; source spec/draft/execution-policy.md:55-58.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.POLICY.SEQUENTIAL. Domain `D.POLICY.SEQUENTIAL`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Outcomes** — 3 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.POLICY.OUTCOME_ACTIVATION` — Return Activation with ACTIVATE or DO_NOT_ACTIVATE and nonempty reason
-        - Applicability: Activation provider returns.
-        - Required/observable: Role-constrained activation outcome. Forbidden: Do not accept Result, Decision, envelope or boolean
-        - Authority: NORMATIVE_VCP; source spec/draft/execution-policy.md:23-26.
-        - Mathematics: Own finite quotient C=3, V/I/N=1/2/0. Domain `D.POLICY.SEQUENTIAL`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.POLICY.OUTCOME_ADMISSION` — Return Admission RUN, SKIP or DEFER with nonempty reason
-        - Applicability: Admission provider returns.
-        - Required/observable: Reject invalid policy output. Forbidden: Do not accept other role outcomes
-        - Authority: NORMATIVE_VCP; source spec/draft/execution-policy.md:23-26.
-        - Mathematics: Own finite quotient C=3, V/I/N=1/2/0. Domain `D.POLICY.SEQUENTIAL`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.POLICY.OUTCOME_SELECTION` — Return Selection with reason and an identity-unique subject set that is empty or exact definition subject
-        - Applicability: Selection provider returns.
-        - Required/observable: Reject invalid policy output. Forbidden: Do not select foreign snapshots, duplicate IDs or expand the graph
-        - Authority: NORMATIVE_VCP; source spec/draft/execution-policy.md:23-26.
-        - Mathematics: Own finite quotient C=3, V/I/N=1/2/0. Domain `D.POLICY.SEQUENTIAL`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Stages** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.POLICY.ORDER` — Evaluate activation, then selection, then admission before graph work
-        - Applicability: An opportunity is evaluated.
-        - Required/observable: Exact policy evaluation order. Forbidden: Do not let policies inspect graph execution
-        - Authority: NORMATIVE_VCP; source spec/draft/execution-policy.md:5-7.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.POLICY.SEQUENTIAL. Domain `D.POLICY.SEQUENTIAL`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Validation** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.POLICY.PREFLIGHT` — Validate complete definition, schemas, constants and bindings first
-        - Applicability: Any policy or graph implementation might be invoked.
-        - Required/observable: No implementation side effects before preflight. Forbidden: Do not invoke on partially validated definitions
-        - Authority: NORMATIVE_VCP; source spec/draft/execution-policy.md:9-17.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.POLICY.SEQUENTIAL. Domain `D.POLICY.SEQUENTIAL`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-  - **Profiles** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **standard-draft** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **Severity** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.PROFILE.STANDARD_SEVERITY` — Use ordered INFO=10, WARNING=20, ERROR=30, BLOCKER=40 under domain id standard-draft.
-          - Applicability: The standard-draft severity domain snapshot is explicitly selected..
-          - Required/observable: Exact selected label rank order.. Forbidden: Do not interpret an unresolved different domain through these labels or derive a binary verdict.
-          - Authority: SELECTED_STANDARD_VCP_PROFILE; source profiles/standard-draft/profile.json:1-97.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROFILE.STANDARD. Domain `D.PROFILE.STANDARD`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-  - **Provenance** — 28 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **Evidence** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.OBS.EVIDENCE` — Invalidate acceptance and retain observed snapshot plus valid usage
-        - Applicability: Observed Evidence is structurally typed but semantically invalid.
-        - Required/observable: Recorded rejected observation. Forbidden: Do not promote invalid evidence into accepted evaluation evidence
-        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:155-169.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.OBSERVATION.USAGE. Domain `D.OBSERVATION.USAGE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Execution observation** — 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **SNAPSHOT** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.OBS.RETENTION.SNAPSHOT` — Retain observed snapshot separately from accepted semantic outputs.
-          - Applicability: Attempt observations fail semantic acceptance.
-          - Required/observable: Raw observation retained.. Forbidden: Do not replace it by fabricated successful output.
-          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:155-169.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.OBSERVATION.USAGE. Domain `D.OBSERVATION.USAGE`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **USAGE** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.OBS.RETENTION.USAGE` — Retain that incurred usage independently of semantic rejection.
-          - Applicability: Attempt reports valid incurred usage but output/judgment/error acceptance fails.
-          - Required/observable: Recorded authoritative usage.. Forbidden: Do not erase known consumption.
-          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:155-169.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.OBSERVATION.USAGE. Domain `D.OBSERVATION.USAGE`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Lineage** — 4 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **NO_RERUN** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.PROV.RECONSTRUCT.NO_RERUN` — Do not execute provider/custom policy logic to validate stored lineage.
-          - Applicability: RunRecord is validated.
-          - Required/observable: Zero rerun validation.. Forbidden: No replay requirement or provider side effects during validation.
-          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:171-182.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **RESOLUTIONS** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.PROV.RECONSTRUCT.RESOLUTIONS` — Reconstruct each resolution from definition, normalized run inputs and recorded predecessor/source values.
-          - Applicability: RunRecord validates declared consumed inputs.
-          - Required/observable: PROVENANCE_LINEAGE on contradiction.. Forbidden: Do not accept mutually copied forged values without source reconstruction.
-          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:171-182.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **VALUES** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.PROV.RECONSTRUCT.VALUES` — Exact assembled input_values equals the usable/defaulted resolved port values, with omissions absent.
-          - Applicability: Reconstructed input resolutions are available.
-          - Required/observable: Exact consumed input snapshot.. Forbidden: No unbound/stale/null fallback values.
-          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:171-182.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.PROV.UNBOUND` — Reject unbound consumed values and membership drift
-        - Applicability: Recorded inputs or aggregate membership disagree with declarations.
-        - Required/observable: PROVENANCE_LINEAGE. Forbidden: Do not accept invented semantic inputs
-        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:171-182.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **NodeRecord** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **Direct upstream snapshots** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.PROV.UPSTREAM_SNAPSHOTS` — Record direct upstream identities and Result snapshots consistent with actual execution prerequisites and earlier node records.
-          - Applicability: Occurrence node provenance validated..
-          - Required/observable: PROVENANCE_LINEAGE on inconsistent direct lineage.. Forbidden: Do not substitute transitive/unrelated producer snapshots or silently drift upstream Result values.
-          - Authority: NORMATIVE_VCP; source spec/draft/provenance.md:11-19.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Nonexecution** — 4 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.PROV.UNSTARTED.EXECUTOR` — Executor identity/version are absent.
-        - Applicability: Node never started.
-        - Required/observable: Identity absence.. Forbidden: No fabricated provider identity for uninvoked work.
-        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:171-182.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.PROV.UNSTARTED.INFORMATION` — Accepted information and Decision are absent.
-        - Applicability: Node never started.
-        - Required/observable: Accepted-output absence.. Forbidden: No accepted output without execution.
-        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:171-182.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.PROV.UNSTARTED.OBSERVATION` — No executor observation is retained.
-        - Applicability: Node never started.
-        - Required/observable: Observation absence.. Forbidden: No fabricated output/evidence snapshot.
-        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:171-182.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.PROV.UNSTARTED.USAGE` — Executor usage is absent; runner wall time is separate bookkeeping.
-        - Applicability: Node never started.
-        - Required/observable: Usage provenance.. Forbidden: Do not claim provider consumption without work.
-        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:171-182.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.OBSERVATION.USAGE. Domain `D.OBSERVATION.USAGE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Policies** — 7 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **ACTIVATION** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.PROV.ADMISSION_EQUALITY.ACTIVATION` — Recorded Activation outcome is ACTIVATE.
-          - Applicability: RunRecord describes an occurrence.
-          - Required/observable: PROVENANCE_LINEAGE otherwise.. Forbidden: No inactive RunRecord.
-          - Authority: NORMATIVE_VCP; source spec/draft/provenance.md:42-51.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **ADMISSION** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.PROV.ADMISSION_EQUALITY.ADMISSION` — Policy admission object equals RunRecord.admission under JSON typed equality.
-          - Applicability: Occurrence records policy admission.
-          - Required/observable: PROVENANCE_LINEAGE otherwise.. Forbidden: No drift between copies.
-          - Authority: NORMATIVE_VCP; source spec/draft/provenance.md:42-51.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **BUILTINS** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.PROV.POLICY_ORDER.BUILTINS` — Check built-in semantic outcomes including probability endpoints, but not portable interior bucket identity.
-          - Applicability: Built-in outcome recorded.
-          - Required/observable: Endpoint or role inconsistency is PROVENANCE_LINEAGE.. Forbidden: No blanket trust of built-in label or rerunning custom logic.
-          - Authority: NORMATIVE_VCP; source spec/draft/provenance.md:42-51.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **ELIGIBILITY** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.PROV.POLICY_ORDER.ELIGIBILITY` — Activation is ACTIVATE; selection is exact definition subject; admission equals RunRecord.admission.
-          - Applicability: RunRecord policy outcomes validated.
-          - Required/observable: PROVENANCE_LINEAGE on inconsistent occurrence evidence.. Forbidden: No occurrence for inactive/unselected opportunity.
-          - Authority: NORMATIVE_VCP; source spec/draft/provenance.md:42-51.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **INPUTS** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.PROV.POLICY_ORDER.INPUTS` — Reconstruct exact policy resolutions/values from definition and supplied run inputs.
-          - Applicability: Policy provenance validated.
-          - Required/observable: PROVENANCE_LINEAGE on reconstructed input mismatch.. Forbidden: Do not rerun custom policy implementation.
-          - Authority: NORMATIVE_VCP; source spec/draft/provenance.md:42-51.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **SELECTION** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.PROV.ADMISSION_EQUALITY.SELECTION` — Recorded selection contains exact definition subject snapshot.
-          - Applicability: RunRecord describes an occurrence.
-          - Required/observable: PROVENANCE_LINEAGE otherwise.. Forbidden: No empty/foreign subject occurrence.
-          - Authority: NORMATIVE_VCP; source spec/draft/provenance.md:42-51.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **STAGES** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.PROV.POLICY_ORDER.STAGES` — Exactly ACTIVATION, SELECTION, ADMISSION policy evaluations in order.
-          - Applicability: RunRecord exists.
-          - Required/observable: Role sequence equals authored stage order.. Forbidden: No omitted/reordered/duplicated stage.
-          - Authority: NORMATIVE_VCP; source spec/draft/provenance.md:42-51.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **RunRecord** — 4 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **FINGERPRINT** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.PROV.RECORD_ANCHOR.FINGERPRINT` — Treat fingerprint as opaque reference identity, not portable integrity signature.
-          - Applicability: Definition fingerprint consumed.
-          - Required/observable: Consistency guarantees remain bounded by external trust.. Forbidden: Do not infer signing or authenticity from local-sha256 label.
-          - Authority: NORMATIVE_VCP; source spec/draft/provenance.md:5-9.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **SNAPSHOTS** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.PROV.RECORD_ANCHOR.SNAPSHOTS` — Definition, subject, initial supplied run_inputs and initial_context are immutable authored occurrence snapshots.
-          - Applicability: Occurrence recorded.
-          - Required/observable: Record anchors compare with externally known occurrence inputs when available.. Forbidden: Do not substitute matching copied observed fields for authored inputs.
-          - Authority: NORMATIVE_VCP; source spec/draft/provenance.md:5-9.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.PROV.NODE_SET.EXACT` — Exactly one NodeRecord for every definition node.
-        - Applicability: An occurrence is recorded.
-        - Required/observable: Node identity set and cardinality.. Forbidden: No duplicates, missing or invented nodes.
-        - Authority: NORMATIVE_VCP; source spec/draft/provenance.md:5-9.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.PROV.NODE_SET.ORDER` — Records follow dependency order.
-        - Applicability: Dependency-related nodes are recorded.
-        - Required/observable: Record sequence.. Forbidden: Do not accept a consumer record ahead of its prerequisite.
-        - Authority: NORMATIVE_VCP; source spec/draft/provenance.md:5-9.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Timing** — 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.PROV.TIMING.DEPENDENCY` — Every predecessor finishes before consumer starts.
-        - Applicability: Consumer has execution predecessors.
-        - Required/observable: Recorded dependency timing.. Forbidden: Do not infer readiness from node array position.
-        - Authority: NORMATIVE_VCP; source spec/draft/provenance.md:22-27.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.PROV.TIMING.INTERVAL` — Node start/finish lie within the run interval with nonnegative duration.
-        - Applicability: Node record has timestamps.
-        - Required/observable: Recorded interval validity.. Forbidden: Do not accept reversed/outside timestamps.
-        - Authority: NORMATIVE_VCP; source spec/draft/provenance.md:22-27.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Trust boundary** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.PROV.TRUST_LIMIT` — Claim consistency detection only, without replay/authentication
-        - Applicability: An entire record is internally coherent.
-        - Required/observable: No portable signing/attestation guarantee. Forbidden: Do not claim detection of coordinated rewriting or dishonest provider truth without external trust
-        - Authority: NORMATIVE_VCP; source spec/draft/provenance.md:29-32.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Usage** — 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.OBS.AUTHORITY.NO_SUM` — Do not add repeated usage as additional charge.
-        - Applicability: Observation and Result repeat usage.
-        - Required/observable: Per-attempt usage.. Forbidden: No double accounting.
-        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:155-169.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.OBSERVATION.USAGE. Domain `D.OBSERVATION.USAGE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.OBS.AUTHORITY.OVERLAP` — Repeated dimensions agree exactly with authoritative observation.
-        - Applicability: Result repeats execution observation usage dimensions.
-        - Required/observable: Semantic rejection on mismatch.. Forbidden: Do not accept contradictory dimensions.
-        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:155-169.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.OBSERVATION.USAGE. Domain `D.OBSERVATION.USAGE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-  - **Provider binding** — 12 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **Contract boundaries** — 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.BIND.INPUT` — Exact port input and node config validate against capability schemas before invocation
-        - Applicability: Resolved bound invocation is assembled.
-        - Required/observable: INVALID_INPUT/INVALID_CONFIG boundary. Forbidden: Do not insert defaults, override ports or wrap primitives
-        - Authority: NORMATIVE_VCP; source spec/draft/provider-binding.md:12-18.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.OPERATION.IDENTITY. Domain `D.OPERATION.IDENTITY`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.BIND.OUTPUT` — Validate exact output object against capability schema before VCP port/Result/Decision/judgment acceptance
-        - Applicability: Provider returns COMPLETED output.
-        - Required/observable: Independent contract and semantic acceptance. Forbidden: Do not equate COMPLETED with VCP success/PASS
-        - Authority: NORMATIVE_VCP; source spec/draft/provider-binding.md:20-28.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.OPERATION.IDENTITY. Domain `D.OPERATION.IDENTITY`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Identity** — 3 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **COMPATIBILITY** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.BIND.PRECHECK.COMPATIBILITY` — Enforce Provider Contract version/interchange compatibility.
-          - Applicability: Bound capability exchanges contract/VCP objects.
-          - Required/observable: Incompatible binding rejected before invocation.. Forbidden: Do not infer compatible revision from marker alone.
-          - Authority: NORMATIVE_VCP; source spec/draft/provider-binding.md:12-18.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.OPERATION.IDENTITY. Domain `D.OPERATION.IDENTITY`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **IDENTITY** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.BIND.PRECHECK.IDENTITY` — Binding provider identity/version equals manifest; capability pair equals node requirement and advertised exact pair.
-          - Applicability: Concrete binding selects graph node.
-          - Required/observable: Identity/pair conflicts reject before invocation.. Forbidden: No fallback to another provider or version.
-          - Authority: NORMATIVE_VCP; source spec/draft/provider-binding.md:12-18.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.OPERATION.IDENTITY. Domain `D.OPERATION.IDENTITY`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **STRUCTURE** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.BIND.PRECHECK.STRUCTURE` — Validate binding and complete bound manifest structural and semantic validity before invocation, including capability schemas.
-          - Applicability: Concrete binding supplied.
-          - Required/observable: Preinvocation rejection.. Forbidden: Do not invoke from malformed binding/manifest.
-          - Authority: NORMATIVE_VCP; source spec/draft/provider-binding.md:12-18.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.OPERATION.IDENTITY. Domain `D.OPERATION.IDENTITY`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Provenance** — 4 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **EXECUTOR** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.BIND.PROVENANCE.EXECUTOR` — executor_ref/provider_id and executor_version/provider_version are equal.
-          - Applicability: Bound invocation records executor identity/version.
-          - Required/observable: PROVENANCE_LINEAGE on mismatch.. Forbidden: No invented different executor.
-          - Authority: NORMATIVE_VCP; source spec/draft/provider-binding.md:30-39.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **NODE_COPY** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.BIND.PROVENANCE.NODE_COPY` — NodeRecord.provider_binding equals actual occurrence invocation binding and operation pair.
-          - Applicability: Bound invocation NodeRecord exists.
-          - Required/observable: PROVENANCE_LINEAGE on mismatch.. Forbidden: No divergent provenance copies.
-          - Authority: NORMATIVE_VCP; source spec/draft/provider-binding.md:30-39.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **OCCURRENCE_MAP** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.BIND.PROVENANCE.OCCURRENCE_MAP` — Occurrence provider_bindings[node_id] equals exact actual four-part binding.
-          - Applicability: Bound graph node actually invokes, including raised/interrupted invocation.
-          - Required/observable: Recorded binding.. Forbidden: No drift or missing invocation map identity.
-          - Authority: NORMATIVE_VCP; source spec/draft/provider-binding.md:30-39.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **ONLY_INVOKED** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.BIND.PROVENANCE.ONLY_INVOKED` — No concrete invocation binding is fabricated.
-          - Applicability: Node never invoked or local implementation has no Provider manifest.
-          - Required/observable: Binding absence for noninvocation.. Forbidden: No binding on lifecycle-disabled/preflight-rejected/local unbound work.
-          - Authority: NORMATIVE_VCP; source spec/draft/provider-binding.md:30-39.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Rejected output** — 3 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **ACCEPTANCE** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.BIND.OUTPUT_REJECTION.ACCEPTANCE` — No accepted information or Decision; terminal ERROR with corresponding bookkeeping Result, or interrupted CANCELLED.
-          - Applicability: Provider output schema rejection recorded.
-          - Required/observable: Bookkeeping Result remains subject to declared Result-port schema.. Forbidden: Invalid raw information never becomes consumable downstream.
-          - Authority: NORMATIVE_VCP; source spec/draft/provider-binding.md:41-49.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **DIAGNOSIS** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.BIND.OUTPUT_REJECTION.DIAGNOSIS` — Record provider_output_error with INVALID_PROVIDER_OUTPUT and diagnostic message; requires provider binding.
-          - Applicability: Provider output schema rejects observation without execution error.
-          - Required/observable: Separate host validation rejection provenance.. Forbidden: No provider_output_error without binding or for execution-error observation.
-          - Authority: NORMATIVE_VCP; source spec/draft/provider-binding.md:41-49.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **RETAIN** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.BIND.OUTPUT_REJECTION.RETAIN` — Retain exact binding, raw observation and valid incurred usage.
-          - Applicability: Provider output schema rejects successful raw observation.
-          - Required/observable: Raw snapshot remains observation only.. Forbidden: Do not discard valid usage because semantic output rejected.
-          - Authority: NORMATIVE_VCP; source spec/draft/provider-binding.md:41-49.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-  - **Resources** — 5 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **Accounting** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.RES.UNITS` — Preserve explicit units and separate runner duration from executor usage
-        - Applicability: Usage is combined or reported.
-        - Required/observable: No duplicated or unitless charge. Forbidden: Do not sum incompatible units or convert implicitly
-        - Authority: NORMATIVE_VCP; source spec/draft/resources.md:5-12.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RESOURCES.SEMANTICS. Domain `D.RESOURCES.SEMANTICS`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Measurements** — 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.RES.KINDS` — EXACT/ESTIMATED have nonnegative finite value only; RANGE has nonnegative finite minimum/maximum only; UNKNOWN has neither
-        - Applicability: A resource measurement is validated.
-        - Required/observable: RESOURCE_MEASUREMENT for semantic violation. Forbidden: Do not populate numeric fields for another kind
-        - Authority: NORMATIVE_VCP; source spec/draft/resources.md:5-12.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RESOURCES.SEMANTICS. Domain `D.RESOURCES.SEMANTICS`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.RES.ORDER` — minimum <= maximum
-        - Applicability: A RANGE measurement is validated.
-        - Required/observable: RESOURCE_MEASUREMENT. Forbidden: Do not accept reversed bounds
-        - Authority: NORMATIVE_VCP; source spec/draft/resources.md:5-12.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RESOURCES.SEMANTICS. Domain `D.RESOURCES.SEMANTICS`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Reference profile** — 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **MEASUREMENT** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.RES.WALL_TIME.MEASUREMENT` — Record EXACT seconds using monotonic elapsed clock.
-          - Applicability: Reference engine measures own wall_time.
-          - Required/observable: Nonnegative monotonic elapsed measurement.. Forbidden: Do not promise physical clock precision or substitute UTC subtraction.
-          - Authority: NORMATIVE_VCP; source spec/draft/resources.md:14-18.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RESOURCES.SEMANTICS. Domain `D.RESOURCES.SEMANTICS`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **SEPARATE** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.RES.WALL_TIME.SEPARATE` — Retain adapter usage and record engine duration separately.
-          - Applicability: Reference engine records node usage.
-          - Required/observable: Executor usage and engine timing distinguishable.. Forbidden: No merging incompatible units or duplicating executor charge.
-          - Authority: NORMATIVE_VCP; source spec/draft/resources.md:14-18.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RESOURCES.SEMANTICS. Domain `D.RESOURCES.SEMANTICS`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-  - **Result** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **Score** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **Normalized meaning** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.RESULT.SCORE_MEANING` — Score is a JSON number in[0,1], with1 meaning stronger satisfaction and0 stronger violation; it does not imply verdict.
-          - Applicability: A Result contains nonnull score..
-          - Required/observable: Typed normalized observation retains declared orientation.. Forbidden: Do not reverse direction or infer score-to-verdict mapping.
-          - Authority: NORMATIVE_VCP; source spec/draft/result.md:18-22.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.NUMERIC. Domain `D.AGG.NUMERIC`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-  - **Results** — 30 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **Evidence** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.RESULT.NONEXEC_EVIDENCE` — Evidence may explain nonexecution
-        - Applicability: A standalone nonexecution Result carries evidence.
-        - Required/observable: Reject misleading accepted evaluation evidence. Forbidden: Do not claim successful evaluation; runner nonexecution carries diagnostic reason without evaluation evidence
-        - Authority: NORMATIVE_VCP; source spec/draft/result.md:55-57.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.EVIDENCE.PURPOSE. Domain `D.EVIDENCE.PURPOSE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Observations** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.RESULT.INDEPENDENCE` — Judgment, verdict, score and severity are independently optional observations
-        - Applicability: Successful applicable KNOWN evaluation.
-        - Required/observable: Accept valid combinations without fabricated observations. Forbidden: Do not derive a verdict from score/severity or add implicit satisfaction mappings
-        - Authority: NORMATIVE_VCP; source spec/draft/result.md:5-16.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RESULT.WIRE. Domain `D.RESULT.WIRE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Projection** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.RESULT.FLATTEN` — KNOWN with verdict maps to verdict; UNKNOWN to UNKNOWN; executed ERROR to ERROR; SKIPPED to SKIP
-        - Applicability: A consumer requests the standard convenience projection.
-        - Required/observable: Partial projection is undefined for those remaining states. Forbidden: Do not invent projection values for DEFERRED, CANCELLED, NOT_APPLICABLE or KNOWN without verdict
-        - Authority: NORMATIVE_VCP; source spec/draft/result.md:24-28.
-        - Mathematics: Own finite quotient C=9, V/I/N=5/0/4. Domain `D.RESULT.FLATTENED`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Severity** — 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.RESULT.SEVERITY` — Preserve domain/label as opaque identifiers
-        - Applicability: Result severity has no explicit domain snapshot.
-        - Required/observable: Unresolved domain alone is not a parsing failure. Forbidden: Do not resolve a registry or assert label membership
-        - Authority: NORMATIVE_VCP; source spec/draft/result.md:18-22.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SEVERITY.DOMAIN. Domain `D.SEVERITY.DOMAIN`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.SEVERITY.VERSION` — Domain identifier identifies the versioned semantic domain
-        - Applicability: Severity meaning depends on version.
-        - Required/observable: Domain identifier identifies the versioned semantic domain. Forbidden: Do not use an ambiguous unversioned registry lookup to change meaning
-        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:184-188.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SEVERITY.DOMAIN. Domain `D.SEVERITY.DOMAIN`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **State** — 25 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.RESULT.DETERMINATION` — determination is KNOWN or UNKNOWN
-        - Applicability: Successful applicable evaluation.
-        - Required/observable: RESULT_STATE on violation. Forbidden: Do not leave the determination unspecified
-        - Authority: NORMATIVE_VCP; source spec/draft/result.md:5-16.
-        - Mathematics: Own finite quotient C=8, V/I/N=2/2/4. Domain `D.RESULT.WIRE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.RESULT.ERROR.APPLICABILITY` — applicability is absent or explicitly null under VCP nullable-control semantics.
-        - Applicability: Executed outcome is ERROR.
-        - Required/observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.. Forbidden: Do not accept a forbidden applicability observation in this Result state.
-        - Authority: NORMATIVE_VCP; source spec/draft/result.md:5-16.
-        - Mathematics: Own finite quotient C=6, V/I/N=2/1/3. Domain `D.RESULT.WIRE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.RESULT.ERROR.DETERMINATION` — determination is absent or explicitly null under VCP nullable-control semantics.
-        - Applicability: Executed outcome is ERROR.
-        - Required/observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.. Forbidden: Do not accept a forbidden determination observation in this Result state.
-        - Authority: NORMATIVE_VCP; source spec/draft/result.md:5-16.
-        - Mathematics: Own finite quotient C=6, V/I/N=2/1/3. Domain `D.RESULT.WIRE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.RESULT.ERROR.JUDGMENT` — The judgment key is absent.
-        - Applicability: Executed outcome is ERROR.
-        - Required/observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.. Forbidden: Do not accept a forbidden judgment observation in this Result state.
-        - Authority: NORMATIVE_VCP; source spec/draft/result.md:5-16.
-        - Mathematics: Own finite quotient C=6, V/I/N=1/2/3. Domain `D.RESULT.OBSERVATION_MASK`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.RESULT.ERROR.SCORE` — score is absent or explicitly null under VCP nullable-control semantics.
-        - Applicability: Executed outcome is ERROR.
-        - Required/observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.. Forbidden: Do not accept a forbidden score observation in this Result state.
-        - Authority: NORMATIVE_VCP; source spec/draft/result.md:5-16.
-        - Mathematics: Own finite quotient C=6, V/I/N=2/1/3. Domain `D.RESULT.WIRE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.RESULT.ERROR.SEVERITY` — severity is absent or explicitly null under VCP nullable-control semantics.
-        - Applicability: Executed outcome is ERROR.
-        - Required/observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.. Forbidden: Do not accept a forbidden severity observation in this Result state.
-        - Authority: NORMATIVE_VCP; source spec/draft/result.md:5-16.
-        - Mathematics: Own finite quotient C=6, V/I/N=2/1/3. Domain `D.RESULT.WIRE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.RESULT.ERROR.VERDICT` — verdict is absent or explicitly null under VCP nullable-control semantics.
-        - Applicability: Executed outcome is ERROR.
-        - Required/observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.. Forbidden: Do not accept a forbidden verdict observation in this Result state.
-        - Authority: NORMATIVE_VCP; source spec/draft/result.md:5-16.
-        - Mathematics: Own finite quotient C=6, V/I/N=2/1/3. Domain `D.RESULT.WIRE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.RESULT.NONEXECUTION.APPLICABILITY` — applicability is absent or explicitly null under VCP nullable-control semantics.
-        - Applicability: Result.disposition is SKIPPED, DEFERRED or CANCELLED.
-        - Required/observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.. Forbidden: Do not accept a forbidden applicability observation in this Result state.
-        - Authority: NORMATIVE_VCP; source spec/draft/result.md:5-16.
-        - Mathematics: Own finite quotient C=12, V/I/N=6/3/3. Domain `D.RESULT.WIRE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.RESULT.NONEXECUTION.DETERMINATION` — determination is absent or explicitly null under VCP nullable-control semantics.
-        - Applicability: Result.disposition is SKIPPED, DEFERRED or CANCELLED.
-        - Required/observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.. Forbidden: Do not accept a forbidden determination observation in this Result state.
-        - Authority: NORMATIVE_VCP; source spec/draft/result.md:5-16.
-        - Mathematics: Own finite quotient C=12, V/I/N=6/3/3. Domain `D.RESULT.WIRE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.RESULT.NONEXECUTION.EXECUTION_OUTCOME` — execution_outcome is absent or explicitly null under VCP nullable-control semantics.
-        - Applicability: Result.disposition is SKIPPED, DEFERRED or CANCELLED.
-        - Required/observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.. Forbidden: Do not accept a forbidden execution_outcome observation in this Result state.
-        - Authority: NORMATIVE_VCP; source spec/draft/result.md:5-16.
-        - Mathematics: Own finite quotient C=12, V/I/N=6/3/3. Domain `D.RESULT.WIRE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.RESULT.NONEXECUTION.JUDGMENT` — The judgment key is absent.
-        - Applicability: Result.disposition is SKIPPED, DEFERRED or CANCELLED.
-        - Required/observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.. Forbidden: Do not accept a forbidden judgment observation in this Result state.
-        - Authority: NORMATIVE_VCP; source spec/draft/result.md:5-16.
-        - Mathematics: Own finite quotient C=12, V/I/N=3/6/3. Domain `D.RESULT.OBSERVATION_MASK`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.RESULT.NONEXECUTION.SCORE` — score is absent or explicitly null under VCP nullable-control semantics.
-        - Applicability: Result.disposition is SKIPPED, DEFERRED or CANCELLED.
-        - Required/observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.. Forbidden: Do not accept a forbidden score observation in this Result state.
-        - Authority: NORMATIVE_VCP; source spec/draft/result.md:5-16.
-        - Mathematics: Own finite quotient C=12, V/I/N=6/3/3. Domain `D.RESULT.WIRE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.RESULT.NONEXECUTION.SEVERITY` — severity is absent or explicitly null under VCP nullable-control semantics.
-        - Applicability: Result.disposition is SKIPPED, DEFERRED or CANCELLED.
-        - Required/observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.. Forbidden: Do not accept a forbidden severity observation in this Result state.
-        - Authority: NORMATIVE_VCP; source spec/draft/result.md:5-16.
-        - Mathematics: Own finite quotient C=12, V/I/N=6/3/3. Domain `D.RESULT.WIRE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.RESULT.NONEXECUTION.VERDICT` — verdict is absent or explicitly null under VCP nullable-control semantics.
-        - Applicability: Result.disposition is SKIPPED, DEFERRED or CANCELLED.
-        - Required/observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.. Forbidden: Do not accept a forbidden verdict observation in this Result state.
-        - Authority: NORMATIVE_VCP; source spec/draft/result.md:5-16.
-        - Mathematics: Own finite quotient C=12, V/I/N=6/3/3. Domain `D.RESULT.WIRE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.RESULT.NOT_APPLICABLE.DETERMINATION` — determination is absent or explicitly null under VCP nullable-control semantics.
-        - Applicability: Successful outcome is NOT_APPLICABLE.
-        - Required/observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.. Forbidden: Do not accept a forbidden determination observation in this Result state.
-        - Authority: NORMATIVE_VCP; source spec/draft/result.md:5-16.
-        - Mathematics: Own finite quotient C=6, V/I/N=2/1/3. Domain `D.RESULT.WIRE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.RESULT.NOT_APPLICABLE.JUDGMENT` — The judgment key is absent.
-        - Applicability: Successful outcome is NOT_APPLICABLE.
-        - Required/observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.. Forbidden: Do not accept a forbidden judgment observation in this Result state.
-        - Authority: NORMATIVE_VCP; source spec/draft/result.md:5-16.
-        - Mathematics: Own finite quotient C=6, V/I/N=1/2/3. Domain `D.RESULT.OBSERVATION_MASK`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.RESULT.NOT_APPLICABLE.SCORE` — score is absent or explicitly null under VCP nullable-control semantics.
-        - Applicability: Successful outcome is NOT_APPLICABLE.
-        - Required/observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.. Forbidden: Do not accept a forbidden score observation in this Result state.
-        - Authority: NORMATIVE_VCP; source spec/draft/result.md:5-16.
-        - Mathematics: Own finite quotient C=6, V/I/N=2/1/3. Domain `D.RESULT.WIRE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.RESULT.NOT_APPLICABLE.SEVERITY` — severity is absent or explicitly null under VCP nullable-control semantics.
-        - Applicability: Successful outcome is NOT_APPLICABLE.
-        - Required/observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.. Forbidden: Do not accept a forbidden severity observation in this Result state.
-        - Authority: NORMATIVE_VCP; source spec/draft/result.md:5-16.
-        - Mathematics: Own finite quotient C=6, V/I/N=2/1/3. Domain `D.RESULT.WIRE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.RESULT.NOT_APPLICABLE.VERDICT` — verdict is absent or explicitly null under VCP nullable-control semantics.
-        - Applicability: Successful outcome is NOT_APPLICABLE.
-        - Required/observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.. Forbidden: Do not accept a forbidden verdict observation in this Result state.
-        - Authority: NORMATIVE_VCP; source spec/draft/result.md:5-16.
-        - Mathematics: Own finite quotient C=6, V/I/N=2/1/3. Domain `D.RESULT.WIRE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.RESULT.OUTCOME` — execution_outcome is SUCCESS or ERROR
-        - Applicability: Result.disposition is EXECUTED.
-        - Required/observable: RESULT_STATE on violation. Forbidden: Do not accept absent/null outcome for an executed Result
-        - Authority: NORMATIVE_VCP; source spec/draft/result.md:5-16.
-        - Mathematics: Own finite quotient C=16, V/I/N=2/2/12. Domain `D.RESULT.WIRE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.RESULT.SUCCESS` — applicability is APPLICABLE or NOT_APPLICABLE
-        - Applicability: Executed outcome is SUCCESS.
-        - Required/observable: RESULT_STATE on violation. Forbidden: Do not omit applicability
-        - Authority: NORMATIVE_VCP; source spec/draft/result.md:5-16.
-        - Mathematics: Own finite quotient C=8, V/I/N=2/2/4. Domain `D.RESULT.WIRE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.RESULT.UNKNOWN.JUDGMENT` — The judgment key is absent.
-        - Applicability: determination is UNKNOWN.
-        - Required/observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.. Forbidden: Do not accept a forbidden judgment observation in this Result state.
-        - Authority: NORMATIVE_VCP; source spec/draft/result.md:5-16.
-        - Mathematics: Own finite quotient C=6, V/I/N=1/2/3. Domain `D.RESULT.OBSERVATION_MASK`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.RESULT.UNKNOWN.SCORE` — score is absent or explicitly null under VCP nullable-control semantics.
-        - Applicability: determination is UNKNOWN.
-        - Required/observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.. Forbidden: Do not accept a forbidden score observation in this Result state.
-        - Authority: NORMATIVE_VCP; source spec/draft/result.md:5-16.
-        - Mathematics: Own finite quotient C=6, V/I/N=2/1/3. Domain `D.RESULT.WIRE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.RESULT.UNKNOWN.SEVERITY` — severity is absent or explicitly null under VCP nullable-control semantics.
-        - Applicability: determination is UNKNOWN.
-        - Required/observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.. Forbidden: Do not accept a forbidden severity observation in this Result state.
-        - Authority: NORMATIVE_VCP; source spec/draft/result.md:5-16.
-        - Mathematics: Own finite quotient C=6, V/I/N=2/1/3. Domain `D.RESULT.WIRE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.RESULT.UNKNOWN.VERDICT` — verdict is absent or explicitly null under VCP nullable-control semantics.
-        - Applicability: determination is UNKNOWN.
-        - Required/observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.. Forbidden: Do not accept a forbidden verdict observation in this Result state.
-        - Authority: NORMATIVE_VCP; source spec/draft/result.md:5-16.
-        - Mathematics: Own finite quotient C=6, V/I/N=2/1/3. Domain `D.RESULT.WIRE`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-  - **Schemas** — 3 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **Compatibility** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.SCHEMA.STATIC` — Validate authored constants/defaults/references; reject source/target bindings with false schemas, disjoint explicit primitive-type sets or incompatible finite const/enum values. Integer overlaps number. Other implication is deferred to runtime.
-        - Applicability: Static source/target compatibility and authored constant/default/reference checks for a definition..
-        - Required/observable: Reject known incompatibility; defer other implication to runtime. Forbidden: Do not reinterpret a false JSON Schema as syntactically invalid everywhere: a valid false judgment schema admits no emitted judgments but does not itself forbid an absent judgment.
-        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:96-105.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SCHEMA.EMBEDDED. Domain `D.SCHEMA.EMBEDDED`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Embedded** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.SCHEMA.SUBSET` — Valid Draft 2020-12 object/boolean; only resolvable local JSON Pointer references; no nested IDs, anchors/dynamic refs or external resolution
-        - Applicability: An embedded schema is declared.
-        - Required/observable: SCHEMA_UNSUPPORTED before invocation for unsupported resolution. Forbidden: Do not execute annotation objects as schemas or resolve arbitrary documents
-        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:96-105.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SCHEMA.EMBEDDED. Domain `D.SCHEMA.EMBEDDED`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Instances** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.SCHEMA.RUNTIME` — Validate actual values against all applicable schemas
-        - Applicability: Every actual input or output is accepted.
-        - Required/observable: No invalid value becomes consumable. Forbidden: Do not substitute static overlap for runtime instance validity
-        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:96-105.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SCHEMA.EMBEDDED. Domain `D.SCHEMA.EMBEDDED`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-  - **Wire roots** — 24 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **activation** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.ROOT.ACTIVATION` — Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
-        - Applicability: Wire object submitted to this named root.
-        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
-        - Authority: NORMATIVE_SCHEMA_ROOT; source schemas/draft/activation.schema.json:1-24.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.VCP.activation. Domain `D.ROOT.VCP.activation`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **admission** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.ROOT.ADMISSION` — Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
-        - Applicability: Wire object submitted to this named root.
-        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
-        - Authority: NORMATIVE_SCHEMA_ROOT; source schemas/draft/admission.schema.json:1-25.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.VCP.admission. Domain `D.ROOT.VCP.admission`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **artifact-ref** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.ROOT.ARTIFACT_REF` — Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
-        - Applicability: Wire object submitted to this named root.
-        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
-        - Authority: NORMATIVE_SCHEMA_ROOT; source schemas/draft/artifact-ref.schema.json:1-43.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.VCP.artifact-ref. Domain `D.ROOT.VCP.artifact-ref`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **cancellation-event** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.ROOT.CANCELLATION_EVENT` — Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
-        - Applicability: Wire object submitted to this named root.
-        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
-        - Authority: NORMATIVE_SCHEMA_ROOT; source schemas/draft/cancellation-event.schema.json:1-29.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.VCP.cancellation-event. Domain `D.ROOT.VCP.cancellation-event`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **decision** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.ROOT.DECISION` — Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
-        - Applicability: Wire object submitted to this named root.
-        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
-        - Authority: NORMATIVE_SCHEMA_ROOT; source schemas/draft/decision.schema.json:1-58.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.VCP.decision. Domain `D.ROOT.VCP.decision`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **evidence** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.ROOT.EVIDENCE` — Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
-        - Applicability: Wire object submitted to this named root.
-        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
-        - Authority: NORMATIVE_SCHEMA_ROOT; source schemas/draft/evidence.schema.json:1-53.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.VCP.evidence. Domain `D.ROOT.VCP.evidence`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **execution-observation** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.ROOT.EXECUTION_OBSERVATION` — Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
-        - Applicability: Wire object submitted to this named root.
-        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
-        - Authority: NORMATIVE_SCHEMA_ROOT; source schemas/draft/execution-observation.schema.json:1-51.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.VCP.execution-observation. Domain `D.ROOT.VCP.execution-observation`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **extension** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.ROOT.EXTENSION` — Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
-        - Applicability: Wire object submitted to this named root.
-        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
-        - Authority: NORMATIVE_SCHEMA_ROOT; source schemas/draft/extension.schema.json:1-28.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.VCP.extension. Domain `D.ROOT.VCP.extension`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **graph** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.ROOT.GRAPH` — Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
-        - Applicability: Wire object submitted to this named root.
-        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
-        - Authority: NORMATIVE_SCHEMA_ROOT; source schemas/draft/graph.schema.json:1-158.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.VCP.graph. Domain `D.ROOT.VCP.graph`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **input-port** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.ROOT.INPUT_PORT` — Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
-        - Applicability: Wire object submitted to this named root.
-        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
-        - Authority: NORMATIVE_SCHEMA_ROOT; source schemas/draft/input-port.schema.json:1-50.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.VCP.input-port. Domain `D.ROOT.VCP.input-port`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **input-resolution** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.ROOT.INPUT_RESOLUTION` — Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
-        - Applicability: Wire object submitted to this named root.
-        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
-        - Authority: NORMATIVE_SCHEMA_ROOT; source schemas/draft/input-resolution.schema.json:1-31.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.VCP.input-resolution. Domain `D.ROOT.VCP.input-resolution`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **operation-requirement** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.ROOT.OPERATION_REQUIREMENT` — Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
-        - Applicability: Wire object submitted to this named root.
-        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
-        - Authority: NORMATIVE_SCHEMA_ROOT; source schemas/draft/operation-requirement.schema.json:1-22.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.VCP.operation-requirement. Domain `D.ROOT.VCP.operation-requirement`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **output-port** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.ROOT.OUTPUT_PORT` — Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
-        - Applicability: Wire object submitted to this named root.
-        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
-        - Authority: NORMATIVE_SCHEMA_ROOT; source schemas/draft/output-port.schema.json:1-32.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.VCP.output-port. Domain `D.ROOT.VCP.output-port`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **policy-evaluation** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.ROOT.POLICY_EVALUATION` — Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
-        - Applicability: Wire object submitted to this named root.
-        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
-        - Authority: NORMATIVE_SCHEMA_ROOT; source schemas/draft/policy-evaluation.schema.json:1-67.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.VCP.policy-evaluation. Domain `D.ROOT.VCP.policy-evaluation`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **profile** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.ROOT.PROFILE` — Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
-        - Applicability: Wire object submitted to this named root.
-        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
-        - Authority: NORMATIVE_SCHEMA_ROOT; source schemas/draft/profile.schema.json:1-77.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.VCP.profile. Domain `D.ROOT.VCP.profile`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **provider-binding** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.ROOT.PROVIDER_BINDING` — Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
-        - Applicability: Wire object submitted to this named root.
-        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
-        - Authority: NORMATIVE_SCHEMA_ROOT; source schemas/draft/provider-binding.schema.json:1-33.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.VCP.provider-binding. Domain `D.ROOT.VCP.provider-binding`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **resource** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.ROOT.RESOURCE` — Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
-        - Applicability: Wire object submitted to this named root.
-        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
-        - Authority: NORMATIVE_SCHEMA_ROOT; source schemas/draft/resource.schema.json:1-59.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.VCP.resource. Domain `D.ROOT.VCP.resource`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **resource-dimension** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.ROOT.RESOURCE_DIMENSION` — Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
-        - Applicability: Wire object submitted to this named root.
-        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
-        - Authority: NORMATIVE_SCHEMA_ROOT; source schemas/draft/resource-dimension.schema.json:1-35.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.VCP.resource-dimension. Domain `D.ROOT.VCP.resource-dimension`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **result** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.ROOT.RESULT` — Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
-        - Applicability: Wire object submitted to this named root.
-        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
-        - Authority: NORMATIVE_SCHEMA_ROOT; source schemas/draft/result.schema.json:1-145.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.VCP.result. Domain `D.ROOT.VCP.result`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **run-record** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.ROOT.RUN_RECORD` — Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
-        - Applicability: Wire object submitted to this named root.
-        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
-        - Authority: NORMATIVE_SCHEMA_ROOT; source schemas/draft/run-record.schema.json:1-269.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.VCP.run-record. Domain `D.ROOT.VCP.run-record`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **selection** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.ROOT.SELECTION` — Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
-        - Applicability: Wire object submitted to this named root.
-        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
-        - Authority: NORMATIVE_SCHEMA_ROOT; source schemas/draft/selection.schema.json:1-23.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.VCP.selection. Domain `D.ROOT.VCP.selection`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **severity-domain** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.ROOT.SEVERITY_DOMAIN` — Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
-        - Applicability: Wire object submitted to this named root.
-        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
-        - Authority: NORMATIVE_SCHEMA_ROOT; source schemas/draft/severity-domain.schema.json:1-37.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.VCP.severity-domain. Domain `D.ROOT.VCP.severity-domain`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **value-source** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.ROOT.VALUE_SOURCE` — Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
-        - Applicability: Wire object submitted to this named root.
-        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
-        - Authority: NORMATIVE_SCHEMA_ROOT; source schemas/draft/value-source.schema.json:1-76.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.VCP.value-source. Domain `D.ROOT.VCP.value-source`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **verification-definition** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.ROOT.VERIFICATION_DEFINITION` — Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
-        - Applicability: Wire object submitted to this named root.
-        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
-        - Authority: NORMATIVE_SCHEMA_ROOT; source schemas/draft/verification-definition.schema.json:1-235.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.VCP.verification-definition. Domain `D.ROOT.VCP.verification-definition`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-  - **Wire semantics** — 9 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-    - **JSON** — 4 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **DUPLICATE_KEYS** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.WIRE.JSON.DUPLICATE_KEYS` — Reject duplicate keys rather than selecting an occurrence.
-          - Applicability: JSON object text has repeated member name at any depth.
-          - Required/observable: PROTOCOL_JSON.. Forbidden: No silent last/first key overwrite.
-          - Authority: NORMATIVE_VCP; source spec/draft/wire-format.md:5-14.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.WIRE.JSON. Domain `D.WIRE.JSON`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **FINITE** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.WIRE.JSON.FINITE` — Reject NaN/Infinity/nonfinite values.
-          - Applicability: JSON number is parsed or supplied as a value.
-          - Required/observable: PROTOCOL_JSON.. Forbidden: No numeric coercion or nonfinite sentinel.
-          - Authority: NORMATIVE_VCP; source spec/draft/wire-format.md:5-14.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.WIRE.JSON. Domain `D.WIRE.JSON`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **JSON_TYPES** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.WIRE.JSON.JSON_TYPES` — Accept only finite JSON null,Boolean,number,string,array,object with string keys.
-          - Applicability: A parsed/SDK wire value is supplied.
-          - Required/observable: Strict JSON value or PROTOCOL_JSON.. Forbidden: No binary bytes, arbitrary Python values or nonstring map keys inside JSON data.
-          - Authority: NORMATIVE_VCP; source spec/draft/wire-format.md:5-14.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.WIRE.JSON. Domain `D.WIRE.JSON`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **UTF8** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.WIRE.JSON.UTF8` — Decode only well-formed UTF-8 JSON text.
-          - Applicability: Encoded wire bytes submitted.
-          - Required/observable: Strict JSON parse or PROTOCOL_JSON.. Forbidden: No arbitrary binary/invalid UTF8 admission.
-          - Authority: NORMATIVE_VCP; source spec/draft/wire-format.md:5-14.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.WIRE.JSON. Domain `D.WIRE.JSON`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Null** — 3 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - **CONTROLS** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.WIRE.NULL.CONTROLS` — Treat explicit null as absent for that nullable control.
-          - Applicability: An optional nullable VCP control field is consumed.
-          - Required/observable: Equivalent control semantics.. Forbidden: No forced value from null control.
-          - Authority: NORMATIVE_VCP; source spec/draft/wire-format.md:5-14.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.WIRE.JSON. Domain `D.WIRE.JSON`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **NO_DEFAULT_INSERTION** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.WIRE.NULL.NO_DEFAULT_INSERTION` — Do not insert instance fields from that annotation.
-          - Applicability: Schema carries default annotation.
-          - Required/observable: Only explicitly authored port default can supply value.. Forbidden: No hidden default transformation.
-          - Authority: NORMATIVE_VCP; source spec/draft/wire-format.md:5-14.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.WIRE.JSON. Domain `D.WIRE.JSON`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **PAYLOADS** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-        - `CM.VCP.WIRE.NULL.PAYLOADS` — Retain the emitted null value and its presence.
-          - Applicability: Constant/resolution value or explicitly emitted Result judgment/output is null.
-          - Required/observable: Presence-aware snapshots and judgment acceptance.. Forbidden: Do not erase emitted payload null or identify missing judgment with null.
-          - Authority: NORMATIVE_VCP; source spec/draft/wire-format.md:5-14.
-          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.WIRE.JSON. Domain `D.WIRE.JSON`. No test/proof coverage is claimed.
-          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **References** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.WIRE.OFFLINE` — Resolve from supplied local schemas
-        - Applicability: A shipped schema reference is resolved.
-        - Required/observable: Offline structural validation. Forbidden: Do not fetch network schemas
-        - Authority: NORMATIVE_VCP; source spec/draft/wire-format.md:16-20.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.WIRE.JSON. Domain `D.WIRE.JSON`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Version** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
-      - `CM.VCP.WIRE.VERSION` — Require the published draft marker
-        - Applicability: A marked top-level object is submitted.
-        - Required/observable: PROTOCOL_VERSION for unsupported marker; structural and semantic failures remain distinguishable. Forbidden: Do not infer compatibility from implementation package version
-        - Authority: NORMATIVE_VCP; source spec/draft/wire-format.md:5-14.
-        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.WIRE.JSON. Domain `D.WIRE.JSON`. No test/proof coverage is claimed.
-        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+- **PROVIDER**: 115 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+  - **Capabilities**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **Published meaning**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.PROVIDER.CAPABILITY.PUBLISHED_SPEC`: Publish that capability specification with its adapter; its schemas and specification define actual input/config/output meaning, not its identifier alone.
+        - Preconditions: A capability is published with a provider adapter
+        - Observable: Inspectable published capability contract.
+        - Forbidden: Do not treat a conceptual capability family name or namespace syntax as executable semantic definition.
+        - Domain: D.PROVIDER.NAMESPACE; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/capabilities.md:24-35.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+  - **Compatibility**: 10 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **Initialization**: 2 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.PROVIDER.INIT.SELECT`: Select first runner contract version supported by provider; this draft selects only 0.1
+        - Preconditions: Runner initializes with ordered exact versions
+        - Observable: CONTRACT_VERSION_UNSUPPORTED with no work if no intersection
+        - Forbidden: Do not use SemVer ordering/ranges/coercion/fallback
+        - Domain: D.PROVIDER.INITIALIZATION; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/versioning.md:6-14.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.PROVIDER.INIT.VERIFY`: Recompute first common selection against returned manifest
+        - Preconditions: Runner receives InitializeResult
+        - Observable: Reject invalid initialization result
+        - Forbidden: Do not trust an incompatible selected version
+        - Domain: D.PROVIDER.INITIALIZATION; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/versioning.md:6-14.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Matching**: 2 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **CONTRACT_VERSION**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.COMPAT.CAPABILITY.CONTRACT_VERSION`: Invocation contract_version equals selected session contract version.
+          - Preconditions: Invocation submitted in initialized session
+          - Observable: Wrong version is CONTRACT_VERSION_UNSUPPORTED.
+          - Forbidden: Do not accept a different version even if advertised elsewhere.
+          - Domain: D.PROVIDER.INITIALIZATION; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/versioning.md:16-20.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **IDENTITY**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.COMPAT.CAPABILITY.IDENTITY`: Use the exact advertised capability identity pair.
+          - Preconditions: Invocation selects a capability ID/version
+          - Observable: Missing ID is CAPABILITY_UNAVAILABLE; existing ID with missing exact version is CAPABILITY_VERSION_UNSUPPORTED.
+          - Forbidden: No fallback to another version or capability.
+          - Domain: D.PROVIDER.INITIALIZATION; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/versioning.md:16-20.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **VCP**: 6 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **ADVERTISEMENT**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.COMPAT.CAPABILITY_VCP.ADVERTISEMENT`: That exact version belongs to manifest.supported_vcp_versions.
+          - Preconditions: Capability declares vcp_version
+          - Observable: Manifest semantic acceptance.
+          - Forbidden: No unsupported declaration.
+          - Domain: D.PROVIDER.MANIFEST; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/capabilities.md:47-51.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **CAPABILITY**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.COMPAT.VCP_INTERSECTION.CAPABILITY`: Invocation.vcp_version equals that exact declaration.
+          - Preconditions: Matched capability declares vcp_version
+          - Observable: INVALID_INVOCATION on mismatch.
+          - Forbidden: No missing/different invocation version.
+          - Domain: D.PROVIDER.INITIALIZATION; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/versioning.md:16-20.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **DECLARATION**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.COMPAT.CAPABILITY_VCP.DECLARATION`: Declare applicable vcp_version in capability specification/manifest.
+          - Preconditions: Capability specification contains VCP objects in I/O/config/events
+          - Observable: Published contract consistency.
+          - Forbidden: No unadvertised VCP interchange.
+          - Domain: D.PROVIDER.MANIFEST; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/capabilities.md:47-51.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **INTERSECTION**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.COMPAT.VCP_INTERSECTION.INTERSECTION`: It belongs to both initialized peers supported VCP lists.
+          - Preconditions: Invocation contains vcp_version
+          - Observable: INVALID_INVOCATION if absent from intersection.
+          - Forbidden: No one-sided version acceptance.
+          - Domain: D.PROVIDER.INITIALIZATION; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/versioning.md:16-20.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.PROVIDER.COMPAT.REVISION`: Use the same specification/schema revision and capability specification
+        - Preconditions: Peers exchange VCP draft objects
+        - Observable: Deployment compatibility obligation; portable revision ID remains open
+        - Forbidden: Do not infer revision equivalence from literal draft marker
+        - Domain: D.PROVIDER.INITIALIZATION; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/versioning.md:30-34.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.PROVIDER.COMPAT.VCP_FIELDS`: Invocation declares available draft VCP interchange
+        - Preconditions: Budget or VCP evidence/artifact/usage is exchanged
+        - Observable: INVALID_INVOCATION or INVALID_PROVIDER_OUTPUT according to side
+        - Forbidden: Do not transmit standard VCP fields without negotiated invocation version
+        - Domain: D.PROVIDER.INITIALIZATION; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/versioning.md:22-28.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+  - **Control**: 18 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **Cancellation**: 6 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **NO_BOUND**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.CANCEL.RUNNING.NO_BOUND`: No fixed portable stop-time guarantee; prompt stopping is SHOULD.
+          - Preconditions: A valid cooperative cancel is pending
+          - Observable: Allowed race with prior lawful terminal.
+          - Forbidden: Do not turn recommendation into hard latency requirement.
+          - Domain: D.PROVIDER.CANCEL; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/lifecycle.md:20-27.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **REPEAT**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.CANCEL.RUNNING.REPEAT`: Permit repeated request.
+          - Preconditions: Supported running attempt receives another cancel
+          - Observable: Still one eventual terminal.
+          - Forbidden: No duplicate-request protocol error solely for repetition.
+          - Domain: D.PROVIDER.CANCEL; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/lifecycle.md:20-27.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **REQUEST**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.CANCEL.RUNNING.REQUEST`: Request cooperative termination, remain running until Outcome.
+          - Preconditions: Running cancellation-supported attempt receives cancel
+          - Observable: Cancel-request state effect.
+          - Forbidden: No immediate terminal merely from request.
+          - Domain: D.PROVIDER.CANCEL; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/lifecycle.md:20-27.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.PROVIDER.CANCEL.CAUSE`: A runner cancel request caused termination
+        - Preconditions: Outcome state is CANCELLED
+        - Observable: Unsolicited cancellation invalid; internal failure ERROR
+        - Forbidden: Do not use CANCELLED for internal provider failure
+        - Domain: D.PROVIDER.CANCEL; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/lifecycle.md:20-27.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.PROVIDER.CANCEL.TERMINAL`: Acknowledge as no-op even without running-cancel support
+        - Preconditions: Cancel targets terminal attempt
+        - Observable: Successful no-op acknowledgement
+        - Forbidden: Do not change terminal outcome
+        - Domain: D.PROVIDER.CANCEL; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/lifecycle.md:20-27.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.PROVIDER.CANCEL.UNKNOWN`: Reject without inventing a running attempt
+        - Preconditions: Cancel targets unknown/rejected attempt
+        - Observable: PROTOCOL_VIOLATION
+        - Forbidden: Do not accept unknown cancellation
+        - Domain: D.PROVIDER.CANCEL; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/lifecycle.md:20-27.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Deadlines**: 10 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **ACCEPT**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.DEADLINE.ACCEPT.ACCEPT`: Accept the attempt rather than reject solely for expiry.
+          - Preconditions: Invocation is otherwise valid but already expired
+          - Observable: Accepted deadline attempt.
+          - Forbidden: No preaccept unsupported/invalid error for expiry alone.
+          - Domain: D.PROVIDER.DEADLINE; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/lifecycle.md:29-39.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **CALENDAR**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.DEADLINE.PRECISION.CALENDAR`: Supported dates have years 0001 through 9999 and seconds 00 through 59.
+          - Preconditions: Deadline timestamp supplied
+          - Observable: Reject unsupported date/time syntax rather than truncate or normalize it.
+          - Forbidden: Leap-second notation is unsupported.
+          - Domain: D.PROVIDER.DEADLINE; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/lifecycle.md:41-45.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **COMMIT**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.DEADLINE.ACTIVE.COMMIT`: Commit DEADLINE_EXCEEDED.
+          - Preconditions: Expiry occurs with no earlier terminal committed
+          - Observable: Deadline terminal Outcome.
+          - Forbidden: No later different terminal or clock rollback reversal.
+          - Domain: D.PROVIDER.DEADLINE; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/lifecycle.md:29-39.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **FRACTION**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.DEADLINE.PRECISION.FRACTION`: Compare instants preserving all supplied decimal fractional digits.
+          - Preconditions: UTC deadline and clock observations compared
+          - Observable: Order/equality corresponds to exact decimal instants.
+          - Forbidden: No millisecond or microsecond rounding.
+          - Domain: D.PROVIDER.DEADLINE; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/lifecycle.md:41-45.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **MONITOR**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.DEADLINE.ACTIVE.MONITOR`: Monitor provider local UTC deadline expiry.
+          - Preconditions: Accepted deadline invocation has no terminal commit
+          - Observable: Expiry observed under provider clock.
+          - Forbidden: No ignoring or moving deadline for transport delay.
+          - Domain: D.PROVIDER.DEADLINE; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/lifecycle.md:29-39.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **NO_LATE_COMPLETE**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.DEADLINE.ACTIVE.NO_LATE_COMPLETE`: Do not commit COMPLETED.
+          - Preconditions: Terminal commit time is at/after supplied deadline
+          - Observable: COMPLETED ineligible at expiry.
+          - Forbidden: Delivery time does not change commit-time condition.
+          - Domain: D.PROVIDER.DEADLINE; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/lifecycle.md:29-39.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **NO_WORK**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.DEADLINE.ACCEPT.NO_WORK`: Start no capability work.
+          - Preconditions: Accepted attempt was expired at acceptance
+          - Observable: Zero capability work.
+          - Forbidden: No work past known deadline.
+          - Domain: D.PROVIDER.DEADLINE; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/lifecycle.md:29-39.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **STOP_WORK**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.DEADLINE.ACTIVE.STOP_WORK`: Stop capability work at expiry.
+          - Preconditions: Expiry observed before a terminal commit
+          - Observable: Work stop; no claimed network/OS latency bound.
+          - Forbidden: Do not continue capability work through expired deadline.
+          - Domain: D.PROVIDER.DEADLINE; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/lifecycle.md:29-39.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **TERMINAL**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.DEADLINE.ACCEPT.TERMINAL`: Commit DEADLINE_EXCEEDED.
+          - Preconditions: Accepted attempt was expired at acceptance
+          - Observable: One deadline terminal Outcome.
+          - Forbidden: No COMPLETED/CANCELLED/ERROR replacing already-observed expiry.
+          - Domain: D.PROVIDER.DEADLINE; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/lifecycle.md:29-39.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.PROVIDER.DEADLINE.IRREVERSIBLE`: Attempt remains ended despite clock rollback
+        - Preconditions: Expiry has been observed
+        - Observable: Terminal immutability under clock adjustment
+        - Forbidden: Do not resurrect expired work
+        - Domain: D.PROVIDER.DEADLINE; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/lifecycle.md:41-45.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Eligibility**: 2 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.PROVIDER.FEATURE.CANCEL`: Reject running cancellation without ending invocation
+        - Preconditions: Running capability has cancellation=false
+        - Observable: Cancellation semantics depend on state and feature
+        - Forbidden: Do not remove the universal cancel surface or reject terminal no-op solely for missing feature
+        - Domain: D.PROVIDER.CONSTRAINTS; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/capabilities.md:37-45.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.PROVIDER.FEATURE.DEADLINE`: Capability supports and can enforce deadline semantics
+        - Preconditions: Invocation includes deadline
+        - Observable: Reject before accepting work
+        - Forbidden: Do not accept a deadline that cannot be honored
+        - Domain: D.PROVIDER.CONSTRAINTS; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/capabilities.md:37-45.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+  - **Discovery**: 4 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **Identifiers**: 2 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.PROVIDER.NAMESPACE.OWNERSHIP`: Third-party publisher controls the reversed-domain prefix of at least two segments used by its identifier; syntax cannot establish this ownership.
+        - Preconditions: Third-party publisher chooses an identifier
+        - Observable: Publisher obligation distinct from parser checks
+        - Forbidden: Do not claim syntax validation proves ownership or online registration
+        - Domain: D.PROVIDER.NAMESPACE; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/capabilities.md:24-35.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.PROVIDER.NAMESPACE.SYNTAX`: Lowercase ASCII dot segments; third parties have at least three segments; openverify namespace reserved
+        - Preconditions: Provider/capability/extension/provider-error identifier is authored
+        - Observable: Lexical rejection for invalid identifiers
+        - Forbidden: Do not treat an ID alone as a capability specification
+        - Domain: D.PROVIDER.NAMESPACE; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/capabilities.md:24-35.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Manifest**: 2 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.PROVIDER.MANIFEST.CAPABILITY_IDENTITY`: Each capability ID/version pair is unique; multiple exact versions of one ID are allowed
+        - Preconditions: Manifest advertises capabilities
+        - Observable: Invalid manifest rejects
+        - Forbidden: Do not deduplicate by capability ID alone or accept duplicate pairs
+        - Domain: D.PROVIDER.MANIFEST; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/capabilities.md:9-22.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.PROVIDER.MANIFEST.SNAPSHOT`: Keep manifest fixed throughout that initialized session
+        - Preconditions: A session initializes
+        - Observable: Stable compatibility and invocation validation
+        - Forbidden: Do not silently substitute identities or capability contracts mid-session
+        - Domain: D.PROVIDER.MANIFEST; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/capabilities.md:3-7.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+  - **Errors**: 12 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **Codes**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.PROVIDER.ERROR.CLASSIFY`: Programmatic classification uses stable code; provider failures use namespaced codes outside reserved set
+        - Preconditions: ProviderError is consumed
+        - Observable: Reserved vocabulary plus extensible provider namespace
+        - Forbidden: Do not classify from diagnostic message/details or accept unknown bare uppercase codes
+        - Domain: D.ERROR.AUTHORITY; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/errors.md:3-4.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Peer validation**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.PROVIDER.ERROR.NO_REWRITE`: Report peer validation failure separately
+        - Preconditions: Peer emits invalid output
+        - Observable: Preserve distinction between received data and runner diagnosis
+        - Forbidden: Do not rewrite received bytes into fabricated Outcome or FAIL
+        - Domain: D.ERROR.AUTHORITY; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/errors.md:29-33.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Precedence**: 2 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **CORRELATION_SCOPE**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.ERROR.PRECEDENCE.CORRELATION_SCOPE`: Correlation/lifecycle is checked before body decoding in the stated correlation cases.
+          - Preconditions: Documented conformance correlation/lifecycle case with invalid body.
+          - Observable: Correlation-category diagnosis remains independently accountable within its stated scope.
+          - Forbidden: Do not generalize this fixture-protocol statement into a total order among unrelated validation errors.
+          - Domain: D.ERROR.AUTHORITY; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/errors.md:23-27.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **RECOMMENDED**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.ERROR.PRECEDENCE.RECOMMENDED`: SHOULD report first in JSON/structure/version, manifest, compatibility, capability matching, input, config, constraints, lifecycle, output order unless documented reason.
+          - Preconditions: Multiple independent validation failures coexist.
+          - Observable: Preferred stable category; no invented universal tie-break.
+          - Forbidden: Do not elevate this recommendation to unconditional MUST precedence.
+          - Domain: D.ERROR.AUTHORITY; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/errors.md:23-27.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Reserved code**: 8 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **CAPABILITY_UNAVAILABLE**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.ERROR.CAPABILITY_UNAVAILABLE`: Use CAPABILITY_UNAVAILABLE for this declared category; retain diagnostic message/details without classifying from them.
+          - Preconditions: A ProviderError is classifying requested capability ID absent.
+          - Observable: {'category': 'requested capability ID absent', 'code': 'CAPABILITY_UNAVAILABLE'}
+          - Forbidden: Do not convert this category into verification FAIL or infer unconditional precedence over independent coexisting errors.
+          - Domain: D.ERROR.AUTHORITY; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/errors.md:9-9.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **CAPABILITY_VERSION_UNSUPPORTED**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.ERROR.CAPABILITY_VERSION_UNSUPPORTED`: Use CAPABILITY_VERSION_UNSUPPORTED for this declared category; retain diagnostic message/details without classifying from them.
+          - Preconditions: A ProviderError is classifying ID exists but exact version absent.
+          - Observable: {'category': 'ID exists but exact version absent', 'code': 'CAPABILITY_VERSION_UNSUPPORTED'}
+          - Forbidden: Do not convert this category into verification FAIL or infer unconditional precedence over independent coexisting errors.
+          - Domain: D.ERROR.AUTHORITY; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/errors.md:10-10.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **CONTRACT_VERSION_UNSUPPORTED**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.ERROR.CONTRACT_VERSION_UNSUPPORTED`: Use CONTRACT_VERSION_UNSUPPORTED for this declared category; retain diagnostic message/details without classifying from them.
+          - Preconditions: A ProviderError is classifying no common or wrong session contract version.
+          - Observable: {'category': 'no common or wrong session contract version', 'code': 'CONTRACT_VERSION_UNSUPPORTED'}
+          - Forbidden: Do not convert this category into verification FAIL or infer unconditional precedence over independent coexisting errors.
+          - Domain: D.ERROR.AUTHORITY; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/errors.md:8-8.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **INVALID_CONFIG**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.ERROR.INVALID_CONFIG`: Use INVALID_CONFIG for this declared category; retain diagnostic message/details without classifying from them.
+          - Preconditions: A ProviderError is classifying config violates declared schema.
+          - Observable: {'category': 'config violates declared schema', 'code': 'INVALID_CONFIG'}
+          - Forbidden: Do not convert this category into verification FAIL or infer unconditional precedence over independent coexisting errors.
+          - Domain: D.ERROR.AUTHORITY; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/errors.md:12-12.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **INVALID_INPUT**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.ERROR.INVALID_INPUT`: Use INVALID_INPUT for this declared category; retain diagnostic message/details without classifying from them.
+          - Preconditions: A ProviderError is classifying input violates declared schema.
+          - Observable: {'category': 'input violates declared schema', 'code': 'INVALID_INPUT'}
+          - Forbidden: Do not convert this category into verification FAIL or infer unconditional precedence over independent coexisting errors.
+          - Domain: D.ERROR.AUTHORITY; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/errors.md:13-13.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **INVALID_INVOCATION**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.ERROR.INVALID_INVOCATION`: Use INVALID_INVOCATION for this declared category; retain diagnostic message/details without classifying from them.
+          - Preconditions: A ProviderError is classifying malformed invocation, unsupported constraint or VCP version.
+          - Observable: {'category': 'malformed invocation, unsupported constraint or VCP version', 'code': 'INVALID_INVOCATION'}
+          - Forbidden: Do not convert this category into verification FAIL or infer unconditional precedence over independent coexisting errors.
+          - Domain: D.ERROR.AUTHORITY; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/errors.md:11-11.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **INVALID_PROVIDER_OUTPUT**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.ERROR.INVALID_PROVIDER_OUTPUT`: Use INVALID_PROVIDER_OUTPUT for this declared category; retain diagnostic message/details without classifying from them.
+          - Preconditions: A ProviderError is classifying malformed manifest/event/outcome, invalid declared output or embedded VCP data.
+          - Observable: {'category': 'malformed manifest/event/outcome, invalid declared output or embedded VCP data', 'code': 'INVALID_PROVIDER_OUTPUT'}
+          - Forbidden: Do not convert this category into verification FAIL or infer unconditional precedence over independent coexisting errors.
+          - Domain: D.ERROR.AUTHORITY; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/errors.md:14-14.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **PROTOCOL_VIOLATION**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.ERROR.PROTOCOL_VIOLATION`: Use PROTOCOL_VIOLATION for this declared category; retain diagnostic message/details without classifying from them.
+          - Preconditions: A ProviderError is classifying correlation, sequence, lifecycle, framing, or session rule violated.
+          - Observable: {'category': 'correlation, sequence, lifecycle, framing, or session rule violated', 'code': 'PROTOCOL_VIOLATION'}
+          - Forbidden: Do not convert this category into verification FAIL or infer unconditional precedence over independent coexisting errors.
+          - Domain: D.ERROR.AUTHORITY; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/errors.md:15-15.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+  - **Events**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **Timestamp**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **Advisory clock**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.EVENT.TIMESTAMP`: Timestamp follows the same UTC RFC3339 syntax as deadline; it does not define event ordering.
+          - Preconditions: Event optional timestamp supplied.
+          - Observable: Sequence/history still determine ordering.
+          - Forbidden: Do not substitute timestamp ordering for sequence order.
+          - Domain: D.PROVIDER.PAYLOAD; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/wire-format.md:45-46.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+  - **Extensions**: 3 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **Optional maps**: 2 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **ANNOTATION_ONLY**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.EXT.ROUNDTRIP.ANNOTATION_ONLY`: Extension entries are optional annotations and do not alter core meaning.
+          - Preconditions: Provider extension data accompanies a core object
+          - Observable: Core interpretation is invariant under optional extension annotations.
+          - Forbidden: Do not smuggle mandatory core-changing semantics into optional entries.
+          - Domain: D.EXTENSIONS.ANNOTATIONS; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/wire-format.md:57-65.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **PRESERVE**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.EXT.ROUNDTRIP.PRESERVE`: Preserve its JSON types and values.
+          - Preconditions: Unknown optional extension entry parsed and serialized
+          - Observable: Parsed roundtrip JSON equals authored extension data using JSON equality.
+          - Forbidden: No dropping or coercion of unknown data; whitespace/key order are not promised.
+          - Domain: D.EXTENSIONS.ANNOTATIONS; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/wire-format.md:57-65.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Scope**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.PROVIDER.EXT.MANDATORY`: Reject operation as PROTOCOL_VIOLATION
+        - Preconditions: An implementation requires unnegotiated mandatory extension semantics
+        - Observable: No mandatory extension negotiation in this version
+        - Forbidden: Do not encode required meaning as ignored optional data
+        - Domain: D.EXTENSIONS.ANNOTATIONS; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/wire-format.md:57-65.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+  - **Invocation**: 6 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **Acceptance**: 2 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **CONFIG**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.INVOKE.VALIDATE.CONFIG`: Validate exact config under required matched config_schema before work/events.
+          - Preconditions: Matched capability invocation about to be accepted
+          - Observable: INVALID_CONFIG and no capability work.
+          - Forbidden: No absent config schema assumption or overrides.
+          - Domain: D.PROVIDER.PAYLOAD; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/wire-format.md:24-33.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **INPUT**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.INVOKE.VALIDATE.INPUT`: Validate exact input under matched input_schema before work/events.
+          - Preconditions: Matched capability invocation about to be accepted
+          - Observable: INVALID_INPUT and no capability work.
+          - Forbidden: No incompatible accepted input or coercion.
+          - Domain: D.PROVIDER.PAYLOAD; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/wire-format.md:24-33.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Context**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **Opaque data**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.INVOKE.CONTEXT_OPAQUE`: Context is arbitrary JSON reference/context data and contains no implicit resolution instruction.
+          - Preconditions: Invocation.context supplied.
+          - Observable: Exact context JSON remains data.
+          - Forbidden: Do not automatically fetch context reference or treat it as ambient execution authority.
+          - Domain: D.PROVIDER.WIRE; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/wire-format.md:24-29.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Identity**: 2 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **RETRY**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.WIRE.ATTEMPT_ID.RETRY`: A retry is a new attempt with a new invocation identity.
+          - Preconditions: Runner retries capability work
+          - Observable: No portable exactly-once side-effect or replay guarantee.
+          - Forbidden: Do not treat identifier reuse as idempotent replay.
+          - Domain: D.PROVIDER.WIRE; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/wire-format.md:19-22.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **SESSION_UNIQUENESS**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.WIRE.ATTEMPT_ID.SESSION_UNIQUENESS`: Use a nonempty case-sensitive identity not used by an earlier attempt in that session.
+          - Preconditions: Invocation offered in one session, including previously rejected attempts
+          - Observable: Reuse is PROTOCOL_VIOLATION.
+          - Forbidden: Do not reuse identifiers after rejection or termination.
+          - Domain: D.PROVIDER.WIRE; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/wire-format.md:19-22.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Outcome**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.PROVIDER.LIFE.OUTPUT`: Validate output against advertised output_schema
+        - Preconditions: COMPLETED outcome is emitted
+        - Observable: INVALID_PROVIDER_OUTPUT peer validation failure
+        - Forbidden: Do not turn malformed provider data into verification FAIL
+        - Domain: D.PROVIDER.PAYLOAD; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/lifecycle.md:10-18.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+  - **Lifecycle**: 5 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **Attempts**: 2 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **EXACTLY_ONCE**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.LIFE.TERMINAL.EXACTLY_ONCE`: Emit exactly one terminal Outcome for that accepted attempt.
+          - Preconditions: Functioning session accepts an invocation
+          - Observable: Terminal cardinality one.
+          - Forbidden: No missing or duplicate terminal.
+          - Domain: D.PROVIDER.ATTEMPT_ACTION; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/lifecycle.md:10-18.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **ZERO_EVENTS**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.LIFE.TERMINAL.ZERO_EVENTS`: Zero intermediate events are permitted.
+          - Preconditions: Accepted functioning invocation completes
+          - Observable: Terminal-only attempt legal.
+          - Forbidden: Do not require a progress/evidence heartbeat before outcome.
+          - Domain: D.PROVIDER.ATTEMPT_ACTION; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/lifecycle.md:10-18.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Session**: 3 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.PROVIDER.INIT.ONCE.FAIL_CLOSE`: Close session and begin no work.
+        - Preconditions: Initialization rejects
+        - Observable: Closed session.
+        - Forbidden: Do not retain usable failed session.
+        - Domain: D.PROVIDER.INITIALIZATION; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/versioning.md:6-14.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.PROVIDER.INIT.ONCE.ONCE`: No second initialization succeeds; repeated initialization is PROTOCOL_VIOLATION.
+        - Preconditions: Session initialized or initialization already attempted
+        - Observable: Session violation.
+        - Forbidden: Do not negotiate again inside same session.
+        - Domain: D.PROVIDER.INITIALIZATION; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/versioning.md:6-14.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.PROVIDER.INIT.ONCE.PREWORK`: No capability work begins.
+        - Preconditions: Session not successfully initialized
+        - Observable: No operation work.
+        - Forbidden: Do not invoke before initialization.
+        - Domain: D.PROVIDER.INITIALIZATION; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/versioning.md:6-14.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+  - **Meaning**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **VCP separation**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.PROVIDER.SEMANTIC_BOUNDARY`: Provider completion/error controls operation lifecycle only; VCP owns Subject/Criterion/judgment/control/provenance
+        - Preconditions: Provider outcomes/observations are interpreted
+        - Observable: Provider completion/error controls operation lifecycle only; VCP owns Subject/Criterion/judgment/control/provenance
+        - Forbidden: Do not automatically translate Provider ERROR to verification FAIL
+        - Domain: D.CONFORMANCE.SCOPE; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/overview.md:11-15.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+  - **Resources**: 7 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **Budget**: 4 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **PREACCEPT**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.BUDGET.ENFORCE.PREACCEPT`: Reject before accepting work.
+          - Preconditions: Provider cannot enforce a supplied budget constraint
+          - Observable: Preaccept rejection.
+          - Forbidden: No silent dimension dropping or promised unenforceable limit.
+          - Domain: D.PROVIDER.CONSTRAINTS; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/wire-format.md:24-33.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **TERMINAL**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.BUDGET.ENFORCE.TERMINAL`: End with ERROR and provider-namespaced error.
+          - Preconditions: Accepted enforceable budget prevents completion
+          - Observable: ERROR Outcome.
+          - Forbidden: No verification FAIL or fabricated completion.
+          - Domain: D.PROVIDER.CONSTRAINTS; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/wire-format.md:24-33.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **UNITS**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.BUDGET.ENFORCE.UNITS`: Honor exact declared dimensions and explicit units without implicit conversion.
+          - Preconditions: Resource budget is consumed
+          - Observable: Constraint identity preserved.
+          - Forbidden: No silently dropped constraint or converted unit.
+          - Domain: D.PROVIDER.CONSTRAINTS; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/wire-format.md:24-33.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.PROVIDER.BUDGET.EXACT`: Every dimension is an EXACT upper consumption limit in its explicit unit
+        - Preconditions: Invocation contains resource_budget
+        - Observable: INVALID_INVOCATION for unsupported constraint
+        - Forbidden: Do not accept estimated/range/unknown limits as enforceable exact budgets
+        - Domain: D.PROVIDER.CONSTRAINTS; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/wire-format.md:24-33.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Eligibility**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.PROVIDER.FEATURE.RESOURCE`: No resource_usage event or final usage
+        - Preconditions: Capability resource_reporting=false
+        - Observable: Reject forbidden reporting
+        - Forbidden: Do not infer budget enforcement or estimation from reporting=true
+        - Domain: D.PROVIDER.EVENT_FEATURES; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/capabilities.md:37-45.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Usage**: 2 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **AUTHORITY**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.USAGE.FINAL.AUTHORITY`: Final usage is authoritative for that attempt.
+          - Preconditions: Final usage and earlier partial vectors observed
+          - Observable: Final observed vector retained as authoritative.
+          - Forbidden: Do not infer final usage by summing partial snapshots.
+          - Domain: D.OBSERVATION.USAGE; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/lifecycle.md:56-59.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **SNAPSHOTS**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.USAGE.FINAL.SNAPSHOTS`: Each vector is a possibly partial observation snapshot, not an additive delta.
+          - Preconditions: Intermediate resource_usage events observed
+          - Observable: No duplicated charge; dimension units and kinds retain VCP meanings.
+          - Forbidden: Do not add snapshots automatically to final usage.
+          - Domain: D.OBSERVATION.USAGE; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/lifecycle.md:56-59.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+  - **Schemas**: 4 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **Capability schemas**: 4 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **LOCAL**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.SCHEMA.REFERENCES.LOCAL`: Only # or #/... JSON Pointer references resolving within its own root are supported.
+          - Preconditions: Capability schema contains a reference
+          - Observable: Reject unsupported reference resource; offline validation only.
+          - Forbidden: No external resolution.
+          - Domain: D.SCHEMA.EMBEDDED; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/capabilities.md:9-22.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **RESOURCE_SCOPE**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.SCHEMA.REFERENCES.RESOURCE_SCOPE`: Root $id is allowed; nested resource $id, dynamic references and anchors are unsupported.
+          - Preconditions: Capability schema defines resource or dynamic scope
+          - Observable: Reject unsupported schema scope features.
+          - Forbidden: Do not silently enable unsupported dynamic/resource resolution.
+          - Domain: D.SCHEMA.EMBEDDED; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/capabilities.md:9-22.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **SCHEMA_TARGET**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.SCHEMA.REFERENCES.SCHEMA_TARGET`: Resolved object reference targets must occupy schema positions under standard Draft 2020-12 keywords or $defs; arbitrary annotation objects are not schema targets.
+          - Preconditions: Capability local reference resolves
+          - Observable: Reject annotation-object reference targets; recognized Boolean schema targets remain valid; annotation-Boolean interpretation is outside defined portable scope.
+          - Forbidden: Do not treat arbitrary annotation objects as schemas or infer a portable Boolean-annotation target result from the SDK.
+          - Domain: D.SCHEMA.EMBEDDED; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/capabilities.md:9-22.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.PROVIDER.SCHEMA.VALIDITY`: Each is a valid self-contained Draft 2020-12 object/boolean schema
+        - Preconditions: Capability input/config/output schemas are published
+        - Observable: Reject invalid provider data
+        - Forbidden: Do not accept invalid schemas merely because a field has object type
+        - Domain: D.SCHEMA.EMBEDDED; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/capabilities.md:9-22.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+  - **Streaming**: 11 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **Concurrency**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.PROVIDER.LIFE.INTERLEAVING`: Per-attempt event order holds while different attempts may interleave
+        - Preconditions: Several accepted invocations share a functioning session
+        - Observable: Independent correlation histories
+        - Forbidden: Do not impose a portable global event order
+        - Domain: D.PROVIDER.ATTEMPT_ACTION; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/lifecycle.md:10-18.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Correlation**: 3 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.PROVIDER.LIFE.CORRELATION.AFTER_TERMINAL`: Reject event after terminal.
+        - Preconditions: An event arrives for a terminal attempt
+        - Observable: PROTOCOL_VIOLATION.
+        - Forbidden: Do not reopen attempt.
+        - Domain: D.PROVIDER.ATTEMPT_ACTION; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/lifecycle.md:10-18.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.PROVIDER.LIFE.CORRELATION.DUPLICATE_OUTCOME`: Reject duplicate Outcome.
+        - Preconditions: Another Outcome arrives after terminal
+        - Observable: PROTOCOL_VIOLATION.
+        - Forbidden: Do not overwrite the original terminal state.
+        - Domain: D.PROVIDER.ATTEMPT_ACTION; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/lifecycle.md:10-18.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.PROVIDER.LIFE.CORRELATION.UNKNOWN`: Reject correlation.
+        - Preconditions: Event/outcome correlation names unknown or rejected attempt
+        - Observable: PROTOCOL_VIOLATION.
+        - Forbidden: Do not create implicit accepted attempt.
+        - Domain: D.PROVIDER.ATTEMPT_ACTION; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/lifecycle.md:10-18.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Eligibility**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.PROVIDER.FEATURE.STREAM`: No events may be emitted
+        - Preconditions: Capability has streaming=false
+        - Observable: Forbidden stream is invalid provider behavior
+        - Forbidden: Do not infer event support from other feature flags
+        - Domain: D.PROVIDER.EVENT_FEATURES; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/capabilities.md:37-45.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Ordering**: 5 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.PROVIDER.LIFE.SEQUENCE.DUPLICATE`: Reject duplicate sequence.
+        - Preconditions: Later event repeats preceding/previous sequence
+        - Observable: PROTOCOL_VIOLATION.
+        - Forbidden: Do not silently drop duplicate or treat it as replay.
+        - Domain: D.EVENT.SEQUENCE; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/lifecycle.md:10-18.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.PROVIDER.LIFE.SEQUENCE.FIRST`: sequence equals 1.
+        - Preconditions: First event for accepted invocation
+        - Observable: PROTOCOL_VIOLATION for validly typed but wrong first sequence.
+        - Forbidden: Do not start at zero, a larger value or missing sequence.
+        - Domain: D.EVENT.SEQUENCE; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/lifecycle.md:10-18.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.PROVIDER.LIFE.SEQUENCE.GAPS`: Accept the sequence gap as legal.
+        - Preconditions: Later event with q > p+1 within numeric bounds
+        - Observable: Event remains permitted.
+        - Forbidden: Do not demand contiguous numbering or imply replay.
+        - Domain: D.EVENT.SEQUENCE; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/lifecycle.md:10-18.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.PROVIDER.LIFE.SEQUENCE.INCREASE`: sequence q is strictly greater than p.
+        - Preconditions: A later event has preceding sequence p
+        - Observable: Per-invocation monotonic order.
+        - Forbidden: Do not accept q <= p.
+        - Domain: D.EVENT.SEQUENCE; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/lifecycle.md:10-18.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.PROVIDER.LIFE.SEQUENCE.REORDER`: Reject reordered event.
+        - Preconditions: A lower sequence arrives after a higher sequence
+        - Observable: PROTOCOL_VIOLATION.
+        - Forbidden: Do not sort received events to conceal violation.
+        - Domain: D.EVENT.SEQUENCE; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/lifecycle.md:10-18.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Payloads**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.PROVIDER.EVENT.PAYLOAD`: progress/diagnostic arbitrary JSON; evidence VCP Evidence; artifact VCP ArtifactRef; resource_usage VCP ResourceVector; extension namespaced namespace plus data
+        - Preconditions: A standard event is emitted
+        - Observable: Validate payload using kind-dependent contract
+        - Forbidden: Do not masquerade nonverification observations as VCP Evidence
+        - Domain: D.PROVIDER.PAYLOAD; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/wire-format.md:35-35.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+  - **Transport**: 21 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **Channels**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.PROVIDER.STDIO.CHANNELS`: stdout contains frames only; logs use stderr
+        - Preconditions: Provider uses stdio
+        - Observable: Protocol stream remains parseable
+        - Forbidden: Do not mix arbitrary logs into frame stream
+        - Domain: D.PROVIDER.TRANSPORT; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/transports.md:8-20.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Errors**: 5 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **CONTRACT_REJECTION**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.RPC.RESERVED_ERRORS.CONTRACT_REJECTION`: Use application numeric code -32000, ProviderError message, and ProviderError in data.
+          - Preconditions: Contract rejects a JSON-RPC request other than invalid params category
+          - Observable: Two authority-separated error classifications in the same response.
+          - Forbidden: Do not conflate string ProviderError.code with numeric RPC code.
+          - Domain: D.PROVIDER.TRANSPORT; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/transports.md:48-55.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **INVALID_INVOKE_PARAMS**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.RPC.RESERVED_ERRORS.INVALID_INVOKE_PARAMS`: Use -32602, with INVALID_INVOCATION data when available.
+          - Preconditions: Invoke params invalid
+          - Observable: Invalid params response; no accepted invocation.
+          - Forbidden: Do not require unavailable diagnostic data.
+          - Domain: D.PROVIDER.TRANSPORT; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/transports.md:48-55.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **INVALID_NOTIFICATION**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.RPC.RESERVED_ERRORS.INVALID_NOTIFICATION`: Send no response, record violation and close session.
+          - Preconditions: Receiver gets invalid notification
+          - Observable: Session closes; no fabricated request ID or outcome.
+          - Forbidden: Do not reply to a notification even when invalid.
+          - Domain: D.PROVIDER.TRANSPORT; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/transports.md:48-55.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **NUMERIC_CODES**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.RPC.RESERVED_ERRORS.NUMERIC_CODES`: Use -32700 parse, -32600 invalid request, -32601 unknown method, -32602 invalid params, -32603 internal RPC failure.
+          - Preconditions: JSON-RPC reports a protocol error
+          - Observable: Corresponding JSON-RPC error object.
+          - Forbidden: Do not replace reserved numeric categories with contract string identifiers.
+          - Domain: D.PROVIDER.TRANSPORT; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/transports.md:48-55.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.PROVIDER.RPC.ERROR_CHANNEL`: Before acceptance use JSON-RPC error; after acceptance execution failures are Outcome in successful result
+        - Preconditions: An invoke is accepted or rejected
+        - Observable: Distinct invocation and RPC failure channels
+        - Forbidden: Do not send accepted execution failure as RPC error
+        - Domain: D.PROVIDER.TRANSPORT; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/transports.md:33-41.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Framing**: 5 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **CLOSE**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.STDIO.RECEIVE.CLOSE`: Close as PROTOCOL_VIOLATION without resynchronization.
+          - Preconditions: Framing invalid/oversized/truncated
+          - Observable: Failed/closed session state.
+          - Forbidden: No scanning for a later plausible header.
+          - Domain: D.PROVIDER.TRANSPORT; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/transports.md:8-20.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **COALESCED**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.STDIO.RECEIVE.COALESCED`: Decode all complete frames in wire order and retain any partial suffix.
+          - Preconditions: One read contains multiple complete frames
+          - Observable: Ordered decoded messages.
+          - Forbidden: Do not discard later frame or combine JSON bodies.
+          - Domain: D.PROVIDER.TRANSPORT; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/transports.md:8-20.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **HEADER**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.STDIO.RECEIVE.HEADER`: Accept ASCII case-insensitive Content-Length with one space and CRLF separator, one header only.
+          - Preconditions: Receive a standard frame header
+          - Observable: Header accept/reject.
+          - Forbidden: No Content-Type/duplicate/extra headers.
+          - Domain: D.PROVIDER.TRANSPORT; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/transports.md:8-20.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **PARTIAL**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.STDIO.RECEIVE.PARTIAL`: Buffer valid prefix until complete frame or EOF; EOF truncation violates.
+          - Preconditions: Read ends before complete header/body
+          - Observable: No premature decoded message.
+          - Forbidden: No newline-based truncation or speculative result.
+          - Domain: D.PROVIDER.TRANSPORT; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/transports.md:8-20.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.PROVIDER.STDIO.FRAME`: ASCII Content-Length: N CRLF CRLF then exactly N positive UTF-8 JSON-object bytes
+        - Preconditions: A stdio frame is sent
+        - Observable: Exact baseline frame encoding
+        - Forbidden: Do not count characters or append newline delimiter
+        - Domain: D.PROVIDER.TRANSPORT; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/transports.md:8-20.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Loss**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.PROVIDER.LOSS.SEPARATE`: Report transport failure separately
+        - Preconditions: Process or transport loses pending invocation
+        - Observable: Exactly-once emission does not promise durable delivery/recovery
+        - Forbidden: Do not fabricate Provider Outcome or VCP FAIL
+        - Domain: D.PROVIDER.TRANSPORT; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/lifecycle.md:61-64.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Methods**: 5 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **IDS**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.RPC.METHODS.IDS`: Use nonempty string RPC id unique for entire session and distinct correlation role from invocation_id.
+          - Preconditions: Runner sends baseline request
+          - Observable: RPC correlation identity.
+          - Forbidden: No id reuse including completed requests.
+          - Domain: D.PROVIDER.TRANSPORT; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/transports.md:22-24.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **NULL**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.RPC.CANCEL_ACK.NULL`: Return JSON null acknowledgement.
+          - Preconditions: A supported or terminal-no-op cancel processed
+          - Observable: RPC cancel result null.
+          - Forbidden: No synthetic cancelled Outcome as acknowledgement value.
+          - Domain: D.PROVIDER.TRANSPORT; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/transports.md:43-46.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **OPERATIONS**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.RPC.METHODS.OPERATIONS`: initialize/invoke/cancel are runner requests with their declared results; event is provider notification with no response.
+          - Preconditions: Baseline binding exchanges method messages
+          - Observable: Four declared method shapes.
+          - Forbidden: No invented describe/pause/resume/checkpoint methods or common host parity.
+          - Domain: D.PROVIDER.TRANSPORT; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/transports.md:22-24.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **PARAMS**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.RPC.METHODS.PARAMS`: Use one object-params message, no batches.
+          - Preconditions: Baseline request received
+          - Observable: Request-shape acceptance.
+          - Forbidden: No array params/batch requests under this binding.
+          - Domain: D.PROVIDER.TRANSPORT; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/transports.md:22-24.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **RACE**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.RPC.CANCEL_ACK.RACE`: Either acknowledgement order relative to terminal is permitted.
+          - Preconditions: Cancel acknowledgement and invoke terminal delivered
+          - Observable: Two legal interleavings.
+          - Forbidden: No guaranteed cancelled termination or fixed ack ordering.
+          - Domain: D.PROVIDER.TRANSPORT; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/transports.md:43-46.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Ordering**: 4 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **CONTROL_PROGRESS**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.RPC.ACCEPT_ORDER.CONTROL_PROGRESS`: Continue reading control requests while invokes are pending.
+          - Preconditions: Accepted invoke remains pending
+          - Observable: Cancel can be processed during execution; no timing bound invented.
+          - Forbidden: Do not block all control reception behind terminal completion.
+          - Domain: D.PROVIDER.TRANSPORT; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/transports.md:33-41.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **DUAL_CORRELATION**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.RPC.EVENT_BEFORE_RESULT.DUAL_CORRELATION`: Correlate response RPC ID and invocation_id with established requests/attempts.
+          - Preconditions: Runner receives response or event
+          - Observable: Violation if either correlation is invalid.
+          - Forbidden: No unsolicited response or unknown/rejected-attempt notification.
+          - Domain: D.PROVIDER.TRANSPORT; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/transports.md:33-41.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **EVENT_ORDER**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.RPC.EVENT_BEFORE_RESULT.EVENT_ORDER`: Write every event for that invocation before its terminal invoke response.
+          - Preconditions: Invocation events and its terminal response written
+          - Observable: Per-attempt frame order events before response.
+          - Forbidden: No event after terminal response.
+          - Domain: D.PROVIDER.TRANSPORT; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/transports.md:33-41.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **RECEIVE_ORDER**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.PROVIDER.RPC.ACCEPT_ORDER.RECEIVE_ORDER`: Validate and accept or reject invoke in receive order before processing later cancel.
+          - Preconditions: Invoke and subsequent cancel received
+          - Observable: Cancellation correlation observes prior invoke disposition.
+          - Forbidden: Do not let later cancel overtake attempt establishment.
+          - Domain: D.PROVIDER.TRANSPORT; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/transports.md:33-41.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+  - **Wire**: 2 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **Numbers**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.PROVIDER.WIRE.NUMBERS`: Integral numeric notation counts as integer; preserve faithful JSON mathematical value
+        - Preconditions: A numeric value is consumed
+        - Observable: Reject unfaithfully representable values
+        - Forbidden: Do not coerce booleans/strings or silently round unrepresentable data
+        - Domain: D.PROVIDER.WIRE; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/wire-format.md:12-17.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Optional fields**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.PROVIDER.WIRE.NULL`: Optional typed core fields are absent rather than null, except arbitrary JSON value payloads where null is data
+        - Preconditions: Optional Provider core field is absent or supplied
+        - Observable: Structural/semantic rejection or exact payload preservation
+        - Forbidden: Do not normalize arbitrary null input/config/output/context/details/payload/extension data to absence
+        - Domain: D.PROVIDER.WIRE; authority: NORMATIVE_PROVIDER_CONTRACT; source: provider-contract/spec/draft/wire-format.md:3-10.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+  - **Wire roots**: 9 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **cancel-request**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.PROVIDER.ROOT.CANCEL_REQUEST`: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Preconditions: Wire object submitted to this named root
+        - Observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.
+        - Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Domain: D.ROOT.PROVIDER.cancel-request; authority: NORMATIVE_SCHEMA_ROOT; source: provider-contract/schemas/draft/cancel-request.schema.json:1-28.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **capability**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.PROVIDER.ROOT.CAPABILITY`: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Preconditions: Wire object submitted to this named root
+        - Observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.
+        - Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Domain: D.ROOT.PROVIDER.capability; authority: NORMATIVE_SCHEMA_ROOT; source: provider-contract/schemas/draft/capability.schema.json:1-80.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **initialize-request**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.PROVIDER.ROOT.INITIALIZE_REQUEST`: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Preconditions: Wire object submitted to this named root
+        - Observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.
+        - Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Domain: D.ROOT.PROVIDER.initialize-request; authority: NORMATIVE_SCHEMA_ROOT; source: provider-contract/schemas/draft/initialize-request.schema.json:1-38.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **initialize-result**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.PROVIDER.ROOT.INITIALIZE_RESULT`: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Preconditions: Wire object submitted to this named root
+        - Observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.
+        - Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Domain: D.ROOT.PROVIDER.initialize-result; authority: NORMATIVE_SCHEMA_ROOT; source: provider-contract/schemas/draft/initialize-result.schema.json:1-27.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **invocation**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.PROVIDER.ROOT.INVOCATION`: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Preconditions: Wire object submitted to this named root
+        - Observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.
+        - Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Domain: D.ROOT.PROVIDER.invocation; authority: NORMATIVE_SCHEMA_ROOT; source: provider-contract/schemas/draft/invocation.schema.json:1-60.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **outcome**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.PROVIDER.ROOT.OUTCOME`: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Preconditions: Wire object submitted to this named root
+        - Observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.
+        - Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Domain: D.ROOT.PROVIDER.outcome; authority: NORMATIVE_SCHEMA_ROOT; source: provider-contract/schemas/draft/outcome.schema.json:1-92.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **provider-error**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.PROVIDER.ROOT.PROVIDER_ERROR`: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Preconditions: Wire object submitted to this named root
+        - Observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.
+        - Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Domain: D.ROOT.PROVIDER.provider-error; authority: NORMATIVE_SCHEMA_ROOT; source: provider-contract/schemas/draft/provider-error.schema.json:1-38.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **provider-event**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.PROVIDER.ROOT.PROVIDER_EVENT`: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Preconditions: Wire object submitted to this named root
+        - Observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.
+        - Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Domain: D.ROOT.PROVIDER.provider-event; authority: NORMATIVE_SCHEMA_ROOT; source: provider-contract/schemas/draft/provider-event.schema.json:1-131.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **provider-manifest**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.PROVIDER.ROOT.PROVIDER_MANIFEST`: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Preconditions: Wire object submitted to this named root
+        - Observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.
+        - Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Domain: D.ROOT.PROVIDER.provider-manifest; authority: NORMATIVE_SCHEMA_ROOT; source: provider-contract/schemas/draft/provider-manifest.schema.json:1-56.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+- **RELAY**: 161 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+  - **Architecture**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **Module boundaries**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.ARCH.DEPENDENCIES`: Core depends on SDK rules; application depends on core/ports/SDK without infrastructure or standard providers; adapters implement ports; entrypoints/facade compose; authoring depends on VCP SDK.
+        - Preconditions: Maintain Relay module structure
+        - Observable: Static module dependency boundaries.
+        - Forbidden: No Reference Engine imports or global mutable run containers introduced into Relay.
+        - Domain: D.RELAY.ARCHITECTURE; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/architecture.md:24-29.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+  - **Binding**: 4 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **Binder errors**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.BINDER.FAILURE_CLASS`: Guard choice/trust/compatibility validation; preserve structured errors; unexpected failures become BINDER_FAILURE retaining cause; candidates carry independent manifests without replacing trusted catalog snapshot.
+        - Preconditions: Binder invocation and returned choice validation executes
+        - Observable: Exact Relay error/cause and no invocation.
+        - Forbidden: No untrusted substituted identity/schema or invocation following rejection.
+        - Domain: D.RELAY.BINDING; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/error-contract-hardening.md:46-60.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Catalog errors**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.CATALOG.FAILURE_CLASS`: Preserve structured protocol errors; classify invalid returned type/entry as CATALOG_INVALID, unexpected discovery/iteration failure as CATALOG_FAILURE with chained type/message cause, duplicate provider identity as PROVIDER_CONFLICT.
+        - Preconditions: Catalog registration/discovery/Sequence snapshot or iteration executes
+        - Observable: Exact local Relay error category and retained cause.
+        - Forbidden: Do not invoke a provider after catalog rejection or merge these into portable VCP codes.
+        - Domain: D.RELAY.BINDING; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/error-contract-hardening.md:46-60.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **DeterministicBinder**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.BIND.SELECT`: Unique compatible provider or exact explicit identity
+        - Preconditions: Requirement is matched
+        - Observable: Unique compatible provider or exact explicit identity; No range/fallback; ambiguity/unavailable/mismatch rejects
+        - Forbidden: No range/fallback; ambiguity/unavailable/mismatch rejects
+        - Domain: D.RELAY.BINDING; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/providers.md:31-37.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Injected binder**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.BIND.CHECK`: Independently check trusted catalog and exact manifest/capability identities
+        - Preconditions: Injected binder returns provider
+        - Observable: Independently check trusted catalog and exact manifest/capability identities; Replacement binder does not bypass trust
+        - Forbidden: Replacement binder does not bypass trust
+        - Domain: D.RELAY.BINDING; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/architecture.md:49-53.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+  - **Binding and execution**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **Invocation**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **Supported constraint surface**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.RELAY.INVOCATION.CONSTRAINT_SCOPE`: Generated invocation contains exact input/config, selected pair, contract0.1 and VCPdraft; it supplies no Provider deadline or resource_budget. Runtime host timeout remains separate and node resource_estimate is not converted to budget.
+          - Preconditions: Relay.run creates graph or custom-policy InvocationRequest.
+          - Observable: Provider deadline traces belong to standalone Provider Contract SDK domain; host cancellation remains explicit Relay/VCP event.
+          - Forbidden: Do not promise Provider deadline/budget entrypoint parity or expect unsolicited DEADLINE_EXCEEDED/CANCELLED from a correct provider on an unrequested path.
+          - Domain: D.RELAY.DRIVER; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: src/openverify/relay/application/execution.py:42-68.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+  - **Cancellation**: 2 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **Recorded token**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.CANCEL.TOKEN`: Serialize occurrence to fit one-interrupted-attempt provenance
+        - Preconditions: Host uses recorded Cancellation token
+        - Observable: Serialize occurrence to fit one-interrupted-attempt provenance; No simultaneous multi-attempt VCP cancellation claim
+        - Forbidden: No simultaneous multi-attempt VCP cancellation claim
+        - Domain: D.RELAY.SCHEDULER; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/architecture.md:72-76.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Task**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.CANCEL.TASK`: Clean up processes; raise CancelledError
+        - Preconditions: Host task cancelled
+        - Observable: Clean up processes; raise CancelledError; No fabricated completed record; unrelated runs unaffected
+        - Forbidden: No fabricated completed record; unrelated runs unaffected
+        - Domain: D.RELAY.SCHEDULER; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/architecture.md:72-76.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+  - **Discovery**: 3 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **Catalog**: 3 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **DUPLICATE**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.RELAY.CATALOG.TRUST.DUPLICATE`: Reject duplicate identity pair.
+          - Preconditions: Catalog registration repeats provider_id/provider_version
+          - Observable: Catalog registration error.
+          - Forbidden: No silent replacement or duplicate compatible provider.
+          - Domain: D.RELAY.BINDING; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/providers.md:31-37.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **HOST**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.RELAY.CATALOG.TRUST.HOST`: Only explicit trusted host registration/configuration authorizes execution.
+          - Preconditions: Provider registered or transport configured
+          - Observable: Trusted catalog authority independent of graph data.
+          - Forbidden: Graph JSON cannot authorize executable loading.
+          - Domain: D.RELAY.BINDING; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/providers.md:31-37.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.RELAY.CATALOG.ENTRYPOINTS`: Only host-approved names execute factories
+        - Preconditions: Host loads package provider entry points
+        - Observable: Only host-approved names execute factories; No ownership authentication from entry name
+        - Forbidden: No ownership authentication from entry name
+        - Domain: D.RELAY.BINDING; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/providers.md:39-41.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+  - **Entrypoints**: 17 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **CLI**: 6 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **ERROR**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.RELAY.CLI.EXIT.ERROR`: Return exit 2 if any recorded Result is execution ERROR.
+          - Preconditions: CLI has valid RunRecord
+          - Observable: Error has precedence over ordinary judgment failure.
+          - Forbidden: Do not return FAIL or success exit instead.
+          - Domain: D.RELAY.CLI.EXIT_QUOTIENT; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/quickstart.md:55-58.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **FAIL**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.RELAY.CLI.EXIT.FAIL`: Return exit 1 if any selected terminal Result has verdict FAIL, after checking execution ERROR anywhere. Terminal selection excludes Results with a strict descendant represented in final_results.
+          - Preconditions: No execution ERROR and a terminal judgment FAIL exists
+          - Observable: Fail exit.
+          - Forbidden: Do not claim overall semantic verdict from code alone.
+          - Domain: D.RELAY.CLI.EXIT_QUOTIENT; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/quickstart.md:55-58.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **OTHER**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.RELAY.CLI.EXIT.OTHER`: Return exit 3 after no execution ERROR anywhere, no selected terminal FAIL, and selected set empty or not all selected verdicts PASS.
+          - Preconditions: Record satisfies none of ERROR, FAIL or nonempty all-PASS conditions
+          - Observable: Undetermined exit.
+          - Forbidden: No success for unknown, score-only, nonexecution or partial determination.
+          - Domain: D.RELAY.CLI.EXIT_QUOTIENT; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/quickstart.md:55-58.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **PASS**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.RELAY.CLI.EXIT.PASS`: Return exit 0 iff every selected Result has verdict PASS; selected Results have no strict graph descendant represented in final_results.
+          - Preconditions: No execution ERROR anywhere, no FAIL in selected terminal Result subgraph, selected set nonempty.
+          - Observable: Exit 0 for all-PASS terminal Result subgraph.
+          - Forbidden: Do not reuse passing_gate over every recorded Result: earlier nonterminal Results may differ.
+          - Domain: D.RELAY.CLI.EXIT_QUOTIENT; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/quickstart.md:55-58.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.RELAY.CLI.JSON`: stdout only RunRecord; diagnostics stderr; output option stores record
+        - Preconditions: CLI run uses --json
+        - Observable: stdout only RunRecord; diagnostics stderr; output option stores record; No diagnostic prose mixed into JSON stdout
+        - Forbidden: No diagnostic prose mixed into JSON stdout
+        - Domain: D.RELAY.ENTRYPOINTS; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/quickstart.md:14-16.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.RELAY.CLI.STDIN`: Exactly one stdin consumer; --run-inputs aliases --inputs
+        - Preconditions: stdin used for graph or inputs
+        - Observable: Exactly one stdin consumer; --run-inputs aliases --inputs; Reject both consumers on stdin
+        - Forbidden: Reject both consumers on stdin
+        - Domain: D.RELAY.ENTRYPOINTS; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/quickstart.md:43-46.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **CLI operations**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.CLI.OPERATIONS`: Expose validate/inspect/run, providers list/inspect, examples/templates alias, mcp and http. Validation named type defaults Definition; inspect returns validated summary; provider commands return standard manifests or unknown-id error; examples return named authored summaries; run uses exact trusted config/roots/bindings and documented stdout/exit map.
+        - Preconditions: Installed openverify command invoked
+        - Observable: JSON/summary, process host error exit2; mcp/http start configured local service.
+        - Forbidden: No arbitrary graph-authorized executable, invented MCP/HTTP parity or portable CLI semantics.
+        - Domain: D.RELAY.ENTRYPOINTS; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: src/openverify/relay/entrypoints/cli.py:95-204.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **GraphService**: 2 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.SERVICE.ALLOWLIST`: Host-authorized names only; defaults text/guardrail
+        - Preconditions: Named graph requested
+        - Observable: Host-authorized names only; defaults text/guardrail; No arbitrary graph paths or executable-config tools
+        - Forbidden: No arbitrary graph paths or executable-config tools
+        - Domain: D.RELAY.ENTRYPOINTS; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/integration.md:39-45.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.RELAY.SERVICE.CONCURRENCY`: Bound active service runs, default eight, separately from per-run waves
+        - Preconditions: Concurrent service requests
+        - Observable: Bound active service runs, default eight, separately from per-run waves; No automatic provider concurrency safety
+        - Forbidden: No automatic provider concurrency safety
+        - Domain: D.RELAY.ENTRYPOINTS; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/integration.md:59-63.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **HTTP**: 6 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **INVALID_INPUT**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.RELAY.HTTP.SHAPE.INVALID_INPUT`: Return exception as_dict with HTTP 400.
+          - Preconditions: ProtocolError raised while parsing request/authorized run input
+          - Observable: Structured diagnostic response.
+          - Forbidden: Do not run action or disguise invalid request as Result FAIL.
+          - Domain: D.RELAY.ENTRYPOINTS; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/integration.md:72-74.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **REQUEST**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.RELAY.HTTP.SHAPE.REQUEST`: Accept exactly graph string and inputs JSON object naming host-authorized graph.
+          - Preconditions: POST /verify after authorization and body bound
+          - Observable: Malformed shape/request is HTTP 400 INVALID_REQUEST.
+          - Forbidden: No extra keys, arbitrary graph paths or executable config.
+          - Domain: D.RELAY.ENTRYPOINTS; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/integration.md:72-74.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **SEMANTIC_FAILURE**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.RELAY.HTTP.SHAPE.SEMANTIC_FAILURE`: Return HTTP 200 with full RunRecord.
+          - Preconditions: Authorized valid run completes with verification FAIL
+          - Observable: Completed FAIL remains inspectable.
+          - Forbidden: Do not conflate verification failure with request/transport error.
+          - Domain: D.RELAY.ENTRYPOINTS; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/integration.md:72-74.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.RELAY.HTTP.AUTH`: Require matching Bearer token before execution
+        - Preconditions: Host configured token
+        - Observable: Require matching Bearer token before execution; Missing/bad token HTTP 401
+        - Forbidden: Missing/bad token HTTP 401
+        - Domain: D.RELAY.ENTRYPOINTS; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/integration.md:86-91.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.RELAY.HTTP.BOUND`: HTTP 413, default 1 MiB
+        - Preconditions: Body exceeds configured bound
+        - Observable: HTTP 413, default 1 MiB; Do not execute oversized body
+        - Forbidden: Do not execute oversized body
+        - Domain: D.RELAY.ENTRYPOINTS; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/integration.md:86-91.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.RELAY.HTTP.HEALTH`: Report health; supplied server binds localhost
+        - Preconditions: Health requested
+        - Observable: Report health; supplied server binds localhost; No tenant/TLS/public-service promise
+        - Forbidden: No tenant/TLS/public-service promise
+        - Domain: D.RELAY.ENTRYPOINTS; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/integration.md:72-74.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **MCP**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.MCP.TOOLS`: list_graphs, describe_graph, run_graph, inspect_result expose structured records
+        - Preconditions: MCP client connects
+        - Observable: list_graphs, describe_graph, run_graph, inspect_result expose structured records; No automatic host hooks/Python execution tool
+        - Forbidden: No automatic host hooks/Python execution tool
+        - Domain: D.RELAY.ENTRYPOINTS; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/integration.md:39-45.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Trusted provider configuration**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.PROVIDER_CONFIG.TRUST`: Read stdio manifest/argv/cwd and optional entry-point allowlist and exact four-field bindings as trusted host configuration, independent of graph JSON.
+        - Preconditions: Host supplies CLI provider configuration
+        - Observable: Explicit configured catalog and binding choices.
+        - Forbidden: Never authorize an executable from graph input/config; do not authenticate a package from its entry name.
+        - Domain: D.RELAY.BINDING; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/providers.md:52-65.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+  - **Execution**: 3 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **Driver**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.DRIVER.CHECK`: Recheck Provider lifecycle/correlation/output and VCP acceptance
+        - Preconditions: Driver returns report
+        - Observable: Recheck Provider lifecycle/correlation/output and VCP acceptance; No bypass through injected driver
+        - Forbidden: No bypass through injected driver
+        - Domain: D.RELAY.DRIVER; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/architecture.md:49-53.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Event capture**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.DRIVER.BOUNDS`: Configured count/byte bounds, default 10000 events and 16 MiB
+        - Preconditions: Events captured
+        - Observable: Configured count/byte bounds, default 10000 events and 16 MiB; No unbounded capture or resource-cost interpretation
+        - Forbidden: No unbounded capture or resource-cost interpretation
+        - Domain: D.RELAY.DRIVER; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/security.md:35-42.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Timeout**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.DRIVER.TIMEOUT`: Independent host timeout, default 30 seconds
+        - Preconditions: Invocation active
+        - Observable: Independent host timeout, default 30 seconds; Do not invent provider deadline/budget; timeout ERROR not FAIL
+        - Forbidden: Do not invent provider deadline/budget; timeout ERROR not FAIL
+        - Domain: D.RELAY.DRIVER; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/security.md:35-42.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+  - **Extension ports**: 7 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **EventObserver**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **observe**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.RELAY.PORT.EventObserver.observe`: Receive occurrence/node/provider notification and return None; Relay isolates callback exceptions and annotates diagnostics.
+          - Preconditions: Host supplies a conforming replacement and otherwise-valid boundary inputs.
+          - Observable: Receive occurrence/node/provider notification and return None; Relay isolates callback exceptions and annotates diagnostics.
+          - Forbidden: Do not make observer diagnostics semantic Evidence or a mandatory closed event alphabet.
+          - Domain: D.RELAY.STORAGE_OBSERVATION; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: src/openverify/relay/ports/__init__.py:74-75.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **ExecutionDriver**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **execute**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.RELAY.PORT.ExecutionDriver.execute`: Given provider, manifest/invocation request, host timeout and sink, return InvocationReport retaining legal events and terminal outcome or separate execution/transport error. Application revalidates report.
+          - Preconditions: Host supplies a conforming replacement and otherwise-valid boundary inputs.
+          - Observable: Given provider, manifest/invocation request, host timeout and sink, return InvocationReport retaining legal events and terminal outcome or separate execution/transport error. Application revalidates report.
+          - Forbidden: Do not fabricate a provider Outcome for transport failure or bypass contract validation.
+          - Domain: D.RELAY.DRIVER; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: src/openverify/relay/ports/__init__.py:59-75.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **ProviderBinder**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **bind**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.RELAY.PORT.ProviderBinder.bind`: Given validated requirement/providers and optional explicit binding, return the exact compatible trusted choice or declared binding/unavailable/ambiguity failure.
+          - Preconditions: Host supplies a conforming replacement and otherwise-valid boundary inputs.
+          - Observable: Given validated requirement/providers and optional explicit binding, return the exact compatible trusted choice or declared binding/unavailable/ambiguity failure.
+          - Forbidden: No silent fallback or untrusted identity substitution.
+          - Domain: D.RELAY.BINDING; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: src/openverify/relay/ports/__init__.py:50-68.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **ProviderCatalog**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **providers**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.RELAY.PORT.ProviderCatalog.providers`: Returns the trusted AvailableProvider sequence with valid manifest snapshots; registration/discovery is host-owned.
+          - Preconditions: Host supplies a conforming replacement and otherwise-valid boundary inputs.
+          - Observable: Returns the trusted AvailableProvider sequence with valid manifest snapshots; registration/discovery is host-owned.
+          - Forbidden: Do not infer a portable discovery policy or execute unapproved factories.
+          - Domain: D.RELAY.BINDING; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: src/openverify/relay/ports/__init__.py:46-64.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **ProviderTransport**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **invoke**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.RELAY.PORT.ProviderTransport.invoke`: Given one validated invocation request and sink, deliver permitted ProviderEvents and return terminal Outcome under the supported transport.
+          - Preconditions: Host supplies a conforming replacement and otherwise-valid boundary inputs.
+          - Observable: Given one validated invocation request and sink, deliver permitted ProviderEvents and return terminal Outcome under the supported transport.
+          - Forbidden: No Provider semantic redefinition or primitive port auto-wrapping.
+          - Domain: D.RELAY.DRIVER; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: src/openverify/relay/ports/__init__.py:19-37.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **RecordStore**: 2 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **get**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.RELAY.PORT.RecordStore.get`: Return retained RunRecord snapshot or None when unavailable.
+          - Preconditions: Host supplies a conforming replacement and otherwise-valid boundary inputs.
+          - Observable: Return retained RunRecord snapshot or None when unavailable.
+          - Forbidden: Do not fabricate missing records or share mutable stored instances.
+          - Domain: D.RELAY.STORAGE_OBSERVATION; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: src/openverify/relay/ports/__init__.py:69-75.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **put**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.RELAY.PORT.RecordStore.put`: Given a valid completed record, persist a snapshot or propagate storage failure.
+          - Preconditions: Host supplies a conforming replacement and otherwise-valid boundary inputs.
+          - Observable: Given a valid completed record, persist a snapshot or propagate storage failure.
+          - Forbidden: No claim of universal durability or accepting mutation as stored state.
+          - Domain: D.RELAY.STORAGE_OBSERVATION; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: src/openverify/relay/ports/__init__.py:69-75.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+  - **Invocation callbacks**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **EventSink**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **emit(event)**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.RELAY.PORT.EventSink.emit`: For this invocation, synchronously report validated correlated events to the runner callback.
+          - Preconditions: Host supplies a conforming replacement and otherwise-valid boundary inputs.
+          - Observable: For this invocation, synchronously report validated correlated events to the runner callback.
+          - Forbidden: Callback is not an eighth extension port or a terminal Outcome.
+          - Domain: D.RELAY.DRIVER; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: src/openverify/relay/ports/__init__.py:10-28.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+  - **Observability**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **Observer**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.OBSERVER.ERROR`: Isolate and annotate diagnostic
+        - Preconditions: Observer callback raises
+        - Observable: Isolate and annotate diagnostic; Do not abort semantic run solely for observer failure
+        - Forbidden: Do not abort semantic run solely for observer failure
+        - Domain: D.RELAY.STORAGE_OBSERVATION; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/architecture.md:85-89.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+  - **Policies**: 2 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **Occurrence**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.POLICY.NO_RECORD`: Raise NO_OCCURRENCE with no RunRecord
+        - Preconditions: Opportunity inactive or unselected
+        - Observable: Raise NO_OCCURRENCE with no RunRecord; Do not fabricate occurrence
+        - Forbidden: Do not fabricate occurrence
+        - Domain: D.RELAY.HOST_API; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/architecture.md:55-62.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Opportunity**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.POLICY.IDENTITY`: Generate fresh UUID; explicit identity supports local repeatability
+        - Preconditions: Relay host omits opportunity identity
+        - Observable: Generate fresh UUID; explicit identity supports local repeatability; No portable probability bucket promise
+        - Forbidden: No portable probability bucket promise
+        - Domain: D.RELAY.HOST_API; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/architecture.md:55-62.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+  - **Preparation**: 2 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **Inputs**: 2 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **BIND_BEFORE_POLICIES**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.RELAY.PREP.SNAPSHOT.BIND_BEFORE_POLICIES`: Resolve graph and policy operation bindings before invoking policies.
+          - Preconditions: Definition and inputs valid
+          - Observable: Binding failure precedes any policy execution.
+          - Forbidden: Scheduling must not perform hidden selection or defer required binding validation.
+          - Domain: D.RELAY.BINDING; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/architecture.md:55-62.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **SNAPSHOT**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.RELAY.PREP.SNAPSHOT.SNAPSHOT`: Snapshot and validate definition and supplied JSON inputs.
+          - Preconditions: Relay run begins
+          - Observable: Occurrence retains prepared snapshots.
+          - Forbidden: No caller mutation may change authored occurrence stimulus after preparation.
+          - Domain: D.RELAY.BINDING; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/architecture.md:55-62.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+  - **Process execution**: 2 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **Host configuration**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.PROCESS.ARGV_ENV`: Use argv and explicit absolute cwd without shell=True; inherit host environment unless complete env supplied, supplement only required Windows SystemRoot.
+        - Preconditions: Launch a trusted configured subprocess
+        - Observable: Actual launch arguments/environment and host-owned privileges.
+        - Forbidden: Graph configuration never grants executable authorization; do not silently copy ambient secrets into semantic inputs/log payloads.
+        - Domain: D.RELAY.PROCESS; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/security.md:27-33.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Windows lifetime**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.PROCESS.WINDOWS_PRESTART`: Establish kill-on-close Job Object before tool code starts; descendants remain in job after parent exit.
+        - Preconditions: A Windows tool is launched under Relay supervision
+        - Observable: Prestart supervision and tree cleanup boundary.
+        - Forbidden: Do not claim containment against hostile process escaping OS mechanisms or cross-platform test execution.
+        - Domain: D.RELAY.PROCESS; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/security.md:44-50.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+  - **Providers**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **Concurrency**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.PROVIDER.SHARING`: Serialize unless explicit concurrency_safe=True
+        - Preconditions: Host shares Python provider
+        - Observable: Serialize unless explicit concurrency_safe=True; No implicit provider state safety
+        - Forbidden: No implicit provider state safety
+        - Domain: D.RELAY.SCHEDULER; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/architecture.md:72-76.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+  - **Public API**: 9 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **Relay.run**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.API.RUN`: Accept Graph/Definition/serialized VCP through same validation path; return Run(record)
+        - Preconditions: Host submits graph representation and explicit inputs
+        - Observable: Accept Graph/Definition/serialized VCP through same validation path; return Run(record); No representation-specific semantics or fabricated global verdict
+        - Forbidden: No representation-specific semantics or fabricated global verdict
+        - Domain: D.RELAY.HOST_API; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/architecture.md:8-22.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Run**: 5 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **DECISIONS**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.RELAY.API.VIEWS.DECISIONS`: decisions returns exactly NodeRecord decisions that are present, keyed by node_id.
+          - Preconditions: Run returned
+          - Observable: Accepted recorded Decisions only.
+          - Forbidden: No synthesized decisions for other nodes.
+          - Domain: D.RELAY.HOST_API; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/architecture.md:31-38.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **EVIDENCE**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.RELAY.API.VIEWS.EVIDENCE`: evidence returns each node observation evidence followed by its Result evidence.
+          - Preconditions: Run returned
+          - Observable: Ordered evidence snapshots per node.
+          - Forbidden: Repeated snapshots do not imply additional measurements.
+          - Domain: D.RELAY.HOST_API; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/architecture.md:31-38.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **RESULTS**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.RELAY.API.VIEWS.RESULTS`: results returns complete final_results mapping including bookkeeping states.
+          - Preconditions: Run returned
+          - Observable: Per-node final Results.
+          - Forbidden: No fabricated overall verdict.
+          - Domain: D.RELAY.HOST_API; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/architecture.md:31-38.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **SERIALIZATION**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.RELAY.API.VIEWS.SERIALIZATION`: to_json serializes complete SDK RunRecord.
+          - Preconditions: Run returned
+          - Observable: Wire-compatible complete record JSON.
+          - Forbidden: No lossy display-only summary as serialized provenance.
+          - Domain: D.RELAY.HOST_API; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/architecture.md:31-38.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **USAGE**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.RELAY.API.VIEWS.USAGE`: usage returns per-node node usage preserving dimensions/units.
+          - Preconditions: Run returned
+          - Observable: Per-node ResourceVector mapping.
+          - Forbidden: No automatic global summation or conversion.
+          - Domain: D.RELAY.HOST_API; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/architecture.md:31-38.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **verify_before**: 3 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **ACTION**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.RELAY.API.GATE.ACTION`: Invoke and await provided action once and return its result.
+          - Preconditions: Verification passes selected gate
+          - Observable: Action result or action exception delivered to caller.
+          - Forbidden: No promise to mediate unrelated host actions.
+          - Domain: D.RELAY.HOST_API; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/integration.md:16-25.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **POLICY**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.RELAY.API.GATE.POLICY`: Require nonempty Results and every Result EXECUTED SUCCESS APPLICABLE KNOWN PASS.
+          - Preconditions: Default passing_gate applied to Run
+          - Observable: Boolean acceptance exactly equals this conjunction.
+          - Forbidden: Reject FAIL, UNKNOWN, ERROR, nonexecution, NOT_APPLICABLE and score-only outcomes.
+          - Domain: D.RELAY.HOST_API; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/integration.md:16-25.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **WAIT**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.RELAY.API.GATE.WAIT`: Await verification and gate before invoking action.
+          - Preconditions: verify_before called with zero-argument async action
+          - Observable: GATE_REJECTED on rejected gate; verification errors propagate.
+          - Forbidden: Do not invoke action on gate rejection or verification failure.
+          - Domain: D.RELAY.HOST_API; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/integration.md:16-25.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+  - **Public SDK**: 48 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **FileAccess**: 4 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **BOUNDS**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.SDK.FILEACCESS.BOUNDS`: Default max_bytes2MiB and max_files10000; enforce configured bounds.
+          - Preconditions: Read/selection performed
+          - Observable: Bounded data or error.
+          - Forbidden: No unbounded file observation or selection.
+          - Domain: D.STANDARD.READ_FILE; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/standard/filesystem.py:17-61.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **RELATIVE**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.SDK.FILEACCESS.RELATIVE`: Require explicit base or exactly one configured root.
+          - Preconditions: Relative path supplied
+          - Observable: Deterministic anchored path or ValueError.
+          - Forbidden: No ambient choice among multiple roots.
+          - Domain: D.STANDARD.READ_FILE; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/standard/filesystem.py:17-61.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **ROOTS**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.SDK.FILEACCESS.ROOTS`: Resolve symlinks and require containment in a resolved authorized root.
+          - Preconditions: FileAccess authorizes a local path
+          - Observable: Authorized resolved path or rejection.
+          - Forbidden: No escaping symlink or unauthored root authorization.
+          - Domain: D.STANDARD.READ_FILE; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/standard/filesystem.py:17-61.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **SNAPSHOT**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.SDK.FILEACCESS.SNAPSHOT`: Return exact bounded bytes and identity path,sha256,size from the same read bytes.
+          - Preconditions: File bytes successfully read
+          - Observable: Hash and size identify returned byte sequence.
+          - Forbidden: No second changing read for identity.
+          - Domain: D.STANDARD.READ_FILE; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/standard/filesystem.py:17-61.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **FunctionProvider**: 9 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.FUNCTION_PROVIDER.ASYNC`: Reject non-coroutine functions with TypeError.
+        - Preconditions: A computation is decorated
+        - Observable: Decorator failure before registration.
+        - Forbidden: Do not run blocking sync callback inside wrapper.
+        - Domain: D.SDK.FUNCTION_PROVIDER; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/relay/providers.py:127-166.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.SDK.FUNCTION_PROVIDER.BUDGET`: Reject before computation because wrapper cannot enforce budgets.
+        - Preconditions: Invocation contains resource_budget
+        - Observable: Pre-work rejection.
+        - Forbidden: Do not silently ignore upper limits.
+        - Domain: D.SDK.FUNCTION_PROVIDER; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/relay/providers.py:56-124.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.SDK.FUNCTION_PROVIDER.DECISION`: Normalize to decision port mapping.
+        - Preconditions: Coroutine returns Decision
+        - Observable: Output object.
+        - Forbidden: Do not coerce Decision into Result.
+        - Domain: D.SDK.FUNCTION_PROVIDER; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/relay/providers.py:56-124.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.SDK.FUNCTION_PROVIDER.EXCEPTION`: Yield ERROR with openverify.computation_error.
+        - Preconditions: Computation raises ordinary exception
+        - Observable: ERROR Outcome.
+        - Forbidden: Do not convert exception into binary FAIL.
+        - Domain: D.SDK.FUNCTION_PROVIDER; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/relay/providers.py:56-124.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.SDK.FUNCTION_PROVIDER.MANIFEST`: Validate and publish the exact supplied identity/schemas with Contract 0.1, VCP draft and streaming/cancellation/resource reporting enabled, deadlines disabled.
+        - Preconditions: Decorator has explicit schemas/kind/identities
+        - Observable: Validated manifest.
+        - Forbidden: Do not advertise deadline enforcement.
+        - Domain: D.SDK.FUNCTION_PROVIDER; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/relay/providers.py:127-166.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.SDK.FUNCTION_PROVIDER.OBSERVATION`: Emit observation evidence and nonempty usage before terminal; preserve usage on explicit execution error.
+        - Preconditions: Coroutine returns ExecutionObservation
+        - Observable: Events plus final usage.
+        - Forbidden: Do not lose valid reported incurred usage because semantic outputs fail later.
+        - Domain: D.SDK.FUNCTION_PROVIDER; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/relay/providers.py:56-124.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.SDK.FUNCTION_PROVIDER.POLICY`: Return outcome as the direct output object.
+        - Preconditions: Coroutine returns Activation/Selection/Admission
+        - Observable: Policy wire object.
+        - Forbidden: Do not wrap as result/decision port mapping.
+        - Domain: D.SDK.FUNCTION_PROVIDER; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/relay/providers.py:56-124.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.SDK.FUNCTION_PROVIDER.RESULT`: Normalize to result port mapping; retain Result usage as observation usage.
+        - Preconditions: Coroutine returns Result
+        - Observable: COMPLETED output object or later contract validation.
+        - Forbidden: Do not apply this wrapping rule to arbitrary external transport output.
+        - Domain: D.SDK.FUNCTION_PROVIDER; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/relay/providers.py:56-124.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.SDK.FUNCTION_PROVIDER.TASK_CANCEL`: Propagate CancelledError.
+        - Preconditions: Invocation coroutine is cancelled by asyncio
+        - Observable: Task cancellation.
+        - Forbidden: Do not fabricate provider COMPLETED Outcome.
+        - Domain: D.SDK.FUNCTION_PROVIDER; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/relay/providers.py:56-124.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Graph constructor**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.AUTHORING.CONSTRUCTOR`: Default exact version1, declared-input subject {id,type,locator.graph}, Criterion tied to id, judgment schema true and MANUAL/EXPLICIT/ALWAYS policy are materialized; explicit supplied objects replace corresponding defaults.
+        - Preconditions: Host authors Graph(id,...)
+        - Observable: Authored portable Definition after build validation.
+        - Forbidden: No hidden runtime semantic inputs or automatic executable authorization.
+        - Domain: D.SDK.AUTHORING; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/authoring/graph.py:72-99.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Graph.add_node**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.AUTHORING.GRAPH.ADD_NODE`: Add a deep copy of an explicitly supplied SDK graph node.
+        - Preconditions: Host authors a graph
+        - Observable: Documented local authoring result or validation error.
+        - Forbidden: Do not create a second protocol semantics or bypass ordinary validation.
+        - Domain: D.SDK.AUTHORING.GRAPH.ADD_NODE; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/authoring/graph.py:232-240.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Graph.aggregate**: 3 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **CONFIG**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.SDK.AUTHORING.GRAPH.AGGREGATE.CONFIG`: For openverify.aggregate write explicit reducer and handling; missing or empty supplied handling convenience authors REJECT for every exceptional class. Custom capability retains supplied config.
+          - Preconditions: Graph.aggregate capability/config supplied
+          - Observable: Complete authored config in resulting definition.
+          - Forbidden: Do not call this builder default a hidden portable reducer default.
+          - Domain: D.SDK.AUTHORING; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/authoring/graph.py:192-224.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **ORDER**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.SDK.AUTHORING.GRAPH.AGGREGATE.ORDER`: Declare aggregate_inputs in authored map order and members Constant equal to that name list.
+          - Preconditions: Graph.aggregate members ordered map supplied
+          - Observable: Custom and standard Aggregate receive explicit member order.
+          - Forbidden: No edge-order or JSON key-order implicit membership.
+          - Domain: D.SDK.AUTHORING; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/authoring/graph.py:192-224.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **RESERVED**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.SDK.AUTHORING.GRAPH.AGGREGATE.RESERVED`: Reject subject, criterion or members as member names.
+          - Preconditions: Graph.aggregate member name supplied
+          - Observable: ValueError.
+          - Forbidden: No collision with reserved semantic inputs.
+          - Domain: D.SDK.AUTHORING; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/authoring/graph.py:192-224.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Graph.build**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.AUTHORING.GRAPH.BUILD`: Construct, serialize and parse a validated portable VerificationDefinition snapshot.
+        - Preconditions: Host authors a graph
+        - Observable: Documented local authoring result or validation error.
+        - Forbidden: Do not create a second protocol semantics or bypass ordinary validation.
+        - Domain: D.SDK.AUTHORING.GRAPH.BUILD; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/authoring/graph.py:242-253.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Graph.edge**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.AUTHORING.GRAPH.EDGE`: Append dependency edge; replacing the same source/destination pair updates its guard.
+        - Preconditions: Host authors a graph
+        - Observable: Documented local authoring result or validation error.
+        - Forbidden: Do not create a second protocol semantics or bypass ordinary validation.
+        - Domain: D.SDK.AUTHORING.GRAPH.EDGE; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/authoring/graph.py:226-230.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Graph.input**: 2 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **PORT**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.SDK.AUTHORING.GRAPH.INPUT.PORT`: Append port with copied schema; required uses BLOCK; optional with explicit Constant uses DEFAULT, otherwise OMIT.
+          - Preconditions: Graph.input called
+          - Observable: Typed declaration in builder.
+          - Forbidden: No implicit schema default insertion.
+          - Domain: D.SDK.AUTHORING; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/authoring/graph.py:94-111.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **REF**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.SDK.AUTHORING.GRAPH.INPUT.REF`: Return RUN_INPUT Ref naming declared input with copied schema.
+          - Preconditions: Graph.input called
+          - Observable: Explicit reusable Ref.
+          - Forbidden: No ambient Context lookup source.
+          - Domain: D.SDK.AUTHORING; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/authoring/graph.py:94-111.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Graph.inspect**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.AUTHORING.GRAPH.INSPECT`: Build and call inspect_definition on the validated snapshot.
+        - Preconditions: Host authors a graph
+        - Observable: Documented local authoring result or validation error.
+        - Forbidden: Do not create a second protocol semantics or bypass ordinary validation.
+        - Domain: D.SDK.AUTHORING.GRAPH.INSPECT; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/authoring/graph.py:258-259.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Graph.node**: 6 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **BINDINGS**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.SDK.AUTHORING.GRAPH.NODE.BINDINGS`: Deepcopy source constructors into bindings; synthesize required BLOCK ports from Ref schema unless explicit input_port with that name supplied.
+          - Preconditions: Graph.node input Refs supplied
+          - Observable: Authored typed port/binding pair.
+          - Forbidden: Do not derive data from dependency edges.
+          - Domain: D.SDK.AUTHORING; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/authoring/graph.py:113-181.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **CONFIG_SNAPSHOT**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.SDK.AUTHORING.GRAPH.NODE.CONFIG_SNAPSHOT`: Deepcopy config, optional config_schema and estimate into authored node.
+          - Preconditions: Graph.node config/schema/estimate supplied
+          - Observable: Independent node settings snapshot.
+          - Forbidden: Later caller mutation cannot replace copied authored fields.
+          - Domain: D.SDK.AUTHORING; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/authoring/graph.py:113-181.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **DEPENDENCIES**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.SDK.AUTHORING.GRAPH.NODE.DEPENDENCIES`: Add prerequisite edges to authored predecessor identities, once per distinct predecessor in this call.
+          - Preconditions: Input Ref is UPSTREAM_OUTPUT or explicit dependencies supplied
+          - Observable: Required ordering paths materialized.
+          - Forbidden: Dependencies alone do not transfer values.
+          - Domain: D.SDK.AUTHORING; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/authoring/graph.py:113-181.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **OPERATION**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.SDK.AUTHORING.GRAPH.NODE.OPERATION`: Materialize exact capability_id/version and selected node kind.
+          - Preconditions: Graph.node called with typed arguments
+          - Observable: New SDK Node in builder state.
+          - Forbidden: Operation identity never authorizes imports or fallback.
+          - Domain: D.SDK.AUTHORING; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/authoring/graph.py:113-181.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **OUTPUTS**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.SDK.AUTHORING.GRAPH.NODE.OUTPUTS`: Declare INFORMATION outputs plus result RESULT for EVAL/AGG or decision DECISION forCONTROL.
+          - Preconditions: Graph.node declared information outputs supplied
+          - Observable: Returned NodeRef exposes exactly declared output names.
+          - Forbidden: Do not fabricate primary Result for DERIVE.
+          - Domain: D.SDK.AUTHORING; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/authoring/graph.py:113-181.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **SEMANTIC_INPUTS**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.SDK.AUTHORING.GRAPH.NODE.SEMANTIC_INPUTS`: Bind exact definition subject and criterion Constants as explicit semantic ports; reject caller overriding either reserved binding.
+          - Preconditions: Builder authors EVALUATE or AGGREGATE
+          - Observable: ValueError on reserved override; exact authored snapshots otherwise.
+          - Forbidden: No implicit ambient subject or criterion selected from config.
+          - Domain: D.SDK.AUTHORING; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/authoring/graph.py:113-181.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Graph.to_json**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.AUTHORING.GRAPH.TO_JSON`: Serialize the built validated definition.
+        - Preconditions: Host authors a graph
+        - Observable: Documented local authoring result or validation error.
+        - Forbidden: Do not create a second protocol semantics or bypass ordinary validation.
+        - Domain: D.SDK.AUTHORING.GRAPH.TO_JSON; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/authoring/graph.py:261-262.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Graph.validate**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.AUTHORING.GRAPH.VALIDATE`: Build and validate; return None if successful.
+        - Preconditions: Host authors a graph
+        - Observable: Documented local authoring result or validation error.
+        - Forbidden: Do not create a second protocol semantics or bypass ordinary validation.
+        - Domain: D.SDK.AUTHORING.GRAPH.VALIDATE; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/authoring/graph.py:255-256.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **GraphService.definition**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.SERVICE.GRAPHSERVICE.DEFINITION`: Return a newly parsed stored graph snapshot; unauthorized name raises GRAPH_UNAVAILABLE.
+        - Preconditions: Authorized name
+        - Observable: Definition or RelayError.
+        - Forbidden: Do not expose arbitrary executable or graph-path loading. 
+        - Domain: D.SDK.SERVICE.GRAPHSERVICE.DEFINITION; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/relay/entrypoints/service.py:35-38.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **GraphService.describe_graph**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.SERVICE.GRAPHSERVICE.DESCRIBE_GRAPH`: Inspect authorized definition without invocation.
+        - Preconditions: Graph name
+        - Observable: Definition summary or GRAPH_UNAVAILABLE.
+        - Forbidden: Do not expose arbitrary executable or graph-path loading. 
+        - Domain: D.SDK.SERVICE.GRAPHSERVICE.DESCRIBE_GRAPH; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/relay/entrypoints/service.py:43-44.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **GraphService.inspect_result**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.SERVICE.GRAPHSERVICE.INSPECT_RESULT`: Read service store; absent record raises RUN_UNAVAILABLE, otherwise return record data.
+        - Preconditions: Run id
+        - Observable: Record or RelayError.
+        - Forbidden: Do not expose arbitrary executable or graph-path loading. 
+        - Domain: D.SDK.SERVICE.GRAPHSERVICE.INSPECT_RESULT; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/relay/entrypoints/service.py:53-59.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **GraphService.list_graphs**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.SERVICE.GRAPHSERVICE.LIST_GRAPHS`: Return sorted authorized graph names.
+        - Preconditions: Service constructed
+        - Observable: Sorted list.
+        - Forbidden: Do not expose arbitrary executable or graph-path loading. 
+        - Domain: D.SDK.SERVICE.GRAPHSERVICE.LIST_GRAPHS; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/relay/entrypoints/service.py:40-41.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **GraphService.run_graph**: 3 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **AUTHORIZATION**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.SDK.SERVICE.GRAPHSERVICE.RUN_GRAPH.AUTHORIZATION`: Resolve only host-authorized named graph.
+          - Preconditions: run_graph called
+          - Observable: GRAPH_UNAVAILABLE for unknown name.
+          - Forbidden: No arbitrary file path or graph JSON service execution.
+          - Domain: D.RELAY.ENTRYPOINTS; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/relay/entrypoints/service.py:46-51.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **LIMIT**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.SDK.SERVICE.GRAPHSERVICE.RUN_GRAPH.LIMIT`: Hold service semaphore during awaited Relay.run.
+          - Preconditions: Authorized run requested
+          - Observable: Active run bound respected.
+          - Forbidden: No promise that service limit replaces provider concurrency safety.
+          - Domain: D.RELAY.ENTRYPOINTS; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/relay/entrypoints/service.py:46-51.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **RESULT**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.SDK.SERVICE.GRAPHSERVICE.RUN_GRAPH.RESULT`: Return full RunRecord wire data.
+          - Preconditions: Authorized run completes
+          - Observable: Structured complete provenance JSON.
+          - Forbidden: Do not convert completed verification FAIL into service exception.
+          - Domain: D.RELAY.ENTRYPOINTS; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/relay/entrypoints/service.py:46-51.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **NodeRef.__getitem__**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.NODE.OUTPUT`: Return the declared output Ref; undeclared name raises KeyError.
+        - Preconditions: Output name requested
+        - Observable: Ref or KeyError.
+        - Forbidden: Do not synthesize undeclared output.
+        - Domain: D.SDK.NODE.OUTPUT; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/authoring/graph.py:45-46.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Relay.run_sync**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.RELAY.RUN_SYNC`: Execute Relay.run through asyncio.run and return Run.
+        - Preconditions: No already-running event loop in this calling thread
+        - Observable: Run or propagated error.
+        - Forbidden: Do not claim compatibility with nested event loops or expose a cancellation argument absent from this signature.
+        - Domain: D.SDK.RELAY.RUN_SYNC; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/relay/api.py:143-150.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **RuntimeConfig.__post_init__**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.RELAY.CONFIG`: Require exact positive integer max_concurrency and finite positive timeout; reject invalid settings with ValueError.
+        - Preconditions: Host configuration constructed
+        - Observable: Constructed config or ValueError.
+        - Forbidden: Do not accept Boolean max_concurrency as an integer.
+        - Domain: D.SDK.RELAY.CONFIG; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/relay/config.py:17-21.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Shipped graph builders**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.TEMPLATES`: Return ordinary authored Graph. text requires Migration/Rollback and prohibits TODO/TBD with ALL; document adds read_text. guardrail action_policy->ALL->gate. code WORKTREE/untracked captures scope, Ruff F and Python print AST, AST changed-line filtering, post-tool freshness and ALL; code_spans also filters Ruff.
+        - Preconditions: Host requests text/document/guardrail/code/code_spans template
+        - Observable: Inspectable ordinary VCP graph with declared inputs and exact typed links.
+        - Forbidden: No hidden index bytes, factual/semantic checking, host-action execution, different graph language or auto tool installation.
+        - Domain: D.RELAY.STANDARD_HOST; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: src/openverify/relay/templates.py:1-129.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Tools**: 3 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **DISCOVERY**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.SDK.TOOLS.DISCOVERY`: Resolve active Python scripts directory then PATH; explicit host paths remain authoritative.
+          - Preconditions: installed_tools invoked
+          - Observable: Tools configuration, with missing tools diagnosable.
+          - Forbidden: Do not infer a successful tool run from discovery.
+          - Domain: D.RELAY.STANDARD_HOST; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/standard/tools.py:1-52.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **EXECUTABLE**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.SDK.TOOLS.EXECUTABLE`: Select configured named Ruff/pytest/astgrep executable or raise actionable FileNotFoundError.
+          - Preconditions: Tool executable requested
+          - Observable: Configured executable path or missing-tool error.
+          - Forbidden: No tool emulation.
+          - Domain: D.RELAY.STANDARD_HOST; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/standard/tools.py:1-52.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **FILES**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.SDK.TOOLS.FILES`: Authorize cwd and each target inside cwd, keep existing files in authored input order and skip absent/nonfile candidates.
+          - Preconditions: Tool target list supplied
+          - Observable: Ordered authorized existing file list.
+          - Forbidden: No target outside cwd or unauthorized root.
+          - Domain: D.RELAY.STANDARD_HOST; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/standard/tools.py:1-52.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **constant**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.REFERENCE.CONSTANT`: Return Ref carrying a CONSTANT ValueSource and the supplied schema.
+        - Preconditions: JSON value and optional schema
+        - Observable: Ref value/schema.
+        - Forbidden: Do not infer hidden runtime context.
+        - Domain: D.SDK.REFERENCE.CONSTANT; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/authoring/references.py:16-17.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **external**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.REFERENCE.EXTERNAL`: Return Ref carrying an EXTERNAL_REFERENCE source and object schema.
+        - Preconditions: ArtifactRef supplied
+        - Observable: Ref preserving reference.
+        - Forbidden: Do not fetch referenced bytes.
+        - Domain: D.SDK.REFERENCE.EXTERNAL; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/authoring/references.py:20-21.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **serve_stdio**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.SERVE_STDIO`: Read and emit published framed requests/events/results with observed session/lifecycle validation; accept/reject controls in receive order, active invokes are tasks; cancel delegates and emits requested CANCELLED when helper interrupts; EOF awaits/validates completion, finally cancels remaining tasks.
+        - Preconditions: Trusted SDK Provider is served on stdio under supported helper constraints
+        - Observable: Framed standard binding exchange or propagated helper/protocol failure.
+        - Forbidden: No discovery/pooling/replay/physical deadline or budget enforcement promised; logs cannot enter stdout framing; failure is not a fabricated VCP FAIL.
+        - Domain: D.SDK.PROVIDER_SERVER; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/relay/adapters/server.py:25-125.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+  - **Records**: 6 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **Acceptance**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.STORE.VALIDATE`: Parse RunRecord before storage and return
+        - Preconditions: Occurrence finishes
+        - Observable: Parse RunRecord before storage and return; Do not persist/return contradictory record as valid
+        - Forbidden: Do not persist/return contradictory record as valid
+        - Domain: D.RELAY.STORAGE_OBSERVATION; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/architecture.md:85-89.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Annotations**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.ANNOTATION.SCOPE`: Optional unauthenticated annotation supplements normative ProviderBinding
+        - Preconditions: Invocation correlation metadata retained
+        - Observable: Optional unauthenticated annotation supplements normative ProviderBinding; No replacement of graph binding or VCP authentication/replay promise
+        - Forbidden: No replacement of graph binding or VCP authentication/replay promise
+        - Domain: D.RELAY.STORAGE_OBSERVATION; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/architecture.md:85-89.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Default stores**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.STORE.DUPLICATE`: Reject duplicate identity with ValueError and preserve existing snapshot. JsonlStore loads every existing line at construction and propagates malformed/duplicate/I/O errors; get returns new parsed snapshot or None.
+        - Preconditions: Default MemoryStore or JsonlStore receives a RunRecord whose run_id is already retained
+        - Observable: Stored snapshot/get/None or propagated store error.
+        - Forbidden: No silent overwrite, deep mutable history rewriting, fsync/transaction/multiprocess guarantee.
+        - Domain: D.RELAY.STORAGE_OBSERVATION; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: src/openverify/relay/adapters/memory.py:8-21.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Stores**: 3 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.STORE.COPY`: Snapshot both directions
+        - Preconditions: Memory/JSONL store writes or retrieves
+        - Observable: Snapshot both directions; Caller mutation must not alter retained record
+        - Forbidden: Caller mutation must not alter retained record
+        - Domain: D.RELAY.STORAGE_OBSERVATION; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/integration.md:113-119.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.RELAY.STORE.ERROR`: Propagate to host
+        - Preconditions: Store operation fails
+        - Observable: Propagate to host; Do not claim persistence success
+        - Forbidden: Do not claim persistence success
+        - Domain: D.RELAY.STORAGE_OBSERVATION; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/integration.md:113-119.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.RELAY.STORE.SCOPE`: Memory volatile; JSONL single-process nontransactional append/reload
+        - Preconditions: Host chooses supplied store
+        - Observable: Memory volatile; JSONL single-process nontransactional append/reload; No fsync/multiprocess/durable recovery promise
+        - Forbidden: No fsync/multiprocess/durable recovery promise
+        - Domain: D.RELAY.STORAGE_OBSERVATION; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/limitations.md:7-40.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+  - **Scheduler**: 5 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **Acceptance**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.SCHED.ORDER`: Accept records in definition order within wave
+        - Preconditions: Wave tasks finish in arbitrary order
+        - Observable: Accept records in definition order within wave; Completion order must not change Control semantics
+        - Forbidden: Completion order must not change Control semantics
+        - Domain: D.RELAY.SCHEDULER; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/architecture.md:64-70.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Barriers**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.SCHED.CONTROL`: Serial barrier without concurrently affected wave peers
+        - Preconditions: Control is ready
+        - Observable: Serial barrier without concurrently affected wave peers; Do not race STOP/ROUTE/RETRY/DEFER with active independent work
+        - Forbidden: Do not race STOP/ROUTE/RETRY/DEFER with active independent work
+        - Domain: D.RELAY.SCHEDULER; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/architecture.md:64-70.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Concurrent runs**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.SCHED.ISOLATION`: Keep states/inputs/records/cancellation occurrence-local
+        - Preconditions: Relay serves concurrent runs on one event loop
+        - Observable: Keep states/inputs/records/cancellation occurrence-local; Do not share mutable run state
+        - Forbidden: Do not share mutable run state
+        - Domain: D.RELAY.SCHEDULER; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/architecture.md:72-76.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Waves**: 2 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **BARRIER**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.RELAY.SCHED.WAVE.BARRIER`: Wait for every wave member before starting successors.
+          - Preconditions: At least one wave member still unsettled
+          - Observable: Whole-wave completion precedes successor invocation.
+          - Forbidden: No early consumer start after only one producer settles.
+          - Domain: D.RELAY.SCHEDULER; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/architecture.md:64-70.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **MEMBERSHIP**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.RELAY.SCHED.WAVE.MEMBERSHIP`: Select a ready wave bounded by configured max_concurrency.
+          - Preconditions: Ready independent non-Control nodes eligible
+          - Observable: Wave consists only of currently eligible non-Control nodes.
+          - Forbidden: No unready node or Control peer in parallel wave.
+          - Domain: D.RELAY.SCHEDULER; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/architecture.md:64-70.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+  - **Standard providers**: 42 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **Action policy**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.ACTION.PREFIX`: Only descendants of valid relative prefixes pass; tmp and tmp/ equivalent; prefix itself, siblings, absolute/traversal/ambiguous paths fail
+        - Preconditions: Action policy authorizes delete target
+        - Observable: Only descendants of valid relative prefixes pass; tmp and tmp/ equivalent; prefix itself, siblings, absolute/traversal/ambiguous paths fail
+        - Forbidden: Do not grant filesystem access or authenticate a later resolved target
+        - Domain: D.STANDARD.ACTION_POLICY; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/providers.md:72-91.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Coordinates**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.SCOPE.RANGES`: Half-open end coordinates; zero-length ranges intersect nothing; return original finding file strings/coordinates
+        - Preconditions: Scope compares source ranges
+        - Observable: Half-open end coordinates; zero-length ranges intersect nothing; return original finding file strings/coordinates
+        - Forbidden: Do not mutate reported coordinates via lexical normalization
+        - Domain: D.STANDARD.SCOPE; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/providers.md:112-118.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Default catalog**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.STANDARD.CATALOG`: Create 17 standard providers: text; json_parse/schema; read_text/read_file/select_files; scope/no_findings; git_scope/candidate_unchanged; action_policy/gate; command_check; ruff; pytest; astgrep; aggregate. Register concurrency_safe=True; roots default construction cwd, supplied Tools.access takes precedence.
+        - Preconditions: Host constructs standard_catalog with optional roots/Tools
+        - Observable: Trusted Catalog with exact version1 standard capabilities.
+        - Forbidden: No generic command launcher or unbundled external engine automatically registered.
+        - Domain: D.RELAY.STANDARD_HOST; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: src/openverify/standard/__init__.py:21-65.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **FileAccess**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.SECURITY.FILES`: Authorize resolved roots/cwd, reject escaping symlinks and enforce read/selection bounds
+        - Preconditions: Filesystem provider reads/selects
+        - Observable: Authorize resolved roots/cwd, reject escaping symlinks and enforce read/selection bounds; No graph-granted access or atomic hostile-race sandbox
+        - Forbidden: No graph-granted access or atomic hostile-race sandbox
+        - Domain: D.STANDARD.READ_FILE; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/security.md:18-25.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Git**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.SECURITY.FRESHNESS`: Compare observed worktree/HEAD/content identities later
+        - Preconditions: Candidate freshness checked
+        - Observable: Compare observed worktree/HEAD/content identities later; No atomic snapshot or guaranteed change/revert detection
+        - Forbidden: No atomic snapshot or guaranteed change/revert detection
+        - Domain: D.STANDARD.CANDIDATE_UNCHANGED; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/security.md:60-66.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Git scope**: 2 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.GIT.CHANGES`: Untracked gets whole-file new ranges; renames retain old/new identities; deletions reported separately/excluded from executable file scope
+        - Preconditions: git_scope observes changes
+        - Observable: Untracked gets whole-file new ranges; renames retain old/new identities; deletions reported separately/excluded from executable file scope
+        - Forbidden: Do not assign new-file lines to zero-count deletions
+        - Domain: D.STANDARD.GIT_SCOPE; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/providers.md:129-136.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.RELAY.GIT.MODES`: WORKTREE compares base to tracked worktree; STAGED base to index; UNSTAGED index to worktree with empty base; include_untracked explicit
+        - Preconditions: git_scope is configured
+        - Observable: WORKTREE compares base to tracked worktree; STAGED base to index; UNSTAGED index to worktree with empty base; include_untracked explicit
+        - Forbidden: Do not claim tools checked index bytes merely from STAGED scope
+        - Domain: D.STANDARD.GIT_SCOPE; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/providers.md:129-136.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Scope paths**: 2 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.SCOPE.INVALID`: Empty file list selects nothing; empty directory, NUL, traversal, ambiguous Windows paths/reserved paths reject; dot explicitly selects cwd
+        - Preconditions: Scope provider validates selection
+        - Observable: Empty file list selects nothing; empty directory, NUL, traversal, ambiguous Windows paths/reserved paths reject; dot explicitly selects cwd
+        - Forbidden: Do not broaden invalid input into unrestricted selection
+        - Domain: D.STANDARD.SCOPE; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/providers.md:112-118.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.RELAY.SCOPE.PATH`: Platform-native component/case rules; relative paths use cwd; trailing separator preserves directory membership; POSIX backslash literal
+        - Preconditions: Scope provider compares paths
+        - Observable: Platform-native component/case rules; relative paths use cwd; trailing separator preserves directory membership; POSIX backslash literal
+        - Forbidden: Do not use string prefix matching that includes selected-other or require files to exist
+        - Domain: D.STANDARD.SCOPE; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/providers.md:102-110.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Text**: 4 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **LINECOL**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.RELAY.TEXT.COORDINATES.LINECOL`: Lines and columns are one-based.
+          - Preconditions: Text finding has line/column coordinates
+          - Observable: Line counts newlines before offset; column is offset since preceding newline plus one.
+          - Forbidden: Do not expose zero-based tool coordinates directly.
+          - Domain: D.STANDARD.TEXT; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/providers.md:93-98.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **OFFSETS**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.RELAY.TEXT.COORDINATES.OFFSETS`: Offsets are zero-based Unicode character indexes with exclusive end.
+          - Preconditions: Text finding has start/end offsets
+          - Observable: Exact character range identifies the literal occurrence.
+          - Forbidden: Do not count UTF8 bytes.
+          - Domain: D.STANDARD.TEXT; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/providers.md:93-98.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **TERMS**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.RELAY.TEXT.COORDINATES.TERMS`: Concatenate declared bound terms and configured terms in their respective order.
+          - Preconditions: Text input and config terms supplied
+          - Observable: Both sets participate in literal checks.
+          - Forbidden: Config cannot replace bound terms.
+          - Domain: D.STANDARD.TEXT; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/providers.md:93-98.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.RELAY.SECURITY.TEXT`: Bounded regex worker and capped findings
+        - Preconditions: Regex/literal capability executes
+        - Observable: Bounded regex worker and capped findings; Deterministic text properties are not factual truth
+        - Forbidden: Deterministic text properties are not factual truth
+        - Domain: D.STANDARD.TEXT; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/security.md:52-58.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Tool selection**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.STANDARD.TOOLS_DISCOVERY`: Find tools in active Python scripts directory then PATH unless host Tools specifies executable paths; Git separately installed; missing tool is actionable execution ERROR.
+        - Preconditions: Trusted standard catalog locates installed tools
+        - Observable: Chosen executable or execution ERROR.
+        - Forbidden: Do not emulate missing tools, change tool-selection order or infer tool success from installation.
+        - Domain: D.RELAY.STANDARD_HOST; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/providers.md:138-144.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Tools**: 3 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.TOOL.AST`: Actual installed ast-grep patterns/authorized rule files; whole-file findings and half-open range intersection
+        - Preconditions: astgrep capability executes
+        - Observable: Actual installed ast-grep patterns/authorized rule files; whole-file findings and half-open range intersection
+        - Forbidden: Do not substitute a custom parser or line-only overlap for full AST ranges
+        - Domain: D.STANDARD.ASTGREP; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/providers.md:138-144.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.RELAY.TOOL.PYTEST`: Run actual configured tests/plugins with process privileges; default full scope; exit 1 FAIL and exits 2-5 ERROR
+        - Preconditions: pytest capability executes
+        - Observable: Run actual configured tests/plugins with process privileges; default full scope; exit 1 FAIL and exits 2-5 ERROR
+        - Forbidden: Do not claim Python execution is sandboxed
+        - Domain: D.STANDARD.PYTEST; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/providers.md:138-144.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.RELAY.TOOL.RUFF`: Use actual isolated tool and explicit diagnostic codes; lint exit 1 means FAIL
+        - Preconditions: Ruff capability executes
+        - Observable: Use actual isolated tool and explicit diagnostic codes; lint exit 1 means FAIL
+        - Forbidden: Do not execute repository Ruff config implicitly or replace execution error with FAIL
+        - Domain: D.STANDARD.RUFF; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/providers.md:138-144.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **action_policy**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.STANDARD.ACTION_POLICY`: Only delete with a nonempty relative target strictly below a valid relative directory prefix passes. Invalid supplied prefix, traversal, absolute/ambiguous path or a prefix itself fails closed.
+        - Preconditions: Exact version 1 standard capability with validated input/config and trusted host resources.
+        - Observable: result:Result; valid FAIL remains an ordinary completed verification operation.
+        - Forbidden: Do not substitute a different mechanism, silently broaden scope or turn execution failure into a verification FAIL.
+        - Domain: D.STANDARD.ACTION_POLICY; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: src/openverify/standard/control.py:1-53.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **aggregate**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.STANDARD.AGGREGATE`: Use explicit ordered members and the declared standard VCP reducer laws. Member values remain tied to names when filtering/weighting.
+        - Preconditions: Exact version 1 standard capability with validated input/config and trusted host resources.
+        - Observable: result:Result; valid FAIL remains an ordinary completed verification operation.
+        - Forbidden: Do not substitute a different mechanism, silently broaden scope or turn execution failure into a verification FAIL.
+        - Domain: D.STANDARD.AGGREGATE; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: src/openverify/standard/__init__.py:1-68.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **astgrep**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.STANDARD.ASTGREP`: Run actual ast-grep pattern or authorized rule file on selected whole files; normalize zero-based tool coordinates to one-based half-open findings. Invalid option combination/tool failure is ERROR.
+        - Preconditions: Exact version 1 standard capability with validated input/config and trusted host resources.
+        - Observable: findings:array; valid FAIL remains an ordinary completed verification operation.
+        - Forbidden: Do not substitute a different mechanism, silently broaden scope or turn execution failure into a verification FAIL.
+        - Domain: D.STANDARD.ASTGREP; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: src/openverify/standard/astgrep.py:15-75.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **candidate_unchanged**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.STANDARD.CANDIDATE_UNCHANGED`: Recheck supplied worktree identity, file content identities, HEAD, compared diff and untracked scope. Changed checked state yields stale_candidate; mismatched cwd yields candidate_worktree_mismatch.
+        - Preconditions: Exact version 1 standard capability with validated input/config and trusted host resources.
+        - Observable: result:Result; valid FAIL remains an ordinary completed verification operation.
+        - Forbidden: Do not substitute a different mechanism, silently broaden scope or turn execution failure into a verification FAIL.
+        - Domain: D.STANDARD.CANDIDATE_UNCHANGED; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: src/openverify/standard/git.py:1-210.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **command**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.STANDARD.COMMAND`: Run only the host-authored command, bounded by timeout/output limits, and return its observation without deriving a verification verdict.
+        - Preconditions: Exact version 1 standard capability with validated input/config and trusted host resources.
+        - Observable: observation:{argv,cwd,returncode,stdout,stderr}; valid FAIL remains an ordinary completed verification operation.
+        - Forbidden: Do not substitute a different mechanism, silently broaden scope or turn execution failure into a verification FAIL.
+        - Domain: D.STANDARD.COMMAND; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: src/openverify/standard/command.py:25-44.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **command_check**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.STANDARD.COMMAND_CHECK`: Compare exact return code and optional required substrings. Produce unexpected_exit/output_missing findings for mismatches, preserving the checked observation.
+        - Preconditions: Exact version 1 standard capability with validated input/config and trusted host resources.
+        - Observable: result:Result; valid FAIL remains an ordinary completed verification operation.
+        - Forbidden: Do not substitute a different mechanism, silently broaden scope or turn execution failure into a verification FAIL.
+        - Domain: D.STANDARD.COMMAND_CHECK; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: src/openverify/standard/command.py:1-86.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **gate**: 2 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.STANDARD.GATE`: Parse checked as a Result, then CONTINUE only for EXECUTED/SUCCESS/APPLICABLE/KNOWN/PASS; every other valid Result yields STOP_FAILURE.
+        - Preconditions: Exact version 1 standard capability with validated input/config and trusted host resources.
+        - Observable: decision:Decision; valid FAIL remains an ordinary completed verification operation.
+        - Forbidden: Do not substitute a different mechanism, silently broaden scope or turn execution failure into a verification FAIL.
+        - Domain: D.STANDARD.GATE; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: src/openverify/standard/control.py:1-53.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.RELAY.STANDARD.GATE.INVALID`: Reject operation input; do not produce an ordinary denial Decision.
+        - Preconditions: checked object violates VCP Result semantics
+        - Observable: Provider ERROR.
+        - Forbidden: Do not coerce invalid Result into STOP_FAILURE.
+        - Domain: D.STANDARD.GATE; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: src/openverify/standard/control.py:1-53.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **git_scope**: 3 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.STANDARD.GIT.DELETE`: Keep deletion identities separate; zero-count hunk contains no new-file lines.
+        - Preconditions: A deleted path or zero-count new-file hunk
+        - Observable: deleted_files, changed_files, changed_hunks.
+        - Forbidden: Do not invoke tools on deleted paths through executable scopes.
+        - Domain: D.STANDARD.GIT_SCOPE; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: src/openverify/standard/git.py:1-210.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.RELAY.STANDARD.GIT.FRESHNESS`: Reject the detected inconsistent capture.
+        - Preconditions: Workspace changes during a scope capture and mismatch is observed
+        - Observable: Execution ERROR or coherent observed candidate.
+        - Forbidden: Do not promise atomic filesystem snapshot or detect change-and-revert.
+        - Domain: D.STANDARD.GIT_SCOPE; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: src/openverify/standard/git.py:1-210.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.RELAY.STANDARD.GIT_SCOPE`: WORKTREE compares base to worktree, STAGED base to index, UNSTAGED index to worktree with empty base. Preserve rename identities, separate deletions, include explicit untracked policy and reject detected changes during capture.
+        - Preconditions: Exact version 1 standard capability with validated input/config and trusted host resources.
+        - Observable: changed_files,changed_hunks,diff,candidate,changes,deleted_files; valid FAIL remains an ordinary completed verification operation.
+        - Forbidden: Do not substitute a different mechanism, silently broaden scope or turn execution failure into a verification FAIL.
+        - Domain: D.STANDARD.GIT_SCOPE; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: src/openverify/standard/git.py:1-210.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **json_parse**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.STANDARD.JSON_PARSE`: Parse strict JSON, rejecting duplicate keys, malformed text and nonfinite tokens. Preserve parsed JSON type/value.
+        - Preconditions: Exact version 1 standard capability with validated input/config and trusted host resources.
+        - Observable: value:any JSON; valid FAIL remains an ordinary completed verification operation.
+        - Forbidden: Do not substitute a different mechanism, silently broaden scope or turn execution failure into a verification FAIL.
+        - Domain: D.STANDARD.JSON_PARSE; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: src/openverify/standard/structured.py:1-37.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **no_findings**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.STANDARD.NO_FINDINGS`: PASS iff the supplied findings list is empty; otherwise FAIL retaining structured finding evidence.
+        - Preconditions: Exact version 1 standard capability with validated input/config and trusted host resources.
+        - Observable: result:Result; valid FAIL remains an ordinary completed verification operation.
+        - Forbidden: Do not substitute a different mechanism, silently broaden scope or turn execution failure into a verification FAIL.
+        - Domain: D.STANDARD.NO_FINDINGS; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: src/openverify/standard/scope.py:1-105.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **pytest**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.STANDARD.PYTEST`: Run real pytest with supplied selectors; no selectors means full scope. Exit 0 passes, 1 fails, 2 through 5 are execution ERROR; Python/plugins execute with host privileges.
+        - Preconditions: Exact version 1 standard capability with validated input/config and trusted host resources.
+        - Observable: result:Result; valid FAIL remains an ordinary completed verification operation.
+        - Forbidden: Do not substitute a different mechanism, silently broaden scope or turn execution failure into a verification FAIL.
+        - Domain: D.STANDARD.PYTEST; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: src/openverify/standard/pytest.py:11-44.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **read_file**: 2 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.STANDARD.FILES.IDENTITY`: sha256 and size describe precisely the same byte snapshot returned through base64.
+        - Preconditions: Bytes successfully read
+        - Observable: identity.size and sha256.
+        - Forbidden: Do not hash a second changing read.
+        - Domain: D.STANDARD.READ_FILE; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: src/openverify/standard/filesystem.py:1-124.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.RELAY.STANDARD.READ_FILE`: Read bounded authorized bytes; base64 encodes those bytes, sha256 and size describe the same bytes.
+        - Preconditions: Exact version 1 standard capability with validated input/config and trusted host resources.
+        - Observable: base64:string; identity:{path,sha256,size}; valid FAIL remains an ordinary completed verification operation.
+        - Forbidden: Do not substitute a different mechanism, silently broaden scope or turn execution failure into a verification FAIL.
+        - Domain: D.STANDARD.READ_FILE; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: src/openverify/standard/filesystem.py:1-124.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **read_text**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.STANDARD.READ_TEXT`: Read bounded authorized bytes, reject NUL/binary and invalid UTF-8, return decoded text and identity over the exact read bytes.
+        - Preconditions: Exact version 1 standard capability with validated input/config and trusted host resources.
+        - Observable: text:string; identity:{path,sha256,size}; valid FAIL remains an ordinary completed verification operation.
+        - Forbidden: Do not substitute a different mechanism, silently broaden scope or turn execution failure into a verification FAIL.
+        - Domain: D.STANDARD.READ_TEXT; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: src/openverify/standard/filesystem.py:1-124.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **ruff**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.STANDARD.RUFF`: Run installed Ruff isolated with explicit select codes on authorized Python files; report normalized actual diagnostics. Empty scope passes without process invocation; tool failures are ERROR.
+        - Preconditions: Exact version 1 standard capability with validated input/config and trusted host resources.
+        - Observable: findings:array; result:Result; valid FAIL remains an ordinary completed verification operation.
+        - Forbidden: Do not substitute a different mechanism, silently broaden scope or turn execution failure into a verification FAIL.
+        - Domain: D.STANDARD.RUFF; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: src/openverify/standard/ruff.py:15-86.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **schema**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.STANDARD.SCHEMA`: Validate the configured self-contained schema, then check supplied value offline. A valid-schema instance mismatch is a schema_mismatch finding, not an execution failure.
+        - Preconditions: Exact version 1 standard capability with validated input/config and trusted host resources.
+        - Observable: result:Result; valid FAIL remains an ordinary completed verification operation.
+        - Forbidden: Do not substitute a different mechanism, silently broaden scope or turn execution failure into a verification FAIL.
+        - Domain: D.STANDARD.SCHEMA; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: src/openverify/standard/structured.py:1-37.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **scope**: 4 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.STANDARD.SCOPE`: Filter supplied findings in their original order using normalized local file identity or half-open ranges. Preserve original finding strings and coordinates.
+        - Preconditions: Exact version 1 standard capability with validated input/config and trusted host resources.
+        - Observable: findings:array; valid FAIL remains an ordinary completed verification operation.
+        - Forbidden: Do not substitute a different mechanism, silently broaden scope or turn execution failure into a verification FAIL.
+        - Domain: D.STANDARD.SCOPE; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: src/openverify/standard/scope.py:1-105.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.RELAY.STANDARD.SCOPE.EMPTY`: Return no selected findings.
+        - Preconditions: Mode files/changed_files and empty files
+        - Observable: Empty list.
+        - Forbidden: Do not treat empty as unrestricted.
+        - Domain: D.STANDARD.SCOPE; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: src/openverify/standard/scope.py:1-105.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.RELAY.STANDARD.SCOPE.LEXICAL`: Compare lexical platform-normalized components without reading files or resolving symlinks.
+        - Preconditions: Paths used only for finding comparison
+        - Observable: Finding selection.
+        - Forbidden: Do not require missing/deleted paths to exist.
+        - Domain: D.STANDARD.SCOPE; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: src/openverify/standard/scope.py:1-105.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.RELAY.STANDARD.SCOPE.ORDER`: Return selected values in original input order with original file strings and coordinates.
+        - Preconditions: Input findings selected by predicate
+        - Observable: Exact returned subsequence.
+        - Forbidden: Do not sort/rewrite findings.
+        - Domain: D.STANDARD.SCOPE; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: src/openverify/standard/scope.py:1-105.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **select_files**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.STANDARD.SELECT_FILES`: Authorize selected files within host roots; choose explicit files, supplied/default glob or recursive directory traversal; return sorted paths bounded by file limit.
+        - Preconditions: Exact version 1 standard capability with validated input/config and trusted host resources.
+        - Observable: files:array; valid FAIL remains an ordinary completed verification operation.
+        - Forbidden: Do not substitute a different mechanism, silently broaden scope or turn execution failure into a verification FAIL.
+        - Domain: D.STANDARD.SELECT_FILES; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: src/openverify/standard/filesystem.py:1-124.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **text**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.RELAY.STANDARD.TEXT`: Combine bound and configured terms. Missing required literals, present prohibited literals and unmatched required regex produce structured findings; PASS iff no findings.
+        - Preconditions: Exact version 1 standard capability with validated input/config and trusted host resources.
+        - Observable: result:Result; valid FAIL remains an ordinary completed verification operation.
+        - Forbidden: Do not substitute a different mechanism, silently broaden scope or turn execution failure into a verification FAIL.
+        - Domain: D.STANDARD.TEXT; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: src/openverify/standard/text.py:72-84.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+  - **Transport**: 4 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **Processes**: 2 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **LAUNCH**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.RELAY.PROCESS.CLEANUP.LAUNCH`: Use argv array and absolute cwd, without shell.
+          - Preconditions: Host-authorized external process starts
+          - Observable: Host-selected process execution.
+          - Forbidden: No graph-derived executable authorization or command-string shell interpretation.
+          - Domain: D.RELAY.PROCESS; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/security.md:27-33.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **TEARDOWN**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.RELAY.PROCESS.CLEANUP.TEARDOWN`: Clean up process tree using supported platform lifecycle mechanism.
+          - Preconditions: Timeout, cancellation or process completion requires cleanup
+          - Observable: Process descendants terminated according to local supported cleanup contract.
+          - Forbidden: Do not claim hostile-code sandbox or isolation from process privileges.
+          - Domain: D.RELAY.PROCESS; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/security.md:27-33.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Stdio**: 2 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **FRESH**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.RELAY.STDIO.SESSION.FRESH`: Create a fresh initialized isolated session for that invocation.
+          - Preconditions: Registered stdio provider invoked
+          - Observable: Invocation-local session/process lifecycle.
+          - Forbidden: No pooling, restart, replay or remote discovery promised.
+          - Domain: D.RELAY.PROCESS; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/providers.md:43-50.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **MANIFEST**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.RELAY.STDIO.SESSION.MANIFEST`: Require manifest equality with trusted catalog snapshot.
+          - Preconditions: Stdio initialization returns manifest
+          - Observable: Reject mismatched returned manifest before work.
+          - Forbidden: No mid-session schema/identity substitution.
+          - Domain: D.RELAY.PROCESS; authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source: docs/relay/providers.md:43-50.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+- **SHARED**: 73 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+  - **JSON value and schema semantics**: 3 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **JSON_EQUALITY**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SHARED.JSON_EQUALITY`: JSON booleans and numbers are distinct; numbers compare by JSON numeric value; arrays are ordered; object member ordering does not alter object value. This same equality is used for reconstructed provenance snapshots.
+        - Preconditions: Evaluate a declared JSON/schema predicate in its applicator context.
+        - Observable: Type-aware and context-correct predicate evaluation
+        - Forbidden: Do not use Python True==1 or stringify values for identity.
+        - Domain: D.WIRE.JSON; authority: SHARED_JSON_OR_SCHEMA_SEMANTICS; source: provider-contract/spec/draft/capabilities.md:1-51.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **SCHEMA_APPLICATORS**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SHARED.SCHEMA_APPLICATORS`: Evaluate allOf conjunctively, anyOf existentially, oneOf with exactly one successful child, not by negation, and if solely as a branch selector; apply child properties/items/propertyNames only at their actual locations.
+        - Preconditions: Evaluate a declared JSON/schema predicate in its applicator context.
+        - Observable: Type-aware and context-correct predicate evaluation
+        - Forbidden: Do not turn branch constraints or annotations into unconditional root predicates.
+        - Domain: D.SCHEMA.EMBEDDED; authority: SHARED_JSON_OR_SCHEMA_SEMANTICS; source: provider-contract/schemas/draft/outcome.schema.json:1-92.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Schema evaluation**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **Nonlooping**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.SHARED.SCHEMA.EVALUATION.NONLOOPING`: Schema evaluation must not run into an infinite loop against an instance.
+          - Preconditions: A schema is evaluated against an instance, including a reference cycle.
+          - Observable: Evaluation terminates or is safely stopped; correctness of a chosen result/error is governed separately.
+          - Forbidden: Do not evaluate references/applicators indefinitely; do not invent a universal finite timeout or reject every syntactic cycle as a portable rule.
+          - Domain: D.SCHEMA.EMBEDDED; authority: SHARED_JSON_OR_SCHEMA_SEMANTICS; source: https://json-schema.org/draft/2020-12/json-schema-core#section-9.4.1.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+  - **Public SDK**: 70 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **Aggregation**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **Exact local configuration**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.SDK.AGGREGATE.CONFIGURATION`: Require exact config keys reducer/handling, plus weights only for WEIGHTED_AVERAGE or severity_domain only for WORST_SEVERITY. Handling keys exactly7 with REJECT/IGNORE. Ordered weights nonempty/nonnegative/positive and match provided count; severity domain parsed.
+          - Preconditions: Direct SDK aggregate configuration validator or local standard reducer validates config.
+          - Observable: AGGREGATE_CONFIG for local configuration rejection.
+          - Forbidden: Do not generalize this local exact key whitelist to arbitrary custom Aggregate config or every portable capability.
+          - Domain: D.AGG.CONFIGURATION; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/validation/__init__.py:368-400.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Cancellation**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.CANCELLATION.TOKEN`: Token starts without reason; cancel requires exact nonempty string and retains the first reason; repeated valid cancel does not replace it.
+        - Preconditions: Host constructs/cancels a cooperative token
+        - Observable: Stable first explicit reason or ValueError for invalid reason.
+        - Forbidden: No provider Result inference, forced blocking-code preemption or ambient semantic input.
+        - Domain: D.SDK.CANCELLATION; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/lifecycle.py:74-84.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Extensions**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **Unsupported required meaning**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.SDK.EXTENSIONS.NONE`: No required extension capability implementations exist, so reject required extensions as EXTENSION_UNSUPPORTED.
+          - Preconditions: Reference SDK or Engine consumes a required VCP extension.
+          - Observable: Local unsupported-extension rejection.
+          - Forbidden: Do not imply every portable consumer must reject a supported required extension.
+          - Domain: D.EXT.REQUIRED_SUPPORT; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: spec/draft/extensions.md:11-13.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Frame codec**: 4 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **DECODE**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.SDK.PROVIDER.FRAME.DECODE`: Buffer partial frames and emit all complete coalesced JSON-object messages in order.
+          - Preconditions: Byte chunks fed to FrameDecoder
+          - Observable: Ordered decoded message list, remainder retained.
+          - Forbidden: No speculative resynchronization.
+          - Domain: D.PROVIDER.TRANSPORT; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/provider/stdio.py:25-109.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **ENCODE**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.SDK.PROVIDER.FRAME.ENCODE`: Encode UTF8 body and exact ASCII Content-Length header measured in bytes.
+          - Preconditions: JSON object frame authored
+          - Observable: One complete frame bytes.
+          - Forbidden: No newline delimiter or character-count length.
+          - Domain: D.PROVIDER.TRANSPORT; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/provider/stdio.py:25-109.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **FAILURE**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.SDK.PROVIDER.FRAME.FAILURE`: Failure poisons decoder; finish rejects failed or partial state.
+          - Preconditions: Framing/JSON fails or EOF declared
+          - Observable: ProviderContractError and closed decoding path.
+          - Forbidden: Do not resume parsing after failure or accept truncated EOF.
+          - Domain: D.PROVIDER.TRANSPORT; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/provider/stdio.py:25-109.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **LIMITS**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.SDK.PROVIDER.FRAME.LIMITS`: Require positive message/header limits; defaults 16MiB and8192 bytes.
+          - Preconditions: FrameDecoder configured
+          - Observable: ValueError on invalid limits.
+          - Forbidden: No zero/negative configured limit.
+          - Domain: D.PROVIDER.TRANSPORT; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/provider/stdio.py:25-109.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Integer normalization**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.MODEL.INTEGRAL_NORMALIZATION`: Normalize integral float notation to SDK int while retaining strict rejection of Boolean/string by typed model; fractional values remain noninteger and fail.
+        - Preconditions: SDK constructs SeverityLevel.rank or ProviderEvent.sequence from an integral finite float
+        - Observable: Local integer representation implementing JSON integer notation.
+        - Forbidden: No Boolean/numeric-string coercion or new portable integer semantics.
+        - Domain: D.SDK.MODEL; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/model/__init__.py:68-76.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **LifecycleValidator**: 7 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **ACCEPT**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.SDK.PROVIDER.LIFECYCLE.ACCEPT`: Validate exact capability/version/input/config/constraints before running; reserve attempt identity including rejected attempt.
+          - Preconditions: Observed invocation offered
+          - Observable: Accepted state or structured rejection, no capability execution by validator.
+          - Forbidden: No acceptance of invalid request or replay of rejected identity.
+          - Domain: D.SDK.PROVIDER_OBSERVER; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/provider/lifecycle.py:43-190.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **CANCEL**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.SDK.PROVIDER.LIFECYCLE.CANCEL`: Running supported request records cancellation; terminal request succeeds without mutation.
+          - Preconditions: Observed cancellation offered
+          - Observable: Requested state stays nonterminal.
+          - Forbidden: Unknown/rejected or unsupported running cancellation rejects.
+          - Domain: D.SDK.PROVIDER_OBSERVER; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/provider/lifecycle.py:43-190.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **EVENT**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.SDK.PROVIDER.LIFECYCLE.EVENT`: Validate correlation, feature eligibility, payload and increasing per-attempt sequence.
+          - Preconditions: Observed event offered
+          - Observable: Accepted event advances sequence history only.
+          - Forbidden: No unknown, duplicate, reordered or after-terminal event.
+          - Domain: D.SDK.PROVIDER_OBSERVER; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/provider/lifecycle.py:43-190.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **FINISH**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.SDK.PROVIDER.LIFECYCLE.FINISH`: Reject uninitialized session or unfinished accepted attempts.
+          - Preconditions: Observed trace declared finished
+          - Observable: None on completed valid trace; structured error otherwise.
+          - Forbidden: No assumed terminal completion from silence.
+          - Domain: D.SDK.PROVIDER_OBSERVER; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/provider/lifecycle.py:43-190.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **INITIALIZE**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.SDK.PROVIDER.LIFECYCLE.INITIALIZE`: Validate offered lists, negotiate exact supported version and latch one successful initialization; failure closes session.
+          - Preconditions: Initialization attempted
+          - Observable: Structured ProviderContractError for illegal session operation.
+          - Forbidden: No repeated initialization or work before initialization.
+          - Domain: D.SDK.PROVIDER_OBSERVER; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/provider/lifecycle.py:43-190.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **MANIFEST**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.SDK.PROVIDER.LIFECYCLE.MANIFEST`: Snapshot and validate manifest for observed session.
+          - Preconditions: ProviderLifecycle constructed
+          - Observable: Session validates against retained exact manifest.
+          - Forbidden: Do not let caller mutation change validation authority.
+          - Domain: D.SDK.PROVIDER_OBSERVER; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/provider/lifecycle.py:43-190.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **OUTCOME**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.SDK.PROVIDER.LIFECYCLE.OUTCOME`: Check correlation, cancellation cause, clock/deadline, output and usage; latch terminal once.
+          - Preconditions: Observed terminal outcome offered
+          - Observable: One accepted terminal state.
+          - Forbidden: No unsolicited CANCELLED, premature deadline, late nondeadline outcome or duplicate terminal.
+          - Domain: D.SDK.PROVIDER_OBSERVER; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/provider/lifecycle.py:43-190.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Portable harness helpers**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.CONFORMANCE.HARNESS`: VCP check_manifest parses each documented object case and compares actual structured code with declared expected code, returning mismatched case IDs; Provider additionally dispatches documented lifecycle/session/framing forms, including EOF completion.
+        - Preconditions: Host explicitly supplies portable manifest directory/case
+        - Observable: Failure-ID list/None case check or propagated malformed-harness/I/O error.
+        - Forbidden: No fixture corpus determines semantics, messages not compared, no implicit provider execution or mutation of expected files.
+        - Domain: D.SDK.CONFORMANCE_HARNESS; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/provider/conformance.py:1-67.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **ProtocolError.as_dict**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.ERROR.ASDICT`: Return code,message,path,details preserving string code and diagnostic fields.
+        - Preconditions: ProtocolError instance
+        - Observable: Four-key mapping.
+        - Forbidden: Do not classify from diagnostic wording.
+        - Domain: D.SDK.ERROR.ASDICT; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/errors.py:26-32.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Provider Protocol**: 3 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **cancel**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.SDK.PROVIDER.INTERFACE.CANCEL`: cancel(invocation_id,reason) is an async None-returning control method, with Provider Contract state/feature/cause semantics.
+          - Preconditions: Caller routes cooperative cancellation concurrently with invocation as supported.
+          - Observable: Cancellation acknowledgement and final operation outcome remain separate.
+          - Forbidden: Return is not a terminal Outcome or guarantee physical interruption.
+          - Domain: D.SDK.PROVIDER_INTERFACE; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/provider/__init__.py:40-52.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **invoke**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.SDK.PROVIDER.INTERFACE.INVOKE`: invoke(invocation) asynchronously yields zero or more events followed by exactly one Outcome; before-acceptance exceptions reject, accepted failures yield ERROR.
+          - Preconditions: Caller supplies initialization and validates matched invocation boundaries.
+          - Observable: Actual stream conforms to Provider Contract under caller lifecycle/correlation checks.
+          - Forbidden: No missing/duplicate terminal or postterminal item; no VCP verdict inferred from lifecycle completion.
+          - Domain: D.SDK.PROVIDER_INTERFACE; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/provider/__init__.py:40-50.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **manifest**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.SDK.PROVIDER.INTERFACE.MANIFEST`: manifest() returns ProviderManifest describing its advertised identities/schemas/features.
+          - Preconditions: Host obtains an in-process Provider description.
+          - Observable: Caller validates manifest and supplies initialization/session handling.
+          - Forbidden: Do not infer automatic discovery, authentication or provider execution from description.
+          - Domain: D.SDK.PROVIDER_INTERFACE; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/provider/__init__.py:40-48.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **ProviderContractError.as_dict**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.PROVIDER.ERROR.ASDICT`: Return code,message,details without a VCP path field.
+        - Preconditions: ProviderContractError instance
+        - Observable: Three-key mapping.
+        - Forbidden: Do not collapse Provider and VCP vocabularies.
+        - Domain: D.SDK.PROVIDER.ERROR.ASDICT; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/provider/validation.py:63-64.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Reference Engine**: 5 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **FINALIZE**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.SDK.ENGINE.ATTEMPT.FINALIZE`: Apply cooperative cancellation and validate complete RunRecord before return.
+          - Preconditions: Attempt completes
+          - Observable: Validated complete occurrence record.
+          - Forbidden: No accepted output after observed cancellation; no incomplete record.
+          - Domain: D.SDK.ENGINE; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/engine/__init__.py:86-135.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **POLICIES**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.SDK.ENGINE.ATTEMPT.POLICIES`: Run ordered policies; return None on inactive/unselected, otherwise create occurrence after valid admission.
+          - Preconditions: Definition/input preflight succeeds
+          - Observable: None or complete RunRecord.
+          - Forbidden: No fabricated occurrence before admission.
+          - Domain: D.SDK.ENGINE; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/engine/__init__.py:86-135.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **SCHEDULER**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.SDK.ENGINE.ATTEMPT.SCHEDULER`: Execute sequentially in topological order, using definition order among ready nodes.
+          - Preconditions: Occurrence admission RUN
+          - Observable: Dependency-respecting terminal record order.
+          - Forbidden: No parallel execution promise for reference Engine.
+          - Domain: D.SDK.ENGINE; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/engine/__init__.py:86-135.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **SNAPSHOTS**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.SDK.ENGINE.ATTEMPT.SNAPSHOTS`: Snapshot definition, run inputs, ambient metadata and supplied bindings.
+          - Preconditions: Engine attempt begins
+          - Observable: Independent occurrence state.
+          - Forbidden: Caller mutation cannot alter retained authored occurrence stimulus.
+          - Domain: D.SDK.ENGINE; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/engine/__init__.py:86-135.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.SDK.ENGINE.RUN`: Engine.run returns its occurrence record; None from attempt becomes NO_OCCURRENCE.
+        - Preconditions: Same arguments as Engine.attempt
+        - Observable: RunRecord or ProtocolError(NO_OCCURRENCE).
+        - Forbidden: Do not invent an occurrence for inactive/unselected opportunities.
+        - Domain: D.SDK.ENGINE; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/engine/__init__.py:66-84.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Reference registry**: 2 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **IDENTITY**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.SDK.REGISTRY.REGISTER.IDENTITY`: Store adapter under exact capability_id/capability_version pair; replace existing same pair.
+          - Preconditions: Registry.register called
+          - Observable: Subsequent exact lookup sees most recently registered adapter.
+          - Forbidden: No version range or fallback.
+          - Domain: D.SDK.REGISTRY; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/adapters/__init__.py:14-28.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **ROLE_ALIASES**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.SDK.REGISTRY.REGISTER.ROLE_ALIASES`: Delegate to exact pair registration with default version1.
+          - Preconditions: Role-named registry convenience called
+          - Observable: Same stored adapter as explicit register call.
+          - Forbidden: No role-specific hidden operation semantics.
+          - Domain: D.SDK.REGISTRY; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/adapters/__init__.py:14-28.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Reference stores**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.LEGACY_STORE`: append validates and serializes snapshot; records returns newly parsed independent records in append order. JsonlStore uses UTF8 newline records; blank lines ignored on retrieval; I/O/validation errors propagate.
+        - Preconditions: Valid RunRecord supplied to legacy MemoryStore/JsonlStore
+        - Observable: Stored snapshot or propagated error.
+        - Forbidden: No mutable history rewriting, remote backend/durable/multiprocess/transaction promise.
+        - Domain: D.SDK.LEGACY_STORAGE; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/provenance/__init__.py:1-41.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **StdioSessionValidator**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.PROVIDER.SESSION`: Track unique RPC and attempt identities, one initialize/version verification, provisional invoke accept/reject, event-before-terminal and contract cancellation acknowledgement; finish requires no pending RPC or accepted attempts; malformed/correlation/closed-session errors reject.
+        - Preconditions: Observed declared JSON-RPC messages supplied in direction order
+        - Observable: Stateful None/ProviderContractError validation result.
+        - Forbidden: No process execution, network-clock claim or acceptance message added to protocol.
+        - Domain: D.SDK.PROVIDER_OBSERVER; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/provider/stdio.py:109-250.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **String normalization**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.JSON.NORMALIZE`: Accept exact JSON primitive/container types; normalize StrEnum values and string-subclass mapping keys using their underlying string rather than overridden display/equality. Reject other non-JSON value subclasses. Reuse unchanged containers, copy only changed containers and leave caller data untouched.
+        - Preconditions: SDK JSON normalization receives strings/StrEnum nested in lists or string-keyed mappings
+        - Observable: Plain-string JSON snapshot, caller preservation, rejection of invalid types.
+        - Forbidden: No numeric Enum/nonJSON admission, Boolean/number coercion or reserved-code impersonation.
+        - Domain: D.WIRE.JSON; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: docs/relay/error-contract-hardening.md:21-23.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Typed value construction**: 4 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **EXTRA**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.SDK.MODEL.CONSTRUCTION.EXTRA`: Forbid extra attributes.
+          - Preconditions: SDK object constructed with undeclared field
+          - Observable: Model validation failure.
+          - Forbidden: Do not retain unknown core attributes silently.
+          - Domain: D.SDK.MODEL; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/model/__init__.py:8-9.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **FROZEN**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.SDK.MODEL.CONSTRUCTION.FROZEN`: Forbid field reassignment; nested mutable containers remain mutable.
+          - Preconditions: SDK object already constructed
+          - Observable: Assignment failure, nested mutability requires caller snapshot boundaries.
+          - Forbidden: Do not claim recursive deep immutability.
+          - Domain: D.SDK.MODEL; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/model/__init__.py:8-9.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **SEMANTIC_BOUNDARY**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.SDK.MODEL.CONSTRUCTION.SEMANTIC_BOUNDARY`: Explicit parse/validate boundary still enforces root schemas and prose invariants.
+          - Preconditions: Typed model construction succeeds
+          - Observable: Constructed object may still fail explicit semantic validation.
+          - Forbidden: Typed construction alone is not complete contract acceptance.
+          - Domain: D.SDK.MODEL; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/model/__init__.py:8-9.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **TYPES**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.SDK.MODEL.CONSTRUCTION.TYPES`: Apply declared strict model field types and reject nonfinite model numbers.
+          - Preconditions: SDK object constructed
+          - Observable: Typed object or model validation error, not full portable semantic validation.
+          - Forbidden: No Boolean/string coercion into numeric semantic fields.
+          - Domain: D.SDK.MODEL; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/model/__init__.py:8-9.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Wire validation**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **Shipped timestamp format**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.SDK.WIRE.TIME_FORMAT`: Apply SDK registered date-time checker using explicit syntax and Python calendar validation, alongside root UTC suffix pattern. Embedded capability/port format remains annotation-only.
+          - Preconditions: Validate shipped VCP root containing date-time format fields.
+          - Observable: Invalid SDK timestamp field fails wire validation with PROTOCOL_STRUCTURE.
+          - Forbidden: Do not generalize shipped-root format assertion to embedded schemas or claim Python datetime precision/calendar limits are portable numeric canonicalization.
+          - Domain: D.SDK.VALIDATION; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/validation/__init__.py:96-130.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **check_schema**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.SCHEMA.CHECK`: Require Draft2020-12-valid Boolean/object schema and supported local schema-position references; unsupported dialect/nestedIDs/anchors/dynamic/external/invalid pointers reject SCHEMA_UNSUPPORTED; root ID allowed.
+        - Preconditions: Embedded schema supplied
+        - Observable: None or ProtocolError.
+        - Forbidden: No annotation target execution/network fetching or instance default insertion.
+        - Domain: D.SCHEMA.EMBEDDED; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/json_schema.py:62-127.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **fingerprint**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.FINGERPRINT`: Return local-sha256: followed by SHA256 hex of the SDK serialized UTF-8 bytes.
+        - Preconditions: VerificationDefinition supplied
+        - Observable: Opaque reference-only string.
+        - Forbidden: Do not infer authenticity or cross-language canonical identity.
+        - Domain: D.SDK.FINGERPRINT; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/fingerprint/__init__.py:9-11.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **flattened_status**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.FLATTEN`: Validate Result, then use the partial standard projection; undefined states raise SDK RESULT_PROJECTION.
+        - Preconditions: Result supplied
+        - Observable: String or ProtocolError.
+        - Forbidden: Do not add portable statuses for unprojectable states.
+        - Domain: D.RESULT.FLATTENED; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/inspection.py:56-68.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **inspect_definition**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.INSPECT`: Validate definition, then expose id/version/subject/criterion, topological node order, policy/run-input/port/binding data and declared upstream consumers including guards.
+        - Preconditions: Definition supplied
+        - Observable: Definition summary mapping.
+        - Forbidden: Do not inspect by executing providers.
+        - Domain: D.SDK.INSPECT; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/inspection.py:13-53.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **json_equal**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.JSON.EQUALITY`: Compare numbers numerically, Boolean separately; lists positionally; object key order immaterial.
+        - Preconditions: Validated parsed JSON values
+        - Observable: Boolean equality.
+        - Forbidden: Do not identify true and 1.
+        - Domain: D.SDK.JSON.EQUALITY; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/serialization/__init__.py:13-33.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **load_provider_schema**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.PROVIDER.SCHEMA.LOAD`: Return one of the nine packaged Provider schemas; unknown root raises PROTOCOL_VIOLATION.
+        - Preconditions: Requested Provider root name
+        - Observable: Schema mapping.
+        - Forbidden: Do not import remote schemas.
+        - Domain: D.SDK.PROVIDER.SCHEMA.LOAD; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/provider/validation.py:80-90.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **load_schema**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.SCHEMA.LOAD`: Return packaged named schema, including value-source; unknown root raises PROTOCOL_STRUCTURE.
+        - Preconditions: Requested root name string
+        - Observable: Schema mapping.
+        - Forbidden: Do not retrieve schemas from a network.
+        - Domain: D.SDK.SCHEMA.LOAD; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/validation/__init__.py:81-91.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **negotiate_contract_version**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.PROVIDER.NEGOTIATE`: SDK selects first list element present in provider list, then requires that element equal 0.1 or raises CONTRACT_VERSION_UNSUPPORTED.
+        - Preconditions: Ordered exact version string lists supplied
+        - Observable: 0.1 or ProviderContractError.
+        - Forbidden: No SemVer/coercion/fallback; portable mixed future-version interpretation remains separately reviewed rather than inferred from this local helper.
+        - Domain: D.SDK.PROVIDER_NEGOTIATION; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/provider/lifecycle.py:25-30.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **obvious_incompatible**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.SCHEMA.INCOMPATIBLE`: Return true for a false schema, disjoint explicit primitive types with integer/number overlap, or finite source const/enum with no target-accepted candidate; otherwise false means no established contradiction.
+        - Preconditions: Valid supported source and target schemas supplied
+        - Observable: Conservative compatibility Boolean.
+        - Forbidden: False is not a proof of arbitrary schema subsumption or actual value validity.
+        - Domain: D.SCHEMA.EMBEDDED; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/json_schema.py:130-156.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **parse_cancel_request**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.PROVIDER.PARSE_CANCEL_REQUEST`: Delegate to parse_provider_object for cancel-request; return its typed value after structure and local semantic validation.
+        - Preconditions: str/bytes/JSON value
+        - Observable: Typed value or ProviderContractError.
+        - Forbidden: Do not treat object parsing as a complete session/manifest-dependent lifecycle validation.
+        - Domain: D.SDK.PROVIDER.PARSE_CANCEL_REQUEST; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/provider/validation.py:347-348.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **parse_definition**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.PARSE.DEFINITION`: Decode strict JSON, validate the named shipped root and its prose semantics, return the typed verification-definition value.
+        - Preconditions: str/bytes/parsed JSON supplied
+        - Observable: Typed value or ProtocolError.
+        - Forbidden: Do not accept construction alone as full validation or execute providers.
+        - Domain: D.SDK.PARSE.DEFINITION; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/validation/__init__.py:168-169.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **parse_invocation**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.PROVIDER.PARSE_INVOCATION`: Delegate to parse_provider_object for invocation; return its typed value after structure and local semantic validation.
+        - Preconditions: str/bytes/JSON value
+        - Observable: Typed value or ProviderContractError.
+        - Forbidden: Do not treat object parsing as a complete session/manifest-dependent lifecycle validation.
+        - Domain: D.SDK.PROVIDER.PARSE_INVOCATION; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/provider/validation.py:335-336.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **parse_object**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.PARSE.OBJECT`: Decode strict JSON, validate named root, construct appropriate typed SDK object and apply prose semantic checks; value-source dispatches exact kind; unknown names PROTOCOL_STRUCTURE.
+        - Preconditions: Named wire root and str/bytes/parsed JSON supplied
+        - Observable: Typed value or exact applicable structural/semantic ProtocolError.
+        - Forbidden: No construction-only acceptance, provider execution or metadata-as-schema traversal.
+        - Domain: D.SDK.VALIDATION; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/validation/__init__.py:142-165.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **parse_outcome**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.PROVIDER.PARSE_OUTCOME`: Delegate to parse_provider_object for outcome; return its typed value after structure and local semantic validation.
+        - Preconditions: str/bytes/JSON value
+        - Observable: Typed value or ProviderContractError.
+        - Forbidden: Do not treat object parsing as a complete session/manifest-dependent lifecycle validation.
+        - Domain: D.SDK.PROVIDER.PARSE_OUTCOME; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/provider/validation.py:343-344.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **parse_provider_event**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.PROVIDER.PARSE_PROVIDER_EVENT`: Delegate to parse_provider_object for provider-event; return its typed value after structure and local semantic validation.
+        - Preconditions: str/bytes/JSON value
+        - Observable: Typed value or ProviderContractError.
+        - Forbidden: Do not treat object parsing as a complete session/manifest-dependent lifecycle validation.
+        - Domain: D.SDK.PROVIDER.PARSE_PROVIDER_EVENT; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/provider/validation.py:339-340.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **parse_provider_manifest**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.PROVIDER.PARSE_PROVIDER_MANIFEST`: Delegate to parse_provider_object for provider-manifest; return its typed value after structure and local semantic validation.
+        - Preconditions: str/bytes/JSON value
+        - Observable: Typed value or ProviderContractError.
+        - Forbidden: Do not treat object parsing as a complete session/manifest-dependent lifecycle validation.
+        - Domain: D.SDK.PROVIDER.PARSE_PROVIDER_MANIFEST; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/provider/validation.py:331-332.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **parse_provider_object**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.PROVIDER.PARSE_OBJECT`: Validate strict JSON/root/model/standalone semantics offline; unknown root PROTOCOL_VIOLATION, present wrong contract version CONTRACT_VERSION_UNSUPPORTED; malformed invocation INVALID_INVOCATION, malformed cancel/initialize request PROTOCOL_VIOLATION, other peer objects INVALID_PROVIDER_OUTPUT.
+        - Preconditions: Named Provider root and encoded/parsed JSON supplied
+        - Observable: Typed Provider value or ProviderContractError with diagnostic cause.
+        - Forbidden: No session/capability-dependent acceptance inferred from standalone parsing; preserve explicit null payloads.
+        - Domain: D.SDK.VALIDATION; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/provider/validation.py:146-201.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **parse_result**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.PARSE.RESULT`: Decode strict JSON, validate the named shipped root and its prose semantics, return the typed result value.
+        - Preconditions: str/bytes/parsed JSON supplied
+        - Observable: Typed value or ProtocolError.
+        - Forbidden: Do not accept construction alone as full validation or execute providers.
+        - Domain: D.SDK.PARSE.RESULT; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/validation/__init__.py:172-173.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **parse_run_record**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.PARSE.RECORD`: Decode strict JSON, validate the named shipped root and its prose semantics, return the typed run-record value.
+        - Preconditions: str/bytes/parsed JSON supplied
+        - Observable: Typed value or ProtocolError.
+        - Forbidden: Do not accept construction alone as full validation or execute providers.
+        - Domain: D.SDK.PARSE.RECORD; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/validation/__init__.py:176-177.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **serialize**: 2 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.PROVIDER.SERIALIZE`: Return compact ensure_ascii JSON of wire_data with nonfinite values prohibited.
+        - Preconditions: ProviderValue supplied
+        - Observable: String.
+        - Forbidden: Do not claim sorted keys or portable canonical bytes.
+        - Domain: D.SDK.PROVIDER.SERIALIZE; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/provider/validation.py:76-77.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.SDK.SERIALIZE.BYTES`: Return compact sorted-key ensure_ascii JSON with nonfinite output prohibited.
+        - Preconditions: SDK Value supplied
+        - Observable: String bytes determined by local serializer.
+        - Forbidden: Do not promise portable canonical bytes or signing.
+        - Domain: D.SDK.SERIALIZE.BYTES; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/serialization/__init__.py:68-71.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **to_data**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.SERIALIZE.DATA`: Recursively materialize wire fields; omit unsupplied empty metadata/extensions and optional null controls; retain explicitly set Result judgment/output and InputResolution value, including null.
+        - Preconditions: SDK Value supplied
+        - Observable: JSON-compatible wire snapshot.
+        - Forbidden: Do not erase explicitly emitted null payload or invent default annotations.
+        - Domain: D.SDK.SERIALIZE.DATA; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/serialization/__init__.py:36-55.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **validate_definition**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.VALIDATE.DEFINITION`: Validate by serializing to wire data and applying parse_definition; return None on success.
+        - Preconditions: Typed value supplied
+        - Observable: None or ProtocolError.
+        - Forbidden: Do not assume a typed model is semantically valid.
+        - Domain: D.SDK.VALIDATE.DEFINITION; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/validation/__init__.py:180-181.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **validate_invocation**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.PROVIDER.VALIDATE_INVOCATION`: Reparse wire_data through the corresponding object parser and return None on success.
+        - Preconditions: Typed Invocation
+        - Observable: None or ProviderContractError.
+        - Forbidden: Do not skip validation because a typed instance exists.
+        - Domain: D.SDK.PROVIDER.VALIDATE_INVOCATION; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/provider/validation.py:355-356.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **validate_lifecycle**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.PROVIDER.TRACE`: Require exactly manifest/initialize/steps/finish with typed action payload/optional clock, run observed validation steps, call finish only when true; return None for accepted complete trace or permitted unfinished prefix.
+        - Preconditions: Portable trace object supplied
+        - Observable: None or ProviderContractError.
+        - Forbidden: No RPC execution, missing deadline clock or fabricated finish terminal.
+        - Domain: D.SDK.PROVIDER_OBSERVER; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/provider/lifecycle.py:193-229.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **validate_outcome**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.PROVIDER.VALIDATE_OUTCOME`: Reparse wire_data through the corresponding object parser and return None on success.
+        - Preconditions: Typed Outcome
+        - Observable: None or ProviderContractError.
+        - Forbidden: Do not skip validation because a typed instance exists.
+        - Domain: D.SDK.PROVIDER.VALIDATE_OUTCOME; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/provider/validation.py:363-364.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **validate_payload**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.PROVIDER.PAYLOAD`: Validate offline Draft2020-12 instance; return None or ProviderContractError using caller code and cause/details.
+        - Preconditions: Supported checked capability schema and JSON value/caller code supplied
+        - Observable: None or caller-classified failure.
+        - Forbidden: No network/schema-default insertion, standalone payload validation does not initialize/invoke a provider.
+        - Domain: D.SDK.VALIDATION; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/provider/validation.py:322-328.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **validate_provider_event**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.PROVIDER.VALIDATE_PROVIDER_EVENT`: Reparse wire_data through the corresponding object parser and return None on success.
+        - Preconditions: Typed ProviderEvent
+        - Observable: None or ProviderContractError.
+        - Forbidden: Do not skip validation because a typed instance exists.
+        - Domain: D.SDK.PROVIDER.VALIDATE_PROVIDER_EVENT; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/provider/validation.py:359-360.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **validate_provider_manifest**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.PROVIDER.VALIDATE_PROVIDER_MANIFEST`: Reparse wire_data through the corresponding object parser and return None on success.
+        - Preconditions: Typed ProviderManifest
+        - Observable: None or ProviderContractError.
+        - Forbidden: Do not skip validation because a typed instance exists.
+        - Domain: D.SDK.PROVIDER.VALIDATE_PROVIDER_MANIFEST; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/provider/validation.py:351-352.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **validate_result**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.VALIDATE.RESULT`: Validate by serializing to wire data and applying parse_result; return None on success.
+        - Preconditions: Typed value supplied
+        - Observable: None or ProtocolError.
+        - Forbidden: Do not assume a typed model is semantically valid.
+        - Domain: D.SDK.VALIDATE.RESULT; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/validation/__init__.py:184-185.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **validate_run_inputs**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.RUN_INPUTS`: Reject unknown names/missing required/schema-invalid supplied values as RUN_INPUT; return a deep snapshot with declared explicit optional Constant defaults inserted, omitted optional ports absent.
+        - Preconditions: A validated Definition and supplied JSON object are provided
+        - Observable: Normalized mapping or ProtocolError before invocation.
+        - Forbidden: No schema-default insertion, caller mutation or null fallback; this helper does not independently validate the entire Definition.
+        - Domain: D.RUN_INPUT.NORMALIZATION; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/dataflow.py:322-334.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **validate_value**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.SCHEMA.VALUE`: Offline Draft2020-12 evaluation returns None on acceptance; validation/evaluation exception raises ProtocolError using caller code, default local DATAFLOW_VALUE, retaining cause/details.
+        - Preconditions: A checked supported schema and JSON instance are supplied
+        - Observable: None or caller-classified ProtocolError.
+        - Forbidden: Do not treat this default SDK diagnostic as portable VCP error; format annotations not enforced here.
+        - Domain: D.SDK.VALIDATION; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/json_schema.py:134-139.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **validate_wire**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.VALIDATE.WIRE`: Check strict JSON; wrong present protocol marker PROTOCOL_VERSION before root validation; schema failure PROTOCOL_STRUCTURE with escaped JSON Pointer path. Return None if structural check passes.
+        - Preconditions: Named VCP root and parsed JSON supplied
+        - Observable: None or ProtocolError with path.
+        - Forbidden: Do not imply full prose semantics from this structural helper.
+        - Domain: D.SDK.VALIDATION; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/validation/__init__.py:127-139.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **wire_data**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.SDK.PROVIDER.WIRE_DATA`: Use JSON model dump with exclude_unset=True, preserving explicitly supplied null and extension values.
+        - Preconditions: ProviderValue supplied
+        - Observable: JSON object.
+        - Forbidden: Do not erase explicit null output or invent unsupplied optional fields.
+        - Domain: D.SDK.PROVIDER.WIRE_DATA; authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source: src/openverify/provider/validation.py:71-73.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+- **VCP**: 266 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+  - **Aggregation**: 33 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **Evidence**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.AGG.EVIDENCE_ORDER`: Concatenate retained evidence in authored membership order
+        - Preconditions: Any standard reducer succeeds
+        - Observable: Stable evidence sequence
+        - Forbidden: Do not reorder evidence using commutativity of numeric/verdict calculation
+        - Domain: D.AGG.MEMBERSHIP; authority: NORMATIVE_VCP; source: spec/draft/aggregation.md:24-42.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Handling**: 3 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.AGG.IGNORE`: Exclude that member only; retain order and identities of others
+        - Preconditions: A member matches exceptional class handled IGNORE
+        - Observable: Reduction uses retained sequence
+        - Forbidden: Do not turn ignored members into scores/verdicts
+        - Domain: D.AGG.EXCEPTION_ACTION; authority: NORMATIVE_VCP; source: spec/draft/aggregation.md:11-17.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.AGG.MISSING`: Use MISSING handling
+        - Preconditions: A KNOWN member lacks reducer-required verdict/score/severity
+        - Observable: Configured missing-observation path
+        - Forbidden: Do not recategorize KNOWN without verdict as UNKNOWN
+        - Domain: D.AGG.EXCEPTION_ACTION; authority: NORMATIVE_VCP; source: spec/draft/aggregation.md:11-17.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.AGG.REJECT`: Reject reduction with AGGREGATE_INPUT and record ERROR
+        - Preconditions: A member matches an exceptional class handled REJECT
+        - Observable: Explicit aggregate failure
+        - Forbidden: Do not invent satisfaction value
+        - Domain: D.AGG.EXCEPTION_ACTION; authority: NORMATIVE_VCP; source: spec/draft/aggregation.md:11-17.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Logical reducers**: 5 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.AGG.ALL`: PASS iff every retained verdict is PASS
+        - Preconditions: ALL has retained binary verdicts
+        - Observable: Successful applicable KNOWN logical Result
+        - Forbidden: Do not return PASS when any retained verdict is FAIL
+        - Domain: D.AGG.LOGICAL; authority: NORMATIVE_VCP; source: spec/draft/aggregation.md:24-42.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.AGG.ANY`: PASS iff at least one retained verdict is PASS
+        - Preconditions: ANY has retained binary verdicts
+        - Observable: Successful applicable KNOWN logical Result
+        - Forbidden: Do not pass an all-FAIL retained sequence
+        - Domain: D.AGG.LOGICAL; authority: NORMATIVE_VCP; source: spec/draft/aggregation.md:24-42.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.AGG.MAJORITY.FAIL`: Return FAIL.
+        - Preconditions: Retained binary verdicts have more FAIL than PASS
+        - Observable: Successful applicable KNOWN Result.
+        - Forbidden: Do not choose PASS or a tie policy.
+        - Domain: D.AGG.LOGICAL; authority: NORMATIVE_VCP; source: spec/draft/aggregation.md:24-42.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.AGG.MAJORITY.PASS`: Return PASS.
+        - Preconditions: Retained binary verdicts have more PASS than FAIL
+        - Observable: Successful applicable KNOWN Result.
+        - Forbidden: Do not choose FAIL or a tie policy.
+        - Domain: D.AGG.LOGICAL; authority: NORMATIVE_VCP; source: spec/draft/aggregation.md:24-42.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.AGG.MAJORITY.TIE`: Reject reduction.
+        - Preconditions: Retained binary verdict counts tie
+        - Observable: Aggregate error.
+        - Forbidden: Do not invent deterministic or random tie break.
+        - Domain: D.AGG.LOGICAL; authority: NORMATIVE_VCP; source: spec/draft/aggregation.md:24-42.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Membership**: 8 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.AGG.MEMBERS.COMPLETE`: Include that binding in aggregate_inputs.
+        - Preconditions: An Aggregate input binds a RESULT-role output
+        - Observable: Reject incomplete structural membership.
+        - Forbidden: Do not silently omit declared Result binding.
+        - Domain: D.AGG.MEMBERSHIP; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:188-201.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.AGG.MEMBERS.ORDER`: aggregate_inputs is an authored ordered list.
+        - Preconditions: An Aggregate membership is declared
+        - Observable: Stable ordered membership input.
+        - Forbidden: Do not derive order from predecessor edges or JSON object order.
+        - Domain: D.AGG.MEMBERSHIP; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:188-201.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.AGG.MEMBERS.REQUIREDNESS`: Input is required BLOCK.
+        - Preconditions: An Aggregate member input is declared
+        - Observable: Reject invalid member declaration.
+        - Forbidden: Do not OMIT/DEFAULT a structural Result member.
+        - Domain: D.AGG.MEMBERSHIP; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:188-201.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.AGG.MEMBERS.SOURCE_ROLE`: Member binds existing upstream RESULT-role output.
+        - Preconditions: A member name is declared
+        - Observable: Reject invalid typed membership.
+        - Forbidden: Do not include INFORMATION/DECISION or Derive/Control bookkeeping as Result members.
+        - Domain: D.AGG.MEMBERSHIP; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:188-201.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.AGG.MEMBERS.UNIQUE`: Member input names are unique.
+        - Preconditions: An Aggregate membership is declared
+        - Observable: Reject duplicate membership.
+        - Forbidden: Do not include same input identity twice.
+        - Domain: D.AGG.MEMBERSHIP; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:188-201.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.AGG.MEMBERS_INPUT.CONSTANT`: Required members input is CONSTANT equal to aggregate_inputs.
+        - Preconditions: An Aggregate is declared
+        - Observable: Provider receives exact ordered membership.
+        - Forbidden: Do not rely on object-key order or inconsistent copied list.
+        - Domain: D.AGG.MEMBERSHIP; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:188-201.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.AGG.MEMBERS_INPUT.RESERVED`: subject, criterion and members are not member names.
+        - Preconditions: An Aggregate member input is named
+        - Observable: Reject reserved member identity.
+        - Forbidden: Do not conflate semantic or ordering ports with reducer members.
+        - Domain: D.AGG.MEMBERSHIP; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:188-201.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.AGG.MEMBER_STATES`: Keep it in membership and apply handling; unavailable values block
+        - Preconditions: A Result member is ERROR or nonexecuted
+        - Observable: Exact retained/rejected member set
+        - Forbidden: Do not silently discard exceptional members before configured handling
+        - Domain: D.AGG.MEMBERSHIP; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:188-201.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Numeric reducers**: 6 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **ORIGINAL_WEIGHTS**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.AGG.WEIGHTED.ORIGINAL_WEIGHTS`: Exactly n finite nonnegative weights aligned with original positions.
+          - Preconditions: Direct weighted reduction has n original members
+          - Observable: AGGREGATE_CONFIG/INPUT as scoped.
+          - Forbidden: No missing/negative/nonfinite weight.
+          - Domain: D.AGG.NUMERIC; authority: NORMATIVE_VCP; source: spec/draft/aggregation.md:24-42.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **RETAINED_TOTAL**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.AGG.WEIGHTED.RETAINED_TOTAL`: sum(w_i,i in K)>0.
+          - Preconditions: Filtering retains member set K
+          - Observable: AGGREGATE_INPUT on zero.
+          - Forbidden: No zero retained total or invented normalization.
+          - Domain: D.AGG.NUMERIC; authority: NORMATIVE_VCP; source: spec/draft/aggregation.md:24-42.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **SCORE**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.AGG.WEIGHTED.SCORE`: score=sum(w_i*s_i,i in K)/sum(w_i,i in K).
+          - Preconditions: Weighted reduction has valid retained scores/weights
+          - Observable: Successful applicable KNOWN score.
+          - Forbidden: No verdict inference or weight reindexing.
+          - Domain: D.AGG.NUMERIC; authority: NORMATIVE_VCP; source: spec/draft/aggregation.md:24-42.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.AGG.MAX`: Output score is mathematical maximum
+        - Preconditions: MAX_SCORE has retained scores
+        - Observable: Successful applicable KNOWN score Result
+        - Forbidden: Do not imply verdict from score
+        - Domain: D.AGG.NUMERIC; authority: NORMATIVE_VCP; source: spec/draft/aggregation.md:24-42.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.AGG.MEAN`: Output score is arithmetic mean sum(x_i)/n
+        - Preconditions: AVERAGE has retained scores x_i
+        - Observable: Mathematical mean within implementation representability limits
+        - Forbidden: Do not require portable binary64 bit identity
+        - Domain: D.AGG.NUMERIC; authority: NORMATIVE_VCP; source: spec/draft/aggregation.md:24-42.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.AGG.MIN`: Output score is mathematical minimum
+        - Preconditions: MIN_SCORE has retained scores
+        - Observable: Successful applicable KNOWN score Result
+        - Forbidden: Do not imply verdict from score
+        - Domain: D.AGG.NUMERIC; authority: NORMATIVE_VCP; source: spec/draft/aggregation.md:24-42.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Severity**: 6 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **EXPLICIT**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.AGG.SEVERITY_DOMAIN.EXPLICIT`: Explicit severity_domain id/levels supplied and structurally valid.
+          - Preconditions: WORST_SEVERITY configured
+          - Observable: AGGREGATE_CONFIG or PROFILE_DOMAIN at declared boundary.
+          - Forbidden: No global/implicit registry fallback.
+          - Domain: D.SEVERITY.DOMAIN; authority: NORMATIVE_VCP; source: spec/draft/aggregation.md:24-42.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **LABEL_UNIQUE**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.AGG.SEVERITY_DOMAIN.LABEL_UNIQUE`: Labels are nonempty and unique.
+          - Preconditions: Explicit severity levels declared
+          - Observable: PROFILE_DOMAIN rejection.
+          - Forbidden: No ambiguous duplicate/empty label.
+          - Domain: D.SEVERITY.DOMAIN; authority: NORMATIVE_VCP; source: spec/draft/aggregation.md:24-42.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **MEMBER_DOMAIN**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.AGG.SEVERITY_DOMAIN.MEMBER_DOMAIN`: Member.domain equals explicit domain.id.
+          - Preconditions: Retained severity member examined
+          - Observable: AGGREGATE_INPUT otherwise.
+          - Forbidden: No foreign domain comparison.
+          - Domain: D.SEVERITY.DOMAIN; authority: NORMATIVE_VCP; source: spec/draft/aggregation.md:24-42.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **MEMBER_LABEL**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.AGG.SEVERITY_DOMAIN.MEMBER_LABEL`: Member.label belongs to explicit domain levels.
+          - Preconditions: Retained severity member examined
+          - Observable: AGGREGATE_INPUT otherwise.
+          - Forbidden: No unresolved label ordering.
+          - Domain: D.SEVERITY.DOMAIN; authority: NORMATIVE_VCP; source: spec/draft/aggregation.md:24-42.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **RANK_UNIQUE**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.AGG.SEVERITY_DOMAIN.RANK_UNIQUE`: Ranks satisfy JSON integer semantics and are pairwise distinct; higher is worse.
+          - Preconditions: Explicit severity levels declared
+          - Observable: PROFILE_DOMAIN rejection.
+          - Forbidden: No Boolean/string/fractional/duplicate rank.
+          - Domain: D.SEVERITY.DOMAIN; authority: NORMATIVE_VCP; source: spec/draft/aggregation.md:24-42.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.AGG.SEVERITY_RESULT`: Output label has greatest rank in explicit domain
+        - Preconditions: WORST_SEVERITY has valid retained members
+        - Observable: Successful applicable KNOWN severity Result
+        - Forbidden: Do not imply binary verdict
+        - Domain: D.SEVERITY.DOMAIN; authority: NORMATIVE_VCP; source: spec/draft/aggregation.md:24-42.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Standard config**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.AGG.CONFIG`: Provide reducer and handling with every exceptional category explicitly REJECT or IGNORE
+        - Preconditions: Standard openverify.aggregate version 1 is invoked
+        - Observable: AGGREGATE_CONFIG for invalid configuration; exact coexistence precedence unspecified
+        - Forbidden: Do not insert hidden handling defaults
+        - Domain: D.AGG.CONFIGURATION; authority: NORMATIVE_VCP; source: spec/draft/aggregation.md:11-17.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Standard domain**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.AGG.NONEMPTY`: Reject empty reduction
+        - Preconditions: A standard reducer is invoked, including after exceptional member filtering.
+        - Observable: Standard reduction rejects empty original/retained input; custom [] is legal and capability-owned.
+        - Forbidden: Do not return vacuous PASS or invented score
+        - Domain: D.AGG.MEMBERSHIP; authority: NORMATIVE_VCP; source: spec/draft/aggregation.md:11-17.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Weights**: 2 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **EXACT_KEYS**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.AGG.WEIGHT_KEYS.EXACT_KEYS`: Weight mapping key set equals ordered aggregate_inputs member identity set.
+          - Preconditions: Graph reducer WEIGHTED_AVERAGE
+          - Observable: Graph config validity.
+          - Forbidden: No extra/missing name or object-order positional identity.
+          - Domain: D.AGG.NUMERIC; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:188-201.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **IDENTITY**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.AGG.WEIGHT_KEYS.IDENTITY`: Retained member keeps its originally authored named weight.
+          - Preconditions: Weighted members are filtered
+          - Observable: Identity-preserving score law.
+          - Forbidden: Do not shift weights onto neighbors.
+          - Domain: D.AGG.NUMERIC; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:188-201.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+  - **Composition**: 12 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **Control scope**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.BOUNDARY.NO_ACTION`: Control Decisions affect verification eligibility only; the host owns arbitrary external business actions.
+        - Preconditions: Portable verification execution is requested
+        - Observable: Verification state/Decision, no automatically authorized external action.
+        - Forbidden: Do not execute an external business action solely because a Control Decision names a route/stop/retry/defer.
+        - Domain: D.CONFORMANCE.SCOPE; authority: NORMATIVE_VCP; source: spec/draft/boundary.md:5-10.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Dependencies**: 2 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.GRAPH.NO_DATA`: The edge only imposes dependency/eligibility
+        - Preconditions: An execution edge exists
+        - Observable: Only explicit bindings and guards transport/gate semantics
+        - Forbidden: Do not inject values or implicitly propagate predecessor failure/nonexecution
+        - Domain: D.COMPOSITION; authority: NORMATIVE_VCP; source: spec/draft/composition.md:5-9.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.GRAPH.READINESS`: Every incoming predecessor has reached a terminal occurrence state
+        - Preconditions: A node may begin execution
+        - Observable: Dependency-respecting execution and recorded timing
+        - Forbidden: Do not start a consumer early
+        - Domain: D.COMPOSITION; authority: NORMATIVE_VCP; source: spec/draft/composition.md:5-9.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Features**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.GRAPH.UNSUPPORTED`: Reject unsupported executable features
+        - Preconditions: A graph requests cycles/iteration or DYNAMIC_EXPANSION
+        - Observable: GRAPH_UNSUPPORTED
+        - Forbidden: Do not assign invented iteration semantics
+        - Domain: D.COMPOSITION; authority: NORMATIVE_VCP; source: spec/draft/composition.md:24-24.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Guards**: 3 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.GUARD.ABSENT`: Guard evaluates false
+        - Preconditions: A valid runtime guard pointer encounters unavailable optional data
+        - Observable: GUARD_FALSE nonexecution
+        - Forbidden: Do not invoke the gated node using an invented operand
+        - Domain: D.COMPOSITION; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:181-186.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.GUARD.EQUALITY`: Compare its explicit source at JSON Pointer with authored JSON literal; empty pointer selects entire value
+        - Preconditions: A guard is evaluated
+        - Observable: Boolean equality result gates eligibility
+        - Forbidden: Do not evaluate expressions or global Context lookups
+        - Domain: D.COMPOSITION; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:181-186.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.GUARD.VALIDITY`: Validate source ancestry, pointer and known operand types before execution
+        - Preconditions: A guard source/pointer/operand is statically known
+        - Observable: Reject invalid definition
+        - Forbidden: Do not defer statically invalid guards into runtime false
+        - Domain: D.COMPOSITION; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:181-186.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Ordering**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.GRAPH.ORDER`: Any topologically valid order is portable
+        - Preconditions: Several independent nodes are ready
+        - Observable: Portable order constraints are partial
+        - Forbidden: Do not treat definition-array order as data identity or universal execution sequence
+        - Domain: D.COMPOSITION; authority: NORMATIVE_VCP; source: spec/draft/composition.md:11-13.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Results**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.GRAPH.NO_VERDICT`: Retain per-node Results without synthesizing an overall verdict
+        - Preconditions: A graph has no explicit aggregate
+        - Observable: Per-node final Results remain distinct
+        - Forbidden: Do not equate STOP_SUCCESS with verification PASS
+        - Domain: D.COMPOSITION; authority: NORMATIVE_VCP; source: spec/draft/composition.md:15-22.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Topology**: 3 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.GRAPH.IDENTITY.EDGE_ID`: Directed execution edges are unique.
+        - Preconditions: A finite graph is validated
+        - Observable: Graph identity rejection.
+        - Forbidden: Do not accept duplicate directed pair.
+        - Domain: D.GRAPH.IDENTITY; authority: NORMATIVE_VCP; source: spec/draft/composition.md:5-9.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.GRAPH.IDENTITY.ENDPOINT`: Every edge endpoint names an existing node.
+        - Preconditions: A finite graph is validated
+        - Observable: GRAPH_REFERENCE.
+        - Forbidden: Do not accept dangling execution endpoints.
+        - Domain: D.GRAPH.IDENTITY; authority: NORMATIVE_VCP; source: spec/draft/composition.md:5-9.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.GRAPH.IDENTITY.NODE_ID`: Node IDs are unique.
+        - Preconditions: A finite graph is validated
+        - Observable: GRAPH_DUPLICATE/GRAPH_REFERENCE category as specified, no invented coexistence precedence.
+        - Forbidden: Do not overwrite duplicate node identities.
+        - Domain: D.GRAPH.IDENTITY; authority: NORMATIVE_VCP; source: spec/draft/composition.md:5-9.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+  - **Computation**: 13 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **Acceptance**: 4 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.DATA.ATOMIC_OUTPUT.ATOMIC`: Publish no partial accepted INFORMATION mapping.
+        - Preconditions: At least one output/judgment/Result/Decision fails acceptance
+        - Observable: Information publication is all-or-nothing.
+        - Forbidden: Do not leak values validated before a later failure.
+        - Domain: D.OUTPUT.ACCEPTANCE; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:74-85.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.DATA.ATOMIC_OUTPUT.EXTRA`: Reject semantic output acceptance.
+        - Preconditions: An invoked node returns any undeclared output
+        - Observable: Semantic output rejection; this prose does not mandate a unique code between OUTPUT_MISSING/OUTPUT_INVALID for extra names, or precedence against another invalid output.
+        - Forbidden: Do not expose additional semantic outputs.
+        - Domain: D.OUTPUT.ACCEPTANCE; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:74-85.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.DATA.ATOMIC_OUTPUT.MISSING`: Reject semantic output acceptance.
+        - Preconditions: An invoked node omits any declared output
+        - Observable: OUTPUT_MISSING where specified.
+        - Forbidden: Do not mark incomplete output successful.
+        - Domain: D.OUTPUT.ACCEPTANCE; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:74-85.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.DATA.JUDGMENT`: Validate that value against the definition judgment_schema
+        - Preconditions: A Result explicitly emits judgment, including null
+        - Observable: JUDGMENT_INVALID and unsuccessful acceptance on failure
+        - Forbidden: Do not validate an absent judgment as if it were emitted null
+        - Domain: D.JUDGMENT.ACCEPTANCE; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:87-94.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Evaluator**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.RESULT.INVOKED`: Only EXECUTED SUCCESS or ERROR may be returned
+        - Preconditions: EVALUATE or AGGREGATE actually invokes an implementation
+        - Observable: OUTPUT_INVALID becomes EXECUTED/ERROR
+        - Forbidden: Do not accept standalone SKIPPED, DEFERRED or CANCELLED output as provider-claimed nonexecution
+        - Domain: D.RESULT.INVOKED; authority: NORMATIVE_VCP; source: spec/draft/result.md:48-53.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Node outputs**: 8 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **CARDINALITY**: 2 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.DATA.PRIMARY_RESULT.CARDINALITY`: Exactly one RESULT-role output exists.
+          - Preconditions: Node kind EVALUATE or AGGREGATE
+          - Observable: Definition validity predicate.
+          - Forbidden: No zero/multiple primary Results.
+          - Domain: D.PORT.DECLARATIONS; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:74-85.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+        - `CM.VCP.DATA.PRIMARY_DECISION.CARDINALITY`: Exactly one DECISION-role output exists.
+          - Preconditions: Node kind CONTROL
+          - Observable: Definition validity predicate.
+          - Forbidden: No zero/multiple primary Decisions.
+          - Domain: D.PORT.DECLARATIONS; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:74-85.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **NAME**: 2 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.DATA.PRIMARY_RESULT.NAME`: That primary output name is result.
+          - Preconditions: Evaluator declares its RESULT output
+          - Observable: Definition validity predicate.
+          - Forbidden: No renamed primary output.
+          - Domain: D.PORT.DECLARATIONS; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:74-85.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+        - `CM.VCP.DATA.PRIMARY_DECISION.NAME`: That primary output name is decision.
+          - Preconditions: Control declares its DECISION output
+          - Observable: Definition validity predicate.
+          - Forbidden: No renamed primary output.
+          - Domain: D.PORT.DECLARATIONS; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:74-85.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **ROLES**: 2 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.DATA.PRIMARY_RESULT.ROLES`: Every other output role is INFORMATION.
+          - Preconditions: Evaluator declares additional outputs
+          - Observable: Definition validity predicate.
+          - Forbidden: No DECISION output.
+          - Domain: D.PORT.DECLARATIONS; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:74-85.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+        - `CM.VCP.DATA.PRIMARY_DECISION.ROLES`: Every other output role is INFORMATION.
+          - Preconditions: Control declares additional outputs
+          - Observable: Definition validity predicate.
+          - Forbidden: No RESULT output.
+          - Domain: D.PORT.DECLARATIONS; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:74-85.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.DATA.DERIVE_ROLE`: Every declared output role is INFORMATION
+        - Preconditions: Node kind is DERIVE
+        - Observable: Reject forbidden role
+        - Forbidden: Do not expose bookkeeping Result as a declared Result port
+        - Domain: D.NODE.OUTPUT_ROLE; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:74-85.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.DATA.PRIMARY_VALIDITY`: Value validates against VCP semantics and its port schema
+        - Preconditions: A Result/Decision output is emitted
+        - Observable: Reject invalid attempt output
+        - Forbidden: Do not let structurally typed envelopes bypass semantic validation
+        - Domain: D.PORT.DECLARATIONS; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:74-85.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+  - **Conformance**: 2 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **Consumer stages**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.CONFORMANCE.STAGES`: Check shipped structural schema and semantic invariants; unsupported execution rejects distinctly
+        - Preconditions: A VCP consumer receives interchange
+        - Observable: Check shipped structural schema and semantic invariants; unsupported execution rejects distinctly
+        - Forbidden: Do not infer supported execution from structurally valid data
+        - Domain: D.CONFORMANCE.SCOPE; authority: NORMATIVE_VCP; source: spec/draft/conformance.md:5-8.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Portable harness**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.CONFORMANCE.FIXTURE_PROTOCOL`: Valid manifest entries pass structure and semantics; invalid entries fail declared stage/code
+        - Preconditions: An implementation voluntarily claims this revision conformance suite
+        - Observable: Valid manifest entries pass structure and semantics; invalid entries fail declared stage/code
+        - Forbidden: Do not derive semantic requirements from fixture existence; corpus content is not read in this assignment
+        - Domain: D.CONFORMANCE.SCOPE; authority: NORMATIVE_VCP; source: spec/draft/conformance.md:10-14.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+  - **Dataflow**: 37 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **Availability**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.DATA.BOOKKEEPING`: Its declared Result port exposes the recorded Result only if that port schema accepts it
+        - Preconditions: A producer records ERROR or nonexecution
+        - Observable: Result may be AVAILABLE or INVALID independently of producer execution success
+        - Forbidden: Do not let bookkeeping bypass producer schema or publish bookkeeping from Derive/Control as ports
+        - Domain: D.TYPED_AVAILABILITY; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:74-85.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Bindings**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.DATA.BIND_TARGET`: Every required input has exactly one binding; binding targets name declared inputs
+        - Preconditions: A node or typed policy binds input sources
+        - Observable: Reject binding before execution
+        - Forbidden: Do not accept unknown targets or multiple source constructors for one binding
+        - Domain: D.PORT.DECLARATIONS; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:27-33.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Configuration**: 2 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **SCHEMA**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.DATA.CONFIG.SCHEMA`: Validate config under that valid supported schema before invocation.
+          - Preconditions: Definition declares config_schema
+          - Observable: DATAFLOW_CONFIG where specified; noninvocation.
+          - Forbidden: No runtime work with rejected config.
+          - Domain: D.PORT.DECLARATIONS; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:42-47.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **SEPARATE**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.DATA.CONFIG.SEPARATE`: Pass definition config separately without overriding any bound value.
+          - Preconditions: Invocation has bound values and config
+          - Observable: Exact input/config snapshots.
+          - Forbidden: No semantic input replacement by config.
+          - Domain: D.PORT.DECLARATIONS; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:42-47.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Input ports**: 3 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **CONSTANT**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.DATA.DEFAULT.CONSTANT`: An explicit Constant default must be supplied, including possible JSON null.
+          - Preconditions: A port uses DEFAULT
+          - Observable: Definition validity; unused-default portability separate.
+          - Forbidden: No absent default or schema-annotation fallback.
+          - Domain: D.DEFAULT.PRESENCE; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:20-25.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **VALUE_SCHEMA**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.DATA.DEFAULT.VALUE_SCHEMA`: Its exact value validates against the port schema before invocation.
+          - Preconditions: A DEFAULT Constant is supplied
+          - Observable: Typed default acceptance.
+          - Forbidden: No unvalidated default payload.
+          - Domain: D.SCHEMA.EMBEDDED; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:20-25.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.DATA.PORT_HANDLING`: Required ports use BLOCK; optional ports use OMIT or DEFAULT
+        - Preconditions: An input port is declared
+        - Observable: Reject invalid declaration
+        - Forbidden: Do not permit required OMIT/DEFAULT or optional BLOCK
+        - Domain: D.PORT.HANDLER; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:27-33.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Isolation**: 2 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **AMBIENT**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.DATA.CONTEXT.AMBIENT`: Retain Context only as nonsemantic host metadata.
+          - Preconditions: Occurrence has initial_context
+          - Observable: Authored initial_context retained separately from input_values.
+          - Forbidden: Derive must not mutate ambient Context or consume it as hidden semantic input.
+          - Domain: D.WIRE.JSON; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:221-225.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **ISOLATION**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.DATA.CONTEXT.ISOLATION`: Pass a fresh exact resolved input object and separate config.
+          - Preconditions: Operation invoked
+          - Observable: One invocation cannot mutate another semantic input object.
+          - Forbidden: No injected predecessor Results or initial_context.
+          - Domain: D.WIRE.JSON; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:221-225.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Operation**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.DATA.OPERATION`: Use exact capability_id/version pair with no provider identity in the requirement
+        - Preconditions: An operation requirement is matched
+        - Observable: Provider-neutral exact match
+        - Forbidden: Do not treat versions as ranges or operation strings as executable imports
+        - Domain: D.OPERATION.IDENTITY; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:57-72.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Ports**: 2 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **INPUT**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.DATA.PORT_NAMES.INPUT`: Input names are unique within that sequence.
+          - Preconditions: Node input port sequence declared
+          - Observable: Definition rejection on duplicate.
+          - Forbidden: No positional/duplicate input identity.
+          - Domain: D.PORT.DECLARATIONS; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:27-33.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **OUTPUT**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.DATA.PORT_NAMES.OUTPUT`: Output names are unique within that sequence.
+          - Preconditions: Node output sequence declared
+          - Observable: Definition rejection on duplicate.
+          - Forbidden: No duplicate output identity.
+          - Domain: D.PORT.DECLARATIONS; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:27-33.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Provider boundary**: 3 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **CONFIG**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.DATA.CAPABILITY_SHAPE.CONFIG`: Capability config is exactly node config, separate from bound inputs.
+          - Preconditions: Direct capability invocation from graph node
+          - Observable: Provider receives separate authored config snapshot.
+          - Forbidden: No config override of bound inputs.
+          - Domain: D.OPERATION.IDENTITY; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:57-72.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **INPUT**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.DATA.CAPABILITY_SHAPE.INPUT`: Capability input is exactly the resolved port-name object.
+          - Preconditions: Direct capability invocation from graph ports
+          - Observable: Provider receives authored resolved JSON object.
+          - Forbidden: No primitive wrapping or injected ambient context.
+          - Domain: D.OPERATION.IDENTITY; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:57-72.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **OUTPUT**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.DATA.CAPABILITY_SHAPE.OUTPUT`: Capability output is the output-port-name object.
+          - Preconditions: Direct capability COMPLETED outcome
+          - Observable: Provider output schema acceptance precedes port and semantic acceptance.
+          - Forbidden: COMPLETED alone does not imply VCP success or verification PASS.
+          - Domain: D.OPERATION.IDENTITY; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:57-72.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Resolution**: 14 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **INPUT**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.DATA.RESOLVE_OMIT.INPUT`: Exclude that key from invocation input object.
+          - Preconditions: Optional input has OMIT handling and unavailable/invalid source
+          - Observable: Exact consumed object lacks the key.
+          - Forbidden: Do not insert null.
+          - Domain: D.TYPED_AVAILABILITY; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:107-118.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **PROVENANCE**: 3 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.DATA.RESOLVE_DEFAULT.PROVENANCE`: Retain original source and availability with used_default=true and explicit consumed value.
+          - Preconditions: Default substituted for unavailable/invalid bound source
+          - Observable: InputResolution explains why and what default was consumed.
+          - Forbidden: Do not replace original status with AVAILABLE.
+          - Domain: D.TYPED_AVAILABILITY; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:107-118.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+        - `CM.VCP.DATA.RESOLVE_OMIT.PROVENANCE`: Retain original availability and source in resolution with no usable value and used_default=false.
+          - Preconditions: Optional input omitted
+          - Observable: InputResolution records omission.
+          - Forbidden: Do not erase resolution or claim a consumed value.
+          - Domain: D.TYPED_AVAILABILITY; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:107-118.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+        - `CM.VCP.DATA.RESOLVE_AVAILABLE.PROVENANCE`: Record exact source identity, AVAILABLE status, exact value and used_default=false.
+          - Preconditions: Available schema-valid input consumed
+          - Observable: input_values equals exact authored/reconstructed source value.
+          - Forbidden: No stale/unrelated source substitution.
+          - Domain: D.TYPED_AVAILABILITY; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:107-118.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **SUBSTITUTE**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.DATA.RESOLVE_DEFAULT.SUBSTITUTE`: Use the authored validated Constant as the consumed value.
+          - Preconditions: Input has DEFAULT handling and original availability is not AVAILABLE
+          - Observable: Exact default value appears in assembled invocation inputs.
+          - Forbidden: No stale value, implicit null, or other producer fallback.
+          - Domain: D.TYPED_AVAILABILITY; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:107-118.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **VALIDATION**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.DATA.RESOLVE_AVAILABLE.VALIDATION`: Validate the value against target port schema before use.
+          - Preconditions: Resolved source supplies a candidate value
+          - Observable: Invalid value follows configured unavailable handler.
+          - Forbidden: Do not consume schema-invalid value.
+          - Domain: D.TYPED_AVAILABILITY; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:107-118.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.DATA.RESOLVE_ALL`: Retain a resolution for every declared input
+        - Preconditions: A node is disabled or enabled
+        - Observable: Complete resolution snapshot
+        - Forbidden: Do not erase resolution evidence merely because lifecycle prevents invocation
+        - Domain: D.TYPED_AVAILABILITY; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:107-118.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.DATA.RESOLVE_BLOCK.DOWNSTREAM`: Execution edges themselves do not disable descendants; explicit bindings/guards determine downstream eligibility.
+        - Preconditions: Blocked predecessor settles terminal with typed declared outputs
+        - Observable: Downstream readiness and availability follow their own contracts.
+        - Forbidden: Do not propagate nonexecution implicitly on dependency edges.
+        - Domain: D.COMPOSITION; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:107-118.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.DATA.RESOLVE_BLOCK.NONINVOCATION`: Do not invoke the graph provider.
+        - Preconditions: Required BLOCK input unavailable/invalid; no higher-precedence lifecycle cause
+        - Observable: Zero invocation for this node.
+        - Forbidden: Do not spend provider work despite blocked input.
+        - Domain: D.HANDLING.EFFECTS; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:107-118.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.DATA.RESOLVE_BLOCK.PROVENANCE`: No executor identity, observation, Decision or accepted information/executor usage.
+        - Preconditions: Blocked node never invoked
+        - Observable: RunRecord lineage consistent with noninvocation.
+        - Forbidden: Do not fabricate incurred provider work.
+        - Domain: D.RECORD.ELIGIBILITY; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:107-118.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.DATA.RESOLVE_BLOCK.REASON`: NodeRecord.reason and diagnostic Result.output.reason equal INPUT_UNAVAILABLE.
+        - Preconditions: Required BLOCK input unavailable/invalid; no higher-precedence lifecycle cause
+        - Observable: Machine-readable reason and repeated diagnostic.
+        - Forbidden: Do not erase the exact cause.
+        - Domain: D.HANDLING.EFFECTS; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:107-118.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.DATA.RESOLVE_BLOCK.RESOLUTION`: Preserve source and original availability, used_default=false, no usable input value.
+        - Preconditions: Required BLOCK input unavailable/invalid
+        - Observable: Exact input resolution and assembled input omission.
+        - Forbidden: Do not substitute stale/null/unrelated values.
+        - Domain: D.TYPED_AVAILABILITY; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:107-118.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.DATA.RESOLVE_BLOCK.RESULT`: Synthesized Result disposition is SKIPPED.
+        - Preconditions: Required BLOCK input unavailable/invalid; no higher-precedence lifecycle cause
+        - Observable: SKIPPED Result.
+        - Forbidden: Do not synthesize FAIL or UNKNOWN.
+        - Domain: D.HANDLING.EFFECTS; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:107-118.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.DATA.RESOLVE_BLOCK.STATE`: NodeRecord.state is NONEXECUTED.
+        - Preconditions: Required BLOCK input unavailable/invalid; no higher-precedence lifecycle cause
+        - Observable: Terminal nonexecution state.
+        - Forbidden: Do not record SUCCESS or executed ERROR for prevented work.
+        - Domain: D.HANDLING.EFFECTS; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:107-118.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Run inputs**: 4 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.DATA.RUN_ACCEPT.MISSING_REQUIRED`: Reject occurrence inputs before policy/node invocation.
+        - Preconditions: Host omits required run-input value
+        - Observable: RUN_INPUT.
+        - Forbidden: Do not invent null/default for a required missing value.
+        - Domain: D.RUN_INPUT.PREFLIGHT; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:20-25.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.DATA.RUN_ACCEPT.UNKNOWN_NAME`: Reject occurrence inputs before policy/node invocation.
+        - Preconditions: Host supplies run-input key absent from declarations
+        - Observable: RUN_INPUT.
+        - Forbidden: Do not inject unknown names.
+        - Domain: D.RUN_INPUT.PREFLIGHT; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:20-25.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.DATA.RUN_ACCEPT.VALUE_SCHEMA`: Reject occurrence inputs before policy/node invocation.
+        - Preconditions: Host supplies value violating declared run-input schema
+        - Observable: RUN_INPUT.
+        - Forbidden: Do not coerce or postpone actual input validation.
+        - Domain: D.RUN_INPUT.PREFLIGHT; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:20-25.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.DATA.RUN_NAMES`: Run input names are unique
+        - Preconditions: Run inputs are declared
+        - Observable: Reject definition before implementation invocation
+        - Forbidden: Do not resolve duplicate declarations by array order
+        - Domain: D.RUN_INPUT.NORMALIZATION; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:20-25.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Sources**: 4 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.DATA.ANCESTOR.OUTPUT_EXISTS`: Named declared output exists.
+        - Preconditions: UPSTREAM_OUTPUT producer exists
+        - Observable: Definition binding rejection.
+        - Forbidden: Do not use undeclared output names or bookkeeping-only values as ports.
+        - Domain: D.SOURCE.REACHABILITY; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:49-55.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.DATA.ANCESTOR.PRODUCER_EXISTS`: Producer node exists.
+        - Preconditions: UPSTREAM_OUTPUT source is declared
+        - Observable: Definition binding rejection.
+        - Forbidden: Do not accept dangling node_id.
+        - Domain: D.SOURCE.REACHABILITY; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:49-55.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.DATA.ANCESTOR.STRICT_ANCESTRY`: Producer is strict execution ancestor of consumer.
+        - Preconditions: UPSTREAM_OUTPUT producer/output exist
+        - Observable: Definition binding rejection.
+        - Forbidden: Do not infer ancestry from array position or bind self/unordered peer.
+        - Domain: D.SOURCE.REACHABILITY; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:49-55.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.DATA.RUN_SOURCE`: Name refers to a declared run input
+        - Preconditions: Source kind is RUN_INPUT
+        - Observable: Reject source identity before execution
+        - Forbidden: Do not consult ambient names or undeclared inputs
+        - Domain: D.RUN_INPUT.NORMALIZATION; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:37-40.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+  - **Decisions**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **Shape**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.DECISION.DESTINATION`: ROUTE has a nonempty destination; every other kind has no non-null destination
+        - Preconditions: Decision is validated
+        - Observable: Reject invalid Decision semantics
+        - Forbidden: Do not treat Decision as a judgment or infer PASS from STOP_SUCCESS
+        - Domain: D.DECISION.DESTINATION; authority: NORMATIVE_VCP; source: spec/draft/result.md:30-33.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+  - **Extensions**: 2 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **Optional**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.EXT.PRESERVE`: Preserve data without interpreting unknown semantics
+        - Preconditions: Unknown optional VCP extension is consumed
+        - Observable: Lossless optional extension handling
+        - Forbidden: Do not let metadata/extension data override core meaning
+        - Domain: D.EXTENSIONS.ANNOTATIONS; authority: NORMATIVE_VCP; source: spec/draft/extensions.md:5-13.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Required**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.EXT.REQUIRED`: Report EXTENSION_UNSUPPORTED
+        - Preconditions: Required VCP extension lacks implementation support
+        - Observable: Reject unsupported capability
+        - Forbidden: Do not silently consume required unknown meaning
+        - Domain: D.EXT.REQUIRED_SUPPORT; authority: NORMATIVE_VCP; source: spec/draft/extensions.md:5-13.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+  - **Knowledge**: 3 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **ArtifactRef**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.KNOWLEDGE.REFERENCE`: Pass its exact reference snapshot as information; locator is opaque
+        - Preconditions: An ArtifactRef is consumed
+        - Observable: Explicit retrieval is host/provider owned
+        - Forbidden: Do not assume bytes or fetch content automatically
+        - Domain: D.REFERENCES.OPAQUE; authority: NORMATIVE_VCP; source: spec/draft/knowledge.md:5-9.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Evidence**: 2 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.KNOWLEDGE.EVIDENCE`: At least one of message, artifact_ref, locator, structured_data is non-null; message is nonempty; empty containers count
+        - Preconditions: Evidence is validated
+        - Observable: EVIDENCE_EMPTY when meaning is absent
+        - Forbidden: Do not let id, metadata or extensions alone establish meaningful evidence
+        - Domain: D.EVIDENCE.MEANING; authority: NORMATIVE_VCP; source: spec/draft/knowledge.md:11-14.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.KNOWLEDGE.NEUTRAL`: Core property vocabulary remains domain-neutral; code-specific coordinates belong in opaque locator/structured data
+        - Preconditions: A portable Evidence object is authored
+        - Observable: Core property vocabulary remains domain-neutral; code-specific coordinates belong in opaque locator/structured data
+        - Forbidden: Do not introduce file/line-specific fundamental Evidence fields
+        - Domain: D.REFERENCES.OPAQUE; authority: NORMATIVE_VCP; source: spec/draft/knowledge.md:16-17.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+  - **Lifecycle**: 22 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **Cancellation**: 8 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **EVENT**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.LIFECYCLE.CANCEL_BEFORE.EVENT`: Record first affected node, BEFORE_START phase and explicit host reason.
+          - Preconditions: Host cancellation first affects unstarted work
+          - Observable: RunRecord.cancellation identifies actual host event.
+          - Forbidden: No inferred cancellation origin.
+          - Domain: D.COMPOSITION; authority: NORMATIVE_VCP; source: spec/draft/lifecycle.md:61-67.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **NODE**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.LIFECYCLE.CANCEL_BEFORE.NODE`: Affected and subsequent unstarted nodes are NONEXECUTED with CANCELLED Result and CANCELLATION reason.
+          - Preconditions: Host cancellation first affects an unstarted node
+          - Observable: Complete cancelled nonexecution records.
+          - Forbidden: No executor identity, observations or usage on unstarted nodes.
+          - Domain: D.COMPOSITION; authority: NORMATIVE_VCP; source: spec/draft/lifecycle.md:61-67.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.LIFECYCLE.CANCEL_ADMISSION`: Admission must be RUN
+        - Preconditions: Host records occurrence cancellation
+        - Observable: Reject contradictory cancellation provenance
+        - Forbidden: Do not attach a cancellation event to SKIP/DEFER occurrence
+        - Domain: D.COMPOSITION; authority: NORMATIVE_VCP; source: spec/draft/lifecycle.md:61-67.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.LIFECYCLE.CANCEL_ORIGIN`: Only explicit host cancellation establishes occurrence cancellation
+        - Preconditions: A provider supplies a Result
+        - Observable: No invented cancellation provenance
+        - Forbidden: Do not infer host cancellation from a provider Result
+        - Domain: D.COMPOSITION; authority: NORMATIVE_VCP; source: spec/draft/lifecycle.md:61-67.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.LIFECYCLE.CANCEL_RUNNING.LATER`: Later unstarted nodes are NONEXECUTED with CANCELLED Results.
+        - Preconditions: Host cancellation has interrupted the first affected attempt
+        - Observable: No further invocation.
+        - Forbidden: Do not start remaining providers.
+        - Domain: D.COMPOSITION; authority: NORMATIVE_VCP; source: spec/draft/lifecycle.md:61-67.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.LIFECYCLE.CANCEL_RUNNING.OBSERVATION`: Retain valid unaccepted observations and incurred usage separately.
+        - Preconditions: Cancelled attempt incurred observable usage/evidence
+        - Observable: Cancellation does not erase incurred resources.
+        - Forbidden: Do not publish accepted information or Decision from cancelled attempt.
+        - Domain: D.OBSERVATION.USAGE; authority: NORMATIVE_VCP; source: spec/draft/lifecycle.md:61-67.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.LIFECYCLE.CANCEL_RUNNING.RESULT`: Affected Result disposition is CANCELLED with no accepted evaluation fields.
+        - Preconditions: Host cancellation interrupts the affected attempt
+        - Observable: Cancellation Result.
+        - Forbidden: Do not convert interruption into FAIL or accepted UNKNOWN.
+        - Domain: D.NODE.TERMINAL_RESULT; authority: NORMATIVE_VCP; source: spec/draft/lifecycle.md:61-67.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.LIFECYCLE.CANCEL_RUNNING.STATE`: Affected NodeRecord.state is CANCELLED.
+        - Preconditions: Host cancellation interrupts the affected attempt
+        - Observable: Interrupted terminal state.
+        - Forbidden: Do not record completed success after observed cancellation.
+        - Domain: D.CANCEL.ADMISSION; authority: NORMATIVE_VCP; source: spec/draft/lifecycle.md:61-67.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Causes**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.LIFECYCLE.NONEXEC_CAUSE`: Result.output.reason repeats NodeRecord.reason using the cause table
+        - Preconditions: Runner synthesizes nonexecution
+        - Observable: Exact cause/disposition mapping in the lifecycle table
+        - Forbidden: Do not conflate admission, guard, route, control, cancellation or blocked-input reasons
+        - Domain: D.COMPOSITION; authority: NORMATIVE_VCP; source: spec/draft/lifecycle.md:26-27.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Control**: 4 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.LIFECYCLE.CONTINUE`: Leave other eligibility unchanged
+        - Preconditions: Control returns CONTINUE
+        - Observable: Existing readiness rules continue
+        - Forbidden: Do not invent a verification verdict
+        - Domain: D.COMPOSITION; authority: NORMATIVE_VCP; source: spec/draft/lifecycle.md:41-44.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.LIFECYCLE.DEFER`: Prevent further work in this occurrence with DEFERRED/CONTROL_DEFER
+        - Preconditions: Control returns DEFER
+        - Observable: Deferred remainder
+        - Forbidden: Do not create external scheduling
+        - Domain: D.COMPOSITION; authority: NORMATIVE_VCP; source: spec/draft/lifecycle.md:41-44.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.LIFECYCLE.RETRY`: End local pass, retain Decision and mark remaining work SKIPPED/RETRY_REQUESTED
+        - Preconditions: Control returns RETRY
+        - Observable: Explicit retry request only
+        - Forbidden: Do not run an implicit new attempt or occurrence
+        - Domain: D.COMPOSITION; authority: NORMATIVE_VCP; source: spec/draft/lifecycle.md:41-44.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.LIFECYCLE.STOP`: End further work as specified with SKIPPED/CONTROL_STOP
+        - Preconditions: Control returns STOP_SUCCESS or STOP_FAILURE
+        - Observable: Remaining unstarted work has diagnostic nonexecution
+        - Forbidden: Do not synthesize a PASS/FAIL judgment
+        - Domain: D.COMPOSITION; authority: NORMATIVE_VCP; source: spec/draft/lifecycle.md:41-44.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Eligibility**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.LIFECYCLE.PRECEDENCE`: Select admission non-RUN, observed cancellation, terminating control, route exclusion, false guard, blocked input in that order
+        - Preconditions: Multiple nonexecution causes apply to an unstarted node
+        - Observable: Stable highest-precedence lifecycle reason
+        - Forbidden: Do not collapse cancellation/DEFER into INPUT_UNAVAILABLE
+        - Domain: D.COMPOSITION; authority: NORMATIVE_VCP; source: spec/draft/lifecycle.md:54-57.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Guards**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.LIFECYCLE.GUARD_JOIN`: Every incoming guard must hold
+        - Preconditions: A node has multiple guarded incoming edges
+        - Observable: GUARD_FALSE only where eligibility requires it
+        - Forbidden: Do not use any-guard semantics or implicitly disable all unguarded descendants after false guard
+        - Domain: D.COMPOSITION; authority: NORMATIVE_VCP; source: spec/draft/lifecycle.md:46-52.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Logical phases**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.LIFECYCLE.PHASES`: Pending awaits all predecessors; Ready additionally satisfies eligibility; starting the attempt is Running; completion/nonexecution is Terminal. Pending/Ready may terminate without invocation; terminal records are SUCCESS/ERROR/NONEXECUTED/CANCELLED.
+        - Preconditions: Observe one node within an admitted occurrence
+        - Observable: Trace/readiness and terminal-record compatibility.
+        - Forbidden: Do not treat these logical phases as a new wire enum, start before prerequisites/eligibility, or reopen a terminal attempt.
+        - Domain: D.LIFECYCLE.PHASE; authority: NORMATIVE_VCP; source: spec/draft/lifecycle.md:9-13.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Nodes**: 2 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **CARDINALITY**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.LIFECYCLE.TERMINAL.CARDINALITY`: Exactly one terminal NodeRecord for every definition node, including noninvoked nodes.
+          - Preconditions: Occurrence exists
+          - Observable: Definition node identities equal terminal record identities.
+          - Forbidden: No missing or duplicated terminal records.
+          - Domain: D.COMPOSITION; authority: NORMATIVE_VCP; source: spec/draft/lifecycle.md:5-7.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **IMMUTABILITY**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.LIFECYCLE.TERMINAL.IMMUTABILITY`: Terminal record never changes retroactively.
+          - Preconditions: Node has reached terminal state
+          - Observable: Stable terminal snapshot.
+          - Forbidden: No later control, cancellation or output can overwrite it.
+          - Domain: D.COMPOSITION; authority: NORMATIVE_VCP; source: spec/draft/lifecycle.md:5-7.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Routing**: 4 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **ACCUMULATE**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.LIFECYCLE.ROUTE_EXCLUSION.ACCUMULATE`: Accumulate exclusions; later routing cannot undo prior exclusion.
+          - Preconditions: Multiple routing controls apply
+          - Observable: Monotone excluded set.
+          - Forbidden: Do not re-enable previously excluded node.
+          - Domain: D.COMPOSITION; authority: NORMATIVE_VCP; source: spec/draft/lifecycle.md:29-39.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **BRANCHES**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.LIFECYCLE.ROUTE_EXCLUSION.BRANCHES`: Exclude other successors and descendants except nodes also reachable from selected successor.
+          - Preconditions: Control emits valid ROUTE to direct successor
+          - Observable: Only exclusive competing branches receive ROUTE_EXCLUDED.
+          - Forbidden: Do not exclude shared reachable joins or independent work outside branches.
+          - Domain: D.COMPOSITION; authority: NORMATIVE_VCP; source: spec/draft/lifecycle.md:29-39.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **DEPENDENCIES**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.LIFECYCLE.ROUTE_EXCLUSION.DEPENDENCIES`: Still require ordinary prerequisites and all incoming guards.
+          - Preconditions: ROUTE-selected successor considered for execution
+          - Observable: Selected branch obeys dependency/guard eligibility.
+          - Forbidden: Routing cannot bypass readiness or guards.
+          - Domain: D.COMPOSITION; authority: NORMATIVE_VCP; source: spec/draft/lifecycle.md:29-39.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.LIFECYCLE.ROUTE_TARGET`: Destination is a direct outgoing execution successor
+        - Preconditions: Control returns ROUTE
+        - Observable: Reject invalid Control output
+        - Forbidden: Do not accept a mere transitive descendant or unknown target
+        - Domain: D.COMPOSITION; authority: NORMATIVE_VCP; source: spec/draft/lifecycle.md:46-52.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+  - **Meaning**: 6 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **Capability behavior**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.DATA.HONEST_EVALUATION`: Evaluate the subject/criterion actually supplied in semantic ports
+        - Preconditions: A trusted capability implements evaluation
+        - Observable: Capability semantic conformance, not cryptographic authentication
+        - Forbidden: Do not claim arbitrary provider honesty is proven by record validation
+        - Domain: D.CONFORMANCE.SCOPE; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:87-94.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Criterion**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **Declarative identity**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.MEANING.CRITERION_DATA`: Criterion id/description/metadata identify and describe the property; they are not executable expressions. Evaluate implementation executes declared criterion.
+          - Preconditions: Criterion metadata consumed.
+          - Observable: Portable meaning tied to explicitly supplied Criterion snapshot.
+          - Forbidden: Do not interpret criterion metadata as expression language or executable import.
+          - Domain: D.CONFORMANCE.SCOPE; authority: NORMATIVE_VCP; source: spec/draft/meaning.md:16-20.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Evaluator inputs**: 2 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.DATA.SEMANTIC_SUBJECT.CRITERION`: Required criterion input is CONSTANT-bound to the exact definition criterion snapshot.
+        - Preconditions: Node kind EVALUATE or AGGREGATE
+        - Observable: SEMANTIC_BINDING on mismatch; provider input contains authored semantic snapshot.
+        - Forbidden: Do not omit, change or source criterion from an unrelated value.
+        - Domain: D.SEMANTIC_BINDING; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:87-94.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.DATA.SEMANTIC_SUBJECT.SUBJECT`: Required subject input is CONSTANT-bound to the exact definition subject snapshot.
+        - Preconditions: Node kind EVALUATE or AGGREGATE
+        - Observable: SEMANTIC_BINDING on mismatch; provider input contains authored semantic snapshot.
+        - Forbidden: Do not omit, change or source subject from an unrelated value.
+        - Domain: D.SEMANTIC_BINDING; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:87-94.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Satisfaction mapping**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **Adapter ownership**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.MEANING.SATISFACTION_MAPPING`: It describes mapping identity/configuration; execution is adapter-owned and core derives no verdict automatically.
+          - Preconditions: Optional satisfaction_mapping supplied.
+          - Observable: Known judgment may remain without verdict or score.
+          - Forbidden: Do not execute an invented portable mapping language.
+          - Domain: D.CONFORMANCE.SCOPE; authority: NORMATIVE_VCP; source: spec/draft/meaning.md:10-14.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Selection versus criterion**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.MEANING.SELECTION_DISTINCT`: Selection chooses subject inclusion; Criterion identifies property to establish
+        - Preconditions: A definition chooses subjects and evaluates a criterion
+        - Observable: Selection chooses subject inclusion; Criterion identifies property to establish
+        - Forbidden: Do not change criterion through selection or treat selection as evaluation
+        - Domain: D.CONFORMANCE.SCOPE; authority: NORMATIVE_VCP; source: spec/draft/meaning.md:5-7.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+  - **Policies**: 22 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **Built-ins**: 6 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **BOUNDARIES**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.POLICY.PROBABILITY.BOUNDARIES`: p=0 returns SKIP; p=1 returns RUN.
+          - Preconditions: PROBABILITY evaluated with valid explicit p
+          - Observable: Exact endpoint admission.
+          - Forbidden: Do not sample contrary endpoint outcome.
+          - Domain: D.POLICY.PROBABILITY; authority: NORMATIVE_VCP; source: spec/draft/execution-policy.md:36-43.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **DOMAIN**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.POLICY.PROBABILITY.DOMAIN`: Probability is a finite JSON number p in [0,1].
+          - Preconditions: PROBABILITY admission declared
+          - Observable: Invalid policy declaration rejected.
+          - Forbidden: No bool, nonfinite, out-of-range or implicit probability.
+          - Domain: D.POLICY.PROBABILITY; authority: NORMATIVE_VCP; source: spec/draft/execution-policy.md:36-43.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **INTERIOR**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.POLICY.PROBABILITY.INTERIOR`: Return RUN or SKIP using explicit structural sampler inputs.
+          - Preconditions: 0<p<1 with definition fingerprint, subject identity, opportunity_id and explicit p
+          - Observable: Recorded admission stays in RUN/SKIP; reference-only bucket not enforced portably.
+          - Forbidden: No hidden budget/history/clock/environment; portable bucket identity not promised.
+          - Domain: D.POLICY.PROBABILITY; authority: NORMATIVE_VCP; source: spec/draft/execution-policy.md:36-43.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.POLICY.ALWAYS`: Return RUN
+        - Preconditions: Built-in ALWAYS admission is evaluated
+        - Observable: Admission outcome
+        - Forbidden: Do not silently sample
+        - Domain: D.POLICY.SEQUENTIAL; authority: NORMATIVE_VCP; source: spec/draft/execution-policy.md:36-43.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.POLICY.EXPLICIT`: Select the exact definition subject snapshot
+        - Preconditions: Built-in EXPLICIT selection is evaluated
+        - Observable: Selection outcome
+        - Forbidden: Do not invent a candidate universe
+        - Domain: D.POLICY.SEQUENTIAL; authority: NORMATIVE_VCP; source: spec/draft/execution-policy.md:36-43.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.POLICY.MANUAL`: Return ACTIVATE
+        - Preconditions: Built-in MANUAL activation receives a host opportunity
+        - Observable: Activation outcome
+        - Forbidden: Do not schedule a periodic trigger implicitly
+        - Domain: D.POLICY.SEQUENTIAL; authority: NORMATIVE_VCP; source: spec/draft/execution-policy.md:36-43.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Declarations**: 3 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.POLICY.DECLARATION.BUILTIN_INPUTS`: No ports, bindings or config are attached.
+        - Preconditions: A built-in shorthand is authored
+        - Observable: Reject mixed declaration.
+        - Forbidden: Do not add hidden typed/custom computation to shorthand.
+        - Domain: D.POLICY.BUILTIN_FIELDS; authority: NORMATIVE_VCP; source: spec/draft/execution-policy.md:36-43.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.POLICY.DECLARATION.DISCRIMINATOR`: Exactly one custom operation or built-in discriminator.
+        - Preconditions: A policy is authored
+        - Observable: Policy declaration rejection.
+        - Forbidden: Do not omit both or mix both.
+        - Domain: D.POLICY.DECLARATION; authority: NORMATIVE_VCP; source: spec/draft/execution-policy.md:36-43.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.POLICY.DECLARATION.PROBABILITY_FIELD`: No probability field is used.
+        - Preconditions: A policy other than built-in PROBABILITY is authored
+        - Observable: Reject invalid declaration.
+        - Forbidden: Do not attach probability to custom/other built-in roles.
+        - Domain: D.POLICY.BUILTIN_FIELDS; authority: NORMATIVE_VCP; source: spec/draft/execution-policy.md:36-43.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Failure**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.POLICY.FAILURE`: Abort policy evaluation without decision or occurrence
+        - Preconditions: Policy input is required unavailable/invalid, implementation raises, or outcome invalid
+        - Observable: POLICY_INPUT/POLICY_OUTPUT where specified; no RunRecord
+        - Forbidden: Do not invent admission or fabricate a record
+        - Domain: D.POLICY.SEQUENTIAL; authority: NORMATIVE_VCP; source: spec/draft/execution-policy.md:9-17.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Identity**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.POLICY.OPPORTUNITY`: Supply nonempty opportunity_id
+        - Preconditions: VCP occurrence opportunity is offered
+        - Observable: Reject empty identity; Relay may explicitly generate one as host behavior
+        - Forbidden: Do not derive semantic opportunity identity from hidden ambient state
+        - Domain: D.POLICY.OPPORTUNITY; authority: NORMATIVE_VCP; source: spec/draft/execution-policy.md:45-51.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Inputs**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.POLICY.SOURCES`: Only CONSTANT, RUN_INPUT and EXTERNAL_REFERENCE bindings are legal
+        - Preconditions: Custom typed policy is declared
+        - Observable: Reject policy definition
+        - Forbidden: Do not allow pre-graph UPSTREAM_OUTPUT or undeclared Context
+        - Domain: D.POLICY.SOURCE; authority: NORMATIVE_VCP; source: spec/draft/execution-policy.md:9-17.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Occurrence boundary**: 5 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.POLICY.ADMISSION`: Create occurrence for RUN, SKIP or DEFER
+        - Preconditions: Activated selected subject receives valid admission
+        - Observable: RunRecord exists after valid admission
+        - Forbidden: Do not require actual graph execution to call it an occurrence
+        - Domain: D.POLICY.SEQUENTIAL; authority: NORMATIVE_VCP; source: spec/draft/execution-policy.md:60-65.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.POLICY.DEFER`: Every node terminal DEFERRED with ADMISSION_DEFER without invocation
+        - Preconditions: Admission returns DEFER
+        - Observable: Complete deferred records
+        - Forbidden: Do not execute graph providers or schedule invisible retries
+        - Domain: D.POLICY.SEQUENTIAL; authority: NORMATIVE_VCP; source: spec/draft/execution-policy.md:60-65.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.POLICY.INACTIVE`: Stop before selection with no occurrence
+        - Preconditions: Activation returns DO_NOT_ACTIVATE
+        - Observable: No occurrence
+        - Forbidden: Do not create RunRecord or node records
+        - Domain: D.POLICY.SEQUENTIAL; authority: NORMATIVE_VCP; source: spec/draft/execution-policy.md:55-58.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.POLICY.SKIP`: Every node terminal SKIPPED with ADMISSION_SKIP without invocation
+        - Preconditions: Admission returns SKIP
+        - Observable: Complete nonexecution records
+        - Forbidden: Do not label this FAIL, UNKNOWN or execution ERROR
+        - Domain: D.POLICY.SEQUENTIAL; authority: NORMATIVE_VCP; source: spec/draft/execution-policy.md:60-65.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.POLICY.UNSELECTED`: Stop before admission with no occurrence
+        - Preconditions: Selection returns empty set
+        - Observable: No occurrence
+        - Forbidden: Do not create RunRecord or node records
+        - Domain: D.POLICY.SEQUENTIAL; authority: NORMATIVE_VCP; source: spec/draft/execution-policy.md:55-58.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Outcomes**: 3 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.POLICY.OUTCOME_ACTIVATION`: Return Activation with ACTIVATE or DO_NOT_ACTIVATE and nonempty reason
+        - Preconditions: Activation provider returns
+        - Observable: Role-constrained activation outcome
+        - Forbidden: Do not accept Result, Decision, envelope or boolean
+        - Domain: D.POLICY.SEQUENTIAL; authority: NORMATIVE_VCP; source: spec/draft/execution-policy.md:23-26.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.POLICY.OUTCOME_ADMISSION`: Return Admission RUN, SKIP or DEFER with nonempty reason
+        - Preconditions: Admission provider returns
+        - Observable: Reject invalid policy output
+        - Forbidden: Do not accept other role outcomes
+        - Domain: D.POLICY.SEQUENTIAL; authority: NORMATIVE_VCP; source: spec/draft/execution-policy.md:23-26.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.POLICY.OUTCOME_SELECTION`: Return Selection with reason and an identity-unique subject set that is empty or exact definition subject
+        - Preconditions: Selection provider returns
+        - Observable: Reject invalid policy output
+        - Forbidden: Do not select foreign snapshots, duplicate IDs or expand the graph
+        - Domain: D.POLICY.SEQUENTIAL; authority: NORMATIVE_VCP; source: spec/draft/execution-policy.md:23-26.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Stages**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.POLICY.ORDER`: Evaluate activation, then selection, then admission before graph work
+        - Preconditions: An opportunity is evaluated
+        - Observable: Exact policy evaluation order
+        - Forbidden: Do not let policies inspect graph execution
+        - Domain: D.POLICY.SEQUENTIAL; authority: NORMATIVE_VCP; source: spec/draft/execution-policy.md:5-7.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Validation**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.POLICY.PREFLIGHT`: Validate complete definition, schemas, constants and bindings first
+        - Preconditions: Any policy or graph implementation might be invoked
+        - Observable: No implementation side effects before preflight
+        - Forbidden: Do not invoke on partially validated definitions
+        - Domain: D.POLICY.SEQUENTIAL; authority: NORMATIVE_VCP; source: spec/draft/execution-policy.md:9-17.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+  - **Profiles**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **standard-draft**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **Severity**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.PROFILE.STANDARD_SEVERITY`: Use ordered INFO=10, WARNING=20, ERROR=30, BLOCKER=40 under domain id standard-draft.
+          - Preconditions: The standard-draft severity domain snapshot is explicitly selected.
+          - Observable: Exact selected label rank order.
+          - Forbidden: Do not interpret an unresolved different domain through these labels or derive a binary verdict.
+          - Domain: D.PROFILE.STANDARD; authority: SELECTED_STANDARD_VCP_PROFILE; source: profiles/standard-draft/profile.json:1-97.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+  - **Provenance**: 28 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **Evidence**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.OBS.EVIDENCE`: Invalidate acceptance and retain observed snapshot plus valid usage
+        - Preconditions: Observed Evidence is structurally typed but semantically invalid
+        - Observable: Recorded rejected observation
+        - Forbidden: Do not promote invalid evidence into accepted evaluation evidence
+        - Domain: D.OBSERVATION.USAGE; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:227-241.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Execution observation**: 2 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **SNAPSHOT**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.OBS.RETENTION.SNAPSHOT`: Retain observed snapshot separately from accepted semantic outputs.
+          - Preconditions: Attempt observations fail semantic acceptance
+          - Observable: Raw observation retained.
+          - Forbidden: Do not replace it by fabricated successful output.
+          - Domain: D.OBSERVATION.USAGE; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:227-241.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **USAGE**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.OBS.RETENTION.USAGE`: Retain that incurred usage independently of semantic rejection.
+          - Preconditions: Attempt reports valid incurred usage but output/judgment/error acceptance fails
+          - Observable: Recorded authoritative usage.
+          - Forbidden: Do not erase known consumption.
+          - Domain: D.OBSERVATION.USAGE; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:227-241.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Lineage**: 4 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **NO_RERUN**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.PROV.RECONSTRUCT.NO_RERUN`: Do not execute provider/custom policy logic to validate stored lineage.
+          - Preconditions: RunRecord is validated
+          - Observable: Zero rerun validation.
+          - Forbidden: No replay requirement or provider side effects during validation.
+          - Domain: D.RECORD.ELIGIBILITY; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:243-254.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **RESOLUTIONS**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.PROV.RECONSTRUCT.RESOLUTIONS`: Reconstruct each resolution from definition, normalized run inputs and recorded predecessor/source values.
+          - Preconditions: RunRecord validates declared consumed inputs
+          - Observable: PROVENANCE_LINEAGE on contradiction.
+          - Forbidden: Do not accept mutually copied forged values without source reconstruction.
+          - Domain: D.RECORD.ELIGIBILITY; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:243-254.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **VALUES**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.PROV.RECONSTRUCT.VALUES`: Exact assembled input_values equals the usable/defaulted resolved port values, with omissions absent.
+          - Preconditions: Reconstructed input resolutions are available
+          - Observable: Exact consumed input snapshot.
+          - Forbidden: No unbound/stale/null fallback values.
+          - Domain: D.RECORD.ELIGIBILITY; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:243-254.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.PROV.UNBOUND`: Reject unbound consumed values and membership drift
+        - Preconditions: Recorded inputs or aggregate membership disagree with declarations
+        - Observable: PROVENANCE_LINEAGE
+        - Forbidden: Do not accept invented semantic inputs
+        - Domain: D.RECORD.ELIGIBILITY; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:243-254.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **NodeRecord**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **Direct upstream snapshots**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.PROV.UPSTREAM_SNAPSHOTS`: Record direct upstream identities and Result snapshots consistent with actual execution prerequisites and earlier node records.
+          - Preconditions: Occurrence node provenance validated.
+          - Observable: PROVENANCE_LINEAGE on inconsistent direct lineage.
+          - Forbidden: Do not substitute transitive/unrelated producer snapshots or silently drift upstream Result values.
+          - Domain: D.RECORD.ELIGIBILITY; authority: NORMATIVE_VCP; source: spec/draft/provenance.md:11-19.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Nonexecution**: 4 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.PROV.UNSTARTED.EXECUTOR`: Executor identity/version are absent.
+        - Preconditions: Node never started
+        - Observable: Identity absence.
+        - Forbidden: No fabricated provider identity for uninvoked work.
+        - Domain: D.RECORD.ELIGIBILITY; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:243-254.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.PROV.UNSTARTED.INFORMATION`: Accepted information and Decision are absent.
+        - Preconditions: Node never started
+        - Observable: Accepted-output absence.
+        - Forbidden: No accepted output without execution.
+        - Domain: D.RECORD.ELIGIBILITY; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:243-254.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.PROV.UNSTARTED.OBSERVATION`: No executor observation is retained.
+        - Preconditions: Node never started
+        - Observable: Observation absence.
+        - Forbidden: No fabricated output/evidence snapshot.
+        - Domain: D.RECORD.ELIGIBILITY; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:243-254.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.PROV.UNSTARTED.USAGE`: Executor usage is absent; runner wall time is separate bookkeeping.
+        - Preconditions: Node never started
+        - Observable: Usage provenance.
+        - Forbidden: Do not claim provider consumption without work.
+        - Domain: D.OBSERVATION.USAGE; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:243-254.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Policies**: 7 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **ACTIVATION**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.PROV.ADMISSION_EQUALITY.ACTIVATION`: Recorded Activation outcome is ACTIVATE.
+          - Preconditions: RunRecord describes an occurrence
+          - Observable: PROVENANCE_LINEAGE otherwise.
+          - Forbidden: No inactive RunRecord.
+          - Domain: D.RECORD.ELIGIBILITY; authority: NORMATIVE_VCP; source: spec/draft/provenance.md:42-51.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **ADMISSION**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.PROV.ADMISSION_EQUALITY.ADMISSION`: Policy admission object equals RunRecord.admission under JSON typed equality.
+          - Preconditions: Occurrence records policy admission
+          - Observable: PROVENANCE_LINEAGE otherwise.
+          - Forbidden: No drift between copies.
+          - Domain: D.RECORD.ELIGIBILITY; authority: NORMATIVE_VCP; source: spec/draft/provenance.md:42-51.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **BUILTINS**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.PROV.POLICY_ORDER.BUILTINS`: Check built-in semantic outcomes including probability endpoints, but not portable interior bucket identity.
+          - Preconditions: Built-in outcome recorded
+          - Observable: Endpoint or role inconsistency is PROVENANCE_LINEAGE.
+          - Forbidden: No blanket trust of built-in label or rerunning custom logic.
+          - Domain: D.RECORD.ELIGIBILITY; authority: NORMATIVE_VCP; source: spec/draft/provenance.md:42-51.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **ELIGIBILITY**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.PROV.POLICY_ORDER.ELIGIBILITY`: Activation is ACTIVATE; selection is exact definition subject; admission equals RunRecord.admission.
+          - Preconditions: RunRecord policy outcomes validated
+          - Observable: PROVENANCE_LINEAGE on inconsistent occurrence evidence.
+          - Forbidden: No occurrence for inactive/unselected opportunity.
+          - Domain: D.RECORD.ELIGIBILITY; authority: NORMATIVE_VCP; source: spec/draft/provenance.md:42-51.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **INPUTS**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.PROV.POLICY_ORDER.INPUTS`: Reconstruct exact policy resolutions/values from definition and supplied run inputs.
+          - Preconditions: Policy provenance validated
+          - Observable: PROVENANCE_LINEAGE on reconstructed input mismatch.
+          - Forbidden: Do not rerun custom policy implementation.
+          - Domain: D.RECORD.ELIGIBILITY; authority: NORMATIVE_VCP; source: spec/draft/provenance.md:42-51.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **SELECTION**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.PROV.ADMISSION_EQUALITY.SELECTION`: Recorded selection contains exact definition subject snapshot.
+          - Preconditions: RunRecord describes an occurrence
+          - Observable: PROVENANCE_LINEAGE otherwise.
+          - Forbidden: No empty/foreign subject occurrence.
+          - Domain: D.RECORD.ELIGIBILITY; authority: NORMATIVE_VCP; source: spec/draft/provenance.md:42-51.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **STAGES**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.PROV.POLICY_ORDER.STAGES`: Exactly ACTIVATION, SELECTION, ADMISSION policy evaluations in order.
+          - Preconditions: RunRecord exists
+          - Observable: Role sequence equals authored stage order.
+          - Forbidden: No omitted/reordered/duplicated stage.
+          - Domain: D.RECORD.ELIGIBILITY; authority: NORMATIVE_VCP; source: spec/draft/provenance.md:42-51.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **RunRecord**: 4 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **FINGERPRINT**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.PROV.RECORD_ANCHOR.FINGERPRINT`: Treat fingerprint as opaque reference identity, not portable integrity signature.
+          - Preconditions: Definition fingerprint consumed
+          - Observable: Consistency guarantees remain bounded by external trust.
+          - Forbidden: Do not infer signing or authenticity from local-sha256 label.
+          - Domain: D.RECORD.ELIGIBILITY; authority: NORMATIVE_VCP; source: spec/draft/provenance.md:5-9.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **SNAPSHOTS**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.PROV.RECORD_ANCHOR.SNAPSHOTS`: Definition, subject, initial supplied run_inputs and initial_context are immutable authored occurrence snapshots.
+          - Preconditions: Occurrence recorded
+          - Observable: Record anchors compare with externally known occurrence inputs when available.
+          - Forbidden: Do not substitute matching copied observed fields for authored inputs.
+          - Domain: D.RECORD.ELIGIBILITY; authority: NORMATIVE_VCP; source: spec/draft/provenance.md:5-9.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.PROV.NODE_SET.EXACT`: Exactly one NodeRecord for every definition node.
+        - Preconditions: An occurrence is recorded
+        - Observable: Node identity set and cardinality.
+        - Forbidden: No duplicates, missing or invented nodes.
+        - Domain: D.RECORD.ELIGIBILITY; authority: NORMATIVE_VCP; source: spec/draft/provenance.md:5-9.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.PROV.NODE_SET.ORDER`: Records follow dependency order.
+        - Preconditions: Dependency-related nodes are recorded
+        - Observable: Record sequence.
+        - Forbidden: Do not accept a consumer record ahead of its prerequisite.
+        - Domain: D.RECORD.ELIGIBILITY; authority: NORMATIVE_VCP; source: spec/draft/provenance.md:5-9.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Timing**: 2 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.PROV.TIMING.DEPENDENCY`: Every predecessor finishes before consumer starts.
+        - Preconditions: Consumer has execution predecessors
+        - Observable: Recorded dependency timing.
+        - Forbidden: Do not infer readiness from node array position.
+        - Domain: D.RECORD.ELIGIBILITY; authority: NORMATIVE_VCP; source: spec/draft/provenance.md:22-27.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.PROV.TIMING.INTERVAL`: Node start/finish lie within the run interval with nonnegative duration.
+        - Preconditions: Node record has timestamps
+        - Observable: Recorded interval validity.
+        - Forbidden: Do not accept reversed/outside timestamps.
+        - Domain: D.RECORD.ELIGIBILITY; authority: NORMATIVE_VCP; source: spec/draft/provenance.md:22-27.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Trust boundary**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.PROV.TRUST_LIMIT`: Claim consistency detection only, without replay/authentication
+        - Preconditions: An entire record is internally coherent
+        - Observable: No portable signing/attestation guarantee
+        - Forbidden: Do not claim detection of coordinated rewriting or dishonest provider truth without external trust
+        - Domain: D.RECORD.ELIGIBILITY; authority: NORMATIVE_VCP; source: spec/draft/provenance.md:29-32.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Usage**: 2 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.OBS.AUTHORITY.NO_SUM`: Do not add repeated usage as additional charge.
+        - Preconditions: Observation and Result repeat usage
+        - Observable: Per-attempt usage.
+        - Forbidden: No double accounting.
+        - Domain: D.OBSERVATION.USAGE; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:227-241.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.OBS.AUTHORITY.OVERLAP`: Repeated dimensions agree exactly with authoritative observation.
+        - Preconditions: Result repeats execution observation usage dimensions
+        - Observable: Semantic rejection on mismatch.
+        - Forbidden: Do not accept contradictory dimensions.
+        - Domain: D.OBSERVATION.USAGE; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:227-241.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+  - **Provider binding**: 12 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **Contract boundaries**: 2 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.BIND.INPUT`: Exact port input and node config validate against capability schemas before invocation
+        - Preconditions: Resolved bound invocation is assembled
+        - Observable: INVALID_INPUT/INVALID_CONFIG boundary
+        - Forbidden: Do not insert defaults, override ports or wrap primitives
+        - Domain: D.OPERATION.IDENTITY; authority: NORMATIVE_VCP; source: spec/draft/provider-binding.md:12-18.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.BIND.OUTPUT`: Validate exact output object against capability schema before VCP port/Result/Decision/judgment acceptance
+        - Preconditions: Provider returns COMPLETED output
+        - Observable: Independent contract and semantic acceptance
+        - Forbidden: Do not equate COMPLETED with VCP success/PASS
+        - Domain: D.OPERATION.IDENTITY; authority: NORMATIVE_VCP; source: spec/draft/provider-binding.md:20-28.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Identity**: 3 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **COMPATIBILITY**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.BIND.PRECHECK.COMPATIBILITY`: Enforce Provider Contract version/interchange compatibility.
+          - Preconditions: Bound capability exchanges contract/VCP objects
+          - Observable: Incompatible binding rejected before invocation.
+          - Forbidden: Do not infer compatible revision from marker alone.
+          - Domain: D.OPERATION.IDENTITY; authority: NORMATIVE_VCP; source: spec/draft/provider-binding.md:12-18.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **IDENTITY**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.BIND.PRECHECK.IDENTITY`: Binding provider identity/version equals manifest; capability pair equals node requirement and advertised exact pair.
+          - Preconditions: Concrete binding selects graph node
+          - Observable: Identity/pair conflicts reject before invocation.
+          - Forbidden: No fallback to another provider or version.
+          - Domain: D.OPERATION.IDENTITY; authority: NORMATIVE_VCP; source: spec/draft/provider-binding.md:12-18.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **STRUCTURE**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.BIND.PRECHECK.STRUCTURE`: Validate binding and complete bound manifest structural and semantic validity before invocation, including capability schemas.
+          - Preconditions: Concrete binding supplied
+          - Observable: Preinvocation rejection.
+          - Forbidden: Do not invoke from malformed binding/manifest.
+          - Domain: D.OPERATION.IDENTITY; authority: NORMATIVE_VCP; source: spec/draft/provider-binding.md:12-18.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Provenance**: 4 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **EXECUTOR**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.BIND.PROVENANCE.EXECUTOR`: executor_ref/provider_id and executor_version/provider_version are equal.
+          - Preconditions: Bound invocation records executor identity/version
+          - Observable: PROVENANCE_LINEAGE on mismatch.
+          - Forbidden: No invented different executor.
+          - Domain: D.RECORD.ELIGIBILITY; authority: NORMATIVE_VCP; source: spec/draft/provider-binding.md:30-39.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **NODE_COPY**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.BIND.PROVENANCE.NODE_COPY`: NodeRecord.provider_binding equals actual occurrence invocation binding and operation pair.
+          - Preconditions: Bound invocation NodeRecord exists
+          - Observable: PROVENANCE_LINEAGE on mismatch.
+          - Forbidden: No divergent provenance copies.
+          - Domain: D.RECORD.ELIGIBILITY; authority: NORMATIVE_VCP; source: spec/draft/provider-binding.md:30-39.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **OCCURRENCE_MAP**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.BIND.PROVENANCE.OCCURRENCE_MAP`: Occurrence provider_bindings[node_id] equals exact actual four-part binding.
+          - Preconditions: Bound graph node actually invokes, including raised/interrupted invocation
+          - Observable: Recorded binding.
+          - Forbidden: No drift or missing invocation map identity.
+          - Domain: D.RECORD.ELIGIBILITY; authority: NORMATIVE_VCP; source: spec/draft/provider-binding.md:30-39.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **ONLY_INVOKED**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.BIND.PROVENANCE.ONLY_INVOKED`: No concrete invocation binding is fabricated.
+          - Preconditions: Node never invoked or local implementation has no Provider manifest
+          - Observable: Binding absence for noninvocation.
+          - Forbidden: No binding on lifecycle-disabled/preflight-rejected/local unbound work.
+          - Domain: D.RECORD.ELIGIBILITY; authority: NORMATIVE_VCP; source: spec/draft/provider-binding.md:30-39.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Rejected output**: 3 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **ACCEPTANCE**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.BIND.OUTPUT_REJECTION.ACCEPTANCE`: No accepted information or Decision; terminal ERROR with corresponding bookkeeping Result, or interrupted CANCELLED.
+          - Preconditions: Provider output schema rejection recorded
+          - Observable: Bookkeeping Result remains subject to declared Result-port schema.
+          - Forbidden: Invalid raw information never becomes consumable downstream.
+          - Domain: D.RECORD.ELIGIBILITY; authority: NORMATIVE_VCP; source: spec/draft/provider-binding.md:41-49.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **DIAGNOSIS**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.BIND.OUTPUT_REJECTION.DIAGNOSIS`: Record provider_output_error with INVALID_PROVIDER_OUTPUT and diagnostic message; requires provider binding.
+          - Preconditions: Provider output schema rejects observation without execution error
+          - Observable: Separate host validation rejection provenance.
+          - Forbidden: No provider_output_error without binding or for execution-error observation.
+          - Domain: D.RECORD.ELIGIBILITY; authority: NORMATIVE_VCP; source: spec/draft/provider-binding.md:41-49.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **RETAIN**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.BIND.OUTPUT_REJECTION.RETAIN`: Retain exact binding, raw observation and valid incurred usage.
+          - Preconditions: Provider output schema rejects successful raw observation
+          - Observable: Raw snapshot remains observation only.
+          - Forbidden: Do not discard valid usage because semantic output rejected.
+          - Domain: D.RECORD.ELIGIBILITY; authority: NORMATIVE_VCP; source: spec/draft/provider-binding.md:41-49.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+  - **Resources**: 5 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **Accounting**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.RES.UNITS`: Preserve explicit units and separate runner duration from executor usage
+        - Preconditions: Usage is combined or reported
+        - Observable: No duplicated or unitless charge
+        - Forbidden: Do not sum incompatible units or convert implicitly
+        - Domain: D.RESOURCES.SEMANTICS; authority: NORMATIVE_VCP; source: spec/draft/resources.md:5-12.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Measurements**: 2 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.RES.KINDS`: EXACT/ESTIMATED have nonnegative finite value only; RANGE has nonnegative finite minimum/maximum only; UNKNOWN has neither
+        - Preconditions: A resource measurement is validated
+        - Observable: RESOURCE_MEASUREMENT for semantic violation
+        - Forbidden: Do not populate numeric fields for another kind
+        - Domain: D.RESOURCES.SEMANTICS; authority: NORMATIVE_VCP; source: spec/draft/resources.md:5-12.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.RES.ORDER`: minimum <= maximum
+        - Preconditions: A RANGE measurement is validated
+        - Observable: RESOURCE_MEASUREMENT
+        - Forbidden: Do not accept reversed bounds
+        - Domain: D.RESOURCES.SEMANTICS; authority: NORMATIVE_VCP; source: spec/draft/resources.md:5-12.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Reference profile**: 2 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **MEASUREMENT**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.RES.WALL_TIME.MEASUREMENT`: Record EXACT seconds using monotonic elapsed clock.
+          - Preconditions: Reference engine measures own wall_time
+          - Observable: Nonnegative monotonic elapsed measurement.
+          - Forbidden: Do not promise physical clock precision or substitute UTC subtraction.
+          - Domain: D.RESOURCES.SEMANTICS; authority: NORMATIVE_VCP; source: spec/draft/resources.md:14-18.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **SEPARATE**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.RES.WALL_TIME.SEPARATE`: Retain adapter usage and record engine duration separately.
+          - Preconditions: Reference engine records node usage
+          - Observable: Executor usage and engine timing distinguishable.
+          - Forbidden: No merging incompatible units or duplicating executor charge.
+          - Domain: D.RESOURCES.SEMANTICS; authority: NORMATIVE_VCP; source: spec/draft/resources.md:14-18.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+  - **Result**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **Score**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **Normalized meaning**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.RESULT.SCORE_MEANING`: Score is a JSON number in[0,1], with1 meaning stronger satisfaction and0 stronger violation; it does not imply verdict.
+          - Preconditions: A Result contains nonnull score.
+          - Observable: Typed normalized observation retains declared orientation.
+          - Forbidden: Do not reverse direction or infer score-to-verdict mapping.
+          - Domain: D.AGG.NUMERIC; authority: NORMATIVE_VCP; source: spec/draft/result.md:18-22.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+  - **Results**: 30 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **Evidence**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.RESULT.NONEXEC_EVIDENCE`: Evidence may explain nonexecution
+        - Preconditions: A standalone nonexecution Result carries evidence
+        - Observable: Reject misleading accepted evaluation evidence
+        - Forbidden: Do not claim successful evaluation; runner nonexecution carries diagnostic reason without evaluation evidence
+        - Domain: D.EVIDENCE.PURPOSE; authority: NORMATIVE_VCP; source: spec/draft/result.md:55-57.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Observations**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.RESULT.INDEPENDENCE`: Judgment, verdict, score and severity are independently optional observations
+        - Preconditions: Successful applicable KNOWN evaluation
+        - Observable: Accept valid combinations without fabricated observations
+        - Forbidden: Do not derive a verdict from score/severity or add implicit satisfaction mappings
+        - Domain: D.RESULT.WIRE; authority: NORMATIVE_VCP; source: spec/draft/result.md:5-16.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Projection**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.RESULT.FLATTEN`: KNOWN with verdict maps to verdict; UNKNOWN to UNKNOWN; executed ERROR to ERROR; SKIPPED to SKIP
+        - Preconditions: A consumer requests the standard convenience projection
+        - Observable: Partial projection is undefined for those remaining states
+        - Forbidden: Do not invent projection values for DEFERRED, CANCELLED, NOT_APPLICABLE or KNOWN without verdict
+        - Domain: D.RESULT.FLATTENED; authority: NORMATIVE_VCP; source: spec/draft/result.md:24-28.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Severity**: 2 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.RESULT.SEVERITY`: Preserve domain/label as opaque identifiers
+        - Preconditions: Result severity has no explicit domain snapshot
+        - Observable: Unresolved domain alone is not a parsing failure
+        - Forbidden: Do not resolve a registry or assert label membership
+        - Domain: D.SEVERITY.DOMAIN; authority: NORMATIVE_VCP; source: spec/draft/result.md:18-22.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.SEVERITY.VERSION`: Domain identifier identifies the versioned semantic domain
+        - Preconditions: Severity meaning depends on version
+        - Observable: Domain identifier identifies the versioned semantic domain
+        - Forbidden: Do not use an ambiguous unversioned registry lookup to change meaning
+        - Domain: D.SEVERITY.DOMAIN; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:256-260.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **State**: 25 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.RESULT.DETERMINATION`: determination is KNOWN or UNKNOWN
+        - Preconditions: Successful applicable evaluation
+        - Observable: RESULT_STATE on violation
+        - Forbidden: Do not leave the determination unspecified
+        - Domain: D.RESULT.WIRE; authority: NORMATIVE_VCP; source: spec/draft/result.md:5-16.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.RESULT.ERROR.APPLICABILITY`: applicability is absent or explicitly null under VCP nullable-control semantics.
+        - Preconditions: Executed outcome is ERROR
+        - Observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.
+        - Forbidden: Do not accept a forbidden applicability observation in this Result state.
+        - Domain: D.RESULT.WIRE; authority: NORMATIVE_VCP; source: spec/draft/result.md:5-16.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.RESULT.ERROR.DETERMINATION`: determination is absent or explicitly null under VCP nullable-control semantics.
+        - Preconditions: Executed outcome is ERROR
+        - Observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.
+        - Forbidden: Do not accept a forbidden determination observation in this Result state.
+        - Domain: D.RESULT.WIRE; authority: NORMATIVE_VCP; source: spec/draft/result.md:5-16.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.RESULT.ERROR.JUDGMENT`: The judgment key is absent.
+        - Preconditions: Executed outcome is ERROR
+        - Observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.
+        - Forbidden: Do not accept a forbidden judgment observation in this Result state.
+        - Domain: D.RESULT.OBSERVATION_MASK; authority: NORMATIVE_VCP; source: spec/draft/result.md:5-16.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.RESULT.ERROR.SCORE`: score is absent or explicitly null under VCP nullable-control semantics.
+        - Preconditions: Executed outcome is ERROR
+        - Observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.
+        - Forbidden: Do not accept a forbidden score observation in this Result state.
+        - Domain: D.RESULT.WIRE; authority: NORMATIVE_VCP; source: spec/draft/result.md:5-16.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.RESULT.ERROR.SEVERITY`: severity is absent or explicitly null under VCP nullable-control semantics.
+        - Preconditions: Executed outcome is ERROR
+        - Observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.
+        - Forbidden: Do not accept a forbidden severity observation in this Result state.
+        - Domain: D.RESULT.WIRE; authority: NORMATIVE_VCP; source: spec/draft/result.md:5-16.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.RESULT.ERROR.VERDICT`: verdict is absent or explicitly null under VCP nullable-control semantics.
+        - Preconditions: Executed outcome is ERROR
+        - Observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.
+        - Forbidden: Do not accept a forbidden verdict observation in this Result state.
+        - Domain: D.RESULT.WIRE; authority: NORMATIVE_VCP; source: spec/draft/result.md:5-16.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.RESULT.NONEXECUTION.APPLICABILITY`: applicability is absent or explicitly null under VCP nullable-control semantics.
+        - Preconditions: Result.disposition is SKIPPED, DEFERRED or CANCELLED
+        - Observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.
+        - Forbidden: Do not accept a forbidden applicability observation in this Result state.
+        - Domain: D.RESULT.WIRE; authority: NORMATIVE_VCP; source: spec/draft/result.md:5-16.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.RESULT.NONEXECUTION.DETERMINATION`: determination is absent or explicitly null under VCP nullable-control semantics.
+        - Preconditions: Result.disposition is SKIPPED, DEFERRED or CANCELLED
+        - Observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.
+        - Forbidden: Do not accept a forbidden determination observation in this Result state.
+        - Domain: D.RESULT.WIRE; authority: NORMATIVE_VCP; source: spec/draft/result.md:5-16.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.RESULT.NONEXECUTION.EXECUTION_OUTCOME`: execution_outcome is absent or explicitly null under VCP nullable-control semantics.
+        - Preconditions: Result.disposition is SKIPPED, DEFERRED or CANCELLED
+        - Observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.
+        - Forbidden: Do not accept a forbidden execution_outcome observation in this Result state.
+        - Domain: D.RESULT.WIRE; authority: NORMATIVE_VCP; source: spec/draft/result.md:5-16.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.RESULT.NONEXECUTION.JUDGMENT`: The judgment key is absent.
+        - Preconditions: Result.disposition is SKIPPED, DEFERRED or CANCELLED
+        - Observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.
+        - Forbidden: Do not accept a forbidden judgment observation in this Result state.
+        - Domain: D.RESULT.OBSERVATION_MASK; authority: NORMATIVE_VCP; source: spec/draft/result.md:5-16.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.RESULT.NONEXECUTION.SCORE`: score is absent or explicitly null under VCP nullable-control semantics.
+        - Preconditions: Result.disposition is SKIPPED, DEFERRED or CANCELLED
+        - Observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.
+        - Forbidden: Do not accept a forbidden score observation in this Result state.
+        - Domain: D.RESULT.WIRE; authority: NORMATIVE_VCP; source: spec/draft/result.md:5-16.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.RESULT.NONEXECUTION.SEVERITY`: severity is absent or explicitly null under VCP nullable-control semantics.
+        - Preconditions: Result.disposition is SKIPPED, DEFERRED or CANCELLED
+        - Observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.
+        - Forbidden: Do not accept a forbidden severity observation in this Result state.
+        - Domain: D.RESULT.WIRE; authority: NORMATIVE_VCP; source: spec/draft/result.md:5-16.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.RESULT.NONEXECUTION.VERDICT`: verdict is absent or explicitly null under VCP nullable-control semantics.
+        - Preconditions: Result.disposition is SKIPPED, DEFERRED or CANCELLED
+        - Observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.
+        - Forbidden: Do not accept a forbidden verdict observation in this Result state.
+        - Domain: D.RESULT.WIRE; authority: NORMATIVE_VCP; source: spec/draft/result.md:5-16.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.RESULT.NOT_APPLICABLE.DETERMINATION`: determination is absent or explicitly null under VCP nullable-control semantics.
+        - Preconditions: Successful outcome is NOT_APPLICABLE
+        - Observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.
+        - Forbidden: Do not accept a forbidden determination observation in this Result state.
+        - Domain: D.RESULT.WIRE; authority: NORMATIVE_VCP; source: spec/draft/result.md:5-16.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.RESULT.NOT_APPLICABLE.JUDGMENT`: The judgment key is absent.
+        - Preconditions: Successful outcome is NOT_APPLICABLE
+        - Observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.
+        - Forbidden: Do not accept a forbidden judgment observation in this Result state.
+        - Domain: D.RESULT.OBSERVATION_MASK; authority: NORMATIVE_VCP; source: spec/draft/result.md:5-16.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.RESULT.NOT_APPLICABLE.SCORE`: score is absent or explicitly null under VCP nullable-control semantics.
+        - Preconditions: Successful outcome is NOT_APPLICABLE
+        - Observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.
+        - Forbidden: Do not accept a forbidden score observation in this Result state.
+        - Domain: D.RESULT.WIRE; authority: NORMATIVE_VCP; source: spec/draft/result.md:5-16.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.RESULT.NOT_APPLICABLE.SEVERITY`: severity is absent or explicitly null under VCP nullable-control semantics.
+        - Preconditions: Successful outcome is NOT_APPLICABLE
+        - Observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.
+        - Forbidden: Do not accept a forbidden severity observation in this Result state.
+        - Domain: D.RESULT.WIRE; authority: NORMATIVE_VCP; source: spec/draft/result.md:5-16.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.RESULT.NOT_APPLICABLE.VERDICT`: verdict is absent or explicitly null under VCP nullable-control semantics.
+        - Preconditions: Successful outcome is NOT_APPLICABLE
+        - Observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.
+        - Forbidden: Do not accept a forbidden verdict observation in this Result state.
+        - Domain: D.RESULT.WIRE; authority: NORMATIVE_VCP; source: spec/draft/result.md:5-16.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.RESULT.OUTCOME`: execution_outcome is SUCCESS or ERROR
+        - Preconditions: Result.disposition is EXECUTED
+        - Observable: RESULT_STATE on violation
+        - Forbidden: Do not accept absent/null outcome for an executed Result
+        - Domain: D.RESULT.WIRE; authority: NORMATIVE_VCP; source: spec/draft/result.md:5-16.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.RESULT.SUCCESS`: applicability is APPLICABLE or NOT_APPLICABLE
+        - Preconditions: Executed outcome is SUCCESS
+        - Observable: RESULT_STATE on violation
+        - Forbidden: Do not omit applicability
+        - Domain: D.RESULT.WIRE; authority: NORMATIVE_VCP; source: spec/draft/result.md:5-16.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.RESULT.UNKNOWN.JUDGMENT`: The judgment key is absent.
+        - Preconditions: determination is UNKNOWN
+        - Observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.
+        - Forbidden: Do not accept a forbidden judgment observation in this Result state.
+        - Domain: D.RESULT.OBSERVATION_MASK; authority: NORMATIVE_VCP; source: spec/draft/result.md:5-16.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.RESULT.UNKNOWN.SCORE`: score is absent or explicitly null under VCP nullable-control semantics.
+        - Preconditions: determination is UNKNOWN
+        - Observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.
+        - Forbidden: Do not accept a forbidden score observation in this Result state.
+        - Domain: D.RESULT.WIRE; authority: NORMATIVE_VCP; source: spec/draft/result.md:5-16.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.RESULT.UNKNOWN.SEVERITY`: severity is absent or explicitly null under VCP nullable-control semantics.
+        - Preconditions: determination is UNKNOWN
+        - Observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.
+        - Forbidden: Do not accept a forbidden severity observation in this Result state.
+        - Domain: D.RESULT.WIRE; authority: NORMATIVE_VCP; source: spec/draft/result.md:5-16.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - `CM.VCP.RESULT.UNKNOWN.VERDICT`: verdict is absent or explicitly null under VCP nullable-control semantics.
+        - Preconditions: determination is UNKNOWN
+        - Observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.
+        - Forbidden: Do not accept a forbidden verdict observation in this Result state.
+        - Domain: D.RESULT.WIRE; authority: NORMATIVE_VCP; source: spec/draft/result.md:5-16.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+  - **Schemas**: 3 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **Compatibility**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.SCHEMA.STATIC`: Validate authored constants/defaults/references; reject source/target bindings with false schemas, disjoint explicit primitive-type sets or incompatible finite const/enum values. Integer overlaps number. Other implication is deferred to runtime.
+        - Preconditions: Static source/target compatibility and authored constant/default/reference checks for a definition.
+        - Observable: Reject known incompatibility; defer other implication to runtime
+        - Forbidden: Do not reinterpret a false JSON Schema as syntactically invalid everywhere: a valid false judgment schema admits no emitted judgments but does not itself forbid an absent judgment.
+        - Domain: D.SCHEMA.EMBEDDED; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:96-105.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Embedded**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.SCHEMA.SUBSET`: Valid Draft 2020-12 object/boolean; only resolvable local JSON Pointer references; no nested IDs, anchors/dynamic refs or external resolution
+        - Preconditions: An embedded schema is declared
+        - Observable: SCHEMA_UNSUPPORTED before invocation for unsupported resolution
+        - Forbidden: Do not execute annotation objects as schemas or resolve arbitrary documents
+        - Domain: D.SCHEMA.EMBEDDED; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:96-105.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Instances**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.SCHEMA.RUNTIME`: Validate actual values against all applicable schemas
+        - Preconditions: Every actual input or output is accepted
+        - Observable: No invalid value becomes consumable
+        - Forbidden: Do not substitute static overlap for runtime instance validity
+        - Domain: D.SCHEMA.EMBEDDED; authority: NORMATIVE_VCP; source: spec/draft/dataflow.md:96-105.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+  - **Wire roots**: 24 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **activation**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.ROOT.ACTIVATION`: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Preconditions: Wire object submitted to this named root
+        - Observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.
+        - Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Domain: D.ROOT.VCP.activation; authority: NORMATIVE_SCHEMA_ROOT; source: schemas/draft/activation.schema.json:1-24.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **admission**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.ROOT.ADMISSION`: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Preconditions: Wire object submitted to this named root
+        - Observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.
+        - Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Domain: D.ROOT.VCP.admission; authority: NORMATIVE_SCHEMA_ROOT; source: schemas/draft/admission.schema.json:1-25.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **artifact-ref**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.ROOT.ARTIFACT_REF`: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Preconditions: Wire object submitted to this named root
+        - Observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.
+        - Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Domain: D.ROOT.VCP.artifact-ref; authority: NORMATIVE_SCHEMA_ROOT; source: schemas/draft/artifact-ref.schema.json:1-43.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **cancellation-event**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.ROOT.CANCELLATION_EVENT`: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Preconditions: Wire object submitted to this named root
+        - Observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.
+        - Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Domain: D.ROOT.VCP.cancellation-event; authority: NORMATIVE_SCHEMA_ROOT; source: schemas/draft/cancellation-event.schema.json:1-29.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **decision**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.ROOT.DECISION`: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Preconditions: Wire object submitted to this named root
+        - Observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.
+        - Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Domain: D.ROOT.VCP.decision; authority: NORMATIVE_SCHEMA_ROOT; source: schemas/draft/decision.schema.json:1-58.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **evidence**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.ROOT.EVIDENCE`: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Preconditions: Wire object submitted to this named root
+        - Observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.
+        - Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Domain: D.ROOT.VCP.evidence; authority: NORMATIVE_SCHEMA_ROOT; source: schemas/draft/evidence.schema.json:1-53.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **execution-observation**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.ROOT.EXECUTION_OBSERVATION`: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Preconditions: Wire object submitted to this named root
+        - Observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.
+        - Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Domain: D.ROOT.VCP.execution-observation; authority: NORMATIVE_SCHEMA_ROOT; source: schemas/draft/execution-observation.schema.json:1-51.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **extension**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.ROOT.EXTENSION`: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Preconditions: Wire object submitted to this named root
+        - Observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.
+        - Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Domain: D.ROOT.VCP.extension; authority: NORMATIVE_SCHEMA_ROOT; source: schemas/draft/extension.schema.json:1-28.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **graph**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.ROOT.GRAPH`: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Preconditions: Wire object submitted to this named root
+        - Observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.
+        - Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Domain: D.ROOT.VCP.graph; authority: NORMATIVE_SCHEMA_ROOT; source: schemas/draft/graph.schema.json:1-158.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **input-port**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.ROOT.INPUT_PORT`: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Preconditions: Wire object submitted to this named root
+        - Observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.
+        - Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Domain: D.ROOT.VCP.input-port; authority: NORMATIVE_SCHEMA_ROOT; source: schemas/draft/input-port.schema.json:1-50.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **input-resolution**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.ROOT.INPUT_RESOLUTION`: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Preconditions: Wire object submitted to this named root
+        - Observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.
+        - Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Domain: D.ROOT.VCP.input-resolution; authority: NORMATIVE_SCHEMA_ROOT; source: schemas/draft/input-resolution.schema.json:1-31.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **operation-requirement**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.ROOT.OPERATION_REQUIREMENT`: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Preconditions: Wire object submitted to this named root
+        - Observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.
+        - Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Domain: D.ROOT.VCP.operation-requirement; authority: NORMATIVE_SCHEMA_ROOT; source: schemas/draft/operation-requirement.schema.json:1-22.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **output-port**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.ROOT.OUTPUT_PORT`: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Preconditions: Wire object submitted to this named root
+        - Observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.
+        - Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Domain: D.ROOT.VCP.output-port; authority: NORMATIVE_SCHEMA_ROOT; source: schemas/draft/output-port.schema.json:1-32.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **policy-evaluation**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.ROOT.POLICY_EVALUATION`: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Preconditions: Wire object submitted to this named root
+        - Observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.
+        - Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Domain: D.ROOT.VCP.policy-evaluation; authority: NORMATIVE_SCHEMA_ROOT; source: schemas/draft/policy-evaluation.schema.json:1-67.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **profile**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.ROOT.PROFILE`: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Preconditions: Wire object submitted to this named root
+        - Observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.
+        - Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Domain: D.ROOT.VCP.profile; authority: NORMATIVE_SCHEMA_ROOT; source: schemas/draft/profile.schema.json:1-77.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **provider-binding**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.ROOT.PROVIDER_BINDING`: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Preconditions: Wire object submitted to this named root
+        - Observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.
+        - Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Domain: D.ROOT.VCP.provider-binding; authority: NORMATIVE_SCHEMA_ROOT; source: schemas/draft/provider-binding.schema.json:1-33.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **resource**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.ROOT.RESOURCE`: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Preconditions: Wire object submitted to this named root
+        - Observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.
+        - Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Domain: D.ROOT.VCP.resource; authority: NORMATIVE_SCHEMA_ROOT; source: schemas/draft/resource.schema.json:1-59.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **resource-dimension**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.ROOT.RESOURCE_DIMENSION`: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Preconditions: Wire object submitted to this named root
+        - Observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.
+        - Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Domain: D.ROOT.VCP.resource-dimension; authority: NORMATIVE_SCHEMA_ROOT; source: schemas/draft/resource-dimension.schema.json:1-35.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **result**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.ROOT.RESULT`: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Preconditions: Wire object submitted to this named root
+        - Observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.
+        - Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Domain: D.ROOT.VCP.result; authority: NORMATIVE_SCHEMA_ROOT; source: schemas/draft/result.schema.json:1-145.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **run-record**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.ROOT.RUN_RECORD`: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Preconditions: Wire object submitted to this named root
+        - Observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.
+        - Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Domain: D.ROOT.VCP.run-record; authority: NORMATIVE_SCHEMA_ROOT; source: schemas/draft/run-record.schema.json:1-269.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **selection**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.ROOT.SELECTION`: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Preconditions: Wire object submitted to this named root
+        - Observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.
+        - Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Domain: D.ROOT.VCP.selection; authority: NORMATIVE_SCHEMA_ROOT; source: schemas/draft/selection.schema.json:1-23.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **severity-domain**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.ROOT.SEVERITY_DOMAIN`: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Preconditions: Wire object submitted to this named root
+        - Observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.
+        - Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Domain: D.ROOT.VCP.severity-domain; authority: NORMATIVE_SCHEMA_ROOT; source: schemas/draft/severity-domain.schema.json:1-37.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **value-source**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.ROOT.VALUE_SOURCE`: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Preconditions: Wire object submitted to this named root
+        - Observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.
+        - Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Domain: D.ROOT.VCP.value-source; authority: NORMATIVE_SCHEMA_ROOT; source: schemas/draft/value-source.schema.json:1-76.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **verification-definition**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.ROOT.VERIFICATION_DEFINITION`: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Preconditions: Wire object submitted to this named root
+        - Observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.
+        - Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Domain: D.ROOT.VCP.verification-definition; authority: NORMATIVE_SCHEMA_ROOT; source: schemas/draft/verification-definition.schema.json:1-235.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+  - **Wire semantics**: 9 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+    - **JSON**: 4 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **DUPLICATE_KEYS**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.WIRE.JSON.DUPLICATE_KEYS`: Reject duplicate keys rather than selecting an occurrence.
+          - Preconditions: JSON object text has repeated member name at any depth
+          - Observable: PROTOCOL_JSON.
+          - Forbidden: No silent last/first key overwrite.
+          - Domain: D.WIRE.JSON; authority: NORMATIVE_VCP; source: spec/draft/wire-format.md:5-14.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **FINITE**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.WIRE.JSON.FINITE`: Reject NaN/Infinity/nonfinite values.
+          - Preconditions: JSON number is parsed or supplied as a value
+          - Observable: PROTOCOL_JSON.
+          - Forbidden: No numeric coercion or nonfinite sentinel.
+          - Domain: D.WIRE.JSON; authority: NORMATIVE_VCP; source: spec/draft/wire-format.md:5-14.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **JSON_TYPES**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.WIRE.JSON.JSON_TYPES`: Accept only finite JSON null,Boolean,number,string,array,object with string keys.
+          - Preconditions: A parsed/SDK wire value is supplied
+          - Observable: Strict JSON value or PROTOCOL_JSON.
+          - Forbidden: No binary bytes, arbitrary Python values or nonstring map keys inside JSON data.
+          - Domain: D.WIRE.JSON; authority: NORMATIVE_VCP; source: spec/draft/wire-format.md:5-14.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **UTF8**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.WIRE.JSON.UTF8`: Decode only well-formed UTF-8 JSON text.
+          - Preconditions: Encoded wire bytes submitted
+          - Observable: Strict JSON parse or PROTOCOL_JSON.
+          - Forbidden: No arbitrary binary/invalid UTF8 admission.
+          - Domain: D.WIRE.JSON; authority: NORMATIVE_VCP; source: spec/draft/wire-format.md:5-14.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Null**: 3 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - **CONTROLS**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.WIRE.NULL.CONTROLS`: Treat explicit null as absent for that nullable control.
+          - Preconditions: An optional nullable VCP control field is consumed
+          - Observable: Equivalent control semantics.
+          - Forbidden: No forced value from null control.
+          - Domain: D.WIRE.JSON; authority: NORMATIVE_VCP; source: spec/draft/wire-format.md:5-14.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **NO_DEFAULT_INSERTION**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.WIRE.NULL.NO_DEFAULT_INSERTION`: Do not insert instance fields from that annotation.
+          - Preconditions: Schema carries default annotation
+          - Observable: Only explicitly authored port default can supply value.
+          - Forbidden: No hidden default transformation.
+          - Domain: D.WIRE.JSON; authority: NORMATIVE_VCP; source: spec/draft/wire-format.md:5-14.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+      - **PAYLOADS**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+        - `CM.VCP.WIRE.NULL.PAYLOADS`: Retain the emitted null value and its presence.
+          - Preconditions: Constant/resolution value or explicitly emitted Result judgment/output is null
+          - Observable: Presence-aware snapshots and judgment acceptance.
+          - Forbidden: Do not erase emitted payload null or identify missing judgment with null.
+          - Domain: D.WIRE.JSON; authority: NORMATIVE_VCP; source: spec/draft/wire-format.md:5-14.
+          - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **References**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.WIRE.OFFLINE`: Resolve from supplied local schemas
+        - Preconditions: A shipped schema reference is resolved
+        - Observable: Offline structural validation
+        - Forbidden: Do not fetch network schemas
+        - Domain: D.WIRE.JSON; authority: NORMATIVE_VCP; source: spec/draft/wire-format.md:16-20.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
+    - **Version**: 1 canonical primary records; CLOSED FOR DECLARED SEMANTIC SCOPE.
+      - `CM.VCP.WIRE.VERSION`: Require the published draft marker
+        - Preconditions: A marked top-level object is submitted
+        - Observable: PROTOCOL_VERSION for unsupported marker; structural and semantic failures remain distinguishable
+        - Forbidden: Do not infer compatibility from implementation package version
+        - Domain: D.WIRE.JSON; authority: NORMATIVE_VCP; source: spec/draft/wire-format.md:5-14.
+        - Status: CLOSED FOR DECLARED SEMANTIC SCOPE. Executable coverage is a separate reconciliation.
 
-## Explicit blocked or limited subspaces
+## Unrelated scope limits and resolved questions
 
-| ID | Status | Known boundary / unresolved coordinate |
+| ID | Current classification | Scope effect |
 | --- | --- | --- |
-| Q.CUSTOM_AGG_EMPTY | GENUINE_NORMATIVE_AMBIGUITY | Aggregation prose introduces the standard reducers before its unqualified empty-input sentence; dataflow shares structural membership with custom Aggregate without explicitly specifying custom nonemptiness. Result* alone does not resolve the scope of that prohibition or definition-time versus invocation-time rejection. |
-| Q.RELAY_TIMING_KEY | RESOLVED_AUTHORITY_AND_OPTIONAL_NAMING | None for the two canonical propositions: usage views preserve per-node units; executor usage and runner duration remain distinct. Exact same-unit spelling is not uniquely prescribed by normative VCP. A simultaneous two-key collision is a separate static implementation defect, not a semantic naming ambiguity. |
-| Q.AVAILABILITY_OVERLAP | GENUINE_NORMATIVE_AMBIGUITY | No normative total priority maps simultaneous producer ERROR, output absence and rejected value to exactly one original availability label. Interrupted CANCELLED INFORMATION/DECISION publication is forbidden, but its unavailable status label is not assigned. |
-| Q.ROUNDING | UNBOUNDED_PRECISION_LIMIT_NO_BITWISE_REQUIREMENT | A finite JSON decimal cannot encode 1/3 exactly; the contract does not name a universal epsilon or one wire rounding bit pattern. Do not infer that any number in the input range is an adequate mean. |
-| Q.DEFAULT_UNUSED | RESOLVED_BY_STRUCTURAL_AND_PROSE_CONJUNCTION | The old review imported an unexpressed converse as a possible portable restriction. The conjunction of current structural and semantic predicates classifies these two coordinates without that converse. SDK validate_port implements the stronger iff and rejects both as DATAFLOW_BINDING; keep that extra local behavior separate. |
-| Q.VERSION_FUTURE_INTERSECTION | UNSUPPORTED_FUTURE_PROFILE_LIMIT | No missing current0.1 expectation. A peer whose first common supported version is0.2 needs a future-version profile to define a successful0.2 session; do not treat it as current0.1 fallback. |
-| Q.NONPROGRESSING_SCHEMA_REFERENCE | EXTERNAL_UNDEFINED_SCOPE_EXCLUSION | Not a missing portable Boolean requirement: validation true/false for an actually nonterminating reference unfolding has no defined upstream answer. Do not infer that all syntactic cycles are invalid or all must be rejected at schema load. |
-| Q.BOOLEAN_ANNOTATION_REFERENCE | EXTERNAL_UNDEFINED_SCOPE_EXCLUSION | The previous Provider record overclaimed an object-or-Boolean universal restriction. Correct that record to the explicit object-target rule. Do not turn undefined Provider Boolean-annotation interpretation into a mandated accept, reject or error code. |
+| Q.CUSTOM_AGG_EMPTY | RESOLVED_BY_EXPLICIT_NORMATIVE_DECISION | Resolved; no blocked supported semantic subspace. |
+| Q.RELAY_TIMING_KEY | RESOLVED_AUTHORITY_AND_OPTIONAL_NAMING | Remove the ambiguity from CM.RELAY.API.VIEWS.USAGE and CM.VCP.RES.WALL_TIME.SEPARATE. Do not declare implementation correctness: the two-key overwrite counterexample remains. |
+| Q.AVAILABILITY_OVERLAP | RESOLVED_BY_EXPLICIT_NORMATIVE_DECISION | Resolved; no blocked supported semantic subspace. |
+| Q.ROUNDING | UNBOUNDED_PRECISION_LIMIT_NO_BITWISE_REQUIREMENT | Keep the algebraic oracle; exclude a universal portable float-bit/tolerance oracle. Local reference arithmetic may be checked as a local algorithm only. Domain still unbounded. |
+| Q.DEFAULT_UNUSED | RESOLVED_BY_STRUCTURAL_AND_PROSE_CONJUNCTION | Close the two portable coordinates. Correct D.PORT.REQUIREDNESS_DEFAULT_JOINT from V3/I7/Q2 to V5/I7/Q0; preserve DEFAULT-only presence projection and schema-value obligations. This is a justified canonical interpretation correction, not a normative source edit. |
+| Q.VERSION_FUTURE_INTERSECTION | UNSUPPORTED_FUTURE_PROFILE_LIMIT | Retain current supported behavior and exact local helper algorithm. Future protocol session semantics excluded; arbitrary string/list cardinality unbounded. |
+| Q.NONPROGRESSING_SCHEMA_REFERENCE | EXTERNAL_UNDEFINED_SCOPE_EXCLUSION | Exclude only the upstream-undefined Boolean-result subspace from portable result classification; retain the no-infinite-loop safety requirement. This does not prove current validators terminate or that a recursion exception is an appropriate portable error. |
+| Q.BOOLEAN_ANNOTATION_REFERENCE | EXTERNAL_UNDEFINED_SCOPE_EXCLUSION | Portable Provider evaluation result for annotation Boolean targets is excluded, not counted invalid by inference. VCP annotation-target rejection remains source-supported. SDK source admits those Boolean targets at the position-membership check; that is local behavior and does not define portable semantics. |
 
-See CANONICAL_AUDIT.md for source reconciliation and remaining questions; CANONICAL_MATH.md for complete domain predicates and equations. No tests, fixtures, frozen expectations or production/specification changes are part of this review.
-## Current decision and source reconciliation
-
-The preceding investigation narratives describe the earlier commit; this section supersedes their blocker/decision-needed verdicts. Custom [] is legal, capability schema controls input eligibility and custom implementation owns Result; standard reducers reject empty original/retained input. Snapshot availability is the ordered classifier in spec/draft/dataflow.md, with invoked CANCELLED/no accepted output -> OUTPUT_MISSING regardless of raw values. Declared bookkeeping Results precede lifecycle absence. No event-order provenance, extra state or scheduler barrier. Handlers retain original status/source/value/default and lifecycle reasons. Source hashes/citations and domain predicates are updated in JSONL and CANONICAL_MATH.md.
-
-Gate1: PASS targeted normative context and ownership reconciled. Gate2: PASS33 whole-root predicates unchanged; no new wire fields. Gate3: PASS snapshot-dependent domain has a total/disjoint proof over80 equivalence contexts and240 handler checks, with unbounded input scope explicit. Gate4: PASS baseline independent source-first audit retained, targeted normative changes independently classified and checked; no new whole-repository traversal or implementation proof claimed. Unrelated limitations and four static implementation discrepancies remain.
-
-Current normative-source aggregate SHA-256: 3c7694fc35900f93380bdf26ed345b54c51935c8f532a651c464d3144f3e9ad0. Earlier hash tables refer to the preserved pre-decision baseline; current exact per-source byte hashes are in SOURCE_CROSSWALK.jsonl.
+Active normative source aggregate SHA-256: 3c7694fc35900f93380bdf26ed345b54c51935c8f532a651c464d3144f3e9ad0. Exact current references and source-text digests are in SOURCE_CROSSWALK.jsonl.
