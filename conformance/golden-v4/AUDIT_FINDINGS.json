@@ -1,0 +1,347 @@
+[
+  {
+    "case_id": "V4.AUDIT.INVENTORY.INVENTORY",
+    "classification": "COVERAGE_GATE_FAILURE",
+    "reason": "Missing reviewed clause/method crosswalk and unproved residuals prevent certification.",
+    "expected": {
+      "accepted": true
+    },
+    "actual": {
+      "accepted": false
+    },
+    "sources": [
+      {
+        "path": "spec/draft/conformance.md",
+        "line_start": 5,
+        "line_end": 33,
+        "source_sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24"
+      }
+    ],
+    "rerun": "python -m tools.golden_v4.report --case-id \"V4.AUDIT.INVENTORY.INVENTORY\""
+  },
+  {
+    "case_id": "V4.AUDIT.INVENTORY.PROOFS",
+    "classification": "COVERAGE_GATE_FAILURE",
+    "reason": "Missing reviewed clause/method crosswalk and unproved residuals prevent certification.",
+    "expected": {
+      "accepted": true
+    },
+    "actual": {
+      "accepted": false
+    },
+    "sources": [
+      {
+        "path": "spec/draft/conformance.md",
+        "line_start": 5,
+        "line_end": 33,
+        "source_sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24"
+      }
+    ],
+    "rerun": "python -m tools.golden_v4.report --case-id \"V4.AUDIT.INVENTORY.PROOFS\""
+  },
+  {
+    "case_id": "V4.PROVIDER.TRANSPORT.METHOD.UNKNOWN_METHOD",
+    "classification": "SUPPORTED_TRANSPORT_FAILURE",
+    "reason": "An initialized stdio session closes instead of returning the required JSON-RPC unknown-method response. No production change is permitted in this assignment.",
+    "expected": {
+      "accepted": true
+    },
+    "actual": {
+      "exception": "0 bytes read on a total of undefined expected bytes"
+    },
+    "sources": [
+      {
+        "path": "provider-contract/spec/draft/transports.md",
+        "line_start": 3,
+        "line_end": 75,
+        "source_sha256": "3d5b5d158363059147706b232ecbc7112a911845b5f22fc3db40ed2d490f0fea"
+      }
+    ],
+    "rerun": "python -m tools.golden_v4.report --case-id \"V4.PROVIDER.TRANSPORT.METHOD.UNKNOWN_METHOD\""
+  },
+  {
+    "case_id": "V4.VCP.AGG.MEMBER_ROLE.AGGREGATE-RESULT",
+    "classification": "FROZEN_STIMULUS_DEFECT",
+    "reason": "Aggregate fixtures have empty membership, or the schema-annotation fixture uses an invalid object-valued description. Unrelated validity prerequisites were not held valid. Frozen bytes are preserved; these are not established production defects.",
+    "expected": {
+      "accepted": true
+    },
+    "actual": {
+      "accepted": false
+    },
+    "sources": [
+      {
+        "path": "spec/draft/dataflow.md",
+        "line_start": 5,
+        "line_end": 195,
+        "source_sha256": "10399b6c1ad0754d63b50404d060e8fcb6c362246d5d793d05c18e55f68074eb"
+      }
+    ],
+    "rerun": "python -m tools.golden_v4.report --case-id \"V4.VCP.AGG.MEMBER_ROLE.AGGREGATE-RESULT\""
+  },
+  {
+    "case_id": "V4.VCP.AGG.SEMANTIC.AGGREGATE-SUBJECT-MATCH1",
+    "classification": "FROZEN_STIMULUS_DEFECT",
+    "reason": "Aggregate fixtures have empty membership, or the schema-annotation fixture uses an invalid object-valued description. Unrelated validity prerequisites were not held valid. Frozen bytes are preserved; these are not established production defects.",
+    "expected": {
+      "accepted": true
+    },
+    "actual": {
+      "accepted": false
+    },
+    "sources": [
+      {
+        "path": "spec/draft/dataflow.md",
+        "line_start": 5,
+        "line_end": 195,
+        "source_sha256": "10399b6c1ad0754d63b50404d060e8fcb6c362246d5d793d05c18e55f68074eb"
+      }
+    ],
+    "rerun": "python -m tools.golden_v4.report --case-id \"V4.VCP.AGG.SEMANTIC.AGGREGATE-SUBJECT-MATCH1\""
+  },
+  {
+    "case_id": "V4.VCP.AGG.SEMANTIC.AGGREGATE-CRITERION-MATCH1",
+    "classification": "FROZEN_STIMULUS_DEFECT",
+    "reason": "Aggregate fixtures have empty membership, or the schema-annotation fixture uses an invalid object-valued description. Unrelated validity prerequisites were not held valid. Frozen bytes are preserved; these are not established production defects.",
+    "expected": {
+      "accepted": true
+    },
+    "actual": {
+      "accepted": false
+    },
+    "sources": [
+      {
+        "path": "spec/draft/dataflow.md",
+        "line_start": 5,
+        "line_end": 195,
+        "source_sha256": "10399b6c1ad0754d63b50404d060e8fcb6c362246d5d793d05c18e55f68074eb"
+      }
+    ],
+    "rerun": "python -m tools.golden_v4.report --case-id \"V4.VCP.AGG.SEMANTIC.AGGREGATE-CRITERION-MATCH1\""
+  },
+  {
+    "case_id": "V4.VCP.AGG.SEMANTIC.AGGREGATE-MEMBERS-MATCH1",
+    "classification": "FROZEN_STIMULUS_DEFECT",
+    "reason": "Aggregate fixtures have empty membership, or the schema-annotation fixture uses an invalid object-valued description. Unrelated validity prerequisites were not held valid. Frozen bytes are preserved; these are not established production defects.",
+    "expected": {
+      "accepted": true
+    },
+    "actual": {
+      "accepted": false
+    },
+    "sources": [
+      {
+        "path": "spec/draft/dataflow.md",
+        "line_start": 5,
+        "line_end": 195,
+        "source_sha256": "10399b6c1ad0754d63b50404d060e8fcb6c362246d5d793d05c18e55f68074eb"
+      }
+    ],
+    "rerun": "python -m tools.golden_v4.report --case-id \"V4.VCP.AGG.SEMANTIC.AGGREGATE-MEMBERS-MATCH1\""
+  },
+  {
+    "case_id": "V4.VCP.AGG.WEIGHT_SIGN_2.-1--1",
+    "classification": "FROZEN_ORACLE_DEFECT",
+    "reason": "Rejection is required, but the frozen author asserted AGGREGATE_INPUT for invalid weight configuration. The observed AGGREGATE_CONFIG is not established here as a production defect. Exact precedence must not be invented.",
+    "expected": {
+      "error": "AGGREGATE_INPUT"
+    },
+    "actual": {
+      "error": "AGGREGATE_CONFIG"
+    },
+    "sources": [
+      {
+        "path": "spec/draft/aggregation.md",
+        "line_start": 5,
+        "line_end": 38,
+        "source_sha256": "a627fc3bd6f8509d1f231caf3d919e16d88c33057b6f144e37e30d715165507e"
+      }
+    ],
+    "rerun": "python -m tools.golden_v4.report --case-id \"V4.VCP.AGG.WEIGHT_SIGN_2.-1--1\""
+  },
+  {
+    "case_id": "V4.VCP.AGG.WEIGHT_SIGN_2.-1-0",
+    "classification": "FROZEN_ORACLE_DEFECT",
+    "reason": "Rejection is required, but the frozen author asserted AGGREGATE_INPUT for invalid weight configuration. The observed AGGREGATE_CONFIG is not established here as a production defect. Exact precedence must not be invented.",
+    "expected": {
+      "error": "AGGREGATE_INPUT"
+    },
+    "actual": {
+      "error": "AGGREGATE_CONFIG"
+    },
+    "sources": [
+      {
+        "path": "spec/draft/aggregation.md",
+        "line_start": 5,
+        "line_end": 38,
+        "source_sha256": "a627fc3bd6f8509d1f231caf3d919e16d88c33057b6f144e37e30d715165507e"
+      }
+    ],
+    "rerun": "python -m tools.golden_v4.report --case-id \"V4.VCP.AGG.WEIGHT_SIGN_2.-1-0\""
+  },
+  {
+    "case_id": "V4.VCP.AGG.WEIGHT_SIGN_2.-1-2",
+    "classification": "FROZEN_ORACLE_DEFECT",
+    "reason": "Rejection is required, but the frozen author asserted AGGREGATE_INPUT for invalid weight configuration. The observed AGGREGATE_CONFIG is not established here as a production defect. Exact precedence must not be invented.",
+    "expected": {
+      "error": "AGGREGATE_INPUT"
+    },
+    "actual": {
+      "error": "AGGREGATE_CONFIG"
+    },
+    "sources": [
+      {
+        "path": "spec/draft/aggregation.md",
+        "line_start": 5,
+        "line_end": 38,
+        "source_sha256": "a627fc3bd6f8509d1f231caf3d919e16d88c33057b6f144e37e30d715165507e"
+      }
+    ],
+    "rerun": "python -m tools.golden_v4.report --case-id \"V4.VCP.AGG.WEIGHT_SIGN_2.-1-2\""
+  },
+  {
+    "case_id": "V4.VCP.AGG.WEIGHT_SIGN_2.0--1",
+    "classification": "FROZEN_ORACLE_DEFECT",
+    "reason": "Rejection is required, but the frozen author asserted AGGREGATE_INPUT for invalid weight configuration. The observed AGGREGATE_CONFIG is not established here as a production defect. Exact precedence must not be invented.",
+    "expected": {
+      "error": "AGGREGATE_INPUT"
+    },
+    "actual": {
+      "error": "AGGREGATE_CONFIG"
+    },
+    "sources": [
+      {
+        "path": "spec/draft/aggregation.md",
+        "line_start": 5,
+        "line_end": 38,
+        "source_sha256": "a627fc3bd6f8509d1f231caf3d919e16d88c33057b6f144e37e30d715165507e"
+      }
+    ],
+    "rerun": "python -m tools.golden_v4.report --case-id \"V4.VCP.AGG.WEIGHT_SIGN_2.0--1\""
+  },
+  {
+    "case_id": "V4.VCP.AGG.WEIGHT_SIGN_2.0-0",
+    "classification": "FROZEN_ORACLE_DEFECT",
+    "reason": "Rejection is required, but the frozen author asserted AGGREGATE_INPUT for invalid weight configuration. The observed AGGREGATE_CONFIG is not established here as a production defect. Exact precedence must not be invented.",
+    "expected": {
+      "error": "AGGREGATE_INPUT"
+    },
+    "actual": {
+      "error": "AGGREGATE_CONFIG"
+    },
+    "sources": [
+      {
+        "path": "spec/draft/aggregation.md",
+        "line_start": 5,
+        "line_end": 38,
+        "source_sha256": "a627fc3bd6f8509d1f231caf3d919e16d88c33057b6f144e37e30d715165507e"
+      }
+    ],
+    "rerun": "python -m tools.golden_v4.report --case-id \"V4.VCP.AGG.WEIGHT_SIGN_2.0-0\""
+  },
+  {
+    "case_id": "V4.VCP.AGG.WEIGHT_SIGN_2.2--1",
+    "classification": "FROZEN_ORACLE_DEFECT",
+    "reason": "Rejection is required, but the frozen author asserted AGGREGATE_INPUT for invalid weight configuration. The observed AGGREGATE_CONFIG is not established here as a production defect. Exact precedence must not be invented.",
+    "expected": {
+      "error": "AGGREGATE_INPUT"
+    },
+    "actual": {
+      "error": "AGGREGATE_CONFIG"
+    },
+    "sources": [
+      {
+        "path": "spec/draft/aggregation.md",
+        "line_start": 5,
+        "line_end": 38,
+        "source_sha256": "a627fc3bd6f8509d1f231caf3d919e16d88c33057b6f144e37e30d715165507e"
+      }
+    ],
+    "rerun": "python -m tools.golden_v4.report --case-id \"V4.VCP.AGG.WEIGHT_SIGN_2.2--1\""
+  },
+  {
+    "case_id": "V4.VCP.NODE.PRIMARY.AGGREGATE-VALID",
+    "classification": "FROZEN_STIMULUS_DEFECT",
+    "reason": "Aggregate fixtures have empty membership, or the schema-annotation fixture uses an invalid object-valued description. Unrelated validity prerequisites were not held valid. Frozen bytes are preserved; these are not established production defects.",
+    "expected": {
+      "accepted": true
+    },
+    "actual": {
+      "accepted": false
+    },
+    "sources": [
+      {
+        "path": "spec/draft/dataflow.md",
+        "line_start": 5,
+        "line_end": 195,
+        "source_sha256": "10399b6c1ad0754d63b50404d060e8fcb6c362246d5d793d05c18e55f68074eb"
+      }
+    ],
+    "rerun": "python -m tools.golden_v4.report --case-id \"V4.VCP.NODE.PRIMARY.AGGREGATE-VALID\""
+  },
+  {
+    "case_id": "V4.VCP.NODE.ROLE.AGGREGATE-INFORMATION",
+    "classification": "FROZEN_STIMULUS_DEFECT",
+    "reason": "Aggregate fixtures have empty membership, or the schema-annotation fixture uses an invalid object-valued description. Unrelated validity prerequisites were not held valid. Frozen bytes are preserved; these are not established production defects.",
+    "expected": {
+      "accepted": true
+    },
+    "actual": {
+      "accepted": false
+    },
+    "sources": [
+      {
+        "path": "spec/draft/dataflow.md",
+        "line_start": 5,
+        "line_end": 195,
+        "source_sha256": "10399b6c1ad0754d63b50404d060e8fcb6c362246d5d793d05c18e55f68074eb"
+      }
+    ],
+    "rerun": "python -m tools.golden_v4.report --case-id \"V4.VCP.NODE.ROLE.AGGREGATE-INFORMATION\""
+  },
+  {
+    "case_id": "V4.VCP.NODE.ROLE.AGGREGATE-RESULT",
+    "classification": "FROZEN_STIMULUS_DEFECT",
+    "reason": "Aggregate fixtures have empty membership, or the schema-annotation fixture uses an invalid object-valued description. Unrelated validity prerequisites were not held valid. Frozen bytes are preserved; these are not established production defects.",
+    "expected": {
+      "accepted": true
+    },
+    "actual": {
+      "accepted": false
+    },
+    "sources": [
+      {
+        "path": "spec/draft/dataflow.md",
+        "line_start": 5,
+        "line_end": 195,
+        "source_sha256": "10399b6c1ad0754d63b50404d060e8fcb6c362246d5d793d05c18e55f68074eb"
+      }
+    ],
+    "rerun": "python -m tools.golden_v4.report --case-id \"V4.VCP.NODE.ROLE.AGGREGATE-RESULT\""
+  },
+  {
+    "case_id": "V4.VCP.SCHEMA.FULL.ANNOTATION",
+    "classification": "FROZEN_STIMULUS_DEFECT",
+    "reason": "Aggregate fixtures have empty membership, or the schema-annotation fixture uses an invalid object-valued description. Unrelated validity prerequisites were not held valid. Frozen bytes are preserved; these are not established production defects.",
+    "expected": {
+      "accepted": true
+    },
+    "actual": {
+      "accepted": false
+    },
+    "sources": [
+      {
+        "path": "spec/draft/dataflow.md",
+        "line_start": 5,
+        "line_end": 195,
+        "source_sha256": "10399b6c1ad0754d63b50404d060e8fcb6c362246d5d793d05c18e55f68074eb"
+      }
+    ],
+    "rerun": "python -m tools.golden_v4.report --case-id \"V4.VCP.SCHEMA.FULL.ANNOTATION\""
+  },
+  {
+    "finding_id": "V4.AUDIT.PHASE_PARTITION_LABEL",
+    "classification": "FROZEN_INVENTORY_DEFECT",
+    "reason": "The 5 progression/4 stutter/7 other partition is correct, but four stutters were placed in an N column in the frozen arithmetic table. They are not impossible coordinates. Published coverage labels this explicitly conditional and assigns no impossibility claim."
+  }
+]

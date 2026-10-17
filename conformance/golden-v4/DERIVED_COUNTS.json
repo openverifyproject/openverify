@@ -1,0 +1,291 @@
+{
+  "V4.AUDIT.INVENTORY": {
+    "VALID": 4
+  },
+  "V4.AUDIT.MUTATION": {
+    "VALID": 9
+  },
+  "V4.ERROR.NAMES": {
+    "VALID": 55
+  },
+  "V4.PROVIDER.ATTEMPT.TRANSITION": {
+    "VALID": 5,
+    "INVALID": 11
+  },
+  "V4.PROVIDER.CANCEL.ELIGIBILITY": {
+    "INVALID": 5,
+    "VALID": 3
+  },
+  "V4.PROVIDER.DEADLINE.RACE": {
+    "VALID": 12,
+    "INVALID": 12
+  },
+  "V4.PROVIDER.EVENT.ELIGIBILITY": {
+    "INVALID": 31,
+    "VALID": 34
+  },
+  "V4.PROVIDER.EVENT.SEQUENCE": {
+    "VALID": 3,
+    "INVALID": 6
+  },
+  "V4.PROVIDER.FEATURE_FLAGS": {
+    "VALID": 16
+  },
+  "V4.PROVIDER.INIT": {
+    "VALID": 2,
+    "INVALID": 1
+  },
+  "V4.PROVIDER.INVOKE.BUDGET": {
+    "VALID": 3,
+    "INVALID": 1
+  },
+  "V4.PROVIDER.INVOKE.DEADLINE": {
+    "VALID": 3,
+    "INVALID": 1
+  },
+  "V4.PROVIDER.OUTCOME.SHAPE": {
+    "INVALID": 12,
+    "VALID": 4
+  },
+  "V4.PROVIDER.OUTCOME.USAGE": {
+    "VALID": 20,
+    "INVALID": 12
+  },
+  "V4.PROVIDER.TRANSPORT.METHOD": {
+    "VALID": 8,
+    "INVALID": 2
+  },
+  "V4.PROVIDER.VCP_COMPAT": {
+    "VALID": 3,
+    "INVALID": 1
+  },
+  "V4.RELAY.ENTRYPOINT": {
+    "VALID": 11
+  },
+  "V4.RELAY.PORTS": {
+    "VALID": 9
+  },
+  "V4.RELAY.SCHEDULER": {
+    "VALID": 18
+  },
+  "V4.VCP.AGG.EXCEPTION": {
+    "VALID": 112
+  },
+  "V4.VCP.AGG.HANDLING_MAP": {
+    "VALID": 1024
+  },
+  "V4.VCP.AGG.LOGICAL": {
+    "VALID": 186
+  },
+  "V4.VCP.AGG.MEMBER_ROLE": {
+    "INVALID": 10,
+    "VALID": 2
+  },
+  "V4.VCP.AGG.SCORE": {
+    "VALID": 20
+  },
+  "V4.VCP.AGG.SEMANTIC": {
+    "INVALID": 5,
+    "VALID": 5
+  },
+  "V4.VCP.AGG.SEVERITY": {
+    "VALID": 30
+  },
+  "V4.VCP.AGG.WEIGHT_GENERAL": {
+    "VALID": 8
+  },
+  "V4.VCP.AGG.WEIGHT_IDENTITY": {
+    "VALID": 2
+  },
+  "V4.VCP.AGG.WEIGHT_SIGN_2": {
+    "VALID": 9
+  },
+  "V4.VCP.ARTIFACT.PRESENCE": {
+    "INVALID": 56,
+    "VALID": 8
+  },
+  "V4.VCP.BIND.IDENTITY": {
+    "INVALID": 15,
+    "VALID": 1
+  },
+  "V4.VCP.CANCEL.ELIGIBILITY": {
+    "VALID": 2,
+    "INVALID": 4
+  },
+  "V4.VCP.CRITERION.PRESENCE": {
+    "INVALID": 12,
+    "VALID": 4
+  },
+  "V4.VCP.DECISION.DEST": {
+    "VALID": 11,
+    "INVALID": 13
+  },
+  "V4.VCP.DECISION.ROUTE": {
+    "VALID": 3,
+    "INVALID": 1
+  },
+  "V4.VCP.DEF.PRESENCE": {
+    "INVALID": 4088,
+    "VALID": 8
+  },
+  "V4.VCP.EVIDENCE.MEANING": {
+    "INVALID": 8,
+    "VALID": 120
+  },
+  "V4.VCP.EXEC_OBS.PRESENCE": {
+    "INVALID": 14,
+    "VALID": 2
+  },
+  "V4.VCP.EXT.REQUIRED": {
+    "VALID": 3,
+    "INVALID": 1
+  },
+  "V4.VCP.GRAPH.DAG_0_4": {
+    "VALID": 573,
+    "INVALID": 3593
+  },
+  "V4.VCP.GRAPH.DEFINITION": {
+    "INVALID": 7
+  },
+  "V4.VCP.GRAPH.FEATURES": {
+    "VALID": 1,
+    "INVALID": 3
+  },
+  "V4.VCP.GUARD.BOOL": {
+    "VALID": 4
+  },
+  "V4.VCP.GUARD.OPERATOR": {
+    "VALID": 1
+  },
+  "V4.VCP.GUARD.POINTER": {
+    "VALID": 4
+  },
+  "V4.VCP.GUARD.SOURCE": {
+    "VALID": 4
+  },
+  "V4.VCP.LIFECYCLE.PHASES": {
+    "VALID": 16
+  },
+  "V4.VCP.LIFECYCLE.REASON": {
+    "VALID": 9
+  },
+  "V4.VCP.LIFECYCLE.RESULT": {
+    "VALID": 20,
+    "INVALID": 52
+  },
+  "V4.VCP.NODE.INVOKED_RESULT": {
+    "VALID": 12,
+    "INVALID": 6
+  },
+  "V4.VCP.NODE.PRIMARY": {
+    "VALID": 3,
+    "INVALID": 12
+  },
+  "V4.VCP.NODE.ROLE": {
+    "VALID": 7,
+    "INVALID": 5
+  },
+  "V4.VCP.NODE_RECORD.PRESENCE": {
+    "VALID": 256,
+    "INVALID": 12
+  },
+  "V4.VCP.POLICY.DECLARATIONS": {
+    "VALID": 12
+  },
+  "V4.VCP.POLICY.EVAL_ORDER": {
+    "VALID": 1,
+    "INVALID": 5
+  },
+  "V4.VCP.POLICY.PATH": {
+    "VALID": 5
+  },
+  "V4.VCP.POLICY.ROLE_RESULT": {
+    "VALID": 3,
+    "INVALID": 6
+  },
+  "V4.VCP.PORT.DEFAULT": {
+    "INVALID": 1,
+    "VALID": 1
+  },
+  "V4.VCP.PORT.HANDLING": {
+    "INVALID": 3,
+    "VALID": 3
+  },
+  "V4.VCP.RECORD.LINEAGE": {
+    "VALID": 1,
+    "INVALID": 6
+  },
+  "V4.VCP.RESOLVE.CONSUMER": {
+    "VALID": 72
+  },
+  "V4.VCP.RESOLVE.HANDLER": {
+    "VALID": 18
+  },
+  "V4.VCP.RESOLVE.RAW": {
+    "CONDITIONAL": 288
+  },
+  "V4.VCP.RESOLVE.RECORD_BITS": {
+    "INVALID": 54,
+    "VALID": 18
+  },
+  "V4.VCP.RESOLVE.UNBOUND": {
+    "CONDITIONAL": 72
+  },
+  "V4.VCP.RESOURCE.PRESENCE_BINARY": {
+    "INVALID": 28,
+    "VALID": 4
+  },
+  "V4.VCP.RESOURCE.PRESENCE_TRINARY": {
+    "INVALID": 90,
+    "VALID": 18
+  },
+  "V4.VCP.RESOURCE.RANGE_ORDER": {
+    "VALID": 2,
+    "INVALID": 1
+  },
+  "V4.VCP.RESULT.OBS_MASK": {
+    "VALID": 960,
+    "INVALID": 1344
+  },
+  "V4.VCP.RESULT.PROJECTION": {
+    "VALID": 9
+  },
+  "V4.VCP.RESULT.SEMANTIC_AXIS": {
+    "INVALID": 315,
+    "VALID": 9
+  },
+  "V4.VCP.RESULT.VALUES": {
+    "VALID": 6,
+    "INVALID": 6
+  },
+  "V4.VCP.RESULT.WIRE_AXIS": {
+    "INVALID": 958,
+    "VALID": 66
+  },
+  "V4.VCP.RUN_RECORD.PRESENCE": {
+    "VALID": 16,
+    "INVALID": 14
+  },
+  "V4.VCP.SCHEMA.FULL": {
+    "VALID": 4,
+    "INVALID": 6
+  },
+  "V4.VCP.SCHEMA.PRIMITIVE": {
+    "VALID": 9,
+    "INVALID": 40
+  },
+  "V4.VCP.SOURCE.KIND": {
+    "VALID": 4
+  },
+  "V4.VCP.SOURCE.POLICY": {
+    "VALID": 9,
+    "INVALID": 3
+  },
+  "V4.WIRE.JSON": {
+    "VALID": 1,
+    "INVALID": 8
+  },
+  "V4.WIRE.ROOTS": {
+    "VALID": 33
+  }
+}

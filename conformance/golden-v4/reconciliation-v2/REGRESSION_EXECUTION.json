@@ -1,0 +1,12 @@
+{
+  "exitstatus": 1,
+  "executed": 253,
+  "wall_seconds": 4.659723300021142,
+  "argv": [
+    "C:\\Users\\siddh\\OneDrive\\Desktop\\openverify\\.venv\\Lib\\site-packages\\pytest\\__main__.py",
+    "-q",
+    "tests/golden_v4_reconciliation",
+    "--junitxml=.pytest_cache/golden-v4-revision-junit.xml"
+  ],
+  "python": "3.13.5 (main, Jun 12 2025, 12:42:35) [MSC v.1943 64 bit (AMD64)]"
+}

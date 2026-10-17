@@ -1,0 +1,7 @@
+{
+  "source_branch": "test/openverify-golden-v4",
+  "source_commit": "15bb1cea8d263a581306a893dc67fd72810c04cc",
+  "integration_baseline": "d45dcffa56d8bf2eadc98bbe588c5c617af353eb",
+  "method": "Selected existing tests/tools/conformance Golden V4 files restored into isolated integration checkout; no merge/reset or other-worktree overwrite.",
+  "production_byte_drift": false
+}

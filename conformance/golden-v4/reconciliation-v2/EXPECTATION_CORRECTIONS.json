@@ -1,0 +1,101 @@
+[
+  {
+    "case_id": "V4.AUDIT.INVENTORY.INVENTORY",
+    "historical_expected": {
+      "accepted": true
+    },
+    "revised_expected": {
+      "accepted": false
+    },
+    "source": "tools/golden_v4/report.py:inventory; REDUCTION_LEDGER entries remain unproved; canonical full test mapping incomplete",
+    "rationale": "Frozen assertion demands certification/PROVED for an inventory with admitted missing/unproved obligations. A fail-closed audit must return false; test green cannot establish completeness."
+  },
+  {
+    "case_id": "V4.AUDIT.INVENTORY.PROOFS",
+    "historical_expected": {
+      "accepted": true
+    },
+    "revised_expected": {
+      "accepted": false
+    },
+    "source": "tools/golden_v4/report.py:inventory; REDUCTION_LEDGER entries remain unproved; canonical full test mapping incomplete",
+    "rationale": "Frozen assertion demands certification/PROVED for an inventory with admitted missing/unproved obligations. A fail-closed audit must return false; test green cannot establish completeness."
+  },
+  {
+    "case_id": "V4.VCP.AGG.WEIGHT_SIGN_2.-1--1",
+    "historical_expected": {
+      "error": "AGGREGATE_INPUT"
+    },
+    "revised_expected": {
+      "error": "AGGREGATE_CONFIG"
+    },
+    "source": "spec/draft/aggregation.md; spec/draft/conformance.md; original-weight configuration versus retained-total semantics",
+    "rationale": "Invalid original weight configuration is AGGREGATE_CONFIG; AGGREGATE_INPUT belongs to reduction/member/retained-total failure. Separate revised cases verify the six corrections."
+  },
+  {
+    "case_id": "V4.VCP.AGG.WEIGHT_SIGN_2.-1-0",
+    "historical_expected": {
+      "error": "AGGREGATE_INPUT"
+    },
+    "revised_expected": {
+      "error": "AGGREGATE_CONFIG"
+    },
+    "source": "spec/draft/aggregation.md; spec/draft/conformance.md; original-weight configuration versus retained-total semantics",
+    "rationale": "Invalid original weight configuration is AGGREGATE_CONFIG; AGGREGATE_INPUT belongs to reduction/member/retained-total failure. Separate revised cases verify the six corrections."
+  },
+  {
+    "case_id": "V4.VCP.AGG.WEIGHT_SIGN_2.-1-2",
+    "historical_expected": {
+      "error": "AGGREGATE_INPUT"
+    },
+    "revised_expected": {
+      "error": "AGGREGATE_CONFIG"
+    },
+    "source": "spec/draft/aggregation.md; spec/draft/conformance.md; original-weight configuration versus retained-total semantics",
+    "rationale": "Invalid original weight configuration is AGGREGATE_CONFIG; AGGREGATE_INPUT belongs to reduction/member/retained-total failure. Separate revised cases verify the six corrections."
+  },
+  {
+    "case_id": "V4.VCP.AGG.WEIGHT_SIGN_2.0--1",
+    "historical_expected": {
+      "error": "AGGREGATE_INPUT"
+    },
+    "revised_expected": {
+      "error": "AGGREGATE_CONFIG"
+    },
+    "source": "spec/draft/aggregation.md; spec/draft/conformance.md; original-weight configuration versus retained-total semantics",
+    "rationale": "Invalid original weight configuration is AGGREGATE_CONFIG; AGGREGATE_INPUT belongs to reduction/member/retained-total failure. Separate revised cases verify the six corrections."
+  },
+  {
+    "case_id": "V4.VCP.AGG.WEIGHT_SIGN_2.0-0",
+    "historical_expected": {
+      "error": "AGGREGATE_INPUT"
+    },
+    "revised_expected": {
+      "error": "AGGREGATE_CONFIG"
+    },
+    "source": "spec/draft/aggregation.md; spec/draft/conformance.md; original-weight configuration versus retained-total semantics",
+    "rationale": "Invalid original weight configuration is AGGREGATE_CONFIG; AGGREGATE_INPUT belongs to reduction/member/retained-total failure. Separate revised cases verify the six corrections."
+  },
+  {
+    "case_id": "V4.VCP.AGG.WEIGHT_SIGN_2.2--1",
+    "historical_expected": {
+      "error": "AGGREGATE_INPUT"
+    },
+    "revised_expected": {
+      "error": "AGGREGATE_CONFIG"
+    },
+    "source": "spec/draft/aggregation.md; spec/draft/conformance.md; original-weight configuration versus retained-total semantics",
+    "rationale": "Invalid original weight configuration is AGGREGATE_CONFIG; AGGREGATE_INPUT belongs to reduction/member/retained-total failure. Separate revised cases verify the six corrections."
+  },
+  {
+    "case_id": "V4.VCP.SCHEMA.FULL.ANNOTATION",
+    "historical_expected": {
+      "accepted": true
+    },
+    "revised_expected": {
+      "accepted": false
+    },
+    "source": "Draft2020-12 validation section9.1; spec/draft/dataflow.md valid Draft requirement",
+    "rationale": "description must be a string under the Draft metaschema. An object containing $ref there is invalid schema, independently of annotation traversal. The separate corrected default-payload case is valid."
+  }
+]

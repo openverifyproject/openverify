@@ -1,0 +1,19 @@
+{
+  "format": "golden-v4-canonical-source-revision-1",
+  "authority": "Approved normative decisions; source revision is explicit and is not a frozen expectation update.",
+  "frozen_manifest_sha256": "73ddbdb4df7a48e51f159cfc5bbce8d9d5dfaf6276ebb9def4db4bc224ba4fb3",
+  "source_changes": {
+    "spec/draft/dataflow.md": {
+      "old_sha256": "10399b6c1ad0754d63b50404d060e8fcb6c362246d5d793d05c18e55f68074eb",
+      "new_sha256": "292d3edfaffd7a9b0a5d697f414858938d3d1579d7c8d1e45f13dbb11932f36c"
+    },
+    "spec/draft/aggregation.md": {
+      "old_sha256": "a627fc3bd6f8509d1f231caf3d919e16d88c33057b6f144e37e30d715165507e",
+      "new_sha256": "b23aba6282f5043566f00800e678abe6db3c25fd23b06d1d553f82ea41f36e69"
+    },
+    "spec/draft/open-questions.md": {
+      "old_sha256": "d172d96b92104a6de8eabb1541cdd3bf598b30f076730cb2dbc095ee2f129546",
+      "new_sha256": "4148b6067d1c707c92137da906fe77f3fcfb6fd7c8acdf63b10d5afbb8fd3d3b"
+    }
+  }
+}
