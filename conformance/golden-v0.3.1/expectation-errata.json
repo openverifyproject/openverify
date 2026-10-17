@@ -1,0 +1,1988 @@
+{
+  "authority": "spec/draft/dataflow.md, Aggregate membership paragraphs",
+  "classification": "GOLDEN_EXPECTATION_WRONG: optional supplemental RESULT bindings cannot escape membership",
+  "corrections": {
+    "availability-role.RESULT.AGGREGATE.AVAILABLE.BLOCK": {
+      "id": "availability-role.RESULT.AGGREGATE.AVAILABLE.BLOCK",
+      "node_kind": "AGGREGATE",
+      "source": "UPSTREAM_OUTPUT",
+      "availability": "AVAILABLE",
+      "handling": "BLOCK",
+      "role": "RESULT",
+      "runtime_applicable": true,
+      "reason": "Recorded evaluator Results, including error/nonexecution bookkeeping, are available unless excluded by a declared port schema",
+      "category": "availability-role",
+      "requirement": "spec/draft/dataflow.md#typed-executable-dataflow-breaking-draft-revision",
+      "mutation_witness": "Confuse information with semantic output roles or leak invalid/unpublished values",
+      "stimulus": {
+        "definition": {
+          "protocol": "draft",
+          "id": "golden.definition",
+          "version": "1",
+          "subject": {
+            "id": "golden.subject",
+            "type": "application/json",
+            "locator": {
+              "host_supplied": true
+            }
+          },
+          "criterion": {
+            "id": "golden.criterion",
+            "description": "The explicitly supplied deterministic criterion holds"
+          },
+          "judgment_schema": true,
+          "run_inputs": [],
+          "graph": {
+            "nodes": [
+              {
+                "id": "producer",
+                "kind": "EVALUATE",
+                "operation": {
+                  "capability_id": "com.example.golden.evaluate",
+                  "capability_version": "1"
+                },
+                "inputs": [
+                  {
+                    "name": "subject",
+                    "schema": {
+                      "type": "object"
+                    },
+                    "required": true,
+                    "on_unavailable": "BLOCK"
+                  },
+                  {
+                    "name": "criterion",
+                    "schema": {
+                      "type": "object"
+                    },
+                    "required": true,
+                    "on_unavailable": "BLOCK"
+                  }
+                ],
+                "bindings": {
+                  "subject": {
+                    "kind": "CONSTANT",
+                    "value": {
+                      "id": "golden.subject",
+                      "type": "application/json",
+                      "locator": {
+                        "host_supplied": true
+                      }
+                    }
+                  },
+                  "criterion": {
+                    "kind": "CONSTANT",
+                    "value": {
+                      "id": "golden.criterion",
+                      "description": "The explicitly supplied deterministic criterion holds"
+                    }
+                  }
+                },
+                "outputs": [
+                  {
+                    "name": "result",
+                    "schema": true,
+                    "role": "RESULT"
+                  }
+                ],
+                "config": {}
+              },
+              {
+                "id": "member",
+                "kind": "EVALUATE",
+                "operation": {
+                  "capability_id": "com.example.golden.evaluate",
+                  "capability_version": "1"
+                },
+                "inputs": [
+                  {
+                    "name": "subject",
+                    "schema": {
+                      "type": "object"
+                    },
+                    "required": true,
+                    "on_unavailable": "BLOCK"
+                  },
+                  {
+                    "name": "criterion",
+                    "schema": {
+                      "type": "object"
+                    },
+                    "required": true,
+                    "on_unavailable": "BLOCK"
+                  }
+                ],
+                "bindings": {
+                  "subject": {
+                    "kind": "CONSTANT",
+                    "value": {
+                      "id": "golden.subject",
+                      "type": "application/json",
+                      "locator": {
+                        "host_supplied": true
+                      }
+                    }
+                  },
+                  "criterion": {
+                    "kind": "CONSTANT",
+                    "value": {
+                      "id": "golden.criterion",
+                      "description": "The explicitly supplied deterministic criterion holds"
+                    }
+                  }
+                },
+                "outputs": [
+                  {
+                    "name": "result",
+                    "schema": true,
+                    "role": "RESULT"
+                  }
+                ],
+                "config": {}
+              },
+              {
+                "id": "consumer",
+                "kind": "AGGREGATE",
+                "operation": {
+                  "capability_id": "com.example.golden.custom_aggregate",
+                  "capability_version": "1"
+                },
+                "inputs": [
+                  {
+                    "name": "data",
+                    "schema": true,
+                    "required": true,
+                    "on_unavailable": "BLOCK"
+                  },
+                  {
+                    "name": "member",
+                    "schema": true,
+                    "required": true,
+                    "on_unavailable": "BLOCK"
+                  },
+                  {
+                    "name": "members",
+                    "schema": true,
+                    "required": true,
+                    "on_unavailable": "BLOCK"
+                  },
+                  {
+                    "name": "subject",
+                    "schema": {
+                      "type": "object"
+                    },
+                    "required": true,
+                    "on_unavailable": "BLOCK"
+                  },
+                  {
+                    "name": "criterion",
+                    "schema": {
+                      "type": "object"
+                    },
+                    "required": true,
+                    "on_unavailable": "BLOCK"
+                  }
+                ],
+                "bindings": {
+                  "data": {
+                    "kind": "UPSTREAM_OUTPUT",
+                    "node_id": "producer",
+                    "output": "result"
+                  },
+                  "member": {
+                    "kind": "UPSTREAM_OUTPUT",
+                    "node_id": "member",
+                    "output": "result"
+                  },
+                  "members": {
+                    "kind": "CONSTANT",
+                    "value": [
+                      "data",
+                      "member"
+                    ]
+                  },
+                  "subject": {
+                    "kind": "CONSTANT",
+                    "value": {
+                      "id": "golden.subject",
+                      "type": "application/json",
+                      "locator": {
+                        "host_supplied": true
+                      }
+                    }
+                  },
+                  "criterion": {
+                    "kind": "CONSTANT",
+                    "value": {
+                      "id": "golden.criterion",
+                      "description": "The explicitly supplied deterministic criterion holds"
+                    }
+                  }
+                },
+                "outputs": [
+                  {
+                    "name": "result",
+                    "schema": true,
+                    "role": "RESULT"
+                  }
+                ],
+                "config": {},
+                "aggregate_inputs": [
+                  "data",
+                  "member"
+                ]
+              }
+            ],
+            "edges": [
+              {
+                "from_node": "producer",
+                "to_node": "consumer"
+              },
+              {
+                "from_node": "member",
+                "to_node": "consumer"
+              }
+            ]
+          },
+          "execution_policy": {
+            "activation": {
+              "executor_ref": "MANUAL"
+            },
+            "selection": {
+              "executor_ref": "EXPLICIT"
+            },
+            "admission": {
+              "strategy": "ALWAYS"
+            }
+          }
+        },
+        "inputs": {},
+        "behaviors": {
+          "producer": {
+            "outputs": {
+              "result": {
+                "protocol": "draft",
+                "disposition": "EXECUTED",
+                "execution_outcome": "SUCCESS",
+                "applicability": "APPLICABLE",
+                "determination": "KNOWN",
+                "verdict": "PASS",
+                "evidence": [],
+                "usage": {}
+              }
+            }
+          },
+          "member": {
+            "outputs": {
+              "result": {
+                "protocol": "draft",
+                "disposition": "EXECUTED",
+                "execution_outcome": "SUCCESS",
+                "applicability": "APPLICABLE",
+                "determination": "KNOWN",
+                "verdict": "PASS",
+                "evidence": [],
+                "usage": {}
+              }
+            }
+          },
+          "consumer": {
+            "outputs": {
+              "result": {
+                "protocol": "draft",
+                "disposition": "EXECUTED",
+                "execution_outcome": "SUCCESS",
+                "applicability": "APPLICABLE",
+                "determination": "KNOWN",
+                "verdict": "PASS",
+                "evidence": [],
+                "usage": {}
+              }
+            }
+          }
+        },
+        "expected": {
+          "status": "AVAILABLE",
+          "used_default": false,
+          "has_value": true,
+          "blocked": false,
+          "consumer_invoked": true,
+          "source": {
+            "kind": "UPSTREAM_OUTPUT",
+            "node_id": "producer",
+            "output": "result"
+          },
+          "consumer_outputs": {
+            "result": {
+              "protocol": "draft",
+              "disposition": "EXECUTED",
+              "execution_outcome": "SUCCESS",
+              "applicability": "APPLICABLE",
+              "determination": "KNOWN",
+              "verdict": "PASS",
+              "evidence": [],
+              "usage": {}
+            }
+          },
+          "value": {
+            "protocol": "draft",
+            "disposition": "EXECUTED",
+            "execution_outcome": "SUCCESS",
+            "applicability": "APPLICABLE",
+            "determination": "KNOWN",
+            "verdict": "PASS",
+            "evidence": [],
+            "usage": {}
+          }
+        }
+      }
+    },
+    "availability-role.RESULT.AGGREGATE.AVAILABLE.OMIT": {
+      "id": "availability-role.RESULT.AGGREGATE.AVAILABLE.OMIT",
+      "node_kind": "AGGREGATE",
+      "source": "UPSTREAM_OUTPUT",
+      "availability": "AVAILABLE",
+      "handling": "OMIT",
+      "role": "RESULT",
+      "runtime_applicable": false,
+      "reason": "Every upstream RESULT binding is Aggregate membership. All members must be required BLOCK. Optional OMIT/DEFAULT RESULT members reject the definition",
+      "category": "availability-role",
+      "requirement": "spec/draft/dataflow.md#typed-executable-dataflow-breaking-draft-revision",
+      "mutation_witness": "Confuse information with semantic output roles or leak invalid/unpublished values",
+      "stimulus": {
+        "definition": {
+          "protocol": "draft",
+          "id": "golden.definition",
+          "version": "1",
+          "subject": {
+            "id": "golden.subject",
+            "type": "application/json",
+            "locator": {
+              "host_supplied": true
+            }
+          },
+          "criterion": {
+            "id": "golden.criterion",
+            "description": "The explicitly supplied deterministic criterion holds"
+          },
+          "judgment_schema": true,
+          "run_inputs": [],
+          "graph": {
+            "nodes": [
+              {
+                "id": "producer",
+                "kind": "EVALUATE",
+                "operation": {
+                  "capability_id": "com.example.golden.evaluate",
+                  "capability_version": "1"
+                },
+                "inputs": [
+                  {
+                    "name": "subject",
+                    "schema": {
+                      "type": "object"
+                    },
+                    "required": true,
+                    "on_unavailable": "BLOCK"
+                  },
+                  {
+                    "name": "criterion",
+                    "schema": {
+                      "type": "object"
+                    },
+                    "required": true,
+                    "on_unavailable": "BLOCK"
+                  }
+                ],
+                "bindings": {
+                  "subject": {
+                    "kind": "CONSTANT",
+                    "value": {
+                      "id": "golden.subject",
+                      "type": "application/json",
+                      "locator": {
+                        "host_supplied": true
+                      }
+                    }
+                  },
+                  "criterion": {
+                    "kind": "CONSTANT",
+                    "value": {
+                      "id": "golden.criterion",
+                      "description": "The explicitly supplied deterministic criterion holds"
+                    }
+                  }
+                },
+                "outputs": [
+                  {
+                    "name": "result",
+                    "schema": true,
+                    "role": "RESULT"
+                  }
+                ],
+                "config": {}
+              },
+              {
+                "id": "member",
+                "kind": "EVALUATE",
+                "operation": {
+                  "capability_id": "com.example.golden.evaluate",
+                  "capability_version": "1"
+                },
+                "inputs": [
+                  {
+                    "name": "subject",
+                    "schema": {
+                      "type": "object"
+                    },
+                    "required": true,
+                    "on_unavailable": "BLOCK"
+                  },
+                  {
+                    "name": "criterion",
+                    "schema": {
+                      "type": "object"
+                    },
+                    "required": true,
+                    "on_unavailable": "BLOCK"
+                  }
+                ],
+                "bindings": {
+                  "subject": {
+                    "kind": "CONSTANT",
+                    "value": {
+                      "id": "golden.subject",
+                      "type": "application/json",
+                      "locator": {
+                        "host_supplied": true
+                      }
+                    }
+                  },
+                  "criterion": {
+                    "kind": "CONSTANT",
+                    "value": {
+                      "id": "golden.criterion",
+                      "description": "The explicitly supplied deterministic criterion holds"
+                    }
+                  }
+                },
+                "outputs": [
+                  {
+                    "name": "result",
+                    "schema": true,
+                    "role": "RESULT"
+                  }
+                ],
+                "config": {}
+              },
+              {
+                "id": "consumer",
+                "kind": "AGGREGATE",
+                "operation": {
+                  "capability_id": "com.example.golden.custom_aggregate",
+                  "capability_version": "1"
+                },
+                "inputs": [
+                  {
+                    "name": "data",
+                    "schema": true,
+                    "required": false,
+                    "on_unavailable": "OMIT"
+                  },
+                  {
+                    "name": "member",
+                    "schema": true,
+                    "required": true,
+                    "on_unavailable": "BLOCK"
+                  },
+                  {
+                    "name": "members",
+                    "schema": true,
+                    "required": true,
+                    "on_unavailable": "BLOCK"
+                  },
+                  {
+                    "name": "subject",
+                    "schema": {
+                      "type": "object"
+                    },
+                    "required": true,
+                    "on_unavailable": "BLOCK"
+                  },
+                  {
+                    "name": "criterion",
+                    "schema": {
+                      "type": "object"
+                    },
+                    "required": true,
+                    "on_unavailable": "BLOCK"
+                  }
+                ],
+                "bindings": {
+                  "data": {
+                    "kind": "UPSTREAM_OUTPUT",
+                    "node_id": "producer",
+                    "output": "result"
+                  },
+                  "member": {
+                    "kind": "UPSTREAM_OUTPUT",
+                    "node_id": "member",
+                    "output": "result"
+                  },
+                  "members": {
+                    "kind": "CONSTANT",
+                    "value": [
+                      "member"
+                    ]
+                  },
+                  "subject": {
+                    "kind": "CONSTANT",
+                    "value": {
+                      "id": "golden.subject",
+                      "type": "application/json",
+                      "locator": {
+                        "host_supplied": true
+                      }
+                    }
+                  },
+                  "criterion": {
+                    "kind": "CONSTANT",
+                    "value": {
+                      "id": "golden.criterion",
+                      "description": "The explicitly supplied deterministic criterion holds"
+                    }
+                  }
+                },
+                "outputs": [
+                  {
+                    "name": "result",
+                    "schema": true,
+                    "role": "RESULT"
+                  }
+                ],
+                "config": {},
+                "aggregate_inputs": [
+                  "member"
+                ]
+              }
+            ],
+            "edges": [
+              {
+                "from_node": "producer",
+                "to_node": "consumer"
+              },
+              {
+                "from_node": "member",
+                "to_node": "consumer"
+              }
+            ]
+          },
+          "execution_policy": {
+            "activation": {
+              "executor_ref": "MANUAL"
+            },
+            "selection": {
+              "executor_ref": "EXPLICIT"
+            },
+            "admission": {
+              "strategy": "ALWAYS"
+            }
+          }
+        },
+        "inputs": {},
+        "behaviors": {
+          "producer": {
+            "outputs": {
+              "result": {
+                "protocol": "draft",
+                "disposition": "EXECUTED",
+                "execution_outcome": "SUCCESS",
+                "applicability": "APPLICABLE",
+                "determination": "KNOWN",
+                "verdict": "PASS",
+                "evidence": [],
+                "usage": {}
+              }
+            }
+          },
+          "member": {
+            "outputs": {
+              "result": {
+                "protocol": "draft",
+                "disposition": "EXECUTED",
+                "execution_outcome": "SUCCESS",
+                "applicability": "APPLICABLE",
+                "determination": "KNOWN",
+                "verdict": "PASS",
+                "evidence": [],
+                "usage": {}
+              }
+            }
+          },
+          "consumer": {
+            "outputs": {
+              "result": {
+                "protocol": "draft",
+                "disposition": "EXECUTED",
+                "execution_outcome": "SUCCESS",
+                "applicability": "APPLICABLE",
+                "determination": "KNOWN",
+                "verdict": "PASS",
+                "evidence": [],
+                "usage": {}
+              }
+            }
+          }
+        },
+        "expected": {
+          "status": "AVAILABLE",
+          "used_default": false,
+          "has_value": true,
+          "blocked": false,
+          "consumer_invoked": true,
+          "source": {
+            "kind": "UPSTREAM_OUTPUT",
+            "node_id": "producer",
+            "output": "result"
+          },
+          "consumer_outputs": {
+            "result": {
+              "protocol": "draft",
+              "disposition": "EXECUTED",
+              "execution_outcome": "SUCCESS",
+              "applicability": "APPLICABLE",
+              "determination": "KNOWN",
+              "verdict": "PASS",
+              "evidence": [],
+              "usage": {}
+            }
+          },
+          "value": {
+            "protocol": "draft",
+            "disposition": "EXECUTED",
+            "execution_outcome": "SUCCESS",
+            "applicability": "APPLICABLE",
+            "determination": "KNOWN",
+            "verdict": "PASS",
+            "evidence": [],
+            "usage": {}
+          }
+        }
+      },
+      "static_rejection": "AGGREGATE_CONFIG"
+    },
+    "availability-role.RESULT.AGGREGATE.AVAILABLE.DEFAULT": {
+      "id": "availability-role.RESULT.AGGREGATE.AVAILABLE.DEFAULT",
+      "node_kind": "AGGREGATE",
+      "source": "UPSTREAM_OUTPUT",
+      "availability": "AVAILABLE",
+      "handling": "DEFAULT",
+      "role": "RESULT",
+      "runtime_applicable": false,
+      "reason": "Every upstream RESULT binding is Aggregate membership. All members must be required BLOCK. Optional OMIT/DEFAULT RESULT members reject the definition",
+      "category": "availability-role",
+      "requirement": "spec/draft/dataflow.md#typed-executable-dataflow-breaking-draft-revision",
+      "mutation_witness": "Confuse information with semantic output roles or leak invalid/unpublished values",
+      "stimulus": {
+        "definition": {
+          "protocol": "draft",
+          "id": "golden.definition",
+          "version": "1",
+          "subject": {
+            "id": "golden.subject",
+            "type": "application/json",
+            "locator": {
+              "host_supplied": true
+            }
+          },
+          "criterion": {
+            "id": "golden.criterion",
+            "description": "The explicitly supplied deterministic criterion holds"
+          },
+          "judgment_schema": true,
+          "run_inputs": [],
+          "graph": {
+            "nodes": [
+              {
+                "id": "producer",
+                "kind": "EVALUATE",
+                "operation": {
+                  "capability_id": "com.example.golden.evaluate",
+                  "capability_version": "1"
+                },
+                "inputs": [
+                  {
+                    "name": "subject",
+                    "schema": {
+                      "type": "object"
+                    },
+                    "required": true,
+                    "on_unavailable": "BLOCK"
+                  },
+                  {
+                    "name": "criterion",
+                    "schema": {
+                      "type": "object"
+                    },
+                    "required": true,
+                    "on_unavailable": "BLOCK"
+                  }
+                ],
+                "bindings": {
+                  "subject": {
+                    "kind": "CONSTANT",
+                    "value": {
+                      "id": "golden.subject",
+                      "type": "application/json",
+                      "locator": {
+                        "host_supplied": true
+                      }
+                    }
+                  },
+                  "criterion": {
+                    "kind": "CONSTANT",
+                    "value": {
+                      "id": "golden.criterion",
+                      "description": "The explicitly supplied deterministic criterion holds"
+                    }
+                  }
+                },
+                "outputs": [
+                  {
+                    "name": "result",
+                    "schema": true,
+                    "role": "RESULT"
+                  }
+                ],
+                "config": {}
+              },
+              {
+                "id": "member",
+                "kind": "EVALUATE",
+                "operation": {
+                  "capability_id": "com.example.golden.evaluate",
+                  "capability_version": "1"
+                },
+                "inputs": [
+                  {
+                    "name": "subject",
+                    "schema": {
+                      "type": "object"
+                    },
+                    "required": true,
+                    "on_unavailable": "BLOCK"
+                  },
+                  {
+                    "name": "criterion",
+                    "schema": {
+                      "type": "object"
+                    },
+                    "required": true,
+                    "on_unavailable": "BLOCK"
+                  }
+                ],
+                "bindings": {
+                  "subject": {
+                    "kind": "CONSTANT",
+                    "value": {
+                      "id": "golden.subject",
+                      "type": "application/json",
+                      "locator": {
+                        "host_supplied": true
+                      }
+                    }
+                  },
+                  "criterion": {
+                    "kind": "CONSTANT",
+                    "value": {
+                      "id": "golden.criterion",
+                      "description": "The explicitly supplied deterministic criterion holds"
+                    }
+                  }
+                },
+                "outputs": [
+                  {
+                    "name": "result",
+                    "schema": true,
+                    "role": "RESULT"
+                  }
+                ],
+                "config": {}
+              },
+              {
+                "id": "consumer",
+                "kind": "AGGREGATE",
+                "operation": {
+                  "capability_id": "com.example.golden.custom_aggregate",
+                  "capability_version": "1"
+                },
+                "inputs": [
+                  {
+                    "name": "data",
+                    "schema": true,
+                    "required": false,
+                    "on_unavailable": "DEFAULT",
+                    "default": {
+                      "kind": "CONSTANT",
+                      "value": 0
+                    }
+                  },
+                  {
+                    "name": "member",
+                    "schema": true,
+                    "required": true,
+                    "on_unavailable": "BLOCK"
+                  },
+                  {
+                    "name": "members",
+                    "schema": true,
+                    "required": true,
+                    "on_unavailable": "BLOCK"
+                  },
+                  {
+                    "name": "subject",
+                    "schema": {
+                      "type": "object"
+                    },
+                    "required": true,
+                    "on_unavailable": "BLOCK"
+                  },
+                  {
+                    "name": "criterion",
+                    "schema": {
+                      "type": "object"
+                    },
+                    "required": true,
+                    "on_unavailable": "BLOCK"
+                  }
+                ],
+                "bindings": {
+                  "data": {
+                    "kind": "UPSTREAM_OUTPUT",
+                    "node_id": "producer",
+                    "output": "result"
+                  },
+                  "member": {
+                    "kind": "UPSTREAM_OUTPUT",
+                    "node_id": "member",
+                    "output": "result"
+                  },
+                  "members": {
+                    "kind": "CONSTANT",
+                    "value": [
+                      "member"
+                    ]
+                  },
+                  "subject": {
+                    "kind": "CONSTANT",
+                    "value": {
+                      "id": "golden.subject",
+                      "type": "application/json",
+                      "locator": {
+                        "host_supplied": true
+                      }
+                    }
+                  },
+                  "criterion": {
+                    "kind": "CONSTANT",
+                    "value": {
+                      "id": "golden.criterion",
+                      "description": "The explicitly supplied deterministic criterion holds"
+                    }
+                  }
+                },
+                "outputs": [
+                  {
+                    "name": "result",
+                    "schema": true,
+                    "role": "RESULT"
+                  }
+                ],
+                "config": {},
+                "aggregate_inputs": [
+                  "member"
+                ]
+              }
+            ],
+            "edges": [
+              {
+                "from_node": "producer",
+                "to_node": "consumer"
+              },
+              {
+                "from_node": "member",
+                "to_node": "consumer"
+              }
+            ]
+          },
+          "execution_policy": {
+            "activation": {
+              "executor_ref": "MANUAL"
+            },
+            "selection": {
+              "executor_ref": "EXPLICIT"
+            },
+            "admission": {
+              "strategy": "ALWAYS"
+            }
+          }
+        },
+        "inputs": {},
+        "behaviors": {
+          "producer": {
+            "outputs": {
+              "result": {
+                "protocol": "draft",
+                "disposition": "EXECUTED",
+                "execution_outcome": "SUCCESS",
+                "applicability": "APPLICABLE",
+                "determination": "KNOWN",
+                "verdict": "PASS",
+                "evidence": [],
+                "usage": {}
+              }
+            }
+          },
+          "member": {
+            "outputs": {
+              "result": {
+                "protocol": "draft",
+                "disposition": "EXECUTED",
+                "execution_outcome": "SUCCESS",
+                "applicability": "APPLICABLE",
+                "determination": "KNOWN",
+                "verdict": "PASS",
+                "evidence": [],
+                "usage": {}
+              }
+            }
+          },
+          "consumer": {
+            "outputs": {
+              "result": {
+                "protocol": "draft",
+                "disposition": "EXECUTED",
+                "execution_outcome": "SUCCESS",
+                "applicability": "APPLICABLE",
+                "determination": "KNOWN",
+                "verdict": "PASS",
+                "evidence": [],
+                "usage": {}
+              }
+            }
+          }
+        },
+        "expected": {
+          "status": "AVAILABLE",
+          "used_default": false,
+          "has_value": true,
+          "blocked": false,
+          "consumer_invoked": true,
+          "source": {
+            "kind": "UPSTREAM_OUTPUT",
+            "node_id": "producer",
+            "output": "result"
+          },
+          "consumer_outputs": {
+            "result": {
+              "protocol": "draft",
+              "disposition": "EXECUTED",
+              "execution_outcome": "SUCCESS",
+              "applicability": "APPLICABLE",
+              "determination": "KNOWN",
+              "verdict": "PASS",
+              "evidence": [],
+              "usage": {}
+            }
+          },
+          "value": {
+            "protocol": "draft",
+            "disposition": "EXECUTED",
+            "execution_outcome": "SUCCESS",
+            "applicability": "APPLICABLE",
+            "determination": "KNOWN",
+            "verdict": "PASS",
+            "evidence": [],
+            "usage": {}
+          }
+        }
+      },
+      "static_rejection": "AGGREGATE_CONFIG"
+    },
+    "availability-role.RESULT.AGGREGATE.INVALID.BLOCK": {
+      "id": "availability-role.RESULT.AGGREGATE.INVALID.BLOCK",
+      "node_kind": "AGGREGATE",
+      "source": "UPSTREAM_OUTPUT",
+      "availability": "INVALID",
+      "handling": "BLOCK",
+      "role": "RESULT",
+      "runtime_applicable": true,
+      "reason": "Recorded evaluator Results, including error/nonexecution bookkeeping, are available unless excluded by a declared port schema",
+      "category": "availability-role",
+      "requirement": "spec/draft/dataflow.md#typed-executable-dataflow-breaking-draft-revision",
+      "mutation_witness": "Confuse information with semantic output roles or leak invalid/unpublished values",
+      "stimulus": {
+        "definition": {
+          "protocol": "draft",
+          "id": "golden.definition",
+          "version": "1",
+          "subject": {
+            "id": "golden.subject",
+            "type": "application/json",
+            "locator": {
+              "host_supplied": true
+            }
+          },
+          "criterion": {
+            "id": "golden.criterion",
+            "description": "The explicitly supplied deterministic criterion holds"
+          },
+          "judgment_schema": true,
+          "run_inputs": [],
+          "graph": {
+            "nodes": [
+              {
+                "id": "producer",
+                "kind": "EVALUATE",
+                "operation": {
+                  "capability_id": "com.example.golden.evaluate",
+                  "capability_version": "1"
+                },
+                "inputs": [
+                  {
+                    "name": "subject",
+                    "schema": {
+                      "type": "object"
+                    },
+                    "required": true,
+                    "on_unavailable": "BLOCK"
+                  },
+                  {
+                    "name": "criterion",
+                    "schema": {
+                      "type": "object"
+                    },
+                    "required": true,
+                    "on_unavailable": "BLOCK"
+                  }
+                ],
+                "bindings": {
+                  "subject": {
+                    "kind": "CONSTANT",
+                    "value": {
+                      "id": "golden.subject",
+                      "type": "application/json",
+                      "locator": {
+                        "host_supplied": true
+                      }
+                    }
+                  },
+                  "criterion": {
+                    "kind": "CONSTANT",
+                    "value": {
+                      "id": "golden.criterion",
+                      "description": "The explicitly supplied deterministic criterion holds"
+                    }
+                  }
+                },
+                "outputs": [
+                  {
+                    "name": "result",
+                    "schema": {
+                      "type": "object",
+                      "properties": {
+                        "execution_outcome": {
+                          "const": "SUCCESS"
+                        }
+                      }
+                    },
+                    "role": "RESULT"
+                  }
+                ],
+                "config": {}
+              },
+              {
+                "id": "member",
+                "kind": "EVALUATE",
+                "operation": {
+                  "capability_id": "com.example.golden.evaluate",
+                  "capability_version": "1"
+                },
+                "inputs": [
+                  {
+                    "name": "subject",
+                    "schema": {
+                      "type": "object"
+                    },
+                    "required": true,
+                    "on_unavailable": "BLOCK"
+                  },
+                  {
+                    "name": "criterion",
+                    "schema": {
+                      "type": "object"
+                    },
+                    "required": true,
+                    "on_unavailable": "BLOCK"
+                  }
+                ],
+                "bindings": {
+                  "subject": {
+                    "kind": "CONSTANT",
+                    "value": {
+                      "id": "golden.subject",
+                      "type": "application/json",
+                      "locator": {
+                        "host_supplied": true
+                      }
+                    }
+                  },
+                  "criterion": {
+                    "kind": "CONSTANT",
+                    "value": {
+                      "id": "golden.criterion",
+                      "description": "The explicitly supplied deterministic criterion holds"
+                    }
+                  }
+                },
+                "outputs": [
+                  {
+                    "name": "result",
+                    "schema": true,
+                    "role": "RESULT"
+                  }
+                ],
+                "config": {}
+              },
+              {
+                "id": "consumer",
+                "kind": "AGGREGATE",
+                "operation": {
+                  "capability_id": "com.example.golden.custom_aggregate",
+                  "capability_version": "1"
+                },
+                "inputs": [
+                  {
+                    "name": "data",
+                    "schema": true,
+                    "required": true,
+                    "on_unavailable": "BLOCK"
+                  },
+                  {
+                    "name": "member",
+                    "schema": true,
+                    "required": true,
+                    "on_unavailable": "BLOCK"
+                  },
+                  {
+                    "name": "members",
+                    "schema": true,
+                    "required": true,
+                    "on_unavailable": "BLOCK"
+                  },
+                  {
+                    "name": "subject",
+                    "schema": {
+                      "type": "object"
+                    },
+                    "required": true,
+                    "on_unavailable": "BLOCK"
+                  },
+                  {
+                    "name": "criterion",
+                    "schema": {
+                      "type": "object"
+                    },
+                    "required": true,
+                    "on_unavailable": "BLOCK"
+                  }
+                ],
+                "bindings": {
+                  "data": {
+                    "kind": "UPSTREAM_OUTPUT",
+                    "node_id": "producer",
+                    "output": "result"
+                  },
+                  "member": {
+                    "kind": "UPSTREAM_OUTPUT",
+                    "node_id": "member",
+                    "output": "result"
+                  },
+                  "members": {
+                    "kind": "CONSTANT",
+                    "value": [
+                      "data",
+                      "member"
+                    ]
+                  },
+                  "subject": {
+                    "kind": "CONSTANT",
+                    "value": {
+                      "id": "golden.subject",
+                      "type": "application/json",
+                      "locator": {
+                        "host_supplied": true
+                      }
+                    }
+                  },
+                  "criterion": {
+                    "kind": "CONSTANT",
+                    "value": {
+                      "id": "golden.criterion",
+                      "description": "The explicitly supplied deterministic criterion holds"
+                    }
+                  }
+                },
+                "outputs": [
+                  {
+                    "name": "result",
+                    "schema": true,
+                    "role": "RESULT"
+                  }
+                ],
+                "config": {},
+                "aggregate_inputs": [
+                  "data",
+                  "member"
+                ]
+              }
+            ],
+            "edges": [
+              {
+                "from_node": "producer",
+                "to_node": "consumer"
+              },
+              {
+                "from_node": "member",
+                "to_node": "consumer"
+              }
+            ]
+          },
+          "execution_policy": {
+            "activation": {
+              "executor_ref": "MANUAL"
+            },
+            "selection": {
+              "executor_ref": "EXPLICIT"
+            },
+            "admission": {
+              "strategy": "ALWAYS"
+            }
+          }
+        },
+        "inputs": {},
+        "behaviors": {
+          "producer": {
+            "error": {
+              "code": "com.example.scripted_failure",
+              "message": "known producer failure"
+            }
+          },
+          "member": {
+            "outputs": {
+              "result": {
+                "protocol": "draft",
+                "disposition": "EXECUTED",
+                "execution_outcome": "SUCCESS",
+                "applicability": "APPLICABLE",
+                "determination": "KNOWN",
+                "verdict": "PASS",
+                "evidence": [],
+                "usage": {}
+              }
+            }
+          },
+          "consumer": {
+            "outputs": {
+              "result": {
+                "protocol": "draft",
+                "disposition": "EXECUTED",
+                "execution_outcome": "SUCCESS",
+                "applicability": "APPLICABLE",
+                "determination": "KNOWN",
+                "verdict": "PASS",
+                "evidence": [],
+                "usage": {}
+              }
+            }
+          }
+        },
+        "expected": {
+          "status": "INVALID",
+          "used_default": false,
+          "has_value": false,
+          "blocked": true,
+          "consumer_invoked": false,
+          "source": {
+            "kind": "UPSTREAM_OUTPUT",
+            "node_id": "producer",
+            "output": "result"
+          },
+          "consumer_outputs": {
+            "result": {
+              "protocol": "draft",
+              "disposition": "EXECUTED",
+              "execution_outcome": "SUCCESS",
+              "applicability": "APPLICABLE",
+              "determination": "KNOWN",
+              "verdict": "PASS",
+              "evidence": [],
+              "usage": {}
+            }
+          }
+        }
+      }
+    },
+    "availability-role.RESULT.AGGREGATE.INVALID.OMIT": {
+      "id": "availability-role.RESULT.AGGREGATE.INVALID.OMIT",
+      "node_kind": "AGGREGATE",
+      "source": "UPSTREAM_OUTPUT",
+      "availability": "INVALID",
+      "handling": "OMIT",
+      "role": "RESULT",
+      "runtime_applicable": false,
+      "reason": "Every upstream RESULT binding is Aggregate membership. All members must be required BLOCK. Optional OMIT/DEFAULT RESULT members reject the definition",
+      "category": "availability-role",
+      "requirement": "spec/draft/dataflow.md#typed-executable-dataflow-breaking-draft-revision",
+      "mutation_witness": "Confuse information with semantic output roles or leak invalid/unpublished values",
+      "stimulus": {
+        "definition": {
+          "protocol": "draft",
+          "id": "golden.definition",
+          "version": "1",
+          "subject": {
+            "id": "golden.subject",
+            "type": "application/json",
+            "locator": {
+              "host_supplied": true
+            }
+          },
+          "criterion": {
+            "id": "golden.criterion",
+            "description": "The explicitly supplied deterministic criterion holds"
+          },
+          "judgment_schema": true,
+          "run_inputs": [],
+          "graph": {
+            "nodes": [
+              {
+                "id": "producer",
+                "kind": "EVALUATE",
+                "operation": {
+                  "capability_id": "com.example.golden.evaluate",
+                  "capability_version": "1"
+                },
+                "inputs": [
+                  {
+                    "name": "subject",
+                    "schema": {
+                      "type": "object"
+                    },
+                    "required": true,
+                    "on_unavailable": "BLOCK"
+                  },
+                  {
+                    "name": "criterion",
+                    "schema": {
+                      "type": "object"
+                    },
+                    "required": true,
+                    "on_unavailable": "BLOCK"
+                  }
+                ],
+                "bindings": {
+                  "subject": {
+                    "kind": "CONSTANT",
+                    "value": {
+                      "id": "golden.subject",
+                      "type": "application/json",
+                      "locator": {
+                        "host_supplied": true
+                      }
+                    }
+                  },
+                  "criterion": {
+                    "kind": "CONSTANT",
+                    "value": {
+                      "id": "golden.criterion",
+                      "description": "The explicitly supplied deterministic criterion holds"
+                    }
+                  }
+                },
+                "outputs": [
+                  {
+                    "name": "result",
+                    "schema": {
+                      "type": "object",
+                      "properties": {
+                        "execution_outcome": {
+                          "const": "SUCCESS"
+                        }
+                      }
+                    },
+                    "role": "RESULT"
+                  }
+                ],
+                "config": {}
+              },
+              {
+                "id": "member",
+                "kind": "EVALUATE",
+                "operation": {
+                  "capability_id": "com.example.golden.evaluate",
+                  "capability_version": "1"
+                },
+                "inputs": [
+                  {
+                    "name": "subject",
+                    "schema": {
+                      "type": "object"
+                    },
+                    "required": true,
+                    "on_unavailable": "BLOCK"
+                  },
+                  {
+                    "name": "criterion",
+                    "schema": {
+                      "type": "object"
+                    },
+                    "required": true,
+                    "on_unavailable": "BLOCK"
+                  }
+                ],
+                "bindings": {
+                  "subject": {
+                    "kind": "CONSTANT",
+                    "value": {
+                      "id": "golden.subject",
+                      "type": "application/json",
+                      "locator": {
+                        "host_supplied": true
+                      }
+                    }
+                  },
+                  "criterion": {
+                    "kind": "CONSTANT",
+                    "value": {
+                      "id": "golden.criterion",
+                      "description": "The explicitly supplied deterministic criterion holds"
+                    }
+                  }
+                },
+                "outputs": [
+                  {
+                    "name": "result",
+                    "schema": true,
+                    "role": "RESULT"
+                  }
+                ],
+                "config": {}
+              },
+              {
+                "id": "consumer",
+                "kind": "AGGREGATE",
+                "operation": {
+                  "capability_id": "com.example.golden.custom_aggregate",
+                  "capability_version": "1"
+                },
+                "inputs": [
+                  {
+                    "name": "data",
+                    "schema": true,
+                    "required": false,
+                    "on_unavailable": "OMIT"
+                  },
+                  {
+                    "name": "member",
+                    "schema": true,
+                    "required": true,
+                    "on_unavailable": "BLOCK"
+                  },
+                  {
+                    "name": "members",
+                    "schema": true,
+                    "required": true,
+                    "on_unavailable": "BLOCK"
+                  },
+                  {
+                    "name": "subject",
+                    "schema": {
+                      "type": "object"
+                    },
+                    "required": true,
+                    "on_unavailable": "BLOCK"
+                  },
+                  {
+                    "name": "criterion",
+                    "schema": {
+                      "type": "object"
+                    },
+                    "required": true,
+                    "on_unavailable": "BLOCK"
+                  }
+                ],
+                "bindings": {
+                  "data": {
+                    "kind": "UPSTREAM_OUTPUT",
+                    "node_id": "producer",
+                    "output": "result"
+                  },
+                  "member": {
+                    "kind": "UPSTREAM_OUTPUT",
+                    "node_id": "member",
+                    "output": "result"
+                  },
+                  "members": {
+                    "kind": "CONSTANT",
+                    "value": [
+                      "member"
+                    ]
+                  },
+                  "subject": {
+                    "kind": "CONSTANT",
+                    "value": {
+                      "id": "golden.subject",
+                      "type": "application/json",
+                      "locator": {
+                        "host_supplied": true
+                      }
+                    }
+                  },
+                  "criterion": {
+                    "kind": "CONSTANT",
+                    "value": {
+                      "id": "golden.criterion",
+                      "description": "The explicitly supplied deterministic criterion holds"
+                    }
+                  }
+                },
+                "outputs": [
+                  {
+                    "name": "result",
+                    "schema": true,
+                    "role": "RESULT"
+                  }
+                ],
+                "config": {},
+                "aggregate_inputs": [
+                  "member"
+                ]
+              }
+            ],
+            "edges": [
+              {
+                "from_node": "producer",
+                "to_node": "consumer"
+              },
+              {
+                "from_node": "member",
+                "to_node": "consumer"
+              }
+            ]
+          },
+          "execution_policy": {
+            "activation": {
+              "executor_ref": "MANUAL"
+            },
+            "selection": {
+              "executor_ref": "EXPLICIT"
+            },
+            "admission": {
+              "strategy": "ALWAYS"
+            }
+          }
+        },
+        "inputs": {},
+        "behaviors": {
+          "producer": {
+            "error": {
+              "code": "com.example.scripted_failure",
+              "message": "known producer failure"
+            }
+          },
+          "member": {
+            "outputs": {
+              "result": {
+                "protocol": "draft",
+                "disposition": "EXECUTED",
+                "execution_outcome": "SUCCESS",
+                "applicability": "APPLICABLE",
+                "determination": "KNOWN",
+                "verdict": "PASS",
+                "evidence": [],
+                "usage": {}
+              }
+            }
+          },
+          "consumer": {
+            "outputs": {
+              "result": {
+                "protocol": "draft",
+                "disposition": "EXECUTED",
+                "execution_outcome": "SUCCESS",
+                "applicability": "APPLICABLE",
+                "determination": "KNOWN",
+                "verdict": "PASS",
+                "evidence": [],
+                "usage": {}
+              }
+            }
+          }
+        },
+        "expected": {
+          "status": "INVALID",
+          "used_default": false,
+          "has_value": false,
+          "blocked": false,
+          "consumer_invoked": true,
+          "source": {
+            "kind": "UPSTREAM_OUTPUT",
+            "node_id": "producer",
+            "output": "result"
+          },
+          "consumer_outputs": {
+            "result": {
+              "protocol": "draft",
+              "disposition": "EXECUTED",
+              "execution_outcome": "SUCCESS",
+              "applicability": "APPLICABLE",
+              "determination": "KNOWN",
+              "verdict": "PASS",
+              "evidence": [],
+              "usage": {}
+            }
+          }
+        }
+      },
+      "static_rejection": "AGGREGATE_CONFIG"
+    },
+    "availability-role.RESULT.AGGREGATE.INVALID.DEFAULT": {
+      "id": "availability-role.RESULT.AGGREGATE.INVALID.DEFAULT",
+      "node_kind": "AGGREGATE",
+      "source": "UPSTREAM_OUTPUT",
+      "availability": "INVALID",
+      "handling": "DEFAULT",
+      "role": "RESULT",
+      "runtime_applicable": false,
+      "reason": "Every upstream RESULT binding is Aggregate membership. All members must be required BLOCK. Optional OMIT/DEFAULT RESULT members reject the definition",
+      "category": "availability-role",
+      "requirement": "spec/draft/dataflow.md#typed-executable-dataflow-breaking-draft-revision",
+      "mutation_witness": "Confuse information with semantic output roles or leak invalid/unpublished values",
+      "stimulus": {
+        "definition": {
+          "protocol": "draft",
+          "id": "golden.definition",
+          "version": "1",
+          "subject": {
+            "id": "golden.subject",
+            "type": "application/json",
+            "locator": {
+              "host_supplied": true
+            }
+          },
+          "criterion": {
+            "id": "golden.criterion",
+            "description": "The explicitly supplied deterministic criterion holds"
+          },
+          "judgment_schema": true,
+          "run_inputs": [],
+          "graph": {
+            "nodes": [
+              {
+                "id": "producer",
+                "kind": "EVALUATE",
+                "operation": {
+                  "capability_id": "com.example.golden.evaluate",
+                  "capability_version": "1"
+                },
+                "inputs": [
+                  {
+                    "name": "subject",
+                    "schema": {
+                      "type": "object"
+                    },
+                    "required": true,
+                    "on_unavailable": "BLOCK"
+                  },
+                  {
+                    "name": "criterion",
+                    "schema": {
+                      "type": "object"
+                    },
+                    "required": true,
+                    "on_unavailable": "BLOCK"
+                  }
+                ],
+                "bindings": {
+                  "subject": {
+                    "kind": "CONSTANT",
+                    "value": {
+                      "id": "golden.subject",
+                      "type": "application/json",
+                      "locator": {
+                        "host_supplied": true
+                      }
+                    }
+                  },
+                  "criterion": {
+                    "kind": "CONSTANT",
+                    "value": {
+                      "id": "golden.criterion",
+                      "description": "The explicitly supplied deterministic criterion holds"
+                    }
+                  }
+                },
+                "outputs": [
+                  {
+                    "name": "result",
+                    "schema": {
+                      "type": "object",
+                      "properties": {
+                        "execution_outcome": {
+                          "const": "SUCCESS"
+                        }
+                      }
+                    },
+                    "role": "RESULT"
+                  }
+                ],
+                "config": {}
+              },
+              {
+                "id": "member",
+                "kind": "EVALUATE",
+                "operation": {
+                  "capability_id": "com.example.golden.evaluate",
+                  "capability_version": "1"
+                },
+                "inputs": [
+                  {
+                    "name": "subject",
+                    "schema": {
+                      "type": "object"
+                    },
+                    "required": true,
+                    "on_unavailable": "BLOCK"
+                  },
+                  {
+                    "name": "criterion",
+                    "schema": {
+                      "type": "object"
+                    },
+                    "required": true,
+                    "on_unavailable": "BLOCK"
+                  }
+                ],
+                "bindings": {
+                  "subject": {
+                    "kind": "CONSTANT",
+                    "value": {
+                      "id": "golden.subject",
+                      "type": "application/json",
+                      "locator": {
+                        "host_supplied": true
+                      }
+                    }
+                  },
+                  "criterion": {
+                    "kind": "CONSTANT",
+                    "value": {
+                      "id": "golden.criterion",
+                      "description": "The explicitly supplied deterministic criterion holds"
+                    }
+                  }
+                },
+                "outputs": [
+                  {
+                    "name": "result",
+                    "schema": true,
+                    "role": "RESULT"
+                  }
+                ],
+                "config": {}
+              },
+              {
+                "id": "consumer",
+                "kind": "AGGREGATE",
+                "operation": {
+                  "capability_id": "com.example.golden.custom_aggregate",
+                  "capability_version": "1"
+                },
+                "inputs": [
+                  {
+                    "name": "data",
+                    "schema": true,
+                    "required": false,
+                    "on_unavailable": "DEFAULT",
+                    "default": {
+                      "kind": "CONSTANT",
+                      "value": 0
+                    }
+                  },
+                  {
+                    "name": "member",
+                    "schema": true,
+                    "required": true,
+                    "on_unavailable": "BLOCK"
+                  },
+                  {
+                    "name": "members",
+                    "schema": true,
+                    "required": true,
+                    "on_unavailable": "BLOCK"
+                  },
+                  {
+                    "name": "subject",
+                    "schema": {
+                      "type": "object"
+                    },
+                    "required": true,
+                    "on_unavailable": "BLOCK"
+                  },
+                  {
+                    "name": "criterion",
+                    "schema": {
+                      "type": "object"
+                    },
+                    "required": true,
+                    "on_unavailable": "BLOCK"
+                  }
+                ],
+                "bindings": {
+                  "data": {
+                    "kind": "UPSTREAM_OUTPUT",
+                    "node_id": "producer",
+                    "output": "result"
+                  },
+                  "member": {
+                    "kind": "UPSTREAM_OUTPUT",
+                    "node_id": "member",
+                    "output": "result"
+                  },
+                  "members": {
+                    "kind": "CONSTANT",
+                    "value": [
+                      "member"
+                    ]
+                  },
+                  "subject": {
+                    "kind": "CONSTANT",
+                    "value": {
+                      "id": "golden.subject",
+                      "type": "application/json",
+                      "locator": {
+                        "host_supplied": true
+                      }
+                    }
+                  },
+                  "criterion": {
+                    "kind": "CONSTANT",
+                    "value": {
+                      "id": "golden.criterion",
+                      "description": "The explicitly supplied deterministic criterion holds"
+                    }
+                  }
+                },
+                "outputs": [
+                  {
+                    "name": "result",
+                    "schema": true,
+                    "role": "RESULT"
+                  }
+                ],
+                "config": {},
+                "aggregate_inputs": [
+                  "member"
+                ]
+              }
+            ],
+            "edges": [
+              {
+                "from_node": "producer",
+                "to_node": "consumer"
+              },
+              {
+                "from_node": "member",
+                "to_node": "consumer"
+              }
+            ]
+          },
+          "execution_policy": {
+            "activation": {
+              "executor_ref": "MANUAL"
+            },
+            "selection": {
+              "executor_ref": "EXPLICIT"
+            },
+            "admission": {
+              "strategy": "ALWAYS"
+            }
+          }
+        },
+        "inputs": {},
+        "behaviors": {
+          "producer": {
+            "error": {
+              "code": "com.example.scripted_failure",
+              "message": "known producer failure"
+            }
+          },
+          "member": {
+            "outputs": {
+              "result": {
+                "protocol": "draft",
+                "disposition": "EXECUTED",
+                "execution_outcome": "SUCCESS",
+                "applicability": "APPLICABLE",
+                "determination": "KNOWN",
+                "verdict": "PASS",
+                "evidence": [],
+                "usage": {}
+              }
+            }
+          },
+          "consumer": {
+            "outputs": {
+              "result": {
+                "protocol": "draft",
+                "disposition": "EXECUTED",
+                "execution_outcome": "SUCCESS",
+                "applicability": "APPLICABLE",
+                "determination": "KNOWN",
+                "verdict": "PASS",
+                "evidence": [],
+                "usage": {}
+              }
+            }
+          }
+        },
+        "expected": {
+          "status": "INVALID",
+          "used_default": true,
+          "has_value": true,
+          "blocked": false,
+          "consumer_invoked": true,
+          "source": {
+            "kind": "UPSTREAM_OUTPUT",
+            "node_id": "producer",
+            "output": "result"
+          },
+          "consumer_outputs": {
+            "result": {
+              "protocol": "draft",
+              "disposition": "EXECUTED",
+              "execution_outcome": "SUCCESS",
+              "applicability": "APPLICABLE",
+              "determination": "KNOWN",
+              "verdict": "PASS",
+              "evidence": [],
+              "usage": {}
+            }
+          },
+          "value": 0
+        }
+      },
+      "static_rejection": "AGGREGATE_CONFIG"
+    }
+  }
+}
