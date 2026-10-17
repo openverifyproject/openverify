@@ -1,0 +1,30 @@
+{
+  "id": "provider.outcome-error",
+  "contract": "provider",
+  "version": "0.1",
+  "type": "outcome",
+  "operation": "parse",
+  "input": {
+    "invocation_id": "i",
+    "state": "ERROR",
+    "error": {
+      "code": "com.example.failed",
+      "message": "failed"
+    }
+  },
+  "expected": {
+    "accepted": true,
+    "normalized": {
+      "invocation_id": "i",
+      "state": "ERROR",
+      "error": {
+        "code": "com.example.failed",
+        "message": "failed"
+      }
+    }
+  },
+  "features": [
+    "standalone",
+    "outcome"
+  ]
+}

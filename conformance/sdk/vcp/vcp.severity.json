@@ -1,0 +1,38 @@
+{
+  "id": "vcp.severity",
+  "contract": "vcp",
+  "version": "draft",
+  "type": "result",
+  "operation": "parse",
+  "input": {
+    "protocol": "draft",
+    "disposition": "EXECUTED",
+    "execution_outcome": "SUCCESS",
+    "applicability": "APPLICABLE",
+    "determination": "KNOWN",
+    "verdict": "PASS",
+    "severity": {
+      "domain": "custom",
+      "label": "x"
+    }
+  },
+  "expected": {
+    "accepted": true,
+    "normalized": {
+      "protocol": "draft",
+      "disposition": "EXECUTED",
+      "execution_outcome": "SUCCESS",
+      "applicability": "APPLICABLE",
+      "determination": "KNOWN",
+      "verdict": "PASS",
+      "severity": {
+        "domain": "custom",
+        "label": "x"
+      }
+    }
+  },
+  "features": [
+    "standalone",
+    "result"
+  ]
+}

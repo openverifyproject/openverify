@@ -1,0 +1,51 @@
+name: Release node SDK
+on:
+  push:
+    tags: ['sdk/node/v*']
+permissions:
+  contents: read
+concurrency:
+  group: sdk-node-release
+  cancel-in-progress: false
+jobs:
+  verify:
+    uses: ./.github/workflows/sdk-verify.yml
+    with:
+      language: node
+  publish:
+    needs: verify
+    runs-on: ubuntu-latest
+    environment: sdk-node
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/download-artifact@v4
+        with:
+          name: sdk-node-${{ github.sha }}
+          path: dist/sdk/node/
+      - name: Check exact tag, test evidence, checksum and unpublished version
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+          REGISTRY_OWNERSHIP_APPROVED: ${{ vars.REGISTRY_OWNERSHIP_APPROVED }}
+        run: |
+          test "$REGISTRY_OWNERSHIP_APPROVED" = true
+          python tools/sdk_release.py preflight --language node --tag "$RELEASE_TAG" --evidence dist/sdk/node/verification.json
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          registry-url: https://registry.npmjs.org
+      - run: npm install --global npm@latest
+      - name: Publish verified tarball using npm OIDC
+        run: npm publish dist/sdk/node/*.tgz --access public --provenance
+      - name: Verify registry availability and a fresh external installation
+        env:
+          SDK_LANGUAGE: node
+        run: python tools/sdk_verify.py "$SDK_LANGUAGE" --registry-only

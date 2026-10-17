@@ -1,0 +1,21 @@
+{
+  "id": "provider.verdict",
+  "contract": "provider",
+  "version": "0.1",
+  "type": "outcome",
+  "operation": "parse",
+  "input": {
+    "invocation_id": "i",
+    "state": "COMPLETED",
+    "output": null,
+    "verdict": "PASS"
+  },
+  "expected": {
+    "accepted": false,
+    "error": "INVALID_PROVIDER_OUTPUT"
+  },
+  "features": [
+    "standalone",
+    "outcome"
+  ]
+}

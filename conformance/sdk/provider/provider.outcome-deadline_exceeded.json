@@ -1,0 +1,22 @@
+{
+  "id": "provider.outcome-deadline_exceeded",
+  "contract": "provider",
+  "version": "0.1",
+  "type": "outcome",
+  "operation": "parse",
+  "input": {
+    "invocation_id": "i",
+    "state": "DEADLINE_EXCEEDED"
+  },
+  "expected": {
+    "accepted": true,
+    "normalized": {
+      "invocation_id": "i",
+      "state": "DEADLINE_EXCEEDED"
+    }
+  },
+  "features": [
+    "standalone",
+    "outcome"
+  ]
+}

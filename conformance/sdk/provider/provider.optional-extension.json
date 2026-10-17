@@ -1,0 +1,36 @@
+{
+  "id": "provider.optional-extension",
+  "contract": "provider",
+  "version": "0.1",
+  "type": "outcome",
+  "operation": "parse",
+  "input": {
+    "invocation_id": "i",
+    "state": "COMPLETED",
+    "output": null,
+    "extensions": {
+      "com.example.annotation": {
+        "required": true,
+        "x": null
+      }
+    }
+  },
+  "expected": {
+    "accepted": true,
+    "normalized": {
+      "invocation_id": "i",
+      "state": "COMPLETED",
+      "output": null,
+      "extensions": {
+        "com.example.annotation": {
+          "required": true,
+          "x": null
+        }
+      }
+    }
+  },
+  "features": [
+    "standalone",
+    "outcome"
+  ]
+}

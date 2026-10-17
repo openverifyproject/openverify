@@ -20,4 +20,8 @@ Thumbs.db
 .vscode/
 .uv-cache/
 .uv-python/
+.sdk-cache/
+.pytest_cache-sdk-*.log
+sdk/**/.sdk-cache/
+sdk/ruby/.bundle/
 

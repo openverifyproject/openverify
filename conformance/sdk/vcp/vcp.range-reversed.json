@@ -1,0 +1,21 @@
+{
+  "id": "vcp.range-reversed",
+  "contract": "vcp",
+  "version": "draft",
+  "type": "resource",
+  "operation": "parse",
+  "input": {
+    "unit": "x",
+    "kind": "RANGE",
+    "minimum": 3,
+    "maximum": 2
+  },
+  "expected": {
+    "accepted": false,
+    "error": "RESOURCE_MEASUREMENT"
+  },
+  "features": [
+    "standalone",
+    "resource"
+  ]
+}

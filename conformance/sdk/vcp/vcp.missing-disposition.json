@@ -1,0 +1,22 @@
+{
+  "id": "vcp.missing-disposition",
+  "contract": "vcp",
+  "version": "draft",
+  "type": "result",
+  "operation": "parse",
+  "input": {
+    "protocol": "draft",
+    "execution_outcome": "SUCCESS",
+    "applicability": "APPLICABLE",
+    "determination": "KNOWN",
+    "verdict": "PASS"
+  },
+  "expected": {
+    "accepted": false,
+    "error": "PROTOCOL_STRUCTURE"
+  },
+  "features": [
+    "standalone",
+    "result"
+  ]
+}

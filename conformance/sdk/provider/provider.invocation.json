@@ -1,0 +1,30 @@
+{
+  "id": "provider.invocation",
+  "contract": "provider",
+  "version": "0.1",
+  "type": "invocation",
+  "operation": "parse",
+  "input": {
+    "invocation_id": "i",
+    "contract_version": "0.1",
+    "capability_id": "com.example.echo",
+    "capability_version": "1",
+    "input": null,
+    "config": null
+  },
+  "expected": {
+    "accepted": true,
+    "normalized": {
+      "invocation_id": "i",
+      "contract_version": "0.1",
+      "capability_id": "com.example.echo",
+      "capability_version": "1",
+      "input": null,
+      "config": null
+    }
+  },
+  "features": [
+    "standalone",
+    "invocation"
+  ]
+}

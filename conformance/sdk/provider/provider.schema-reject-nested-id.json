@@ -1,0 +1,24 @@
+{
+  "id": "provider.schema-reject-nested-id",
+  "contract": "provider",
+  "version": "0.1",
+  "type": "data",
+  "operation": "data",
+  "input": null,
+  "expected": {
+    "accepted": false,
+    "error": "INVALID_PROVIDER_OUTPUT"
+  },
+  "features": [
+    "standalone",
+    "data"
+  ],
+  "schema": {
+    "$defs": {
+      "x": {
+        "$id": "urn:other",
+        "type": "string"
+      }
+    }
+  }
+}

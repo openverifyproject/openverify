@@ -1,0 +1,18 @@
+{
+  "id": "vcp.id-only-evidence",
+  "contract": "vcp",
+  "version": "draft",
+  "type": "evidence",
+  "operation": "parse",
+  "input": {
+    "id": "e"
+  },
+  "expected": {
+    "accepted": false,
+    "error": "EVIDENCE_EMPTY"
+  },
+  "features": [
+    "standalone",
+    "evidence"
+  ]
+}
