@@ -1,0 +1,23 @@
+{
+  "id": "vcp.bad-enum",
+  "contract": "vcp",
+  "version": "draft",
+  "type": "result",
+  "operation": "parse",
+  "input": {
+    "protocol": "draft",
+    "disposition": "EXECUTED",
+    "execution_outcome": "SUCCESS",
+    "applicability": "APPLICABLE",
+    "determination": "KNOWN",
+    "verdict": "MAYBE"
+  },
+  "expected": {
+    "accepted": false,
+    "error": "PROTOCOL_STRUCTURE"
+  },
+  "features": [
+    "standalone",
+    "result"
+  ]
+}

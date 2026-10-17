@@ -1,0 +1,24 @@
+{
+  "id": "provider.bad-id",
+  "contract": "provider",
+  "version": "0.1",
+  "type": "provider-manifest",
+  "operation": "parse",
+  "input": {
+    "provider_id": "echo",
+    "provider_version": "1",
+    "supported_contract_versions": [
+      "0.1"
+    ],
+    "supported_vcp_versions": [],
+    "capabilities": []
+  },
+  "expected": {
+    "accepted": false,
+    "error": "INVALID_PROVIDER_OUTPUT"
+  },
+  "features": [
+    "standalone",
+    "provider-manifest"
+  ]
+}

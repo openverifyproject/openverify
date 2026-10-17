@@ -1,0 +1,55 @@
+name: Release php SDK
+on:
+  push:
+    tags: ['sdk/php/v*']
+permissions:
+  contents: read
+concurrency:
+  group: sdk-php-release
+  cancel-in-progress: false
+jobs:
+  verify:
+    uses: ./.github/workflows/sdk-verify.yml
+    with:
+      language: php
+  publish:
+    needs: verify
+    runs-on: ubuntu-latest
+    environment: sdk-php
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/download-artifact@v4
+        with:
+          name: sdk-php-${{ github.sha }}
+          path: dist/sdk/php/
+      - name: Check exact tag, test evidence, checksum and unpublished version
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+          REGISTRY_OWNERSHIP_APPROVED: ${{ vars.REGISTRY_OWNERSHIP_APPROVED }}
+        run: |
+          test "$REGISTRY_OWNERSHIP_APPROVED" = true
+          python tools/sdk_release.py preflight --language php --tag "$RELEASE_TAG" --evidence dist/sdk/php/verification.json
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          tools: composer:v2
+      - name: Mirror the package subtree and translate its tag
+        env:
+          GH_TOKEN: ${{ secrets.SDK_PHP_MIRROR_TOKEN }}
+          SDK_PHP_MIRROR: ${{ vars.SDK_PHP_MIRROR }}
+        run: |
+          gh auth setup-git
+          python tools/sdk_mirror.py
+      - name: Verify registry availability and a fresh external installation
+        env:
+          SDK_LANGUAGE: php
+        run: python tools/sdk_verify.py "$SDK_LANGUAGE" --registry-only

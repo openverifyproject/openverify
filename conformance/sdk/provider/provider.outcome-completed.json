@@ -1,0 +1,24 @@
+{
+  "id": "provider.outcome-completed",
+  "contract": "provider",
+  "version": "0.1",
+  "type": "outcome",
+  "operation": "parse",
+  "input": {
+    "invocation_id": "i",
+    "state": "COMPLETED",
+    "output": null
+  },
+  "expected": {
+    "accepted": true,
+    "normalized": {
+      "invocation_id": "i",
+      "state": "COMPLETED",
+      "output": null
+    }
+  },
+  "features": [
+    "standalone",
+    "outcome"
+  ]
+}

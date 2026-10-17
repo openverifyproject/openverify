@@ -1,0 +1,22 @@
+{
+  "id": "vcp.decision-defer",
+  "contract": "vcp",
+  "version": "draft",
+  "type": "decision",
+  "operation": "parse",
+  "input": {
+    "protocol": "draft",
+    "kind": "DEFER"
+  },
+  "expected": {
+    "accepted": true,
+    "normalized": {
+      "protocol": "draft",
+      "kind": "DEFER"
+    }
+  },
+  "features": [
+    "standalone",
+    "decision"
+  ]
+}

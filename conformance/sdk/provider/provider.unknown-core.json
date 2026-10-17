@@ -1,0 +1,25 @@
+{
+  "id": "provider.unknown-core",
+  "contract": "provider",
+  "version": "0.1",
+  "type": "provider-manifest",
+  "operation": "parse",
+  "input": {
+    "provider_id": "com.example.provider",
+    "provider_version": "1",
+    "supported_contract_versions": [
+      "0.1"
+    ],
+    "supported_vcp_versions": [],
+    "capabilities": [],
+    "extra": 1
+  },
+  "expected": {
+    "accepted": false,
+    "error": "INVALID_PROVIDER_OUTPUT"
+  },
+  "features": [
+    "standalone",
+    "provider-manifest"
+  ]
+}

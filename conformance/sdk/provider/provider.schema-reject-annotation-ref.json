@@ -1,0 +1,20 @@
+{
+  "id": "provider.schema-reject-annotation-ref",
+  "contract": "provider",
+  "version": "0.1",
+  "type": "data",
+  "operation": "data",
+  "input": null,
+  "expected": {
+    "accepted": false,
+    "error": "INVALID_PROVIDER_OUTPUT"
+  },
+  "features": [
+    "standalone",
+    "data"
+  ],
+  "schema": {
+    "default": {},
+    "$ref": "#/default"
+  }
+}

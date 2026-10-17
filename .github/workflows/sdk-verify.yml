@@ -1,0 +1,60 @@
+name: SDK verification
+on:
+  workflow_call:
+    inputs:
+      language:
+        type: string
+        required: true
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: python -m pip install build pytest jsonschema pydantic
+      - run: python -m pytest sdk/tests -q
+      - uses: actions/setup-node@v4
+        if: inputs.language == 'node'
+        with:
+          node-version: '24'
+      - uses: dtolnay/rust-toolchain@stable
+        if: inputs.language == 'rust'
+      - uses: actions/setup-go@v5
+        if: inputs.language == 'go'
+        with:
+          go-version: '1.24.x'
+          cache-dependency-path: sdk/go/go.sum
+      - uses: actions/setup-java@v4
+        if: inputs.language == 'jvm'
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: actions/setup-dotnet@v4
+        if: inputs.language == 'dotnet'
+        with:
+          dotnet-version: '8.0.x'
+      - uses: ruby/setup-ruby@v1
+        if: inputs.language == 'ruby'
+        with:
+          ruby-version: '3.4'
+      - uses: shivammathur/setup-php@v2
+        if: inputs.language == 'php'
+        with:
+          php-version: '8.3'
+          tools: composer:v2
+          extensions: mbstring, dom, xml, xmlwriter
+      - name: Shared fixtures, native tests, repeat build and clean consumer
+        env:
+          SDK_LANGUAGE: ${{ inputs.language }}
+        run: python tools/sdk_verify.py "$SDK_LANGUAGE"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sdk-${{ inputs.language }}-${{ github.sha }}
+          path: dist/sdk/${{ inputs.language }}/
+          if-no-files-found: error

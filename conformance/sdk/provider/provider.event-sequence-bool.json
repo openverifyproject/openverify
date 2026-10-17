@@ -1,0 +1,21 @@
+{
+  "id": "provider.event-sequence-bool",
+  "contract": "provider",
+  "version": "0.1",
+  "type": "provider-event",
+  "operation": "parse",
+  "input": {
+    "invocation_id": "i",
+    "sequence": true,
+    "kind": "progress",
+    "payload": null
+  },
+  "expected": {
+    "accepted": false,
+    "error": "INVALID_PROVIDER_OUTPUT"
+  },
+  "features": [
+    "standalone",
+    "provider-event"
+  ]
+}

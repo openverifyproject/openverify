@@ -1,0 +1,32 @@
+{
+  "id": "vcp.null-judgment",
+  "contract": "vcp",
+  "version": "draft",
+  "type": "result",
+  "operation": "parse",
+  "input": {
+    "protocol": "draft",
+    "disposition": "EXECUTED",
+    "execution_outcome": "SUCCESS",
+    "applicability": "APPLICABLE",
+    "determination": "KNOWN",
+    "verdict": "PASS",
+    "judgment": null
+  },
+  "expected": {
+    "accepted": true,
+    "normalized": {
+      "protocol": "draft",
+      "disposition": "EXECUTED",
+      "execution_outcome": "SUCCESS",
+      "applicability": "APPLICABLE",
+      "determination": "KNOWN",
+      "verdict": "PASS",
+      "judgment": null
+    }
+  },
+  "features": [
+    "standalone",
+    "result"
+  ]
+}

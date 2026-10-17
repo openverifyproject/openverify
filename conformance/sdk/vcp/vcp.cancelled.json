@@ -1,0 +1,22 @@
+{
+  "id": "vcp.cancelled",
+  "contract": "vcp",
+  "version": "draft",
+  "type": "result",
+  "operation": "parse",
+  "input": {
+    "protocol": "draft",
+    "disposition": "CANCELLED"
+  },
+  "expected": {
+    "accepted": true,
+    "normalized": {
+      "protocol": "draft",
+      "disposition": "CANCELLED"
+    }
+  },
+  "features": [
+    "standalone",
+    "result"
+  ]
+}

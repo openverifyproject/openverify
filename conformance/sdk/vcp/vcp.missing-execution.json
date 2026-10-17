@@ -1,0 +1,19 @@
+{
+  "id": "vcp.missing-execution",
+  "contract": "vcp",
+  "version": "draft",
+  "type": "result",
+  "operation": "parse",
+  "input": {
+    "protocol": "draft",
+    "disposition": "EXECUTED"
+  },
+  "expected": {
+    "accepted": false,
+    "error": "RESULT_STATE"
+  },
+  "features": [
+    "standalone",
+    "result"
+  ]
+}

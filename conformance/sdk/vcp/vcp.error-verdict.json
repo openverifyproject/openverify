@@ -1,0 +1,23 @@
+{
+  "id": "vcp.error-verdict",
+  "contract": "vcp",
+  "version": "draft",
+  "type": "result",
+  "operation": "parse",
+  "input": {
+    "protocol": "draft",
+    "disposition": "EXECUTED",
+    "execution_outcome": "ERROR",
+    "applicability": "APPLICABLE",
+    "determination": "KNOWN",
+    "verdict": "PASS"
+  },
+  "expected": {
+    "accepted": false,
+    "error": "RESULT_STATE"
+  },
+  "features": [
+    "standalone",
+    "result"
+  ]
+}
