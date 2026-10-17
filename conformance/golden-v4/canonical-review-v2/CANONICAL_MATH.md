@@ -2387,16 +2387,6 @@ Canonical links: CM.VCP.DATA.BOOKKEEPING, CM.VCP.DATA.RESOLVE_ALL, CM.VCP.DATA.R
     {
       "candidate": "BOOKKEEPING",
       "cause": null,
-      "id": "EVALUATE.SUCCESS.RESULT.PRODUCER_FAIL",
-      "kind": "EVALUATE",
-      "role": "RESULT",
-      "source": "UPSTREAM_OUTPUT",
-      "state": "SUCCESS",
-      "validation": "PRODUCER_FAIL"
-    },
-    {
-      "candidate": "BOOKKEEPING",
-      "cause": null,
       "id": "EVALUATE.SUCCESS.RESULT.CONSUMER_FAIL",
       "kind": "EVALUATE",
       "role": "RESULT",
@@ -2613,16 +2603,6 @@ Canonical links: CM.VCP.DATA.BOOKKEEPING, CM.VCP.DATA.RESOLVE_ALL, CM.VCP.DATA.R
       "source": "UPSTREAM_OUTPUT",
       "state": "SUCCESS",
       "validation": "PASS"
-    },
-    {
-      "candidate": "BOOKKEEPING",
-      "cause": null,
-      "id": "AGGREGATE.SUCCESS.RESULT.PRODUCER_FAIL",
-      "kind": "AGGREGATE",
-      "role": "RESULT",
-      "source": "UPSTREAM_OUTPUT",
-      "state": "SUCCESS",
-      "validation": "PRODUCER_FAIL"
     },
     {
       "candidate": "BOOKKEEPING",
@@ -2933,7 +2913,7 @@ Canonical links: CM.VCP.DATA.BOOKKEEPING, CM.VCP.DATA.RESOLVE_ALL, CM.VCP.DATA.R
     "status_context_counts": {
       "ABSENT": 2,
       "AVAILABLE": 16,
-      "INVALID": 27,
+      "INVALID": 25,
       "OUTPUT_MISSING": 20,
       "PRODUCER_ERROR": 12,
       "PRODUCER_NOT_EXECUTED": 5
@@ -44955,7 +44935,7 @@ CM.SHARED.SCHEMA.EVALUATION.NONLOOPING owns the independent unbounded trace inva
 
 ## Final normative snapshot proof (supersedes earlier blocked-scope commentary)
 
-The two previous normative blockers are resolved. Existing582 IDs and33 roots are preserved. The finite82-context semantic quotient has16 AVAILABLE,27 INVALID,2 ABSENT,5 PRODUCER_NOT_EXECUTED,20 OUTPUT_MISSING and12 PRODUCER_ERROR representatives. Each of3 legal handlers applies, giving246 proof checks. These are quotient counts, not arbitrary JSON/trace totals.
+The two previous normative blockers are resolved. Existing582 IDs and33 roots are preserved. The finite80-context semantic quotient has16 AVAILABLE,25 INVALID,2 ABSENT,5 PRODUCER_NOT_EXECUTED,20 OUTPUT_MISSING and12 PRODUCER_ERROR representatives. Each of3 legal handlers applies, giving240 proof checks. These are quotient counts, not arbitrary JSON/trace totals.
 
 Totality proof: valid definitions partition by the four disjoint ValueSource discriminants or optional unbound. Nonupstream values partition into absent/present, then the applicable target predicate. Upstream ports partition into declared Result versus other roles; persisted recorded Result is checked first. Other outputs partition accepted/unaccepted. Accepted values partition schema true/false. Unaccepted outputs partition NONEXECUTED/CANCELLED/ERROR/other finalized. ERROR partitions rejected completed attempt versus execution error; rejected attempts partition present/omitted. Every decision is persisted or reconstructed from declared acceptance predicates; no historical event order is used. Each complement excludes all earlier cells, so the predicates are disjoint. Unknown schemas/invalid definitions are preflight failures, not extra runtime statuses. Valid finalized records and atomic publication exclude combinations such as NONEXECUTED with accepted information. Schema instances are unbounded, reduced only to their actual applicable truth predicate. Producer-state/kind/role constraints are retained; unrelated axes are not multiplied.
 
@@ -44978,6 +44958,7 @@ add('UNBOUND','UNBOUND',candidate='ABSENT')
 for k,role in ROLES:
  if role=='RESULT':
   for state,v in itertools.product(['SUCCESS','ERROR','NONEXECUTED','CANCELLED'],['PASS','PRODUCER_FAIL','CONSUMER_FAIL']):
+   if state=='SUCCESS' and v=='PRODUCER_FAIL':continue
    add(k+'.'+state+'.RESULT.'+v,'UPSTREAM_OUTPUT',state,k,role,'BOOKKEEPING',v)
  else:
   for v in ['PASS','CONSUMER_FAIL']:add(k+'.'+role+'.SUCCESS.'+v,'UPSTREAM_OUTPUT','SUCCESS',k,role,'ACCEPTED',v)
@@ -45016,8 +44997,8 @@ for c in contexts:
   rows.append(dict(context=c['id'],status=status,required=required,handler=handler,
    used_default=not available and handler=='DEFAULT',value_present=available or handler=='DEFAULT',
    invocation_permitted_by_input=available or handler!='BLOCK'))
-assert len(contexts)==82 and len(rows)==246
-assert len({c['id'] for c in contexts})==82
+assert len(contexts)==80 and len(rows)==240
+assert len({c['id'] for c in contexts})==80
 assert set(r['status'] for r in rows)=={'AVAILABLE','INVALID','ABSENT','PRODUCER_NOT_EXECUTED','PRODUCER_ERROR','OUTPUT_MISSING'}
 # Cancellation raw payloads and handler choices cannot change original status.
 for k,role in ROLES:
@@ -45029,3 +45010,5 @@ PROOF=dict(proof_id='P.AVAILABILITY.SNAPSHOT.PARTITION',context_quotient_count=8
 
 print({k:v for k,v in PROOF.items() if k not in ["contexts","handler_rows"]})
 ```
+
+Proof applicability correction: SUCCESS Result ports already passed the producer schema; producer-schema failure at SUCCESS is an inconsistent record, not a supported runtime coordinate. Two such kind coordinates are excluded from the quotient, leaving80 contexts/240 handler checks. Other three terminal states may have bookkeeping Results rejected by the declared Result-port schema. This is a reachability correction, not omitted coverage.
