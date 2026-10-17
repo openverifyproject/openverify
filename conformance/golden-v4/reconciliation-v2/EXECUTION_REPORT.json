@@ -1,0 +1,104 @@
+{
+  "canonical_semantic": 582,
+  "schema_root_predicates": 33,
+  "original_v4": {
+    "python": "3.13.5 (main, Jun 12 2025, 12:42:35) [MSC v.1943 64 bit (AMD64)]",
+    "executable": "C:\\Users\\siddh\\OneDrive\\Desktop\\openverify\\.venv\\Scripts\\python.exe",
+    "import_path": "C:\\Users\\siddh\\OneDrive\\Desktop\\openverify\\.worktrees\\vcp-final-semantics\\src\\openverify\\__init__.py",
+    "argv": [
+      "C:\\Users\\siddh\\OneDrive\\Desktop\\openverify\\.venv\\Lib\\site-packages\\pytest\\__main__.py",
+      "-q",
+      "-c",
+      "tests/golden_v4/pytest.ini",
+      "tests/golden_v4",
+      "--junitxml=.pytest_cache/golden-v4-existing-junit.xml"
+    ],
+    "start_monotonic": 309804.173833,
+    "dependencies": {
+      "pytest": "9.1.1",
+      "pydantic": "2.14.1",
+      "jsonschema": "4.26.0",
+      "mcp": "1.30.0",
+      "starlette": "1.8.0",
+      "httpx": "0.28.1"
+    },
+    "exitstatus": 1,
+    "duration_seconds": 56.25453009997727,
+    "collected": 15236,
+    "executed": 15236,
+    "counts": {
+      "PASS": 15219,
+      "FAIL": 17
+    },
+    "relay_api_calls": 185,
+    "relay_awaited_seconds": 9.248595199780539
+  },
+  "revision_execution": {
+    "exitstatus": 1,
+    "executed": 253,
+    "wall_seconds": 4.659723300021142,
+    "argv": [
+      "C:\\Users\\siddh\\OneDrive\\Desktop\\openverify\\.venv\\Lib\\site-packages\\pytest\\__main__.py",
+      "-q",
+      "tests/golden_v4_reconciliation",
+      "--junitxml=.pytest_cache/golden-v4-revision-junit.xml"
+    ],
+    "python": "3.13.5 (main, Jun 12 2025, 12:42:35) [MSC v.1943 64 bit (AMD64)]"
+  },
+  "revision_counts": {
+    "PASS": 204,
+    "FAIL": 49
+  },
+  "revision_executed": 253,
+  "revision_case_duration_sum_seconds": 1.9788225005031563,
+  "existing_profiles": {
+    "cheap": {
+      "executed": 15010,
+      "counts": {
+        "PASS": 14994,
+        "FAIL": 16
+      },
+      "case_duration_sum_seconds": 13.94268880202435,
+      "relay_api_calls": 0,
+      "timing_scope": "Partition of one full suite run, not three separately timed profile processes."
+    },
+    "runtime": {
+      "executed": 205,
+      "counts": {
+        "PASS": 205
+      },
+      "case_duration_sum_seconds": 8.864888399548363,
+      "relay_api_calls": 179,
+      "timing_scope": "Partition of one full suite run, not three separately timed profile processes."
+    },
+    "integration": {
+      "executed": 21,
+      "counts": {
+        "PASS": 20,
+        "FAIL": 1
+      },
+      "case_duration_sum_seconds": 14.16972679994069,
+      "relay_api_calls": 6,
+      "timing_scope": "Partition of one full suite run, not three separately timed profile processes."
+    }
+  },
+  "failure_categories": {
+    "incorrect frozen expectation": 9,
+    "production defect": 57
+  },
+  "canonical_primary_ids": 615,
+  "primary_ids_with_reviewed_partial_links": 37,
+  "primary_ids_with_some_passing_links": 33,
+  "primary_ids_with_failing_links": 10,
+  "primary_ids_without_reviewed_links": 578,
+  "fully_reconciled_requirements": 0,
+  "case_link_review": {
+    "UNREVIEWED_NO_COVERAGE_CREDIT": 9034,
+    "PARTIAL_ASSERTION_LINK_REVIEWED": 6093,
+    "SCAFFOLD_NOT_BEHAVIORAL_COVERAGE": 360,
+    "CONTROL_ASSERTION_NO_SEMANTIC_COVERAGE": 2
+  },
+  "unique_executed_ids": 15489,
+  "certification": "NOT CERTIFIED",
+  "limitation": "This begins assertion reconciliation. Remaining assertions are explicitly UNREVIEWED, not implicitly coverage. Full canonical mathematical/source closure is distinct from complete Golden coverage."
+}

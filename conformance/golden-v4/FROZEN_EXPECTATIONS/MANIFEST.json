@@ -1,0 +1,30 @@
+{
+  "format": "golden-v4-freeze-1",
+  "files": {
+    "conformance/golden-v4/BLUEPRINT.md": "3c73fee1826a65d7101c375d21421988a798ae6ee336824546b055ca92d5a6d2",
+    "conformance/golden-v4/CASES.jsonl": "63339eed66c39fd6e4cbd44a9c7eba881592737d7e3593d7cc6ebd83b51476de",
+    "conformance/golden-v4/OBLIGATIONS.jsonl": "9aee4598a79447c59a841eb0b902111c166f01bdde6b06d2dfa6fb91efb6b8c3",
+    "conformance/golden-v4/WITNESSES.jsonl": "8153a20813fca4c6735c21db31818a24198c070e2bd2370f742831874dfb960f",
+    "conformance/golden-v4/NORMATIVE_CLAUSES.jsonl": "a6e768dc5adb2ddecd3627250057d5805f04359b61864030c32e7661ef410a45",
+    "conformance/golden-v4/NORMATIVE_SOURCE_HASHES.json": "6f1bc6bb1533516b1f6f1325bbb2632148f00136e572038329bf41c0e0900ccc",
+    "conformance/golden-v4/ERROR_INVENTORY.json": "f3e7b14d291437128bc1eb6399775c669c30bbe3e8710838216dbcc68b4fdd07",
+    "conformance/golden-v4/PROJECTIONS.json": "7f85d354d56f5efbef559e9303278d09173e34e6a2d2d729863349eaa06903bd",
+    "conformance/golden-v4/REDUCTION_LEDGER.jsonl": "aaa9bd5e7620110bfdb55573c39bf5549ce2132554f7eefe9db2afabc9c287f4",
+    "conformance/golden-v4/CONTRACT_INVENTORY.md": "bfdee90da13473637c1482cdc559b302523479b8e9925c0bf98aa29561d359b5",
+    "conformance/golden-v4/COUNT_PROOFS.md": "f2819969c4cbefe184a00e35c8a456fc6d4179480709210986a276b2af8b840b",
+    "conformance/golden-v4/COMPOSITION_PROOFS.md": "84ba4b4583c80ea8ea41effd466af50b71a2a098eddb9be6f4c689d26cd75b30",
+    "conformance/golden-v4/DOMAIN_LIMITS.md": "66ccc23fcb05602d74f949435c2edbca93c92334e5781792f8053addf243c01a",
+    "conformance/golden-v4/FROZEN_EXPECTATIONS/cases.jsonl": "63339eed66c39fd6e4cbd44a9c7eba881592737d7e3593d7cc6ebd83b51476de",
+    "tests/golden_v4/oracle/model.py": "982913e7dac39626e11a4e9aaaf6a6cc970c853774d7915b29d5a153a6e3e42d",
+    "tests/golden_v4/oracle/__init__.py": "ba9e03fc9f06d747bc8a16ecf025903582bc36a27f06565263fd4967a0040f80",
+    "tools/golden_v4/discover.py": "9fdd9ec673534c91796c72fca574ca51188ebb47b7b57994547f5507ff999a66",
+    "tools/golden_v4/freeze.py": "39ad8bf4913a6f9b5d63bc78029ad3b82b44797e5de69b2f82e35ccdfa03d8dc",
+    "tools/golden_v4/witness_authoring.py": "3c2faab9ef937dd1a2e0a0342132bab5740c2f3ad81e6cbbedd592eee2369e0c",
+    "tools/golden_v4/proofs.py": "6334e17bc29e5303bc51dce20e401542b0d5bbf1600f9a2296df8e8dc1f1b9ff",
+    "tools/golden_v4/seal.py": "ee07a6ee967630192a42c6299c806ea2dfad2489c3cc03953cc1679a30c9a9f0"
+  },
+  "authoring": "Independent prose/schema calculations. No production imports or recorded production outputs.",
+  "adjudications": [
+    "D-001: 53 error declarations; 33 normative VCP, 8 normative Provider, 2 SDK diagnostics, 10 Relay-specific; explicitly approved by user."
+  ]
+}
