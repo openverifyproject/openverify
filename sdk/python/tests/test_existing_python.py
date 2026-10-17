@@ -14,6 +14,7 @@ CASES = [
 
 @pytest.mark.parametrize("case", CASES, ids=lambda c: "existing-" + c["id"])
 def test_existing(case):
+    pytest.importorskip("openverify", reason="Original Python SDK audit requires repository source")
     from openverify.provider.validation import parse_provider_object
     from openverify.provider.validation import serialize as provider_serialize
     from openverify.serialization import serialize
