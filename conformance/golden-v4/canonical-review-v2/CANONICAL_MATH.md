@@ -1,8 +1,8 @@
 # Canonical mathematics v2
 
-85 named finite projections; 150 symbolic domains; 2 conditional domains. In addition, 44 leaf-specific finite quotients and 54 declared-name presence projections within the 18 standard capability contracts are nested, explicitly scoped projections. The retained schema components have 543 local logical finite projections and 181 symbolic predicates. These categories overlap and are not one global combination count.
+86 named finite projections; 150 symbolic domains; 1 conditional domains. In addition, 44 leaf-specific finite quotients and 54 declared-name presence projections within the 18 standard capability contracts are nested, explicitly scoped projections. The retained schema components have 543 local logical finite projections and 181 symbolic predicates. These categories overlap and are not one global combination count.
 
-Every named finite projection was independently recalculated. Every finite leaf quotient reconciles C=V+I+N. The conditional full InputPort default/handler domain intentionally remains 12=3 valid+7 invalid+0 inapplicable+2 unresolved; it does not meet the closed identity without resolving Q.DEFAULT_UNUSED. Typed availability is a dependent relation with explicit ambiguous status coordinates, not a raw Cartesian count.
+Every named finite projection was independently recalculated. Every finite leaf quotient reconciles C=V+I+N. The full InputPort default/handler domain is corrected to 12=5 valid+7 invalid+0 inapplicable, with zero unresolved coordinates. The source-derived implication is DEFAULT -> Constant present, not the SDK's additional converse. This finite domain is now included among the named finite projections. Typed availability is a dependent relation with explicit ambiguous status coordinates, not a raw Cartesian count.
 
 Counts mean validity of the stated projection under its assumptions, never complete arbitrary JSON validity, implementation correctness or executed coverage. Domain links to a joint family do not copy its count into every leaf. Each JSONL semantic record retains its own predicate/applicability, and leaf-specific counts are labeled as such.
 
@@ -95,13 +95,13 @@ Counts mean validity of the stated projection under its assumptions, never compl
 | D.PRESENCE.VCP.CRITERION | 2^4; key-valid=2^2 | 16 | 4 | 12 | 0 |
 | D.PRESENCE.VCP.NODE_RECORD | 2^20; key-valid=2^8 | 1048576 | 256 | 1048320 | 0 |
 | D.RELAY.CLI.EXIT_QUOTIENT | 2*4 | 8 | 8 | 0 | 0 |
+| D.PORT.REQUIREDNESS_DEFAULT_JOINT | 2*3*2 | 12 | 5 | 7 | 0 |
 
 ## Conditional domains
 
 | Domain | Candidates | Status |
 | --- | --- | --- |
 | D.TYPED_AVAILABILITY | For fixed definition D and finite observed trace T: sum over declared target ports of applicable source contexts Reach(D,T,p); unbounded across D,T,schemas,values. | DISJOINT_CONTEXT_RELATION_DERIVED; NORMATIVE_STATUS_AMBIGUITIES_EXPLICIT |
-| D.PORT.REQUIREDNESS_DEFAULT_JOINT | 12 | BLOCKED_ONLY_UNUSED_DEFAULT_PORTABLE_COORDINATES |
 
 ## Worked identities
 
@@ -118,6 +118,10 @@ Required-key masks: n declared fields and r mandatory fields gives 2^n masks; ex
 Weighted n-member sign space is 3^n, with 2^n-1 admissible before filtering. After filtering K, retained sum must be positive; an admissible original vector may cease to be admissible. A weight belongs to its authored identity, so permuting scores alone is not a reduction. Evidence order also prevents a blanket commutativity reduction.
 
 The independent source-set inclusion-exclusion calculation reproduces the same DAG counts as the explicit topology predicate. Required-key monotonicity proves only the required-presence projection, not value/lineage/conditional validity. For fixed retained K the admissible nonnegative sign count is (2^|K|-1)*2^(n-|K|). Logical majority ties number binomial(n,n/2) for even n; the remaining 2^n-ties split equally between strict PASS and FAIL majorities.
+
+The independent source-set inclusion–exclusion calculation reproduces the same DAG counts as the explicit topology predicate. Required-key monotonicity proves only the required-presence projection, not value/lineage/conditional validity. For fixed retained K the admissible nonnegative sign count is (2^|K|-1)*2^(n-|K|). Logical majority ties number binomial(n,n/2) for even n; the remaining 2^n-ties split equally between strict PASS and FAIL majorities.
+
+The independent source-set inclusion–exclusion calculation reproduces the same DAG counts as the explicit topology predicate. Required-key monotonicity proves only the required-presence projection, not value/lineage/conditional validity. For fixed retained K the admissible nonnegative sign count is (2^|K|-1)*2^(n-|K|). Logical majority ties number binomial(n,n/2) for even n; the remaining 2^n-ties split equally between strict PASS and FAIL majorities.
 
 ## Whole-schema validity language
 
@@ -2202,9 +2206,8 @@ Canonical links: CM.VCP.DATA.BOOKKEEPING, CM.VCP.DATA.RESOLVE_ALL, CM.VCP.DATA.R
     }
   ],
   "remaining_limits": [
-    "Exact OUTPUT_MISSING versus PRODUCER_ERROR/INVALID precedence for simultaneous invalid output causes.",
-    "Unavailable status for interrupted CANCELLED INFORMATION/DECISION producer.",
-    "No portable classification of arbitrary forged record prefixes; consistency validation rejects invalid provenance."
+    "Q.AVAILABILITY_OVERLAP: exact original status priority and interrupted INFORMATION/DECISION mapping.",
+    "No raw Cartesian applicability count or portable arbitrary forged record-prefix semantics."
   ],
   "requirement_ids": [
     "CM.VCP.DATA.BOOKKEEPING",
@@ -2698,7 +2701,7 @@ Canonical links: CM.VCP.AGG.EVIDENCE_ORDER, CM.VCP.AGG.IGNORE, CM.VCP.AGG.MISSIN
   "candidate_count": "unbounded",
   "derivation": "For fixed n distinct eligible member identities, n! possible orders; order is semantically observable through members/evidence/weights, so no permutation collapse is justified.",
   "domain_id": "D.AGG.MEMBERSHIP",
-  "inapplicable_set": "Empty CUSTOM membership scope is Q.CUSTOM_EMPTY; standard retained reduction must be nonempty.",
+  "inapplicable_set": "Producer-specific dimensions are absent when n=0. Custom zero-member semantic scope remains Q.CUSTOM_AGG_EMPTY, not silently INAPPLICABLE or INVALID.",
   "invalid_set": "Duplicate, omitted, reserved, non-Result, unbound or nonancestor member, wrong requiredness/order snapshot.",
   "kind": "SYMBOLIC",
   "mathematics_status": "DERIVED",
@@ -2710,6 +2713,7 @@ Canonical links: CM.VCP.AGG.EVIDENCE_ORDER, CM.VCP.AGG.IGNORE, CM.VCP.AGG.MISSIN
     "identity-preserving versus shifted",
     "all members included versus omitted"
   ],
+  "remaining_question": "Custom structural empty-list/invocation nonemptiness scope and rejection phase remain unresolved.",
   "valid_set": "M unique and exactly all upstream RESULT bindings; members required BLOCK; reserved semantic names excluded; Constant members equals M."
 }
 ```
@@ -3966,7 +3970,7 @@ Canonical links: CM.PROVIDER.ROOT.CANCEL_REQUEST
     "line_end": 28,
     "line_start": 1,
     "path": "provider-contract/schemas/draft/cancel-request.schema.json",
-    "sha256": "7e5fe523a3533558a28049c73b927550460bc6f5cddf8b41c3e2de45121379fa"
+    "sha256": "b17be231743fe9044906e1c2aecf9b73da3dffeb5d4c39324608b3539532ad22"
   },
   "valid_set": "Accept iff P_root(x) is true under the resolved schema predicate below; semantic prose constraints are an additional gate."
 }
@@ -4218,7 +4222,7 @@ Canonical links: CM.PROVIDER.ROOT.CAPABILITY
     "line_end": 80,
     "line_start": 1,
     "path": "provider-contract/schemas/draft/capability.schema.json",
-    "sha256": "66242f836060a987d7dd7208872630a3ffc9f865b81565410950213d1f667dad"
+    "sha256": "67ad1c93bb83909e09bdcf3fb80fdef16e449937c72b3091e3d722490470d025"
   },
   "valid_set": "Accept iff P_root(x) is true under the resolved schema predicate below; semantic prose constraints are an additional gate."
 }
@@ -4384,7 +4388,7 @@ Canonical links: CM.PROVIDER.ROOT.INITIALIZE_REQUEST
     "line_end": 38,
     "line_start": 1,
     "path": "provider-contract/schemas/draft/initialize-request.schema.json",
-    "sha256": "e23a6c9c372c72f39cc29443d24c37e70844a6c2d65eb68c2ae0a649137b63da"
+    "sha256": "5c446cc8404f26a8dfc23a210e93f66b686c2f4d0e25f668119517e9af310f97"
   },
   "valid_set": "Accept iff P_root(x) is true under the resolved schema predicate below; semantic prose constraints are an additional gate."
 }
@@ -4896,7 +4900,7 @@ Canonical links: CM.PROVIDER.ROOT.INITIALIZE_RESULT
     "line_end": 27,
     "line_start": 1,
     "path": "provider-contract/schemas/draft/initialize-result.schema.json",
-    "sha256": "71686e48b7b398b8efe786dc433c1a2e2f25d311e2ba89e402b22efae062ee62"
+    "sha256": "b482448bc85f808515f3fbc023b9fb0aa5211aed14f9f8790869fe6c19cde4f9"
   },
   "valid_set": "Accept iff P_root(x) is true under the resolved schema predicate below; semantic prose constraints are an additional gate."
 }
@@ -5273,7 +5277,7 @@ Canonical links: CM.PROVIDER.ROOT.INVOCATION
     "line_end": 60,
     "line_start": 1,
     "path": "provider-contract/schemas/draft/invocation.schema.json",
-    "sha256": "f10b9cda14d7f18e58289d981da5b8b8261bfa3d246d71c8cc7c2b473adf24e6"
+    "sha256": "14992170f80ea57a1171147a022af2a5bb83a38e5e8a49fbbaf32dbd801fc40f"
   },
   "valid_set": "Accept iff P_root(x) is true under the resolved schema predicate below; semantic prose constraints are an additional gate."
 }
@@ -5814,7 +5818,7 @@ Canonical links: CM.PROVIDER.ROOT.OUTCOME
     "line_end": 92,
     "line_start": 1,
     "path": "provider-contract/schemas/draft/outcome.schema.json",
-    "sha256": "7df6c6622b35d483bb42589ff571b061be2cbdd97d85fe4030b6aef6719d85c8"
+    "sha256": "6c6a9b4bc62fe5a61096f7b50d1ceffce5edff0e6ffbaa797cd0cd685eccc0db"
   },
   "valid_set": "Accept iff P_root(x) is true under the resolved schema predicate below; semantic prose constraints are an additional gate."
 }
@@ -5944,7 +5948,7 @@ Canonical links: CM.PROVIDER.ROOT.PROVIDER_ERROR
     "line_end": 38,
     "line_start": 1,
     "path": "provider-contract/schemas/draft/provider-error.schema.json",
-    "sha256": "eebf40e65a56ddeeda103cf2a18df73eeb65e8a5bdca2733caf84342e4dfe5d9"
+    "sha256": "2c77abc25cd022473bc593457ba88f4a4b5e38a17b6262e0ee083726482bef62"
   },
   "valid_set": "Accept iff P_root(x) is true under the resolved schema predicate below; semantic prose constraints are an additional gate."
 }
@@ -7133,7 +7137,7 @@ Canonical links: CM.PROVIDER.ROOT.PROVIDER_EVENT
     "line_end": 131,
     "line_start": 1,
     "path": "provider-contract/schemas/draft/provider-event.schema.json",
-    "sha256": "0bf4bb10e54b99f7c9edd1bcb64d71b2146b164cf3397ceb0a948514263f885e"
+    "sha256": "515f84003aa3c11a69bcd8ab3b6b4aa3a553f829277d31f413d4dcc1315e8d9a"
   },
   "valid_set": "Accept iff P_root(x) is true under the resolved schema predicate below; semantic prose constraints are an additional gate."
 }
@@ -7564,7 +7568,7 @@ Canonical links: CM.PROVIDER.ROOT.PROVIDER_MANIFEST
     "line_end": 56,
     "line_start": 1,
     "path": "provider-contract/schemas/draft/provider-manifest.schema.json",
-    "sha256": "e2c5c88d4e2c5e906a4218722a791154d847664f86af121d8f747480286cae49"
+    "sha256": "dd2509a8096a9290642d1d0b8e7870a4fa54ff9ace27840bfa5c57545360a783"
   },
   "valid_set": "Accept iff P_root(x) is true under the resolved schema predicate below; semantic prose constraints are an additional gate."
 }
@@ -34546,7 +34550,7 @@ Canonical links: CM.RELAY.STANDARD.READ_TEXT
       "line_end": 101,
       "line_start": 99,
       "path": "src/openverify/standard/filesystem.py",
-      "sha256": "8e72d8e8a03c78677d1ff1582fbde88eeb072c3f2f3975b8fdcfca4b25f8f85e"
+      "sha256": "cb8a29d31cc960ed48f314a6e4600782aa4273532f79ce1a14c77d07589b3783"
     }
   },
   "inapplicable_set": "Unavailable optional tools and host filesystem/process authorization are explicit host preconditions.",
@@ -34675,7 +34679,7 @@ Canonical links: CM.RELAY.SECURITY.FILES, CM.RELAY.STANDARD.FILES.IDENTITY, CM.R
       "line_end": 108,
       "line_start": 102,
       "path": "src/openverify/standard/filesystem.py",
-      "sha256": "8e72d8e8a03c78677d1ff1582fbde88eeb072c3f2f3975b8fdcfca4b25f8f85e"
+      "sha256": "cb8a29d31cc960ed48f314a6e4600782aa4273532f79ce1a14c77d07589b3783"
     }
   },
   "inapplicable_set": "Unavailable optional tools and host filesystem/process authorization are explicit host preconditions.",
@@ -34824,7 +34828,7 @@ Canonical links: CM.RELAY.STANDARD.SELECT_FILES
       "line_end": 123,
       "line_start": 109,
       "path": "src/openverify/standard/filesystem.py",
-      "sha256": "8e72d8e8a03c78677d1ff1582fbde88eeb072c3f2f3975b8fdcfca4b25f8f85e"
+      "sha256": "cb8a29d31cc960ed48f314a6e4600782aa4273532f79ce1a14c77d07589b3783"
     }
   },
   "inapplicable_set": "Unavailable optional tools and host filesystem/process authorization are explicit host preconditions.",
@@ -35162,7 +35166,7 @@ Canonical links: CM.RELAY.STANDARD.JSON_PARSE
       "line_end": 28,
       "line_start": 28,
       "path": "src/openverify/standard/structured.py",
-      "sha256": "8930b3d022eee59a86fe7d57f5bb29b04a1d54e83c795a25ad3c7b805c5d188a"
+      "sha256": "17906027cb4181d6d28d7ce3bded74d05d2b265423ecfd5de87f44bd2f8d08c0"
     }
   },
   "inapplicable_set": "Unavailable optional tools and host filesystem/process authorization are explicit host preconditions.",
@@ -35298,7 +35302,7 @@ Canonical links: CM.RELAY.STANDARD.SCHEMA
       "line_end": 36,
       "line_start": 29,
       "path": "src/openverify/standard/structured.py",
-      "sha256": "8930b3d022eee59a86fe7d57f5bb29b04a1d54e83c795a25ad3c7b805c5d188a"
+      "sha256": "17906027cb4181d6d28d7ce3bded74d05d2b265423ecfd5de87f44bd2f8d08c0"
     }
   },
   "inapplicable_set": "Unavailable optional tools and host filesystem/process authorization are explicit host preconditions.",
@@ -36008,7 +36012,7 @@ Canonical links: CM.RELAY.STANDARD.COMMAND
       "line_end": 44,
       "line_start": 44,
       "path": "src/openverify/standard/command.py",
-      "sha256": "1532d1dfb2f3a6820bcb26458d589b422562dbbe34fc4ebff6df39a41eab1b52"
+      "sha256": "0dba4c1ddd61543d46c9de30f7b5ebe4118c8ef1bfee968067cd98195b39a761"
     }
   },
   "inapplicable_set": "Unavailable optional tools and host filesystem/process authorization are explicit host preconditions.",
@@ -36165,7 +36169,7 @@ Canonical links: CM.RELAY.STANDARD.COMMAND_CHECK
       "line_end": 86,
       "line_start": 72,
       "path": "src/openverify/standard/command.py",
-      "sha256": "1532d1dfb2f3a6820bcb26458d589b422562dbbe34fc4ebff6df39a41eab1b52"
+      "sha256": "0dba4c1ddd61543d46c9de30f7b5ebe4118c8ef1bfee968067cd98195b39a761"
     }
   },
   "inapplicable_set": "Unavailable optional tools and host filesystem/process authorization are explicit host preconditions.",
@@ -36489,7 +36493,7 @@ Canonical links: CM.RELAY.TOOL.PYTEST, CM.RELAY.STANDARD.PYTEST
       "line_end": 44,
       "line_start": 37,
       "path": "src/openverify/standard/pytest.py",
-      "sha256": "4306df9f9a1f7aa274805bdf49f1013dd870fac71c5fc8e1719125fa2116d692"
+      "sha256": "02c72d766e52522d03298523e34587be44d0243d4c93002de8e5d96af6d1295a"
     }
   },
   "inapplicable_set": "Unavailable optional tools and host filesystem/process authorization are explicit host preconditions.",
@@ -36822,7 +36826,7 @@ Canonical links: CM.RELAY.GIT.CHANGES, CM.RELAY.GIT.MODES, CM.RELAY.STANDARD.GIT
       "line_end": 206,
       "line_start": 187,
       "path": "src/openverify/standard/git.py",
-      "sha256": "9ff2cee66ebaccb377bd325a6ec879f18fa473e43f54274004c7017d8673b218"
+      "sha256": "d80eca64f9bd7ee632653d079e15bba8b6ae51afd2e1f93b92f467d96c73f664"
     }
   },
   "inapplicable_set": "Unavailable optional tools and host filesystem/process authorization are explicit host preconditions.",
@@ -36993,7 +36997,7 @@ Canonical links: CM.RELAY.SECURITY.FRESHNESS, CM.RELAY.STANDARD.CANDIDATE_UNCHAN
       "line_end": 209,
       "line_start": 207,
       "path": "src/openverify/standard/git.py",
-      "sha256": "9ff2cee66ebaccb377bd325a6ec879f18fa473e43f54274004c7017d8673b218"
+      "sha256": "d80eca64f9bd7ee632653d079e15bba8b6ae51afd2e1f93b92f467d96c73f664"
     }
   },
   "inapplicable_set": "Unavailable optional tools and host filesystem/process authorization are explicit host preconditions.",
@@ -37122,7 +37126,7 @@ Canonical links: CM.RELAY.STANDARD.AGGREGATE
       "line_end": 50,
       "line_start": 38,
       "path": "src/openverify/standard/__init__.py",
-      "sha256": "2ad7f0c2cf4ae6a03f1a7939f1df2b51947519485fc5248858705482fdd5e96f"
+      "sha256": "7ce338ec6ba3e1faa8164b446fd29aadfcd69a6a4b9b23f18753c216b5c87331"
     }
   },
   "inapplicable_set": "Unavailable optional tools and host filesystem/process authorization are explicit host preconditions.",
@@ -38881,7 +38885,7 @@ Canonical links: Related projection; not counted as a separate requirement.
 
 ### D.SCHEMA.EMBEDDED
 
-Canonical links: CM.PROVIDER.SCHEMA.VALIDITY, CM.SHARED.SCHEMA_APPLICATORS, CM.VCP.SCHEMA.STATIC, CM.VCP.SCHEMA.SUBSET, CM.VCP.SCHEMA.RUNTIME, CM.SDK.SCHEMA.CHECK, CM.SDK.SCHEMA.INCOMPATIBLE, CM.VCP.DATA.DEFAULT.VALUE_SCHEMA, CM.PROVIDER.SCHEMA.REFERENCES.LOCAL, CM.PROVIDER.SCHEMA.REFERENCES.SCHEMA_TARGET, CM.PROVIDER.SCHEMA.REFERENCES.RESOURCE_SCOPE
+Canonical links: CM.PROVIDER.SCHEMA.VALIDITY, CM.SHARED.SCHEMA_APPLICATORS, CM.VCP.SCHEMA.STATIC, CM.VCP.SCHEMA.SUBSET, CM.VCP.SCHEMA.RUNTIME, CM.SDK.SCHEMA.CHECK, CM.SDK.SCHEMA.INCOMPATIBLE, CM.VCP.DATA.DEFAULT.VALUE_SCHEMA, CM.PROVIDER.SCHEMA.REFERENCES.LOCAL, CM.PROVIDER.SCHEMA.REFERENCES.SCHEMA_TARGET, CM.PROVIDER.SCHEMA.REFERENCES.RESOURCE_SCOPE, CM.SHARED.SCHEMA.EVALUATION.NONLOOPING
 
 ```json
 {
@@ -38900,7 +38904,7 @@ Canonical links: CM.PROVIDER.SCHEMA.VALIDITY, CM.SHARED.SCHEMA_APPLICATORS, CM.V
     "annotation default never inserts value"
   ],
   "candidate_count": "unbounded",
-  "derivation": "Let Pos(S) be standard schema-bearing keyword locations plus $defs. Resolve refs only inside Pos(S); Draft validity and supported-reference subset are separate predicates. Runtime P_S(x) handles all remaining instance constraints.",
+  "derivation": "Separate Draft validity, reference form, target schema position, authority-specific restrictions and defined evaluation. VCP prohibits annotation payloads as schemas. Provider explicitly rejects non-schema object targets; Boolean annotation references have no portable evaluation result under Core9.4.2. Do not normalize an undefined result into universal rejection.",
   "domain_id": "D.SCHEMA.EMBEDDED",
   "evaluation_calculus": {
     "Boolean": "Eval(true,x).b=true; Eval(false,x).b=false.",
@@ -38917,10 +38921,16 @@ Canonical links: CM.PROVIDER.SCHEMA.VALIDITY, CM.SHARED.SCHEMA_APPLICATORS, CM.V
     "reference": "Resolve supported local pointer to actual schema position and evaluate same instance; $defs declares locations without independently asserting them.",
     "string": "minLength/maxLength bound Unicode length; pattern uses authored ECMA-compatible search match."
   },
+  "excluded_portable_results": {
+    "Provider_Boolean_annotation_target": "Core9.4.2 undefined/nonportable interpretation; no portable acceptance/rejection oracle.",
+    "nonprogressing_reference_unfolding": "Core9.4.1 undefined Boolean result; no infinite looping allowed.",
+    "note": "These exclusions are standard-defined limits, not proof of SUT handling or a user-selected blanket cycle ban."
+  },
   "inapplicable_set": "No general static subsumption promise for schemas beyond the explicit conservative checks; format remains annotation-only in embedded schemas.",
-  "invalid_set": "Invalid metaschema, unresolved pointer, annotation-object target, external URI, nested $id, anchors/dynamic refs, disjoint primitive types/false schema/incompatible finite value sets at static binding.",
+  "invalid_set": "Invalid metaschema; unresolved/nonlocal pointer or disallowed resource features under the relevant subset; annotation object target; VCP annotation target; static disjoint/false/finite contradiction under binding applicability. Provider annotation-Boolean targets are separately excluded, not assigned a universal invalid classification.",
   "kind": "SYMBOLIC",
   "mathematics_status": "DERIVED",
+  "nonlooping_invariant": "Every evaluation trace must avoid infinite reference/applicator looping. No portable finite time or step bound is specified. Finite tests cannot prove all traces terminate; excluded Boolean outcomes do not exclude this MUST.",
   "partitions": [
     "true schema",
     "false schema",
@@ -38945,9 +38955,10 @@ Canonical links: CM.PROVIDER.SCHEMA.VALIDITY, CM.SHARED.SCHEMA_APPLICATORS, CM.V
     "CM.PROVIDER.SCHEMA.REFERENCES.SCHEMA_TARGET",
     "CM.PROVIDER.SCHEMA.REFERENCES.RESOURCE_SCOPE",
     "CM.SDK.SCHEMA.CHECK",
-    "CM.SDK.SCHEMA.INCOMPATIBLE"
+    "CM.SDK.SCHEMA.INCOMPATIBLE",
+    "CM.SHARED.SCHEMA.EVALUATION.NONLOOPING"
   ],
-  "valid_set": "Schema is Draft 2020-12-valid, every ref is # or #/pointer resolving to an actual schema position, no nested resource IDs/anchors/dynamic/external refs; then evaluate runtime instance under that schema."
+  "valid_set": "Draft-valid schema with supported local references to recognized schema positions, no disallowed resolution features, and defined instance evaluation. This describes the interoperable evaluation domain, not an assertion that every outside coordinate has a mandated rejection code."
 }
 ```
 
@@ -39098,7 +39109,7 @@ Canonical links: Related projection; not counted as a separate requirement.
           "line_end": 20,
           "line_start": 20,
           "path": "spec/draft/conformance.md",
-          "sha256": "b48dec7685452f8ba47b1896747decf37d247d0e8eabee6e0289b22f87f0c074"
+          "sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24"
         }
       ]
     },
@@ -39117,7 +39128,7 @@ Canonical links: Related projection; not counted as a separate requirement.
           "line_end": 21,
           "line_start": 21,
           "path": "spec/draft/conformance.md",
-          "sha256": "b48dec7685452f8ba47b1896747decf37d247d0e8eabee6e0289b22f87f0c074"
+          "sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24"
         },
         {
           "line_end": 95,
@@ -39142,13 +39153,13 @@ Canonical links: Related projection; not counted as a separate requirement.
           "line_end": 13,
           "line_start": 13,
           "path": "spec/draft/aggregation.md",
-          "sha256": "9c5599e6c6553ed7da5da13ffe65294c97402be7b6c221c326c7efbf98b8da8d"
+          "sha256": "a627fc3bd6f8509d1f231caf3d919e16d88c33057b6f144e37e30d715165507e"
         },
         {
           "line_end": 22,
           "line_start": 22,
           "path": "spec/draft/conformance.md",
-          "sha256": "b48dec7685452f8ba47b1896747decf37d247d0e8eabee6e0289b22f87f0c074"
+          "sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24"
         }
       ]
     },
@@ -39167,7 +39178,7 @@ Canonical links: Related projection; not counted as a separate requirement.
           "line_end": 24,
           "line_start": 24,
           "path": "spec/draft/conformance.md",
-          "sha256": "b48dec7685452f8ba47b1896747decf37d247d0e8eabee6e0289b22f87f0c074"
+          "sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24"
         },
         {
           "line_end": 95,
@@ -39192,7 +39203,7 @@ Canonical links: Related projection; not counted as a separate requirement.
           "line_end": 25,
           "line_start": 25,
           "path": "spec/draft/conformance.md",
-          "sha256": "b48dec7685452f8ba47b1896747decf37d247d0e8eabee6e0289b22f87f0c074"
+          "sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24"
         }
       ]
     },
@@ -39211,7 +39222,7 @@ Canonical links: Related projection; not counted as a separate requirement.
           "line_end": 25,
           "line_start": 25,
           "path": "spec/draft/conformance.md",
-          "sha256": "b48dec7685452f8ba47b1896747decf37d247d0e8eabee6e0289b22f87f0c074"
+          "sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24"
         },
         {
           "line_end": 106,
@@ -39236,7 +39247,7 @@ Canonical links: Related projection; not counted as a separate requirement.
           "line_end": 18,
           "line_start": 18,
           "path": "spec/draft/conformance.md",
-          "sha256": "b48dec7685452f8ba47b1896747decf37d247d0e8eabee6e0289b22f87f0c074"
+          "sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24"
         }
       ]
     },
@@ -39255,7 +39266,7 @@ Canonical links: Related projection; not counted as a separate requirement.
           "line_end": 22,
           "line_start": 22,
           "path": "spec/draft/conformance.md",
-          "sha256": "b48dec7685452f8ba47b1896747decf37d247d0e8eabee6e0289b22f87f0c074"
+          "sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24"
         }
       ]
     },
@@ -39274,7 +39285,7 @@ Canonical links: Related projection; not counted as a separate requirement.
           "line_end": 22,
           "line_start": 22,
           "path": "spec/draft/conformance.md",
-          "sha256": "b48dec7685452f8ba47b1896747decf37d247d0e8eabee6e0289b22f87f0c074"
+          "sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24"
         }
       ]
     },
@@ -39293,7 +39304,7 @@ Canonical links: Related projection; not counted as a separate requirement.
           "line_end": 20,
           "line_start": 20,
           "path": "spec/draft/conformance.md",
-          "sha256": "b48dec7685452f8ba47b1896747decf37d247d0e8eabee6e0289b22f87f0c074"
+          "sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24"
         },
         {
           "line_end": 11,
@@ -39318,7 +39329,7 @@ Canonical links: Related projection; not counted as a separate requirement.
           "line_end": 19,
           "line_start": 19,
           "path": "spec/draft/conformance.md",
-          "sha256": "b48dec7685452f8ba47b1896747decf37d247d0e8eabee6e0289b22f87f0c074"
+          "sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24"
         }
       ]
     },
@@ -39337,7 +39348,7 @@ Canonical links: Related projection; not counted as a separate requirement.
           "line_end": 18,
           "line_start": 18,
           "path": "spec/draft/conformance.md",
-          "sha256": "b48dec7685452f8ba47b1896747decf37d247d0e8eabee6e0289b22f87f0c074"
+          "sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24"
         },
         {
           "line_end": 106,
@@ -39362,13 +39373,13 @@ Canonical links: Related projection; not counted as a separate requirement.
           "line_end": 24,
           "line_start": 24,
           "path": "spec/draft/composition.md",
-          "sha256": "cd930f696dbfe7c5897930a848f999575241570fbdaa81fa51a167828f7299cc"
+          "sha256": "d5a1ae05299bc11d00d666f10912bef85320357cc5b890e5c6c3332f5cf872e6"
         },
         {
           "line_end": 19,
           "line_start": 19,
           "path": "spec/draft/conformance.md",
-          "sha256": "b48dec7685452f8ba47b1896747decf37d247d0e8eabee6e0289b22f87f0c074"
+          "sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24"
         },
         {
           "line_end": 11,
@@ -39393,7 +39404,7 @@ Canonical links: Related projection; not counted as a separate requirement.
           "line_end": 27,
           "line_start": 27,
           "path": "spec/draft/conformance.md",
-          "sha256": "b48dec7685452f8ba47b1896747decf37d247d0e8eabee6e0289b22f87f0c074"
+          "sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24"
         }
       ]
     },
@@ -39412,7 +39423,7 @@ Canonical links: Related projection; not counted as a separate requirement.
           "line_end": 76,
           "line_start": 76,
           "path": "spec/draft/execution-policy.md",
-          "sha256": "2bb545ce77cbf3790261a35a9955104fecb8c18be1f56e51c1ff0c2d251ce4cf"
+          "sha256": "d6c1d6c71da16609c67bcf77ad70723f47d4e53931301ba1e0eefbce2e46268c"
         }
       ]
     },
@@ -39431,13 +39442,13 @@ Canonical links: Related projection; not counted as a separate requirement.
           "line_end": 26,
           "line_start": 26,
           "path": "spec/draft/conformance.md",
-          "sha256": "b48dec7685452f8ba47b1896747decf37d247d0e8eabee6e0289b22f87f0c074"
+          "sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24"
         },
         {
           "line_end": 49,
           "line_start": 49,
           "path": "spec/draft/result.md",
-          "sha256": "14acc3ccf0b4bc26570687be3a9f9a78746deb29007756626c2c1677e9e695ba"
+          "sha256": "899c305f508a87ae4bd648bfdc40aa856fc09a2877ef5c3774e2d0a6af6b2a33"
         }
       ]
     },
@@ -39456,13 +39467,13 @@ Canonical links: Related projection; not counted as a separate requirement.
           "line_end": 26,
           "line_start": 26,
           "path": "spec/draft/conformance.md",
-          "sha256": "b48dec7685452f8ba47b1896747decf37d247d0e8eabee6e0289b22f87f0c074"
+          "sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24"
         },
         {
           "line_end": 109,
           "line_start": 109,
           "path": "spec/draft/dataflow.md",
-          "sha256": "50c60efcd2701f35d93b05040bc0aef5a2f3dcf8252e026a3df956c4d4554c02"
+          "sha256": "10399b6c1ad0754d63b50404d060e8fcb6c362246d5d793d05c18e55f68074eb"
         }
       ]
     },
@@ -39493,7 +39504,7 @@ Canonical links: Related projection; not counted as a separate requirement.
           "line_end": 77,
           "line_start": 77,
           "path": "spec/draft/execution-policy.md",
-          "sha256": "2bb545ce77cbf3790261a35a9955104fecb8c18be1f56e51c1ff0c2d251ce4cf"
+          "sha256": "d6c1d6c71da16609c67bcf77ad70723f47d4e53931301ba1e0eefbce2e46268c"
         }
       ]
     },
@@ -39512,7 +39523,7 @@ Canonical links: Related projection; not counted as a separate requirement.
           "line_end": 78,
           "line_start": 78,
           "path": "spec/draft/execution-policy.md",
-          "sha256": "2bb545ce77cbf3790261a35a9955104fecb8c18be1f56e51c1ff0c2d251ce4cf"
+          "sha256": "d6c1d6c71da16609c67bcf77ad70723f47d4e53931301ba1e0eefbce2e46268c"
         }
       ]
     },
@@ -39531,7 +39542,7 @@ Canonical links: Related projection; not counted as a separate requirement.
           "line_end": 23,
           "line_start": 23,
           "path": "spec/draft/conformance.md",
-          "sha256": "b48dec7685452f8ba47b1896747decf37d247d0e8eabee6e0289b22f87f0c074"
+          "sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24"
         }
       ]
     },
@@ -39550,7 +39561,7 @@ Canonical links: Related projection; not counted as a separate requirement.
           "line_end": 21,
           "line_start": 21,
           "path": "spec/draft/conformance.md",
-          "sha256": "b48dec7685452f8ba47b1896747decf37d247d0e8eabee6e0289b22f87f0c074"
+          "sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24"
         }
       ]
     },
@@ -39569,7 +39580,7 @@ Canonical links: Related projection; not counted as a separate requirement.
           "line_end": 24,
           "line_start": 24,
           "path": "spec/draft/conformance.md",
-          "sha256": "b48dec7685452f8ba47b1896747decf37d247d0e8eabee6e0289b22f87f0c074"
+          "sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24"
         }
       ]
     },
@@ -39588,7 +39599,7 @@ Canonical links: Related projection; not counted as a separate requirement.
           "line_end": 17,
           "line_start": 17,
           "path": "spec/draft/conformance.md",
-          "sha256": "b48dec7685452f8ba47b1896747decf37d247d0e8eabee6e0289b22f87f0c074"
+          "sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24"
         }
       ]
     },
@@ -39607,13 +39618,13 @@ Canonical links: Related projection; not counted as a separate requirement.
           "line_end": 17,
           "line_start": 17,
           "path": "spec/draft/conformance.md",
-          "sha256": "b48dec7685452f8ba47b1896747decf37d247d0e8eabee6e0289b22f87f0c074"
+          "sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24"
         },
         {
           "line_end": 8,
           "line_start": 8,
           "path": "spec/draft/wire-format.md",
-          "sha256": "e2ff9695699de355d19490a67a27480dbb382c533f8fa408ef404900909e78ee"
+          "sha256": "b6935e2ebf193fffe59851efa5f69a00606652cf3f664bb78aaf12b020d28ef4"
         }
       ]
     },
@@ -39632,31 +39643,31 @@ Canonical links: Related projection; not counted as a separate requirement.
           "line_end": 21,
           "line_start": 21,
           "path": "spec/draft/conformance.md",
-          "sha256": "b48dec7685452f8ba47b1896747decf37d247d0e8eabee6e0289b22f87f0c074"
+          "sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24"
         },
         {
           "line_end": 31,
           "line_start": 31,
           "path": "spec/draft/conformance.md",
-          "sha256": "b48dec7685452f8ba47b1896747decf37d247d0e8eabee6e0289b22f87f0c074"
+          "sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24"
         },
         {
           "line_end": 16,
           "line_start": 16,
           "path": "spec/draft/provenance.md",
-          "sha256": "3e02714727ab1b957df766739e37871362ae1ece47bd7623c7cfe90e5464818a"
+          "sha256": "f5e39f64216f88a8ba3b2e0d9dbcc2e1bdf61f6f747abf0c17af4b988624f713"
         },
         {
           "line_end": 51,
           "line_start": 51,
           "path": "spec/draft/provenance.md",
-          "sha256": "3e02714727ab1b957df766739e37871362ae1ece47bd7623c7cfe90e5464818a"
+          "sha256": "f5e39f64216f88a8ba3b2e0d9dbcc2e1bdf61f6f747abf0c17af4b988624f713"
         },
         {
           "line_end": 53,
           "line_start": 53,
           "path": "spec/draft/provider-binding.md",
-          "sha256": "0e0b75547db6e869aaa66d17ba43b5fe4cf2473f3ea7eb344844f332b0b61f8f"
+          "sha256": "e9182644aa142b737291815f343c6eae5982f4e7b65195af035ccaf201bc4570"
         }
       ]
     },
@@ -39675,7 +39686,7 @@ Canonical links: Related projection; not counted as a separate requirement.
           "line_end": 71,
           "line_start": 71,
           "path": "spec/draft/provider-binding.md",
-          "sha256": "0e0b75547db6e869aaa66d17ba43b5fe4cf2473f3ea7eb344844f332b0b61f8f"
+          "sha256": "e9182644aa142b737291815f343c6eae5982f4e7b65195af035ccaf201bc4570"
         }
       ]
     },
@@ -39694,7 +39705,7 @@ Canonical links: Related projection; not counted as a separate requirement.
           "line_end": 64,
           "line_start": 64,
           "path": "spec/draft/provider-binding.md",
-          "sha256": "0e0b75547db6e869aaa66d17ba43b5fe4cf2473f3ea7eb344844f332b0b61f8f"
+          "sha256": "e9182644aa142b737291815f343c6eae5982f4e7b65195af035ccaf201bc4570"
         }
       ]
     },
@@ -39713,7 +39724,7 @@ Canonical links: Related projection; not counted as a separate requirement.
           "line_end": 72,
           "line_start": 72,
           "path": "spec/draft/provider-binding.md",
-          "sha256": "0e0b75547db6e869aaa66d17ba43b5fe4cf2473f3ea7eb344844f332b0b61f8f"
+          "sha256": "e9182644aa142b737291815f343c6eae5982f4e7b65195af035ccaf201bc4570"
         }
       ]
     },
@@ -39732,7 +39743,7 @@ Canonical links: Related projection; not counted as a separate requirement.
           "line_end": 19,
           "line_start": 19,
           "path": "spec/draft/conformance.md",
-          "sha256": "b48dec7685452f8ba47b1896747decf37d247d0e8eabee6e0289b22f87f0c074"
+          "sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24"
         }
       ]
     },
@@ -39763,7 +39774,7 @@ Canonical links: Related projection; not counted as a separate requirement.
           "line_end": 18,
           "line_start": 18,
           "path": "spec/draft/conformance.md",
-          "sha256": "b48dec7685452f8ba47b1896747decf37d247d0e8eabee6e0289b22f87f0c074"
+          "sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24"
         }
       ]
     },
@@ -39782,19 +39793,19 @@ Canonical links: Related projection; not counted as a separate requirement.
           "line_end": 26,
           "line_start": 26,
           "path": "spec/draft/conformance.md",
-          "sha256": "b48dec7685452f8ba47b1896747decf37d247d0e8eabee6e0289b22f87f0c074"
+          "sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24"
         },
         {
           "line_end": 38,
           "line_start": 38,
           "path": "spec/draft/dataflow.md",
-          "sha256": "50c60efcd2701f35d93b05040bc0aef5a2f3dcf8252e026a3df956c4d4554c02"
+          "sha256": "10399b6c1ad0754d63b50404d060e8fcb6c362246d5d793d05c18e55f68074eb"
         },
         {
           "line_end": 11,
           "line_start": 11,
           "path": "spec/draft/execution-policy.md",
-          "sha256": "2bb545ce77cbf3790261a35a9955104fecb8c18be1f56e51c1ff0c2d251ce4cf"
+          "sha256": "d6c1d6c71da16609c67bcf77ad70723f47d4e53931301ba1e0eefbce2e46268c"
         }
       ]
     },
@@ -39813,13 +39824,13 @@ Canonical links: Related projection; not counted as a separate requirement.
           "line_end": 25,
           "line_start": 25,
           "path": "spec/draft/conformance.md",
-          "sha256": "b48dec7685452f8ba47b1896747decf37d247d0e8eabee6e0289b22f87f0c074"
+          "sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24"
         },
         {
           "line_end": 99,
           "line_start": 99,
           "path": "spec/draft/dataflow.md",
-          "sha256": "50c60efcd2701f35d93b05040bc0aef5a2f3dcf8252e026a3df956c4d4554c02"
+          "sha256": "10399b6c1ad0754d63b50404d060e8fcb6c362246d5d793d05c18e55f68074eb"
         }
       ]
     },
@@ -39838,7 +39849,7 @@ Canonical links: Related projection; not counted as a separate requirement.
           "line_end": 25,
           "line_start": 25,
           "path": "spec/draft/conformance.md",
-          "sha256": "b48dec7685452f8ba47b1896747decf37d247d0e8eabee6e0289b22f87f0c074"
+          "sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24"
         }
       ]
     },
@@ -43774,11 +43785,11 @@ Canonical links: CM.SDK.PROVIDER.INTERFACE.MANIFEST, CM.SDK.PROVIDER.INTERFACE.I
 
 ### D.PORT.REQUIREDNESS_DEFAULT_JOINT
 
-Canonical links: CM.VCP.DATA.PORT_HANDLING, CM.VCP.DATA.DEFAULT.CONSTANT
+Canonical links: CM.VCP.DATA.PORT_HANDLING, CM.VCP.DATA.DEFAULT.CONSTANT, CM.VCP.DATA.DEFAULT.VALUE_SCHEMA
 
 ```json
 {
-  "ambiguous_count": 2,
+  "ambiguous_count": 0,
   "axes": [
     {
       "name": "required",
@@ -43804,19 +43815,127 @@ Canonical links: CM.VCP.DATA.PORT_HANDLING, CM.VCP.DATA.DEFAULT.CONSTANT
     }
   ],
   "candidate_count": 12,
-  "derivation": "Illegal requiredness/handler pairs:3*2=6 invalid. Legal DEFAULT absent adds1 invalid, present1 valid. Legal BLOCK/OMIT without default add2 valid. Their default-present cases are2 unresolved portable coordinates, Q.DEFAULT_UNUSED. Thus12=3+7+0+2; requested closed identity C=V+I+N is not achieved for this domain. SDK locally rejects the two extra cases: SDK V3/I9/N0.",
+  "classification_predicate": "(required -> handler=BLOCK) and (not required -> handler in {OMIT,DEFAULT}) and (handler=DEFAULT -> default_present)",
+  "coordinates": [
+    {
+      "SDK_classification": "INVALID",
+      "classification": "INVALID",
+      "default_present": false,
+      "handler": "BLOCK",
+      "required": false
+    },
+    {
+      "SDK_classification": "INVALID",
+      "classification": "INVALID",
+      "default_present": true,
+      "handler": "BLOCK",
+      "required": false
+    },
+    {
+      "SDK_classification": "VALID",
+      "classification": "VALID",
+      "default_present": false,
+      "handler": "OMIT",
+      "required": false
+    },
+    {
+      "SDK_classification": "INVALID",
+      "classification": "VALID",
+      "default_present": true,
+      "handler": "OMIT",
+      "required": false
+    },
+    {
+      "SDK_classification": "INVALID",
+      "classification": "INVALID",
+      "default_present": false,
+      "handler": "DEFAULT",
+      "required": false
+    },
+    {
+      "SDK_classification": "VALID",
+      "classification": "VALID",
+      "default_present": true,
+      "handler": "DEFAULT",
+      "required": false
+    },
+    {
+      "SDK_classification": "VALID",
+      "classification": "VALID",
+      "default_present": false,
+      "handler": "BLOCK",
+      "required": true
+    },
+    {
+      "SDK_classification": "INVALID",
+      "classification": "VALID",
+      "default_present": true,
+      "handler": "BLOCK",
+      "required": true
+    },
+    {
+      "SDK_classification": "INVALID",
+      "classification": "INVALID",
+      "default_present": false,
+      "handler": "OMIT",
+      "required": true
+    },
+    {
+      "SDK_classification": "INVALID",
+      "classification": "INVALID",
+      "default_present": true,
+      "handler": "OMIT",
+      "required": true
+    },
+    {
+      "SDK_classification": "INVALID",
+      "classification": "INVALID",
+      "default_present": false,
+      "handler": "DEFAULT",
+      "required": true
+    },
+    {
+      "SDK_classification": "INVALID",
+      "classification": "INVALID",
+      "default_present": true,
+      "handler": "DEFAULT",
+      "required": true
+    }
+  ],
+  "derivation": "Three illegal requiredness/handler pairs times two presence values =6 invalid; legal DEFAULT without Constant adds1. Legal BLOCK and OMIT each admit both presence values (4), legal DEFAULT with Constant adds1. SDK strengthens implication to iff: V3/I9.",
   "domain_id": "D.PORT.REQUIREDNESS_DEFAULT_JOINT",
   "formula": "2*3*2",
   "inapplicable_count": 0,
   "invalid_count": 7,
-  "kind": "CONDITIONAL",
-  "mathematics_status": "BLOCKED_ONLY_UNUSED_DEFAULT_PORTABLE_COORDINATES",
+  "kind": "FINITE",
+  "mathematics_status": "DERIVED_FROM_NORMATIVE_ONE_WAY_DEFAULT_IMPLICATION",
   "requirement_ids": [
     "CM.VCP.DATA.PORT_HANDLING",
     "CM.VCP.DATA.DEFAULT.CONSTANT"
   ],
   "scope": "All names, schemas and supplied Constant payloads otherwise valid. D.DEFAULT.PRESENCE remains a narrower DEFAULT-only projection with nonDEFAULT inapplicability; do not mistake it for this full joint domain.",
-  "valid_count": 3
+  "source_references": [
+    {
+      "line_end": 50,
+      "line_start": 1,
+      "path": "schemas/draft/input-port.schema.json",
+      "sha256": "06bf28b97b7d3c4cb92d058ff2866cc334120c00c5279cba8fda8425c7f9d3c9"
+    },
+    {
+      "line_end": 33,
+      "line_start": 20,
+      "path": "spec/draft/dataflow.md",
+      "sha256": "10399b6c1ad0754d63b50404d060e8fcb6c362246d5d793d05c18e55f68074eb"
+    },
+    {
+      "line_end": 105,
+      "line_start": 97,
+      "path": "spec/draft/dataflow.md",
+      "sha256": "10399b6c1ad0754d63b50404d060e8fcb6c362246d5d793d05c18e55f68074eb"
+    }
+  ],
+  "unresolved_count": 0,
+  "valid_count": 5
 }
 ```
 
@@ -44070,13 +44189,21 @@ Supplementary literal diagnostics include DATAFLOW_VALUE, TIMEOUT, TRANSPORT_ERR
 
 | Question | Classification | Effect |
 | --- | --- | --- |
-| Q.CUSTOM_AGG_EMPTY | EXPLICIT_SEMANTIC_BLOCKER | Custom empty-membership expectation cannot be closed without an explicit authority/scope decision; other membership and standard reducer rules continue. |
-| Q.RELAY_TIMING_KEY | DOCUMENTED_PROFILE_KEY_UNDERSPECIFICATION | Exact local same-unit timing-key expectation requires clarification of the documented profile; retain both source statements. |
-| Q.AVAILABILITY_OVERLAP | EXPLICIT_SEMANTIC_BLOCKER | Only exact ambiguous status coordinates remain blocked; rejection/nonpublication/default/omit/block effects remain derived. No raw source/status Cartesian total claimed. |
-| Q.ROUNDING | UNBOUNDED_PRECISION_LIMIT_NO_BITWISE_REQUIREMENT | Use algebraic semantics and declared number fidelity; no bit-identical portable claim. |
-| Q.DEFAULT_UNUSED | EXPLICIT_SEMANTIC_BLOCKER | Only this portable field-interaction expectation remains ambiguous; SDK rejection is a separate local behavior. |
-| Q.VERSION_FUTURE_INTERSECTION | UNSUPPORTED_FUTURE_PROFILE_LIMIT | 0.1-only declared profile is decidable; hypothetical future support not silently inferred. SDK helper first-common-then0.1 behavior separately specified. |
-| Q.NONPROGRESSING_SCHEMA_REFERENCE | EXTERNAL_UNDEFINED_SEMANTICS | Only exact expectation for nonprogressing cyclic embedded schemas remains blocked; shipped33 root reference closure is acyclic and unaffected. |
-| Q.BOOLEAN_ANNOTATION_REFERENCE | SCOPE_AMBIGUITY | Provider boolean targets outside recognized schema positions are not certified as either valid supported evaluation or a particular rejection code. |
+| Q.CUSTOM_AGG_EMPTY | GENUINE_NORMATIVE_AMBIGUITY | Only custom zero-member acceptance/rejection and its phase remain blocked. Standard nonempty/rejection and membership-completeness rules are not blocked. |
+| Q.RELAY_TIMING_KEY | RESOLVED_AUTHORITY_AND_OPTIONAL_NAMING | Remove the ambiguity from CM.RELAY.API.VIEWS.USAGE and CM.VCP.RES.WALL_TIME.SEPARATE. Do not declare implementation correctness: the two-key overwrite counterexample remains. |
+| Q.AVAILABILITY_OVERLAP | GENUINE_NORMATIVE_AMBIGUITY | The dependent typed reachability relation is complete only on disjoint specified contexts. Handler value/noninvocation/record effects are determined after availability; the exact original status for overlapping causes and interrupted producers remains blocked. |
+| Q.ROUNDING | UNBOUNDED_PRECISION_LIMIT_NO_BITWISE_REQUIREMENT | Keep the algebraic oracle; exclude a universal portable float-bit/tolerance oracle. Local reference arithmetic may be checked as a local algorithm only. Domain still unbounded. |
+| Q.DEFAULT_UNUSED | RESOLVED_BY_STRUCTURAL_AND_PROSE_CONJUNCTION | Close the two portable coordinates. Correct D.PORT.REQUIREDNESS_DEFAULT_JOINT from V3/I7/Q2 to V5/I7/Q0; preserve DEFAULT-only presence projection and schema-value obligations. This is a justified canonical interpretation correction, not a normative source edit. |
+| Q.VERSION_FUTURE_INTERSECTION | UNSUPPORTED_FUTURE_PROFILE_LIMIT | Retain current supported behavior and exact local helper algorithm. Future protocol session semantics excluded; arbitrary string/list cardinality unbounded. |
+| Q.NONPROGRESSING_SCHEMA_REFERENCE | EXTERNAL_UNDEFINED_SCOPE_EXCLUSION | Exclude only the upstream-undefined Boolean-result subspace from portable result classification; retain the no-infinite-loop safety requirement. This does not prove current validators terminate or that a recursion exception is an appropriate portable error. |
+| Q.BOOLEAN_ANNOTATION_REFERENCE | EXTERNAL_UNDEFINED_SCOPE_EXCLUSION | Portable Provider evaluation result for annotation Boolean targets is excluded, not counted invalid by inference. VCP annotation-target rejection remains source-supported. SDK source admits those Boolean targets at the position-membership check; that is local behavior and does not define portable semantics. |
 
 No production reducer/validator/resolution/lifecycle function was imported or executed for these calculations. The conditional DAG argument proves a theorem under its listed premises; it is not a universal proof of the implementation scheduler or shared mutable state. No sample graph bound is used to establish arbitrary-size correctness.
+
+## Final-blocker mathematical reconciliation
+
+D.PORT.REQUIREDNESS_DEFAULT_JOINT now enumerates all12 exact coordinates from the written one-way implication, C=12,V=5,I=7,N=0,Q=0. The two SDK-only rejected coordinates are required/BLOCK/default-present and optional/OMIT/default-present. All Constant payloads are assumed valid; malformed or schema-rejected payloads are a different dimension.
+
+D.TYPED_AVAILABILITY remains a dependent unbounded reachability relation; no complete numeric cause-priority classification is claimed. Custom n=0 contributes one empty structural list but its custom semantic classification remains unresolved. The33 shipped root predicates are unchanged. Undefined nonprogressing/Provider non-schema-target evaluation results are excluded with external authority; this is not a blanket invalid-schema classification or a proof that implementation evaluation terminates.
+
+CM.SHARED.SCHEMA.EVALUATION.NONLOOPING owns the independent unbounded trace invariant. Finite stopping satisfies that one invariant, not every validator rule. There is no normative finite time/step bound; finite probes alone cannot prove universal termination. CANONICAL_AUDIT.md contains exact examples and decisions for every remaining boundary.
