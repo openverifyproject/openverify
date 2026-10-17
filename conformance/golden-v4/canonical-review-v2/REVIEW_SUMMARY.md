@@ -1,35 +1,33 @@
 # Canonical review v2 status
 
-**INCOMPLETE. This is not the completed canonical model requested. All four gates FAIL.** Useful source-derived repairs are preserved, but the semantic closure work and complete independent audit remain unfinished.
+Source closure and the complete second source-first comparison are finished for the selected current repository source set. Full semantic closure remains INCOMPLETE in explicit question subspaces; this is not Golden implementation certification.
 
-| Layer | Atomic propositions defined | Whole-root structural predicates | Operation summaries | Provisional semantic records | Schema components | Status |
-| --- | --- | --- | --- | --- | --- | --- |
-| VCP | 71 | 24 | 0 | 119 | 539 | INCOMPLETE |
-| PROVIDER | 11 | 9 | 0 | 60 | 185 | INCOMPLETE |
-| RELAY | 22 | 0 | 38 | 65 | 0 | INCOMPLETE |
-| SHARED | 0 | 0 | 26 | 2 | 0 | INCOMPLETE |
+| Layer | Semantic requirements | Whole-root predicates | Primary total |
+| --- | --- | --- | --- |
+| VCP | 242 | 24 | 266 |
+| PROVIDER | 106 | 9 | 115 |
+| RELAY | 161 | 0 | 161 |
+| SHARED | 72 | 0 | 72 |
 
+581 semantic requirements; 33 complete structural roots; 724 local schema components, excluded from the semantic count. 74 preserved groups and 12 aliases are not counted again.
 
-1171 JSONL records comprise 104 defined atomic propositions, 33 whole-root predicates, 64 operation/capability summaries, 246 provisional semantic records and 724 schema components. These categories must not be reported as one atomic requirement total.
+Mathematics: 85 named finite domains, 150 symbolic domains, 2 conditional domains; 44 leaf-specific finite quotients and 54 standard-capability declared-key projections are separately scoped. No global overlapping candidate sum. Every known supported semantic record has a domain. The full default/handler projection retains 2 unresolved coordinates; typed availability retains explicit overlapping-cause/cancellation questions.
 
-Mathematics: 84 new finite projections; 109 symbolic descriptions; 1 partial conditional relation. The 724 old component domains remain provisional. Finite arithmetic reconciles, but global semantic and mathematical completeness do not.
+Source audit: 162 repository source files reviewed; 314/314 original unfinished prose units and 366/366 declarations closed; 55 reexports, 12 aliases and NodeRef special lookup reviewed. 24 VCP/9 Provider roots normalized; 724 components reconciled ; 34 packaged copies byte-identical. All 614 primary records have source-first comparison links. No identified supported semantic requirement is unowned.
 
-Source audit: 161 files discovered/hashed; 2617 source positions; 314 prose units still pending full semantic disposition; 366 declaration candidates pending publicness/behavioral closure; 37 selected second-pass propositions. No count of missing semantic clauses can yet be established.
+| Gate | Verdict |
+| --- | --- |
+| 1 Source closure | PASS, explicit questions recorded |
+| 2 Whole-schema semantics | FAIL for full subset; 33 shipped roots PASS |
+| 3 Behavioral mathematics | FAIL for full profile; known domains derived, blocked coordinates explicit |
+| 4 Independent source audit | PASS as source comparison; no implementation certification |
 
-| Gate | Verdict | Concrete evidence |
-| --- | --- | --- |
-| Gate One: semantic source closure | FAIL | 314 prose units lack full clause-by-clause disposition; 246 inherited semantic records remain provisional. Candidate overlap is not closure. |
-| Gate Two: whole-schema semantic closure | FAIL | 33 root predicates reconstructed with references resolved; 724 retained local components require independent context review, and schema/prose interaction reconciliation is incomplete. |
-| Gate Three: behavioral mathematics | FAIL | 84 independently derived finite projections; 156 noncomponent records lack a domain; typed availability remains partial and public operation atomic closure is incomplete. |
-| Gate Four: independent source completeness | FAIL | 37 selected source-first propositions compared, not a complete second traversal; publicness/closure of 366 discovered declarations is pending. |
+Typed availability: disjoint contexts/handlers derived, exact overlapping status priority blocked. Whole-root normalization: complete for 33 roots. Standard providers: 18 exact schema/behavior contracts, 17 default plus opt-in command. Public helpers: reviewed operations/type carriers/aliases, explicit I/O/error/effect relations. Lifecycles: state/event/cause domains and scoped transitions. Composition: distinct motifs/couplings and conditional DAG induction, with implementation premises not claimed proven.
 
+Questions/limits: Q.CUSTOM_AGG_EMPTY, Q.RELAY_TIMING_KEY, Q.AVAILABILITY_OVERLAP, Q.ROUNDING, Q.DEFAULT_UNUSED, Q.VERSION_FUTURE_INTERSECTION, Q.NONPROGRESSING_SCHEMA_REFERENCE, Q.BOOLEAN_ANNOTATION_REFERENCE. Exact source references, impact and branch verdicts are in CANONICAL_AUDIT.md. Two static implementation/profile findings remain reported separately from model questions; neither was executed as a test.
 
-Typed availability: PARTIAL. Whole-schema normalization: 33 roots reconstructed, independent semantic/context verification INCOMPLETE. Standard providers: 18 summaries, atomic/schema closure INCOMPLETE. Public helpers: expanded, full exported-operation closure INCOMPLETE. Lifecycle: categorical mathematics expanded, dependent effects INCOMPLETE. Composition: explicit conditional model, universal premises UNPROVED.
+53 declared enum codes remain separated: 33 normative VCP, 8 normative Provider, 2 SDK diagnostics, 10 Relay-specific. Additional literal/freeform diagnostic channels are not silently included in that count.
 
-Local questions/limits: custom empty Aggregate membership, same-unit Relay timing key, availability overlap/valid-prefix reachability and portable numeric rounding. Exact sources and impact are in CANONICAL_AUDIT.md. None is silently resolved from production behavior.
+Source aggregate SHA-256: f976a456e361b9ac21fc62a8457598625479ba3178f4bd12f725e09f7852260c. All individual repository source hashes are in the audit/crosswalk. Six files updated in this existing directory: CANONICAL_MODEL.md, CANONICAL_REQUIREMENTS.jsonl, CANONICAL_MATH.md, SOURCE_CROSSWALK.jsonl, CANONICAL_AUDIT.md, REVIEW_SUMMARY.md.
 
-Declared enum identifiers: 33 normative VCP, 8 normative Provider, 2 SDK diagnostics, 10 Relay-specific =53. Additional CLI/HTTP literal diagnostics are listed separately. Authority and declaration/prose references are in CANONICAL_MATH.md.
-
-Files: CANONICAL_MODEL.md; CANONICAL_REQUIREMENTS.jsonl; CANONICAL_MATH.md; SOURCE_CROSSWALK.jsonl; CANONICAL_AUDIT.md; REVIEW_SUMMARY.md. The earlier canonical-review artifacts remain byte-for-byte unchanged. No tests/fixtures/expectations or production/spec changes were made; no test suite was run.
-
-Commit identity is supplied by the Git commit containing these six artifacts; it is not self-embedded into its own content. This review stops before test mapping/generation and expectation freezing.
+No tests/fixtures/expectations, production or specifications changed; no suite was run. The next test-mapping/generation or freeze phase has not begun and requires explicit user authorization. Commit identity is the Git commit containing these six files, not self-embedded into its content.
