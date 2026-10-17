@@ -105,3 +105,20 @@ Use `tools.golden_v031.aggregate` to combine only one campaign's JSONLs. Coverag
 is confirmed only when ALL linked witnesses pass, rather than any one passing
 case. General custom code, process/filesystem/CLI/MCP/HTTP integration, external
 forgery and other documented unsupported behavior remain outside this profile.
+
+## Measured release verification
+
+Each full suite was run once against the isolated pinned production checkout:
+Test A **7,350 passed / 0 failed / 0 blocked**, **16.8915268 s** subprocess wall
+time; Test B **323 passed / 0 failed / 0 blocked**, **154.9736793 s** subprocess
+wall time. Neither reached its 300-second timeout. Test B made **336 Relay API
+calls**, with **127.9125142 s** summed awaited Relay duration. All 695 finite
+profile obligations have all linked witnesses passing; seven ambiguous and ten
+unsupported obligations remain explicit. This is not universal conformance.
+
+The unchanged isolated put_return reproduction and the full port batch passed;
+the initial transient remains UNDETERMINED. No reproducible Relay defect was
+independently established. [Committed audit evidence](../../conformance/golden-v0.3.1/evidence/run-results.json)
+contains the exact expectation hashes, historical reconciliation, measured
+summaries, log hashes and targeted findings. Full JSONLs and progress traces
+remain in the local pytest cache; aggregation of the two full reports succeeded.
