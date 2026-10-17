@@ -1,0 +1,4 @@
+{
+  "conformance/golden-v0.3.1/coverage-effective.json": "d0af481059e0df5c40256051ef55ee9e706a92a5e632067d78491f781e54820d",
+  "tools/golden_v031/freeze_coverage.py": "268d712a635d001223085bf936a110eb18f0bd0ac773588a004931bb8000b3c0"
+}
