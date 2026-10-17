@@ -9,7 +9,7 @@ Both approved semantic decisions are implemented in spec/draft/dataflow.md, aggr
 | RELAY | 161 | 0 |
 | SHARED | 73 | 0 |
 
-All four canonical model gates PASS for the declared supported semantic domain, subject to preserved upstream undefined-result/precision/future-version exclusions. This is not production or Golden certification.86 named finite,150 symbolic and1 dependent conditional domain; the snapshot quotient80/240 is a scoped proof, not the size of the unbounded domain. The two prior blocked-subspace flags are removed.
+All four canonical model gates PASS for the declared supported semantic domain, subject to preserved upstream undefined-result/precision/future-version exclusions. This is not production or Golden certification.86 named finite,150 symbolic and1 dependent conditional domain; the snapshot quotient80 contexts /239 supported handlers /1 preflight rejection is a scoped proof, not the size of the unbounded domain. The two prior blocked-subspace flags are removed.
 
 Custom [] is structurally legal; exact members=[] is capability input, schema owns eligibility, capability owns Result. Standard reducers reject empty original/retained input; unavailable declared members still BLOCK. Snapshot-based original status is total/disjoint; CANCELLED/no accepted non-Result output is OUTPUT_MISSING regardless of raw observation. Bookkeeping Result schema checks precede lifecycle absence. No new state, event-order requirement or barrier. Existing BLOCK/OMIT/DEFAULT/provenance/lifecycle rules are preserved.
 
