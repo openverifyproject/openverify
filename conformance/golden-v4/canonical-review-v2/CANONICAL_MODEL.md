@@ -1,8 +1,11 @@
 # Canonical contract model v2
 
+CURRENT NORMATIVE UPDATE: both supported blockers are resolved by explicit approved prose. All four canonical gates PASS for the declared supported semantic domain. This is not implementation certification. Existing scope exclusions (undefined schema evaluation, future versions, portable float bits) remain. Counts:582 semantic IDs,33 whole-root predicates,86 finite/150 symbolic/1 dependent conditional domains; no new IDs.
+
+
 Continued from 0723fa8a8766bcfdd3c2c5e5a8559a70befca3b7 in the isolated .worktrees/canonical-v2-blockers worktree on review/canonical-v2-blockers. This directory is the existing review, updated in place. The earlier canonical-review artifacts remain historical provisional inputs and were not edited.
 
-Source inventory and second source-first traversal are reconciled. Full semantic closure remains INCOMPLETE in the explicitly listed question subspaces. This is a contract model, not implementation certification or test coverage.
+Source inventory and second source-first traversal are reconciled. Full semantic closure remains CLOSED BY APPROVED SNAPSHOT/CUSTOM DECISION in the explicitly listed question subspaces. This is a contract model, not implementation certification or test coverage.
 
 The model counts 582 semantic propositions and 33 complete root structural predicates separately. The 724 local schema components are parameterized parts of those roots, not additional independent semantic requirements. 74 groups and 12 aliases preserve retired/split IDs without increasing the denominator.
 
@@ -26,15 +29,15 @@ Related finite projection counts are not leaf-validity counts. A leaf's full val
 
 ## Branch closure
 
-Domain-reference counts are sets within each row and overlap across branches. Requirement counts roll up by unique canonical ID. INCOMPLETE means an explicit blocked input/scope remains; it does not mean an unreviewed source paragraph.
+Domain-reference counts are sets within each row and overlap across branches. Requirement counts roll up by unique canonical ID. CLOSED BY APPROVED SNAPSHOT/CUSTOM DECISION means an explicit blocked input/scope remains; it does not mean an unreviewed source paragraph.
 
 | Branch | Semantic | Roots | Finite domains | Symbolic domains | Conditional domains | Blocking questions | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| VCP/Aggregation | 33 | 0 | 1 | 5 | 0 | 1 | INCOMPLETE |
+| VCP/Aggregation | 33 | 0 | 1 | 5 | 0 | 1 | CLOSED BY APPROVED SNAPSHOT/CUSTOM DECISION |
 | VCP/Composition | 12 | 0 | 0 | 3 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
 | VCP/Computation | 13 | 0 | 5 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
 | VCP/Conformance | 2 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| VCP/Dataflow | 37 | 0 | 6 | 8 | 1 | 1 | INCOMPLETE |
+| VCP/Dataflow | 37 | 0 | 6 | 8 | 1 | 1 | CLOSED BY APPROVED SNAPSHOT/CUSTOM DECISION |
 | VCP/Decisions | 1 | 0 | 1 | 0 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
 | VCP/Extensions | 2 | 0 | 1 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
 | VCP/Knowledge | 3 | 0 | 1 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
@@ -2575,8 +2578,8 @@ Domain-reference counts are sets within each row and overlap across branches. Re
         - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/validation.py:71-73.
         - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PROVIDER.WIRE_DATA. Domain `D.SDK.PROVIDER.WIRE_DATA`. No test/proof coverage is claimed.
         - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-- **VCP** — 266 canonical primary records; INCOMPLETE.
-  - **Aggregation** — 33 canonical primary records; INCOMPLETE.
+- **VCP** — 266 canonical primary records; CLOSED BY APPROVED SNAPSHOT/CUSTOM DECISION.
+  - **Aggregation** — 33 canonical primary records; CLOSED BY APPROVED SNAPSHOT/CUSTOM DECISION.
     - **Evidence** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
       - `CM.VCP.AGG.EVIDENCE_ORDER` — Concatenate retained evidence in authored membership order
         - Applicability: Any standard reducer succeeds.
@@ -2634,13 +2637,13 @@ Domain-reference counts are sets within each row and overlap across branches. Re
         - Authority: NORMATIVE_VCP; source spec/draft/aggregation.md:20-38.
         - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.LOGICAL. Domain `D.AGG.LOGICAL`. No test/proof coverage is claimed.
         - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Membership** — 8 canonical primary records; INCOMPLETE.
+    - **Membership** — 8 canonical primary records; CLOSED BY APPROVED SNAPSHOT/CUSTOM DECISION.
       - `CM.VCP.AGG.MEMBERS.COMPLETE` — Include that binding in aggregate_inputs.
         - Applicability: An Aggregate input binds a RESULT-role output.
         - Required/observable: Reject incomplete structural membership.. Forbidden: Do not silently omit declared Result binding.
         - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:127-140.
         - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.MEMBERSHIP. Domain `D.AGG.MEMBERSHIP`. No test/proof coverage is claimed.
-        - Review status: INCOMPLETE — Q.CUSTOM_AGG_EMPTY.
+        - Review status: CLOSED BY APPROVED SNAPSHOT/CUSTOM DECISION — Q.CUSTOM_AGG_EMPTY.
       - `CM.VCP.AGG.MEMBERS.ORDER` — aggregate_inputs is an authored ordered list.
         - Applicability: An Aggregate membership is declared.
         - Required/observable: Stable ordered membership input.. Forbidden: Do not derive order from predecessor edges or JSON object order.
@@ -2974,7 +2977,7 @@ Domain-reference counts are sets within each row and overlap across branches. Re
         - Authority: NORMATIVE_VCP; source spec/draft/conformance.md:10-14.
         - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.CONFORMANCE.SCOPE. Domain `D.CONFORMANCE.SCOPE`. No test/proof coverage is claimed.
         - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-  - **Dataflow** — 37 canonical primary records; INCOMPLETE.
+  - **Dataflow** — 37 canonical primary records; CLOSED BY APPROVED SNAPSHOT/CUSTOM DECISION.
     - **Availability** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
       - `CM.VCP.DATA.BOOKKEEPING` — Its declared Result port exposes the recorded Result only if that port schema accepts it
         - Applicability: A producer records ERROR or nonexecution.
@@ -3084,7 +3087,7 @@ Domain-reference counts are sets within each row and overlap across branches. Re
           - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:57-72.
           - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.OPERATION.IDENTITY. Domain `D.OPERATION.IDENTITY`. No test/proof coverage is claimed.
           - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-    - **Resolution** — 14 canonical primary records; INCOMPLETE.
+    - **Resolution** — 14 canonical primary records; CLOSED BY APPROVED SNAPSHOT/CUSTOM DECISION.
       - **INPUT** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
         - `CM.VCP.DATA.RESOLVE_OMIT.INPUT` — Exclude that key from invocation input object.
           - Applicability: Optional input has OMIT handling and unavailable/invalid source.
@@ -3092,7 +3095,7 @@ Domain-reference counts are sets within each row and overlap across branches. Re
           - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:107-118.
           - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.TYPED_AVAILABILITY. Domain `D.TYPED_AVAILABILITY`. No test/proof coverage is claimed.
           - Review status: COMPLETE FOR DECLARED RULE SCOPE.
-      - **PROVENANCE** — 3 canonical primary records; INCOMPLETE.
+      - **PROVENANCE** — 3 canonical primary records; CLOSED BY APPROVED SNAPSHOT/CUSTOM DECISION.
         - `CM.VCP.DATA.RESOLVE_AVAILABLE.PROVENANCE` — Record exact source identity, AVAILABLE status, exact value and used_default=false.
           - Applicability: Available schema-valid input consumed.
           - Required/observable: input_values equals exact authored/reconstructed source value.. Forbidden: No stale/unrelated source substitution.
@@ -3104,13 +3107,13 @@ Domain-reference counts are sets within each row and overlap across branches. Re
           - Required/observable: InputResolution explains why and what default was consumed.. Forbidden: Do not replace original status with AVAILABLE.
           - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:107-118.
           - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.TYPED_AVAILABILITY. Domain `D.TYPED_AVAILABILITY`. No test/proof coverage is claimed.
-          - Review status: INCOMPLETE — Q.AVAILABILITY_OVERLAP.
+          - Review status: CLOSED BY APPROVED SNAPSHOT/CUSTOM DECISION — Q.AVAILABILITY_OVERLAP.
         - `CM.VCP.DATA.RESOLVE_OMIT.PROVENANCE` — Retain original availability and source in resolution with no usable value and used_default=false.
           - Applicability: Optional input omitted.
           - Required/observable: InputResolution records omission.. Forbidden: Do not erase resolution or claim a consumed value.
           - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:107-118.
           - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.TYPED_AVAILABILITY. Domain `D.TYPED_AVAILABILITY`. No test/proof coverage is claimed.
-          - Review status: INCOMPLETE — Q.AVAILABILITY_OVERLAP.
+          - Review status: CLOSED BY APPROVED SNAPSHOT/CUSTOM DECISION — Q.AVAILABILITY_OVERLAP.
       - **SUBSTITUTE** — 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
         - `CM.VCP.DATA.RESOLVE_DEFAULT.SUBSTITUTE` — Use the authored validated Constant as the consumed value.
           - Applicability: Input has DEFAULT handling and original availability is not AVAILABLE.
@@ -3130,7 +3133,7 @@ Domain-reference counts are sets within each row and overlap across branches. Re
         - Required/observable: Complete resolution snapshot. Forbidden: Do not erase resolution evidence merely because lifecycle prevents invocation
         - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:107-118.
         - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.TYPED_AVAILABILITY. Domain `D.TYPED_AVAILABILITY`. No test/proof coverage is claimed.
-        - Review status: INCOMPLETE — Q.AVAILABILITY_OVERLAP.
+        - Review status: CLOSED BY APPROVED SNAPSHOT/CUSTOM DECISION — Q.AVAILABILITY_OVERLAP.
       - `CM.VCP.DATA.RESOLVE_BLOCK.DOWNSTREAM` — Execution edges themselves do not disable descendants; explicit bindings/guards determine downstream eligibility.
         - Applicability: Blocked predecessor settles terminal with typed declared outputs.
         - Required/observable: Downstream readiness and availability follow their own contracts.. Forbidden: Do not propagate nonexecution implicitly on dependency edges.
@@ -3160,7 +3163,7 @@ Domain-reference counts are sets within each row and overlap across branches. Re
         - Required/observable: Exact input resolution and assembled input omission.. Forbidden: Do not substitute stale/null/unrelated values.
         - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:107-118.
         - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.TYPED_AVAILABILITY. Domain `D.TYPED_AVAILABILITY`. No test/proof coverage is claimed.
-        - Review status: INCOMPLETE — Q.AVAILABILITY_OVERLAP.
+        - Review status: CLOSED BY APPROVED SNAPSHOT/CUSTOM DECISION — Q.AVAILABILITY_OVERLAP.
       - `CM.VCP.DATA.RESOLVE_BLOCK.RESULT` — Synthesized Result disposition is SKIPPED.
         - Applicability: Required BLOCK input unavailable/invalid; no higher-precedence lifecycle cause.
         - Required/observable: SKIPPED Result.. Forbidden: Do not synthesize FAIL or UNKNOWN.
@@ -4397,3 +4400,10 @@ Domain-reference counts are sets within each row and overlap across branches. Re
 | Q.BOOLEAN_ANNOTATION_REFERENCE | EXTERNAL_UNDEFINED_SCOPE_EXCLUSION | The previous Provider record overclaimed an object-or-Boolean universal restriction. Correct that record to the explicit object-target rule. Do not turn undefined Provider Boolean-annotation interpretation into a mandated accept, reject or error code. |
 
 See CANONICAL_AUDIT.md for source reconciliation and remaining questions; CANONICAL_MATH.md for complete domain predicates and equations. No tests, fixtures, frozen expectations or production/specification changes are part of this review.
+## Current decision and source reconciliation
+
+The preceding investigation narratives describe the earlier commit; this section supersedes their blocker/decision-needed verdicts. Custom [] is legal, capability schema controls input eligibility and custom implementation owns Result; standard reducers reject empty original/retained input. Snapshot availability is the ordered classifier in spec/draft/dataflow.md, with invoked CANCELLED/no accepted output -> OUTPUT_MISSING regardless of raw values. Declared bookkeeping Results precede lifecycle absence. No event-order provenance, extra state or scheduler barrier. Handlers retain original status/source/value/default and lifecycle reasons. Source hashes/citations and domain predicates are updated in JSONL and CANONICAL_MATH.md.
+
+Gate1: PASS targeted normative context and ownership reconciled. Gate2: PASS33 whole-root predicates unchanged; no new wire fields. Gate3: PASS snapshot-dependent domain has a total/disjoint proof over82 equivalence contexts and246 handler checks, with unbounded input scope explicit. Gate4: PASS baseline independent source-first audit retained, targeted normative changes independently classified and checked; no new whole-repository traversal or implementation proof claimed. Unrelated limitations and four static implementation discrepancies remain.
+
+Current normative-source aggregate SHA-256: 3c7694fc35900f93380bdf26ed345b54c51935c8f532a651c464d3144f3e9ad0. Earlier hash tables refer to the preserved pre-decision baseline; current exact per-source byte hashes are in SOURCE_CROSSWALK.jsonl.

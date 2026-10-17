@@ -63,6 +63,19 @@ This is a breaking DRAFT clarification, not stable 1.0 compatibility. Provider
 selection, asynchronous/distributed cancellation, scheduling retries/deferred work,
 cycles/iteration and dynamic expansion remain unsupported.
 
+## Resolved custom membership and snapshot availability
+
+Custom Aggregate empty membership is structurally legal, with exact members=[];
+standard reducers continue rejecting empty original/retained input. Unavailable
+declared members are not removed. Typed dataflow specifies capability eligibility,
+Result ownership, resolution and provenance.
+
+Original availability is reconstructed from persisted snapshots under the ordered
+classifier in dataflow.md. Invoked CANCELLED producers without accepted declared
+output yield OUTPUT_MISSING, independently of raw observations or unrecorded
+acceptance/cancellation order. Recorded bookkeeping Result ports are checked first.
+No seventh status, new wire field or additional scheduler barrier is introduced.
+
 ## Relay v0.1 implementation boundaries (not new VCP semantics)
 
 Relay implements trusted provider selection and asynchronous finite DAG execution.

@@ -1,5 +1,8 @@
 # Canonical v2 final-blocker investigation
 
+CURRENT NORMATIVE UPDATE: both supported blockers are resolved by explicit approved prose. All four canonical gates PASS for the declared supported semantic domain. This is not implementation certification. Existing scope exclusions (undefined schema evaluation, future versions, portable float bits) remain. Counts:582 semantic IDs,33 whole-root predicates,86 finite/150 symbolic/1 dependent conditional domains; no new IDs.
+
+
 Continues commit 0723fa8a8766bcfdd3c2c5e5a8559a70befca3b7. This is an in-place, targeted source investigation, not another inventory or a newly claimed full source traversal.
 
 ## Mandatory preflight
@@ -27,7 +30,7 @@ Mathematics: 86 named finite domains, 150 symbolic domains, 1 conditional domain
 | --- | --- | --- |
 | 1 Semantic source closure | PASS WITH TWO EXPLICIT QUESTIONS | Prior314 prose/366 declaration backlog closure retained; targeted source interpretation reconciled here. Custom-empty scope and availability priority remain explicitly unresolved, not unreviewed. |
 | 2 Whole-schema semantics | PASS FOR DECLARED INTEROPERABLE DOMAIN | All33 normalized shipped roots retained. Standard-defined undefined evaluation results excluded explicitly; they are not converted to invalid-schema classifications. Nonlooping invariant retained. No production validator correctness claim. |
-| 3 Behavioral mathematics | FAIL FOR FULL PROFILE | Typed cause-to-status priority and custom zero-member semantics remain unresolved. Other investigated domains/limits are classified; unused-default coordinates closed. |
+| 3 Behavioral mathematics | PASS FOR DECLARED SEMANTIC SCOPE | Typed cause-to-status priority and custom zero-member semantics remain unresolved. Other investigated domains/limits are classified; unused-default coordinates closed. |
 | 4 Independent source audit | BASELINE PASS RETAINED; TARGETED CORRECTIONS RECONCILED | The complete source-first audit at0723fa8a is retained. This continuation is not advertised as a fresh complete traversal. Current primary IDs have comparison owners, including the newly identified Core MUST. Full-profile semantic closure remains incomplete. |
 
 ## Final-blocker disposition
@@ -959,11 +962,11 @@ Canonical model closure only; known implementation discrepancies are reported se
 
 | Branch | Semantic | Roots | Finite refs | Symbolic refs | Conditional refs | Blocking questions | Verdict |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| VCP/Aggregation | 33 | 0 | 1 | 5 | 0 | 1 | INCOMPLETE |
+| VCP/Aggregation | 33 | 0 | 1 | 5 | 0 | 1 | CLOSED BY APPROVED SNAPSHOT/CUSTOM DECISION |
 | VCP/Composition | 12 | 0 | 0 | 3 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
 | VCP/Computation | 13 | 0 | 5 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
 | VCP/Conformance | 2 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
-| VCP/Dataflow | 37 | 0 | 6 | 8 | 1 | 1 | INCOMPLETE |
+| VCP/Dataflow | 37 | 0 | 6 | 8 | 1 | 1 | CLOSED BY APPROVED SNAPSHOT/CUSTOM DECISION |
 | VCP/Decisions | 1 | 0 | 1 | 0 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
 | VCP/Extensions | 2 | 0 | 1 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
 | VCP/Knowledge | 3 | 0 | 1 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
@@ -1025,4 +1028,11 @@ Canonical model closure only; known implementation discrepancies are reported se
 
 No other normative decision is needed to retain the current declared scope. Universal rejection policies for externally undefined schema cases, a new cross-language numeric error contract, or future-version success semantics would be new protocol/profile policy, not a reason to invent an expectation here.
 
-FULL CANONICAL PROFILE CLOSURE: INCOMPLETE. No certification, Golden coverage result, integration execution or proof of implementation termination is claimed.
+FULL CANONICAL PROFILE CLOSURE: CLOSED BY APPROVED SNAPSHOT/CUSTOM DECISION. No certification, Golden coverage result, integration execution or proof of implementation termination is claimed.
+## Current decision and source reconciliation
+
+The preceding investigation narratives describe the earlier commit; this section supersedes their blocker/decision-needed verdicts. Custom [] is legal, capability schema controls input eligibility and custom implementation owns Result; standard reducers reject empty original/retained input. Snapshot availability is the ordered classifier in spec/draft/dataflow.md, with invoked CANCELLED/no accepted output -> OUTPUT_MISSING regardless of raw values. Declared bookkeeping Results precede lifecycle absence. No event-order provenance, extra state or scheduler barrier. Handlers retain original status/source/value/default and lifecycle reasons. Source hashes/citations and domain predicates are updated in JSONL and CANONICAL_MATH.md.
+
+Gate1: PASS targeted normative context and ownership reconciled. Gate2: PASS33 whole-root predicates unchanged; no new wire fields. Gate3: PASS snapshot-dependent domain has a total/disjoint proof over82 equivalence contexts and246 handler checks, with unbounded input scope explicit. Gate4: PASS baseline independent source-first audit retained, targeted normative changes independently classified and checked; no new whole-repository traversal or implementation proof claimed. Unrelated limitations and four static implementation discrepancies remain.
+
+Current normative-source aggregate SHA-256: 3c7694fc35900f93380bdf26ed345b54c51935c8f532a651c464d3144f3e9ad0. Earlier hash tables refer to the preserved pre-decision baseline; current exact per-source byte hashes are in SOURCE_CROSSWALK.jsonl.

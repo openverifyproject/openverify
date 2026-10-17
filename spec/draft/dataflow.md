@@ -117,6 +117,67 @@ unrelated producer is a fallback. Every declared input has a resolution snapshot
 even when execution is disabled. Nonexecution because of guards/control/admission
 is distinguished from blocked input by the node record's reason.
 
+### Original availability from the resolution snapshot
+
+Original availability MUST be a deterministic function of the persisted definition,
+effective run inputs, and preceding finalized producer records at the exact input
+resolution snapshot. It MUST NOT depend on unrecorded rejection/cancellation order.
+These rules classify availability, not the producer's lifecycle or error code.
+
+Invalid declarations, absent required bindings, unknown source identities,
+nonancestor upstream bindings, and malformed/inconsistent records are rejected
+by their existing validation rules; they are not extra availability states.
+Unavailable source values do not become JSON null implicitly.
+
+Apply the following disjoint, ordered branches:
+
+1. For a non-upstream source, an optional unbound input or an omitted optional
+   effective run input is ABSENT. Otherwise CONSTANT, RUN_INPUT and
+   EXTERNAL_REFERENCE supply their exact authored/effective value. If that value
+   fails the applicable target schema it is INVALID; otherwise it is AVAILABLE.
+   Constant/reference/static failures and invalid occurrence run inputs still
+   reject before invocation under the existing preflight rules.
+2. For the declared RESULT port of EVALUATE or AGGREGATE, use the recorded
+   semantic/bookkeeping Result, including ERROR, nonexecution and cancellation.
+   If its declared producer port schema or the consumer input schema rejects it,
+   classify INVALID; otherwise AVAILABLE. This branch precedes lifecycle-based
+   absence rules. Bookkeeping Results of DERIVE/CONTROL are not declared outputs.
+3. For any other accepted declared output in the persisted information/Decision
+   snapshot, classify AVAILABLE if the applicable producer/consumer schemas accept
+   it, otherwise INVALID. Raw observations are never accepted output snapshots.
+4. With no such output, a producer recorded as NONEXECUTED never started its
+   computation: classify PRODUCER_NOT_EXECUTED. This is an unstarted lifecycle,
+   not the CANCELLED state of an interrupted attempt.
+5. With no such output, an invoked producer whose terminal state is CANCELLED is
+   OUTPUT_MISSING, regardless of retained raw observations or apparent raw schema
+   validity. Preserve CANCELLED and CANCELLATION in its lifecycle/diagnostics;
+   losing output observations cannot change availability or publish information.
+6. For an ERROR producer with a recorded completed output attempt (an observation
+   without an execution error), reconstruct its failed output acceptance from the
+   declared outputs, schemas/semantic invariants and any recorded host
+   provider_output_error. If acceptance rejected that output attempt, a present
+   candidate for the requested port is INVALID; an explicitly omitted declared
+   port is OUTPUT_MISSING. Atomic rejection does not publish other raw candidates.
+   A valid executed ERROR Result is an execution-error report, not an output
+   acceptance rejection; its accompanying unpublished information falls through.
+7. Any remaining producer terminated ERROR without the preceding recorded
+   rejected/missing output cause is PRODUCER_ERROR. This includes raised or
+   reported execution errors with no accepted requested output.
+8. Any other finalized producer with no accepted declared output is OUTPUT_MISSING.
+
+The first applicable branch is the original status. A failed producer schema
+check does not additionally evaluate an absent/irrelevant consumer value.
+Classification requires no new terminal state, acceptance-event log, scheduler
+barrier, or seventh status. The CANCELLED branch deliberately ignores raw
+observations even if their values would fail a schema.
+
+Handlers apply only after classification and MUST preserve the original status
+and source. AVAILABLE consumes the exact validated value with used_default=false.
+For any other status, BLOCK does not invoke the node and retains no usable value;
+OMIT omits the input key with used_default=false; DEFAULT consumes the exact
+validated Constant (including null) with used_default=true. These effects do not
+replace stronger lifecycle nonexecution causes or their diagnostic reasons.
+
 Guards are equality over `{source: ValueSource, pointer: JSON Pointer, value: JSON}`.
 Empty pointer compares the complete value. Upstream sources MUST be ancestors of
 the consumer. Sources and statically known operands MUST be validated. Invalid
@@ -138,6 +199,17 @@ Every Aggregate also MUST declare required `members` input bound to a CONSTANT
 equal to aggregate_inputs. This supplies the authored ordering in the exact input
 object received by custom implementations; JSON object member order is irrelevant.
 The reserved semantic names subject, criterion and members cannot be member names.
+
+For a custom Aggregate capability, an explicitly empty aggregate_inputs is
+structurally legal. Its required Constant-bound members input is exactly [].
+The capability receives that exact ordered empty list, with subject/criterion and
+any other declared resolved inputs; its declared input schema controls invocation
+eligibility and its implementation determines the Result. VCP invents no PASS,
+FAIL, score or empty-input error for custom aggregation. Standard reducers still
+reject empty original or retained input. A declared member that is unavailable
+remains declared and follows BLOCK resolution; it MUST NOT silently disappear or
+be reinterpreted as an intentionally empty membership declaration. All normal
+binding, semantic input, output acceptance and provenance rules still apply.
 
 Execution policies that consume information MUST use the same typed declarations
 and ValueSource bindings (run/constants/external only, before graph execution).
