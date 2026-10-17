@@ -1,1778 +1,4391 @@
-# Canonical contract model v2 — INCOMPLETE
+# Canonical contract model v2
 
-This review preserves useful provisional IDs while separating atomic behavior, whole-root structural predicates, overlapping schema components and operation summaries. It is not a complete canonical inventory or certification.
+Continued from cdad9bad6ca6e5201fbda48dd5b85d58736e3731. This directory is the existing review, updated in place. The earlier canonical-review artifacts remain historical provisional inputs and were not edited.
 
-Source text → proposition → preconditions/domain → required/forbidden behavior and observable effect → mathematical classification → independent audit. A position, keyword, signature, hash or passing test cannot establish an obligation.
+Source inventory and second source-first traversal are reconciled. Full semantic closure remains INCOMPLETE in the explicitly listed question subspaces. This is a contract model, not implementation certification or test coverage.
 
-## Counts and authority
+The model counts 581 semantic propositions and 33 complete root structural predicates separately. The 724 local schema components are parameterized parts of those roots, not additional independent semantic requirements. 74 groups and 12 aliases preserve retired/split IDs without increasing the denominator.
 
-| Layer | Atomic propositions defined | Whole-root structural requirements | Operation summaries pending atomic closure | Inherited provisional semantic records | Overlapping schema components | Status |
-| --- | --- | --- | --- | --- | --- | --- |
-| VCP | 71 | 24 | 0 | 119 | 539 | INCOMPLETE |
-| PROVIDER | 11 | 9 | 0 | 60 | 185 | INCOMPLETE |
-| RELAY | 22 | 0 | 38 | 65 | 0 | INCOMPLETE |
-| SHARED | 0 | 0 | 26 | 2 | 0 | INCOMPLETE |
+Source meaning has three authorities: portable VCP, portable Provider Contract and the documented local Relay profile. Public SDK behavior is a separate implementation contract. Examples, aliases, annotations, unsupported features and open questions are classified without becoming requirements by default.
+
+The data path is explicit: run inputs/constants/external references or ancestor outputs -> declared input bindings -> typed availability and handling -> exact invocation input/config -> Provider Outcome/observations -> VCP port and semantic acceptance -> immutable occurrence provenance. Execution edges impose readiness; they carry no values. Guards gate eligibility; Control changes verification reachability; ordered aggregate membership is independently authored.
+
+Each counted proposition is an applicability-qualified relation or independently accountable effect. A public operation may have a structured output relation; distinct observable lifecycle effects were split, including BLOCK noninvocation/state/reason/resolution/provenance. A schema root is one complete Boolean predicate with individually addressable components. Neither source positions nor callable names become one required obligation by default.
+
+Related finite projection counts are not leaf-validity counts. A leaf's full value/record/trace relation can be unbounded; its exact argument classes, predicate and semantic partitions are in JSONL and its named domain. The 44 explicit leaf quotients additionally show their own C/V/I/N. No overlapping projection totals are summed.
 
 
-JSONL contains 1171 records, not 1171 independent atomic requirements. 724 local schema IDs are components of 33 whole-root predicates. Defined atomic propositions still require source-completeness/applicability audit; their count is not a final total.
+## Layer counts
 
-Portable VCP, portable Provider Contract, conditional reference-engine profile, documented Relay profile and public SDK remain distinct authorities. Older Golden tests/inventories/fixtures/blueprints/frozen expectations were not inputs. The four expressly authorized canonical-review files are preserved provisional inputs, not oracles.
+| Layer | Semantic propositions | Whole-root predicates | Canonical primary records |
+| --- | --- | --- | --- |
+| VCP | 242 | 24 | 266 |
+| PROVIDER | 106 | 9 | 115 |
+| RELAY | 161 | 0 | 161 |
+| SHARED | 72 | 0 | 72 |
 
-## Hierarchical contract picture
+## Branch closure
 
-VCP owns meaning/wire/computation/dataflow/composition/aggregation/policies/lifecycle/resources/provenance. Provider owns compatibility/manifests/invocation/events/outcomes/cancellation/deadlines/transport. Relay owns its documented scheduler/ports/hosts/standard capabilities. Shared holds cross-layer JSON semantics and local SDK operations without merging authorities.
+Domain-reference counts are sets within each row and overlap across branches. Requirement counts roll up by unique canonical ID. INCOMPLETE means an explicit blocked input/scope remains; it does not mean an unreviewed source paragraph.
 
-Every leaf and ancestor remains INCOMPLETE because semantic source closure and the independent traversal are incomplete. Counts below describe authored content; no missing requirement count can be inferred from source-unit count.
+| Branch | Semantic | Roots | Finite domains | Symbolic domains | Conditional domains | Blocking questions | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| VCP/Aggregation | 33 | 0 | 1 | 5 | 0 | 1 | INCOMPLETE |
+| VCP/Composition | 12 | 0 | 0 | 3 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
+| VCP/Computation | 13 | 0 | 5 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
+| VCP/Conformance | 2 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
+| VCP/Dataflow | 37 | 0 | 5 | 8 | 2 | 2 | INCOMPLETE |
+| VCP/Decisions | 1 | 0 | 1 | 0 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
+| VCP/Extensions | 2 | 0 | 1 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
+| VCP/Knowledge | 3 | 0 | 1 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
+| VCP/Lifecycle | 22 | 0 | 3 | 2 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
+| VCP/Meaning | 6 | 0 | 1 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
+| VCP/Policies | 22 | 0 | 4 | 2 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
+| VCP/Profiles | 1 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
+| VCP/Provenance | 28 | 0 | 0 | 2 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
+| VCP/Provider binding | 12 | 0 | 0 | 2 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
+| VCP/Resources | 5 | 0 | 0 | 1 | 0 | 1 | INCOMPLETE |
+| VCP/Result | 1 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
+| VCP/Results | 30 | 0 | 3 | 2 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
+| VCP/Schemas | 3 | 0 | 0 | 1 | 0 | 1 | INCOMPLETE |
+| VCP/Wire roots | 0 | 24 | 0 | 24 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
+| VCP/Wire semantics | 9 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
+| PROVIDER/Capabilities | 1 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
+| PROVIDER/Compatibility | 10 | 0 | 0 | 2 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
+| PROVIDER/Control | 18 | 0 | 1 | 2 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
+| PROVIDER/Discovery | 4 | 0 | 0 | 2 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
+| PROVIDER/Errors | 12 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
+| PROVIDER/Events | 1 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
+| PROVIDER/Extensions | 3 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
+| PROVIDER/Invocation | 6 | 0 | 1 | 2 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
+| PROVIDER/Lifecycle | 5 | 0 | 1 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
+| PROVIDER/Meaning | 1 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
+| PROVIDER/Resources | 7 | 0 | 1 | 2 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
+| PROVIDER/Schemas | 4 | 0 | 0 | 1 | 0 | 2 | INCOMPLETE |
+| PROVIDER/Streaming | 11 | 0 | 2 | 2 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
+| PROVIDER/Transport | 21 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
+| PROVIDER/Wire | 2 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
+| PROVIDER/Wire roots | 0 | 9 | 0 | 9 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
+| RELAY/Architecture | 1 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
+| RELAY/Binding | 4 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
+| RELAY/Binding and execution | 1 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
+| RELAY/Cancellation | 2 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
+| RELAY/Discovery | 3 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
+| RELAY/Entrypoints | 17 | 0 | 1 | 2 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
+| RELAY/Execution | 3 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
+| RELAY/Extension ports | 7 | 0 | 0 | 3 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
+| RELAY/Invocation callbacks | 1 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
+| RELAY/Observability | 1 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
+| RELAY/Policies | 2 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
+| RELAY/Preparation | 2 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
+| RELAY/Process execution | 2 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
+| RELAY/Providers | 1 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
+| RELAY/Public API | 9 | 0 | 0 | 1 | 0 | 1 | INCOMPLETE |
+| RELAY/Public SDK | 48 | 0 | 0 | 21 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
+| RELAY/Records | 6 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
+| RELAY/Scheduler | 5 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
+| RELAY/Standard providers | 42 | 0 | 0 | 19 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
+| RELAY/Transport | 4 | 0 | 0 | 1 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
+| SHARED/JSON value and schema semantics | 2 | 0 | 0 | 2 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
+| SHARED/Public SDK | 70 | 0 | 2 | 40 | 0 | 0 | COMPLETE FOR DECLARED RULE SCOPE |
 
-- **PROVIDER — INCOMPLETE**: 11 atomic; 9 whole-root; 185 components; 2 finite / 12 symbolic / 0 conditional domain refs, distinct within this branch only.
-  - **Compatibility — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-    - **Initialization — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.PROVIDER.INIT.SELECT [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Select first runner contract version supported by provider; this draft selects only 0.1 Domain: D.PROVIDER.INITIALIZATION. Source: provider-contract/spec/draft/versioning.md:6-14.
-      - CM.PROVIDER.INIT.VERIFY [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Recompute first common selection against returned manifest Domain: D.PROVIDER.INITIALIZATION. Source: provider-contract/spec/draft/versioning.md:6-14.
-    - **Matching — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.PROVIDER.COMPAT.CAPABILITY [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Exact advertised pair and negotiated contract version Domain: None. Source: provider-contract/spec/draft/versioning.md:16-20.
-    - **VCP — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.PROVIDER.COMPAT.CAPABILITY_VCP [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Declared vcp_version belongs to manifest supported_vcp_versions; specification declares it when schemas/events contain VCP Domain: None. Source: provider-contract/spec/draft/capabilities.md:47-51.
-      - CM.PROVIDER.COMPAT.REVISION [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Use the same specification/schema revision and capability specification Domain: None. Source: provider-contract/spec/draft/versioning.md:30-34.
-      - CM.PROVIDER.COMPAT.VCP_FIELDS [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Invocation declares available draft VCP interchange Domain: None. Source: provider-contract/spec/draft/versioning.md:22-28.
-      - CM.PROVIDER.COMPAT.VCP_INTERSECTION [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: It belongs to session VCP intersection and equals capability vcp_version when declared Domain: None. Source: provider-contract/spec/draft/versioning.md:16-20.
-  - **Control — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 1 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-    - **Cancellation — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 1 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.PROVIDER.CANCEL.CAUSE [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: A runner cancel request caused termination Domain: D.PROVIDER.CANCEL. Source: provider-contract/spec/draft/lifecycle.md:20-27.
-      - CM.PROVIDER.CANCEL.RUNNING [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Request cooperative termination; repeat requests legal; remain running until Outcome Domain: D.PROVIDER.CANCEL. Source: provider-contract/spec/draft/lifecycle.md:20-27.
-      - CM.PROVIDER.CANCEL.TERMINAL [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Acknowledge as no-op even without running-cancel support Domain: D.PROVIDER.CANCEL. Source: provider-contract/spec/draft/lifecycle.md:20-27.
-      - CM.PROVIDER.CANCEL.UNKNOWN [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Reject without inventing a running attempt Domain: D.PROVIDER.CANCEL. Source: provider-contract/spec/draft/lifecycle.md:20-27.
-    - **Deadlines — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.PROVIDER.DEADLINE.ACCEPT [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Accept and end DEADLINE_EXCEEDED without starting work Domain: D.PROVIDER.DEADLINE. Source: provider-contract/spec/draft/lifecycle.md:29-39.
-      - CM.PROVIDER.DEADLINE.ACTIVE [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Monitor/stop work and commit DEADLINE_EXCEEDED; no COMPLETED at/after deadline Domain: D.PROVIDER.DEADLINE. Source: provider-contract/spec/draft/lifecycle.md:29-39.
-      - CM.PROVIDER.DEADLINE.IRREVERSIBLE [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Attempt remains ended despite clock rollback Domain: D.PROVIDER.DEADLINE. Source: provider-contract/spec/draft/lifecycle.md:41-45.
-      - CM.PROVIDER.DEADLINE.PRECISION [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Preserve decimal fractional precision; years 0001-9999, seconds 00-59 Domain: D.PROVIDER.DEADLINE. Source: provider-contract/spec/draft/lifecycle.md:41-45.
-    - **Eligibility — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.PROVIDER.FEATURE.CANCEL [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Reject running cancellation without ending invocation Domain: None. Source: provider-contract/spec/draft/capabilities.md:37-45.
-      - CM.PROVIDER.FEATURE.DEADLINE [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Capability supports and can enforce deadline semantics Domain: None. Source: provider-contract/spec/draft/capabilities.md:37-45.
-  - **Discovery — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-    - **Identifiers — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.PROVIDER.NAMESPACE.OWNERSHIP [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Publisher controls reverse-label domain prefix and publishes capability specification Domain: None. Source: provider-contract/spec/draft/capabilities.md:24-35.
-      - CM.PROVIDER.NAMESPACE.SYNTAX [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Lowercase ASCII dot segments; third parties have at least three segments; openverify namespace reserved Domain: None. Source: provider-contract/spec/draft/capabilities.md:24-35.
-    - **Manifest — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.PROVIDER.MANIFEST.CAPABILITY_IDENTITY [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Each capability ID/version pair is unique; multiple exact versions of one ID are allowed Domain: None. Source: provider-contract/spec/draft/capabilities.md:9-22.
-      - CM.PROVIDER.MANIFEST.SNAPSHOT [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Keep manifest fixed throughout that initialized session Domain: None. Source: provider-contract/spec/draft/capabilities.md:3-7.
-  - **Errors — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-    - **Codes — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.PROVIDER.ERROR.CLASSIFY [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Programmatic classification uses stable code; provider failures use namespaced codes outside reserved set Domain: None. Source: provider-contract/spec/draft/errors.md:3-4, provider-contract/spec/draft/errors.md:17-20.
-    - **Peer validation — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.PROVIDER.ERROR.NO_REWRITE [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Report peer validation failure separately Domain: None. Source: provider-contract/spec/draft/errors.md:29-33.
-    - **Precedence — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.PROVIDER.ERROR.PRECEDENCE [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: SHOULD use stated JSON/structure/version through provider-output order; correlation/lifecycle before body decoding in correlation cases Domain: None. Source: provider-contract/spec/draft/errors.md:23-27.
-    - **Reserved code — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - **CAPABILITY_UNAVAILABLE — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.ERROR.CAPABILITY_UNAVAILABLE [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Use CAPABILITY_UNAVAILABLE for this declared category; retain diagnostic message/details without classifying from them. Domain: None. Source: provider-contract/spec/draft/errors.md:9-9.
-      - **CAPABILITY_VERSION_UNSUPPORTED — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.ERROR.CAPABILITY_VERSION_UNSUPPORTED [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Use CAPABILITY_VERSION_UNSUPPORTED for this declared category; retain diagnostic message/details without classifying from them. Domain: None. Source: provider-contract/spec/draft/errors.md:10-10.
-      - **CONTRACT_VERSION_UNSUPPORTED — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.ERROR.CONTRACT_VERSION_UNSUPPORTED [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Use CONTRACT_VERSION_UNSUPPORTED for this declared category; retain diagnostic message/details without classifying from them. Domain: None. Source: provider-contract/spec/draft/errors.md:8-8.
-      - **INVALID_CONFIG — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.ERROR.INVALID_CONFIG [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Use INVALID_CONFIG for this declared category; retain diagnostic message/details without classifying from them. Domain: None. Source: provider-contract/spec/draft/errors.md:12-12.
-      - **INVALID_INPUT — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.ERROR.INVALID_INPUT [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Use INVALID_INPUT for this declared category; retain diagnostic message/details without classifying from them. Domain: None. Source: provider-contract/spec/draft/errors.md:13-13.
-      - **INVALID_INVOCATION — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.ERROR.INVALID_INVOCATION [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Use INVALID_INVOCATION for this declared category; retain diagnostic message/details without classifying from them. Domain: None. Source: provider-contract/spec/draft/errors.md:11-11.
-      - **INVALID_PROVIDER_OUTPUT — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.ERROR.INVALID_PROVIDER_OUTPUT [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Use INVALID_PROVIDER_OUTPUT for this declared category; retain diagnostic message/details without classifying from them. Domain: None. Source: provider-contract/spec/draft/errors.md:14-14.
-      - **PROTOCOL_VIOLATION — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.ERROR.PROTOCOL_VIOLATION [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Use PROTOCOL_VIOLATION for this declared category; retain diagnostic message/details without classifying from them. Domain: None. Source: provider-contract/spec/draft/errors.md:15-15.
-  - **Extensions — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-    - **Optional maps — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.PROVIDER.EXT.ROUNDTRIP [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Preserve JSON type/value through parse/serialize Domain: None. Source: provider-contract/spec/draft/wire-format.md:57-65.
-    - **Scope — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.PROVIDER.EXT.MANDATORY [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Reject operation as PROTOCOL_VIOLATION Domain: None. Source: provider-contract/spec/draft/wire-format.md:57-65.
-  - **Invocation — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 1 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-    - **Acceptance — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.PROVIDER.INVOKE.VALIDATE [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Validate exact input and config against advertised schemas before acceptance Domain: None. Source: provider-contract/spec/draft/wire-format.md:24-33.
-    - **Identity — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.PROVIDER.WIRE.ATTEMPT_ID [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Nonempty case-sensitive identity is never reused, including rejected attempts Domain: None. Source: provider-contract/spec/draft/wire-format.md:19-22.
-    - **Outcome — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 1 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.PROVIDER.LIFE.OUTPUT [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Validate output against advertised output_schema Domain: D.PROVIDER.ATTEMPT_ACTION. Source: provider-contract/spec/draft/lifecycle.md:10-18.
-  - **Lifecycle — INCOMPLETE**: 3 atomic; 0 whole-root; 0 components; 1 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-    - **Attempts — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 1 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.PROVIDER.LIFE.TERMINAL [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Exactly one terminal Outcome; zero events permitted Domain: D.PROVIDER.ATTEMPT_ACTION. Source: provider-contract/spec/draft/lifecycle.md:10-18, provider-contract/spec/draft/overview.md:8-9.
-    - **Session — INCOMPLETE**: 3 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.PROVIDER.INIT.ONCE.FAIL_CLOSE [ATOMIC_PROPOSITION_DEFINED]: Close session and begin no work. Domain: D.PROVIDER.INITIALIZATION. Source: provider-contract/spec/draft/versioning.md:6-14.
-      - CM.PROVIDER.INIT.ONCE.ONCE [ATOMIC_PROPOSITION_DEFINED]: No second initialization succeeds; repeated initialization is PROTOCOL_VIOLATION. Domain: D.PROVIDER.INITIALIZATION. Source: provider-contract/spec/draft/versioning.md:6-14.
-      - CM.PROVIDER.INIT.ONCE.PREWORK [ATOMIC_PROPOSITION_DEFINED]: No capability work begins. Domain: D.PROVIDER.INITIALIZATION. Source: provider-contract/spec/draft/versioning.md:6-14.
-  - **Meaning — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-    - **VCP separation — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.PROVIDER.SEMANTIC_BOUNDARY [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Provider completion/error controls operation lifecycle only; VCP owns Subject/Criterion/judgment/control/provenance Domain: None. Source: provider-contract/spec/draft/overview.md:11-15, provider-contract/spec/draft/errors.md:17-20.
-  - **Resources — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-    - **Budget — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.PROVIDER.BUDGET.ENFORCE [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Reject before acceptance if unenforceable; if enforced limit prevents completion, ERROR with provider-namespaced code Domain: None. Source: provider-contract/spec/draft/wire-format.md:24-33.
-      - CM.PROVIDER.BUDGET.EXACT [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Every dimension is an EXACT upper consumption limit in its explicit unit Domain: None. Source: provider-contract/spec/draft/wire-format.md:24-33.
-    - **Eligibility — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.PROVIDER.FEATURE.RESOURCE [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: No resource_usage event or final usage Domain: None. Source: provider-contract/spec/draft/capabilities.md:37-45.
-    - **Usage — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.PROVIDER.USAGE.FINAL [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Final usage is authoritative; intermediate vectors are snapshots, possibly partial Domain: None. Source: provider-contract/spec/draft/lifecycle.md:56-59.
-  - **Schemas — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-    - **Capability schemas — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.PROVIDER.SCHEMA.REFERENCES [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Only local root JSON Pointers resolving to actual schema positions; root ID allowed Domain: None. Source: provider-contract/spec/draft/capabilities.md:9-22.
-      - CM.PROVIDER.SCHEMA.VALIDITY [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Each is a valid self-contained Draft 2020-12 object/boolean schema Domain: None. Source: provider-contract/spec/draft/capabilities.md:9-22.
-  - **Streaming — INCOMPLETE**: 8 atomic; 0 whole-root; 0 components; 1 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-    - **Concurrency — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 1 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.PROVIDER.LIFE.INTERLEAVING [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Per-attempt event order holds while different attempts may interleave Domain: D.PROVIDER.ATTEMPT_ACTION. Source: provider-contract/spec/draft/lifecycle.md:10-18.
-    - **Correlation — INCOMPLETE**: 3 atomic; 0 whole-root; 0 components; 1 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.PROVIDER.LIFE.CORRELATION.AFTER_TERMINAL [ATOMIC_PROPOSITION_DEFINED]: Reject event after terminal. Domain: D.PROVIDER.ATTEMPT_ACTION. Source: provider-contract/spec/draft/lifecycle.md:10-18.
-      - CM.PROVIDER.LIFE.CORRELATION.DUPLICATE_OUTCOME [ATOMIC_PROPOSITION_DEFINED]: Reject duplicate Outcome. Domain: D.PROVIDER.ATTEMPT_ACTION. Source: provider-contract/spec/draft/lifecycle.md:10-18.
-      - CM.PROVIDER.LIFE.CORRELATION.UNKNOWN [ATOMIC_PROPOSITION_DEFINED]: Reject correlation. Domain: D.PROVIDER.ATTEMPT_ACTION. Source: provider-contract/spec/draft/lifecycle.md:10-18.
-    - **Eligibility — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.PROVIDER.FEATURE.STREAM [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: No events may be emitted Domain: None. Source: provider-contract/spec/draft/capabilities.md:37-45.
-    - **Ordering — INCOMPLETE**: 5 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.PROVIDER.LIFE.SEQUENCE.DUPLICATE [ATOMIC_PROPOSITION_DEFINED]: Reject duplicate sequence. Domain: D.EVENT.SEQUENCE. Source: provider-contract/spec/draft/lifecycle.md:10-18.
-      - CM.PROVIDER.LIFE.SEQUENCE.FIRST [ATOMIC_PROPOSITION_DEFINED]: sequence equals 1. Domain: D.EVENT.SEQUENCE. Source: provider-contract/spec/draft/lifecycle.md:10-18.
-      - CM.PROVIDER.LIFE.SEQUENCE.GAPS [ATOMIC_PROPOSITION_DEFINED]: Accept the sequence gap as legal. Domain: D.EVENT.SEQUENCE. Source: provider-contract/spec/draft/lifecycle.md:10-18.
-      - CM.PROVIDER.LIFE.SEQUENCE.INCREASE [ATOMIC_PROPOSITION_DEFINED]: sequence q is strictly greater than p. Domain: D.EVENT.SEQUENCE. Source: provider-contract/spec/draft/lifecycle.md:10-18.
-      - CM.PROVIDER.LIFE.SEQUENCE.REORDER [ATOMIC_PROPOSITION_DEFINED]: Reject reordered event. Domain: D.EVENT.SEQUENCE. Source: provider-contract/spec/draft/lifecycle.md:10-18.
-    - **Payloads — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.PROVIDER.EVENT.PAYLOAD [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: progress/diagnostic arbitrary JSON; evidence VCP Evidence; artifact VCP ArtifactRef; resource_usage VCP ResourceVector; extension namespaced namespace plus data Domain: None. Source: provider-contract/spec/draft/wire-format.md:35-35.
-  - **Transport — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-    - **Channels — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.PROVIDER.STDIO.CHANNELS [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: stdout contains frames only; logs use stderr Domain: None. Source: provider-contract/spec/draft/transports.md:8-20.
-    - **Errors — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.PROVIDER.RPC.ERROR_CHANNEL [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Before acceptance use JSON-RPC error; after acceptance execution failures are Outcome in successful result Domain: None. Source: provider-contract/spec/draft/transports.md:33-41.
-      - CM.PROVIDER.RPC.RESERVED_ERRORS [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Use -32700 parse, -32600 invalid request, -32601 unknown method, -32602 params, -32603 internal RPC; -32000 contract rejection with ProviderError data Domain: None. Source: provider-contract/spec/draft/transports.md:48-55.
-    - **Framing — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.PROVIDER.STDIO.FRAME [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: ASCII Content-Length: N CRLF CRLF then exactly N positive UTF-8 JSON-object bytes Domain: None. Source: provider-contract/spec/draft/transports.md:8-20.
-      - CM.PROVIDER.STDIO.RECEIVE [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Accept case-insensitive Content-Length with one space, CRLF, single header; handle partial and coalesced reads Domain: None. Source: provider-contract/spec/draft/transports.md:8-20.
-    - **Loss — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.PROVIDER.LOSS.SEPARATE [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Report transport failure separately Domain: None. Source: provider-contract/spec/draft/lifecycle.md:61-64.
-    - **Methods — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.PROVIDER.RPC.CANCEL_ACK [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Return null acknowledgement; it may precede/follow invoke Outcome Domain: None. Source: provider-contract/spec/draft/transports.md:43-46.
-      - CM.PROVIDER.RPC.METHODS [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Runner requests initialize/invoke/cancel; provider sends event notification; object params, no batches, unique nonempty string RPC IDs Domain: None. Source: provider-contract/spec/draft/transports.md:22-24.
-    - **Ordering — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.PROVIDER.RPC.ACCEPT_ORDER [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Validate accept/reject invoke in receive order before handling later cancel; continue reading controls while pending Domain: None. Source: provider-contract/spec/draft/transports.md:33-41.
-      - CM.PROVIDER.RPC.EVENT_BEFORE_RESULT [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Write its events before terminal invoke response Domain: None. Source: provider-contract/spec/draft/transports.md:33-41.
-  - **Wire — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-    - **Numbers — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.PROVIDER.WIRE.NUMBERS [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Integral numeric notation counts as integer; preserve faithful JSON mathematical value Domain: None. Source: provider-contract/spec/draft/wire-format.md:12-17.
-    - **Optional fields — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.PROVIDER.WIRE.NULL [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Optional typed core fields are absent rather than null, except arbitrary JSON value payloads where null is data Domain: None. Source: provider-contract/spec/draft/wire-format.md:3-10.
-  - **Wire roots — INCOMPLETE**: 0 atomic; 9 whole-root; 0 components; 0 finite / 9 symbolic / 0 conditional domain refs, distinct within this branch only.
-    - **cancel-request — INCOMPLETE**: 0 atomic; 1 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.PROVIDER.ROOT.CANCEL_REQUEST [ROOT_PREDICATE_RECONSTRUCTED_INDEPENDENT_REVIEW_PENDING]: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately. Domain: D.ROOT.PROVIDER.cancel-request. Source: provider-contract/schemas/draft/cancel-request.schema.json:1-28.
-    - **capability — INCOMPLETE**: 0 atomic; 1 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.PROVIDER.ROOT.CAPABILITY [ROOT_PREDICATE_RECONSTRUCTED_INDEPENDENT_REVIEW_PENDING]: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately. Domain: D.ROOT.PROVIDER.capability. Source: provider-contract/schemas/draft/capability.schema.json:1-80.
-    - **initialize-request — INCOMPLETE**: 0 atomic; 1 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.PROVIDER.ROOT.INITIALIZE_REQUEST [ROOT_PREDICATE_RECONSTRUCTED_INDEPENDENT_REVIEW_PENDING]: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately. Domain: D.ROOT.PROVIDER.initialize-request. Source: provider-contract/schemas/draft/initialize-request.schema.json:1-38.
-    - **initialize-result — INCOMPLETE**: 0 atomic; 1 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.PROVIDER.ROOT.INITIALIZE_RESULT [ROOT_PREDICATE_RECONSTRUCTED_INDEPENDENT_REVIEW_PENDING]: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately. Domain: D.ROOT.PROVIDER.initialize-result. Source: provider-contract/schemas/draft/initialize-result.schema.json:1-27.
-    - **invocation — INCOMPLETE**: 0 atomic; 1 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.PROVIDER.ROOT.INVOCATION [ROOT_PREDICATE_RECONSTRUCTED_INDEPENDENT_REVIEW_PENDING]: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately. Domain: D.ROOT.PROVIDER.invocation. Source: provider-contract/schemas/draft/invocation.schema.json:1-60.
-    - **outcome — INCOMPLETE**: 0 atomic; 1 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.PROVIDER.ROOT.OUTCOME [ROOT_PREDICATE_RECONSTRUCTED_INDEPENDENT_REVIEW_PENDING]: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately. Domain: D.ROOT.PROVIDER.outcome. Source: provider-contract/schemas/draft/outcome.schema.json:1-92.
-    - **provider-error — INCOMPLETE**: 0 atomic; 1 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.PROVIDER.ROOT.PROVIDER_ERROR [ROOT_PREDICATE_RECONSTRUCTED_INDEPENDENT_REVIEW_PENDING]: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately. Domain: D.ROOT.PROVIDER.provider-error. Source: provider-contract/schemas/draft/provider-error.schema.json:1-38.
-    - **provider-event — INCOMPLETE**: 0 atomic; 1 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.PROVIDER.ROOT.PROVIDER_EVENT [ROOT_PREDICATE_RECONSTRUCTED_INDEPENDENT_REVIEW_PENDING]: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately. Domain: D.ROOT.PROVIDER.provider-event. Source: provider-contract/schemas/draft/provider-event.schema.json:1-131.
-    - **provider-manifest — INCOMPLETE**: 0 atomic; 1 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.PROVIDER.ROOT.PROVIDER_MANIFEST [ROOT_PREDICATE_RECONSTRUCTED_INDEPENDENT_REVIEW_PENDING]: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately. Domain: D.ROOT.PROVIDER.provider-manifest. Source: provider-contract/schemas/draft/provider-manifest.schema.json:1-56.
-  - **Wire structure — INCOMPLETE**: 0 atomic; 0 whole-root; 185 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-    - **cancel-request — INCOMPLETE**: 0 atomic; 0 whole-root; 11 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - **additionalProperties — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.79a6b9c0fc575e579a9c [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Every object key is listed in properties or matched by patternProperties of this SAME schema object. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.79a6b9c0fc575e579a9c. Source: provider-contract/schemas/draft/cancel-request.schema.json#/additionalProperties.
-      - **minLength — INCOMPLETE**: 0 atomic; 0 whole-root; 3 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.09d919bc32838569f211 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.09d919bc32838569f211. Source: provider-contract/schemas/draft/cancel-request.schema.json#/properties/invocation_id/minLength.
-        - CM.PROVIDER.STRUCT.4407865d12f0cceecd38 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.4407865d12f0cceecd38. Source: provider-contract/schemas/draft/cancel-request.schema.json#/properties/extensions/propertyNames/minLength.
-        - CM.PROVIDER.STRUCT.cb46c1ed7e8d432f7b28 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.cb46c1ed7e8d432f7b28. Source: provider-contract/schemas/draft/cancel-request.schema.json#/properties/reason/minLength.
-      - **pattern — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.0f80be202714f83f6b90 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: A string has an ECMA-262-compatible regex match for '^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|(?!openverify\\.)[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*)$' (search semantics unless anchored). Domain: D.COMPONENT.CM.PROVIDER.STRUCT.0f80be202714f83f6b90. Source: provider-contract/schemas/draft/cancel-request.schema.json#/properties/extensions/propertyNames/pattern.
-      - **required — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.e3a78932815069b9e3e5 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'invocation_id'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.e3a78932815069b9e3e5. Source: provider-contract/schemas/draft/cancel-request.schema.json#/required/0.
-      - **type — INCOMPLETE**: 0 atomic; 0 whole-root; 5 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.0d10d442db9426bb133a [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.0d10d442db9426bb133a. Source: provider-contract/schemas/draft/cancel-request.schema.json#/properties/invocation_id/type.
-        - CM.PROVIDER.STRUCT.38355123680fed101ef4 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.38355123680fed101ef4. Source: provider-contract/schemas/draft/cancel-request.schema.json#/properties/extensions/propertyNames/type.
-        - CM.PROVIDER.STRUCT.bd212422ab47a78cbd7d [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.bd212422ab47a78cbd7d. Source: provider-contract/schemas/draft/cancel-request.schema.json#/properties/reason/type.
-        - CM.PROVIDER.STRUCT.c4ea0b4a27ecdd6f1103 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.c4ea0b4a27ecdd6f1103. Source: provider-contract/schemas/draft/cancel-request.schema.json#/properties/extensions/type.
-        - CM.PROVIDER.STRUCT.d0eaa07738cff4bef368 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.d0eaa07738cff4bef368. Source: provider-contract/schemas/draft/cancel-request.schema.json#/type.
-    - **capability — INCOMPLETE**: 0 atomic; 0 whole-root; 32 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - **additionalProperties — INCOMPLETE**: 0 atomic; 0 whole-root; 2 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.965311d0ab766c033aad [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Every object key is listed in properties or matched by patternProperties of this SAME schema object. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.965311d0ab766c033aad. Source: provider-contract/schemas/draft/capability.schema.json#/properties/lifecycle_features/additionalProperties.
-        - CM.PROVIDER.STRUCT.c9ea3054eb8ee712ace5 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Every object key is listed in properties or matched by patternProperties of this SAME schema object. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.c9ea3054eb8ee712ace5. Source: provider-contract/schemas/draft/capability.schema.json#/additionalProperties.
-      - **minLength — INCOMPLETE**: 0 atomic; 0 whole-root; 4 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.5729467f402f8db1968e [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.5729467f402f8db1968e. Source: provider-contract/schemas/draft/capability.schema.json#/properties/extensions/propertyNames/minLength.
-        - CM.PROVIDER.STRUCT.a7068603427cff110a97 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.a7068603427cff110a97. Source: provider-contract/schemas/draft/capability.schema.json#/properties/vcp_version/minLength.
-        - CM.PROVIDER.STRUCT.ef213164caf0b9fc5bbe [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.ef213164caf0b9fc5bbe. Source: provider-contract/schemas/draft/capability.schema.json#/properties/capability_version/minLength.
-        - CM.PROVIDER.STRUCT.ffdb94f67f3c2bd628ba [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.ffdb94f67f3c2bd628ba. Source: provider-contract/schemas/draft/capability.schema.json#/properties/capability_id/minLength.
-      - **pattern — INCOMPLETE**: 0 atomic; 0 whole-root; 2 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.4997b4f71e5ec9c9a110 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: A string has an ECMA-262-compatible regex match for '^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|(?!openverify\\.)[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*)$' (search semantics unless anchored). Domain: D.COMPONENT.CM.PROVIDER.STRUCT.4997b4f71e5ec9c9a110. Source: provider-contract/schemas/draft/capability.schema.json#/properties/capability_id/pattern.
-        - CM.PROVIDER.STRUCT.a4b018d28e1e87c34880 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: A string has an ECMA-262-compatible regex match for '^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|(?!openverify\\.)[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*)$' (search semantics unless anchored). Domain: D.COMPONENT.CM.PROVIDER.STRUCT.a4b018d28e1e87c34880. Source: provider-contract/schemas/draft/capability.schema.json#/properties/extensions/propertyNames/pattern.
-      - **required — INCOMPLETE**: 0 atomic; 0 whole-root; 10 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.0da12bd9cacfda7fb9ee [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'output_schema'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.0da12bd9cacfda7fb9ee. Source: provider-contract/schemas/draft/capability.schema.json#/required/3.
-        - CM.PROVIDER.STRUCT.288fd515c92b117fb13f [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /properties/lifecycle_features contains key 'deadlines'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.288fd515c92b117fb13f. Source: provider-contract/schemas/draft/capability.schema.json#/properties/lifecycle_features/required/2.
-        - CM.PROVIDER.STRUCT.35ef0bda197014833a17 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /properties/lifecycle_features contains key 'streaming'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.35ef0bda197014833a17. Source: provider-contract/schemas/draft/capability.schema.json#/properties/lifecycle_features/required/0.
-        - CM.PROVIDER.STRUCT.58f8069d8c02f4908361 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'capability_id'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.58f8069d8c02f4908361. Source: provider-contract/schemas/draft/capability.schema.json#/required/0.
-        - CM.PROVIDER.STRUCT.8f96f696920cc480b6e2 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /properties/lifecycle_features contains key 'resource_reporting'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.8f96f696920cc480b6e2. Source: provider-contract/schemas/draft/capability.schema.json#/properties/lifecycle_features/required/3.
-        - CM.PROVIDER.STRUCT.c4c77da5d06f67bda816 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'capability_version'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.c4c77da5d06f67bda816. Source: provider-contract/schemas/draft/capability.schema.json#/required/1.
-        - CM.PROVIDER.STRUCT.dda309ffb1cfbb4f24b2 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'input_schema'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.dda309ffb1cfbb4f24b2. Source: provider-contract/schemas/draft/capability.schema.json#/required/2.
-        - CM.PROVIDER.STRUCT.e75cedb3c69878755464 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'config_schema'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.e75cedb3c69878755464. Source: provider-contract/schemas/draft/capability.schema.json#/required/4.
-        - CM.PROVIDER.STRUCT.e7dfc1f51158ba69bc50 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /properties/lifecycle_features contains key 'cancellation'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.e7dfc1f51158ba69bc50. Source: provider-contract/schemas/draft/capability.schema.json#/properties/lifecycle_features/required/1.
-        - CM.PROVIDER.STRUCT.fe06406e7682ede59514 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'lifecycle_features'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.fe06406e7682ede59514. Source: provider-contract/schemas/draft/capability.schema.json#/required/5.
-      - **type — INCOMPLETE**: 0 atomic; 0 whole-root; 14 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.05c72fc922fd24d5ff14 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['boolean']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.05c72fc922fd24d5ff14. Source: provider-contract/schemas/draft/capability.schema.json#/properties/lifecycle_features/properties/cancellation/type.
-        - CM.PROVIDER.STRUCT.0f8ee7e2d797e19e4e79 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.0f8ee7e2d797e19e4e79. Source: provider-contract/schemas/draft/capability.schema.json#/properties/extensions/propertyNames/type.
-        - CM.PROVIDER.STRUCT.185c69aa4800ff77fa92 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['boolean']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.185c69aa4800ff77fa92. Source: provider-contract/schemas/draft/capability.schema.json#/properties/lifecycle_features/properties/deadlines/type.
-        - CM.PROVIDER.STRUCT.1caf2ec491c7858b5e4f [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['boolean', 'object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.1caf2ec491c7858b5e4f. Source: provider-contract/schemas/draft/capability.schema.json#/properties/config_schema/type.
-        - CM.PROVIDER.STRUCT.229c6508f0dfc3e207b9 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.229c6508f0dfc3e207b9. Source: provider-contract/schemas/draft/capability.schema.json#/properties/extensions/type.
-        - CM.PROVIDER.STRUCT.2788a6190887037664e5 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.2788a6190887037664e5. Source: provider-contract/schemas/draft/capability.schema.json#/properties/lifecycle_features/type.
-        - CM.PROVIDER.STRUCT.35c3e094eb380bf7e595 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['boolean']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.35c3e094eb380bf7e595. Source: provider-contract/schemas/draft/capability.schema.json#/properties/lifecycle_features/properties/streaming/type.
-        - CM.PROVIDER.STRUCT.3e415cfb23b48f8f6c07 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.3e415cfb23b48f8f6c07. Source: provider-contract/schemas/draft/capability.schema.json#/type.
-        - CM.PROVIDER.STRUCT.55d09d2d78a058f762e4 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['boolean', 'object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.55d09d2d78a058f762e4. Source: provider-contract/schemas/draft/capability.schema.json#/properties/output_schema/type.
-        - CM.PROVIDER.STRUCT.5fa4bfaee00f4853a17d [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['boolean', 'object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.5fa4bfaee00f4853a17d. Source: provider-contract/schemas/draft/capability.schema.json#/properties/input_schema/type.
-        - CM.PROVIDER.STRUCT.758934857b09d6166c68 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.758934857b09d6166c68. Source: provider-contract/schemas/draft/capability.schema.json#/properties/vcp_version/type.
-        - CM.PROVIDER.STRUCT.9676e270ebba0b3990fa [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.9676e270ebba0b3990fa. Source: provider-contract/schemas/draft/capability.schema.json#/properties/capability_id/type.
-        - CM.PROVIDER.STRUCT.9d461ae44464e0677902 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['boolean']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.9d461ae44464e0677902. Source: provider-contract/schemas/draft/capability.schema.json#/properties/lifecycle_features/properties/resource_reporting/type.
-        - CM.PROVIDER.STRUCT.defef340f7703a66793e [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.defef340f7703a66793e. Source: provider-contract/schemas/draft/capability.schema.json#/properties/capability_version/type.
-    - **initialize-request — INCOMPLETE**: 0 atomic; 0 whole-root; 17 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - **additionalProperties — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.966e82beb1687660181e [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Every object key is listed in properties or matched by patternProperties of this SAME schema object. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.966e82beb1687660181e. Source: provider-contract/schemas/draft/initialize-request.schema.json#/additionalProperties.
-      - **minItems — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.88ea6f3c8a958090ee86 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The array length >= 1. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.88ea6f3c8a958090ee86. Source: provider-contract/schemas/draft/initialize-request.schema.json#/properties/supported_contract_versions/minItems.
-      - **minLength — INCOMPLETE**: 0 atomic; 0 whole-root; 3 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.31d12db0701eee57bfad [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.31d12db0701eee57bfad. Source: provider-contract/schemas/draft/initialize-request.schema.json#/properties/extensions/propertyNames/minLength.
-        - CM.PROVIDER.STRUCT.440ef2e0933f4f8d7598 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.440ef2e0933f4f8d7598. Source: provider-contract/schemas/draft/initialize-request.schema.json#/properties/supported_contract_versions/items/minLength.
-        - CM.PROVIDER.STRUCT.c43d5839e4b36f0ce584 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.c43d5839e4b36f0ce584. Source: provider-contract/schemas/draft/initialize-request.schema.json#/properties/supported_vcp_versions/items/minLength.
-      - **pattern — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.0db9c0afbf33a38c610e [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: A string has an ECMA-262-compatible regex match for '^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|(?!openverify\\.)[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*)$' (search semantics unless anchored). Domain: D.COMPONENT.CM.PROVIDER.STRUCT.0db9c0afbf33a38c610e. Source: provider-contract/schemas/draft/initialize-request.schema.json#/properties/extensions/propertyNames/pattern.
-      - **required — INCOMPLETE**: 0 atomic; 0 whole-root; 2 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.47d0095fe3e5ecd9d1e7 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'supported_vcp_versions'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.47d0095fe3e5ecd9d1e7. Source: provider-contract/schemas/draft/initialize-request.schema.json#/required/1.
-        - CM.PROVIDER.STRUCT.9766f2d0fcb8b21bf8da [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'supported_contract_versions'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.9766f2d0fcb8b21bf8da. Source: provider-contract/schemas/draft/initialize-request.schema.json#/required/0.
-      - **type — INCOMPLETE**: 0 atomic; 0 whole-root; 7 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.00f0686e363278e62f19 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.00f0686e363278e62f19. Source: provider-contract/schemas/draft/initialize-request.schema.json#/properties/supported_vcp_versions/items/type.
-        - CM.PROVIDER.STRUCT.26db5f0ace32da754a7c [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.26db5f0ace32da754a7c. Source: provider-contract/schemas/draft/initialize-request.schema.json#/properties/extensions/type.
-        - CM.PROVIDER.STRUCT.3562e29b61b5f35259da [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['array']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.3562e29b61b5f35259da. Source: provider-contract/schemas/draft/initialize-request.schema.json#/properties/supported_vcp_versions/type.
-        - CM.PROVIDER.STRUCT.756095407adf3d6c2103 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['array']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.756095407adf3d6c2103. Source: provider-contract/schemas/draft/initialize-request.schema.json#/properties/supported_contract_versions/type.
-        - CM.PROVIDER.STRUCT.7faf24c4254b8cf0b8c5 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.7faf24c4254b8cf0b8c5. Source: provider-contract/schemas/draft/initialize-request.schema.json#/type.
-        - CM.PROVIDER.STRUCT.ad4bfc4fb8c2ba8fd407 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.ad4bfc4fb8c2ba8fd407. Source: provider-contract/schemas/draft/initialize-request.schema.json#/properties/supported_contract_versions/items/type.
-        - CM.PROVIDER.STRUCT.dd7a2dce651d483e6c8e [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.dd7a2dce651d483e6c8e. Source: provider-contract/schemas/draft/initialize-request.schema.json#/properties/extensions/propertyNames/type.
-      - **uniqueItems — INCOMPLETE**: 0 atomic; 0 whole-root; 2 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.8295b91e81dd9aacf11d [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: No two array elements are equal under JSON structural equality. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.8295b91e81dd9aacf11d. Source: provider-contract/schemas/draft/initialize-request.schema.json#/properties/supported_vcp_versions/uniqueItems.
-        - CM.PROVIDER.STRUCT.da7a92439783b2eacf0d [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: No two array elements are equal under JSON structural equality. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.da7a92439783b2eacf0d. Source: provider-contract/schemas/draft/initialize-request.schema.json#/properties/supported_contract_versions/uniqueItems.
-    - **initialize-result — INCOMPLETE**: 0 atomic; 0 whole-root; 9 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - **additionalProperties — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.bce5052f36213b85ac5e [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Every object key is listed in properties or matched by patternProperties of this SAME schema object. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.bce5052f36213b85ac5e. Source: provider-contract/schemas/draft/initialize-result.schema.json#/additionalProperties.
-      - **const — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.7ddee7c299f276a40899 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Value equals the constant "0.1" under JSON structural equality. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.7ddee7c299f276a40899. Source: provider-contract/schemas/draft/initialize-result.schema.json#/properties/contract_version/const.
-      - **minLength — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.8ba2de3aac88133b3695 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.8ba2de3aac88133b3695. Source: provider-contract/schemas/draft/initialize-result.schema.json#/properties/extensions/propertyNames/minLength.
-      - **pattern — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.ee0a9427c85520564bbb [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: A string has an ECMA-262-compatible regex match for '^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|(?!openverify\\.)[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*)$' (search semantics unless anchored). Domain: D.COMPONENT.CM.PROVIDER.STRUCT.ee0a9427c85520564bbb. Source: provider-contract/schemas/draft/initialize-result.schema.json#/properties/extensions/propertyNames/pattern.
-      - **required — INCOMPLETE**: 0 atomic; 0 whole-root; 2 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.2bf1fe560b8f234a3e73 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'contract_version'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.2bf1fe560b8f234a3e73. Source: provider-contract/schemas/draft/initialize-result.schema.json#/required/0.
-        - CM.PROVIDER.STRUCT.7c01d1f46c2bb8a055b9 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'manifest'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.7c01d1f46c2bb8a055b9. Source: provider-contract/schemas/draft/initialize-result.schema.json#/required/1.
-      - **type — INCOMPLETE**: 0 atomic; 0 whole-root; 3 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.3c708648c7656eabe0e5 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.3c708648c7656eabe0e5. Source: provider-contract/schemas/draft/initialize-result.schema.json#/properties/extensions/type.
-        - CM.PROVIDER.STRUCT.cf65170328338b385684 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.cf65170328338b385684. Source: provider-contract/schemas/draft/initialize-result.schema.json#/type.
-        - CM.PROVIDER.STRUCT.f4da6f7c2a5ac53bb62f [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.f4da6f7c2a5ac53bb62f. Source: provider-contract/schemas/draft/initialize-result.schema.json#/properties/extensions/propertyNames/type.
-    - **invocation — INCOMPLETE**: 0 atomic; 0 whole-root; 26 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - **additionalProperties — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.a1179eb313aec98342c9 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Every object key is listed in properties or matched by patternProperties of this SAME schema object. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.a1179eb313aec98342c9. Source: provider-contract/schemas/draft/invocation.schema.json#/additionalProperties.
-      - **const — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.0a2810adc1493aca5770 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Value equals the constant "0.1" under JSON structural equality. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.0a2810adc1493aca5770. Source: provider-contract/schemas/draft/invocation.schema.json#/properties/contract_version/const.
-      - **minLength — INCOMPLETE**: 0 atomic; 0 whole-root; 6 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.38c78841d6bb3ac69fda [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.38c78841d6bb3ac69fda. Source: provider-contract/schemas/draft/invocation.schema.json#/properties/deadline/minLength.
-        - CM.PROVIDER.STRUCT.3a55fe7b11186a2d0969 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.3a55fe7b11186a2d0969. Source: provider-contract/schemas/draft/invocation.schema.json#/properties/extensions/propertyNames/minLength.
-        - CM.PROVIDER.STRUCT.70fde57ef0bb4b6965c6 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.70fde57ef0bb4b6965c6. Source: provider-contract/schemas/draft/invocation.schema.json#/properties/vcp_version/minLength.
-        - CM.PROVIDER.STRUCT.9d3a5cfcaec53fc5f0de [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.9d3a5cfcaec53fc5f0de. Source: provider-contract/schemas/draft/invocation.schema.json#/properties/capability_id/minLength.
-        - CM.PROVIDER.STRUCT.a94f64d8dea7bd620c92 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.a94f64d8dea7bd620c92. Source: provider-contract/schemas/draft/invocation.schema.json#/properties/capability_version/minLength.
-        - CM.PROVIDER.STRUCT.b41a64019ccaa1f4376f [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.b41a64019ccaa1f4376f. Source: provider-contract/schemas/draft/invocation.schema.json#/properties/invocation_id/minLength.
-      - **pattern — INCOMPLETE**: 0 atomic; 0 whole-root; 3 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.35e85190d8a849e38011 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: A string has an ECMA-262-compatible regex match for '^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|(?!openverify\\.)[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*)$' (search semantics unless anchored). Domain: D.COMPONENT.CM.PROVIDER.STRUCT.35e85190d8a849e38011. Source: provider-contract/schemas/draft/invocation.schema.json#/properties/capability_id/pattern.
-        - CM.PROVIDER.STRUCT.78dd8b842cf18733ca3b [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: A string has an ECMA-262-compatible regex match for '^\\d{4}-\\d{2}-\\d{2}[Tt]\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?(?:[Zz]|\\+00:00)$' (search semantics unless anchored). Domain: D.COMPONENT.CM.PROVIDER.STRUCT.78dd8b842cf18733ca3b. Source: provider-contract/schemas/draft/invocation.schema.json#/properties/deadline/pattern.
-        - CM.PROVIDER.STRUCT.d43b101dd7d818437054 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: A string has an ECMA-262-compatible regex match for '^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|(?!openverify\\.)[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*)$' (search semantics unless anchored). Domain: D.COMPONENT.CM.PROVIDER.STRUCT.d43b101dd7d818437054. Source: provider-contract/schemas/draft/invocation.schema.json#/properties/extensions/propertyNames/pattern.
-      - **required — INCOMPLETE**: 0 atomic; 0 whole-root; 6 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.0c913ac4fa96bf9398e2 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'capability_id'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.0c913ac4fa96bf9398e2. Source: provider-contract/schemas/draft/invocation.schema.json#/required/2.
-        - CM.PROVIDER.STRUCT.2158ca50cce0dcbe43b1 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'config'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.2158ca50cce0dcbe43b1. Source: provider-contract/schemas/draft/invocation.schema.json#/required/5.
-        - CM.PROVIDER.STRUCT.6b4ce8051aa3f1c623ad [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'contract_version'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.6b4ce8051aa3f1c623ad. Source: provider-contract/schemas/draft/invocation.schema.json#/required/1.
-        - CM.PROVIDER.STRUCT.9031482e7651942db1df [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'capability_version'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.9031482e7651942db1df. Source: provider-contract/schemas/draft/invocation.schema.json#/required/3.
-        - CM.PROVIDER.STRUCT.b4d335dd0e997f525d1d [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'input'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.b4d335dd0e997f525d1d. Source: provider-contract/schemas/draft/invocation.schema.json#/required/4.
-        - CM.PROVIDER.STRUCT.d57ded9f52b5701bb553 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'invocation_id'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.d57ded9f52b5701bb553. Source: provider-contract/schemas/draft/invocation.schema.json#/required/0.
-      - **type — INCOMPLETE**: 0 atomic; 0 whole-root; 9 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.4a93526de0af6065364c [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.4a93526de0af6065364c. Source: provider-contract/schemas/draft/invocation.schema.json#/properties/deadline/type.
-        - CM.PROVIDER.STRUCT.4ad3f39444017d09b3c6 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.4ad3f39444017d09b3c6. Source: provider-contract/schemas/draft/invocation.schema.json#/properties/extensions/propertyNames/type.
-        - CM.PROVIDER.STRUCT.576d3f524e93ea4cd123 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.576d3f524e93ea4cd123. Source: provider-contract/schemas/draft/invocation.schema.json#/properties/invocation_id/type.
-        - CM.PROVIDER.STRUCT.5a5a6342e7c4fab8be9b [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.5a5a6342e7c4fab8be9b. Source: provider-contract/schemas/draft/invocation.schema.json#/properties/capability_id/type.
-        - CM.PROVIDER.STRUCT.67e9dc1c416a6104ed3e [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.67e9dc1c416a6104ed3e. Source: provider-contract/schemas/draft/invocation.schema.json#/properties/resource_budget/type.
-        - CM.PROVIDER.STRUCT.6decb67283936799d5f6 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.6decb67283936799d5f6. Source: provider-contract/schemas/draft/invocation.schema.json#/properties/vcp_version/type.
-        - CM.PROVIDER.STRUCT.cc92b79b276e25f2d0b5 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.cc92b79b276e25f2d0b5. Source: provider-contract/schemas/draft/invocation.schema.json#/properties/extensions/type.
-        - CM.PROVIDER.STRUCT.d5ecbff48711c2369f4f [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.d5ecbff48711c2369f4f. Source: provider-contract/schemas/draft/invocation.schema.json#/properties/capability_version/type.
-        - CM.PROVIDER.STRUCT.fe2b2565d9619d15fb66 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.fe2b2565d9619d15fb66. Source: provider-contract/schemas/draft/invocation.schema.json#/type.
-    - **outcome — INCOMPLETE**: 0 atomic; 0 whole-root; 22 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - **additionalProperties — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.c4801593a877bf1fab72 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Every object key is listed in properties or matched by patternProperties of this SAME schema object. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.c4801593a877bf1fab72. Source: provider-contract/schemas/draft/outcome.schema.json#/additionalProperties.
-      - **const — INCOMPLETE**: 0 atomic; 0 whole-root; 2 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.c970b475fd1a9cd61098 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Value equals the constant "ERROR" under JSON structural equality. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.c970b475fd1a9cd61098. Source: provider-contract/schemas/draft/outcome.schema.json#/allOf/1/if/properties/state/const.
-        - CM.PROVIDER.STRUCT.d2aa59d6782745b1f52e [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Value equals the constant "COMPLETED" under JSON structural equality. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.d2aa59d6782745b1f52e. Source: provider-contract/schemas/draft/outcome.schema.json#/allOf/0/if/properties/state/const.
-      - **enum — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.ca5673773c6fa2521d44 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Value equals one member of ["COMPLETED", "ERROR", "CANCELLED", "DEADLINE_EXCEEDED"] under JSON structural equality. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.ca5673773c6fa2521d44. Source: provider-contract/schemas/draft/outcome.schema.json#/properties/state/enum.
-      - **minLength — INCOMPLETE**: 0 atomic; 0 whole-root; 2 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.46408c2d41b674b37969 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.46408c2d41b674b37969. Source: provider-contract/schemas/draft/outcome.schema.json#/properties/extensions/propertyNames/minLength.
-        - CM.PROVIDER.STRUCT.5c0c24bf42b712c861a4 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.5c0c24bf42b712c861a4. Source: provider-contract/schemas/draft/outcome.schema.json#/properties/invocation_id/minLength.
-      - **not — INCOMPLETE**: 0 atomic; 0 whole-root; 3 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.123ba46d409dba7701dc [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The enclosed child schema fails for this instance. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.123ba46d409dba7701dc. Source: provider-contract/schemas/draft/outcome.schema.json#/allOf/0/then/not.
-        - CM.PROVIDER.STRUCT.260e0afebcac655a0676 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The enclosed child schema fails for this instance. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.260e0afebcac655a0676. Source: provider-contract/schemas/draft/outcome.schema.json#/allOf/0/else/not.
-        - CM.PROVIDER.STRUCT.dbc0e29c1cee3755ce6d [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The enclosed child schema fails for this instance. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.dbc0e29c1cee3755ce6d. Source: provider-contract/schemas/draft/outcome.schema.json#/allOf/1/else/not.
-      - **pattern — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.0f0547dffbc0fb41d893 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: A string has an ECMA-262-compatible regex match for '^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|(?!openverify\\.)[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*)$' (search semantics unless anchored). Domain: D.COMPONENT.CM.PROVIDER.STRUCT.0f0547dffbc0fb41d893. Source: provider-contract/schemas/draft/outcome.schema.json#/properties/extensions/propertyNames/pattern.
-      - **required — INCOMPLETE**: 0 atomic; 0 whole-root; 7 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.0e047a837b510a94394f [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /allOf/1/else/not contains key 'error'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.0e047a837b510a94394f. Source: provider-contract/schemas/draft/outcome.schema.json#/allOf/1/else/not/required/0.
-        - CM.PROVIDER.STRUCT.2773c1e128ce5e5316bd [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /allOf/1/then contains key 'error'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.2773c1e128ce5e5316bd. Source: provider-contract/schemas/draft/outcome.schema.json#/allOf/1/then/required/0.
-        - CM.PROVIDER.STRUCT.714795022a84b6a0ccfa [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'invocation_id'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.714795022a84b6a0ccfa. Source: provider-contract/schemas/draft/outcome.schema.json#/required/0.
-        - CM.PROVIDER.STRUCT.7d92856de8eb58ec5685 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'state'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.7d92856de8eb58ec5685. Source: provider-contract/schemas/draft/outcome.schema.json#/required/1.
-        - CM.PROVIDER.STRUCT.823e899c52c509b62164 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /allOf/0/then/not contains key 'error'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.823e899c52c509b62164. Source: provider-contract/schemas/draft/outcome.schema.json#/allOf/0/then/not/required/0.
-        - CM.PROVIDER.STRUCT.83f575dcbf75a613392b [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /allOf/0/else/not contains key 'output'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.83f575dcbf75a613392b. Source: provider-contract/schemas/draft/outcome.schema.json#/allOf/0/else/not/required/0.
-        - CM.PROVIDER.STRUCT.c11333c37d46d5dfe0d7 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /allOf/0/then contains key 'output'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.c11333c37d46d5dfe0d7. Source: provider-contract/schemas/draft/outcome.schema.json#/allOf/0/then/required/0.
-      - **type — INCOMPLETE**: 0 atomic; 0 whole-root; 5 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.2e1a084570b21db08442 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.2e1a084570b21db08442. Source: provider-contract/schemas/draft/outcome.schema.json#/properties/invocation_id/type.
-        - CM.PROVIDER.STRUCT.5ba97880accafcea5825 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.5ba97880accafcea5825. Source: provider-contract/schemas/draft/outcome.schema.json#/properties/extensions/type.
-        - CM.PROVIDER.STRUCT.c05e0f5308f9c318c24c [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.c05e0f5308f9c318c24c. Source: provider-contract/schemas/draft/outcome.schema.json#/type.
-        - CM.PROVIDER.STRUCT.e6d594381c125e93969c [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.e6d594381c125e93969c. Source: provider-contract/schemas/draft/outcome.schema.json#/properties/resource_usage/type.
-        - CM.PROVIDER.STRUCT.fcaffa631c8f38d40381 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.fcaffa631c8f38d40381. Source: provider-contract/schemas/draft/outcome.schema.json#/properties/extensions/propertyNames/type.
-    - **provider-error — INCOMPLETE**: 0 atomic; 0 whole-root; 11 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - **additionalProperties — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.4d7e6a058723cf1ca9e1 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Every object key is listed in properties or matched by patternProperties of this SAME schema object. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.4d7e6a058723cf1ca9e1. Source: provider-contract/schemas/draft/provider-error.schema.json#/additionalProperties.
-      - **anyOf — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.442e387a7488f4ccb71d [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: At least one child schema succeeds at the same instance location. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.442e387a7488f4ccb71d. Source: provider-contract/schemas/draft/provider-error.schema.json#/properties/code/anyOf.
-      - **enum — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.a75767704cbcacac073b [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Value equals one member of ["CONTRACT_VERSION_UNSUPPORTED", "CAPABILITY_UNAVAILABLE", "CAPABILITY_VERSION_UNSUPPORTED", "INVALID_INVOCATION", "INVALID_CONFIG", "INVALID_INPUT", "INVALID_PROVIDER_OUTPUT", "PROTOCOL_VIOLATION"] under JSON structural equality. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.a75767704cbcacac073b. Source: provider-contract/schemas/draft/provider-error.schema.json#/properties/code/anyOf/0/enum.
-      - **minLength — INCOMPLETE**: 0 atomic; 0 whole-root; 2 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.41917ba847115abf9392 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.41917ba847115abf9392. Source: provider-contract/schemas/draft/provider-error.schema.json#/properties/code/anyOf/1/minLength.
-        - CM.PROVIDER.STRUCT.729270a6781b714e9b70 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.729270a6781b714e9b70. Source: provider-contract/schemas/draft/provider-error.schema.json#/properties/message/minLength.
-      - **pattern — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.7396763ad7bae0af7351 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: A string has an ECMA-262-compatible regex match for '^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|(?!openverify\\.)[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*)$' (search semantics unless anchored). Domain: D.COMPONENT.CM.PROVIDER.STRUCT.7396763ad7bae0af7351. Source: provider-contract/schemas/draft/provider-error.schema.json#/properties/code/anyOf/1/pattern.
-      - **required — INCOMPLETE**: 0 atomic; 0 whole-root; 2 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.07a54c69e05ae73b4ba9 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'code'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.07a54c69e05ae73b4ba9. Source: provider-contract/schemas/draft/provider-error.schema.json#/required/0.
-        - CM.PROVIDER.STRUCT.cc7fdb0c8c94a6353669 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'message'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.cc7fdb0c8c94a6353669. Source: provider-contract/schemas/draft/provider-error.schema.json#/required/1.
-      - **type — INCOMPLETE**: 0 atomic; 0 whole-root; 3 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.3a6325ee8588ab5bf40d [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.3a6325ee8588ab5bf40d. Source: provider-contract/schemas/draft/provider-error.schema.json#/properties/message/type.
-        - CM.PROVIDER.STRUCT.4c449dc184c6a47879da [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.4c449dc184c6a47879da. Source: provider-contract/schemas/draft/provider-error.schema.json#/properties/code/anyOf/1/type.
-        - CM.PROVIDER.STRUCT.97b5b66173298213405f [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.97b5b66173298213405f. Source: provider-contract/schemas/draft/provider-error.schema.json#/type.
-    - **provider-event — INCOMPLETE**: 0 atomic; 0 whole-root; 31 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - **additionalProperties — INCOMPLETE**: 0 atomic; 0 whole-root; 2 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.776f290431ef1c818dfa [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Every object key is listed in properties or matched by patternProperties of this SAME schema object. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.776f290431ef1c818dfa. Source: provider-contract/schemas/draft/provider-event.schema.json#/additionalProperties.
-        - CM.PROVIDER.STRUCT.db07ca163eec0f44311f [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Every object key is listed in properties or matched by patternProperties of this SAME schema object. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.db07ca163eec0f44311f. Source: provider-contract/schemas/draft/provider-event.schema.json#/allOf/3/then/properties/payload/additionalProperties.
-      - **const — INCOMPLETE**: 0 atomic; 0 whole-root; 4 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.26428e695fe455dbf521 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Value equals the constant "extension" under JSON structural equality. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.26428e695fe455dbf521. Source: provider-contract/schemas/draft/provider-event.schema.json#/allOf/3/if/properties/kind/const.
-        - CM.PROVIDER.STRUCT.61ddb5bfd3ecc44d66ad [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Value equals the constant "artifact" under JSON structural equality. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.61ddb5bfd3ecc44d66ad. Source: provider-contract/schemas/draft/provider-event.schema.json#/allOf/1/if/properties/kind/const.
-        - CM.PROVIDER.STRUCT.b54107713df1eff2fe48 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Value equals the constant "evidence" under JSON structural equality. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.b54107713df1eff2fe48. Source: provider-contract/schemas/draft/provider-event.schema.json#/allOf/0/if/properties/kind/const.
-        - CM.PROVIDER.STRUCT.c9ee945457a461616595 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Value equals the constant "resource_usage" under JSON structural equality. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.c9ee945457a461616595. Source: provider-contract/schemas/draft/provider-event.schema.json#/allOf/2/if/properties/kind/const.
-      - **enum — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.6bc0c843a8ca1b7b9349 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Value equals one member of ["progress", "evidence", "artifact", "resource_usage", "diagnostic", "extension"] under JSON structural equality. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.6bc0c843a8ca1b7b9349. Source: provider-contract/schemas/draft/provider-event.schema.json#/properties/kind/enum.
-      - **maximum — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.305174c2dba9fa41b265 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: For a JSON number x, x <= 9007199254740991. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.305174c2dba9fa41b265. Source: provider-contract/schemas/draft/provider-event.schema.json#/properties/sequence/maximum.
-      - **minLength — INCOMPLETE**: 0 atomic; 0 whole-root; 4 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.00ba05e2b9e31b66a4cc [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.00ba05e2b9e31b66a4cc. Source: provider-contract/schemas/draft/provider-event.schema.json#/properties/extensions/propertyNames/minLength.
-        - CM.PROVIDER.STRUCT.382c02ce734d0ac2ded4 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.382c02ce734d0ac2ded4. Source: provider-contract/schemas/draft/provider-event.schema.json#/properties/timestamp/minLength.
-        - CM.PROVIDER.STRUCT.6fae24b253a712aca76b [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.6fae24b253a712aca76b. Source: provider-contract/schemas/draft/provider-event.schema.json#/properties/invocation_id/minLength.
-        - CM.PROVIDER.STRUCT.f260c719909e0b50d549 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.f260c719909e0b50d549. Source: provider-contract/schemas/draft/provider-event.schema.json#/allOf/3/then/properties/payload/properties/namespace/minLength.
-      - **minimum — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.4a2181339ee3ab4a1f27 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: For a JSON number x, x >= 1. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.4a2181339ee3ab4a1f27. Source: provider-contract/schemas/draft/provider-event.schema.json#/properties/sequence/minimum.
-      - **pattern — INCOMPLETE**: 0 atomic; 0 whole-root; 3 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.5723932aedd04bfdc247 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: A string has an ECMA-262-compatible regex match for '^\\d{4}-\\d{2}-\\d{2}[Tt]\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?(?:[Zz]|\\+00:00)$' (search semantics unless anchored). Domain: D.COMPONENT.CM.PROVIDER.STRUCT.5723932aedd04bfdc247. Source: provider-contract/schemas/draft/provider-event.schema.json#/properties/timestamp/pattern.
-        - CM.PROVIDER.STRUCT.732c8c8836d553e90b76 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: A string has an ECMA-262-compatible regex match for '^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|(?!openverify\\.)[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*)$' (search semantics unless anchored). Domain: D.COMPONENT.CM.PROVIDER.STRUCT.732c8c8836d553e90b76. Source: provider-contract/schemas/draft/provider-event.schema.json#/properties/extensions/propertyNames/pattern.
-        - CM.PROVIDER.STRUCT.7ab41670d932492709a6 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: A string has an ECMA-262-compatible regex match for '^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|(?!openverify\\.)[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*)$' (search semantics unless anchored). Domain: D.COMPONENT.CM.PROVIDER.STRUCT.7ab41670d932492709a6. Source: provider-contract/schemas/draft/provider-event.schema.json#/allOf/3/then/properties/payload/properties/namespace/pattern.
-      - **required — INCOMPLETE**: 0 atomic; 0 whole-root; 6 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.5d17406c76498fa09c1d [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /allOf/3/then/properties/payload contains key 'data'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.5d17406c76498fa09c1d. Source: provider-contract/schemas/draft/provider-event.schema.json#/allOf/3/then/properties/payload/required/1.
-        - CM.PROVIDER.STRUCT.607baeb9fac9946dabee [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'invocation_id'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.607baeb9fac9946dabee. Source: provider-contract/schemas/draft/provider-event.schema.json#/required/0.
-        - CM.PROVIDER.STRUCT.93f8a414e2f4e26b2cb9 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /allOf/3/then/properties/payload contains key 'namespace'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.93f8a414e2f4e26b2cb9. Source: provider-contract/schemas/draft/provider-event.schema.json#/allOf/3/then/properties/payload/required/0.
-        - CM.PROVIDER.STRUCT.ad42419850dde92d043f [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'kind'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.ad42419850dde92d043f. Source: provider-contract/schemas/draft/provider-event.schema.json#/required/2.
-        - CM.PROVIDER.STRUCT.adb93e8a5e94ef521846 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'payload'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.adb93e8a5e94ef521846. Source: provider-contract/schemas/draft/provider-event.schema.json#/required/3.
-        - CM.PROVIDER.STRUCT.bd27ebb7b41fbdd0312b [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'sequence'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.bd27ebb7b41fbdd0312b. Source: provider-contract/schemas/draft/provider-event.schema.json#/required/1.
-      - **type — INCOMPLETE**: 0 atomic; 0 whole-root; 9 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.436699c41bb19a07a3c5 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.436699c41bb19a07a3c5. Source: provider-contract/schemas/draft/provider-event.schema.json#/properties/invocation_id/type.
-        - CM.PROVIDER.STRUCT.63091c0d2da1d619d979 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.63091c0d2da1d619d979. Source: provider-contract/schemas/draft/provider-event.schema.json#/properties/extensions/type.
-        - CM.PROVIDER.STRUCT.67c1c388005f01540ba9 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.67c1c388005f01540ba9. Source: provider-contract/schemas/draft/provider-event.schema.json#/type.
-        - CM.PROVIDER.STRUCT.69fca68677f47e27b9f3 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.69fca68677f47e27b9f3. Source: provider-contract/schemas/draft/provider-event.schema.json#/allOf/3/then/properties/payload/type.
-        - CM.PROVIDER.STRUCT.9a492fe4f1ae8b9ea90f [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.9a492fe4f1ae8b9ea90f. Source: provider-contract/schemas/draft/provider-event.schema.json#/allOf/3/then/properties/payload/properties/namespace/type.
-        - CM.PROVIDER.STRUCT.9bee1696d6a8985c5128 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.9bee1696d6a8985c5128. Source: provider-contract/schemas/draft/provider-event.schema.json#/properties/timestamp/type.
-        - CM.PROVIDER.STRUCT.b13801f023942079d473 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.b13801f023942079d473. Source: provider-contract/schemas/draft/provider-event.schema.json#/properties/extensions/propertyNames/type.
-        - CM.PROVIDER.STRUCT.d9b76a4dbc7c25110985 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['integer']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.d9b76a4dbc7c25110985. Source: provider-contract/schemas/draft/provider-event.schema.json#/properties/sequence/type.
-        - CM.PROVIDER.STRUCT.e22cda4c61c7b34e4c2a [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.e22cda4c61c7b34e4c2a. Source: provider-contract/schemas/draft/provider-event.schema.json#/allOf/2/then/properties/payload/type.
-    - **provider-manifest — INCOMPLETE**: 0 atomic; 0 whole-root; 26 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - **additionalProperties — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.0336082963798a0e9a09 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Every object key is listed in properties or matched by patternProperties of this SAME schema object. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.0336082963798a0e9a09. Source: provider-contract/schemas/draft/provider-manifest.schema.json#/additionalProperties.
-      - **minItems — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.cbd122c10ac2ee72fb59 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The array length >= 1. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.cbd122c10ac2ee72fb59. Source: provider-contract/schemas/draft/provider-manifest.schema.json#/properties/supported_contract_versions/minItems.
-      - **minLength — INCOMPLETE**: 0 atomic; 0 whole-root; 5 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.0783aeb26e91b2739a7e [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.0783aeb26e91b2739a7e. Source: provider-contract/schemas/draft/provider-manifest.schema.json#/properties/extensions/propertyNames/minLength.
-        - CM.PROVIDER.STRUCT.1073e02b3aef521a136f [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.1073e02b3aef521a136f. Source: provider-contract/schemas/draft/provider-manifest.schema.json#/properties/supported_vcp_versions/items/minLength.
-        - CM.PROVIDER.STRUCT.3142cf2a43c70dfd3ad8 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.3142cf2a43c70dfd3ad8. Source: provider-contract/schemas/draft/provider-manifest.schema.json#/properties/supported_contract_versions/items/minLength.
-        - CM.PROVIDER.STRUCT.4228037a401c119c1724 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.4228037a401c119c1724. Source: provider-contract/schemas/draft/provider-manifest.schema.json#/properties/provider_id/minLength.
-        - CM.PROVIDER.STRUCT.99afd4627389d27bce91 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.99afd4627389d27bce91. Source: provider-contract/schemas/draft/provider-manifest.schema.json#/properties/provider_version/minLength.
-      - **pattern — INCOMPLETE**: 0 atomic; 0 whole-root; 2 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.37e033cfe6d5daba2387 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: A string has an ECMA-262-compatible regex match for '^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|(?!openverify\\.)[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*)$' (search semantics unless anchored). Domain: D.COMPONENT.CM.PROVIDER.STRUCT.37e033cfe6d5daba2387. Source: provider-contract/schemas/draft/provider-manifest.schema.json#/properties/provider_id/pattern.
-        - CM.PROVIDER.STRUCT.41921f7904c34ed3eb36 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: A string has an ECMA-262-compatible regex match for '^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|(?!openverify\\.)[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*)$' (search semantics unless anchored). Domain: D.COMPONENT.CM.PROVIDER.STRUCT.41921f7904c34ed3eb36. Source: provider-contract/schemas/draft/provider-manifest.schema.json#/properties/extensions/propertyNames/pattern.
-      - **required — INCOMPLETE**: 0 atomic; 0 whole-root; 5 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.aa07b71b46f2f845111d [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'provider_version'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.aa07b71b46f2f845111d. Source: provider-contract/schemas/draft/provider-manifest.schema.json#/required/1.
-        - CM.PROVIDER.STRUCT.af0605b38d2ca34acf79 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'supported_contract_versions'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.af0605b38d2ca34acf79. Source: provider-contract/schemas/draft/provider-manifest.schema.json#/required/2.
-        - CM.PROVIDER.STRUCT.cefd26a5dda9bf7d574e [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'capabilities'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.cefd26a5dda9bf7d574e. Source: provider-contract/schemas/draft/provider-manifest.schema.json#/required/4.
-        - CM.PROVIDER.STRUCT.d6747d473d40ed7e8930 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'supported_vcp_versions'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.d6747d473d40ed7e8930. Source: provider-contract/schemas/draft/provider-manifest.schema.json#/required/3.
-        - CM.PROVIDER.STRUCT.f23dbc6f529eaea10371 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'provider_id'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.f23dbc6f529eaea10371. Source: provider-contract/schemas/draft/provider-manifest.schema.json#/required/0.
-      - **type — INCOMPLETE**: 0 atomic; 0 whole-root; 10 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.2180c7ffa267b657829e [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.2180c7ffa267b657829e. Source: provider-contract/schemas/draft/provider-manifest.schema.json#/properties/supported_contract_versions/items/type.
-        - CM.PROVIDER.STRUCT.3093273d0db9561280bc [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.3093273d0db9561280bc. Source: provider-contract/schemas/draft/provider-manifest.schema.json#/properties/extensions/type.
-        - CM.PROVIDER.STRUCT.44e248ee1d7682d9a4cd [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['array']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.44e248ee1d7682d9a4cd. Source: provider-contract/schemas/draft/provider-manifest.schema.json#/properties/capabilities/type.
-        - CM.PROVIDER.STRUCT.7437e888c89b777d1bb5 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.7437e888c89b777d1bb5. Source: provider-contract/schemas/draft/provider-manifest.schema.json#/properties/provider_version/type.
-        - CM.PROVIDER.STRUCT.7908b5dc36ba0771bd14 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.7908b5dc36ba0771bd14. Source: provider-contract/schemas/draft/provider-manifest.schema.json#/properties/provider_id/type.
-        - CM.PROVIDER.STRUCT.7b7979c629311a4afed6 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['array']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.7b7979c629311a4afed6. Source: provider-contract/schemas/draft/provider-manifest.schema.json#/properties/supported_contract_versions/type.
-        - CM.PROVIDER.STRUCT.86dfe78889765001979d [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.86dfe78889765001979d. Source: provider-contract/schemas/draft/provider-manifest.schema.json#/type.
-        - CM.PROVIDER.STRUCT.b748b01b338fb69e64de [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.b748b01b338fb69e64de. Source: provider-contract/schemas/draft/provider-manifest.schema.json#/properties/extensions/propertyNames/type.
-        - CM.PROVIDER.STRUCT.c22ea1432f7af8dbd3c3 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.c22ea1432f7af8dbd3c3. Source: provider-contract/schemas/draft/provider-manifest.schema.json#/properties/supported_vcp_versions/items/type.
-        - CM.PROVIDER.STRUCT.f1a77a75c569b6896c8e [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['array']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.f1a77a75c569b6896c8e. Source: provider-contract/schemas/draft/provider-manifest.schema.json#/properties/supported_vcp_versions/type.
-      - **uniqueItems — INCOMPLETE**: 0 atomic; 0 whole-root; 2 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.PROVIDER.STRUCT.29fb1b96fcd8c3812e01 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: No two array elements are equal under JSON structural equality. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.29fb1b96fcd8c3812e01. Source: provider-contract/schemas/draft/provider-manifest.schema.json#/properties/supported_vcp_versions/uniqueItems.
-        - CM.PROVIDER.STRUCT.2d9e63c4596e582dab2f [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: No two array elements are equal under JSON structural equality. Domain: D.COMPONENT.CM.PROVIDER.STRUCT.2d9e63c4596e582dab2f. Source: provider-contract/schemas/draft/provider-manifest.schema.json#/properties/supported_contract_versions/uniqueItems.
-- **RELAY — INCOMPLETE**: 22 atomic; 0 whole-root; 0 components; 0 finite / 39 symbolic / 0 conditional domain refs, distinct within this branch only.
-  - **Authoring — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-    - **Graph — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.BUILDER.AGGREGATE [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Materialize ordered aggregate_inputs/members and explicit serialized handling entries; weights attach to stable names Domain: None. Source: docs/relay/graph-authoring.md:44-49.
-      - CM.RELAY.BUILDER.BUILD [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Snapshot and validate portable VCP; raw JSON uses same contract Domain: None. Source: docs/relay/graph-authoring.md:59-63.
-      - CM.RELAY.BUILDER.OPTIONAL [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Explicit Constant enables DEFAULT including null; otherwise OMIT; schema defaults insert nothing Domain: None. Source: docs/relay/graph-authoring.md:19-23.
-      - CM.RELAY.BUILDER.SOURCES [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Materialize typed ValueSource and prerequisite edge for upstream binding; dependencies add execution-only edges Domain: None. Source: docs/relay/graph-authoring.md:32-35.
-  - **Binding — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-    - **DeterministicBinder — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.BIND.SELECT [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Unique compatible provider or exact explicit identity Domain: None. Source: docs/relay/providers.md:31-37.
-    - **Injected binder — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.BIND.CHECK [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Independently check trusted catalog and exact manifest/capability identities Domain: None. Source: docs/relay/architecture.md:49-53.
-  - **Cancellation — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-    - **Recorded token — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.CANCEL.TOKEN [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Serialize occurrence to fit one-interrupted-attempt provenance Domain: None. Source: docs/relay/architecture.md:72-76.
-    - **Task — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.CANCEL.TASK [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Clean up processes; raise CancelledError Domain: None. Source: docs/relay/architecture.md:72-76.
-  - **Discovery — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-    - **Catalog — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.CATALOG.ENTRYPOINTS [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Only host-approved names execute factories Domain: None. Source: docs/relay/providers.md:39-41.
-      - CM.RELAY.CATALOG.TRUST [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Explicit trust; duplicate provider ID/version rejects Domain: None. Source: docs/relay/providers.md:31-37.
-  - **Entrypoints — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-    - **CLI — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.CLI.EXIT [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: ERROR anywhere 2; otherwise terminal judgment FAIL 1; nonempty all-terminal PASS 0; remaining 3 Domain: None. Source: docs/relay/quickstart.md:55-58.
-      - CM.RELAY.CLI.JSON [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: stdout only RunRecord; diagnostics stderr; output option stores record Domain: None. Source: docs/relay/quickstart.md:14-16.
-      - CM.RELAY.CLI.STDIN [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Exactly one stdin consumer; --run-inputs aliases --inputs Domain: None. Source: docs/relay/quickstart.md:43-46.
-    - **GraphService — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.SERVICE.ALLOWLIST [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Host-authorized names only; defaults text/guardrail Domain: None. Source: docs/relay/integration.md:39-45.
-      - CM.RELAY.SERVICE.CONCURRENCY [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Bound active service runs, default eight, separately from per-run waves Domain: None. Source: docs/relay/integration.md:59-63.
-    - **HTTP — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.HTTP.AUTH [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Require matching Bearer token before execution Domain: None. Source: docs/relay/integration.md:86-91.
-      - CM.RELAY.HTTP.BOUND [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: HTTP 413, default 1 MiB Domain: None. Source: docs/relay/integration.md:86-91.
-      - CM.RELAY.HTTP.HEALTH [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Report health; supplied server binds localhost Domain: None. Source: docs/relay/integration.md:72-74.
-      - CM.RELAY.HTTP.SHAPE [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Exactly graph string and inputs object; named authorized graph; valid FAIL HTTP 200 Domain: None. Source: docs/relay/integration.md:72-74.
-    - **MCP — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.MCP.TOOLS [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: list_graphs, describe_graph, run_graph, inspect_result expose structured records Domain: None. Source: docs/relay/integration.md:39-45.
-  - **Execution — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-    - **Driver — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.DRIVER.CHECK [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Recheck Provider lifecycle/correlation/output and VCP acceptance Domain: None. Source: docs/relay/architecture.md:49-53.
-    - **Event capture — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.DRIVER.BOUNDS [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Configured count/byte bounds, default 10000 events and 16 MiB Domain: None. Source: docs/relay/security.md:35-42.
-    - **Timeout — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.DRIVER.TIMEOUT [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Independent host timeout, default 30 seconds Domain: None. Source: docs/relay/security.md:35-42.
-  - **Extension ports — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-    - **EventObserver — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - **observe — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.RELAY.PORT.EventObserver.observe [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Receive occurrence/node/provider notification and return None; Relay isolates callback exceptions and annotates diagnostics. Domain: None. Source: src/openverify/relay/ports/__init__.py:74-75, docs/relay/architecture.md#, docs/relay/integration.md#.
-    - **EventSink — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - **emit — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.RELAY.PORT.EventSink.emit [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: For this invocation, synchronously report validated correlated events to the runner callback. Domain: None. Source: src/openverify/relay/ports/__init__.py:10-28, docs/relay/architecture.md#, docs/relay/integration.md#.
-    - **ExecutionDriver — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - **execute — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.RELAY.PORT.ExecutionDriver.execute [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Given provider, manifest/invocation request, host timeout and sink, return InvocationReport retaining legal events and terminal outcome or separate execution/transport error. Application revalidates report. Domain: None. Source: src/openverify/relay/ports/__init__.py:59-75, docs/relay/architecture.md#, docs/relay/integration.md#.
-    - **ProviderBinder — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - **bind — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.RELAY.PORT.ProviderBinder.bind [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Given validated requirement/providers and optional explicit binding, return the exact compatible trusted choice or declared binding/unavailable/ambiguity failure. Domain: None. Source: src/openverify/relay/ports/__init__.py:50-68, docs/relay/architecture.md#, docs/relay/integration.md#.
-    - **ProviderCatalog — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - **providers — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.RELAY.PORT.ProviderCatalog.providers [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Returns the trusted AvailableProvider sequence with valid manifest snapshots; registration/discovery is host-owned. Domain: None. Source: src/openverify/relay/ports/__init__.py:46-64, docs/relay/architecture.md#, docs/relay/integration.md#.
-    - **ProviderTransport — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - **invoke — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.RELAY.PORT.ProviderTransport.invoke [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Given one validated invocation request and sink, deliver permitted ProviderEvents and return terminal Outcome under the supported transport. Domain: None. Source: src/openverify/relay/ports/__init__.py:19-37, docs/relay/architecture.md#, docs/relay/integration.md#.
-    - **RecordStore — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - **get — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.RELAY.PORT.RecordStore.get [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Return retained RunRecord snapshot or None when unavailable. Domain: None. Source: src/openverify/relay/ports/__init__.py:69-75, docs/relay/architecture.md#, docs/relay/integration.md#.
-      - **put — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.RELAY.PORT.RecordStore.put [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Given a valid completed record, persist a snapshot or propagate storage failure. Domain: None. Source: src/openverify/relay/ports/__init__.py:69-75, docs/relay/architecture.md#, docs/relay/integration.md#.
-  - **Observability — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-    - **Observer — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.OBSERVER.ERROR [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Isolate and annotate diagnostic Domain: None. Source: docs/relay/architecture.md:85-89.
-  - **Policies — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-    - **Occurrence — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.POLICY.NO_RECORD [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Raise NO_OCCURRENCE with no RunRecord Domain: None. Source: docs/relay/architecture.md:55-62.
-    - **Opportunity — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.POLICY.IDENTITY [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Generate fresh UUID; explicit identity supports local repeatability Domain: None. Source: docs/relay/architecture.md:55-62.
-  - **Preparation — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-    - **Inputs — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.PREP.SNAPSHOT [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Snapshot/validate definition and supplied inputs; bind graph/policy requirements before policy evaluation Domain: None. Source: docs/relay/architecture.md:55-62.
-  - **Providers — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-    - **Concurrency — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.PROVIDER.SHARING [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Serialize unless explicit concurrency_safe=True Domain: None. Source: docs/relay/architecture.md:72-76.
-    - **Decorator — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.PROVIDER.ERROR [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Exceptions ERROR; observation Evidence/usage use Contract channels and final authoritative usage Domain: None. Source: docs/relay/providers.md:25-29.
-      - CM.RELAY.PROVIDER.NORMALIZE [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Only authoring convenience wraps Result/Decision into named port mapping; policies remain direct Domain: None. Source: docs/relay/providers.md:12-23.
-  - **Public API — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-    - **Relay.run — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.API.RUN [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Accept Graph/Definition/serialized VCP through same validation path; return Run(record) Domain: None. Source: docs/relay/architecture.md:8-22.
-    - **Run — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.API.VIEWS [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Expose complete per-node Results, accepted Decisions, Evidence snapshots, unit-preserving per-node usage and serialized record Domain: None. Source: docs/relay/architecture.md:31-38.
-    - **verify_before — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.API.GATE [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Await verification; require nonempty all EXECUTED SUCCESS APPLICABLE KNOWN PASS Results under default gate Domain: None. Source: docs/relay/integration.md:16-25.
-  - **Public SDK — INCOMPLETE**: 9 atomic; 0 whole-root; 0 components; 0 finite / 21 symbolic / 0 conditional domain refs, distinct within this branch only.
-    - **FunctionProvider — INCOMPLETE**: 9 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.SDK.FUNCTION_PROVIDER.ASYNC [ATOMIC_PROPOSITION_DEFINED]: Reject non-coroutine functions with TypeError. Domain: D.SDK.FUNCTION_PROVIDER. Source: src/openverify/relay/providers.py:127-166.
-      - CM.SDK.FUNCTION_PROVIDER.BUDGET [ATOMIC_PROPOSITION_DEFINED]: Reject before computation because wrapper cannot enforce budgets. Domain: D.SDK.FUNCTION_PROVIDER. Source: src/openverify/relay/providers.py:56-124.
-      - CM.SDK.FUNCTION_PROVIDER.DECISION [ATOMIC_PROPOSITION_DEFINED]: Normalize to decision port mapping. Domain: D.SDK.FUNCTION_PROVIDER. Source: src/openverify/relay/providers.py:56-124.
-      - CM.SDK.FUNCTION_PROVIDER.EXCEPTION [ATOMIC_PROPOSITION_DEFINED]: Yield ERROR with openverify.computation_error. Domain: D.SDK.FUNCTION_PROVIDER. Source: src/openverify/relay/providers.py:56-124.
-      - CM.SDK.FUNCTION_PROVIDER.MANIFEST [ATOMIC_PROPOSITION_DEFINED]: Validate and publish the exact supplied identity/schemas with Contract 0.1, VCP draft and streaming/cancellation/resource reporting enabled, deadlines disabled. Domain: D.SDK.FUNCTION_PROVIDER. Source: src/openverify/relay/providers.py:127-166.
-      - CM.SDK.FUNCTION_PROVIDER.OBSERVATION [ATOMIC_PROPOSITION_DEFINED]: Emit observation evidence and nonempty usage before terminal; preserve usage on explicit execution error. Domain: D.SDK.FUNCTION_PROVIDER. Source: src/openverify/relay/providers.py:56-124.
-      - CM.SDK.FUNCTION_PROVIDER.POLICY [ATOMIC_PROPOSITION_DEFINED]: Return outcome as the direct output object. Domain: D.SDK.FUNCTION_PROVIDER. Source: src/openverify/relay/providers.py:56-124.
-      - CM.SDK.FUNCTION_PROVIDER.RESULT [ATOMIC_PROPOSITION_DEFINED]: Normalize to result port mapping; retain Result usage as observation usage. Domain: D.SDK.FUNCTION_PROVIDER. Source: src/openverify/relay/providers.py:56-124.
-      - CM.SDK.FUNCTION_PROVIDER.TASK_CANCEL [ATOMIC_PROPOSITION_DEFINED]: Propagate CancelledError. Domain: D.SDK.FUNCTION_PROVIDER. Source: src/openverify/relay/providers.py:56-124.
-    - **Graph.add_node — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.SDK.AUTHORING.GRAPH.ADD_NODE [CONCRETE_OPERATION_CONTRACT_REQUIRES_ATOMIC_CLOSURE]: Add a deep copy of an explicitly supplied SDK graph node. Domain: D.SDK.AUTHORING.GRAPH.ADD_NODE. Source: src/openverify/authoring/graph.py:232-240.
-    - **Graph.aggregate — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.SDK.AUTHORING.GRAPH.AGGREGATE [CONCRETE_OPERATION_CONTRACT_REQUIRES_ATOMIC_CLOSURE]: Materialize ordered named membership and members Constant. Standard reducer configuration serializes explicit handling; custom aggregation receives authored configuration. Domain: D.SDK.AUTHORING.GRAPH.AGGREGATE. Source: src/openverify/authoring/graph.py:192-224.
-    - **Graph.build — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.SDK.AUTHORING.GRAPH.BUILD [CONCRETE_OPERATION_CONTRACT_REQUIRES_ATOMIC_CLOSURE]: Construct, serialize and parse a validated portable VerificationDefinition snapshot. Domain: D.SDK.AUTHORING.GRAPH.BUILD. Source: src/openverify/authoring/graph.py:242-253.
-    - **Graph.edge — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.SDK.AUTHORING.GRAPH.EDGE [CONCRETE_OPERATION_CONTRACT_REQUIRES_ATOMIC_CLOSURE]: Append dependency edge; replacing the same source/destination pair updates its guard. Domain: D.SDK.AUTHORING.GRAPH.EDGE. Source: src/openverify/authoring/graph.py:226-230.
-    - **Graph.input — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.SDK.AUTHORING.GRAPH.INPUT [CONCRETE_OPERATION_CONTRACT_REQUIRES_ATOMIC_CLOSURE]: Declare an InputPort and return its RUN_INPUT Ref. Required uses BLOCK; optional uses DEFAULT iff explicit Constant supplied, otherwise OMIT. Domain: D.SDK.AUTHORING.GRAPH.INPUT. Source: src/openverify/authoring/graph.py:94-111.
-    - **Graph.inspect — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.SDK.AUTHORING.GRAPH.INSPECT [CONCRETE_OPERATION_CONTRACT_REQUIRES_ATOMIC_CLOSURE]: Build and call inspect_definition on the validated snapshot. Domain: D.SDK.AUTHORING.GRAPH.INSPECT. Source: src/openverify/authoring/graph.py:258-259.
-    - **Graph.node — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.SDK.AUTHORING.GRAPH.NODE [CONCRETE_OPERATION_CONTRACT_REQUIRES_ATOMIC_CLOSURE]: Materialize kind, exact operation, ports, bindings and copied config; evaluator semantic subject/criterion are explicit constants; upstream refs add prerequisite edges. Domain: D.SDK.AUTHORING.GRAPH.NODE. Source: src/openverify/authoring/graph.py:113-181.
-    - **Graph.to_json — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.SDK.AUTHORING.GRAPH.TO_JSON [CONCRETE_OPERATION_CONTRACT_REQUIRES_ATOMIC_CLOSURE]: Serialize the built validated definition. Domain: D.SDK.AUTHORING.GRAPH.TO_JSON. Source: src/openverify/authoring/graph.py:261-262.
-    - **Graph.validate — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.SDK.AUTHORING.GRAPH.VALIDATE [CONCRETE_OPERATION_CONTRACT_REQUIRES_ATOMIC_CLOSURE]: Build and validate; return None if successful. Domain: D.SDK.AUTHORING.GRAPH.VALIDATE. Source: src/openverify/authoring/graph.py:255-256.
-    - **GraphService.definition — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.SDK.SERVICE.GRAPHSERVICE.DEFINITION [CONCRETE_OPERATION_CONTRACT_REQUIRES_ATOMIC_CLOSURE]: Return a newly parsed stored graph snapshot; unauthorized name raises GRAPH_UNAVAILABLE. Domain: D.SDK.SERVICE.GRAPHSERVICE.DEFINITION. Source: src/openverify/relay/entrypoints/service.py:35-38.
-    - **GraphService.describe_graph — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.SDK.SERVICE.GRAPHSERVICE.DESCRIBE_GRAPH [CONCRETE_OPERATION_CONTRACT_REQUIRES_ATOMIC_CLOSURE]: Inspect authorized definition without invocation. Domain: D.SDK.SERVICE.GRAPHSERVICE.DESCRIBE_GRAPH. Source: src/openverify/relay/entrypoints/service.py:43-44.
-    - **GraphService.inspect_result — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.SDK.SERVICE.GRAPHSERVICE.INSPECT_RESULT [CONCRETE_OPERATION_CONTRACT_REQUIRES_ATOMIC_CLOSURE]: Read service store; absent record raises RUN_UNAVAILABLE, otherwise return record data. Domain: D.SDK.SERVICE.GRAPHSERVICE.INSPECT_RESULT. Source: src/openverify/relay/entrypoints/service.py:53-59.
-    - **GraphService.list_graphs — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.SDK.SERVICE.GRAPHSERVICE.LIST_GRAPHS [CONCRETE_OPERATION_CONTRACT_REQUIRES_ATOMIC_CLOSURE]: Return sorted authorized graph names. Domain: D.SDK.SERVICE.GRAPHSERVICE.LIST_GRAPHS. Source: src/openverify/relay/entrypoints/service.py:40-41.
-    - **GraphService.run_graph — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.SDK.SERVICE.GRAPHSERVICE.RUN_GRAPH [CONCRETE_OPERATION_CONTRACT_REQUIRES_ATOMIC_CLOSURE]: Within service semaphore, execute authorized graph and return complete record as wire data. Domain: D.SDK.SERVICE.GRAPHSERVICE.RUN_GRAPH. Source: src/openverify/relay/entrypoints/service.py:46-51.
-    - **NodeRef.__getitem__ — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.SDK.NODE.OUTPUT [CONCRETE_OPERATION_CONTRACT_REQUIRES_ATOMIC_CLOSURE]: Return the declared output Ref; undeclared name raises KeyError. Domain: D.SDK.NODE.OUTPUT. Source: src/openverify/authoring/graph.py:45-46.
-    - **Relay.run_sync — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.SDK.RELAY.RUN_SYNC [CONCRETE_OPERATION_CONTRACT_REQUIRES_ATOMIC_CLOSURE]: Execute Relay.run through asyncio.run and return Run. Domain: D.SDK.RELAY.RUN_SYNC. Source: src/openverify/relay/api.py:143-150.
-    - **Relay.verify_before — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.SDK.RELAY.VERIFY_BEFORE [CONCRETE_OPERATION_CONTRACT_REQUIRES_ATOMIC_CLOSURE]: Await verification; invoke action once only if gate_policy returns true. Otherwise raise GATE_REJECTED; verification errors propagate before action. Domain: D.SDK.RELAY.VERIFY_BEFORE. Source: src/openverify/relay/api.py:152-165.
-    - **RuntimeConfig.__post_init__ — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.SDK.RELAY.CONFIG [CONCRETE_OPERATION_CONTRACT_REQUIRES_ATOMIC_CLOSURE]: Require exact positive integer max_concurrency and finite positive timeout; reject invalid settings with ValueError. Domain: D.SDK.RELAY.CONFIG. Source: src/openverify/relay/config.py:17-21.
-    - **constant — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.SDK.REFERENCE.CONSTANT [CONCRETE_OPERATION_CONTRACT_REQUIRES_ATOMIC_CLOSURE]: Return Ref carrying a CONSTANT ValueSource and the supplied schema. Domain: D.SDK.REFERENCE.CONSTANT. Source: src/openverify/authoring/references.py:16-17.
-    - **external — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.SDK.REFERENCE.EXTERNAL [CONCRETE_OPERATION_CONTRACT_REQUIRES_ATOMIC_CLOSURE]: Return Ref carrying an EXTERNAL_REFERENCE source and object schema. Domain: D.SDK.REFERENCE.EXTERNAL. Source: src/openverify/authoring/references.py:20-21.
-  - **Records — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-    - **Acceptance — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.STORE.VALIDATE [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Parse RunRecord before storage and return Domain: None. Source: docs/relay/architecture.md:85-89.
-    - **Annotations — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.ANNOTATION.SCOPE [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Optional unauthenticated annotation supplements normative ProviderBinding Domain: None. Source: docs/relay/architecture.md:85-89.
-    - **Stores — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.STORE.COPY [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Snapshot both directions Domain: None. Source: docs/relay/integration.md:113-119.
-      - CM.RELAY.STORE.ERROR [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Propagate to host Domain: None. Source: docs/relay/integration.md:113-119.
-      - CM.RELAY.STORE.SCOPE [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Memory volatile; JSONL single-process nontransactional append/reload Domain: None. Source: docs/relay/limitations.md:7-40.
-  - **Scheduler — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-    - **Acceptance — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.SCHED.ORDER [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Accept records in definition order within wave Domain: None. Source: docs/relay/architecture.md:64-70.
-    - **Barriers — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.SCHED.CONTROL [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Serial barrier without concurrently affected wave peers Domain: None. Source: docs/relay/architecture.md:64-70.
-    - **Concurrent runs — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.SCHED.ISOLATION [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Keep states/inputs/records/cancellation occurrence-local Domain: None. Source: docs/relay/architecture.md:72-76.
-    - **Waves — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.SCHED.WAVE [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Bounded ready wave; all members settle before successors start Domain: None. Source: docs/relay/architecture.md:64-70.
-  - **Standard providers — INCOMPLETE**: 13 atomic; 0 whole-root; 0 components; 0 finite / 18 symbolic / 0 conditional domain refs, distinct within this branch only.
-    - **Action policy — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.ACTION.PREFIX [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Only descendants of valid relative prefixes pass; tmp and tmp/ equivalent; prefix itself, siblings, absolute/traversal/ambiguous paths fail Domain: None. Source: docs/relay/providers.md:72-91.
-    - **Coordinates — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.SCOPE.RANGES [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Half-open end coordinates; zero-length ranges intersect nothing; return original finding file strings/coordinates Domain: None. Source: docs/relay/providers.md:112-118.
-    - **FileAccess — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.SECURITY.FILES [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Authorize resolved roots/cwd, reject escaping symlinks and enforce read/selection bounds Domain: None. Source: docs/relay/security.md:18-25.
-    - **Git — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.SECURITY.FRESHNESS [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Compare observed worktree/HEAD/content identities later Domain: None. Source: docs/relay/security.md:60-66.
-    - **Git scope — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.GIT.CHANGES [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Untracked gets whole-file new ranges; renames retain old/new identities; deletions reported separately/excluded from executable file scope Domain: None. Source: docs/relay/providers.md:129-136.
-      - CM.RELAY.GIT.MODES [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: WORKTREE compares base to tracked worktree; STAGED base to index; UNSTAGED index to worktree with empty base; include_untracked explicit Domain: None. Source: docs/relay/providers.md:129-136.
-    - **Scope paths — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.SCOPE.INVALID [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Empty file list selects nothing; empty directory, NUL, traversal, ambiguous Windows paths/reserved paths reject; dot explicitly selects cwd Domain: None. Source: docs/relay/providers.md:112-118.
-      - CM.RELAY.SCOPE.PATH [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Platform-native component/case rules; relative paths use cwd; trailing separator preserves directory membership; POSIX backslash literal Domain: None. Source: docs/relay/providers.md:102-110.
-    - **Text — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.SECURITY.TEXT [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Bounded regex worker and capped findings Domain: None. Source: docs/relay/security.md:52-58.
-      - CM.RELAY.TEXT.COORDINATES [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Combine input and configured terms; offsets zero-based Unicode/end-exclusive; lines/columns one-based Domain: None. Source: docs/relay/providers.md:93-98.
-    - **Tools — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.TOOL.AST [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Actual installed ast-grep patterns/authorized rule files; whole-file findings and half-open range intersection Domain: None. Source: docs/relay/providers.md:138-144.
-      - CM.RELAY.TOOL.PYTEST [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Run actual configured tests/plugins with process privileges; default full scope; exit 1 FAIL and exits 2-5 ERROR Domain: None. Source: docs/relay/providers.md:138-144.
-      - CM.RELAY.TOOL.RUFF [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Use actual isolated tool and explicit diagnostic codes; lint exit 1 means FAIL Domain: None. Source: docs/relay/providers.md:138-144.
-    - **action_policy — INCOMPLETE**: 1 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.STANDARD.ACTION.PREFIX_SELF [ATOMIC_PROPOSITION_DEFINED]: Deny; the prefix designates a directory and only strict descendants are allowed. Domain: D.STANDARD.ACTION_POLICY. Source: src/openverify/standard/control.py:1-53, docs/relay/providers.md:1-147.
-      - CM.RELAY.STANDARD.ACTION_POLICY [CONCRETE_CAPABILITY_SUMMARY_REQUIRES_ATOMIC_DECOMPOSITION]: Only delete with a nonempty relative target strictly below a valid relative directory prefix passes. Invalid supplied prefix, traversal, absolute/ambiguous path or a prefix itself fails closed. Domain: D.STANDARD.ACTION_POLICY. Source: src/openverify/standard/control.py:1-53, docs/relay/providers.md:72-91.
-    - **aggregate — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.STANDARD.AGGREGATE [CONCRETE_CAPABILITY_SUMMARY_REQUIRES_ATOMIC_DECOMPOSITION]: Use explicit ordered members and the declared standard VCP reducer laws. Member values remain tied to names when filtering/weighting. Domain: D.STANDARD.AGGREGATE. Source: src/openverify/standard/__init__.py:1-68, docs/relay/providers.md:72-91.
-    - **astgrep — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.STANDARD.ASTGREP [CONCRETE_CAPABILITY_SUMMARY_REQUIRES_ATOMIC_DECOMPOSITION]: Run actual ast-grep pattern or authorized rule file on selected whole files; normalize zero-based tool coordinates to one-based half-open findings. Invalid option combination/tool failure is ERROR. Domain: D.STANDARD.ASTGREP. Source: src/openverify/standard/astgrep.py:15-75, docs/relay/providers.md:72-91.
-    - **candidate_unchanged — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.STANDARD.CANDIDATE_UNCHANGED [CONCRETE_CAPABILITY_SUMMARY_REQUIRES_ATOMIC_DECOMPOSITION]: Recheck supplied worktree identity, file content identities, HEAD, compared diff and untracked scope. Changed checked state yields stale_candidate; mismatched cwd yields candidate_worktree_mismatch. Domain: D.STANDARD.CANDIDATE_UNCHANGED. Source: src/openverify/standard/git.py:1-210, docs/relay/providers.md:72-91.
-    - **command — INCOMPLETE**: 1 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.STANDARD.COMMAND [CONCRETE_CAPABILITY_SUMMARY_REQUIRES_ATOMIC_DECOMPOSITION]: Run only the host-authored command, bounded by timeout/output limits, and return its observation without deriving a verification verdict. Domain: D.STANDARD.COMMAND. Source: src/openverify/standard/command.py:25-44, docs/relay/providers.md:72-91.
-      - CM.RELAY.STANDARD.COMMAND.NO_VERDICT [ATOMIC_PROPOSITION_DEFINED]: Return observation with that code; comparison belongs to command_check. Domain: D.STANDARD.COMMAND. Source: src/openverify/standard/command.py:1-86, docs/relay/providers.md:1-147.
-    - **command_check — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.STANDARD.COMMAND_CHECK [CONCRETE_CAPABILITY_SUMMARY_REQUIRES_ATOMIC_DECOMPOSITION]: Compare exact return code and optional required substrings. Produce unexpected_exit/output_missing findings for mismatches, preserving the checked observation. Domain: D.STANDARD.COMMAND_CHECK. Source: src/openverify/standard/command.py:1-86, docs/relay/providers.md:72-91.
-    - **gate — INCOMPLETE**: 1 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.STANDARD.GATE [CONCRETE_CAPABILITY_SUMMARY_REQUIRES_ATOMIC_DECOMPOSITION]: Parse checked as a Result, then CONTINUE only for EXECUTED/SUCCESS/APPLICABLE/KNOWN/PASS; every other valid Result yields STOP_FAILURE. Domain: D.STANDARD.GATE. Source: src/openverify/standard/control.py:1-53, docs/relay/providers.md:72-91.
-      - CM.RELAY.STANDARD.GATE.INVALID [ATOMIC_PROPOSITION_DEFINED]: Reject operation input; do not produce an ordinary denial Decision. Domain: D.STANDARD.GATE. Source: src/openverify/standard/control.py:1-53, docs/relay/providers.md:1-147.
-    - **git_scope — INCOMPLETE**: 2 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.STANDARD.GIT.DELETE [ATOMIC_PROPOSITION_DEFINED]: Keep deletion identities separate; zero-count hunk contains no new-file lines. Domain: D.STANDARD.GIT_SCOPE. Source: src/openverify/standard/git.py:1-210, docs/relay/providers.md:1-147.
-      - CM.RELAY.STANDARD.GIT.FRESHNESS [ATOMIC_PROPOSITION_DEFINED]: Reject the detected inconsistent capture. Domain: D.STANDARD.GIT_SCOPE. Source: src/openverify/standard/git.py:1-210, docs/relay/providers.md:1-147.
-      - CM.RELAY.STANDARD.GIT_SCOPE [CONCRETE_CAPABILITY_SUMMARY_REQUIRES_ATOMIC_DECOMPOSITION]: WORKTREE compares base to worktree, STAGED base to index, UNSTAGED index to worktree with empty base. Preserve rename identities, separate deletions, include explicit untracked policy and reject detected changes during capture. Domain: D.STANDARD.GIT_SCOPE. Source: src/openverify/standard/git.py:1-210, docs/relay/providers.md:72-91.
-    - **json_parse — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.STANDARD.JSON_PARSE [CONCRETE_CAPABILITY_SUMMARY_REQUIRES_ATOMIC_DECOMPOSITION]: Parse strict JSON, rejecting duplicate keys, malformed text and nonfinite tokens. Preserve parsed JSON type/value. Domain: D.STANDARD.JSON_PARSE. Source: src/openverify/standard/structured.py:1-37, docs/relay/providers.md:72-91.
-    - **no_findings — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.STANDARD.NO_FINDINGS [CONCRETE_CAPABILITY_SUMMARY_REQUIRES_ATOMIC_DECOMPOSITION]: PASS iff the supplied findings list is empty; otherwise FAIL retaining structured finding evidence. Domain: D.STANDARD.NO_FINDINGS. Source: src/openverify/standard/scope.py:1-105, docs/relay/providers.md:72-91.
-    - **pytest — INCOMPLETE**: 1 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.STANDARD.PYTEST [CONCRETE_CAPABILITY_SUMMARY_REQUIRES_ATOMIC_DECOMPOSITION]: Run real pytest with supplied selectors; no selectors means full scope. Exit 0 passes, 1 fails, 2 through 5 are execution ERROR; Python/plugins execute with host privileges. Domain: D.STANDARD.PYTEST. Source: src/openverify/standard/pytest.py:11-44, docs/relay/providers.md:72-91.
-      - CM.RELAY.STANDARD.PYTEST.PRIVILEGES [ATOMIC_PROPOSITION_DEFINED]: Execution uses actual host process privileges. Domain: D.STANDARD.PYTEST. Source: src/openverify/standard/pytest.py:1-44, docs/relay/providers.md:1-147.
-    - **read_file — INCOMPLETE**: 1 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.STANDARD.FILES.IDENTITY [ATOMIC_PROPOSITION_DEFINED]: sha256 and size describe precisely the same byte snapshot returned through base64. Domain: D.STANDARD.READ_FILE. Source: src/openverify/standard/filesystem.py:1-124, docs/relay/providers.md:1-147.
-      - CM.RELAY.STANDARD.READ_FILE [CONCRETE_CAPABILITY_SUMMARY_REQUIRES_ATOMIC_DECOMPOSITION]: Read bounded authorized bytes; base64 encodes those bytes, sha256 and size describe the same bytes. Domain: D.STANDARD.READ_FILE. Source: src/openverify/standard/filesystem.py:1-124, docs/relay/providers.md:72-91.
-    - **read_text — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.STANDARD.READ_TEXT [CONCRETE_CAPABILITY_SUMMARY_REQUIRES_ATOMIC_DECOMPOSITION]: Read bounded authorized bytes, reject NUL/binary and invalid UTF-8, return decoded text and identity over the exact read bytes. Domain: D.STANDARD.READ_TEXT. Source: src/openverify/standard/filesystem.py:1-124, docs/relay/providers.md:72-91.
-    - **ruff — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.STANDARD.RUFF [CONCRETE_CAPABILITY_SUMMARY_REQUIRES_ATOMIC_DECOMPOSITION]: Run installed Ruff isolated with explicit select codes on authorized Python files; report normalized actual diagnostics. Empty scope passes without process invocation; tool failures are ERROR. Domain: D.STANDARD.RUFF. Source: src/openverify/standard/ruff.py:15-86, docs/relay/providers.md:72-91.
-    - **schema — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.STANDARD.SCHEMA [CONCRETE_CAPABILITY_SUMMARY_REQUIRES_ATOMIC_DECOMPOSITION]: Validate the configured self-contained schema, then check supplied value offline. A valid-schema instance mismatch is a schema_mismatch finding, not an execution failure. Domain: D.STANDARD.SCHEMA. Source: src/openverify/standard/structured.py:1-37, docs/relay/providers.md:72-91.
-    - **scope — INCOMPLETE**: 3 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.STANDARD.SCOPE [CONCRETE_CAPABILITY_SUMMARY_REQUIRES_ATOMIC_DECOMPOSITION]: Filter supplied findings in their original order using normalized local file identity or half-open ranges. Preserve original finding strings and coordinates. Domain: D.STANDARD.SCOPE. Source: src/openverify/standard/scope.py:1-105, docs/relay/providers.md:72-91.
-      - CM.RELAY.STANDARD.SCOPE.EMPTY [ATOMIC_PROPOSITION_DEFINED]: Return no selected findings. Domain: D.STANDARD.SCOPE. Source: src/openverify/standard/scope.py:1-105, docs/relay/providers.md:1-147.
-      - CM.RELAY.STANDARD.SCOPE.LEXICAL [ATOMIC_PROPOSITION_DEFINED]: Compare lexical platform-normalized components without reading files or resolving symlinks. Domain: D.STANDARD.SCOPE. Source: src/openverify/standard/scope.py:1-105, docs/relay/providers.md:1-147.
-      - CM.RELAY.STANDARD.SCOPE.ORDER [ATOMIC_PROPOSITION_DEFINED]: Return selected values in original input order with original file strings and coordinates. Domain: D.STANDARD.SCOPE. Source: src/openverify/standard/scope.py:1-105, docs/relay/providers.md:1-147.
-    - **select_files — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.STANDARD.SELECT_FILES [CONCRETE_CAPABILITY_SUMMARY_REQUIRES_ATOMIC_DECOMPOSITION]: Authorize selected files within host roots; choose explicit files, supplied/default glob or recursive directory traversal; return sorted paths bounded by file limit. Domain: D.STANDARD.SELECT_FILES. Source: src/openverify/standard/filesystem.py:1-124, docs/relay/providers.md:72-91.
-    - **text — INCOMPLETE**: 3 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.STANDARD.TEXT [CONCRETE_CAPABILITY_SUMMARY_REQUIRES_ATOMIC_DECOMPOSITION]: Combine bound and configured terms. Missing required literals, present prohibited literals and unmatched required regex produce structured findings; PASS iff no findings. Domain: D.STANDARD.TEXT. Source: src/openverify/standard/text.py:72-84, docs/relay/providers.md:72-91.
-      - CM.RELAY.STANDARD.TEXT.LINECOL [ATOMIC_PROPOSITION_DEFINED]: Use one-based line and column positions. Domain: D.STANDARD.TEXT. Source: src/openverify/standard/text.py:1-84, docs/relay/providers.md:1-147.
-      - CM.RELAY.STANDARD.TEXT.OFFSETS [ATOMIC_PROPOSITION_DEFINED]: Use zero-based Unicode character offsets with exclusive end. Domain: D.STANDARD.TEXT. Source: src/openverify/standard/text.py:1-84, docs/relay/providers.md:1-147.
-      - CM.RELAY.STANDARD.TEXT.TERMS [ATOMIC_PROPOSITION_DEFINED]: Concatenate the two declared sources of terms; configured terms do not replace bound terms. Domain: D.STANDARD.TEXT. Source: src/openverify/standard/text.py:1-84, docs/relay/providers.md:1-147.
-  - **Transport — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-    - **Processes — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.PROCESS.CLEANUP [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: argv array, absolute cwd, no shell; platform process-tree cleanup Domain: None. Source: docs/relay/security.md:27-33.
-    - **Stdio — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.RELAY.STDIO.SESSION [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Fresh initialized session per invocation; manifest equals trusted snapshot Domain: None. Source: docs/relay/providers.md:43-50.
-- **SHARED — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 1 finite / 25 symbolic / 0 conditional domain refs, distinct within this branch only.
-  - **JSON value and schema semantics — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-    - **JSON_EQUALITY — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.SHARED.JSON_EQUALITY [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: JSON booleans and numbers are distinct; numbers compare by JSON numeric value; arrays are ordered; object member ordering does not alter object value. This same equality is used for reconstructed provenance snapshots. Domain: None. Source: provider-contract/spec/draft/capabilities.md#, spec/draft/provenance.md:22-27.
-    - **SCHEMA_APPLICATORS — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.SHARED.SCHEMA_APPLICATORS [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Evaluate allOf conjunctively, anyOf existentially, oneOf with exactly one successful child, not by negation, and if solely as a branch selector; apply child properties/items/propertyNames only at their actual locations. Domain: None. Source: provider-contract/schemas/draft/outcome.schema.json#.
-  - **Public SDK — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 1 finite / 25 symbolic / 0 conditional domain refs, distinct within this branch only.
-    - **ProtocolError.as_dict — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.SDK.ERROR.ASDICT [CONCRETE_OPERATION_CONTRACT_REQUIRES_ATOMIC_CLOSURE]: Return code,message,path,details preserving string code and diagnostic fields. Domain: D.SDK.ERROR.ASDICT. Source: src/openverify/errors.py:26-32.
-    - **ProviderContractError.as_dict — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.SDK.PROVIDER.ERROR.ASDICT [CONCRETE_OPERATION_CONTRACT_REQUIRES_ATOMIC_CLOSURE]: Return code,message,details without a VCP path field. Domain: D.SDK.PROVIDER.ERROR.ASDICT. Source: src/openverify/provider/validation.py:63-64.
-    - **fingerprint — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.SDK.FINGERPRINT [CONCRETE_OPERATION_CONTRACT_REQUIRES_ATOMIC_CLOSURE]: Return local-sha256: followed by SHA256 hex of the SDK serialized UTF-8 bytes. Domain: D.SDK.FINGERPRINT. Source: src/openverify/fingerprint/__init__.py:9-11.
-    - **flattened_status — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 1 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.SDK.FLATTEN [CONCRETE_OPERATION_CONTRACT_REQUIRES_ATOMIC_CLOSURE]: Validate Result, then use the partial standard projection; undefined states raise SDK RESULT_PROJECTION. Domain: D.RESULT.FLATTENED. Source: src/openverify/inspection.py:56-68.
-    - **inspect_definition — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.SDK.INSPECT [CONCRETE_OPERATION_CONTRACT_REQUIRES_ATOMIC_CLOSURE]: Validate definition, then expose id/version/subject/criterion, topological node order, policy/run-input/port/binding data and declared upstream consumers including guards. Domain: D.SDK.INSPECT. Source: src/openverify/inspection.py:13-53.
-    - **json_equal — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.SDK.JSON.EQUALITY [CONCRETE_OPERATION_CONTRACT_REQUIRES_ATOMIC_CLOSURE]: Compare numbers numerically, Boolean separately; lists positionally; object key order immaterial. Domain: D.SDK.JSON.EQUALITY. Source: src/openverify/serialization/__init__.py:13-33.
-    - **load_provider_schema — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.SDK.PROVIDER.SCHEMA.LOAD [CONCRETE_OPERATION_CONTRACT_REQUIRES_ATOMIC_CLOSURE]: Return one of the nine packaged Provider schemas; unknown root raises PROTOCOL_VIOLATION. Domain: D.SDK.PROVIDER.SCHEMA.LOAD. Source: src/openverify/provider/validation.py:80-90.
-    - **load_schema — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.SDK.SCHEMA.LOAD [CONCRETE_OPERATION_CONTRACT_REQUIRES_ATOMIC_CLOSURE]: Return packaged named schema, including value-source; unknown root raises PROTOCOL_STRUCTURE. Domain: D.SDK.SCHEMA.LOAD. Source: src/openverify/validation/__init__.py:81-91.
-    - **parse_cancel_request — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.SDK.PROVIDER.PARSE_CANCEL_REQUEST [CONCRETE_OPERATION_CONTRACT_REQUIRES_ATOMIC_CLOSURE]: Delegate to parse_provider_object for cancel-request; return its typed value after structure and local semantic validation. Domain: D.SDK.PROVIDER.PARSE_CANCEL_REQUEST. Source: src/openverify/provider/validation.py:347-348.
-    - **parse_definition — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.SDK.PARSE.DEFINITION [CONCRETE_OPERATION_CONTRACT_REQUIRES_ATOMIC_CLOSURE]: Decode strict JSON, validate the named shipped root and its prose semantics, return the typed verification-definition value. Domain: D.SDK.PARSE.DEFINITION. Source: src/openverify/validation/__init__.py:168-169.
-    - **parse_invocation — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.SDK.PROVIDER.PARSE_INVOCATION [CONCRETE_OPERATION_CONTRACT_REQUIRES_ATOMIC_CLOSURE]: Delegate to parse_provider_object for invocation; return its typed value after structure and local semantic validation. Domain: D.SDK.PROVIDER.PARSE_INVOCATION. Source: src/openverify/provider/validation.py:335-336.
-    - **parse_outcome — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.SDK.PROVIDER.PARSE_OUTCOME [CONCRETE_OPERATION_CONTRACT_REQUIRES_ATOMIC_CLOSURE]: Delegate to parse_provider_object for outcome; return its typed value after structure and local semantic validation. Domain: D.SDK.PROVIDER.PARSE_OUTCOME. Source: src/openverify/provider/validation.py:343-344.
-    - **parse_provider_event — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.SDK.PROVIDER.PARSE_PROVIDER_EVENT [CONCRETE_OPERATION_CONTRACT_REQUIRES_ATOMIC_CLOSURE]: Delegate to parse_provider_object for provider-event; return its typed value after structure and local semantic validation. Domain: D.SDK.PROVIDER.PARSE_PROVIDER_EVENT. Source: src/openverify/provider/validation.py:339-340.
-    - **parse_provider_manifest — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.SDK.PROVIDER.PARSE_PROVIDER_MANIFEST [CONCRETE_OPERATION_CONTRACT_REQUIRES_ATOMIC_CLOSURE]: Delegate to parse_provider_object for provider-manifest; return its typed value after structure and local semantic validation. Domain: D.SDK.PROVIDER.PARSE_PROVIDER_MANIFEST. Source: src/openverify/provider/validation.py:331-332.
-    - **parse_result — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.SDK.PARSE.RESULT [CONCRETE_OPERATION_CONTRACT_REQUIRES_ATOMIC_CLOSURE]: Decode strict JSON, validate the named shipped root and its prose semantics, return the typed result value. Domain: D.SDK.PARSE.RESULT. Source: src/openverify/validation/__init__.py:172-173.
-    - **parse_run_record — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.SDK.PARSE.RECORD [CONCRETE_OPERATION_CONTRACT_REQUIRES_ATOMIC_CLOSURE]: Decode strict JSON, validate the named shipped root and its prose semantics, return the typed run-record value. Domain: D.SDK.PARSE.RECORD. Source: src/openverify/validation/__init__.py:176-177.
-    - **serialize — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 2 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.SDK.PROVIDER.SERIALIZE [CONCRETE_OPERATION_CONTRACT_REQUIRES_ATOMIC_CLOSURE]: Return compact ensure_ascii JSON of wire_data with nonfinite values prohibited. Domain: D.SDK.PROVIDER.SERIALIZE. Source: src/openverify/provider/validation.py:76-77.
-      - CM.SDK.SERIALIZE.BYTES [CONCRETE_OPERATION_CONTRACT_REQUIRES_ATOMIC_CLOSURE]: Return compact sorted-key ensure_ascii JSON with nonfinite output prohibited. Domain: D.SDK.SERIALIZE.BYTES. Source: src/openverify/serialization/__init__.py:68-71.
-    - **to_data — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.SDK.SERIALIZE.DATA [CONCRETE_OPERATION_CONTRACT_REQUIRES_ATOMIC_CLOSURE]: Recursively materialize wire fields; omit unsupplied empty metadata/extensions and optional null controls; retain explicitly set Result judgment/output and InputResolution value, including null. Domain: D.SDK.SERIALIZE.DATA. Source: src/openverify/serialization/__init__.py:36-55.
-    - **validate_definition — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.SDK.VALIDATE.DEFINITION [CONCRETE_OPERATION_CONTRACT_REQUIRES_ATOMIC_CLOSURE]: Validate by serializing to wire data and applying parse_definition; return None on success. Domain: D.SDK.VALIDATE.DEFINITION. Source: src/openverify/validation/__init__.py:180-181.
-    - **validate_invocation — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.SDK.PROVIDER.VALIDATE_INVOCATION [CONCRETE_OPERATION_CONTRACT_REQUIRES_ATOMIC_CLOSURE]: Reparse wire_data through the corresponding object parser and return None on success. Domain: D.SDK.PROVIDER.VALIDATE_INVOCATION. Source: src/openverify/provider/validation.py:355-356.
-    - **validate_outcome — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.SDK.PROVIDER.VALIDATE_OUTCOME [CONCRETE_OPERATION_CONTRACT_REQUIRES_ATOMIC_CLOSURE]: Reparse wire_data through the corresponding object parser and return None on success. Domain: D.SDK.PROVIDER.VALIDATE_OUTCOME. Source: src/openverify/provider/validation.py:363-364.
-    - **validate_provider_event — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.SDK.PROVIDER.VALIDATE_PROVIDER_EVENT [CONCRETE_OPERATION_CONTRACT_REQUIRES_ATOMIC_CLOSURE]: Reparse wire_data through the corresponding object parser and return None on success. Domain: D.SDK.PROVIDER.VALIDATE_PROVIDER_EVENT. Source: src/openverify/provider/validation.py:359-360.
-    - **validate_provider_manifest — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.SDK.PROVIDER.VALIDATE_PROVIDER_MANIFEST [CONCRETE_OPERATION_CONTRACT_REQUIRES_ATOMIC_CLOSURE]: Reparse wire_data through the corresponding object parser and return None on success. Domain: D.SDK.PROVIDER.VALIDATE_PROVIDER_MANIFEST. Source: src/openverify/provider/validation.py:351-352.
-    - **validate_result — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.SDK.VALIDATE.RESULT [CONCRETE_OPERATION_CONTRACT_REQUIRES_ATOMIC_CLOSURE]: Validate by serializing to wire data and applying parse_result; return None on success. Domain: D.SDK.VALIDATE.RESULT. Source: src/openverify/validation/__init__.py:184-185.
-    - **wire_data — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.SDK.PROVIDER.WIRE_DATA [CONCRETE_OPERATION_CONTRACT_REQUIRES_ATOMIC_CLOSURE]: Use JSON model dump with exclude_unset=True, preserving explicitly supplied null and extension values. Domain: D.SDK.PROVIDER.WIRE_DATA. Source: src/openverify/provider/validation.py:71-73.
-- **VCP — INCOMPLETE**: 71 atomic; 24 whole-root; 539 components; 15 finite / 31 symbolic / 1 conditional domain refs, distinct within this branch only.
-  - **Aggregation — INCOMPLETE**: 10 atomic; 0 whole-root; 0 components; 0 finite / 2 symbolic / 0 conditional domain refs, distinct within this branch only.
-    - **Evidence — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.AGG.EVIDENCE_ORDER [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Concatenate retained evidence in authored membership order Domain: D.AGG.MEMBERSHIP. Source: spec/draft/aggregation.md:20-38.
-    - **Handling — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.AGG.IGNORE [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Exclude that member only; retain order and identities of others Domain: D.AGG.MEMBERSHIP. Source: spec/draft/aggregation.md:10-18.
-      - CM.VCP.AGG.MISSING [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Use MISSING handling Domain: D.AGG.MEMBERSHIP. Source: spec/draft/aggregation.md:10-18.
-      - CM.VCP.AGG.REJECT [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Reject reduction with AGGREGATE_INPUT and record ERROR Domain: D.AGG.MEMBERSHIP. Source: spec/draft/aggregation.md:10-18.
-    - **Logical reducers — INCOMPLETE**: 3 atomic; 0 whole-root; 0 components; 0 finite / 2 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.AGG.ALL [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: PASS iff every retained verdict is PASS Domain: D.AGG.MEMBERSHIP. Source: spec/draft/aggregation.md:20-38.
-      - CM.VCP.AGG.ANY [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: PASS iff at least one retained verdict is PASS Domain: D.AGG.MEMBERSHIP. Source: spec/draft/aggregation.md:20-38.
-      - CM.VCP.AGG.MAJORITY.FAIL [ATOMIC_PROPOSITION_DEFINED]: Return FAIL. Domain: D.AGG.LOGICAL. Source: spec/draft/aggregation.md:20-38.
-      - CM.VCP.AGG.MAJORITY.PASS [ATOMIC_PROPOSITION_DEFINED]: Return PASS. Domain: D.AGG.LOGICAL. Source: spec/draft/aggregation.md:20-38.
-      - CM.VCP.AGG.MAJORITY.TIE [ATOMIC_PROPOSITION_DEFINED]: Reject reduction. Domain: D.AGG.LOGICAL. Source: spec/draft/aggregation.md:20-38.
-    - **Membership — INCOMPLETE**: 7 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.AGG.MEMBERS.COMPLETE [ATOMIC_PROPOSITION_DEFINED]: Include that binding in aggregate_inputs. Domain: D.AGG.MEMBERSHIP. Source: spec/draft/dataflow.md:127-140.
-      - CM.VCP.AGG.MEMBERS.ORDER [ATOMIC_PROPOSITION_DEFINED]: aggregate_inputs is an authored ordered list. Domain: D.AGG.MEMBERSHIP. Source: spec/draft/dataflow.md:127-140.
-      - CM.VCP.AGG.MEMBERS.REQUIREDNESS [ATOMIC_PROPOSITION_DEFINED]: Input is required BLOCK. Domain: D.AGG.MEMBERSHIP. Source: spec/draft/dataflow.md:127-140.
-      - CM.VCP.AGG.MEMBERS.SOURCE_ROLE [ATOMIC_PROPOSITION_DEFINED]: Member binds existing upstream RESULT-role output. Domain: D.AGG.MEMBERSHIP. Source: spec/draft/dataflow.md:127-140.
-      - CM.VCP.AGG.MEMBERS.UNIQUE [ATOMIC_PROPOSITION_DEFINED]: Member input names are unique. Domain: D.AGG.MEMBERSHIP. Source: spec/draft/dataflow.md:127-140.
-      - CM.VCP.AGG.MEMBERS_INPUT.CONSTANT [ATOMIC_PROPOSITION_DEFINED]: Required members input is CONSTANT equal to aggregate_inputs. Domain: D.AGG.MEMBERSHIP. Source: spec/draft/dataflow.md:127-140.
-      - CM.VCP.AGG.MEMBERS_INPUT.RESERVED [ATOMIC_PROPOSITION_DEFINED]: subject, criterion and members are not member names. Domain: D.AGG.MEMBERSHIP. Source: spec/draft/dataflow.md:127-140.
-      - CM.VCP.AGG.MEMBER_STATES [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Keep it in membership and apply handling; unavailable values block Domain: D.AGG.MEMBERSHIP. Source: spec/draft/dataflow.md:127-140.
-    - **Numeric reducers — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.AGG.MAX [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Output score is mathematical maximum Domain: D.AGG.MEMBERSHIP. Source: spec/draft/aggregation.md:20-38.
-      - CM.VCP.AGG.MEAN [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Output score is arithmetic mean sum(x_i)/n Domain: D.AGG.MEMBERSHIP. Source: spec/draft/aggregation.md:20-38.
-      - CM.VCP.AGG.MIN [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Output score is mathematical minimum Domain: D.AGG.MEMBERSHIP. Source: spec/draft/aggregation.md:20-38.
-      - CM.VCP.AGG.WEIGHTED [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Output sum(w_i*x_i)/sum(w_i), all original weights finite nonnegative and retained total positive Domain: D.AGG.MEMBERSHIP. Source: spec/draft/aggregation.md:20-38.
-    - **Severity — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.AGG.SEVERITY_DOMAIN [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Explicit domain ID, unique nonempty labels and distinct integral ranks; validate every member domain/label Domain: D.AGG.MEMBERSHIP. Source: spec/draft/aggregation.md:20-38.
-      - CM.VCP.AGG.SEVERITY_RESULT [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Output label has greatest rank in explicit domain Domain: D.AGG.MEMBERSHIP. Source: spec/draft/aggregation.md:20-38.
-    - **Standard config — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.AGG.CONFIG [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Provide reducer and handling with every exceptional category explicitly REJECT or IGNORE Domain: D.AGG.MEMBERSHIP. Source: spec/draft/aggregation.md:10-18.
-    - **Standard domain — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.AGG.NONEMPTY [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Reject empty reduction Domain: D.AGG.MEMBERSHIP. Source: spec/draft/aggregation.md:10-18.
-    - **Weights — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.AGG.WEIGHT_KEYS [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Weights key set equals aggregate_inputs; finite nonnegative weights, positive total; filtering preserves identities Domain: D.AGG.MEMBERSHIP. Source: spec/draft/dataflow.md:127-140.
-  - **Composition — INCOMPLETE**: 3 atomic; 0 whole-root; 0 components; 0 finite / 2 symbolic / 0 conditional domain refs, distinct within this branch only.
-    - **Dependencies — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.GRAPH.NO_DATA [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: The edge only imposes dependency/eligibility Domain: D.COMPOSITION. Source: spec/draft/composition.md:5-9.
-      - CM.VCP.GRAPH.READINESS [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Every incoming predecessor has reached a terminal occurrence state Domain: D.COMPOSITION. Source: spec/draft/composition.md:5-9.
-    - **Features — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.GRAPH.UNSUPPORTED [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Reject unsupported executable features Domain: D.COMPOSITION. Source: spec/draft/composition.md:24-24.
-    - **Guards — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.GUARD.ABSENT [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Guard evaluates false Domain: D.COMPOSITION. Source: spec/draft/dataflow.md:120-125.
-      - CM.VCP.GUARD.EQUALITY [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Compare its explicit source at JSON Pointer with authored JSON literal; empty pointer selects entire value Domain: D.COMPOSITION. Source: spec/draft/dataflow.md:120-125.
-      - CM.VCP.GUARD.VALIDITY [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Validate source ancestry, pointer and known operand types before execution Domain: D.COMPOSITION. Source: spec/draft/dataflow.md:120-125.
-    - **Ordering — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.GRAPH.ORDER [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Any topologically valid order is portable Domain: D.COMPOSITION. Source: spec/draft/composition.md:11-13.
-    - **Results — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.GRAPH.NO_VERDICT [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Retain per-node Results without synthesizing an overall verdict Domain: D.COMPOSITION. Source: spec/draft/composition.md:15-22.
-    - **Topology — INCOMPLETE**: 3 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.GRAPH.IDENTITY.EDGE_ID [ATOMIC_PROPOSITION_DEFINED]: Directed execution edges are unique. Domain: D.GRAPH.IDENTITY. Source: spec/draft/composition.md:5-9.
-      - CM.VCP.GRAPH.IDENTITY.ENDPOINT [ATOMIC_PROPOSITION_DEFINED]: Every edge endpoint names an existing node. Domain: D.GRAPH.IDENTITY. Source: spec/draft/composition.md:5-9.
-      - CM.VCP.GRAPH.IDENTITY.NODE_ID [ATOMIC_PROPOSITION_DEFINED]: Node IDs are unique. Domain: D.GRAPH.IDENTITY. Source: spec/draft/composition.md:5-9.
-  - **Computation — INCOMPLETE**: 3 atomic; 0 whole-root; 0 components; 2 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-    - **Acceptance — INCOMPLETE**: 3 atomic; 0 whole-root; 0 components; 1 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.DATA.ATOMIC_OUTPUT.ATOMIC [ATOMIC_PROPOSITION_DEFINED]: Publish no partial accepted INFORMATION mapping. Domain: D.OUTPUT.ACCEPTANCE. Source: spec/draft/dataflow.md:74-85.
-      - CM.VCP.DATA.ATOMIC_OUTPUT.EXTRA [ATOMIC_PROPOSITION_DEFINED]: Reject semantic output acceptance. Domain: D.OUTPUT.ACCEPTANCE. Source: spec/draft/dataflow.md:74-85.
-      - CM.VCP.DATA.ATOMIC_OUTPUT.MISSING [ATOMIC_PROPOSITION_DEFINED]: Reject semantic output acceptance. Domain: D.OUTPUT.ACCEPTANCE. Source: spec/draft/dataflow.md:74-85.
-      - CM.VCP.DATA.JUDGMENT [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Validate that value against the definition judgment_schema Domain: None. Source: spec/draft/dataflow.md:87-94.
-    - **Evaluator — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 1 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.RESULT.INVOKED [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Only EXECUTED SUCCESS or ERROR may be returned Domain: D.RESULT.WIRE. Source: spec/draft/result.md:48-53, spec/draft/lifecycle.md:15-17.
-    - **Node outputs — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.DATA.DERIVE_ROLE [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Every declared output role is INFORMATION Domain: None. Source: spec/draft/dataflow.md:74-85.
-      - CM.VCP.DATA.PRIMARY_DECISION [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Exactly one DECISION output named decision; other declared outputs may be INFORMATION Domain: None. Source: spec/draft/dataflow.md:74-85.
-      - CM.VCP.DATA.PRIMARY_RESULT [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Exactly one RESULT output named result; other declared outputs may be INFORMATION Domain: None. Source: spec/draft/dataflow.md:74-85.
-      - CM.VCP.DATA.PRIMARY_VALIDITY [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Value validates against VCP semantics and its port schema Domain: None. Source: spec/draft/dataflow.md:74-85.
-  - **Conformance — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-    - **Consumer stages — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.CONFORMANCE.STAGES [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Check shipped structural schema and semantic invariants; unsupported execution rejects distinctly Domain: None. Source: spec/draft/conformance.md:5-8, spec/draft/README.md:14-18.
-    - **Portable harness — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.CONFORMANCE.FIXTURE_PROTOCOL [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Valid manifest entries pass structure and semantics; invalid entries fail declared stage/code Domain: None. Source: spec/draft/conformance.md:10-14.
-  - **Dataflow — INCOMPLETE**: 13 atomic; 0 whole-root; 0 components; 5 finite / 2 symbolic / 1 conditional domain refs, distinct within this branch only.
-    - **Availability — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.DATA.BOOKKEEPING [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Its declared Result port exposes the recorded Result only if that port schema accepts it Domain: None. Source: spec/draft/dataflow.md:74-85.
-    - **Bindings — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.DATA.BIND_TARGET [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Every required input has exactly one binding; binding targets name declared inputs Domain: None. Source: spec/draft/dataflow.md:27-33.
-    - **Configuration — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.DATA.CONFIG [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Config remains separate and validates against config_schema if present Domain: None. Source: spec/draft/dataflow.md:42-47.
-    - **Input ports — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 2 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.DATA.DEFAULT [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: An explicit Constant default is present and validates, including null when allowed Domain: D.DEFAULT.PRESENCE. Source: spec/draft/dataflow.md:20-25.
-      - CM.VCP.DATA.PORT_HANDLING [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Required ports use BLOCK; optional ports use OMIT or DEFAULT Domain: D.PORT.HANDLER. Source: spec/draft/dataflow.md:27-33.
-    - **Isolation — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.DATA.CONTEXT [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Fresh exact resolved input object and separate config; initial_context stays nonsemantic Domain: None. Source: spec/draft/dataflow.md:149-153.
-    - **Operation — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.DATA.OPERATION [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Use exact capability_id/version pair with no provider identity in the requirement Domain: None. Source: spec/draft/dataflow.md:57-72.
-    - **Ports — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.DATA.PORT_NAMES [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Each sequence has unique names Domain: None. Source: spec/draft/dataflow.md:27-33.
-    - **Provider boundary — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.DATA.CAPABILITY_SHAPE [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Invocation input is exact port-name object; config is exact node config; COMPLETED output is exact output-port-name object Domain: None. Source: spec/draft/dataflow.md:57-72.
-    - **Resolution — INCOMPLETE**: 7 atomic; 0 whole-root; 0 components; 1 finite / 2 symbolic / 1 conditional domain refs, distinct within this branch only.
-      - CM.VCP.DATA.RESOLVE_ALL [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Retain a resolution for every declared input Domain: D.TYPED_AVAILABILITY. Source: spec/draft/dataflow.md:107-118.
-      - CM.VCP.DATA.RESOLVE_AVAILABLE [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Validate target schema and retain exact source/status/value and used_default=false Domain: D.TYPED_AVAILABILITY. Source: spec/draft/dataflow.md:107-118.
-      - CM.VCP.DATA.RESOLVE_BLOCK.DOWNSTREAM [ATOMIC_PROPOSITION_DEFINED]: Execution edges themselves do not disable descendants; explicit bindings/guards determine downstream eligibility. Domain: D.COMPOSITION. Source: spec/draft/dataflow.md:107-118.
-      - CM.VCP.DATA.RESOLVE_BLOCK.NONINVOCATION [ATOMIC_PROPOSITION_DEFINED]: Do not invoke the graph provider. Domain: D.HANDLING.EFFECTS. Source: spec/draft/dataflow.md:107-118.
-      - CM.VCP.DATA.RESOLVE_BLOCK.PROVENANCE [ATOMIC_PROPOSITION_DEFINED]: No executor identity, observation, Decision or accepted information/executor usage. Domain: D.RECORD.ELIGIBILITY. Source: spec/draft/dataflow.md:107-118.
-      - CM.VCP.DATA.RESOLVE_BLOCK.REASON [ATOMIC_PROPOSITION_DEFINED]: NodeRecord.reason and diagnostic Result.output.reason equal INPUT_UNAVAILABLE. Domain: D.HANDLING.EFFECTS. Source: spec/draft/dataflow.md:107-118.
-      - CM.VCP.DATA.RESOLVE_BLOCK.RESOLUTION [ATOMIC_PROPOSITION_DEFINED]: Preserve source and original availability, used_default=false, no usable input value. Domain: D.TYPED_AVAILABILITY. Source: spec/draft/dataflow.md:107-118.
-      - CM.VCP.DATA.RESOLVE_BLOCK.RESULT [ATOMIC_PROPOSITION_DEFINED]: Synthesized Result disposition is SKIPPED. Domain: D.HANDLING.EFFECTS. Source: spec/draft/dataflow.md:107-118.
-      - CM.VCP.DATA.RESOLVE_BLOCK.STATE [ATOMIC_PROPOSITION_DEFINED]: NodeRecord.state is NONEXECUTED. Domain: D.HANDLING.EFFECTS. Source: spec/draft/dataflow.md:107-118.
-      - CM.VCP.DATA.RESOLVE_DEFAULT [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Substitute authored validated Constant and retain original status with used_default=true Domain: D.TYPED_AVAILABILITY. Source: spec/draft/dataflow.md:107-118.
-      - CM.VCP.DATA.RESOLVE_OMIT [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Omit the input key and retain the original availability status Domain: D.TYPED_AVAILABILITY. Source: spec/draft/dataflow.md:107-118.
-    - **Run inputs — INCOMPLETE**: 3 atomic; 0 whole-root; 0 components; 1 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.DATA.RUN_ACCEPT.MISSING_REQUIRED [ATOMIC_PROPOSITION_DEFINED]: Reject occurrence inputs before policy/node invocation. Domain: D.RUN_INPUT.PREFLIGHT. Source: spec/draft/dataflow.md:20-25.
-      - CM.VCP.DATA.RUN_ACCEPT.UNKNOWN_NAME [ATOMIC_PROPOSITION_DEFINED]: Reject occurrence inputs before policy/node invocation. Domain: D.RUN_INPUT.PREFLIGHT. Source: spec/draft/dataflow.md:20-25.
-      - CM.VCP.DATA.RUN_ACCEPT.VALUE_SCHEMA [ATOMIC_PROPOSITION_DEFINED]: Reject occurrence inputs before policy/node invocation. Domain: D.RUN_INPUT.PREFLIGHT. Source: spec/draft/dataflow.md:20-25.
-      - CM.VCP.DATA.RUN_NAMES [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Run input names are unique Domain: None. Source: spec/draft/dataflow.md:20-25.
-    - **Sources — INCOMPLETE**: 3 atomic; 0 whole-root; 0 components; 1 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.DATA.ANCESTOR.OUTPUT_EXISTS [ATOMIC_PROPOSITION_DEFINED]: Named declared output exists. Domain: D.SOURCE.REACHABILITY. Source: spec/draft/dataflow.md:49-55.
-      - CM.VCP.DATA.ANCESTOR.PRODUCER_EXISTS [ATOMIC_PROPOSITION_DEFINED]: Producer node exists. Domain: D.SOURCE.REACHABILITY. Source: spec/draft/dataflow.md:49-55.
-      - CM.VCP.DATA.ANCESTOR.STRICT_ANCESTRY [ATOMIC_PROPOSITION_DEFINED]: Producer is strict execution ancestor of consumer. Domain: D.SOURCE.REACHABILITY. Source: spec/draft/dataflow.md:49-55.
-      - CM.VCP.DATA.EXT_SOURCE [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Resolved value equals the supplied ArtifactRef snapshot Domain: None. Source: spec/draft/dataflow.md:42-47.
-      - CM.VCP.DATA.RUN_SOURCE [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Name refers to a declared run input Domain: None. Source: spec/draft/dataflow.md:37-40.
-  - **Decisions — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 1 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-    - **Shape — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 1 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.DECISION.DESTINATION [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: ROUTE has a nonempty destination; every other kind has no non-null destination Domain: D.DECISION.DESTINATION. Source: spec/draft/result.md:30-33.
-  - **Extensions — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-    - **Optional — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.EXT.PRESERVE [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Preserve data without interpreting unknown semantics Domain: None. Source: spec/draft/extensions.md:5-13.
-    - **Required — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.EXT.REQUIRED [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Report EXTENSION_UNSUPPORTED Domain: None. Source: spec/draft/extensions.md:5-13.
-  - **Knowledge — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-    - **ArtifactRef — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.KNOWLEDGE.REFERENCE [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Pass its exact reference snapshot as information; locator is opaque Domain: None. Source: spec/draft/knowledge.md:5-9.
-    - **Evidence — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.KNOWLEDGE.EVIDENCE [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: At least one of message, artifact_ref, locator, structured_data is non-null; message is nonempty; empty containers count Domain: None. Source: spec/draft/knowledge.md:11-14.
-      - CM.VCP.KNOWLEDGE.NEUTRAL [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Core property vocabulary remains domain-neutral; code-specific coordinates belong in opaque locator/structured data Domain: None. Source: spec/draft/knowledge.md:16-17.
-  - **Lifecycle — INCOMPLETE**: 4 atomic; 0 whole-root; 0 components; 2 finite / 2 symbolic / 0 conditional domain refs, distinct within this branch only.
-    - **Cancellation — INCOMPLETE**: 4 atomic; 0 whole-root; 0 components; 2 finite / 2 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.LIFECYCLE.CANCEL_ADMISSION [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Admission must be RUN Domain: D.COMPOSITION. Source: spec/draft/lifecycle.md:61-67.
-      - CM.VCP.LIFECYCLE.CANCEL_BEFORE [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Affected and subsequent unstarted nodes are NONEXECUTED with CANCELLED Result; retain earlier terminals Domain: D.COMPOSITION. Source: spec/draft/lifecycle.md:61-67.
-      - CM.VCP.LIFECYCLE.CANCEL_ORIGIN [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Only explicit host cancellation establishes occurrence cancellation Domain: D.COMPOSITION. Source: spec/draft/lifecycle.md:61-67.
-      - CM.VCP.LIFECYCLE.CANCEL_RUNNING.LATER [ATOMIC_PROPOSITION_DEFINED]: Later unstarted nodes are NONEXECUTED with CANCELLED Results. Domain: D.COMPOSITION. Source: spec/draft/lifecycle.md:61-67.
-      - CM.VCP.LIFECYCLE.CANCEL_RUNNING.OBSERVATION [ATOMIC_PROPOSITION_DEFINED]: Retain valid unaccepted observations and incurred usage separately. Domain: D.OBSERVATION.USAGE. Source: spec/draft/lifecycle.md:61-67.
-      - CM.VCP.LIFECYCLE.CANCEL_RUNNING.RESULT [ATOMIC_PROPOSITION_DEFINED]: Affected Result disposition is CANCELLED with no accepted evaluation fields. Domain: D.NODE.TERMINAL_RESULT. Source: spec/draft/lifecycle.md:61-67.
-      - CM.VCP.LIFECYCLE.CANCEL_RUNNING.STATE [ATOMIC_PROPOSITION_DEFINED]: Affected NodeRecord.state is CANCELLED. Domain: D.CANCEL.ADMISSION. Source: spec/draft/lifecycle.md:61-67.
-    - **Causes — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.LIFECYCLE.NONEXEC_CAUSE [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Result.output.reason repeats NodeRecord.reason using the cause table Domain: D.COMPOSITION. Source: spec/draft/lifecycle.md:26-27.
-    - **Control — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.LIFECYCLE.CONTINUE [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Leave other eligibility unchanged Domain: D.COMPOSITION. Source: spec/draft/lifecycle.md:41-44.
-      - CM.VCP.LIFECYCLE.DEFER [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Prevent further work in this occurrence with DEFERRED/CONTROL_DEFER Domain: D.COMPOSITION. Source: spec/draft/lifecycle.md:41-44.
-      - CM.VCP.LIFECYCLE.RETRY [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: End local pass, retain Decision and mark remaining work SKIPPED/RETRY_REQUESTED Domain: D.COMPOSITION. Source: spec/draft/lifecycle.md:41-44.
-      - CM.VCP.LIFECYCLE.STOP [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: End further work as specified with SKIPPED/CONTROL_STOP Domain: D.COMPOSITION. Source: spec/draft/lifecycle.md:41-44.
-    - **Eligibility — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.LIFECYCLE.PRECEDENCE [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Select admission non-RUN, observed cancellation, terminating control, route exclusion, false guard, blocked input in that order Domain: D.COMPOSITION. Source: spec/draft/lifecycle.md:54-57.
-    - **Guards — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.LIFECYCLE.GUARD_JOIN [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Every incoming guard must hold Domain: D.COMPOSITION. Source: spec/draft/lifecycle.md:46-52.
-    - **Nodes — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.LIFECYCLE.TERMINAL [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Exactly one terminal NodeRecord per definition node, including noninvoked nodes Domain: D.COMPOSITION. Source: spec/draft/lifecycle.md:5-7.
-    - **Routing — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.LIFECYCLE.ROUTE_EXCLUSION [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Exclude competing successors and descendants except shared reachable joins; preserve independent work; exclusions accumulate Domain: D.COMPOSITION. Source: spec/draft/lifecycle.md:29-39.
-      - CM.VCP.LIFECYCLE.ROUTE_TARGET [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Destination is a direct outgoing execution successor Domain: D.COMPOSITION. Source: spec/draft/lifecycle.md:46-52.
-  - **Meaning — INCOMPLETE**: 2 atomic; 0 whole-root; 0 components; 1 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-    - **Capability behavior — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.DATA.HONEST_EVALUATION [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Evaluate the subject/criterion actually supplied in semantic ports Domain: None. Source: spec/draft/dataflow.md:87-94.
-    - **Definition — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.MEANING.JUDGMENT_SCHEMA [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Validate judgment_schema as a self-contained Draft 2020-12 object or boolean schema before execution Domain: None. Source: spec/draft/meaning.md:16-19.
-    - **Evaluator inputs — INCOMPLETE**: 2 atomic; 0 whole-root; 0 components; 1 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.DATA.SEMANTIC_SUBJECT.CRITERION [ATOMIC_PROPOSITION_DEFINED]: Required criterion input is CONSTANT-bound to the exact definition criterion snapshot. Domain: D.SEMANTIC_BINDING. Source: spec/draft/dataflow.md:87-94.
-      - CM.VCP.DATA.SEMANTIC_SUBJECT.SUBJECT [ATOMIC_PROPOSITION_DEFINED]: Required subject input is CONSTANT-bound to the exact definition subject snapshot. Domain: D.SEMANTIC_BINDING. Source: spec/draft/dataflow.md:87-94.
-    - **Selection versus criterion — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.MEANING.SELECTION_DISTINCT [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Selection chooses subject inclusion; Criterion identifies property to establish Domain: None. Source: spec/draft/meaning.md:5-7.
-  - **Policies — INCOMPLETE**: 3 atomic; 0 whole-root; 0 components; 3 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-    - **Built-ins — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 1 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.POLICY.ALWAYS [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Return RUN Domain: D.POLICY.SEQUENTIAL. Source: spec/draft/execution-policy.md:36-43.
-      - CM.VCP.POLICY.EXPLICIT [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Select the exact definition subject snapshot Domain: D.POLICY.SEQUENTIAL. Source: spec/draft/execution-policy.md:36-43.
-      - CM.VCP.POLICY.MANUAL [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Return ACTIVATE Domain: D.POLICY.SEQUENTIAL. Source: spec/draft/execution-policy.md:36-43.
-      - CM.VCP.POLICY.PROBABILITY [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Finite p in [0,1]; p=0 SKIP, p=1 RUN, interior RUN/SKIP using explicit structural inputs Domain: D.POLICY.SEQUENTIAL. Source: spec/draft/execution-policy.md:36-43.
-    - **Declarations — INCOMPLETE**: 3 atomic; 0 whole-root; 0 components; 2 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.POLICY.DECLARATION.BUILTIN_INPUTS [ATOMIC_PROPOSITION_DEFINED]: No ports, bindings or config are attached. Domain: D.POLICY.BUILTIN_FIELDS. Source: spec/draft/execution-policy.md:36-43.
-      - CM.VCP.POLICY.DECLARATION.DISCRIMINATOR [ATOMIC_PROPOSITION_DEFINED]: Exactly one custom operation or built-in discriminator. Domain: D.POLICY.DECLARATION. Source: spec/draft/execution-policy.md:36-43.
-      - CM.VCP.POLICY.DECLARATION.PROBABILITY_FIELD [ATOMIC_PROPOSITION_DEFINED]: No probability field is used. Domain: D.POLICY.BUILTIN_FIELDS. Source: spec/draft/execution-policy.md:36-43.
-    - **Failure — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 1 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.POLICY.FAILURE [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Abort policy evaluation without decision or occurrence Domain: D.POLICY.SEQUENTIAL. Source: spec/draft/execution-policy.md:9-17.
-    - **Identity — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 1 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.POLICY.OPPORTUNITY [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Supply nonempty opportunity_id Domain: D.POLICY.SEQUENTIAL. Source: spec/draft/execution-policy.md:45-51.
-    - **Inputs — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 1 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.POLICY.SOURCES [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Only CONSTANT, RUN_INPUT and EXTERNAL_REFERENCE bindings are legal Domain: D.POLICY.SEQUENTIAL. Source: spec/draft/execution-policy.md:9-17, spec/draft/dataflow.md:142-147, spec/draft/execution-policy.md:28-34.
-    - **Occurrence boundary — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 1 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.POLICY.ADMISSION [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Create occurrence for RUN, SKIP or DEFER Domain: D.POLICY.SEQUENTIAL. Source: spec/draft/execution-policy.md:60-65.
-      - CM.VCP.POLICY.DEFER [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Every node terminal DEFERRED with ADMISSION_DEFER without invocation Domain: D.POLICY.SEQUENTIAL. Source: spec/draft/execution-policy.md:60-65.
-      - CM.VCP.POLICY.INACTIVE [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Stop before selection with no occurrence Domain: D.POLICY.SEQUENTIAL. Source: spec/draft/execution-policy.md:55-58.
-      - CM.VCP.POLICY.SKIP [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Every node terminal SKIPPED with ADMISSION_SKIP without invocation Domain: D.POLICY.SEQUENTIAL. Source: spec/draft/execution-policy.md:60-65.
-      - CM.VCP.POLICY.UNSELECTED [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Stop before admission with no occurrence Domain: D.POLICY.SEQUENTIAL. Source: spec/draft/execution-policy.md:55-58.
-    - **Outcomes — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 1 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.POLICY.OUTCOME_ACTIVATION [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Return Activation with ACTIVATE or DO_NOT_ACTIVATE and nonempty reason Domain: D.POLICY.SEQUENTIAL. Source: spec/draft/execution-policy.md:23-26.
-      - CM.VCP.POLICY.OUTCOME_ADMISSION [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Return Admission RUN, SKIP or DEFER with nonempty reason Domain: D.POLICY.SEQUENTIAL. Source: spec/draft/execution-policy.md:23-26.
-      - CM.VCP.POLICY.OUTCOME_SELECTION [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Return Selection with reason and an identity-unique subject set that is empty or exact definition subject Domain: D.POLICY.SEQUENTIAL. Source: spec/draft/execution-policy.md:23-26, spec/draft/execution-policy.md:28-34.
-    - **Stages — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 1 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.POLICY.ORDER [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Evaluate activation, then selection, then admission before graph work Domain: D.POLICY.SEQUENTIAL. Source: spec/draft/execution-policy.md:5-7.
-    - **Validation — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 1 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.POLICY.PREFLIGHT [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Validate complete definition, schemas, constants and bindings first Domain: D.POLICY.SEQUENTIAL. Source: spec/draft/execution-policy.md:9-17, spec/draft/dataflow.md:142-147.
-  - **Profiles — INCOMPLETE**: 1 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-    - **standard-draft — INCOMPLETE**: 1 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - **Severity — INCOMPLETE**: 1 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.PROFILE.STANDARD_SEVERITY [ATOMIC_PROPOSITION_DEFINED]: Use ordered INFO=10, WARNING=20, ERROR=30, BLOCKER=40 under domain id standard-draft. Domain: D.PROFILE.STANDARD. Source: profiles/standard-draft/profile.json:1-97, profiles/standard-draft/README.md:1-17.
-  - **Provenance — INCOMPLETE**: 10 atomic; 0 whole-root; 0 components; 0 finite / 2 symbolic / 0 conditional domain refs, distinct within this branch only.
-    - **Evidence — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.OBS.EVIDENCE [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Invalidate acceptance and retain observed snapshot plus valid usage Domain: D.OBSERVATION.USAGE. Source: spec/draft/dataflow.md:155-169.
-    - **Execution observation — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.OBS.RETENTION [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Retain valid incurred usage and observation snapshots separately from accepted outputs Domain: D.OBSERVATION.USAGE. Source: spec/draft/dataflow.md:155-169.
-    - **Lineage — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.PROV.RECONSTRUCT [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Reconstruct resolutions from definition, initial inputs and predecessor records; compare exact JSON snapshots Domain: D.RECORD.ELIGIBILITY. Source: spec/draft/dataflow.md:171-182.
-      - CM.VCP.PROV.UNBOUND [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Reject unbound consumed values and membership drift Domain: D.RECORD.ELIGIBILITY. Source: spec/draft/dataflow.md:171-182.
-    - **Nonexecution — INCOMPLETE**: 4 atomic; 0 whole-root; 0 components; 0 finite / 2 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.PROV.UNSTARTED.EXECUTOR [ATOMIC_PROPOSITION_DEFINED]: Executor identity/version are absent. Domain: D.RECORD.ELIGIBILITY. Source: spec/draft/dataflow.md:171-182.
-      - CM.VCP.PROV.UNSTARTED.INFORMATION [ATOMIC_PROPOSITION_DEFINED]: Accepted information and Decision are absent. Domain: D.RECORD.ELIGIBILITY. Source: spec/draft/dataflow.md:171-182.
-      - CM.VCP.PROV.UNSTARTED.OBSERVATION [ATOMIC_PROPOSITION_DEFINED]: No executor observation is retained. Domain: D.RECORD.ELIGIBILITY. Source: spec/draft/dataflow.md:171-182.
-      - CM.VCP.PROV.UNSTARTED.USAGE [ATOMIC_PROPOSITION_DEFINED]: Executor usage is absent; runner wall time is separate bookkeeping. Domain: D.OBSERVATION.USAGE. Source: spec/draft/dataflow.md:171-182.
-    - **Policies — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.PROV.ADMISSION_EQUALITY [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Activation ACTIVATE, selection exact subject, admission snapshot equals RunRecord.admission Domain: D.RECORD.ELIGIBILITY. Source: spec/draft/provenance.md:42-51.
-      - CM.VCP.PROV.POLICY_ORDER [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Exactly ACTIVATION, SELECTION, ADMISSION in order with reconstructed inputs and role outcomes Domain: D.RECORD.ELIGIBILITY. Source: spec/draft/provenance.md:42-51.
-    - **RunRecord — INCOMPLETE**: 2 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.PROV.NODE_SET.EXACT [ATOMIC_PROPOSITION_DEFINED]: Exactly one NodeRecord for every definition node. Domain: D.RECORD.ELIGIBILITY. Source: spec/draft/provenance.md:5-9.
-      - CM.VCP.PROV.NODE_SET.ORDER [ATOMIC_PROPOSITION_DEFINED]: Records follow dependency order. Domain: D.RECORD.ELIGIBILITY. Source: spec/draft/provenance.md:5-9.
-      - CM.VCP.PROV.RECORD_ANCHOR [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Definition/subject/initial inputs and context are immutable authored occurrence snapshots Domain: D.RECORD.ELIGIBILITY. Source: spec/draft/provenance.md:5-9.
-    - **Timing — INCOMPLETE**: 2 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.PROV.TIMING.DEPENDENCY [ATOMIC_PROPOSITION_DEFINED]: Every predecessor finishes before consumer starts. Domain: D.RECORD.ELIGIBILITY. Source: spec/draft/provenance.md:22-27.
-      - CM.VCP.PROV.TIMING.INTERVAL [ATOMIC_PROPOSITION_DEFINED]: Node start/finish lie within the run interval with nonnegative duration. Domain: D.RECORD.ELIGIBILITY. Source: spec/draft/provenance.md:22-27.
-    - **Trust boundary — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.PROV.TRUST_LIMIT [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Claim consistency detection only, without replay/authentication Domain: D.RECORD.ELIGIBILITY. Source: spec/draft/provenance.md:29-32.
-    - **Usage — INCOMPLETE**: 2 atomic; 0 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.OBS.AUTHORITY.NO_SUM [ATOMIC_PROPOSITION_DEFINED]: Do not add repeated usage as additional charge. Domain: D.OBSERVATION.USAGE. Source: spec/draft/dataflow.md:155-169.
-      - CM.VCP.OBS.AUTHORITY.OVERLAP [ATOMIC_PROPOSITION_DEFINED]: Repeated dimensions agree exactly with authoritative observation. Domain: D.OBSERVATION.USAGE. Source: spec/draft/dataflow.md:155-169.
-  - **Provider binding — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-    - **Contract boundaries — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.BIND.INPUT [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Exact port input and node config validate against capability schemas before invocation Domain: None. Source: spec/draft/provider-binding.md:12-18.
-      - CM.VCP.BIND.OUTPUT [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Validate exact output object against capability schema before VCP port/Result/Decision/judgment acceptance Domain: None. Source: spec/draft/provider-binding.md:20-28.
-    - **Identity — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.BIND.PRECHECK [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Binding provider ID/version equals manifest; capability ID/version equals requirement and advertisement; manifest and negotiated interchange valid Domain: None. Source: spec/draft/provider-binding.md:12-18.
-    - **Provenance — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.BIND.PROVENANCE [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: RunRecord map and NodeRecord binding equal actual four-part binding; executor ID/version equal provider identity Domain: None. Source: spec/draft/provider-binding.md:30-39, spec/draft/provider-binding.md:51-57.
-    - **Rejected output — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.BIND.OUTPUT_REJECTION [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Keep binding/raw observation/valid usage; provider_output_error code INVALID_PROVIDER_OUTPUT; no accepted information/Decision; terminal ERROR or interrupted CANCELLED Domain: None. Source: spec/draft/provider-binding.md:41-49.
-  - **Resources — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-    - **Accounting — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.RES.UNITS [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Preserve explicit units and separate runner duration from executor usage Domain: None. Source: spec/draft/resources.md:5-12.
-    - **Measurements — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.RES.KINDS [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: EXACT/ESTIMATED have nonnegative finite value only; RANGE has nonnegative finite minimum/maximum only; UNKNOWN has neither Domain: None. Source: spec/draft/resources.md:5-12.
-      - CM.VCP.RES.ORDER [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: minimum <= maximum Domain: None. Source: spec/draft/resources.md:5-12.
-    - **Reference profile — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.RES.WALL_TIME [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Retain adapter usage separately and record own EXACT seconds using monotonic clock Domain: None. Source: spec/draft/resources.md:14-18.
-  - **Results — INCOMPLETE**: 22 atomic; 0 whole-root; 0 components; 2 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-    - **Evidence — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 1 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.RESULT.NONEXEC_EVIDENCE [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Evidence may explain nonexecution Domain: D.RESULT.WIRE. Source: spec/draft/result.md:55-57.
-    - **Observations — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 1 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.RESULT.INDEPENDENCE [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Judgment, verdict, score and severity are independently optional observations Domain: D.RESULT.WIRE. Source: spec/draft/result.md:5-16.
-    - **Projection — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 1 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.RESULT.FLATTEN [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: KNOWN with verdict maps to verdict; UNKNOWN to UNKNOWN; executed ERROR to ERROR; SKIPPED to SKIP Domain: D.RESULT.WIRE. Source: spec/draft/result.md:24-28.
-    - **Severity — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 1 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.RESULT.SEVERITY [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Preserve domain/label as opaque identifiers Domain: D.RESULT.WIRE. Source: spec/draft/result.md:18-22.
-      - CM.VCP.SEVERITY.VERSION [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Domain identifier identifies the versioned semantic domain Domain: None. Source: spec/draft/dataflow.md:184-188.
-    - **State — INCOMPLETE**: 22 atomic; 0 whole-root; 0 components; 2 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.RESULT.DETERMINATION [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: determination is KNOWN or UNKNOWN Domain: D.RESULT.WIRE. Source: spec/draft/result.md:5-16.
-      - CM.VCP.RESULT.ERROR.APPLICABILITY [ATOMIC_PROPOSITION_DEFINED]: applicability is absent or explicitly null under VCP nullable-control semantics. Domain: D.RESULT.WIRE. Source: spec/draft/result.md:5-16.
-      - CM.VCP.RESULT.ERROR.DETERMINATION [ATOMIC_PROPOSITION_DEFINED]: determination is absent or explicitly null under VCP nullable-control semantics. Domain: D.RESULT.WIRE. Source: spec/draft/result.md:5-16.
-      - CM.VCP.RESULT.ERROR.JUDGMENT [ATOMIC_PROPOSITION_DEFINED]: The judgment key is absent. Domain: D.RESULT.OBSERVATION_MASK. Source: spec/draft/result.md:5-16.
-      - CM.VCP.RESULT.ERROR.SCORE [ATOMIC_PROPOSITION_DEFINED]: score is absent or explicitly null under VCP nullable-control semantics. Domain: D.RESULT.WIRE. Source: spec/draft/result.md:5-16.
-      - CM.VCP.RESULT.ERROR.SEVERITY [ATOMIC_PROPOSITION_DEFINED]: severity is absent or explicitly null under VCP nullable-control semantics. Domain: D.RESULT.WIRE. Source: spec/draft/result.md:5-16.
-      - CM.VCP.RESULT.ERROR.VERDICT [ATOMIC_PROPOSITION_DEFINED]: verdict is absent or explicitly null under VCP nullable-control semantics. Domain: D.RESULT.WIRE. Source: spec/draft/result.md:5-16.
-      - CM.VCP.RESULT.NONEXECUTION.APPLICABILITY [ATOMIC_PROPOSITION_DEFINED]: applicability is absent or explicitly null under VCP nullable-control semantics. Domain: D.RESULT.WIRE. Source: spec/draft/result.md:5-16.
-      - CM.VCP.RESULT.NONEXECUTION.DETERMINATION [ATOMIC_PROPOSITION_DEFINED]: determination is absent or explicitly null under VCP nullable-control semantics. Domain: D.RESULT.WIRE. Source: spec/draft/result.md:5-16.
-      - CM.VCP.RESULT.NONEXECUTION.EXECUTION_OUTCOME [ATOMIC_PROPOSITION_DEFINED]: execution_outcome is absent or explicitly null under VCP nullable-control semantics. Domain: D.RESULT.WIRE. Source: spec/draft/result.md:5-16.
-      - CM.VCP.RESULT.NONEXECUTION.JUDGMENT [ATOMIC_PROPOSITION_DEFINED]: The judgment key is absent. Domain: D.RESULT.OBSERVATION_MASK. Source: spec/draft/result.md:5-16.
-      - CM.VCP.RESULT.NONEXECUTION.SCORE [ATOMIC_PROPOSITION_DEFINED]: score is absent or explicitly null under VCP nullable-control semantics. Domain: D.RESULT.WIRE. Source: spec/draft/result.md:5-16.
-      - CM.VCP.RESULT.NONEXECUTION.SEVERITY [ATOMIC_PROPOSITION_DEFINED]: severity is absent or explicitly null under VCP nullable-control semantics. Domain: D.RESULT.WIRE. Source: spec/draft/result.md:5-16.
-      - CM.VCP.RESULT.NONEXECUTION.VERDICT [ATOMIC_PROPOSITION_DEFINED]: verdict is absent or explicitly null under VCP nullable-control semantics. Domain: D.RESULT.WIRE. Source: spec/draft/result.md:5-16.
-      - CM.VCP.RESULT.NOT_APPLICABLE.DETERMINATION [ATOMIC_PROPOSITION_DEFINED]: determination is absent or explicitly null under VCP nullable-control semantics. Domain: D.RESULT.WIRE. Source: spec/draft/result.md:5-16.
-      - CM.VCP.RESULT.NOT_APPLICABLE.JUDGMENT [ATOMIC_PROPOSITION_DEFINED]: The judgment key is absent. Domain: D.RESULT.OBSERVATION_MASK. Source: spec/draft/result.md:5-16.
-      - CM.VCP.RESULT.NOT_APPLICABLE.SCORE [ATOMIC_PROPOSITION_DEFINED]: score is absent or explicitly null under VCP nullable-control semantics. Domain: D.RESULT.WIRE. Source: spec/draft/result.md:5-16.
-      - CM.VCP.RESULT.NOT_APPLICABLE.SEVERITY [ATOMIC_PROPOSITION_DEFINED]: severity is absent or explicitly null under VCP nullable-control semantics. Domain: D.RESULT.WIRE. Source: spec/draft/result.md:5-16.
-      - CM.VCP.RESULT.NOT_APPLICABLE.VERDICT [ATOMIC_PROPOSITION_DEFINED]: verdict is absent or explicitly null under VCP nullable-control semantics. Domain: D.RESULT.WIRE. Source: spec/draft/result.md:5-16.
-      - CM.VCP.RESULT.OUTCOME [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: execution_outcome is SUCCESS or ERROR Domain: D.RESULT.WIRE. Source: spec/draft/result.md:5-16.
-      - CM.VCP.RESULT.SUCCESS [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: applicability is APPLICABLE or NOT_APPLICABLE Domain: D.RESULT.WIRE. Source: spec/draft/result.md:5-16.
-      - CM.VCP.RESULT.UNKNOWN.JUDGMENT [ATOMIC_PROPOSITION_DEFINED]: The judgment key is absent. Domain: D.RESULT.OBSERVATION_MASK. Source: spec/draft/result.md:5-16.
-      - CM.VCP.RESULT.UNKNOWN.SCORE [ATOMIC_PROPOSITION_DEFINED]: score is absent or explicitly null under VCP nullable-control semantics. Domain: D.RESULT.WIRE. Source: spec/draft/result.md:5-16.
-      - CM.VCP.RESULT.UNKNOWN.SEVERITY [ATOMIC_PROPOSITION_DEFINED]: severity is absent or explicitly null under VCP nullable-control semantics. Domain: D.RESULT.WIRE. Source: spec/draft/result.md:5-16.
-      - CM.VCP.RESULT.UNKNOWN.VERDICT [ATOMIC_PROPOSITION_DEFINED]: verdict is absent or explicitly null under VCP nullable-control semantics. Domain: D.RESULT.WIRE. Source: spec/draft/result.md:5-16.
-  - **Schemas — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-    - **Compatibility — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.SCHEMA.STATIC [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Validate constants/defaults/references and reject false schemas, disjoint explicit primitive types and incompatible finite const/enum sets Domain: None. Source: spec/draft/dataflow.md:96-105.
-    - **Embedded — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.SCHEMA.SUBSET [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Valid Draft 2020-12 object/boolean; only resolvable local JSON Pointer references; no nested IDs, anchors/dynamic refs or external resolution Domain: None. Source: spec/draft/dataflow.md:96-105.
-    - **Instances — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.SCHEMA.RUNTIME [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Validate actual values against all applicable schemas Domain: None. Source: spec/draft/dataflow.md:96-105.
-  - **Wire roots — INCOMPLETE**: 0 atomic; 24 whole-root; 0 components; 0 finite / 24 symbolic / 0 conditional domain refs, distinct within this branch only.
-    - **activation — INCOMPLETE**: 0 atomic; 1 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.ROOT.ACTIVATION [ROOT_PREDICATE_RECONSTRUCTED_INDEPENDENT_REVIEW_PENDING]: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately. Domain: D.ROOT.VCP.activation. Source: schemas/draft/activation.schema.json:1-24.
-    - **admission — INCOMPLETE**: 0 atomic; 1 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.ROOT.ADMISSION [ROOT_PREDICATE_RECONSTRUCTED_INDEPENDENT_REVIEW_PENDING]: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately. Domain: D.ROOT.VCP.admission. Source: schemas/draft/admission.schema.json:1-25.
-    - **artifact-ref — INCOMPLETE**: 0 atomic; 1 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.ROOT.ARTIFACT_REF [ROOT_PREDICATE_RECONSTRUCTED_INDEPENDENT_REVIEW_PENDING]: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately. Domain: D.ROOT.VCP.artifact-ref. Source: schemas/draft/artifact-ref.schema.json:1-43.
-    - **cancellation-event — INCOMPLETE**: 0 atomic; 1 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.ROOT.CANCELLATION_EVENT [ROOT_PREDICATE_RECONSTRUCTED_INDEPENDENT_REVIEW_PENDING]: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately. Domain: D.ROOT.VCP.cancellation-event. Source: schemas/draft/cancellation-event.schema.json:1-29.
-    - **decision — INCOMPLETE**: 0 atomic; 1 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.ROOT.DECISION [ROOT_PREDICATE_RECONSTRUCTED_INDEPENDENT_REVIEW_PENDING]: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately. Domain: D.ROOT.VCP.decision. Source: schemas/draft/decision.schema.json:1-58.
-    - **evidence — INCOMPLETE**: 0 atomic; 1 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.ROOT.EVIDENCE [ROOT_PREDICATE_RECONSTRUCTED_INDEPENDENT_REVIEW_PENDING]: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately. Domain: D.ROOT.VCP.evidence. Source: schemas/draft/evidence.schema.json:1-53.
-    - **execution-observation — INCOMPLETE**: 0 atomic; 1 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.ROOT.EXECUTION_OBSERVATION [ROOT_PREDICATE_RECONSTRUCTED_INDEPENDENT_REVIEW_PENDING]: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately. Domain: D.ROOT.VCP.execution-observation. Source: schemas/draft/execution-observation.schema.json:1-51.
-    - **extension — INCOMPLETE**: 0 atomic; 1 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.ROOT.EXTENSION [ROOT_PREDICATE_RECONSTRUCTED_INDEPENDENT_REVIEW_PENDING]: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately. Domain: D.ROOT.VCP.extension. Source: schemas/draft/extension.schema.json:1-28.
-    - **graph — INCOMPLETE**: 0 atomic; 1 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.ROOT.GRAPH [ROOT_PREDICATE_RECONSTRUCTED_INDEPENDENT_REVIEW_PENDING]: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately. Domain: D.ROOT.VCP.graph. Source: schemas/draft/graph.schema.json:1-158.
-    - **input-port — INCOMPLETE**: 0 atomic; 1 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.ROOT.INPUT_PORT [ROOT_PREDICATE_RECONSTRUCTED_INDEPENDENT_REVIEW_PENDING]: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately. Domain: D.ROOT.VCP.input-port. Source: schemas/draft/input-port.schema.json:1-50.
-    - **input-resolution — INCOMPLETE**: 0 atomic; 1 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.ROOT.INPUT_RESOLUTION [ROOT_PREDICATE_RECONSTRUCTED_INDEPENDENT_REVIEW_PENDING]: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately. Domain: D.ROOT.VCP.input-resolution. Source: schemas/draft/input-resolution.schema.json:1-31.
-    - **operation-requirement — INCOMPLETE**: 0 atomic; 1 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.ROOT.OPERATION_REQUIREMENT [ROOT_PREDICATE_RECONSTRUCTED_INDEPENDENT_REVIEW_PENDING]: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately. Domain: D.ROOT.VCP.operation-requirement. Source: schemas/draft/operation-requirement.schema.json:1-22.
-    - **output-port — INCOMPLETE**: 0 atomic; 1 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.ROOT.OUTPUT_PORT [ROOT_PREDICATE_RECONSTRUCTED_INDEPENDENT_REVIEW_PENDING]: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately. Domain: D.ROOT.VCP.output-port. Source: schemas/draft/output-port.schema.json:1-32.
-    - **policy-evaluation — INCOMPLETE**: 0 atomic; 1 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.ROOT.POLICY_EVALUATION [ROOT_PREDICATE_RECONSTRUCTED_INDEPENDENT_REVIEW_PENDING]: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately. Domain: D.ROOT.VCP.policy-evaluation. Source: schemas/draft/policy-evaluation.schema.json:1-67.
-    - **profile — INCOMPLETE**: 0 atomic; 1 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.ROOT.PROFILE [ROOT_PREDICATE_RECONSTRUCTED_INDEPENDENT_REVIEW_PENDING]: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately. Domain: D.ROOT.VCP.profile. Source: schemas/draft/profile.schema.json:1-77.
-    - **provider-binding — INCOMPLETE**: 0 atomic; 1 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.ROOT.PROVIDER_BINDING [ROOT_PREDICATE_RECONSTRUCTED_INDEPENDENT_REVIEW_PENDING]: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately. Domain: D.ROOT.VCP.provider-binding. Source: schemas/draft/provider-binding.schema.json:1-33.
-    - **resource — INCOMPLETE**: 0 atomic; 1 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.ROOT.RESOURCE [ROOT_PREDICATE_RECONSTRUCTED_INDEPENDENT_REVIEW_PENDING]: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately. Domain: D.ROOT.VCP.resource. Source: schemas/draft/resource.schema.json:1-59.
-    - **resource-dimension — INCOMPLETE**: 0 atomic; 1 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.ROOT.RESOURCE_DIMENSION [ROOT_PREDICATE_RECONSTRUCTED_INDEPENDENT_REVIEW_PENDING]: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately. Domain: D.ROOT.VCP.resource-dimension. Source: schemas/draft/resource-dimension.schema.json:1-35.
-    - **result — INCOMPLETE**: 0 atomic; 1 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.ROOT.RESULT [ROOT_PREDICATE_RECONSTRUCTED_INDEPENDENT_REVIEW_PENDING]: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately. Domain: D.ROOT.VCP.result. Source: schemas/draft/result.schema.json:1-145.
-    - **run-record — INCOMPLETE**: 0 atomic; 1 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.ROOT.RUN_RECORD [ROOT_PREDICATE_RECONSTRUCTED_INDEPENDENT_REVIEW_PENDING]: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately. Domain: D.ROOT.VCP.run-record. Source: schemas/draft/run-record.schema.json:1-269.
-    - **selection — INCOMPLETE**: 0 atomic; 1 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.ROOT.SELECTION [ROOT_PREDICATE_RECONSTRUCTED_INDEPENDENT_REVIEW_PENDING]: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately. Domain: D.ROOT.VCP.selection. Source: schemas/draft/selection.schema.json:1-23.
-    - **severity-domain — INCOMPLETE**: 0 atomic; 1 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.ROOT.SEVERITY_DOMAIN [ROOT_PREDICATE_RECONSTRUCTED_INDEPENDENT_REVIEW_PENDING]: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately. Domain: D.ROOT.VCP.severity-domain. Source: schemas/draft/severity-domain.schema.json:1-37.
-    - **value-source — INCOMPLETE**: 0 atomic; 1 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.ROOT.VALUE_SOURCE [ROOT_PREDICATE_RECONSTRUCTED_INDEPENDENT_REVIEW_PENDING]: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately. Domain: D.ROOT.VCP.value-source. Source: schemas/draft/value-source.schema.json:1-76.
-    - **verification-definition — INCOMPLETE**: 0 atomic; 1 whole-root; 0 components; 0 finite / 1 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.ROOT.VERIFICATION_DEFINITION [ROOT_PREDICATE_RECONSTRUCTED_INDEPENDENT_REVIEW_PENDING]: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately. Domain: D.ROOT.VCP.verification-definition. Source: schemas/draft/verification-definition.schema.json:1-235.
-  - **Wire semantics — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-    - **JSON — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.WIRE.JSON [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Decode UTF-8 JSON and reject duplicate keys at any nesting and nonfinite/non-JSON values Domain: None. Source: spec/draft/wire-format.md:5-14.
-    - **Null — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.WIRE.NULL [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Treat nullable control null as absent; preserve null as Constant/resolution value and explicit judgment/output Domain: None. Source: spec/draft/wire-format.md:5-14.
-    - **References — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.WIRE.OFFLINE [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Resolve from supplied local schemas Domain: None. Source: spec/draft/wire-format.md:16-20.
-    - **Version — INCOMPLETE**: 0 atomic; 0 whole-root; 0 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - CM.VCP.WIRE.VERSION [V1_CONCRETE_PROPOSITION_RETAINED_PENDING_ATOMIC_AND_DOMAIN_REVIEW]: Require the published draft marker Domain: None. Source: spec/draft/wire-format.md:5-14.
-  - **Wire structure — INCOMPLETE**: 0 atomic; 0 whole-root; 539 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-    - **activation — INCOMPLETE**: 0 atomic; 0 whole-root; 7 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - **additionalProperties — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.6f8b4afae29ef90c8462 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Every object key is listed in properties or matched by patternProperties of this SAME schema object. Domain: D.COMPONENT.CM.VCP.STRUCT.6f8b4afae29ef90c8462. Source: schemas/draft/activation.schema.json#/additionalProperties.
-      - **enum — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.7515825d1ae170cf54b3 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Value equals one member of ["ACTIVATE", "DO_NOT_ACTIVATE"] under JSON structural equality. Domain: D.COMPONENT.CM.VCP.STRUCT.7515825d1ae170cf54b3. Source: schemas/draft/activation.schema.json#/properties/outcome/enum, schemas/draft/activation.schema.json#/properties/outcome/type.
-      - **minLength — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.bd7f1b1d68b55dff8856 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.bd7f1b1d68b55dff8856. Source: schemas/draft/activation.schema.json#/properties/reason/minLength.
-      - **required — INCOMPLETE**: 0 atomic; 0 whole-root; 2 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.2c501bd6ac0da301078c [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'reason'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.2c501bd6ac0da301078c. Source: schemas/draft/activation.schema.json#/required/1.
-        - CM.VCP.STRUCT.a0fd552c70436621df72 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'outcome'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.a0fd552c70436621df72. Source: schemas/draft/activation.schema.json#/required/0.
-      - **type — INCOMPLETE**: 0 atomic; 0 whole-root; 2 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.b05c6374aa36fa220996 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.b05c6374aa36fa220996. Source: schemas/draft/activation.schema.json#/type.
-        - CM.VCP.STRUCT.d3ba680df1427127a480 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.d3ba680df1427127a480. Source: schemas/draft/activation.schema.json#/properties/reason/type.
-    - **admission — INCOMPLETE**: 0 atomic; 0 whole-root; 7 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - **additionalProperties — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.c6564b07302fceffc20e [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Every object key is listed in properties or matched by patternProperties of this SAME schema object. Domain: D.COMPONENT.CM.VCP.STRUCT.c6564b07302fceffc20e. Source: schemas/draft/admission.schema.json#/additionalProperties.
-      - **enum — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.7ae846c2061c08482c21 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Value equals one member of ["RUN", "SKIP", "DEFER"] under JSON structural equality. Domain: D.COMPONENT.CM.VCP.STRUCT.7ae846c2061c08482c21. Source: schemas/draft/admission.schema.json#/properties/outcome/enum, schemas/draft/admission.schema.json#/properties/outcome/type.
-      - **minLength — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.d72aac40e6336f8c883a [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.d72aac40e6336f8c883a. Source: schemas/draft/admission.schema.json#/properties/reason/minLength.
-      - **required — INCOMPLETE**: 0 atomic; 0 whole-root; 2 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.2f0ea55a187d561416be [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'outcome'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.2f0ea55a187d561416be. Source: schemas/draft/admission.schema.json#/required/0.
-        - CM.VCP.STRUCT.4828d4f1d31bb229b4c8 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'reason'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.4828d4f1d31bb229b4c8. Source: schemas/draft/admission.schema.json#/required/1.
-      - **type — INCOMPLETE**: 0 atomic; 0 whole-root; 2 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.ba1fd302157883a1dcd5 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.ba1fd302157883a1dcd5. Source: schemas/draft/admission.schema.json#/type.
-        - CM.VCP.STRUCT.dc69b1cf95e4f42d68e3 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.dc69b1cf95e4f42d68e3. Source: schemas/draft/admission.schema.json#/properties/reason/type.
-    - **artifact-ref — INCOMPLETE**: 0 atomic; 0 whole-root; 15 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - **additionalProperties — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.e17ecf4e4320edd3059a [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Every object key is listed in properties or matched by patternProperties of this SAME schema object. Domain: D.COMPONENT.CM.VCP.STRUCT.e17ecf4e4320edd3059a. Source: schemas/draft/artifact-ref.schema.json#/additionalProperties.
-      - **anyOf — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.ec99774e3a1a72c7b6c4 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: At least one child schema succeeds at the same instance location. Domain: D.COMPONENT.CM.VCP.STRUCT.ec99774e3a1a72c7b6c4. Source: schemas/draft/artifact-ref.schema.json#/properties/schema_id/anyOf.
-      - **minLength — INCOMPLETE**: 0 atomic; 0 whole-root; 3 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.130e80afaf824a5a14f4 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.130e80afaf824a5a14f4. Source: schemas/draft/artifact-ref.schema.json#/properties/id/minLength.
-        - CM.VCP.STRUCT.8387e1efe1df28e2de47 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.8387e1efe1df28e2de47. Source: schemas/draft/artifact-ref.schema.json#/properties/type/minLength.
-        - CM.VCP.STRUCT.8d3e710e8c4687c3458c [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.8d3e710e8c4687c3458c. Source: schemas/draft/artifact-ref.schema.json#/properties/schema_id/anyOf/0/minLength.
-      - **required — INCOMPLETE**: 0 atomic; 0 whole-root; 3 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.40aefd35e2b245e184c4 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'type'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.40aefd35e2b245e184c4. Source: schemas/draft/artifact-ref.schema.json#/required/1.
-        - CM.VCP.STRUCT.57693190274846e57e06 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'id'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.57693190274846e57e06. Source: schemas/draft/artifact-ref.schema.json#/required/0.
-        - CM.VCP.STRUCT.9dd0ae31690695070e14 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'locator'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.9dd0ae31690695070e14. Source: schemas/draft/artifact-ref.schema.json#/required/2.
-      - **type — INCOMPLETE**: 0 atomic; 0 whole-root; 7 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.186aab608b6c0263a389 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['array']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.186aab608b6c0263a389. Source: schemas/draft/artifact-ref.schema.json#/properties/extensions/type.
-        - CM.VCP.STRUCT.54a0ef44ca1bc830ec8a [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.54a0ef44ca1bc830ec8a. Source: schemas/draft/artifact-ref.schema.json#/properties/id/type.
-        - CM.VCP.STRUCT.909003bde49e9c78c395 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['null']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.909003bde49e9c78c395. Source: schemas/draft/artifact-ref.schema.json#/properties/schema_id/anyOf/1/type.
-        - CM.VCP.STRUCT.9c56c5ba4c2cdc5f97c8 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.9c56c5ba4c2cdc5f97c8. Source: schemas/draft/artifact-ref.schema.json#/properties/metadata/type.
-        - CM.VCP.STRUCT.ca10bd32190062a53c50 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.ca10bd32190062a53c50. Source: schemas/draft/artifact-ref.schema.json#/properties/type/type.
-        - CM.VCP.STRUCT.e88975a33e28d8fda280 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.e88975a33e28d8fda280. Source: schemas/draft/artifact-ref.schema.json#/properties/schema_id/anyOf/0/type.
-        - CM.VCP.STRUCT.f98b3d9af7eb5917b87d [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.f98b3d9af7eb5917b87d. Source: schemas/draft/artifact-ref.schema.json#/type.
-    - **cancellation-event — INCOMPLETE**: 0 atomic; 0 whole-root; 10 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - **additionalProperties — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.b8015b8cc4fb4e4c48a1 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Every object key is listed in properties or matched by patternProperties of this SAME schema object. Domain: D.COMPONENT.CM.VCP.STRUCT.b8015b8cc4fb4e4c48a1. Source: schemas/draft/cancellation-event.schema.json#/additionalProperties.
-      - **enum — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.cb4877f3ec56e7dfb7dc [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Value equals one member of ["BEFORE_START", "RUNNING"] under JSON structural equality. Domain: D.COMPONENT.CM.VCP.STRUCT.cb4877f3ec56e7dfb7dc. Source: schemas/draft/cancellation-event.schema.json#/properties/phase/enum, schemas/draft/cancellation-event.schema.json#/properties/phase/type.
-      - **minLength — INCOMPLETE**: 0 atomic; 0 whole-root; 2 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.a699867a07aae48f662f [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.a699867a07aae48f662f. Source: schemas/draft/cancellation-event.schema.json#/properties/node_id/minLength.
-        - CM.VCP.STRUCT.f147fac9a3103b2bfab7 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.f147fac9a3103b2bfab7. Source: schemas/draft/cancellation-event.schema.json#/properties/reason/minLength.
-      - **required — INCOMPLETE**: 0 atomic; 0 whole-root; 3 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.04002d480cb17221a9ab [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'node_id'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.04002d480cb17221a9ab. Source: schemas/draft/cancellation-event.schema.json#/required/0.
-        - CM.VCP.STRUCT.1790fa9b800f271f6e1d [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'reason'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.1790fa9b800f271f6e1d. Source: schemas/draft/cancellation-event.schema.json#/required/2.
-        - CM.VCP.STRUCT.7ee5579d2043ecdf4dbf [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'phase'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.7ee5579d2043ecdf4dbf. Source: schemas/draft/cancellation-event.schema.json#/required/1.
-      - **type — INCOMPLETE**: 0 atomic; 0 whole-root; 3 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.9dea39bac44a5d2929c8 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.9dea39bac44a5d2929c8. Source: schemas/draft/cancellation-event.schema.json#/type.
-        - CM.VCP.STRUCT.aa1db3c8eaca0c36171d [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.aa1db3c8eaca0c36171d. Source: schemas/draft/cancellation-event.schema.json#/properties/node_id/type.
-        - CM.VCP.STRUCT.ea2b39eaf67a885b78b4 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.ea2b39eaf67a885b78b4. Source: schemas/draft/cancellation-event.schema.json#/properties/reason/type.
-    - **decision — INCOMPLETE**: 0 atomic; 0 whole-root; 16 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - **additionalProperties — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.033921403755c4e51375 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Every object key is listed in properties or matched by patternProperties of this SAME schema object. Domain: D.COMPONENT.CM.VCP.STRUCT.033921403755c4e51375. Source: schemas/draft/decision.schema.json#/additionalProperties.
-      - **anyOf — INCOMPLETE**: 0 atomic; 0 whole-root; 2 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.0873df3d259237abdf37 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: At least one child schema succeeds at the same instance location. Domain: D.COMPONENT.CM.VCP.STRUCT.0873df3d259237abdf37. Source: schemas/draft/decision.schema.json#/properties/destination/anyOf.
-        - CM.VCP.STRUCT.ca513006f6104ed8d93e [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: At least one child schema succeeds at the same instance location. Domain: D.COMPONENT.CM.VCP.STRUCT.ca513006f6104ed8d93e. Source: schemas/draft/decision.schema.json#/properties/reason/anyOf.
-      - **const — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.2b1eaf500cf20bdb4330 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Value equals the constant "draft" under JSON structural equality. Domain: D.COMPONENT.CM.VCP.STRUCT.2b1eaf500cf20bdb4330. Source: schemas/draft/decision.schema.json#/properties/protocol/const.
-      - **enum — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.1e8284ac686fb0f22ead [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Value equals one member of ["CONTINUE", "STOP_SUCCESS", "STOP_FAILURE", "ROUTE", "RETRY", "DEFER"] under JSON structural equality. Domain: D.COMPONENT.CM.VCP.STRUCT.1e8284ac686fb0f22ead. Source: schemas/draft/decision.schema.json#/properties/kind/enum, schemas/draft/decision.schema.json#/properties/kind/type.
-      - **minLength — INCOMPLETE**: 0 atomic; 0 whole-root; 2 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.1f0ccaf527b1b2b3cef4 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.1f0ccaf527b1b2b3cef4. Source: schemas/draft/decision.schema.json#/properties/reason/anyOf/0/minLength.
-        - CM.VCP.STRUCT.842e2cc88db6913543f8 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.842e2cc88db6913543f8. Source: schemas/draft/decision.schema.json#/properties/destination/anyOf/0/minLength.
-      - **required — INCOMPLETE**: 0 atomic; 0 whole-root; 2 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.09405a5f89ed2e6793a1 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'protocol'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.09405a5f89ed2e6793a1. Source: schemas/draft/decision.schema.json#/required/0.
-        - CM.VCP.STRUCT.0d13a7fa7713576defff [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'kind'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.0d13a7fa7713576defff. Source: schemas/draft/decision.schema.json#/required/1.
-      - **type — INCOMPLETE**: 0 atomic; 0 whole-root; 7 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.0ecffc4b4b16650fb287 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.0ecffc4b4b16650fb287. Source: schemas/draft/decision.schema.json#/properties/destination/anyOf/0/type.
-        - CM.VCP.STRUCT.1f2c25028bbc0f8f17ab [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.1f2c25028bbc0f8f17ab. Source: schemas/draft/decision.schema.json#/properties/metadata/type.
-        - CM.VCP.STRUCT.597b4338e3a25b097d27 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.597b4338e3a25b097d27. Source: schemas/draft/decision.schema.json#/type.
-        - CM.VCP.STRUCT.6fe93480bb6abe454ce9 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.6fe93480bb6abe454ce9. Source: schemas/draft/decision.schema.json#/properties/reason/anyOf/0/type.
-        - CM.VCP.STRUCT.78c5b40505b6bbfefd5b [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['array']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.78c5b40505b6bbfefd5b. Source: schemas/draft/decision.schema.json#/properties/extensions/type.
-        - CM.VCP.STRUCT.ba0615d2aab118637ef7 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['null']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.ba0615d2aab118637ef7. Source: schemas/draft/decision.schema.json#/properties/reason/anyOf/1/type.
-        - CM.VCP.STRUCT.e076ca900b0f780f8c5f [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['null']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.e076ca900b0f780f8c5f. Source: schemas/draft/decision.schema.json#/properties/destination/anyOf/1/type.
-    - **evidence — INCOMPLETE**: 0 atomic; 0 whole-root; 14 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - **additionalProperties — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.53e0736d80c3771aab68 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Every object key is listed in properties or matched by patternProperties of this SAME schema object. Domain: D.COMPONENT.CM.VCP.STRUCT.53e0736d80c3771aab68. Source: schemas/draft/evidence.schema.json#/additionalProperties.
-      - **anyOf — INCOMPLETE**: 0 atomic; 0 whole-root; 3 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.4a25f8fb0ae8dc3eb383 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: At least one child schema succeeds at the same instance location. Domain: D.COMPONENT.CM.VCP.STRUCT.4a25f8fb0ae8dc3eb383. Source: schemas/draft/evidence.schema.json#/properties/message/anyOf.
-        - CM.VCP.STRUCT.697fe9aa3c9e03ecc009 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: At least one child schema succeeds at the same instance location. Domain: D.COMPONENT.CM.VCP.STRUCT.697fe9aa3c9e03ecc009. Source: schemas/draft/evidence.schema.json#/properties/artifact_ref/anyOf.
-        - CM.VCP.STRUCT.c301b0f8812b27b34cb1 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: At least one child schema succeeds at the same instance location. Domain: D.COMPONENT.CM.VCP.STRUCT.c301b0f8812b27b34cb1. Source: schemas/draft/evidence.schema.json#/properties/id/anyOf.
-      - **minLength — INCOMPLETE**: 0 atomic; 0 whole-root; 2 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.14ab78da1ada4c00c237 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.14ab78da1ada4c00c237. Source: schemas/draft/evidence.schema.json#/properties/id/anyOf/0/minLength.
-        - CM.VCP.STRUCT.69cfaae01ce1b2e4b64c [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.69cfaae01ce1b2e4b64c. Source: schemas/draft/evidence.schema.json#/properties/message/anyOf/0/minLength.
-      - **type — INCOMPLETE**: 0 atomic; 0 whole-root; 8 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.2e9fcfaef8388c3f5d73 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['null']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.2e9fcfaef8388c3f5d73. Source: schemas/draft/evidence.schema.json#/properties/id/anyOf/1/type.
-        - CM.VCP.STRUCT.3c2462549e1e605fc69a [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.3c2462549e1e605fc69a. Source: schemas/draft/evidence.schema.json#/type.
-        - CM.VCP.STRUCT.4cca6f71ecdeeb25924e [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['array']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.4cca6f71ecdeeb25924e. Source: schemas/draft/evidence.schema.json#/properties/extensions/type.
-        - CM.VCP.STRUCT.939035879b3ee8e6ba31 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.939035879b3ee8e6ba31. Source: schemas/draft/evidence.schema.json#/properties/metadata/type.
-        - CM.VCP.STRUCT.9b35d96587329310150a [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['null']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.9b35d96587329310150a. Source: schemas/draft/evidence.schema.json#/properties/artifact_ref/anyOf/1/type.
-        - CM.VCP.STRUCT.d54228f90708df0f5444 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.d54228f90708df0f5444. Source: schemas/draft/evidence.schema.json#/properties/id/anyOf/0/type.
-        - CM.VCP.STRUCT.f602b048c23d6cb7ccd7 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['null']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.f602b048c23d6cb7ccd7. Source: schemas/draft/evidence.schema.json#/properties/message/anyOf/1/type.
-        - CM.VCP.STRUCT.fd1ff1eaf7d1f5c11ef9 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.fd1ff1eaf7d1f5c11ef9. Source: schemas/draft/evidence.schema.json#/properties/message/anyOf/0/type.
-    - **execution-observation — INCOMPLETE**: 0 atomic; 0 whole-root; 18 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - **additionalProperties — INCOMPLETE**: 0 atomic; 0 whole-root; 2 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.de6b345ed6ddf888ddb7 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Every object key is listed in properties or matched by patternProperties of this SAME schema object. Domain: D.COMPONENT.CM.VCP.STRUCT.de6b345ed6ddf888ddb7. Source: schemas/draft/execution-observation.schema.json#/properties/error/additionalProperties.
-        - CM.VCP.STRUCT.ecf82fa32b581b84dacf [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Every object key is listed in properties or matched by patternProperties of this SAME schema object. Domain: D.COMPONENT.CM.VCP.STRUCT.ecf82fa32b581b84dacf. Source: schemas/draft/execution-observation.schema.json#/additionalProperties.
-      - **minLength — INCOMPLETE**: 0 atomic; 0 whole-root; 3 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.7eb1466881148f3755fa [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.7eb1466881148f3755fa. Source: schemas/draft/execution-observation.schema.json#/properties/error/properties/code/minLength.
-        - CM.VCP.STRUCT.b83b4614c5056918befd [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.b83b4614c5056918befd. Source: schemas/draft/execution-observation.schema.json#/properties/usage/propertyNames/minLength.
-        - CM.VCP.STRUCT.c5169d4a5586f949550e [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.c5169d4a5586f949550e. Source: schemas/draft/execution-observation.schema.json#/properties/error/properties/message/minLength.
-      - **required — INCOMPLETE**: 0 atomic; 0 whole-root; 5 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.00f59e1967ad2154f5b7 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'outputs'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.00f59e1967ad2154f5b7. Source: schemas/draft/execution-observation.schema.json#/required/0.
-        - CM.VCP.STRUCT.39d138b3b1809ca3c6b6 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /properties/error contains key 'code'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.39d138b3b1809ca3c6b6. Source: schemas/draft/execution-observation.schema.json#/properties/error/required/0.
-        - CM.VCP.STRUCT.cd66f92c1bf3a818fb03 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'evidence'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.cd66f92c1bf3a818fb03. Source: schemas/draft/execution-observation.schema.json#/required/2.
-        - CM.VCP.STRUCT.e1d84bbbbcc19654f7b7 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /properties/error contains key 'message'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.e1d84bbbbcc19654f7b7. Source: schemas/draft/execution-observation.schema.json#/properties/error/required/1.
-        - CM.VCP.STRUCT.e40431607351a6ea4e62 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'usage'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.e40431607351a6ea4e62. Source: schemas/draft/execution-observation.schema.json#/required/1.
-      - **type — INCOMPLETE**: 0 atomic; 0 whole-root; 8 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.066b53466b4f8da501a4 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.066b53466b4f8da501a4. Source: schemas/draft/execution-observation.schema.json#/properties/error/properties/message/type.
-        - CM.VCP.STRUCT.2219a3f1f86c65a9dea5 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.2219a3f1f86c65a9dea5. Source: schemas/draft/execution-observation.schema.json#/properties/usage/type.
-        - CM.VCP.STRUCT.28e015cdfb025fb7013f [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.28e015cdfb025fb7013f. Source: schemas/draft/execution-observation.schema.json#/properties/outputs/type.
-        - CM.VCP.STRUCT.4d8fc8b8e4c602d7a719 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.4d8fc8b8e4c602d7a719. Source: schemas/draft/execution-observation.schema.json#/properties/error/type.
-        - CM.VCP.STRUCT.5f692421dbe5924f7795 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.5f692421dbe5924f7795. Source: schemas/draft/execution-observation.schema.json#/properties/usage/propertyNames/type.
-        - CM.VCP.STRUCT.b1f9752f56da8bc36ce8 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.b1f9752f56da8bc36ce8. Source: schemas/draft/execution-observation.schema.json#/properties/error/properties/code/type.
-        - CM.VCP.STRUCT.d48c3d7ff28b16c66f7f [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.d48c3d7ff28b16c66f7f. Source: schemas/draft/execution-observation.schema.json#/type.
-        - CM.VCP.STRUCT.ff581156b33789ac4649 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['array']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.ff581156b33789ac4649. Source: schemas/draft/execution-observation.schema.json#/properties/evidence/type.
-    - **extension — INCOMPLETE**: 0 atomic; 0 whole-root; 12 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - **additionalProperties — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.2f032d21658176532f37 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Every object key is listed in properties or matched by patternProperties of this SAME schema object. Domain: D.COMPONENT.CM.VCP.STRUCT.2f032d21658176532f37. Source: schemas/draft/extension.schema.json#/additionalProperties.
-      - **minLength — INCOMPLETE**: 0 atomic; 0 whole-root; 2 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.1c142e68c80df4c9f10b [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.1c142e68c80df4c9f10b. Source: schemas/draft/extension.schema.json#/properties/namespace/minLength, spec/draft/extensions.md:5-13.
-        - CM.VCP.STRUCT.5ee71f7e1da073fe8b88 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.5ee71f7e1da073fe8b88. Source: schemas/draft/extension.schema.json#/properties/version/minLength.
-      - **pattern — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.33f3394adc0449a225e3 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: A string has an ECMA-262-compatible regex match for ':' (search semantics unless anchored). Domain: D.COMPONENT.CM.VCP.STRUCT.33f3394adc0449a225e3. Source: schemas/draft/extension.schema.json#/properties/namespace/pattern, spec/draft/extensions.md:5-13.
-      - **required — INCOMPLETE**: 0 atomic; 0 whole-root; 4 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.235e5b0857ae42a1aaec [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'data'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.235e5b0857ae42a1aaec. Source: schemas/draft/extension.schema.json#/required/3.
-        - CM.VCP.STRUCT.97c13079ab1bcdc414e2 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'version'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.97c13079ab1bcdc414e2. Source: schemas/draft/extension.schema.json#/required/1.
-        - CM.VCP.STRUCT.e578ab8ba3888b19488f [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'required'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.e578ab8ba3888b19488f. Source: schemas/draft/extension.schema.json#/required/2.
-        - CM.VCP.STRUCT.e841dcff4259123daac8 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'namespace'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.e841dcff4259123daac8. Source: schemas/draft/extension.schema.json#/required/0.
-      - **type — INCOMPLETE**: 0 atomic; 0 whole-root; 4 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.3ed39aac5989b1322abc [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['boolean']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.3ed39aac5989b1322abc. Source: schemas/draft/extension.schema.json#/properties/required/type.
-        - CM.VCP.STRUCT.466a4259e33ca6a4d76e [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.466a4259e33ca6a4d76e. Source: schemas/draft/extension.schema.json#/properties/version/type.
-        - CM.VCP.STRUCT.5330ed9d1eb769831e4c [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.5330ed9d1eb769831e4c. Source: schemas/draft/extension.schema.json#/properties/namespace/type, spec/draft/extensions.md:5-13.
-        - CM.VCP.STRUCT.65cdb16b678b296be712 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.65cdb16b678b296be712. Source: schemas/draft/extension.schema.json#/type.
-    - **graph — INCOMPLETE**: 0 atomic; 0 whole-root; 49 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - **additionalProperties — INCOMPLETE**: 0 atomic; 0 whole-root; 4 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.4d08b6b6c75ad6fc2d89 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Every object key is listed in properties or matched by patternProperties of this SAME schema object. Domain: D.COMPONENT.CM.VCP.STRUCT.4d08b6b6c75ad6fc2d89. Source: schemas/draft/graph.schema.json#/properties/nodes/items/additionalProperties.
-        - CM.VCP.STRUCT.ae59153084f2debded57 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Every object key is listed in properties or matched by patternProperties of this SAME schema object. Domain: D.COMPONENT.CM.VCP.STRUCT.ae59153084f2debded57. Source: schemas/draft/graph.schema.json#/additionalProperties.
-        - CM.VCP.STRUCT.e1cdeeafbebb5d4a7a3d [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Every object key is listed in properties or matched by patternProperties of this SAME schema object. Domain: D.COMPONENT.CM.VCP.STRUCT.e1cdeeafbebb5d4a7a3d. Source: schemas/draft/graph.schema.json#/properties/edges/items/additionalProperties.
-        - CM.VCP.STRUCT.e2cb8861103095710fb0 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Every object key is listed in properties or matched by patternProperties of this SAME schema object. Domain: D.COMPONENT.CM.VCP.STRUCT.e2cb8861103095710fb0. Source: schemas/draft/graph.schema.json#/properties/edges/items/properties/guard/anyOf/0/additionalProperties.
-      - **anyOf — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.b1f102280b7ec416ce1c [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: At least one child schema succeeds at the same instance location. Domain: D.COMPONENT.CM.VCP.STRUCT.b1f102280b7ec416ce1c. Source: schemas/draft/graph.schema.json#/properties/edges/items/properties/guard/anyOf.
-      - **enum — INCOMPLETE**: 0 atomic; 0 whole-root; 2 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.1274f1773a117cf5f258 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Value equals one member of ["DERIVE", "EVALUATE", "CONTROL", "AGGREGATE"] under JSON structural equality. Domain: D.COMPONENT.CM.VCP.STRUCT.1274f1773a117cf5f258. Source: schemas/draft/graph.schema.json#/properties/nodes/items/properties/kind/enum, schemas/draft/graph.schema.json#/properties/nodes/items/properties/kind/type.
-        - CM.VCP.STRUCT.bba99ae9cfed10e51805 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Value equals one member of ["CYCLES", "DYNAMIC_EXPANSION"] under JSON structural equality. Domain: D.COMPONENT.CM.VCP.STRUCT.bba99ae9cfed10e51805. Source: schemas/draft/graph.schema.json#/properties/features/items/enum, schemas/draft/graph.schema.json#/properties/features/items/type.
-      - **minLength — INCOMPLETE**: 0 atomic; 0 whole-root; 6 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.129ef54d78d3f0857605 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.129ef54d78d3f0857605. Source: schemas/draft/graph.schema.json#/properties/edges/items/properties/from_node/minLength.
-        - CM.VCP.STRUCT.34f234587bfabe3dbc17 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.34f234587bfabe3dbc17. Source: schemas/draft/graph.schema.json#/properties/edges/items/properties/to_node/minLength.
-        - CM.VCP.STRUCT.4af88da52d3684a5faec [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.4af88da52d3684a5faec. Source: schemas/draft/graph.schema.json#/properties/nodes/items/properties/bindings/propertyNames/minLength.
-        - CM.VCP.STRUCT.525ec2664c98bfbb5e6d [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.525ec2664c98bfbb5e6d. Source: schemas/draft/graph.schema.json#/properties/nodes/items/properties/aggregate_inputs/items/minLength.
-        - CM.VCP.STRUCT.871c46eef4878c8fe61b [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.871c46eef4878c8fe61b. Source: schemas/draft/graph.schema.json#/properties/nodes/items/properties/resource_estimate/propertyNames/minLength.
-        - CM.VCP.STRUCT.c835ecb9ea883e065681 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.c835ecb9ea883e065681. Source: schemas/draft/graph.schema.json#/properties/nodes/items/properties/id/minLength.
-      - **required — INCOMPLETE**: 0 atomic; 0 whole-root; 12 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.3464b7ca042c0e162e52 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /properties/edges/items/properties/guard/anyOf/0 contains key 'value'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.3464b7ca042c0e162e52. Source: schemas/draft/graph.schema.json#/properties/edges/items/properties/guard/anyOf/0/required/2.
-        - CM.VCP.STRUCT.375cbb7221de2021fd04 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /properties/nodes/items contains key 'operation'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.375cbb7221de2021fd04. Source: schemas/draft/graph.schema.json#/properties/nodes/items/required/2.
-        - CM.VCP.STRUCT.3eabfbe143867ce4ae30 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /properties/edges/items/properties/guard/anyOf/0 contains key 'source'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.3eabfbe143867ce4ae30. Source: schemas/draft/graph.schema.json#/properties/edges/items/properties/guard/anyOf/0/required/0.
-        - CM.VCP.STRUCT.5fcb5b22bd0d28fccc97 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /properties/nodes/items contains key 'id'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.5fcb5b22bd0d28fccc97. Source: schemas/draft/graph.schema.json#/properties/nodes/items/required/0.
-        - CM.VCP.STRUCT.60facb5c4cc1f2c2c3b0 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /properties/nodes/items contains key 'outputs'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.60facb5c4cc1f2c2c3b0. Source: schemas/draft/graph.schema.json#/properties/nodes/items/required/4.
-        - CM.VCP.STRUCT.8a985218d18fade33835 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /properties/edges/items contains key 'from_node'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.8a985218d18fade33835. Source: schemas/draft/graph.schema.json#/properties/edges/items/required/0.
-        - CM.VCP.STRUCT.98dbd163fd9431307ca9 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /properties/edges/items contains key 'to_node'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.98dbd163fd9431307ca9. Source: schemas/draft/graph.schema.json#/properties/edges/items/required/1.
-        - CM.VCP.STRUCT.aedfa5a808c138160b36 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /properties/edges/items/properties/guard/anyOf/0 contains key 'pointer'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.aedfa5a808c138160b36. Source: schemas/draft/graph.schema.json#/properties/edges/items/properties/guard/anyOf/0/required/1.
-        - CM.VCP.STRUCT.bdec74a75e55354d306e [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /properties/nodes/items contains key 'inputs'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.bdec74a75e55354d306e. Source: schemas/draft/graph.schema.json#/properties/nodes/items/required/3.
-        - CM.VCP.STRUCT.daa84ca67d1bd16f9b4f [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /properties/nodes/items contains key 'kind'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.daa84ca67d1bd16f9b4f. Source: schemas/draft/graph.schema.json#/properties/nodes/items/required/1.
-        - CM.VCP.STRUCT.e807809d612f4424dbad [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'nodes'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.e807809d612f4424dbad. Source: schemas/draft/graph.schema.json#/required/0.
-        - CM.VCP.STRUCT.ff39efe306985a411483 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /properties/nodes/items contains key 'bindings'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.ff39efe306985a411483. Source: schemas/draft/graph.schema.json#/properties/nodes/items/required/5.
-      - **type — INCOMPLETE**: 0 atomic; 0 whole-root; 24 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.0623a6204a9f2ad5410d [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['array']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.0623a6204a9f2ad5410d. Source: schemas/draft/graph.schema.json#/properties/nodes/items/properties/inputs/type.
-        - CM.VCP.STRUCT.0dcd641c08cda7a6d609 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.0dcd641c08cda7a6d609. Source: schemas/draft/graph.schema.json#/type.
-        - CM.VCP.STRUCT.19a470cacf5749542f2e [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['null']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.19a470cacf5749542f2e. Source: schemas/draft/graph.schema.json#/properties/edges/items/properties/guard/anyOf/1/type.
-        - CM.VCP.STRUCT.20b08c70467430da2ca5 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.20b08c70467430da2ca5. Source: schemas/draft/graph.schema.json#/properties/nodes/items/properties/aggregate_inputs/items/type.
-        - CM.VCP.STRUCT.219166094b10d9703ea3 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['array']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.219166094b10d9703ea3. Source: schemas/draft/graph.schema.json#/properties/nodes/type.
-        - CM.VCP.STRUCT.403f99d63984f1553066 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.403f99d63984f1553066. Source: schemas/draft/graph.schema.json#/properties/nodes/items/properties/bindings/type.
-        - CM.VCP.STRUCT.460355782909f2f09bb4 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.460355782909f2f09bb4. Source: schemas/draft/graph.schema.json#/properties/nodes/items/properties/resource_estimate/type.
-        - CM.VCP.STRUCT.4684b747b89aaad462c2 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.4684b747b89aaad462c2. Source: schemas/draft/graph.schema.json#/properties/edges/items/type.
-        - CM.VCP.STRUCT.547b1915be92486975dc [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['array']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.547b1915be92486975dc. Source: schemas/draft/graph.schema.json#/properties/features/type.
-        - CM.VCP.STRUCT.5afe04cede559b64e645 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['array']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.5afe04cede559b64e645. Source: schemas/draft/graph.schema.json#/properties/nodes/items/properties/aggregate_inputs/type.
-        - CM.VCP.STRUCT.5d0b745d18f274f413bb [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['array']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.5d0b745d18f274f413bb. Source: schemas/draft/graph.schema.json#/properties/edges/type.
-        - CM.VCP.STRUCT.61dddfb3ceaa334daa6f [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.61dddfb3ceaa334daa6f. Source: schemas/draft/graph.schema.json#/properties/edges/items/properties/guard/anyOf/0/type.
-        - CM.VCP.STRUCT.64a1cb6b07a078259f02 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['array']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.64a1cb6b07a078259f02. Source: schemas/draft/graph.schema.json#/properties/nodes/items/properties/extensions/type.
-        - CM.VCP.STRUCT.69f5b64f535ddfbbda80 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.69f5b64f535ddfbbda80. Source: schemas/draft/graph.schema.json#/properties/nodes/items/type.
-        - CM.VCP.STRUCT.762fb1c3f2deebf47d5e [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.762fb1c3f2deebf47d5e. Source: schemas/draft/graph.schema.json#/properties/edges/items/properties/guard/anyOf/0/properties/pointer/type.
-        - CM.VCP.STRUCT.78fcb38b8d557daab2eb [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['boolean', 'object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.78fcb38b8d557daab2eb. Source: schemas/draft/graph.schema.json#/properties/nodes/items/properties/config_schema/type.
-        - CM.VCP.STRUCT.81232f88ef93b0a831df [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['array']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.81232f88ef93b0a831df. Source: schemas/draft/graph.schema.json#/properties/nodes/items/properties/outputs/type.
-        - CM.VCP.STRUCT.8c76c9b04254a98b3589 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.8c76c9b04254a98b3589. Source: schemas/draft/graph.schema.json#/properties/nodes/items/properties/resource_estimate/propertyNames/type.
-        - CM.VCP.STRUCT.954ddd9be5b9d4e8bc61 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.954ddd9be5b9d4e8bc61. Source: schemas/draft/graph.schema.json#/properties/nodes/items/properties/metadata/type.
-        - CM.VCP.STRUCT.998d61de3ca8ca4e08b0 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.998d61de3ca8ca4e08b0. Source: schemas/draft/graph.schema.json#/properties/edges/items/properties/from_node/type.
-        - CM.VCP.STRUCT.9ad6ac0d8683633eb21c [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.9ad6ac0d8683633eb21c. Source: schemas/draft/graph.schema.json#/properties/edges/items/properties/to_node/type.
-        - CM.VCP.STRUCT.a23fec972fda7514e0d2 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.a23fec972fda7514e0d2. Source: schemas/draft/graph.schema.json#/properties/nodes/items/properties/config/type.
-        - CM.VCP.STRUCT.ae2dc9eda61f31d75fad [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.ae2dc9eda61f31d75fad. Source: schemas/draft/graph.schema.json#/properties/nodes/items/properties/id/type.
-        - CM.VCP.STRUCT.e4851e786fd03920ea77 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.e4851e786fd03920ea77. Source: schemas/draft/graph.schema.json#/properties/nodes/items/properties/bindings/propertyNames/type.
-    - **input-port — INCOMPLETE**: 0 atomic; 0 whole-root; 16 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - **additionalProperties — INCOMPLETE**: 0 atomic; 0 whole-root; 2 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.02c6e1b2bdf6cc495556 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Every object key is listed in properties or matched by patternProperties of this SAME schema object. Domain: D.COMPONENT.CM.VCP.STRUCT.02c6e1b2bdf6cc495556. Source: schemas/draft/input-port.schema.json#/properties/default/additionalProperties.
-        - CM.VCP.STRUCT.0447a244891a5bf8686f [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Every object key is listed in properties or matched by patternProperties of this SAME schema object. Domain: D.COMPONENT.CM.VCP.STRUCT.0447a244891a5bf8686f. Source: schemas/draft/input-port.schema.json#/additionalProperties.
-      - **const — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.0899f2f6de7e49c44e7d [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Value equals the constant "CONSTANT" under JSON structural equality. Domain: D.COMPONENT.CM.VCP.STRUCT.0899f2f6de7e49c44e7d. Source: schemas/draft/input-port.schema.json#/properties/default/properties/kind/const.
-      - **enum — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.26fbc395607a79ab93ec [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Value equals one member of ["BLOCK", "OMIT", "DEFAULT"] under JSON structural equality. Domain: D.COMPONENT.CM.VCP.STRUCT.26fbc395607a79ab93ec. Source: schemas/draft/input-port.schema.json#/properties/on_unavailable/enum, schemas/draft/input-port.schema.json#/properties/on_unavailable/type.
-      - **minLength — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.19a3ece691a7562427aa [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.19a3ece691a7562427aa. Source: schemas/draft/input-port.schema.json#/properties/name/minLength.
-      - **required — INCOMPLETE**: 0 atomic; 0 whole-root; 6 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.086137be90a73e5ee95d [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'schema'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.086137be90a73e5ee95d. Source: schemas/draft/input-port.schema.json#/required/1.
-        - CM.VCP.STRUCT.2803eb8d4db37a9ec1c9 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /properties/default contains key 'value'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.2803eb8d4db37a9ec1c9. Source: schemas/draft/input-port.schema.json#/properties/default/required/1.
-        - CM.VCP.STRUCT.4bcacd4ec2b7c395145b [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'required'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.4bcacd4ec2b7c395145b. Source: schemas/draft/input-port.schema.json#/required/2.
-        - CM.VCP.STRUCT.97ba14e07e639c223c67 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'name'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.97ba14e07e639c223c67. Source: schemas/draft/input-port.schema.json#/required/0.
-        - CM.VCP.STRUCT.d72a11661994bef58ec4 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /properties/default contains key 'kind'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.d72a11661994bef58ec4. Source: schemas/draft/input-port.schema.json#/properties/default/required/0.
-        - CM.VCP.STRUCT.f6f9cddf3239306389c0 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'on_unavailable'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.f6f9cddf3239306389c0. Source: schemas/draft/input-port.schema.json#/required/3.
-      - **type — INCOMPLETE**: 0 atomic; 0 whole-root; 5 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.6b4c5144523373de7ca6 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.6b4c5144523373de7ca6. Source: schemas/draft/input-port.schema.json#/properties/default/type.
-        - CM.VCP.STRUCT.8fdb4031e42e28e09987 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['boolean', 'object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.8fdb4031e42e28e09987. Source: schemas/draft/input-port.schema.json#/properties/schema/type.
-        - CM.VCP.STRUCT.93fe3dde0c5593935205 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['boolean']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.93fe3dde0c5593935205. Source: schemas/draft/input-port.schema.json#/properties/required/type.
-        - CM.VCP.STRUCT.9571b6bd79799ff663a5 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.9571b6bd79799ff663a5. Source: schemas/draft/input-port.schema.json#/properties/name/type.
-        - CM.VCP.STRUCT.f4d835f99bf98d556f3e [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.f4d835f99bf98d556f3e. Source: schemas/draft/input-port.schema.json#/type.
-    - **input-resolution — INCOMPLETE**: 0 atomic; 0 whole-root; 6 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - **additionalProperties — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.2be2bbe3e9b035ed576f [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Every object key is listed in properties or matched by patternProperties of this SAME schema object. Domain: D.COMPONENT.CM.VCP.STRUCT.2be2bbe3e9b035ed576f. Source: schemas/draft/input-resolution.schema.json#/additionalProperties.
-      - **enum — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.d795de5af8bfb4265894 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Value equals one member of ["AVAILABLE", "ABSENT", "PRODUCER_NOT_EXECUTED", "PRODUCER_ERROR", "OUTPUT_MISSING", "INVALID"] under JSON structural equality. Domain: D.COMPONENT.CM.VCP.STRUCT.d795de5af8bfb4265894. Source: schemas/draft/input-resolution.schema.json#/properties/status/enum, schemas/draft/input-resolution.schema.json#/properties/status/type.
-      - **required — INCOMPLETE**: 0 atomic; 0 whole-root; 2 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.3f2d57171eca0a1f341b [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'used_default'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.3f2d57171eca0a1f341b. Source: schemas/draft/input-resolution.schema.json#/required/1.
-        - CM.VCP.STRUCT.999635bdd56d8b7d9c81 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'status'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.999635bdd56d8b7d9c81. Source: schemas/draft/input-resolution.schema.json#/required/0.
-      - **type — INCOMPLETE**: 0 atomic; 0 whole-root; 2 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.4289df29ced784c40b6d [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['boolean']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.4289df29ced784c40b6d. Source: schemas/draft/input-resolution.schema.json#/properties/used_default/type.
-        - CM.VCP.STRUCT.f46f3069ec1ead91761d [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.f46f3069ec1ead91761d. Source: schemas/draft/input-resolution.schema.json#/type.
-    - **operation-requirement — INCOMPLETE**: 0 atomic; 0 whole-root; 9 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - **additionalProperties — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.454b88b17a208abfee7a [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Every object key is listed in properties or matched by patternProperties of this SAME schema object. Domain: D.COMPONENT.CM.VCP.STRUCT.454b88b17a208abfee7a. Source: schemas/draft/operation-requirement.schema.json#/additionalProperties.
-      - **minLength — INCOMPLETE**: 0 atomic; 0 whole-root; 2 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.63d340245ca4ae5fcfcc [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.63d340245ca4ae5fcfcc. Source: schemas/draft/operation-requirement.schema.json#/properties/capability_id/minLength.
-        - CM.VCP.STRUCT.967ddb5144d6601c413f [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.967ddb5144d6601c413f. Source: schemas/draft/operation-requirement.schema.json#/properties/capability_version/minLength.
-      - **pattern — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.4ffbb7298791e113b66d [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: A string has an ECMA-262-compatible regex match for '^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*){2,})$' (search semantics unless anchored). Domain: D.COMPONENT.CM.VCP.STRUCT.4ffbb7298791e113b66d. Source: schemas/draft/operation-requirement.schema.json#/properties/capability_id/pattern.
-      - **required — INCOMPLETE**: 0 atomic; 0 whole-root; 2 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.47690923a26fc3edf7de [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'capability_version'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.47690923a26fc3edf7de. Source: schemas/draft/operation-requirement.schema.json#/required/1.
-        - CM.VCP.STRUCT.e43e59d742547dc10076 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'capability_id'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.e43e59d742547dc10076. Source: schemas/draft/operation-requirement.schema.json#/required/0.
-      - **type — INCOMPLETE**: 0 atomic; 0 whole-root; 3 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.283bc902ffc6fd3ee839 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.283bc902ffc6fd3ee839. Source: schemas/draft/operation-requirement.schema.json#/type.
-        - CM.VCP.STRUCT.4e295df3b31fc0dc1a33 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.4e295df3b31fc0dc1a33. Source: schemas/draft/operation-requirement.schema.json#/properties/capability_id/type.
-        - CM.VCP.STRUCT.60892fe25fb8c49984ab [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.60892fe25fb8c49984ab. Source: schemas/draft/operation-requirement.schema.json#/properties/capability_version/type.
-    - **output-port — INCOMPLETE**: 0 atomic; 0 whole-root; 9 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - **additionalProperties — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.5f35b516f6a8b9621508 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Every object key is listed in properties or matched by patternProperties of this SAME schema object. Domain: D.COMPONENT.CM.VCP.STRUCT.5f35b516f6a8b9621508. Source: schemas/draft/output-port.schema.json#/additionalProperties.
-      - **enum — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.23074f6403eff88662b8 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Value equals one member of ["INFORMATION", "RESULT", "DECISION"] under JSON structural equality. Domain: D.COMPONENT.CM.VCP.STRUCT.23074f6403eff88662b8. Source: schemas/draft/output-port.schema.json#/properties/role/enum, schemas/draft/output-port.schema.json#/properties/role/type.
-      - **minLength — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.b4183e9adbf2eeabc9d9 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.b4183e9adbf2eeabc9d9. Source: schemas/draft/output-port.schema.json#/properties/name/minLength.
-      - **required — INCOMPLETE**: 0 atomic; 0 whole-root; 3 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.15eb5eb287cec7479867 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'schema'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.15eb5eb287cec7479867. Source: schemas/draft/output-port.schema.json#/required/1.
-        - CM.VCP.STRUCT.82d92cf7d5481f82a4b6 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'role'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.82d92cf7d5481f82a4b6. Source: schemas/draft/output-port.schema.json#/required/2.
-        - CM.VCP.STRUCT.f4b6cf48da8665c40423 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'name'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.f4b6cf48da8665c40423. Source: schemas/draft/output-port.schema.json#/required/0.
-      - **type — INCOMPLETE**: 0 atomic; 0 whole-root; 3 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.0c87711199920816857c [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.0c87711199920816857c. Source: schemas/draft/output-port.schema.json#/type.
-        - CM.VCP.STRUCT.c5bdb6dfe04bcf96dcf0 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.c5bdb6dfe04bcf96dcf0. Source: schemas/draft/output-port.schema.json#/properties/name/type.
-        - CM.VCP.STRUCT.ff158ef6d08fbd4f44f4 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['boolean', 'object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.ff158ef6d08fbd4f44f4. Source: schemas/draft/output-port.schema.json#/properties/schema/type.
-    - **policy-evaluation — INCOMPLETE**: 0 atomic; 0 whole-root; 18 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - **additionalProperties — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.ac550756f3d52d12f8a4 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Every object key is listed in properties or matched by patternProperties of this SAME schema object. Domain: D.COMPONENT.CM.VCP.STRUCT.ac550756f3d52d12f8a4. Source: schemas/draft/policy-evaluation.schema.json#/additionalProperties.
-      - **anyOf — INCOMPLETE**: 0 atomic; 0 whole-root; 2 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.742fd3419f478aa70755 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: At least one child schema succeeds at the same instance location. Domain: D.COMPONENT.CM.VCP.STRUCT.742fd3419f478aa70755. Source: schemas/draft/policy-evaluation.schema.json#/properties/executor_version/anyOf.
-        - CM.VCP.STRUCT.a475cb76ed9a46e65d0c [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: At least one child schema succeeds at the same instance location. Domain: D.COMPONENT.CM.VCP.STRUCT.a475cb76ed9a46e65d0c. Source: schemas/draft/policy-evaluation.schema.json#/properties/executor_ref/anyOf.
-      - **enum — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.13871c883a51555eaf00 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Value equals one member of ["ACTIVATION", "SELECTION", "ADMISSION"] under JSON structural equality. Domain: D.COMPONENT.CM.VCP.STRUCT.13871c883a51555eaf00. Source: schemas/draft/policy-evaluation.schema.json#/properties/role/enum, schemas/draft/policy-evaluation.schema.json#/properties/role/type.
-      - **minLength — INCOMPLETE**: 0 atomic; 0 whole-root; 2 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.3b518ae65f8bdf88bb6f [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.3b518ae65f8bdf88bb6f. Source: schemas/draft/policy-evaluation.schema.json#/properties/executor_ref/anyOf/0/minLength.
-        - CM.VCP.STRUCT.b97069db89950ad32c8e [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.b97069db89950ad32c8e. Source: schemas/draft/policy-evaluation.schema.json#/properties/executor_version/anyOf/0/minLength.
-      - **oneOf — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.82d3ef1b7e0ea3fa541d [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Exactly one child schema succeeds at the same instance location. Domain: D.COMPONENT.CM.VCP.STRUCT.82d3ef1b7e0ea3fa541d. Source: schemas/draft/policy-evaluation.schema.json#/properties/outcome/oneOf.
-      - **required — INCOMPLETE**: 0 atomic; 0 whole-root; 4 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.1376c482e4e723fc1c87 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'role'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.1376c482e4e723fc1c87. Source: schemas/draft/policy-evaluation.schema.json#/required/0.
-        - CM.VCP.STRUCT.6ad812054228ecf32843 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'input_values'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.6ad812054228ecf32843. Source: schemas/draft/policy-evaluation.schema.json#/required/1.
-        - CM.VCP.STRUCT.c86c644378eaae664d93 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'input_resolutions'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.c86c644378eaae664d93. Source: schemas/draft/policy-evaluation.schema.json#/required/2.
-        - CM.VCP.STRUCT.ebbba9df86d0ffe68504 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'outcome'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.ebbba9df86d0ffe68504. Source: schemas/draft/policy-evaluation.schema.json#/required/3.
-      - **type — INCOMPLETE**: 0 atomic; 0 whole-root; 7 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.23f15abcec0bc606c12b [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.23f15abcec0bc606c12b. Source: schemas/draft/policy-evaluation.schema.json#/properties/input_resolutions/type.
-        - CM.VCP.STRUCT.5c95e9e65259f1dbfc2b [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.5c95e9e65259f1dbfc2b. Source: schemas/draft/policy-evaluation.schema.json#/properties/executor_ref/anyOf/0/type.
-        - CM.VCP.STRUCT.b5e07a96fd8dfb35ca96 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['null']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.b5e07a96fd8dfb35ca96. Source: schemas/draft/policy-evaluation.schema.json#/properties/executor_ref/anyOf/1/type.
-        - CM.VCP.STRUCT.b5f1b846f754b81d380a [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.b5f1b846f754b81d380a. Source: schemas/draft/policy-evaluation.schema.json#/properties/executor_version/anyOf/0/type.
-        - CM.VCP.STRUCT.cc9b75522caea7614b17 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.cc9b75522caea7614b17. Source: schemas/draft/policy-evaluation.schema.json#/properties/input_values/type.
-        - CM.VCP.STRUCT.e1b2e9fb600ac3908c67 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.e1b2e9fb600ac3908c67. Source: schemas/draft/policy-evaluation.schema.json#/type.
-        - CM.VCP.STRUCT.f3cf3e53394c0a64a188 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['null']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.f3cf3e53394c0a64a188. Source: schemas/draft/policy-evaluation.schema.json#/properties/executor_version/anyOf/1/type.
-    - **profile — INCOMPLETE**: 0 atomic; 0 whole-root; 31 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - **additionalProperties — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.f662b2cb03fdee3d3a8a [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Every object key is listed in properties or matched by patternProperties of this SAME schema object. Domain: D.COMPONENT.CM.VCP.STRUCT.f662b2cb03fdee3d3a8a. Source: schemas/draft/profile.schema.json#/additionalProperties.
-      - **const — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.28e7aa44974d7a42a523 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Value equals the constant "draft" under JSON structural equality. Domain: D.COMPONENT.CM.VCP.STRUCT.28e7aa44974d7a42a523. Source: schemas/draft/profile.schema.json#/properties/protocol/const.
-      - **minLength — INCOMPLETE**: 0 atomic; 0 whole-root; 6 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.204c25cd268378ec877a [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.204c25cd268378ec877a. Source: schemas/draft/profile.schema.json#/properties/admission_policies/items/minLength.
-        - CM.VCP.STRUCT.7a755bcae8159b143c7c [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.7a755bcae8159b143c7c. Source: schemas/draft/profile.schema.json#/properties/flattened_statuses/items/minLength.
-        - CM.VCP.STRUCT.adfca63834f27eaac6e3 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.adfca63834f27eaac6e3. Source: schemas/draft/profile.schema.json#/properties/aggregators/items/minLength.
-        - CM.VCP.STRUCT.b2e7d5f42d7a6d72ad0d [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.b2e7d5f42d7a6d72ad0d. Source: schemas/draft/profile.schema.json#/properties/id/minLength.
-        - CM.VCP.STRUCT.c16b5f37ed9239f42755 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.c16b5f37ed9239f42755. Source: schemas/draft/profile.schema.json#/properties/decisions/items/minLength.
-        - CM.VCP.STRUCT.cb145d1f48146062d725 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.cb145d1f48146062d725. Source: schemas/draft/profile.schema.json#/properties/version/minLength.
-      - **required — INCOMPLETE**: 0 atomic; 0 whole-root; 9 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.2331ac952e8bb05e7cca [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'version'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.2331ac952e8bb05e7cca. Source: schemas/draft/profile.schema.json#/required/2.
-        - CM.VCP.STRUCT.50fe0215d5d30fede1b1 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'id'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.50fe0215d5d30fede1b1. Source: schemas/draft/profile.schema.json#/required/1.
-        - CM.VCP.STRUCT.64e5ecdc06334e8791fb [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'admission_policies'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.64e5ecdc06334e8791fb. Source: schemas/draft/profile.schema.json#/required/6.
-        - CM.VCP.STRUCT.689fe5535b927bc4a71a [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'protocol'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.689fe5535b927bc4a71a. Source: schemas/draft/profile.schema.json#/required/0.
-        - CM.VCP.STRUCT.7f69512fe23810415ced [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'decisions'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.7f69512fe23810415ced. Source: schemas/draft/profile.schema.json#/required/7.
-        - CM.VCP.STRUCT.c2f60edae5c1be09edf7 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'aggregators'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.c2f60edae5c1be09edf7. Source: schemas/draft/profile.schema.json#/required/5.
-        - CM.VCP.STRUCT.c30f54b6fda80671334f [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'flattened_statuses'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.c30f54b6fda80671334f. Source: schemas/draft/profile.schema.json#/required/3.
-        - CM.VCP.STRUCT.c7fa1910206a95b32134 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'severity_domain'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.c7fa1910206a95b32134. Source: schemas/draft/profile.schema.json#/required/4.
-        - CM.VCP.STRUCT.fba8722bb53780456f0c [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'resource_dimensions'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.fba8722bb53780456f0c. Source: schemas/draft/profile.schema.json#/required/8.
-      - **type — INCOMPLETE**: 0 atomic; 0 whole-root; 14 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.2a3881d8ee80405210e0 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.2a3881d8ee80405210e0. Source: schemas/draft/profile.schema.json#/properties/admission_policies/items/type.
-        - CM.VCP.STRUCT.3facadb73ebdc08577e8 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['array']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.3facadb73ebdc08577e8. Source: schemas/draft/profile.schema.json#/properties/resource_dimensions/type.
-        - CM.VCP.STRUCT.4fbde0fe7fa8daa22cf9 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.4fbde0fe7fa8daa22cf9. Source: schemas/draft/profile.schema.json#/properties/id/type.
-        - CM.VCP.STRUCT.78a732ee44643186a813 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['array']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.78a732ee44643186a813. Source: schemas/draft/profile.schema.json#/properties/admission_policies/type.
-        - CM.VCP.STRUCT.7a9280a5fbe6fc02f4e6 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.7a9280a5fbe6fc02f4e6. Source: schemas/draft/profile.schema.json#/type.
-        - CM.VCP.STRUCT.7b9813033f98a1553152 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['array']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.7b9813033f98a1553152. Source: schemas/draft/profile.schema.json#/properties/aggregators/type.
-        - CM.VCP.STRUCT.973b9b018fa215726c4e [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.973b9b018fa215726c4e. Source: schemas/draft/profile.schema.json#/properties/version/type.
-        - CM.VCP.STRUCT.9b566289324dc5f73762 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['array']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.9b566289324dc5f73762. Source: schemas/draft/profile.schema.json#/properties/decisions/type.
-        - CM.VCP.STRUCT.ba160e7f24a472d23ec0 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.ba160e7f24a472d23ec0. Source: schemas/draft/profile.schema.json#/properties/metadata/type.
-        - CM.VCP.STRUCT.be59663635340da9d4ab [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.be59663635340da9d4ab. Source: schemas/draft/profile.schema.json#/properties/flattened_statuses/items/type.
-        - CM.VCP.STRUCT.bf5d7576f7c04292abf0 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['array']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.bf5d7576f7c04292abf0. Source: schemas/draft/profile.schema.json#/properties/flattened_statuses/type.
-        - CM.VCP.STRUCT.da122531b6b0664f9ada [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['array']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.da122531b6b0664f9ada. Source: schemas/draft/profile.schema.json#/properties/extensions/type.
-        - CM.VCP.STRUCT.e39525d531b67eb0a14c [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.e39525d531b67eb0a14c. Source: schemas/draft/profile.schema.json#/properties/aggregators/items/type.
-        - CM.VCP.STRUCT.f2eec930c14ab25888e2 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.f2eec930c14ab25888e2. Source: schemas/draft/profile.schema.json#/properties/decisions/items/type.
-    - **provider-binding — INCOMPLETE**: 0 atomic; 0 whole-root; 16 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - **additionalProperties — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.d3905a360d1fb3664c70 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Every object key is listed in properties or matched by patternProperties of this SAME schema object. Domain: D.COMPONENT.CM.VCP.STRUCT.d3905a360d1fb3664c70. Source: schemas/draft/provider-binding.schema.json#/additionalProperties.
-      - **minLength — INCOMPLETE**: 0 atomic; 0 whole-root; 4 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.694627846c1118518a3f [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.694627846c1118518a3f. Source: schemas/draft/provider-binding.schema.json#/properties/provider_id/minLength.
-        - CM.VCP.STRUCT.7353f25db5613ecf7914 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.7353f25db5613ecf7914. Source: schemas/draft/provider-binding.schema.json#/properties/capability_id/minLength.
-        - CM.VCP.STRUCT.7bebdf07093adf33b70f [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.7bebdf07093adf33b70f. Source: schemas/draft/provider-binding.schema.json#/properties/capability_version/minLength.
-        - CM.VCP.STRUCT.d1bf666f414cc76745f1 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.d1bf666f414cc76745f1. Source: schemas/draft/provider-binding.schema.json#/properties/provider_version/minLength.
-      - **pattern — INCOMPLETE**: 0 atomic; 0 whole-root; 2 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.9438fd49d6e21ccce857 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: A string has an ECMA-262-compatible regex match for '^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|(?!openverify\\.)[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*)$' (search semantics unless anchored). Domain: D.COMPONENT.CM.VCP.STRUCT.9438fd49d6e21ccce857. Source: schemas/draft/provider-binding.schema.json#/properties/capability_id/pattern.
-        - CM.VCP.STRUCT.d4f7ec6b0253d8e89a91 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: A string has an ECMA-262-compatible regex match for '^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|(?!openverify\\.)[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*)$' (search semantics unless anchored). Domain: D.COMPONENT.CM.VCP.STRUCT.d4f7ec6b0253d8e89a91. Source: schemas/draft/provider-binding.schema.json#/properties/provider_id/pattern.
-      - **required — INCOMPLETE**: 0 atomic; 0 whole-root; 4 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.0bc76302a5e33b927aad [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'capability_version'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.0bc76302a5e33b927aad. Source: schemas/draft/provider-binding.schema.json#/required/3.
-        - CM.VCP.STRUCT.174294f3bc13e10bb9d5 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'capability_id'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.174294f3bc13e10bb9d5. Source: schemas/draft/provider-binding.schema.json#/required/2.
-        - CM.VCP.STRUCT.e40bdea909afdac470f8 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'provider_id'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.e40bdea909afdac470f8. Source: schemas/draft/provider-binding.schema.json#/required/0.
-        - CM.VCP.STRUCT.fe62af255b7a5660afed [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'provider_version'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.fe62af255b7a5660afed. Source: schemas/draft/provider-binding.schema.json#/required/1.
-      - **type — INCOMPLETE**: 0 atomic; 0 whole-root; 5 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.51ba83163b9b9efc3014 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.51ba83163b9b9efc3014. Source: schemas/draft/provider-binding.schema.json#/properties/capability_version/type.
-        - CM.VCP.STRUCT.8225e918feaf0ec4c2de [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.8225e918feaf0ec4c2de. Source: schemas/draft/provider-binding.schema.json#/type.
-        - CM.VCP.STRUCT.b5680d085b7c41b40cd1 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.b5680d085b7c41b40cd1. Source: schemas/draft/provider-binding.schema.json#/properties/provider_id/type.
-        - CM.VCP.STRUCT.e1d1c68f407fecbea99f [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.e1d1c68f407fecbea99f. Source: schemas/draft/provider-binding.schema.json#/properties/provider_version/type.
-        - CM.VCP.STRUCT.efba4e2007540e11e957 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.efba4e2007540e11e957. Source: schemas/draft/provider-binding.schema.json#/properties/capability_id/type.
-    - **resource — INCOMPLETE**: 0 atomic; 0 whole-root; 19 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - **additionalProperties — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.62aacab2df74db8ff808 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Every object key is listed in properties or matched by patternProperties of this SAME schema object. Domain: D.COMPONENT.CM.VCP.STRUCT.62aacab2df74db8ff808. Source: schemas/draft/resource.schema.json#/additionalProperties.
-      - **anyOf — INCOMPLETE**: 0 atomic; 0 whole-root; 3 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.4d5dc9a769248ef74cc1 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: At least one child schema succeeds at the same instance location. Domain: D.COMPONENT.CM.VCP.STRUCT.4d5dc9a769248ef74cc1. Source: schemas/draft/resource.schema.json#/properties/value/anyOf.
-        - CM.VCP.STRUCT.904bd258de5555ac1489 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: At least one child schema succeeds at the same instance location. Domain: D.COMPONENT.CM.VCP.STRUCT.904bd258de5555ac1489. Source: schemas/draft/resource.schema.json#/properties/maximum/anyOf.
-        - CM.VCP.STRUCT.a5e5551c9245e237d804 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: At least one child schema succeeds at the same instance location. Domain: D.COMPONENT.CM.VCP.STRUCT.a5e5551c9245e237d804. Source: schemas/draft/resource.schema.json#/properties/minimum/anyOf.
-      - **enum — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.6f4237c9aebb469be24a [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Value equals one member of ["EXACT", "ESTIMATED", "RANGE", "UNKNOWN"] under JSON structural equality. Domain: D.COMPONENT.CM.VCP.STRUCT.6f4237c9aebb469be24a. Source: schemas/draft/resource.schema.json#/properties/kind/enum, schemas/draft/resource.schema.json#/properties/kind/type.
-      - **minLength — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.2cc5a036a6eead77ad17 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.2cc5a036a6eead77ad17. Source: schemas/draft/resource.schema.json#/properties/unit/minLength.
-      - **minimum — INCOMPLETE**: 0 atomic; 0 whole-root; 3 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.7bdd440290ca94b05daf [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: For a JSON number x, x >= 0. Domain: D.COMPONENT.CM.VCP.STRUCT.7bdd440290ca94b05daf. Source: schemas/draft/resource.schema.json#/properties/minimum/anyOf/0/minimum.
-        - CM.VCP.STRUCT.cdeedd5e8e55ae701413 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: For a JSON number x, x >= 0. Domain: D.COMPONENT.CM.VCP.STRUCT.cdeedd5e8e55ae701413. Source: schemas/draft/resource.schema.json#/properties/value/anyOf/0/minimum.
-        - CM.VCP.STRUCT.fcc6b8fb639910ed65fa [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: For a JSON number x, x >= 0. Domain: D.COMPONENT.CM.VCP.STRUCT.fcc6b8fb639910ed65fa. Source: schemas/draft/resource.schema.json#/properties/maximum/anyOf/0/minimum.
-      - **required — INCOMPLETE**: 0 atomic; 0 whole-root; 2 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.475f28bdad690e16e51d [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'kind'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.475f28bdad690e16e51d. Source: schemas/draft/resource.schema.json#/required/1.
-        - CM.VCP.STRUCT.5451a83f7f578e200a99 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'unit'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.5451a83f7f578e200a99. Source: schemas/draft/resource.schema.json#/required/0.
-      - **type — INCOMPLETE**: 0 atomic; 0 whole-root; 8 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.3850dbded8cce321d445 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['integer', 'nonintegral-number']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.3850dbded8cce321d445. Source: schemas/draft/resource.schema.json#/properties/maximum/anyOf/0/type.
-        - CM.VCP.STRUCT.59ef0cdb16b9499875e1 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['null']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.59ef0cdb16b9499875e1. Source: schemas/draft/resource.schema.json#/properties/value/anyOf/1/type.
-        - CM.VCP.STRUCT.659fed420caec392df06 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['integer', 'nonintegral-number']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.659fed420caec392df06. Source: schemas/draft/resource.schema.json#/properties/minimum/anyOf/0/type.
-        - CM.VCP.STRUCT.6b680554dd7cf1c879f2 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['null']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.6b680554dd7cf1c879f2. Source: schemas/draft/resource.schema.json#/properties/maximum/anyOf/1/type.
-        - CM.VCP.STRUCT.89d95d41811d4cb07d25 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['null']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.89d95d41811d4cb07d25. Source: schemas/draft/resource.schema.json#/properties/minimum/anyOf/1/type.
-        - CM.VCP.STRUCT.a6e0acf82388efd37e1a [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.a6e0acf82388efd37e1a. Source: schemas/draft/resource.schema.json#/type.
-        - CM.VCP.STRUCT.bc9ebb14314ae5d2b239 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['integer', 'nonintegral-number']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.bc9ebb14314ae5d2b239. Source: schemas/draft/resource.schema.json#/properties/value/anyOf/0/type.
-        - CM.VCP.STRUCT.cc8261df4a84dace4d62 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.cc8261df4a84dace4d62. Source: schemas/draft/resource.schema.json#/properties/unit/type.
-    - **resource-dimension — INCOMPLETE**: 0 atomic; 0 whole-root; 13 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - **additionalProperties — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.06aa67678cfa1b32b77c [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Every object key is listed in properties or matched by patternProperties of this SAME schema object. Domain: D.COMPONENT.CM.VCP.STRUCT.06aa67678cfa1b32b77c. Source: schemas/draft/resource-dimension.schema.json#/additionalProperties.
-      - **minLength — INCOMPLETE**: 0 atomic; 0 whole-root; 3 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.13b389a321b32f8e524d [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.13b389a321b32f8e524d. Source: schemas/draft/resource-dimension.schema.json#/properties/unit/minLength.
-        - CM.VCP.STRUCT.6c4f0c8272615d7235ed [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.6c4f0c8272615d7235ed. Source: schemas/draft/resource-dimension.schema.json#/properties/description/minLength.
-        - CM.VCP.STRUCT.ba23da7d1a1af84c5a44 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.ba23da7d1a1af84c5a44. Source: schemas/draft/resource-dimension.schema.json#/properties/id/minLength.
-      - **required — INCOMPLETE**: 0 atomic; 0 whole-root; 3 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.0ea7b5e20479ff4a2faa [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'description'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.0ea7b5e20479ff4a2faa. Source: schemas/draft/resource-dimension.schema.json#/required/2.
-        - CM.VCP.STRUCT.52f0f1658a93531a2116 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'id'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.52f0f1658a93531a2116. Source: schemas/draft/resource-dimension.schema.json#/required/0.
-        - CM.VCP.STRUCT.8f24cb9314d5ae55bd29 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'unit'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.8f24cb9314d5ae55bd29. Source: schemas/draft/resource-dimension.schema.json#/required/1.
-      - **type — INCOMPLETE**: 0 atomic; 0 whole-root; 6 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.1e2db1902f06e096a412 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.1e2db1902f06e096a412. Source: schemas/draft/resource-dimension.schema.json#/type.
-        - CM.VCP.STRUCT.438a7b8e2b78df5bf339 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.438a7b8e2b78df5bf339. Source: schemas/draft/resource-dimension.schema.json#/properties/description/type.
-        - CM.VCP.STRUCT.67aa4f72f345f0e8904e [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['array']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.67aa4f72f345f0e8904e. Source: schemas/draft/resource-dimension.schema.json#/properties/extensions/type.
-        - CM.VCP.STRUCT.a908394017a947fb6691 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.a908394017a947fb6691. Source: schemas/draft/resource-dimension.schema.json#/properties/metadata/type.
-        - CM.VCP.STRUCT.aee8f756765f2d4ded32 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.aee8f756765f2d4ded32. Source: schemas/draft/resource-dimension.schema.json#/properties/unit/type.
-        - CM.VCP.STRUCT.ca7d39874522dd8a3de2 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.ca7d39874522dd8a3de2. Source: schemas/draft/resource-dimension.schema.json#/properties/id/type.
-    - **result — INCOMPLETE**: 0 atomic; 0 whole-root; 39 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - **additionalProperties — INCOMPLETE**: 0 atomic; 0 whole-root; 2 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.36f9fd1cfd7b50452fb6 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Every object key is listed in properties or matched by patternProperties of this SAME schema object. Domain: D.COMPONENT.CM.VCP.STRUCT.36f9fd1cfd7b50452fb6. Source: schemas/draft/result.schema.json#/additionalProperties.
-        - CM.VCP.STRUCT.b866286c988f74631202 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Every object key is listed in properties or matched by patternProperties of this SAME schema object. Domain: D.COMPONENT.CM.VCP.STRUCT.b866286c988f74631202. Source: schemas/draft/result.schema.json#/properties/severity/anyOf/0/additionalProperties.
-      - **anyOf — INCOMPLETE**: 0 atomic; 0 whole-root; 6 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.1f5b52cdec219c348bd0 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: At least one child schema succeeds at the same instance location. Domain: D.COMPONENT.CM.VCP.STRUCT.1f5b52cdec219c348bd0. Source: schemas/draft/result.schema.json#/properties/execution_outcome/anyOf.
-        - CM.VCP.STRUCT.25592e2bb9800564897e [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: At least one child schema succeeds at the same instance location. Domain: D.COMPONENT.CM.VCP.STRUCT.25592e2bb9800564897e. Source: schemas/draft/result.schema.json#/properties/severity/anyOf.
-        - CM.VCP.STRUCT.9455ccd8757879ca2d0a [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: At least one child schema succeeds at the same instance location. Domain: D.COMPONENT.CM.VCP.STRUCT.9455ccd8757879ca2d0a. Source: schemas/draft/result.schema.json#/properties/applicability/anyOf.
-        - CM.VCP.STRUCT.cf0e0c42ca808e3c48cd [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: At least one child schema succeeds at the same instance location. Domain: D.COMPONENT.CM.VCP.STRUCT.cf0e0c42ca808e3c48cd. Source: schemas/draft/result.schema.json#/properties/verdict/anyOf.
-        - CM.VCP.STRUCT.cf428419d89e97e308ad [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: At least one child schema succeeds at the same instance location. Domain: D.COMPONENT.CM.VCP.STRUCT.cf428419d89e97e308ad. Source: schemas/draft/result.schema.json#/properties/score/anyOf.
-        - CM.VCP.STRUCT.f6a15f6ac4a3cf2fb50a [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: At least one child schema succeeds at the same instance location. Domain: D.COMPONENT.CM.VCP.STRUCT.f6a15f6ac4a3cf2fb50a. Source: schemas/draft/result.schema.json#/properties/determination/anyOf.
-      - **const — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.0e3ca04c5c87dfdb68c6 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Value equals the constant "draft" under JSON structural equality. Domain: D.COMPONENT.CM.VCP.STRUCT.0e3ca04c5c87dfdb68c6. Source: schemas/draft/result.schema.json#/properties/protocol/const.
-      - **enum — INCOMPLETE**: 0 atomic; 0 whole-root; 5 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.2283b9efebe9b9fe9fe7 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Value equals one member of ["EXECUTED", "SKIPPED", "DEFERRED", "CANCELLED"] under JSON structural equality. Domain: D.COMPONENT.CM.VCP.STRUCT.2283b9efebe9b9fe9fe7. Source: schemas/draft/result.schema.json#/properties/disposition/enum, schemas/draft/result.schema.json#/properties/disposition/type.
-        - CM.VCP.STRUCT.7cf63e6f13c11e902d27 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Value equals one member of ["PASS", "FAIL"] under JSON structural equality. Domain: D.COMPONENT.CM.VCP.STRUCT.7cf63e6f13c11e902d27. Source: schemas/draft/result.schema.json#/properties/verdict/anyOf/0/enum, schemas/draft/result.schema.json#/properties/verdict/anyOf/0/type.
-        - CM.VCP.STRUCT.801c614947e9a59e594a [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Value equals one member of ["APPLICABLE", "NOT_APPLICABLE"] under JSON structural equality. Domain: D.COMPONENT.CM.VCP.STRUCT.801c614947e9a59e594a. Source: schemas/draft/result.schema.json#/properties/applicability/anyOf/0/enum, schemas/draft/result.schema.json#/properties/applicability/anyOf/0/type.
-        - CM.VCP.STRUCT.80b548dd70314997728e [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Value equals one member of ["KNOWN", "UNKNOWN"] under JSON structural equality. Domain: D.COMPONENT.CM.VCP.STRUCT.80b548dd70314997728e. Source: schemas/draft/result.schema.json#/properties/determination/anyOf/0/enum, schemas/draft/result.schema.json#/properties/determination/anyOf/0/type.
-        - CM.VCP.STRUCT.e488758e435aa676f41d [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Value equals one member of ["SUCCESS", "ERROR"] under JSON structural equality. Domain: D.COMPONENT.CM.VCP.STRUCT.e488758e435aa676f41d. Source: schemas/draft/result.schema.json#/properties/execution_outcome/anyOf/0/enum, schemas/draft/result.schema.json#/properties/execution_outcome/anyOf/0/type.
-      - **maximum — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.691e58badb4519669f2f [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: For a JSON number x, x <= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.691e58badb4519669f2f. Source: schemas/draft/result.schema.json#/properties/score/anyOf/0/maximum.
-      - **minLength — INCOMPLETE**: 0 atomic; 0 whole-root; 3 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.5454e6cdab076e8d96c3 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.5454e6cdab076e8d96c3. Source: schemas/draft/result.schema.json#/properties/severity/anyOf/0/properties/domain/minLength.
-        - CM.VCP.STRUCT.c4e413ea0df4c3f7d0ca [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.c4e413ea0df4c3f7d0ca. Source: schemas/draft/result.schema.json#/properties/severity/anyOf/0/properties/label/minLength.
-        - CM.VCP.STRUCT.d8f777b8f8857b910ced [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.d8f777b8f8857b910ced. Source: schemas/draft/result.schema.json#/properties/usage/propertyNames/minLength.
-      - **minimum — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.a895e3929b71966355af [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: For a JSON number x, x >= 0. Domain: D.COMPONENT.CM.VCP.STRUCT.a895e3929b71966355af. Source: schemas/draft/result.schema.json#/properties/score/anyOf/0/minimum.
-      - **required — INCOMPLETE**: 0 atomic; 0 whole-root; 4 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.57e165745fa9a919128d [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /properties/severity/anyOf/0 contains key 'label'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.57e165745fa9a919128d. Source: schemas/draft/result.schema.json#/properties/severity/anyOf/0/required/1.
-        - CM.VCP.STRUCT.5ed7ba471c9e7fca2bd3 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /properties/severity/anyOf/0 contains key 'domain'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.5ed7ba471c9e7fca2bd3. Source: schemas/draft/result.schema.json#/properties/severity/anyOf/0/required/0.
-        - CM.VCP.STRUCT.a7ec3a9c11f860ba6a54 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'disposition'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.a7ec3a9c11f860ba6a54. Source: schemas/draft/result.schema.json#/required/1.
-        - CM.VCP.STRUCT.ab9b59d24c02eccaa8fe [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'protocol'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.ab9b59d24c02eccaa8fe. Source: schemas/draft/result.schema.json#/required/0.
-      - **type — INCOMPLETE**: 0 atomic; 0 whole-root; 16 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.2cf4b87d05f17f7957dc [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['array']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.2cf4b87d05f17f7957dc. Source: schemas/draft/result.schema.json#/properties/evidence/type.
-        - CM.VCP.STRUCT.3d6c3a5470cfdbedf1c7 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.3d6c3a5470cfdbedf1c7. Source: schemas/draft/result.schema.json#/properties/severity/anyOf/0/type.
-        - CM.VCP.STRUCT.540708826d4c2ad6deea [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.540708826d4c2ad6deea. Source: schemas/draft/result.schema.json#/properties/metadata/type.
-        - CM.VCP.STRUCT.676d790becc54b509794 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['integer', 'nonintegral-number']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.676d790becc54b509794. Source: schemas/draft/result.schema.json#/properties/score/anyOf/0/type.
-        - CM.VCP.STRUCT.7a5a87bbd04bf1f1bd1b [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['null']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.7a5a87bbd04bf1f1bd1b. Source: schemas/draft/result.schema.json#/properties/verdict/anyOf/1/type.
-        - CM.VCP.STRUCT.7bf440cf66d7816da0ef [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.7bf440cf66d7816da0ef. Source: schemas/draft/result.schema.json#/properties/usage/type.
-        - CM.VCP.STRUCT.7f00a64ac9a33e8961b0 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.7f00a64ac9a33e8961b0. Source: schemas/draft/result.schema.json#/type.
-        - CM.VCP.STRUCT.88a83996a2bd034cb11f [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['null']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.88a83996a2bd034cb11f. Source: schemas/draft/result.schema.json#/properties/severity/anyOf/1/type.
-        - CM.VCP.STRUCT.91fd89220b5640a33f91 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['null']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.91fd89220b5640a33f91. Source: schemas/draft/result.schema.json#/properties/score/anyOf/1/type.
-        - CM.VCP.STRUCT.a2d60c4ff818a060cf13 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.a2d60c4ff818a060cf13. Source: schemas/draft/result.schema.json#/properties/severity/anyOf/0/properties/label/type.
-        - CM.VCP.STRUCT.b5b043b8b312ea927d27 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['null']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.b5b043b8b312ea927d27. Source: schemas/draft/result.schema.json#/properties/execution_outcome/anyOf/1/type.
-        - CM.VCP.STRUCT.b73580ce2121e9176f4f [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['array']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.b73580ce2121e9176f4f. Source: schemas/draft/result.schema.json#/properties/extensions/type.
-        - CM.VCP.STRUCT.c89d903d3800b94213b0 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.c89d903d3800b94213b0. Source: schemas/draft/result.schema.json#/properties/severity/anyOf/0/properties/domain/type.
-        - CM.VCP.STRUCT.cb1e99caeb126d77a61f [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['null']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.cb1e99caeb126d77a61f. Source: schemas/draft/result.schema.json#/properties/determination/anyOf/1/type.
-        - CM.VCP.STRUCT.d1bdeee1901e03803a8f [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.d1bdeee1901e03803a8f. Source: schemas/draft/result.schema.json#/properties/usage/propertyNames/type.
-        - CM.VCP.STRUCT.ea5917537faff3b8b9b5 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['null']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.ea5917537faff3b8b9b5. Source: schemas/draft/result.schema.json#/properties/applicability/anyOf/1/type.
-    - **run-record — INCOMPLETE**: 0 atomic; 0 whole-root; 93 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - **additionalProperties — INCOMPLETE**: 0 atomic; 0 whole-root; 3 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.0bdd82da697c022b6996 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Every object key is listed in properties or matched by patternProperties of this SAME schema object. Domain: D.COMPONENT.CM.VCP.STRUCT.0bdd82da697c022b6996. Source: schemas/draft/run-record.schema.json#/properties/nodes/items/additionalProperties.
-        - CM.VCP.STRUCT.cdf3ac1f0493f37c6d23 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Every object key is listed in properties or matched by patternProperties of this SAME schema object. Domain: D.COMPONENT.CM.VCP.STRUCT.cdf3ac1f0493f37c6d23. Source: schemas/draft/run-record.schema.json#/properties/nodes/items/properties/provider_output_error/additionalProperties.
-        - CM.VCP.STRUCT.d1f59ff073407d1147ba [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Every object key is listed in properties or matched by patternProperties of this SAME schema object. Domain: D.COMPONENT.CM.VCP.STRUCT.d1f59ff073407d1147ba. Source: schemas/draft/run-record.schema.json#/additionalProperties.
-      - **anyOf — INCOMPLETE**: 0 atomic; 0 whole-root; 5 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.03bb2994c93b024784ab [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: At least one child schema succeeds at the same instance location. Domain: D.COMPONENT.CM.VCP.STRUCT.03bb2994c93b024784ab. Source: schemas/draft/run-record.schema.json#/properties/nodes/items/properties/reason/anyOf.
-        - CM.VCP.STRUCT.0570ba29a850b9ec8861 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: At least one child schema succeeds at the same instance location. Domain: D.COMPONENT.CM.VCP.STRUCT.0570ba29a850b9ec8861. Source: schemas/draft/run-record.schema.json#/properties/nodes/items/properties/executor_ref/anyOf.
-        - CM.VCP.STRUCT.342318029fd3db387cfa [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: At least one child schema succeeds at the same instance location. Domain: D.COMPONENT.CM.VCP.STRUCT.342318029fd3db387cfa. Source: schemas/draft/run-record.schema.json#/properties/nodes/items/properties/result/anyOf.
-        - CM.VCP.STRUCT.d4fd2f4343735cbc6cd0 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: At least one child schema succeeds at the same instance location. Domain: D.COMPONENT.CM.VCP.STRUCT.d4fd2f4343735cbc6cd0. Source: schemas/draft/run-record.schema.json#/properties/nodes/items/properties/executor_version/anyOf.
-        - CM.VCP.STRUCT.ff7ecf75dc3b157e59db [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: At least one child schema succeeds at the same instance location. Domain: D.COMPONENT.CM.VCP.STRUCT.ff7ecf75dc3b157e59db. Source: schemas/draft/run-record.schema.json#/properties/nodes/items/properties/decision/anyOf.
-      - **const — INCOMPLETE**: 0 atomic; 0 whole-root; 2 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.4b9f32a1834ac0265fab [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Value equals the constant "INVALID_PROVIDER_OUTPUT" under JSON structural equality. Domain: D.COMPONENT.CM.VCP.STRUCT.4b9f32a1834ac0265fab. Source: schemas/draft/run-record.schema.json#/properties/nodes/items/properties/provider_output_error/properties/code/const.
-        - CM.VCP.STRUCT.cf91cb4e66ba2a4fab89 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Value equals the constant "draft" under JSON structural equality. Domain: D.COMPONENT.CM.VCP.STRUCT.cf91cb4e66ba2a4fab89. Source: schemas/draft/run-record.schema.json#/properties/protocol/const.
-      - **enum — INCOMPLETE**: 0 atomic; 0 whole-root; 2 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.15e5a0f322f8caf5d3b8 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Value equals one member of ["SUCCESS", "ERROR", "NONEXECUTED", "CANCELLED"] under JSON structural equality. Domain: D.COMPONENT.CM.VCP.STRUCT.15e5a0f322f8caf5d3b8. Source: schemas/draft/run-record.schema.json#/properties/nodes/items/properties/state/enum, schemas/draft/run-record.schema.json#/properties/nodes/items/properties/state/type.
-        - CM.VCP.STRUCT.2314052f7e06b5352d4c [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Value equals one member of ["DERIVE", "EVALUATE", "CONTROL", "AGGREGATE"] under JSON structural equality. Domain: D.COMPONENT.CM.VCP.STRUCT.2314052f7e06b5352d4c. Source: schemas/draft/run-record.schema.json#/properties/nodes/items/properties/kind/enum, schemas/draft/run-record.schema.json#/properties/nodes/items/properties/kind/type.
-      - **minLength — INCOMPLETE**: 0 atomic; 0 whole-root; 11 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.2049394ed19be2f3938d [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.2049394ed19be2f3938d. Source: schemas/draft/run-record.schema.json#/properties/definition_fingerprint/minLength.
-        - CM.VCP.STRUCT.47339126d74425326ae8 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.47339126d74425326ae8. Source: schemas/draft/run-record.schema.json#/properties/run_id/minLength.
-        - CM.VCP.STRUCT.4d9ed85fb19daa06c0be [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.4d9ed85fb19daa06c0be. Source: schemas/draft/run-record.schema.json#/properties/nodes/items/properties/executor_ref/anyOf/0/minLength.
-        - CM.VCP.STRUCT.6b7d852157dec723b9df [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.6b7d852157dec723b9df. Source: schemas/draft/run-record.schema.json#/properties/nodes/items/properties/reason/anyOf/0/minLength.
-        - CM.VCP.STRUCT.93242bad1d1f581124bb [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.93242bad1d1f581124bb. Source: schemas/draft/run-record.schema.json#/properties/nodes/items/properties/upstream_node_ids/items/minLength.
-        - CM.VCP.STRUCT.b201a3fc58fab1bb1b69 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.b201a3fc58fab1bb1b69. Source: schemas/draft/run-record.schema.json#/properties/provider_bindings/propertyNames/minLength.
-        - CM.VCP.STRUCT.b242056709a41f7e089e [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.b242056709a41f7e089e. Source: schemas/draft/run-record.schema.json#/properties/nodes/items/properties/executor_version/anyOf/0/minLength.
-        - CM.VCP.STRUCT.c99f0df2540e85b9d2d2 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.c99f0df2540e85b9d2d2. Source: schemas/draft/run-record.schema.json#/properties/nodes/items/properties/usage/propertyNames/minLength.
-        - CM.VCP.STRUCT.d711cc21a932ef22194a [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.d711cc21a932ef22194a. Source: schemas/draft/run-record.schema.json#/properties/nodes/items/properties/provider_output_error/properties/message/minLength.
-        - CM.VCP.STRUCT.ef0b1a134900949694f8 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.ef0b1a134900949694f8. Source: schemas/draft/run-record.schema.json#/properties/opportunity_id/minLength.
-        - CM.VCP.STRUCT.fba8739014fe50ee9c41 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.fba8739014fe50ee9c41. Source: schemas/draft/run-record.schema.json#/properties/nodes/items/properties/node_id/minLength.
-      - **pattern — INCOMPLETE**: 0 atomic; 0 whole-root; 5 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.00d41c57c09d6f67b4df [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: A string has an ECMA-262-compatible regex match for '(?:[Zz]|\\+00:00)$' (search semantics unless anchored). Domain: D.COMPONENT.CM.VCP.STRUCT.00d41c57c09d6f67b4df. Source: schemas/draft/run-record.schema.json#/properties/started_at/pattern.
-        - CM.VCP.STRUCT.0820009e1f76d4b13eb9 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: A string has an ECMA-262-compatible regex match for '(?:[Zz]|\\+00:00)$' (search semantics unless anchored). Domain: D.COMPONENT.CM.VCP.STRUCT.0820009e1f76d4b13eb9. Source: schemas/draft/run-record.schema.json#/properties/finished_at/pattern.
-        - CM.VCP.STRUCT.1774a53ebe50ed29efd5 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: A string has an ECMA-262-compatible regex match for '^local-sha256:[0-9a-f]{64}$' (search semantics unless anchored). Domain: D.COMPONENT.CM.VCP.STRUCT.1774a53ebe50ed29efd5. Source: schemas/draft/run-record.schema.json#/properties/definition_fingerprint/pattern.
-        - CM.VCP.STRUCT.2a35f389657e0284041a [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: A string has an ECMA-262-compatible regex match for '(?:[Zz]|\\+00:00)$' (search semantics unless anchored). Domain: D.COMPONENT.CM.VCP.STRUCT.2a35f389657e0284041a. Source: schemas/draft/run-record.schema.json#/properties/nodes/items/properties/finished_at/pattern.
-        - CM.VCP.STRUCT.9498fd06f4373c16f6b8 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: A string has an ECMA-262-compatible regex match for '(?:[Zz]|\\+00:00)$' (search semantics unless anchored). Domain: D.COMPONENT.CM.VCP.STRUCT.9498fd06f4373c16f6b8. Source: schemas/draft/run-record.schema.json#/properties/nodes/items/properties/started_at/pattern.
-      - **required — INCOMPLETE**: 0 atomic; 0 whole-root; 28 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.06da0fdd275bc7bcfb71 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'admission'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.06da0fdd275bc7bcfb71. Source: schemas/draft/run-record.schema.json#/required/8.
-        - CM.VCP.STRUCT.07e6f55a1133ec2feace [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /properties/nodes/items contains key 'finished_at'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.07e6f55a1133ec2feace. Source: schemas/draft/run-record.schema.json#/properties/nodes/items/required/8.
-        - CM.VCP.STRUCT.167734fd7b9385d50729 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'protocol'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.167734fd7b9385d50729. Source: schemas/draft/run-record.schema.json#/required/0.
-        - CM.VCP.STRUCT.1cbd8f1396488147ab0b [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'definition'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.1cbd8f1396488147ab0b. Source: schemas/draft/run-record.schema.json#/required/2.
-        - CM.VCP.STRUCT.2fcd9bd5970bf95b35fd [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'run_id'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.2fcd9bd5970bf95b35fd. Source: schemas/draft/run-record.schema.json#/required/1.
-        - CM.VCP.STRUCT.3272577862e5b9db3940 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /properties/nodes/items contains key 'input_resolutions'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.3272577862e5b9db3940. Source: schemas/draft/run-record.schema.json#/properties/nodes/items/required/6.
-        - CM.VCP.STRUCT.407aace28fa98accb605 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'opportunity_id'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.407aace28fa98accb605. Source: schemas/draft/run-record.schema.json#/required/7.
-        - CM.VCP.STRUCT.4941af24ac85133790cc [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /properties/nodes/items contains key 'input_values'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.4941af24ac85133790cc. Source: schemas/draft/run-record.schema.json#/properties/nodes/items/required/5.
-        - CM.VCP.STRUCT.517880fb5fad34f39e59 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /properties/nodes/items contains key 'upstream_results'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.517880fb5fad34f39e59. Source: schemas/draft/run-record.schema.json#/properties/nodes/items/required/4.
-        - CM.VCP.STRUCT.564ea2b7812db8c85061 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /properties/nodes/items contains key 'started_at'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.564ea2b7812db8c85061. Source: schemas/draft/run-record.schema.json#/properties/nodes/items/required/7.
-        - CM.VCP.STRUCT.5e6ea7af92b3b7f1830e [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'final_results'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.5e6ea7af92b3b7f1830e. Source: schemas/draft/run-record.schema.json#/required/13.
-        - CM.VCP.STRUCT.5fe5208ad1306af38738 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /properties/nodes/items contains key 'state'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.5fe5208ad1306af38738. Source: schemas/draft/run-record.schema.json#/properties/nodes/items/required/10.
-        - CM.VCP.STRUCT.6a8210984342290acfb9 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /properties/nodes/items contains key 'kind'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.6a8210984342290acfb9. Source: schemas/draft/run-record.schema.json#/properties/nodes/items/required/1.
-        - CM.VCP.STRUCT.7457d9c2933c7acf9a22 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'initial_context'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.7457d9c2933c7acf9a22. Source: schemas/draft/run-record.schema.json#/required/5.
-        - CM.VCP.STRUCT.7531d555921e7bd1a94e [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'run_inputs'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.7531d555921e7bd1a94e. Source: schemas/draft/run-record.schema.json#/required/6.
-        - CM.VCP.STRUCT.7842eb8b3ecf74b0141c [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'policy_evaluations'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.7842eb8b3ecf74b0141c. Source: schemas/draft/run-record.schema.json#/required/9.
-        - CM.VCP.STRUCT.9abafc5195e3dcad6548 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /properties/nodes/items contains key 'operation'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.9abafc5195e3dcad6548. Source: schemas/draft/run-record.schema.json#/properties/nodes/items/required/2.
-        - CM.VCP.STRUCT.b84481ed1228f4f3e38f [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'nodes'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.b84481ed1228f4f3e38f. Source: schemas/draft/run-record.schema.json#/required/12.
-        - CM.VCP.STRUCT.bc3854a4236769b2a842 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'definition_fingerprint'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.bc3854a4236769b2a842. Source: schemas/draft/run-record.schema.json#/required/3.
-        - CM.VCP.STRUCT.d2768481de3da72d22c4 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'subject'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.d2768481de3da72d22c4. Source: schemas/draft/run-record.schema.json#/required/4.
-        - CM.VCP.STRUCT.d4dda9ee71f41804d1bc [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /properties/nodes/items/properties/provider_output_error contains key 'code'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.d4dda9ee71f41804d1bc. Source: schemas/draft/run-record.schema.json#/properties/nodes/items/properties/provider_output_error/required/0.
-        - CM.VCP.STRUCT.dad6268c81f7a0de1523 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /properties/nodes/items contains key 'upstream_node_ids'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.dad6268c81f7a0de1523. Source: schemas/draft/run-record.schema.json#/properties/nodes/items/required/3.
-        - CM.VCP.STRUCT.de004e180dcd4c06d885 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /properties/nodes/items/properties/provider_output_error contains key 'message'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.de004e180dcd4c06d885. Source: schemas/draft/run-record.schema.json#/properties/nodes/items/properties/provider_output_error/required/1.
-        - CM.VCP.STRUCT.e10c638af27867c0d0e7 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /properties/nodes/items contains key 'usage'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.e10c638af27867c0d0e7. Source: schemas/draft/run-record.schema.json#/properties/nodes/items/required/9.
-        - CM.VCP.STRUCT.e596f415a594978afee9 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /properties/nodes/items contains key 'information'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.e596f415a594978afee9. Source: schemas/draft/run-record.schema.json#/properties/nodes/items/required/11.
-        - CM.VCP.STRUCT.eb452f09411f0db8dc25 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /properties/nodes/items contains key 'node_id'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.eb452f09411f0db8dc25. Source: schemas/draft/run-record.schema.json#/properties/nodes/items/required/0.
-        - CM.VCP.STRUCT.f0bb7d7dea26a68b69c8 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'finished_at'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.f0bb7d7dea26a68b69c8. Source: schemas/draft/run-record.schema.json#/required/11.
-        - CM.VCP.STRUCT.fe2e103d168b08637495 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'started_at'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.fe2e103d168b08637495. Source: schemas/draft/run-record.schema.json#/required/10.
-      - **type — INCOMPLETE**: 0 atomic; 0 whole-root; 37 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.07bd4c9616a6b1543205 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.07bd4c9616a6b1543205. Source: schemas/draft/run-record.schema.json#/properties/run_inputs/type.
-        - CM.VCP.STRUCT.089d0dc11e9d7fde9d17 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.089d0dc11e9d7fde9d17. Source: schemas/draft/run-record.schema.json#/properties/nodes/items/properties/usage/type.
-        - CM.VCP.STRUCT.16a29709235206c1b9e4 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.16a29709235206c1b9e4. Source: schemas/draft/run-record.schema.json#/properties/definition_fingerprint/type.
-        - CM.VCP.STRUCT.25be7260bab9c6619316 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.25be7260bab9c6619316. Source: schemas/draft/run-record.schema.json#/properties/nodes/items/properties/executor_version/anyOf/0/type.
-        - CM.VCP.STRUCT.2bcb6c69e18d43e74292 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['null']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.2bcb6c69e18d43e74292. Source: schemas/draft/run-record.schema.json#/properties/nodes/items/properties/decision/anyOf/1/type.
-        - CM.VCP.STRUCT.3075c12c706dfbb1f276 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['null']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.3075c12c706dfbb1f276. Source: schemas/draft/run-record.schema.json#/properties/nodes/items/properties/reason/anyOf/1/type.
-        - CM.VCP.STRUCT.34e6eceda70d4da157ca [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.34e6eceda70d4da157ca. Source: schemas/draft/run-record.schema.json#/properties/nodes/items/properties/upstream_node_ids/items/type.
-        - CM.VCP.STRUCT.3d5961c1cd1eb22b1599 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.3d5961c1cd1eb22b1599. Source: schemas/draft/run-record.schema.json#/properties/nodes/items/properties/node_id/type.
-        - CM.VCP.STRUCT.4062e21e927e45eddab1 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.4062e21e927e45eddab1. Source: schemas/draft/run-record.schema.json#/properties/run_id/type.
-        - CM.VCP.STRUCT.41579edf7d8c71178644 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.41579edf7d8c71178644. Source: schemas/draft/run-record.schema.json#/properties/metadata/type.
-        - CM.VCP.STRUCT.4d9e673178adf32f8c2a [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.4d9e673178adf32f8c2a. Source: schemas/draft/run-record.schema.json#/properties/nodes/items/properties/provider_output_error/type.
-        - CM.VCP.STRUCT.51393f52c3c0c09bd547 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.51393f52c3c0c09bd547. Source: schemas/draft/run-record.schema.json#/properties/provider_bindings/propertyNames/type.
-        - CM.VCP.STRUCT.56ea6324e06bdaf7b670 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.56ea6324e06bdaf7b670. Source: schemas/draft/run-record.schema.json#/properties/nodes/items/properties/provider_output_error/properties/message/type.
-        - CM.VCP.STRUCT.5a477cb8f074523018d5 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.5a477cb8f074523018d5. Source: schemas/draft/run-record.schema.json#/properties/nodes/items/properties/information/type.
-        - CM.VCP.STRUCT.61584c6bcce5a568d870 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.61584c6bcce5a568d870. Source: schemas/draft/run-record.schema.json#/properties/nodes/items/properties/finished_at/type.
-        - CM.VCP.STRUCT.621f23e007248d60bfe9 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.621f23e007248d60bfe9. Source: schemas/draft/run-record.schema.json#/properties/opportunity_id/type.
-        - CM.VCP.STRUCT.6f35f223ec48879fa5f8 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['array']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.6f35f223ec48879fa5f8. Source: schemas/draft/run-record.schema.json#/properties/nodes/type.
-        - CM.VCP.STRUCT.7033a308d5750964a26f [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['array']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.7033a308d5750964a26f. Source: schemas/draft/run-record.schema.json#/properties/nodes/items/properties/upstream_node_ids/type.
-        - CM.VCP.STRUCT.7293cafe65a141b3270a [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.7293cafe65a141b3270a. Source: schemas/draft/run-record.schema.json#/properties/nodes/items/properties/usage/propertyNames/type.
-        - CM.VCP.STRUCT.78926efc6e7bda0c775b [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.78926efc6e7bda0c775b. Source: schemas/draft/run-record.schema.json#/properties/nodes/items/properties/started_at/type.
-        - CM.VCP.STRUCT.7f6a5b7eb4cd45cf3f15 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.7f6a5b7eb4cd45cf3f15. Source: schemas/draft/run-record.schema.json#/type.
-        - CM.VCP.STRUCT.8cda470a6c0d09aea0d5 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.8cda470a6c0d09aea0d5. Source: schemas/draft/run-record.schema.json#/properties/initial_context/type.
-        - CM.VCP.STRUCT.8dd005a789574ce315cf [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.8dd005a789574ce315cf. Source: schemas/draft/run-record.schema.json#/properties/nodes/items/properties/executor_ref/anyOf/0/type.
-        - CM.VCP.STRUCT.96e37878764429618b87 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.96e37878764429618b87. Source: schemas/draft/run-record.schema.json#/properties/nodes/items/properties/reason/anyOf/0/type.
-        - CM.VCP.STRUCT.993206eceba0d92bdda3 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.993206eceba0d92bdda3. Source: schemas/draft/run-record.schema.json#/properties/final_results/type.
-        - CM.VCP.STRUCT.a2a988c6869779c952d4 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.a2a988c6869779c952d4. Source: schemas/draft/run-record.schema.json#/properties/nodes/items/properties/input_values/type.
-        - CM.VCP.STRUCT.a381d4620173676f3fcf [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.a381d4620173676f3fcf. Source: schemas/draft/run-record.schema.json#/properties/provider_bindings/type.
-        - CM.VCP.STRUCT.a43144bd5470db7c2713 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['array']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.a43144bd5470db7c2713. Source: schemas/draft/run-record.schema.json#/properties/policy_evaluations/type.
-        - CM.VCP.STRUCT.abffb6cbf66cf9cef00b [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['null']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.abffb6cbf66cf9cef00b. Source: schemas/draft/run-record.schema.json#/properties/nodes/items/properties/executor_ref/anyOf/1/type.
-        - CM.VCP.STRUCT.c0bcbe1a8814d1b642c0 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['array']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.c0bcbe1a8814d1b642c0. Source: schemas/draft/run-record.schema.json#/properties/extensions/type.
-        - CM.VCP.STRUCT.ce665e28154e0bcad371 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.ce665e28154e0bcad371. Source: schemas/draft/run-record.schema.json#/properties/nodes/items/properties/upstream_results/type.
-        - CM.VCP.STRUCT.ce91cfec8cc04e3d09c9 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.ce91cfec8cc04e3d09c9. Source: schemas/draft/run-record.schema.json#/properties/finished_at/type.
-        - CM.VCP.STRUCT.cfb6be1a37285eee8404 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['null']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.cfb6be1a37285eee8404. Source: schemas/draft/run-record.schema.json#/properties/nodes/items/properties/result/anyOf/1/type.
-        - CM.VCP.STRUCT.e1b4921892dee4849b87 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['null']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.e1b4921892dee4849b87. Source: schemas/draft/run-record.schema.json#/properties/nodes/items/properties/executor_version/anyOf/1/type.
-        - CM.VCP.STRUCT.e3ec5b01a31bc9af7197 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.e3ec5b01a31bc9af7197. Source: schemas/draft/run-record.schema.json#/properties/started_at/type.
-        - CM.VCP.STRUCT.e45455bcfaab8bfd553e [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.e45455bcfaab8bfd553e. Source: schemas/draft/run-record.schema.json#/properties/nodes/items/type.
-        - CM.VCP.STRUCT.f524532800d4f94b2770 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.f524532800d4f94b2770. Source: schemas/draft/run-record.schema.json#/properties/nodes/items/properties/input_resolutions/type.
-    - **selection — INCOMPLETE**: 0 atomic; 0 whole-root; 7 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - **additionalProperties — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.9991104de8d5b258648c [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Every object key is listed in properties or matched by patternProperties of this SAME schema object. Domain: D.COMPONENT.CM.VCP.STRUCT.9991104de8d5b258648c. Source: schemas/draft/selection.schema.json#/additionalProperties.
-      - **minLength — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.6cca11b4df6533723dc2 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.6cca11b4df6533723dc2. Source: schemas/draft/selection.schema.json#/properties/reason/minLength.
-      - **required — INCOMPLETE**: 0 atomic; 0 whole-root; 2 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.eb2f14b8722b14260fb8 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'reason'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.eb2f14b8722b14260fb8. Source: schemas/draft/selection.schema.json#/required/1.
-        - CM.VCP.STRUCT.ebdac89c4d8a0a771d0f [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'subjects'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.ebdac89c4d8a0a771d0f. Source: schemas/draft/selection.schema.json#/required/0.
-      - **type — INCOMPLETE**: 0 atomic; 0 whole-root; 3 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.7c8fe517ac005f4044c7 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.7c8fe517ac005f4044c7. Source: schemas/draft/selection.schema.json#/properties/reason/type.
-        - CM.VCP.STRUCT.89f8040164b2bb08d460 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['array']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.89f8040164b2bb08d460. Source: schemas/draft/selection.schema.json#/properties/subjects/type.
-        - CM.VCP.STRUCT.9f8e1040924d58aed5b6 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.9f8e1040924d58aed5b6. Source: schemas/draft/selection.schema.json#/type.
-    - **severity-domain — INCOMPLETE**: 0 atomic; 0 whole-root; 14 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - **additionalProperties — INCOMPLETE**: 0 atomic; 0 whole-root; 2 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.7dee81bc7e56281fab61 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Every object key is listed in properties or matched by patternProperties of this SAME schema object. Domain: D.COMPONENT.CM.VCP.STRUCT.7dee81bc7e56281fab61. Source: schemas/draft/severity-domain.schema.json#/additionalProperties.
-        - CM.VCP.STRUCT.c1e2ebb202407b028b60 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Every object key is listed in properties or matched by patternProperties of this SAME schema object. Domain: D.COMPONENT.CM.VCP.STRUCT.c1e2ebb202407b028b60. Source: schemas/draft/severity-domain.schema.json#/properties/levels/items/additionalProperties.
-      - **minLength — INCOMPLETE**: 0 atomic; 0 whole-root; 2 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.425e3fc8757442fa2787 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.425e3fc8757442fa2787. Source: schemas/draft/severity-domain.schema.json#/properties/id/minLength.
-        - CM.VCP.STRUCT.d62839b9c49a4b143a7f [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.d62839b9c49a4b143a7f. Source: schemas/draft/severity-domain.schema.json#/properties/levels/items/properties/label/minLength.
-      - **required — INCOMPLETE**: 0 atomic; 0 whole-root; 4 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.21d3689f943e5f1e5d5f [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /properties/levels/items contains key 'label'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.21d3689f943e5f1e5d5f. Source: schemas/draft/severity-domain.schema.json#/properties/levels/items/required/0.
-        - CM.VCP.STRUCT.3f67c0085c034bb98503 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /properties/levels/items contains key 'rank'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.3f67c0085c034bb98503. Source: schemas/draft/severity-domain.schema.json#/properties/levels/items/required/1.
-        - CM.VCP.STRUCT.92fb5f73257f045b7ffd [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'id'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.92fb5f73257f045b7ffd. Source: schemas/draft/severity-domain.schema.json#/required/0.
-        - CM.VCP.STRUCT.be906602b0e8eda91b72 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'levels'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.be906602b0e8eda91b72. Source: schemas/draft/severity-domain.schema.json#/required/1.
-      - **type — INCOMPLETE**: 0 atomic; 0 whole-root; 6 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.0293b14fa4fb90fe8bb7 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.0293b14fa4fb90fe8bb7. Source: schemas/draft/severity-domain.schema.json#/properties/levels/items/type.
-        - CM.VCP.STRUCT.03647b604846f25ea468 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['integer']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.03647b604846f25ea468. Source: schemas/draft/severity-domain.schema.json#/properties/levels/items/properties/rank/type.
-        - CM.VCP.STRUCT.54d6c5d7744cf553bc8f [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.54d6c5d7744cf553bc8f. Source: schemas/draft/severity-domain.schema.json#/properties/levels/items/properties/label/type.
-        - CM.VCP.STRUCT.5aeda9bcd54f47034f6f [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.5aeda9bcd54f47034f6f. Source: schemas/draft/severity-domain.schema.json#/properties/id/type.
-        - CM.VCP.STRUCT.923b4418928049481df3 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.923b4418928049481df3. Source: schemas/draft/severity-domain.schema.json#/type.
-        - CM.VCP.STRUCT.9f43c3283445d9786828 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['array']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.9f43c3283445d9786828. Source: schemas/draft/severity-domain.schema.json#/properties/levels/type.
-    - **value-source — INCOMPLETE**: 0 atomic; 0 whole-root; 28 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - **additionalProperties — INCOMPLETE**: 0 atomic; 0 whole-root; 4 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.3194d75377f0d21462d4 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Every object key is listed in properties or matched by patternProperties of this SAME schema object. Domain: D.COMPONENT.CM.VCP.STRUCT.3194d75377f0d21462d4. Source: schemas/draft/value-source.schema.json#/oneOf/0/additionalProperties.
-        - CM.VCP.STRUCT.4f12d8ed6b189bf9509a [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Every object key is listed in properties or matched by patternProperties of this SAME schema object. Domain: D.COMPONENT.CM.VCP.STRUCT.4f12d8ed6b189bf9509a. Source: schemas/draft/value-source.schema.json#/oneOf/1/additionalProperties.
-        - CM.VCP.STRUCT.5a178272ea3bf8eaebb5 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Every object key is listed in properties or matched by patternProperties of this SAME schema object. Domain: D.COMPONENT.CM.VCP.STRUCT.5a178272ea3bf8eaebb5. Source: schemas/draft/value-source.schema.json#/oneOf/3/additionalProperties.
-        - CM.VCP.STRUCT.72dea033f608bcc2a384 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Every object key is listed in properties or matched by patternProperties of this SAME schema object. Domain: D.COMPONENT.CM.VCP.STRUCT.72dea033f608bcc2a384. Source: schemas/draft/value-source.schema.json#/oneOf/2/additionalProperties.
-      - **const — INCOMPLETE**: 0 atomic; 0 whole-root; 4 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.3ed7c06f15e2191fe07d [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Value equals the constant "RUN_INPUT" under JSON structural equality. Domain: D.COMPONENT.CM.VCP.STRUCT.3ed7c06f15e2191fe07d. Source: schemas/draft/value-source.schema.json#/oneOf/1/properties/kind/const.
-        - CM.VCP.STRUCT.53635ff9ae205f35b36c [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Value equals the constant "CONSTANT" under JSON structural equality. Domain: D.COMPONENT.CM.VCP.STRUCT.53635ff9ae205f35b36c. Source: schemas/draft/value-source.schema.json#/oneOf/0/properties/kind/const.
-        - CM.VCP.STRUCT.b3c267dd3b93358375c4 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Value equals the constant "EXTERNAL_REFERENCE" under JSON structural equality. Domain: D.COMPONENT.CM.VCP.STRUCT.b3c267dd3b93358375c4. Source: schemas/draft/value-source.schema.json#/oneOf/2/properties/kind/const.
-        - CM.VCP.STRUCT.ef7c921be646df32039f [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Value equals the constant "UPSTREAM_OUTPUT" under JSON structural equality. Domain: D.COMPONENT.CM.VCP.STRUCT.ef7c921be646df32039f. Source: schemas/draft/value-source.schema.json#/oneOf/3/properties/kind/const.
-      - **minLength — INCOMPLETE**: 0 atomic; 0 whole-root; 3 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.61fd71db899ea0b52e81 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.61fd71db899ea0b52e81. Source: schemas/draft/value-source.schema.json#/oneOf/3/properties/output/minLength.
-        - CM.VCP.STRUCT.71c3c79ad98ab9e2a0ac [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.71c3c79ad98ab9e2a0ac. Source: schemas/draft/value-source.schema.json#/oneOf/3/properties/node_id/minLength.
-        - CM.VCP.STRUCT.8358a77b402be5cc6913 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.8358a77b402be5cc6913. Source: schemas/draft/value-source.schema.json#/oneOf/1/properties/name/minLength.
-      - **oneOf — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.9dff9e647dcd1ba4f9ca [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Exactly one child schema succeeds at the same instance location. Domain: D.COMPONENT.CM.VCP.STRUCT.9dff9e647dcd1ba4f9ca. Source: schemas/draft/value-source.schema.json#/oneOf.
-      - **required — INCOMPLETE**: 0 atomic; 0 whole-root; 9 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.0edea20b86582f5167a5 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /oneOf/0 contains key 'value'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.0edea20b86582f5167a5. Source: schemas/draft/value-source.schema.json#/oneOf/0/required/1.
-        - CM.VCP.STRUCT.1161eebda66c8b8e45f4 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /oneOf/3 contains key 'kind'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.1161eebda66c8b8e45f4. Source: schemas/draft/value-source.schema.json#/oneOf/3/required/0.
-        - CM.VCP.STRUCT.1caee2a293c2403b78d1 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /oneOf/3 contains key 'node_id'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.1caee2a293c2403b78d1. Source: schemas/draft/value-source.schema.json#/oneOf/3/required/1.
-        - CM.VCP.STRUCT.290de7c88a6a5bebc869 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /oneOf/2 contains key 'reference'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.290de7c88a6a5bebc869. Source: schemas/draft/value-source.schema.json#/oneOf/2/required/1.
-        - CM.VCP.STRUCT.8ddaeb844b840da20c11 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /oneOf/2 contains key 'kind'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.8ddaeb844b840da20c11. Source: schemas/draft/value-source.schema.json#/oneOf/2/required/0.
-        - CM.VCP.STRUCT.92fc81d682665a2fb5dc [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /oneOf/3 contains key 'output'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.92fc81d682665a2fb5dc. Source: schemas/draft/value-source.schema.json#/oneOf/3/required/2.
-        - CM.VCP.STRUCT.a1368646c9a69a2c80fc [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /oneOf/1 contains key 'kind'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.a1368646c9a69a2c80fc. Source: schemas/draft/value-source.schema.json#/oneOf/1/required/0.
-        - CM.VCP.STRUCT.c09cac2e1b4a450f315c [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /oneOf/1 contains key 'name'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.c09cac2e1b4a450f315c. Source: schemas/draft/value-source.schema.json#/oneOf/1/required/1.
-        - CM.VCP.STRUCT.e0f5e8b59335b69da0f4 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /oneOf/0 contains key 'kind'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.e0f5e8b59335b69da0f4. Source: schemas/draft/value-source.schema.json#/oneOf/0/required/0.
-      - **type — INCOMPLETE**: 0 atomic; 0 whole-root; 7 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.00dff311b20b4dfcc73e [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.00dff311b20b4dfcc73e. Source: schemas/draft/value-source.schema.json#/oneOf/3/properties/node_id/type.
-        - CM.VCP.STRUCT.082c3b89f0ddd2c33d91 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.082c3b89f0ddd2c33d91. Source: schemas/draft/value-source.schema.json#/oneOf/3/properties/output/type.
-        - CM.VCP.STRUCT.0da9111102b7db3d0ed6 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.0da9111102b7db3d0ed6. Source: schemas/draft/value-source.schema.json#/oneOf/2/type.
-        - CM.VCP.STRUCT.1bef0bd4f3d9c6e4f877 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.1bef0bd4f3d9c6e4f877. Source: schemas/draft/value-source.schema.json#/oneOf/3/type.
-        - CM.VCP.STRUCT.4ad21c9d3641014ec77b [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.4ad21c9d3641014ec77b. Source: schemas/draft/value-source.schema.json#/oneOf/1/type.
-        - CM.VCP.STRUCT.79d4a431247a73f48a54 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.79d4a431247a73f48a54. Source: schemas/draft/value-source.schema.json#/oneOf/1/properties/name/type.
-        - CM.VCP.STRUCT.f9526416fe8c4336f595 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.f9526416fe8c4336f595. Source: schemas/draft/value-source.schema.json#/oneOf/0/type.
-    - **verification-definition — INCOMPLETE**: 0 atomic; 0 whole-root; 73 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-      - **additionalProperties — INCOMPLETE**: 0 atomic; 0 whole-root; 6 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.05f275e995863afd5ebb [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Every object key is listed in properties or matched by patternProperties of this SAME schema object. Domain: D.COMPONENT.CM.VCP.STRUCT.05f275e995863afd5ebb. Source: schemas/draft/verification-definition.schema.json#/properties/execution_policy/additionalProperties.
-        - CM.VCP.STRUCT.10f4c820db1934cf73a5 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Every object key is listed in properties or matched by patternProperties of this SAME schema object. Domain: D.COMPONENT.CM.VCP.STRUCT.10f4c820db1934cf73a5. Source: schemas/draft/verification-definition.schema.json#/properties/execution_policy/properties/admission/additionalProperties.
-        - CM.VCP.STRUCT.18ca99861ffd88ac886b [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Every object key is listed in properties or matched by patternProperties of this SAME schema object. Domain: D.COMPONENT.CM.VCP.STRUCT.18ca99861ffd88ac886b. Source: schemas/draft/verification-definition.schema.json#/properties/criterion/additionalProperties.
-        - CM.VCP.STRUCT.24df01ea99d086f6655e [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Every object key is listed in properties or matched by patternProperties of this SAME schema object. Domain: D.COMPONENT.CM.VCP.STRUCT.24df01ea99d086f6655e. Source: schemas/draft/verification-definition.schema.json#/additionalProperties.
-        - CM.VCP.STRUCT.28b54db26795bfcfaa38 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Every object key is listed in properties or matched by patternProperties of this SAME schema object. Domain: D.COMPONENT.CM.VCP.STRUCT.28b54db26795bfcfaa38. Source: schemas/draft/verification-definition.schema.json#/properties/execution_policy/properties/activation/additionalProperties.
-        - CM.VCP.STRUCT.805b767b284cc2a3b43d [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Every object key is listed in properties or matched by patternProperties of this SAME schema object. Domain: D.COMPONENT.CM.VCP.STRUCT.805b767b284cc2a3b43d. Source: schemas/draft/verification-definition.schema.json#/properties/execution_policy/properties/selection/additionalProperties.
-      - **anyOf — INCOMPLETE**: 0 atomic; 0 whole-root; 2 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.5fbf5c815f2b1bfd1eb1 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: At least one child schema succeeds at the same instance location. Domain: D.COMPONENT.CM.VCP.STRUCT.5fbf5c815f2b1bfd1eb1. Source: schemas/draft/verification-definition.schema.json#/properties/satisfaction_mapping/anyOf.
-        - CM.VCP.STRUCT.dea558fbf460b4793c38 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: At least one child schema succeeds at the same instance location. Domain: D.COMPONENT.CM.VCP.STRUCT.dea558fbf460b4793c38. Source: schemas/draft/verification-definition.schema.json#/properties/execution_policy/properties/admission/properties/probability/anyOf.
-      - **const — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.15e6a6a91a34abbc3831 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Value equals the constant "draft" under JSON structural equality. Domain: D.COMPONENT.CM.VCP.STRUCT.15e6a6a91a34abbc3831. Source: schemas/draft/verification-definition.schema.json#/properties/protocol/const.
-      - **maximum — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.661b3ce91f6da8aac61f [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: For a JSON number x, x <= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.661b3ce91f6da8aac61f. Source: schemas/draft/verification-definition.schema.json#/properties/execution_policy/properties/admission/properties/probability/anyOf/0/maximum.
-      - **minLength — INCOMPLETE**: 0 atomic; 0 whole-root; 10 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.02020ad86a44b6d47a3c [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.02020ad86a44b6d47a3c. Source: schemas/draft/verification-definition.schema.json#/properties/version/minLength.
-        - CM.VCP.STRUCT.07dea013aea57a6af85b [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.07dea013aea57a6af85b. Source: schemas/draft/verification-definition.schema.json#/properties/criterion/properties/description/minLength.
-        - CM.VCP.STRUCT.08d22f1cd624bcc98dab [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.08d22f1cd624bcc98dab. Source: schemas/draft/verification-definition.schema.json#/properties/execution_policy/properties/selection/properties/executor_ref/minLength.
-        - CM.VCP.STRUCT.3bb1b076fac6a4573e9a [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.3bb1b076fac6a4573e9a. Source: schemas/draft/verification-definition.schema.json#/properties/execution_policy/properties/selection/properties/bindings/propertyNames/minLength.
-        - CM.VCP.STRUCT.42468e4b7b5a75738ad4 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.42468e4b7b5a75738ad4. Source: schemas/draft/verification-definition.schema.json#/properties/id/minLength.
-        - CM.VCP.STRUCT.4cc1de858161e1b55a1f [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.4cc1de858161e1b55a1f. Source: schemas/draft/verification-definition.schema.json#/properties/execution_policy/properties/activation/properties/executor_ref/minLength.
-        - CM.VCP.STRUCT.8bb73e4069cfd5bd1fcb [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.8bb73e4069cfd5bd1fcb. Source: schemas/draft/verification-definition.schema.json#/properties/execution_policy/properties/admission/properties/bindings/propertyNames/minLength.
-        - CM.VCP.STRUCT.951b0894db28227d1233 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.951b0894db28227d1233. Source: schemas/draft/verification-definition.schema.json#/properties/execution_policy/properties/admission/properties/strategy/minLength.
-        - CM.VCP.STRUCT.a729bca469b15fbd6ad7 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.a729bca469b15fbd6ad7. Source: schemas/draft/verification-definition.schema.json#/properties/criterion/properties/id/minLength.
-        - CM.VCP.STRUCT.fd2f0a8c098e27b8aab4 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: The Unicode string length >= 1. Domain: D.COMPONENT.CM.VCP.STRUCT.fd2f0a8c098e27b8aab4. Source: schemas/draft/verification-definition.schema.json#/properties/execution_policy/properties/activation/properties/bindings/propertyNames/minLength.
-      - **minimum — INCOMPLETE**: 0 atomic; 0 whole-root; 1 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.971a59a975597505e792 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: For a JSON number x, x >= 0. Domain: D.COMPONENT.CM.VCP.STRUCT.971a59a975597505e792. Source: schemas/draft/verification-definition.schema.json#/properties/execution_policy/properties/admission/properties/probability/anyOf/0/minimum.
-      - **required — INCOMPLETE**: 0 atomic; 0 whole-root; 14 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.03bfc6ea65d64b4a6792 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /properties/criterion contains key 'description'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.03bfc6ea65d64b4a6792. Source: schemas/draft/verification-definition.schema.json#/properties/criterion/required/1.
-        - CM.VCP.STRUCT.16bd6f3a76c4b7ea6335 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /properties/execution_policy contains key 'selection'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.16bd6f3a76c4b7ea6335. Source: schemas/draft/verification-definition.schema.json#/properties/execution_policy/required/1.
-        - CM.VCP.STRUCT.28cafb5336e20778886d [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'subject'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.28cafb5336e20778886d. Source: schemas/draft/verification-definition.schema.json#/required/3, spec/draft/meaning.md:9-14.
-        - CM.VCP.STRUCT.38b1176192c404179cac [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'judgment_schema'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.38b1176192c404179cac. Source: schemas/draft/verification-definition.schema.json#/required/5, spec/draft/meaning.md:9-14.
-        - CM.VCP.STRUCT.66a8a0c8d5a56a9ceab1 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /properties/execution_policy contains key 'activation'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.66a8a0c8d5a56a9ceab1. Source: schemas/draft/verification-definition.schema.json#/properties/execution_policy/required/0.
-        - CM.VCP.STRUCT.74a47781fb451f7b1a09 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /properties/criterion contains key 'id'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.74a47781fb451f7b1a09. Source: schemas/draft/verification-definition.schema.json#/properties/criterion/required/0.
-        - CM.VCP.STRUCT.7b73780f88c0c13ad7d1 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at /properties/execution_policy contains key 'admission'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.7b73780f88c0c13ad7d1. Source: schemas/draft/verification-definition.schema.json#/properties/execution_policy/required/2.
-        - CM.VCP.STRUCT.978af697a9cbc3da9381 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'version'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.978af697a9cbc3da9381. Source: schemas/draft/verification-definition.schema.json#/required/2, spec/draft/meaning.md:9-14.
-        - CM.VCP.STRUCT.b3d94b992969825431e5 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'protocol'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.b3d94b992969825431e5. Source: schemas/draft/verification-definition.schema.json#/required/0, spec/draft/meaning.md:9-14.
-        - CM.VCP.STRUCT.c43ebcc71b1aab8f54e3 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'run_inputs'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.c43ebcc71b1aab8f54e3. Source: schemas/draft/verification-definition.schema.json#/required/6, spec/draft/meaning.md:9-14.
-        - CM.VCP.STRUCT.ce8bf99948d6a81ece00 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'criterion'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.ce8bf99948d6a81ece00. Source: schemas/draft/verification-definition.schema.json#/required/4, spec/draft/meaning.md:9-14.
-        - CM.VCP.STRUCT.ebde3e7675973fe8a308 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'graph'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.ebde3e7675973fe8a308. Source: schemas/draft/verification-definition.schema.json#/required/7, spec/draft/meaning.md:9-14.
-        - CM.VCP.STRUCT.f7161c41e80c75b6ea38 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'id'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.f7161c41e80c75b6ea38. Source: schemas/draft/verification-definition.schema.json#/required/1, spec/draft/meaning.md:9-14.
-        - CM.VCP.STRUCT.fe7a222c68a955650cb2 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: An object at / contains key 'execution_policy'; its value may be null if admitted by its value schema. Domain: D.COMPONENT.CM.VCP.STRUCT.fe7a222c68a955650cb2. Source: schemas/draft/verification-definition.schema.json#/required/8, spec/draft/meaning.md:9-14.
-      - **type — INCOMPLETE**: 0 atomic; 0 whole-root; 38 components; 0 finite / 0 symbolic / 0 conditional domain refs, distinct within this branch only.
-        - CM.VCP.STRUCT.011b1f8db549383cc7a2 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['array']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.011b1f8db549383cc7a2. Source: schemas/draft/verification-definition.schema.json#/properties/criterion/properties/extensions/type.
-        - CM.VCP.STRUCT.0b4a37744a2a367f5d74 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['null']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.0b4a37744a2a367f5d74. Source: schemas/draft/verification-definition.schema.json#/properties/satisfaction_mapping/anyOf/1/type.
-        - CM.VCP.STRUCT.13de031a172210505af1 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['boolean', 'object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.13de031a172210505af1. Source: schemas/draft/verification-definition.schema.json#/properties/execution_policy/properties/selection/properties/config_schema/type.
-        - CM.VCP.STRUCT.18779c1be4f92e9be957 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.18779c1be4f92e9be957. Source: schemas/draft/verification-definition.schema.json#/properties/execution_policy/properties/activation/properties/bindings/type.
-        - CM.VCP.STRUCT.1a09db07cf976317b0b5 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.1a09db07cf976317b0b5. Source: schemas/draft/verification-definition.schema.json#/properties/id/type.
-        - CM.VCP.STRUCT.26a6c9502b855228f96e [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.26a6c9502b855228f96e. Source: schemas/draft/verification-definition.schema.json#/properties/criterion/type.
-        - CM.VCP.STRUCT.2bdea2df7323e2547a19 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['boolean', 'object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.2bdea2df7323e2547a19. Source: schemas/draft/verification-definition.schema.json#/properties/execution_policy/properties/admission/properties/config_schema/type.
-        - CM.VCP.STRUCT.3b49934832bec638e8a8 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.3b49934832bec638e8a8. Source: schemas/draft/verification-definition.schema.json#/properties/execution_policy/properties/selection/properties/config/type.
-        - CM.VCP.STRUCT.40cc7923aae4b7566b5f [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['integer', 'nonintegral-number']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.40cc7923aae4b7566b5f. Source: schemas/draft/verification-definition.schema.json#/properties/execution_policy/properties/admission/properties/probability/anyOf/0/type.
-        - CM.VCP.STRUCT.4d3f5b22c991c50eef5b [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.4d3f5b22c991c50eef5b. Source: schemas/draft/verification-definition.schema.json#/properties/execution_policy/properties/activation/properties/bindings/propertyNames/type.
-        - CM.VCP.STRUCT.4f9d2542bf9de577ebca [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.4f9d2542bf9de577ebca. Source: schemas/draft/verification-definition.schema.json#/properties/execution_policy/properties/admission/properties/config/type.
-        - CM.VCP.STRUCT.5339cdc19eeca93616e5 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.5339cdc19eeca93616e5. Source: schemas/draft/verification-definition.schema.json#/properties/execution_policy/type.
-        - CM.VCP.STRUCT.58caafae9ceb107ef96d [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.58caafae9ceb107ef96d. Source: schemas/draft/verification-definition.schema.json#/properties/execution_policy/properties/activation/properties/config/type.
-        - CM.VCP.STRUCT.5960d8102614a43c935a [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.5960d8102614a43c935a. Source: schemas/draft/verification-definition.schema.json#/properties/execution_policy/properties/selection/properties/bindings/propertyNames/type.
-        - CM.VCP.STRUCT.5a14e50e438e0a02a25f [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.5a14e50e438e0a02a25f. Source: schemas/draft/verification-definition.schema.json#/properties/execution_policy/properties/admission/properties/bindings/propertyNames/type.
-        - CM.VCP.STRUCT.70f047cce6655265c3da [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['null']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.70f047cce6655265c3da. Source: schemas/draft/verification-definition.schema.json#/properties/execution_policy/properties/admission/properties/probability/anyOf/1/type.
-        - CM.VCP.STRUCT.718849295cb59f3bb532 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['boolean', 'object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.718849295cb59f3bb532. Source: schemas/draft/verification-definition.schema.json#/properties/execution_policy/properties/activation/properties/config_schema/type.
-        - CM.VCP.STRUCT.73206647125efd3015fe [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.73206647125efd3015fe. Source: schemas/draft/verification-definition.schema.json#/properties/execution_policy/properties/activation/type.
-        - CM.VCP.STRUCT.7a583c2dfcb528eb3c58 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.7a583c2dfcb528eb3c58. Source: schemas/draft/verification-definition.schema.json#/properties/satisfaction_mapping/anyOf/0/type.
-        - CM.VCP.STRUCT.808b4b92e6b8fabbf677 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.808b4b92e6b8fabbf677. Source: schemas/draft/verification-definition.schema.json#/properties/metadata/type.
-        - CM.VCP.STRUCT.9a04949f4071210265d7 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.9a04949f4071210265d7. Source: schemas/draft/verification-definition.schema.json#/properties/execution_policy/properties/selection/type.
-        - CM.VCP.STRUCT.9fa24a9c878746d99e43 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.9fa24a9c878746d99e43. Source: schemas/draft/verification-definition.schema.json#/type.
-        - CM.VCP.STRUCT.a5fd7b22523014ccb372 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.a5fd7b22523014ccb372. Source: schemas/draft/verification-definition.schema.json#/properties/execution_policy/properties/admission/type.
-        - CM.VCP.STRUCT.b0f9d083f3af7fe06df8 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.b0f9d083f3af7fe06df8. Source: schemas/draft/verification-definition.schema.json#/properties/execution_policy/properties/admission/properties/strategy/type.
-        - CM.VCP.STRUCT.bab44ef379098bf844a9 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['array']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.bab44ef379098bf844a9. Source: schemas/draft/verification-definition.schema.json#/properties/execution_policy/properties/activation/properties/inputs/type.
-        - CM.VCP.STRUCT.c0dc66f60311323772d9 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['array']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.c0dc66f60311323772d9. Source: schemas/draft/verification-definition.schema.json#/properties/execution_policy/properties/admission/properties/inputs/type.
-        - CM.VCP.STRUCT.c1b927815e1952455a61 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['boolean', 'object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.c1b927815e1952455a61. Source: schemas/draft/verification-definition.schema.json#/properties/judgment_schema/type.
-        - CM.VCP.STRUCT.c3595bb7d5440117b1ad [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.c3595bb7d5440117b1ad. Source: schemas/draft/verification-definition.schema.json#/properties/criterion/properties/id/type.
-        - CM.VCP.STRUCT.cf5385b318347750de58 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.cf5385b318347750de58. Source: schemas/draft/verification-definition.schema.json#/properties/version/type.
-        - CM.VCP.STRUCT.d4c1808ef3ecbf8aff4b [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['array']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.d4c1808ef3ecbf8aff4b. Source: schemas/draft/verification-definition.schema.json#/properties/run_inputs/type.
-        - CM.VCP.STRUCT.d8c7479fc292d40ab9e4 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.d8c7479fc292d40ab9e4. Source: schemas/draft/verification-definition.schema.json#/properties/execution_policy/properties/selection/properties/executor_ref/type.
-        - CM.VCP.STRUCT.da161f35d145f7def4ec [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.da161f35d145f7def4ec. Source: schemas/draft/verification-definition.schema.json#/properties/criterion/properties/metadata/type.
-        - CM.VCP.STRUCT.e134e88b0d50dbb206ee [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.e134e88b0d50dbb206ee. Source: schemas/draft/verification-definition.schema.json#/properties/criterion/properties/description/type.
-        - CM.VCP.STRUCT.eb8be37710e7f59c57b1 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.eb8be37710e7f59c57b1. Source: schemas/draft/verification-definition.schema.json#/properties/execution_policy/properties/selection/properties/bindings/type.
-        - CM.VCP.STRUCT.ed4c1210f72c0916ed62 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['object']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.ed4c1210f72c0916ed62. Source: schemas/draft/verification-definition.schema.json#/properties/execution_policy/properties/admission/properties/bindings/type.
-        - CM.VCP.STRUCT.ee67aefab763f5d77b91 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['array']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.ee67aefab763f5d77b91. Source: schemas/draft/verification-definition.schema.json#/properties/extensions/type.
-        - CM.VCP.STRUCT.f492a7b0c52b5897de16 [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['array']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.f492a7b0c52b5897de16. Source: schemas/draft/verification-definition.schema.json#/properties/execution_policy/properties/selection/properties/inputs/type.
-        - CM.VCP.STRUCT.faafac210191d6fb666e [RETAINED_COMPONENT_REQUIRES_CONTEXT_CHECK]: Accept precisely the JSON type classes ['string']. Integral numeric values satisfy integer regardless of notation; booleans and strings do not. Domain: D.COMPONENT.CM.VCP.STRUCT.faafac210191d6fb666e. Source: schemas/draft/verification-definition.schema.json#/properties/execution_policy/properties/activation/properties/executor_ref/type.
+## Canonical hierarchy
 
-## Remaining closure
+- **PROVIDER** - 115 canonical primary records; INCOMPLETE.
+  - **Capabilities** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+    - **Published meaning** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.PROVIDER.CAPABILITY.PUBLISHED_SPEC` - Publish that capability specification with its adapter; its schemas and specification define actual input/config/output meaning, not its identifier alone.
+        - Applicability: A capability is published with a provider adapter.
+        - Required/observable: Inspectable published capability contract.. Forbidden: Do not treat a conceptual capability family name or namespace syntax as executable semantic definition.
+        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/capabilities.md:24-35.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.NAMESPACE. Domain `D.PROVIDER.NAMESPACE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+  - **Compatibility** - 10 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+    - **Initialization** - 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.PROVIDER.INIT.SELECT` - Select first runner contract version supported by provider; this draft selects only 0.1
+        - Applicability: Runner initializes with ordered exact versions.
+        - Required/observable: CONTRACT_VERSION_UNSUPPORTED with no work if no intersection. Forbidden: Do not use SemVer ordering/ranges/coercion/fallback
+        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/versioning.md:6-14.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.INITIALIZATION. Domain `D.PROVIDER.INITIALIZATION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.PROVIDER.INIT.VERIFY` - Recompute first common selection against returned manifest
+        - Applicability: Runner receives InitializeResult.
+        - Required/observable: Reject invalid initialization result. Forbidden: Do not trust an incompatible selected version
+        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/versioning.md:6-14.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.INITIALIZATION. Domain `D.PROVIDER.INITIALIZATION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Matching** - 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **CONTRACT_VERSION** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.COMPAT.CAPABILITY.CONTRACT_VERSION` - Invocation contract_version equals selected session contract version.
+          - Applicability: Invocation submitted in initialized session.
+          - Required/observable: Wrong version is CONTRACT_VERSION_UNSUPPORTED.. Forbidden: Do not accept a different version even if advertised elsewhere.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/versioning.md:16-20.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.INITIALIZATION. Domain `D.PROVIDER.INITIALIZATION`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **IDENTITY** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.COMPAT.CAPABILITY.IDENTITY` - Use the exact advertised capability identity pair.
+          - Applicability: Invocation selects a capability ID/version.
+          - Required/observable: Missing ID is CAPABILITY_UNAVAILABLE; existing ID with missing exact version is CAPABILITY_VERSION_UNSUPPORTED.. Forbidden: No fallback to another version or capability.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/versioning.md:16-20.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.INITIALIZATION. Domain `D.PROVIDER.INITIALIZATION`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **VCP** - 6 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **ADVERTISEMENT** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.COMPAT.CAPABILITY_VCP.ADVERTISEMENT` - That exact version belongs to manifest.supported_vcp_versions.
+          - Applicability: Capability declares vcp_version.
+          - Required/observable: Manifest semantic acceptance.. Forbidden: No unsupported declaration.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/capabilities.md:47-51.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.MANIFEST. Domain `D.PROVIDER.MANIFEST`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **CAPABILITY** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.COMPAT.VCP_INTERSECTION.CAPABILITY` - Invocation.vcp_version equals that exact declaration.
+          - Applicability: Matched capability declares vcp_version.
+          - Required/observable: INVALID_INVOCATION on mismatch.. Forbidden: No missing/different invocation version.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/versioning.md:16-20.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.INITIALIZATION. Domain `D.PROVIDER.INITIALIZATION`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **DECLARATION** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.COMPAT.CAPABILITY_VCP.DECLARATION` - Declare applicable vcp_version in capability specification/manifest.
+          - Applicability: Capability specification contains VCP objects in I/O/config/events.
+          - Required/observable: Published contract consistency.. Forbidden: No unadvertised VCP interchange.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/capabilities.md:47-51.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.MANIFEST. Domain `D.PROVIDER.MANIFEST`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **INTERSECTION** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.COMPAT.VCP_INTERSECTION.INTERSECTION` - It belongs to both initialized peers supported VCP lists.
+          - Applicability: Invocation contains vcp_version.
+          - Required/observable: INVALID_INVOCATION if absent from intersection.. Forbidden: No one-sided version acceptance.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/versioning.md:16-20.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.INITIALIZATION. Domain `D.PROVIDER.INITIALIZATION`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.PROVIDER.COMPAT.REVISION` - Use the same specification/schema revision and capability specification
+        - Applicability: Peers exchange VCP draft objects.
+        - Required/observable: Deployment compatibility obligation; portable revision ID remains open. Forbidden: Do not infer revision equivalence from literal draft marker
+        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/versioning.md:30-34.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.INITIALIZATION. Domain `D.PROVIDER.INITIALIZATION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.PROVIDER.COMPAT.VCP_FIELDS` - Invocation declares available draft VCP interchange
+        - Applicability: Budget or VCP evidence/artifact/usage is exchanged.
+        - Required/observable: INVALID_INVOCATION or INVALID_PROVIDER_OUTPUT according to side. Forbidden: Do not transmit standard VCP fields without negotiated invocation version
+        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/versioning.md:22-28.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.INITIALIZATION. Domain `D.PROVIDER.INITIALIZATION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+  - **Control** - 18 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+    - **Cancellation** - 6 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **NO_BOUND** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.CANCEL.RUNNING.NO_BOUND` - No fixed portable stop-time guarantee; prompt stopping is SHOULD.
+          - Applicability: A valid cooperative cancel is pending.
+          - Required/observable: Allowed race with prior lawful terminal.. Forbidden: Do not turn recommendation into hard latency requirement.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:20-27.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.CANCEL. Domain `D.PROVIDER.CANCEL`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **REPEAT** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.CANCEL.RUNNING.REPEAT` - Permit repeated request.
+          - Applicability: Supported running attempt receives another cancel.
+          - Required/observable: Still one eventual terminal.. Forbidden: No duplicate-request protocol error solely for repetition.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:20-27.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.CANCEL. Domain `D.PROVIDER.CANCEL`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **REQUEST** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.CANCEL.RUNNING.REQUEST` - Request cooperative termination, remain running until Outcome.
+          - Applicability: Running cancellation-supported attempt receives cancel.
+          - Required/observable: Cancel-request state effect.. Forbidden: No immediate terminal merely from request.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:20-27.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.CANCEL. Domain `D.PROVIDER.CANCEL`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.PROVIDER.CANCEL.CAUSE` - A runner cancel request caused termination
+        - Applicability: Outcome state is CANCELLED.
+        - Required/observable: Unsolicited cancellation invalid; internal failure ERROR. Forbidden: Do not use CANCELLED for internal provider failure
+        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:20-27.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.CANCEL. Domain `D.PROVIDER.CANCEL`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.PROVIDER.CANCEL.TERMINAL` - Acknowledge as no-op even without running-cancel support
+        - Applicability: Cancel targets terminal attempt.
+        - Required/observable: Successful no-op acknowledgement. Forbidden: Do not change terminal outcome
+        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:20-27.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.CANCEL. Domain `D.PROVIDER.CANCEL`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.PROVIDER.CANCEL.UNKNOWN` - Reject without inventing a running attempt
+        - Applicability: Cancel targets unknown/rejected attempt.
+        - Required/observable: PROTOCOL_VIOLATION. Forbidden: Do not accept unknown cancellation
+        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:20-27.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.CANCEL. Domain `D.PROVIDER.CANCEL`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Deadlines** - 10 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **ACCEPT** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.DEADLINE.ACCEPT.ACCEPT` - Accept the attempt rather than reject solely for expiry.
+          - Applicability: Invocation is otherwise valid but already expired.
+          - Required/observable: Accepted deadline attempt.. Forbidden: No preaccept unsupported/invalid error for expiry alone.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:29-39.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.DEADLINE. Domain `D.PROVIDER.DEADLINE`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **CALENDAR** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.DEADLINE.PRECISION.CALENDAR` - Supported dates have years 0001 through 9999 and seconds 00 through 59.
+          - Applicability: Deadline timestamp supplied.
+          - Required/observable: Reject unsupported date/time syntax rather than truncate or normalize it.. Forbidden: Leap-second notation is unsupported.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:41-45.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.DEADLINE. Domain `D.PROVIDER.DEADLINE`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **COMMIT** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.DEADLINE.ACTIVE.COMMIT` - Commit DEADLINE_EXCEEDED.
+          - Applicability: Expiry occurs with no earlier terminal committed.
+          - Required/observable: Deadline terminal Outcome.. Forbidden: No later different terminal or clock rollback reversal.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:29-39.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.DEADLINE. Domain `D.PROVIDER.DEADLINE`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **FRACTION** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.DEADLINE.PRECISION.FRACTION` - Compare instants preserving all supplied decimal fractional digits.
+          - Applicability: UTC deadline and clock observations compared.
+          - Required/observable: Order/equality corresponds to exact decimal instants.. Forbidden: No millisecond or microsecond rounding.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:41-45.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.DEADLINE. Domain `D.PROVIDER.DEADLINE`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **MONITOR** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.DEADLINE.ACTIVE.MONITOR` - Monitor provider local UTC deadline expiry.
+          - Applicability: Accepted deadline invocation has no terminal commit.
+          - Required/observable: Expiry observed under provider clock.. Forbidden: No ignoring or moving deadline for transport delay.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:29-39.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.DEADLINE. Domain `D.PROVIDER.DEADLINE`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **NO_LATE_COMPLETE** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.DEADLINE.ACTIVE.NO_LATE_COMPLETE` - Do not commit COMPLETED.
+          - Applicability: Terminal commit time is at/after supplied deadline.
+          - Required/observable: COMPLETED ineligible at expiry.. Forbidden: Delivery time does not change commit-time condition.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:29-39.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.DEADLINE. Domain `D.PROVIDER.DEADLINE`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **NO_WORK** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.DEADLINE.ACCEPT.NO_WORK` - Start no capability work.
+          - Applicability: Accepted attempt was expired at acceptance.
+          - Required/observable: Zero capability work.. Forbidden: No work past known deadline.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:29-39.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.DEADLINE. Domain `D.PROVIDER.DEADLINE`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **STOP_WORK** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.DEADLINE.ACTIVE.STOP_WORK` - Stop capability work at expiry.
+          - Applicability: Expiry observed before a terminal commit.
+          - Required/observable: Work stop; no claimed network/OS latency bound.. Forbidden: Do not continue capability work through expired deadline.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:29-39.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.DEADLINE. Domain `D.PROVIDER.DEADLINE`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **TERMINAL** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.DEADLINE.ACCEPT.TERMINAL` - Commit DEADLINE_EXCEEDED.
+          - Applicability: Accepted attempt was expired at acceptance.
+          - Required/observable: One deadline terminal Outcome.. Forbidden: No COMPLETED/CANCELLED/ERROR replacing already-observed expiry.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:29-39.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.DEADLINE. Domain `D.PROVIDER.DEADLINE`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.PROVIDER.DEADLINE.IRREVERSIBLE` - Attempt remains ended despite clock rollback
+        - Applicability: Expiry has been observed.
+        - Required/observable: Terminal immutability under clock adjustment. Forbidden: Do not resurrect expired work
+        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:41-45.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.DEADLINE. Domain `D.PROVIDER.DEADLINE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Eligibility** - 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.PROVIDER.FEATURE.CANCEL` - Reject running cancellation without ending invocation
+        - Applicability: Running capability has cancellation=false.
+        - Required/observable: Cancellation semantics depend on state and feature. Forbidden: Do not remove the universal cancel surface or reject terminal no-op solely for missing feature
+        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/capabilities.md:37-45.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.CONSTRAINTS. Domain `D.PROVIDER.CONSTRAINTS`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.PROVIDER.FEATURE.DEADLINE` - Capability supports and can enforce deadline semantics
+        - Applicability: Invocation includes deadline.
+        - Required/observable: Reject before accepting work. Forbidden: Do not accept a deadline that cannot be honored
+        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/capabilities.md:37-45.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.CONSTRAINTS. Domain `D.PROVIDER.CONSTRAINTS`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+  - **Discovery** - 4 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+    - **Identifiers** - 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.PROVIDER.NAMESPACE.OWNERSHIP` - Third-party publisher controls the reversed-domain prefix of at least two segments used by its identifier; syntax cannot establish this ownership.
+        - Applicability: Third-party publisher chooses an identifier.
+        - Required/observable: Publisher obligation distinct from parser checks. Forbidden: Do not claim syntax validation proves ownership or online registration
+        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/capabilities.md:24-35.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.NAMESPACE. Domain `D.PROVIDER.NAMESPACE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.PROVIDER.NAMESPACE.SYNTAX` - Lowercase ASCII dot segments; third parties have at least three segments; openverify namespace reserved
+        - Applicability: Provider/capability/extension/provider-error identifier is authored.
+        - Required/observable: Lexical rejection for invalid identifiers. Forbidden: Do not treat an ID alone as a capability specification
+        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/capabilities.md:24-35.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.NAMESPACE. Domain `D.PROVIDER.NAMESPACE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Manifest** - 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.PROVIDER.MANIFEST.CAPABILITY_IDENTITY` - Each capability ID/version pair is unique; multiple exact versions of one ID are allowed
+        - Applicability: Manifest advertises capabilities.
+        - Required/observable: Invalid manifest rejects. Forbidden: Do not deduplicate by capability ID alone or accept duplicate pairs
+        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/capabilities.md:9-22.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.MANIFEST. Domain `D.PROVIDER.MANIFEST`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.PROVIDER.MANIFEST.SNAPSHOT` - Keep manifest fixed throughout that initialized session
+        - Applicability: A session initializes.
+        - Required/observable: Stable compatibility and invocation validation. Forbidden: Do not silently substitute identities or capability contracts mid-session
+        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/capabilities.md:3-7.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.MANIFEST. Domain `D.PROVIDER.MANIFEST`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+  - **Errors** - 12 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+    - **Codes** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.PROVIDER.ERROR.CLASSIFY` - Programmatic classification uses stable code; provider failures use namespaced codes outside reserved set
+        - Applicability: ProviderError is consumed.
+        - Required/observable: Reserved vocabulary plus extensible provider namespace. Forbidden: Do not classify from diagnostic message/details or accept unknown bare uppercase codes
+        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/errors.md:3-4.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ERROR.AUTHORITY. Domain `D.ERROR.AUTHORITY`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Peer validation** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.PROVIDER.ERROR.NO_REWRITE` - Report peer validation failure separately
+        - Applicability: Peer emits invalid output.
+        - Required/observable: Preserve distinction between received data and runner diagnosis. Forbidden: Do not rewrite received bytes into fabricated Outcome or FAIL
+        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/errors.md:29-33.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ERROR.AUTHORITY. Domain `D.ERROR.AUTHORITY`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Precedence** - 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **CORRELATION_SCOPE** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.ERROR.PRECEDENCE.CORRELATION_SCOPE` - Correlation/lifecycle is checked before body decoding in the stated correlation cases.
+          - Applicability: Documented conformance correlation/lifecycle case with invalid body..
+          - Required/observable: Correlation-category diagnosis remains independently accountable within its stated scope.. Forbidden: Do not generalize this fixture-protocol statement into a total order among unrelated validation errors.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/errors.md:23-27.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ERROR.AUTHORITY. Domain `D.ERROR.AUTHORITY`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **RECOMMENDED** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.ERROR.PRECEDENCE.RECOMMENDED` - SHOULD report first in JSON/structure/version, manifest, compatibility, capability matching, input, config, constraints, lifecycle, output order unless documented reason.
+          - Applicability: Multiple independent validation failures coexist..
+          - Required/observable: Preferred stable category; no invented universal tie-break.. Forbidden: Do not elevate this recommendation to unconditional MUST precedence.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/errors.md:23-27.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ERROR.AUTHORITY. Domain `D.ERROR.AUTHORITY`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Reserved code** - 8 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **CAPABILITY_UNAVAILABLE** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.ERROR.CAPABILITY_UNAVAILABLE` - Use CAPABILITY_UNAVAILABLE for this declared category; retain diagnostic message/details without classifying from them.
+          - Applicability: A ProviderError is classifying requested capability ID absent..
+          - Required/observable: {'category': 'requested capability ID absent', 'code': 'CAPABILITY_UNAVAILABLE'}. Forbidden: Do not convert this category into verification FAIL or infer unconditional precedence over independent coexisting errors.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/errors.md:9-9.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ERROR.AUTHORITY. Domain `D.ERROR.AUTHORITY`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **CAPABILITY_VERSION_UNSUPPORTED** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.ERROR.CAPABILITY_VERSION_UNSUPPORTED` - Use CAPABILITY_VERSION_UNSUPPORTED for this declared category; retain diagnostic message/details without classifying from them.
+          - Applicability: A ProviderError is classifying ID exists but exact version absent..
+          - Required/observable: {'category': 'ID exists but exact version absent', 'code': 'CAPABILITY_VERSION_UNSUPPORTED'}. Forbidden: Do not convert this category into verification FAIL or infer unconditional precedence over independent coexisting errors.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/errors.md:10-10.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ERROR.AUTHORITY. Domain `D.ERROR.AUTHORITY`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **CONTRACT_VERSION_UNSUPPORTED** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.ERROR.CONTRACT_VERSION_UNSUPPORTED` - Use CONTRACT_VERSION_UNSUPPORTED for this declared category; retain diagnostic message/details without classifying from them.
+          - Applicability: A ProviderError is classifying no common or wrong session contract version..
+          - Required/observable: {'category': 'no common or wrong session contract version', 'code': 'CONTRACT_VERSION_UNSUPPORTED'}. Forbidden: Do not convert this category into verification FAIL or infer unconditional precedence over independent coexisting errors.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/errors.md:8-8.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ERROR.AUTHORITY. Domain `D.ERROR.AUTHORITY`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **INVALID_CONFIG** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.ERROR.INVALID_CONFIG` - Use INVALID_CONFIG for this declared category; retain diagnostic message/details without classifying from them.
+          - Applicability: A ProviderError is classifying config violates declared schema..
+          - Required/observable: {'category': 'config violates declared schema', 'code': 'INVALID_CONFIG'}. Forbidden: Do not convert this category into verification FAIL or infer unconditional precedence over independent coexisting errors.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/errors.md:12-12.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ERROR.AUTHORITY. Domain `D.ERROR.AUTHORITY`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **INVALID_INPUT** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.ERROR.INVALID_INPUT` - Use INVALID_INPUT for this declared category; retain diagnostic message/details without classifying from them.
+          - Applicability: A ProviderError is classifying input violates declared schema..
+          - Required/observable: {'category': 'input violates declared schema', 'code': 'INVALID_INPUT'}. Forbidden: Do not convert this category into verification FAIL or infer unconditional precedence over independent coexisting errors.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/errors.md:13-13.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ERROR.AUTHORITY. Domain `D.ERROR.AUTHORITY`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **INVALID_INVOCATION** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.ERROR.INVALID_INVOCATION` - Use INVALID_INVOCATION for this declared category; retain diagnostic message/details without classifying from them.
+          - Applicability: A ProviderError is classifying malformed invocation, unsupported constraint or VCP version..
+          - Required/observable: {'category': 'malformed invocation, unsupported constraint or VCP version', 'code': 'INVALID_INVOCATION'}. Forbidden: Do not convert this category into verification FAIL or infer unconditional precedence over independent coexisting errors.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/errors.md:11-11.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ERROR.AUTHORITY. Domain `D.ERROR.AUTHORITY`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **INVALID_PROVIDER_OUTPUT** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.ERROR.INVALID_PROVIDER_OUTPUT` - Use INVALID_PROVIDER_OUTPUT for this declared category; retain diagnostic message/details without classifying from them.
+          - Applicability: A ProviderError is classifying malformed manifest/event/outcome, invalid declared output or embedded VCP data..
+          - Required/observable: {'category': 'malformed manifest/event/outcome, invalid declared output or embedded VCP data', 'code': 'INVALID_PROVIDER_OUTPUT'}. Forbidden: Do not convert this category into verification FAIL or infer unconditional precedence over independent coexisting errors.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/errors.md:14-14.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ERROR.AUTHORITY. Domain `D.ERROR.AUTHORITY`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **PROTOCOL_VIOLATION** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.ERROR.PROTOCOL_VIOLATION` - Use PROTOCOL_VIOLATION for this declared category; retain diagnostic message/details without classifying from them.
+          - Applicability: A ProviderError is classifying correlation, sequence, lifecycle, framing, or session rule violated..
+          - Required/observable: {'category': 'correlation, sequence, lifecycle, framing, or session rule violated', 'code': 'PROTOCOL_VIOLATION'}. Forbidden: Do not convert this category into verification FAIL or infer unconditional precedence over independent coexisting errors.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/errors.md:15-15.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ERROR.AUTHORITY. Domain `D.ERROR.AUTHORITY`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+  - **Events** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+    - **Timestamp** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **Advisory clock** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.EVENT.TIMESTAMP` - Timestamp follows the same UTC RFC3339 syntax as deadline; it does not define event ordering.
+          - Applicability: Event optional timestamp supplied..
+          - Required/observable: Sequence/history still determine ordering.. Forbidden: Do not substitute timestamp ordering for sequence order.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/wire-format.md:45-46.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.PAYLOAD. Domain `D.PROVIDER.PAYLOAD`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+  - **Extensions** - 3 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+    - **Optional maps** - 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **ANNOTATION_ONLY** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.EXT.ROUNDTRIP.ANNOTATION_ONLY` - Extension entries are optional annotations and do not alter core meaning.
+          - Applicability: Provider extension data accompanies a core object.
+          - Required/observable: Core interpretation is invariant under optional extension annotations.. Forbidden: Do not smuggle mandatory core-changing semantics into optional entries.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/wire-format.md:57-65.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.EXTENSIONS.ANNOTATIONS. Domain `D.EXTENSIONS.ANNOTATIONS`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **PRESERVE** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.EXT.ROUNDTRIP.PRESERVE` - Preserve its JSON types and values.
+          - Applicability: Unknown optional extension entry parsed and serialized.
+          - Required/observable: Parsed roundtrip JSON equals authored extension data using JSON equality.. Forbidden: No dropping or coercion of unknown data; whitespace/key order are not promised.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/wire-format.md:57-65.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.EXTENSIONS.ANNOTATIONS. Domain `D.EXTENSIONS.ANNOTATIONS`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Scope** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.PROVIDER.EXT.MANDATORY` - Reject operation as PROTOCOL_VIOLATION
+        - Applicability: An implementation requires unnegotiated mandatory extension semantics.
+        - Required/observable: No mandatory extension negotiation in this version. Forbidden: Do not encode required meaning as ignored optional data
+        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/wire-format.md:57-65.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.EXTENSIONS.ANNOTATIONS. Domain `D.EXTENSIONS.ANNOTATIONS`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+  - **Invocation** - 6 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+    - **Acceptance** - 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **CONFIG** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.INVOKE.VALIDATE.CONFIG` - Validate exact config under required matched config_schema before work/events.
+          - Applicability: Matched capability invocation about to be accepted.
+          - Required/observable: INVALID_CONFIG and no capability work.. Forbidden: No absent config schema assumption or overrides.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/wire-format.md:24-33.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.PAYLOAD. Domain `D.PROVIDER.PAYLOAD`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **INPUT** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.INVOKE.VALIDATE.INPUT` - Validate exact input under matched input_schema before work/events.
+          - Applicability: Matched capability invocation about to be accepted.
+          - Required/observable: INVALID_INPUT and no capability work.. Forbidden: No incompatible accepted input or coercion.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/wire-format.md:24-33.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.PAYLOAD. Domain `D.PROVIDER.PAYLOAD`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Context** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **Opaque data** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.INVOKE.CONTEXT_OPAQUE` - Context is arbitrary JSON reference/context data and contains no implicit resolution instruction.
+          - Applicability: Invocation.context supplied..
+          - Required/observable: Exact context JSON remains data.. Forbidden: Do not automatically fetch context reference or treat it as ambient execution authority.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/wire-format.md:24-29.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.WIRE. Domain `D.PROVIDER.WIRE`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Identity** - 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **RETRY** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.WIRE.ATTEMPT_ID.RETRY` - A retry is a new attempt with a new invocation identity.
+          - Applicability: Runner retries capability work.
+          - Required/observable: No portable exactly-once side-effect or replay guarantee.. Forbidden: Do not treat identifier reuse as idempotent replay.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/wire-format.md:19-22.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.WIRE. Domain `D.PROVIDER.WIRE`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **SESSION_UNIQUENESS** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.WIRE.ATTEMPT_ID.SESSION_UNIQUENESS` - Use a nonempty case-sensitive identity not used by an earlier attempt in that session.
+          - Applicability: Invocation offered in one session, including previously rejected attempts.
+          - Required/observable: Reuse is PROTOCOL_VIOLATION.. Forbidden: Do not reuse identifiers after rejection or termination.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/wire-format.md:19-22.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.WIRE. Domain `D.PROVIDER.WIRE`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Outcome** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.PROVIDER.LIFE.OUTPUT` - Validate output against advertised output_schema
+        - Applicability: COMPLETED outcome is emitted.
+        - Required/observable: INVALID_PROVIDER_OUTPUT peer validation failure. Forbidden: Do not turn malformed provider data into verification FAIL
+        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:10-18.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.PAYLOAD. Domain `D.PROVIDER.PAYLOAD`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+  - **Lifecycle** - 5 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+    - **Attempts** - 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **EXACTLY_ONCE** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.LIFE.TERMINAL.EXACTLY_ONCE` - Emit exactly one terminal Outcome for that accepted attempt.
+          - Applicability: Functioning session accepts an invocation.
+          - Required/observable: Terminal cardinality one.. Forbidden: No missing or duplicate terminal.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:10-18.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.ATTEMPT_ACTION. Domain `D.PROVIDER.ATTEMPT_ACTION`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **ZERO_EVENTS** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.LIFE.TERMINAL.ZERO_EVENTS` - Zero intermediate events are permitted.
+          - Applicability: Accepted functioning invocation completes.
+          - Required/observable: Terminal-only attempt legal.. Forbidden: Do not require a progress/evidence heartbeat before outcome.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:10-18.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.ATTEMPT_ACTION. Domain `D.PROVIDER.ATTEMPT_ACTION`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Session** - 3 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.PROVIDER.INIT.ONCE.FAIL_CLOSE` - Close session and begin no work.
+        - Applicability: Initialization rejects.
+        - Required/observable: Closed session.. Forbidden: Do not retain usable failed session.
+        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/versioning.md:6-14.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.INITIALIZATION. Domain `D.PROVIDER.INITIALIZATION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.PROVIDER.INIT.ONCE.ONCE` - No second initialization succeeds; repeated initialization is PROTOCOL_VIOLATION.
+        - Applicability: Session initialized or initialization already attempted.
+        - Required/observable: Session violation.. Forbidden: Do not negotiate again inside same session.
+        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/versioning.md:6-14.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.INITIALIZATION. Domain `D.PROVIDER.INITIALIZATION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.PROVIDER.INIT.ONCE.PREWORK` - No capability work begins.
+        - Applicability: Session not successfully initialized.
+        - Required/observable: No operation work.. Forbidden: Do not invoke before initialization.
+        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/versioning.md:6-14.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.INITIALIZATION. Domain `D.PROVIDER.INITIALIZATION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+  - **Meaning** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+    - **VCP separation** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.PROVIDER.SEMANTIC_BOUNDARY` - Provider completion/error controls operation lifecycle only; VCP owns Subject/Criterion/judgment/control/provenance
+        - Applicability: Provider outcomes/observations are interpreted.
+        - Required/observable: Provider completion/error controls operation lifecycle only; VCP owns Subject/Criterion/judgment/control/provenance. Forbidden: Do not automatically translate Provider ERROR to verification FAIL
+        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/overview.md:11-15.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.CONFORMANCE.SCOPE. Domain `D.CONFORMANCE.SCOPE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+  - **Resources** - 7 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+    - **Budget** - 4 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **PREACCEPT** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.BUDGET.ENFORCE.PREACCEPT` - Reject before accepting work.
+          - Applicability: Provider cannot enforce a supplied budget constraint.
+          - Required/observable: Preaccept rejection.. Forbidden: No silent dimension dropping or promised unenforceable limit.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/wire-format.md:24-33.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.CONSTRAINTS. Domain `D.PROVIDER.CONSTRAINTS`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **TERMINAL** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.BUDGET.ENFORCE.TERMINAL` - End with ERROR and provider-namespaced error.
+          - Applicability: Accepted enforceable budget prevents completion.
+          - Required/observable: ERROR Outcome.. Forbidden: No verification FAIL or fabricated completion.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/wire-format.md:24-33.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.CONSTRAINTS. Domain `D.PROVIDER.CONSTRAINTS`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **UNITS** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.BUDGET.ENFORCE.UNITS` - Honor exact declared dimensions and explicit units without implicit conversion.
+          - Applicability: Resource budget is consumed.
+          - Required/observable: Constraint identity preserved.. Forbidden: No silently dropped constraint or converted unit.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/wire-format.md:24-33.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.CONSTRAINTS. Domain `D.PROVIDER.CONSTRAINTS`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.PROVIDER.BUDGET.EXACT` - Every dimension is an EXACT upper consumption limit in its explicit unit
+        - Applicability: Invocation contains resource_budget.
+        - Required/observable: INVALID_INVOCATION for unsupported constraint. Forbidden: Do not accept estimated/range/unknown limits as enforceable exact budgets
+        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/wire-format.md:24-33.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.CONSTRAINTS. Domain `D.PROVIDER.CONSTRAINTS`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Eligibility** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.PROVIDER.FEATURE.RESOURCE` - No resource_usage event or final usage
+        - Applicability: Capability resource_reporting=false.
+        - Required/observable: Reject forbidden reporting. Forbidden: Do not infer budget enforcement or estimation from reporting=true
+        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/capabilities.md:37-45.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.EVENT_FEATURES. Domain `D.PROVIDER.EVENT_FEATURES`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Usage** - 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **AUTHORITY** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.USAGE.FINAL.AUTHORITY` - Final usage is authoritative for that attempt.
+          - Applicability: Final usage and earlier partial vectors observed.
+          - Required/observable: Final observed vector retained as authoritative.. Forbidden: Do not infer final usage by summing partial snapshots.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:56-59.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.OBSERVATION.USAGE. Domain `D.OBSERVATION.USAGE`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **SNAPSHOTS** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.USAGE.FINAL.SNAPSHOTS` - Each vector is a possibly partial observation snapshot, not an additive delta.
+          - Applicability: Intermediate resource_usage events observed.
+          - Required/observable: No duplicated charge; dimension units and kinds retain VCP meanings.. Forbidden: Do not add snapshots automatically to final usage.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:56-59.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.OBSERVATION.USAGE. Domain `D.OBSERVATION.USAGE`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+  - **Schemas** - 4 canonical primary records; INCOMPLETE.
+    - **Capability schemas** - 4 canonical primary records; INCOMPLETE.
+      - **LOCAL** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.SCHEMA.REFERENCES.LOCAL` - Only # or #/... JSON Pointer references resolving within its own root are supported.
+          - Applicability: Capability schema contains a reference.
+          - Required/observable: Reject unsupported reference resource; offline validation only.. Forbidden: No external resolution.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/capabilities.md:9-22.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SCHEMA.EMBEDDED. Domain `D.SCHEMA.EMBEDDED`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **RESOURCE_SCOPE** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.SCHEMA.REFERENCES.RESOURCE_SCOPE` - Root $id is allowed; nested resource $id, dynamic references and anchors are unsupported.
+          - Applicability: Capability schema defines resource or dynamic scope.
+          - Required/observable: Reject unsupported schema scope features.. Forbidden: Do not silently enable unsupported dynamic/resource resolution.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/capabilities.md:9-22.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SCHEMA.EMBEDDED. Domain `D.SCHEMA.EMBEDDED`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **SCHEMA_TARGET** - 1 canonical primary records; INCOMPLETE.
+        - `CM.PROVIDER.SCHEMA.REFERENCES.SCHEMA_TARGET` - Resolved object/boolean must occupy a standard Draft 2020-12 schema position or $defs.
+          - Applicability: Capability local reference resolves.
+          - Required/observable: Annotation-only targets rejected.. Forbidden: Do not treat arbitrary annotation object as schema merely because it is an object.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/capabilities.md:9-22.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SCHEMA.EMBEDDED. Domain `D.SCHEMA.EMBEDDED`. No test/proof coverage is claimed.
+          - Review status: INCOMPLETE - Q.BOOLEAN_ANNOTATION_REFERENCE.
+      - `CM.PROVIDER.SCHEMA.VALIDITY` - Each is a valid self-contained Draft 2020-12 object/boolean schema
+        - Applicability: Capability input/config/output schemas are published.
+        - Required/observable: Reject invalid provider data. Forbidden: Do not accept invalid schemas merely because a field has object type
+        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/capabilities.md:9-22.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SCHEMA.EMBEDDED. Domain `D.SCHEMA.EMBEDDED`. No test/proof coverage is claimed.
+        - Review status: INCOMPLETE - Q.NONPROGRESSING_SCHEMA_REFERENCE.
+  - **Streaming** - 11 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+    - **Concurrency** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.PROVIDER.LIFE.INTERLEAVING` - Per-attempt event order holds while different attempts may interleave
+        - Applicability: Several accepted invocations share a functioning session.
+        - Required/observable: Independent correlation histories. Forbidden: Do not impose a portable global event order
+        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:10-18.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.ATTEMPT_ACTION. Domain `D.PROVIDER.ATTEMPT_ACTION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Correlation** - 3 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.PROVIDER.LIFE.CORRELATION.AFTER_TERMINAL` - Reject event after terminal.
+        - Applicability: An event arrives for a terminal attempt.
+        - Required/observable: PROTOCOL_VIOLATION.. Forbidden: Do not reopen attempt.
+        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:10-18.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.ATTEMPT_ACTION. Domain `D.PROVIDER.ATTEMPT_ACTION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.PROVIDER.LIFE.CORRELATION.DUPLICATE_OUTCOME` - Reject duplicate Outcome.
+        - Applicability: Another Outcome arrives after terminal.
+        - Required/observable: PROTOCOL_VIOLATION.. Forbidden: Do not overwrite the original terminal state.
+        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:10-18.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.ATTEMPT_ACTION. Domain `D.PROVIDER.ATTEMPT_ACTION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.PROVIDER.LIFE.CORRELATION.UNKNOWN` - Reject correlation.
+        - Applicability: Event/outcome correlation names unknown or rejected attempt.
+        - Required/observable: PROTOCOL_VIOLATION.. Forbidden: Do not create implicit accepted attempt.
+        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:10-18.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.ATTEMPT_ACTION. Domain `D.PROVIDER.ATTEMPT_ACTION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Eligibility** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.PROVIDER.FEATURE.STREAM` - No events may be emitted
+        - Applicability: Capability has streaming=false.
+        - Required/observable: Forbidden stream is invalid provider behavior. Forbidden: Do not infer event support from other feature flags
+        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/capabilities.md:37-45.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.EVENT_FEATURES. Domain `D.PROVIDER.EVENT_FEATURES`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Ordering** - 5 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.PROVIDER.LIFE.SEQUENCE.DUPLICATE` - Reject duplicate sequence.
+        - Applicability: Later event repeats preceding/previous sequence.
+        - Required/observable: PROTOCOL_VIOLATION.. Forbidden: Do not silently drop duplicate or treat it as replay.
+        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:10-18.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.EVENT.SEQUENCE. Domain `D.EVENT.SEQUENCE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.PROVIDER.LIFE.SEQUENCE.FIRST` - sequence equals 1.
+        - Applicability: First event for accepted invocation.
+        - Required/observable: PROTOCOL_VIOLATION for validly typed but wrong first sequence.. Forbidden: Do not start at zero, a larger value or missing sequence.
+        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:10-18.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.EVENT.SEQUENCE. Domain `D.EVENT.SEQUENCE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.PROVIDER.LIFE.SEQUENCE.GAPS` - Accept the sequence gap as legal.
+        - Applicability: Later event with q > p+1 within numeric bounds.
+        - Required/observable: Event remains permitted.. Forbidden: Do not demand contiguous numbering or imply replay.
+        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:10-18.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.EVENT.SEQUENCE. Domain `D.EVENT.SEQUENCE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.PROVIDER.LIFE.SEQUENCE.INCREASE` - sequence q is strictly greater than p.
+        - Applicability: A later event has preceding sequence p.
+        - Required/observable: Per-invocation monotonic order.. Forbidden: Do not accept q <= p.
+        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:10-18.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.EVENT.SEQUENCE. Domain `D.EVENT.SEQUENCE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.PROVIDER.LIFE.SEQUENCE.REORDER` - Reject reordered event.
+        - Applicability: A lower sequence arrives after a higher sequence.
+        - Required/observable: PROTOCOL_VIOLATION.. Forbidden: Do not sort received events to conceal violation.
+        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:10-18.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.EVENT.SEQUENCE. Domain `D.EVENT.SEQUENCE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Payloads** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.PROVIDER.EVENT.PAYLOAD` - progress/diagnostic arbitrary JSON; evidence VCP Evidence; artifact VCP ArtifactRef; resource_usage VCP ResourceVector; extension namespaced namespace plus data
+        - Applicability: A standard event is emitted.
+        - Required/observable: Validate payload using kind-dependent contract. Forbidden: Do not masquerade nonverification observations as VCP Evidence
+        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/wire-format.md:35-35.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.PAYLOAD. Domain `D.PROVIDER.PAYLOAD`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+  - **Transport** - 21 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+    - **Channels** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.PROVIDER.STDIO.CHANNELS` - stdout contains frames only; logs use stderr
+        - Applicability: Provider uses stdio.
+        - Required/observable: Protocol stream remains parseable. Forbidden: Do not mix arbitrary logs into frame stream
+        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/transports.md:8-20.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.TRANSPORT. Domain `D.PROVIDER.TRANSPORT`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Errors** - 5 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **CONTRACT_REJECTION** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.RPC.RESERVED_ERRORS.CONTRACT_REJECTION` - Use application numeric code -32000, ProviderError message, and ProviderError in data.
+          - Applicability: Contract rejects a JSON-RPC request other than invalid params category.
+          - Required/observable: Two authority-separated error classifications in the same response.. Forbidden: Do not conflate string ProviderError.code with numeric RPC code.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/transports.md:48-55.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.TRANSPORT. Domain `D.PROVIDER.TRANSPORT`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **INVALID_INVOKE_PARAMS** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.RPC.RESERVED_ERRORS.INVALID_INVOKE_PARAMS` - Use -32602, with INVALID_INVOCATION data when available.
+          - Applicability: Invoke params invalid.
+          - Required/observable: Invalid params response; no accepted invocation.. Forbidden: Do not require unavailable diagnostic data.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/transports.md:48-55.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.TRANSPORT. Domain `D.PROVIDER.TRANSPORT`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **INVALID_NOTIFICATION** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.RPC.RESERVED_ERRORS.INVALID_NOTIFICATION` - Send no response, record violation and close session.
+          - Applicability: Receiver gets invalid notification.
+          - Required/observable: Session closes; no fabricated request ID or outcome.. Forbidden: Do not reply to a notification even when invalid.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/transports.md:48-55.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.TRANSPORT. Domain `D.PROVIDER.TRANSPORT`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **NUMERIC_CODES** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.RPC.RESERVED_ERRORS.NUMERIC_CODES` - Use -32700 parse, -32600 invalid request, -32601 unknown method, -32602 invalid params, -32603 internal RPC failure.
+          - Applicability: JSON-RPC reports a protocol error.
+          - Required/observable: Corresponding JSON-RPC error object.. Forbidden: Do not replace reserved numeric categories with contract string identifiers.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/transports.md:48-55.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.TRANSPORT. Domain `D.PROVIDER.TRANSPORT`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.PROVIDER.RPC.ERROR_CHANNEL` - Before acceptance use JSON-RPC error; after acceptance execution failures are Outcome in successful result
+        - Applicability: An invoke is accepted or rejected.
+        - Required/observable: Distinct invocation and RPC failure channels. Forbidden: Do not send accepted execution failure as RPC error
+        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/transports.md:33-41.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.TRANSPORT. Domain `D.PROVIDER.TRANSPORT`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Framing** - 5 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **CLOSE** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.STDIO.RECEIVE.CLOSE` - Close as PROTOCOL_VIOLATION without resynchronization.
+          - Applicability: Framing invalid/oversized/truncated.
+          - Required/observable: Failed/closed session state.. Forbidden: No scanning for a later plausible header.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/transports.md:8-20.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.TRANSPORT. Domain `D.PROVIDER.TRANSPORT`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **COALESCED** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.STDIO.RECEIVE.COALESCED` - Decode all complete frames in wire order and retain any partial suffix.
+          - Applicability: One read contains multiple complete frames.
+          - Required/observable: Ordered decoded messages.. Forbidden: Do not discard later frame or combine JSON bodies.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/transports.md:8-20.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.TRANSPORT. Domain `D.PROVIDER.TRANSPORT`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **HEADER** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.STDIO.RECEIVE.HEADER` - Accept ASCII case-insensitive Content-Length with one space and CRLF separator, one header only.
+          - Applicability: Receive a standard frame header.
+          - Required/observable: Header accept/reject.. Forbidden: No Content-Type/duplicate/extra headers.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/transports.md:8-20.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.TRANSPORT. Domain `D.PROVIDER.TRANSPORT`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **PARTIAL** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.STDIO.RECEIVE.PARTIAL` - Buffer valid prefix until complete frame or EOF; EOF truncation violates.
+          - Applicability: Read ends before complete header/body.
+          - Required/observable: No premature decoded message.. Forbidden: No newline-based truncation or speculative result.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/transports.md:8-20.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.TRANSPORT. Domain `D.PROVIDER.TRANSPORT`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.PROVIDER.STDIO.FRAME` - ASCII Content-Length: N CRLF CRLF then exactly N positive UTF-8 JSON-object bytes
+        - Applicability: A stdio frame is sent.
+        - Required/observable: Exact baseline frame encoding. Forbidden: Do not count characters or append newline delimiter
+        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/transports.md:8-20.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.TRANSPORT. Domain `D.PROVIDER.TRANSPORT`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Loss** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.PROVIDER.LOSS.SEPARATE` - Report transport failure separately
+        - Applicability: Process or transport loses pending invocation.
+        - Required/observable: Exactly-once emission does not promise durable delivery/recovery. Forbidden: Do not fabricate Provider Outcome or VCP FAIL
+        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/lifecycle.md:61-64.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.TRANSPORT. Domain `D.PROVIDER.TRANSPORT`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Methods** - 5 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **IDS** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.RPC.METHODS.IDS` - Use nonempty string RPC id unique for entire session and distinct correlation role from invocation_id.
+          - Applicability: Runner sends baseline request.
+          - Required/observable: RPC correlation identity.. Forbidden: No id reuse including completed requests.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/transports.md:22-24.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.TRANSPORT. Domain `D.PROVIDER.TRANSPORT`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **NULL** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.RPC.CANCEL_ACK.NULL` - Return JSON null acknowledgement.
+          - Applicability: A supported or terminal-no-op cancel processed.
+          - Required/observable: RPC cancel result null.. Forbidden: No synthetic cancelled Outcome as acknowledgement value.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/transports.md:43-46.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.TRANSPORT. Domain `D.PROVIDER.TRANSPORT`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **OPERATIONS** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.RPC.METHODS.OPERATIONS` - initialize/invoke/cancel are runner requests with their declared results; event is provider notification with no response.
+          - Applicability: Baseline binding exchanges method messages.
+          - Required/observable: Four declared method shapes.. Forbidden: No invented describe/pause/resume/checkpoint methods or common host parity.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/transports.md:22-24.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.TRANSPORT. Domain `D.PROVIDER.TRANSPORT`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **PARAMS** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.RPC.METHODS.PARAMS` - Use one object-params message, no batches.
+          - Applicability: Baseline request received.
+          - Required/observable: Request-shape acceptance.. Forbidden: No array params/batch requests under this binding.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/transports.md:22-24.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.TRANSPORT. Domain `D.PROVIDER.TRANSPORT`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **RACE** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.RPC.CANCEL_ACK.RACE` - Either acknowledgement order relative to terminal is permitted.
+          - Applicability: Cancel acknowledgement and invoke terminal delivered.
+          - Required/observable: Two legal interleavings.. Forbidden: No guaranteed cancelled termination or fixed ack ordering.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/transports.md:43-46.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.TRANSPORT. Domain `D.PROVIDER.TRANSPORT`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Ordering** - 4 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **CONTROL_PROGRESS** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.RPC.ACCEPT_ORDER.CONTROL_PROGRESS` - Continue reading control requests while invokes are pending.
+          - Applicability: Accepted invoke remains pending.
+          - Required/observable: Cancel can be processed during execution; no timing bound invented.. Forbidden: Do not block all control reception behind terminal completion.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/transports.md:33-41.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.TRANSPORT. Domain `D.PROVIDER.TRANSPORT`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **DUAL_CORRELATION** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.RPC.EVENT_BEFORE_RESULT.DUAL_CORRELATION` - Correlate response RPC ID and invocation_id with established requests/attempts.
+          - Applicability: Runner receives response or event.
+          - Required/observable: Violation if either correlation is invalid.. Forbidden: No unsolicited response or unknown/rejected-attempt notification.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/transports.md:33-41.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.TRANSPORT. Domain `D.PROVIDER.TRANSPORT`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **EVENT_ORDER** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.RPC.EVENT_BEFORE_RESULT.EVENT_ORDER` - Write every event for that invocation before its terminal invoke response.
+          - Applicability: Invocation events and its terminal response written.
+          - Required/observable: Per-attempt frame order events before response.. Forbidden: No event after terminal response.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/transports.md:33-41.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.TRANSPORT. Domain `D.PROVIDER.TRANSPORT`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **RECEIVE_ORDER** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.PROVIDER.RPC.ACCEPT_ORDER.RECEIVE_ORDER` - Validate and accept or reject invoke in receive order before processing later cancel.
+          - Applicability: Invoke and subsequent cancel received.
+          - Required/observable: Cancellation correlation observes prior invoke disposition.. Forbidden: Do not let later cancel overtake attempt establishment.
+          - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/transports.md:33-41.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.TRANSPORT. Domain `D.PROVIDER.TRANSPORT`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+  - **Wire** - 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+    - **Numbers** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.PROVIDER.WIRE.NUMBERS` - Integral numeric notation counts as integer; preserve faithful JSON mathematical value
+        - Applicability: A numeric value is consumed.
+        - Required/observable: Reject unfaithfully representable values. Forbidden: Do not coerce booleans/strings or silently round unrepresentable data
+        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/wire-format.md:12-17.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.WIRE. Domain `D.PROVIDER.WIRE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Optional fields** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.PROVIDER.WIRE.NULL` - Optional typed core fields are absent rather than null, except arbitrary JSON value payloads where null is data
+        - Applicability: Optional Provider core field is absent or supplied.
+        - Required/observable: Structural/semantic rejection or exact payload preservation. Forbidden: Do not normalize arbitrary null input/config/output/context/details/payload/extension data to absence
+        - Authority: NORMATIVE_PROVIDER_CONTRACT; source provider-contract/spec/draft/wire-format.md:3-10.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.WIRE. Domain `D.PROVIDER.WIRE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+  - **Wire roots** - 9 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+    - **cancel-request** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.PROVIDER.ROOT.CANCEL_REQUEST` - Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Applicability: Wire object submitted to this named root.
+        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Authority: NORMATIVE_SCHEMA_ROOT; source provider-contract/schemas/draft/cancel-request.schema.json:1-28.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.PROVIDER.cancel-request. Domain `D.ROOT.PROVIDER.cancel-request`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **capability** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.PROVIDER.ROOT.CAPABILITY` - Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Applicability: Wire object submitted to this named root.
+        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Authority: NORMATIVE_SCHEMA_ROOT; source provider-contract/schemas/draft/capability.schema.json:1-80.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.PROVIDER.capability. Domain `D.ROOT.PROVIDER.capability`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **initialize-request** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.PROVIDER.ROOT.INITIALIZE_REQUEST` - Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Applicability: Wire object submitted to this named root.
+        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Authority: NORMATIVE_SCHEMA_ROOT; source provider-contract/schemas/draft/initialize-request.schema.json:1-38.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.PROVIDER.initialize-request. Domain `D.ROOT.PROVIDER.initialize-request`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **initialize-result** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.PROVIDER.ROOT.INITIALIZE_RESULT` - Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Applicability: Wire object submitted to this named root.
+        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Authority: NORMATIVE_SCHEMA_ROOT; source provider-contract/schemas/draft/initialize-result.schema.json:1-27.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.PROVIDER.initialize-result. Domain `D.ROOT.PROVIDER.initialize-result`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **invocation** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.PROVIDER.ROOT.INVOCATION` - Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Applicability: Wire object submitted to this named root.
+        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Authority: NORMATIVE_SCHEMA_ROOT; source provider-contract/schemas/draft/invocation.schema.json:1-60.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.PROVIDER.invocation. Domain `D.ROOT.PROVIDER.invocation`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **outcome** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.PROVIDER.ROOT.OUTCOME` - Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Applicability: Wire object submitted to this named root.
+        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Authority: NORMATIVE_SCHEMA_ROOT; source provider-contract/schemas/draft/outcome.schema.json:1-92.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.PROVIDER.outcome. Domain `D.ROOT.PROVIDER.outcome`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **provider-error** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.PROVIDER.ROOT.PROVIDER_ERROR` - Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Applicability: Wire object submitted to this named root.
+        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Authority: NORMATIVE_SCHEMA_ROOT; source provider-contract/schemas/draft/provider-error.schema.json:1-38.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.PROVIDER.provider-error. Domain `D.ROOT.PROVIDER.provider-error`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **provider-event** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.PROVIDER.ROOT.PROVIDER_EVENT` - Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Applicability: Wire object submitted to this named root.
+        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Authority: NORMATIVE_SCHEMA_ROOT; source provider-contract/schemas/draft/provider-event.schema.json:1-131.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.PROVIDER.provider-event. Domain `D.ROOT.PROVIDER.provider-event`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **provider-manifest** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.PROVIDER.ROOT.PROVIDER_MANIFEST` - Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Applicability: Wire object submitted to this named root.
+        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Authority: NORMATIVE_SCHEMA_ROOT; source provider-contract/schemas/draft/provider-manifest.schema.json:1-56.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.PROVIDER.provider-manifest. Domain `D.ROOT.PROVIDER.provider-manifest`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+- **RELAY** - 161 canonical primary records; INCOMPLETE.
+  - **Architecture** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+    - **Module boundaries** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.ARCH.DEPENDENCIES` - Core depends on SDK rules; application depends on core/ports/SDK without infrastructure or standard providers; adapters implement ports; entrypoints/facade compose; authoring depends on VCP SDK.
+        - Applicability: Maintain Relay module structure.
+        - Required/observable: Static module dependency boundaries.. Forbidden: No Reference Engine imports or global mutable run containers introduced into Relay.
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/architecture.md:24-29.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.ARCHITECTURE. Domain `D.RELAY.ARCHITECTURE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+  - **Binding** - 4 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+    - **Binder errors** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.BINDER.FAILURE_CLASS` - Guard choice/trust/compatibility validation; preserve structured errors; unexpected failures become BINDER_FAILURE retaining cause; candidates carry independent manifests without replacing trusted catalog snapshot.
+        - Applicability: Binder invocation and returned choice validation executes.
+        - Required/observable: Exact Relay error/cause and no invocation.. Forbidden: No untrusted substituted identity/schema or invocation following rejection.
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/error-contract-hardening.md:46-60.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.BINDING. Domain `D.RELAY.BINDING`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Catalog errors** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.CATALOG.FAILURE_CLASS` - Preserve structured protocol errors; classify invalid returned type/entry as CATALOG_INVALID, unexpected discovery/iteration failure as CATALOG_FAILURE with chained type/message cause, duplicate provider identity as PROVIDER_CONFLICT.
+        - Applicability: Catalog registration/discovery/Sequence snapshot or iteration executes.
+        - Required/observable: Exact local Relay error category and retained cause.. Forbidden: Do not invoke a provider after catalog rejection or merge these into portable VCP codes.
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/error-contract-hardening.md:46-60.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.BINDING. Domain `D.RELAY.BINDING`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **DeterministicBinder** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.BIND.SELECT` - Unique compatible provider or exact explicit identity
+        - Applicability: Requirement is matched.
+        - Required/observable: Unique compatible provider or exact explicit identity; No range/fallback; ambiguity/unavailable/mismatch rejects. Forbidden: No range/fallback; ambiguity/unavailable/mismatch rejects
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/providers.md:31-37.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.BINDING. Domain `D.RELAY.BINDING`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Injected binder** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.BIND.CHECK` - Independently check trusted catalog and exact manifest/capability identities
+        - Applicability: Injected binder returns provider.
+        - Required/observable: Independently check trusted catalog and exact manifest/capability identities; Replacement binder does not bypass trust. Forbidden: Replacement binder does not bypass trust
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/architecture.md:49-53.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.BINDING. Domain `D.RELAY.BINDING`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+  - **Binding and execution** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+    - **Invocation** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **Supported constraint surface** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.RELAY.INVOCATION.CONSTRAINT_SCOPE` - Generated invocation contains exact input/config, selected pair, contract0.1 and VCPdraft; it supplies no Provider deadline or resource_budget. Runtime host timeout remains separate and node resource_estimate is not converted to budget.
+          - Applicability: Relay.run creates graph or custom-policy InvocationRequest..
+          - Required/observable: Provider deadline traces belong to standalone Provider Contract SDK domain; host cancellation remains explicit Relay/VCP event.. Forbidden: Do not promise Provider deadline/budget entrypoint parity or expect unsolicited DEADLINE_EXCEEDED/CANCELLED from a correct provider on an unrequested path.
+          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/relay/application/execution.py:42-68.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.DRIVER. Domain `D.RELAY.DRIVER`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+  - **Cancellation** - 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+    - **Recorded token** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.CANCEL.TOKEN` - Serialize occurrence to fit one-interrupted-attempt provenance
+        - Applicability: Host uses recorded Cancellation token.
+        - Required/observable: Serialize occurrence to fit one-interrupted-attempt provenance; No simultaneous multi-attempt VCP cancellation claim. Forbidden: No simultaneous multi-attempt VCP cancellation claim
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/architecture.md:72-76.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.SCHEDULER. Domain `D.RELAY.SCHEDULER`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Task** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.CANCEL.TASK` - Clean up processes; raise CancelledError
+        - Applicability: Host task cancelled.
+        - Required/observable: Clean up processes; raise CancelledError; No fabricated completed record; unrelated runs unaffected. Forbidden: No fabricated completed record; unrelated runs unaffected
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/architecture.md:72-76.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.SCHEDULER. Domain `D.RELAY.SCHEDULER`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+  - **Discovery** - 3 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+    - **Catalog** - 3 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **DUPLICATE** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.RELAY.CATALOG.TRUST.DUPLICATE` - Reject duplicate identity pair.
+          - Applicability: Catalog registration repeats provider_id/provider_version.
+          - Required/observable: Catalog registration error.. Forbidden: No silent replacement or duplicate compatible provider.
+          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/providers.md:31-37.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.BINDING. Domain `D.RELAY.BINDING`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **HOST** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.RELAY.CATALOG.TRUST.HOST` - Only explicit trusted host registration/configuration authorizes execution.
+          - Applicability: Provider registered or transport configured.
+          - Required/observable: Trusted catalog authority independent of graph data.. Forbidden: Graph JSON cannot authorize executable loading.
+          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/providers.md:31-37.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.BINDING. Domain `D.RELAY.BINDING`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.CATALOG.ENTRYPOINTS` - Only host-approved names execute factories
+        - Applicability: Host loads package provider entry points.
+        - Required/observable: Only host-approved names execute factories; No ownership authentication from entry name. Forbidden: No ownership authentication from entry name
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/providers.md:39-41.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.BINDING. Domain `D.RELAY.BINDING`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+  - **Entrypoints** - 17 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+    - **CLI** - 6 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **ERROR** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.RELAY.CLI.EXIT.ERROR` - Return exit 2 if any recorded Result is execution ERROR.
+          - Applicability: CLI has valid RunRecord.
+          - Required/observable: Error has precedence over ordinary judgment failure.. Forbidden: Do not return FAIL or success exit instead.
+          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/quickstart.md:55-58.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.CLI.EXIT_QUOTIENT. Domain `D.RELAY.CLI.EXIT_QUOTIENT`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **FAIL** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.RELAY.CLI.EXIT.FAIL` - Return exit 1 if any selected terminal Result has verdict FAIL, after checking execution ERROR anywhere. Terminal selection excludes Results with a strict descendant represented in final_results.
+          - Applicability: No execution ERROR and a terminal judgment FAIL exists.
+          - Required/observable: Fail exit.. Forbidden: Do not claim overall semantic verdict from code alone.
+          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/quickstart.md:55-58.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.CLI.EXIT_QUOTIENT. Domain `D.RELAY.CLI.EXIT_QUOTIENT`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **OTHER** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.RELAY.CLI.EXIT.OTHER` - Return exit 3 after no execution ERROR anywhere, no selected terminal FAIL, and selected set empty or not all selected verdicts PASS.
+          - Applicability: Record satisfies none of ERROR, FAIL or nonempty all-PASS conditions.
+          - Required/observable: Undetermined exit.. Forbidden: No success for unknown, score-only, nonexecution or partial determination.
+          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/quickstart.md:55-58.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.CLI.EXIT_QUOTIENT. Domain `D.RELAY.CLI.EXIT_QUOTIENT`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **PASS** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.RELAY.CLI.EXIT.PASS` - Return exit 0 iff every selected Result has verdict PASS; selected Results have no strict graph descendant represented in final_results.
+          - Applicability: No execution ERROR anywhere, no FAIL in selected terminal Result subgraph, selected set nonempty..
+          - Required/observable: Exit 0 for all-PASS terminal Result subgraph.. Forbidden: Do not reuse passing_gate over every recorded Result: earlier nonterminal Results may differ.
+          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/quickstart.md:55-58.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.CLI.EXIT_QUOTIENT. Domain `D.RELAY.CLI.EXIT_QUOTIENT`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.CLI.JSON` - stdout only RunRecord; diagnostics stderr; output option stores record
+        - Applicability: CLI run uses --json.
+        - Required/observable: stdout only RunRecord; diagnostics stderr; output option stores record; No diagnostic prose mixed into JSON stdout. Forbidden: No diagnostic prose mixed into JSON stdout
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/quickstart.md:14-16.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.ENTRYPOINTS. Domain `D.RELAY.ENTRYPOINTS`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.CLI.STDIN` - Exactly one stdin consumer; --run-inputs aliases --inputs
+        - Applicability: stdin used for graph or inputs.
+        - Required/observable: Exactly one stdin consumer; --run-inputs aliases --inputs; Reject both consumers on stdin. Forbidden: Reject both consumers on stdin
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/quickstart.md:43-46.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.ENTRYPOINTS. Domain `D.RELAY.ENTRYPOINTS`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **CLI operations** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.CLI.OPERATIONS` - Expose validate/inspect/run, providers list/inspect, examples/templates alias, mcp and http. Validation named type defaults Definition; inspect returns validated summary; provider commands return standard manifests or unknown-id error; examples return named authored summaries; run uses exact trusted config/roots/bindings and documented stdout/exit map.
+        - Applicability: Installed openverify command invoked.
+        - Required/observable: JSON/summary, process host error exit2; mcp/http start configured local service.. Forbidden: No arbitrary graph-authorized executable, invented MCP/HTTP parity or portable CLI semantics.
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/relay/entrypoints/cli.py:95-204.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.ENTRYPOINTS. Domain `D.RELAY.ENTRYPOINTS`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **GraphService** - 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.SERVICE.ALLOWLIST` - Host-authorized names only; defaults text/guardrail
+        - Applicability: Named graph requested.
+        - Required/observable: Host-authorized names only; defaults text/guardrail; No arbitrary graph paths or executable-config tools. Forbidden: No arbitrary graph paths or executable-config tools
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/integration.md:39-45.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.ENTRYPOINTS. Domain `D.RELAY.ENTRYPOINTS`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.SERVICE.CONCURRENCY` - Bound active service runs, default eight, separately from per-run waves
+        - Applicability: Concurrent service requests.
+        - Required/observable: Bound active service runs, default eight, separately from per-run waves; No automatic provider concurrency safety. Forbidden: No automatic provider concurrency safety
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/integration.md:59-63.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.ENTRYPOINTS. Domain `D.RELAY.ENTRYPOINTS`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **HTTP** - 6 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **INVALID_INPUT** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.RELAY.HTTP.SHAPE.INVALID_INPUT` - Return exception as_dict with HTTP 400.
+          - Applicability: ProtocolError raised while parsing request/authorized run input.
+          - Required/observable: Structured diagnostic response.. Forbidden: Do not run action or disguise invalid request as Result FAIL.
+          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/integration.md:72-74.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.ENTRYPOINTS. Domain `D.RELAY.ENTRYPOINTS`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **REQUEST** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.RELAY.HTTP.SHAPE.REQUEST` - Accept exactly graph string and inputs JSON object naming host-authorized graph.
+          - Applicability: POST /verify after authorization and body bound.
+          - Required/observable: Malformed shape/request is HTTP 400 INVALID_REQUEST.. Forbidden: No extra keys, arbitrary graph paths or executable config.
+          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/integration.md:72-74.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.ENTRYPOINTS. Domain `D.RELAY.ENTRYPOINTS`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **SEMANTIC_FAILURE** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.RELAY.HTTP.SHAPE.SEMANTIC_FAILURE` - Return HTTP 200 with full RunRecord.
+          - Applicability: Authorized valid run completes with verification FAIL.
+          - Required/observable: Completed FAIL remains inspectable.. Forbidden: Do not conflate verification failure with request/transport error.
+          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/integration.md:72-74.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.ENTRYPOINTS. Domain `D.RELAY.ENTRYPOINTS`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.HTTP.AUTH` - Require matching Bearer token before execution
+        - Applicability: Host configured token.
+        - Required/observable: Require matching Bearer token before execution; Missing/bad token HTTP 401. Forbidden: Missing/bad token HTTP 401
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/integration.md:86-91.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.ENTRYPOINTS. Domain `D.RELAY.ENTRYPOINTS`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.HTTP.BOUND` - HTTP 413, default 1 MiB
+        - Applicability: Body exceeds configured bound.
+        - Required/observable: HTTP 413, default 1 MiB; Do not execute oversized body. Forbidden: Do not execute oversized body
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/integration.md:86-91.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.ENTRYPOINTS. Domain `D.RELAY.ENTRYPOINTS`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.HTTP.HEALTH` - Report health; supplied server binds localhost
+        - Applicability: Health requested.
+        - Required/observable: Report health; supplied server binds localhost; No tenant/TLS/public-service promise. Forbidden: No tenant/TLS/public-service promise
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/integration.md:72-74.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.ENTRYPOINTS. Domain `D.RELAY.ENTRYPOINTS`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **MCP** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.MCP.TOOLS` - list_graphs, describe_graph, run_graph, inspect_result expose structured records
+        - Applicability: MCP client connects.
+        - Required/observable: list_graphs, describe_graph, run_graph, inspect_result expose structured records; No automatic host hooks/Python execution tool. Forbidden: No automatic host hooks/Python execution tool
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/integration.md:39-45.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.ENTRYPOINTS. Domain `D.RELAY.ENTRYPOINTS`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Trusted provider configuration** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.PROVIDER_CONFIG.TRUST` - Read stdio manifest/argv/cwd and optional entry-point allowlist and exact four-field bindings as trusted host configuration, independent of graph JSON.
+        - Applicability: Host supplies CLI provider configuration.
+        - Required/observable: Explicit configured catalog and binding choices.. Forbidden: Never authorize an executable from graph input/config; do not authenticate a package from its entry name.
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/providers.md:52-65.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.BINDING. Domain `D.RELAY.BINDING`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+  - **Execution** - 3 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+    - **Driver** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.DRIVER.CHECK` - Recheck Provider lifecycle/correlation/output and VCP acceptance
+        - Applicability: Driver returns report.
+        - Required/observable: Recheck Provider lifecycle/correlation/output and VCP acceptance; No bypass through injected driver. Forbidden: No bypass through injected driver
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/architecture.md:49-53.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.DRIVER. Domain `D.RELAY.DRIVER`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Event capture** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.DRIVER.BOUNDS` - Configured count/byte bounds, default 10000 events and 16 MiB
+        - Applicability: Events captured.
+        - Required/observable: Configured count/byte bounds, default 10000 events and 16 MiB; No unbounded capture or resource-cost interpretation. Forbidden: No unbounded capture or resource-cost interpretation
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/security.md:35-42.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.DRIVER. Domain `D.RELAY.DRIVER`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Timeout** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.DRIVER.TIMEOUT` - Independent host timeout, default 30 seconds
+        - Applicability: Invocation active.
+        - Required/observable: Independent host timeout, default 30 seconds; Do not invent provider deadline/budget; timeout ERROR not FAIL. Forbidden: Do not invent provider deadline/budget; timeout ERROR not FAIL
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/security.md:35-42.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.DRIVER. Domain `D.RELAY.DRIVER`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+  - **Extension ports** - 7 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+    - **EventObserver** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **observe** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.RELAY.PORT.EventObserver.observe` - Receive occurrence/node/provider notification and return None; Relay isolates callback exceptions and annotates diagnostics.
+          - Applicability: Host supplies a conforming replacement and otherwise-valid boundary inputs..
+          - Required/observable: Receive occurrence/node/provider notification and return None; Relay isolates callback exceptions and annotates diagnostics.. Forbidden: Do not make observer diagnostics semantic Evidence or a mandatory closed event alphabet.
+          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/relay/ports/__init__.py:74-75.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.STORAGE_OBSERVATION. Domain `D.RELAY.STORAGE_OBSERVATION`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **ExecutionDriver** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **execute** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.RELAY.PORT.ExecutionDriver.execute` - Given provider, manifest/invocation request, host timeout and sink, return InvocationReport retaining legal events and terminal outcome or separate execution/transport error. Application revalidates report.
+          - Applicability: Host supplies a conforming replacement and otherwise-valid boundary inputs..
+          - Required/observable: Given provider, manifest/invocation request, host timeout and sink, return InvocationReport retaining legal events and terminal outcome or separate execution/transport error. Application revalidates report.. Forbidden: Do not fabricate a provider Outcome for transport failure or bypass contract validation.
+          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/relay/ports/__init__.py:59-75.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.DRIVER. Domain `D.RELAY.DRIVER`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **ProviderBinder** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **bind** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.RELAY.PORT.ProviderBinder.bind` - Given validated requirement/providers and optional explicit binding, return the exact compatible trusted choice or declared binding/unavailable/ambiguity failure.
+          - Applicability: Host supplies a conforming replacement and otherwise-valid boundary inputs..
+          - Required/observable: Given validated requirement/providers and optional explicit binding, return the exact compatible trusted choice or declared binding/unavailable/ambiguity failure.. Forbidden: No silent fallback or untrusted identity substitution.
+          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/relay/ports/__init__.py:50-68.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.BINDING. Domain `D.RELAY.BINDING`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **ProviderCatalog** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **providers** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.RELAY.PORT.ProviderCatalog.providers` - Returns the trusted AvailableProvider sequence with valid manifest snapshots; registration/discovery is host-owned.
+          - Applicability: Host supplies a conforming replacement and otherwise-valid boundary inputs..
+          - Required/observable: Returns the trusted AvailableProvider sequence with valid manifest snapshots; registration/discovery is host-owned.. Forbidden: Do not infer a portable discovery policy or execute unapproved factories.
+          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/relay/ports/__init__.py:46-64.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.BINDING. Domain `D.RELAY.BINDING`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **ProviderTransport** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **invoke** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.RELAY.PORT.ProviderTransport.invoke` - Given one validated invocation request and sink, deliver permitted ProviderEvents and return terminal Outcome under the supported transport.
+          - Applicability: Host supplies a conforming replacement and otherwise-valid boundary inputs..
+          - Required/observable: Given one validated invocation request and sink, deliver permitted ProviderEvents and return terminal Outcome under the supported transport.. Forbidden: No Provider semantic redefinition or primitive port auto-wrapping.
+          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/relay/ports/__init__.py:19-37.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.DRIVER. Domain `D.RELAY.DRIVER`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **RecordStore** - 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **get** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.RELAY.PORT.RecordStore.get` - Return retained RunRecord snapshot or None when unavailable.
+          - Applicability: Host supplies a conforming replacement and otherwise-valid boundary inputs..
+          - Required/observable: Return retained RunRecord snapshot or None when unavailable.. Forbidden: Do not fabricate missing records or share mutable stored instances.
+          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/relay/ports/__init__.py:69-75.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.STORAGE_OBSERVATION. Domain `D.RELAY.STORAGE_OBSERVATION`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **put** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.RELAY.PORT.RecordStore.put` - Given a valid completed record, persist a snapshot or propagate storage failure.
+          - Applicability: Host supplies a conforming replacement and otherwise-valid boundary inputs..
+          - Required/observable: Given a valid completed record, persist a snapshot or propagate storage failure.. Forbidden: No claim of universal durability or accepting mutation as stored state.
+          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/relay/ports/__init__.py:69-75.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.STORAGE_OBSERVATION. Domain `D.RELAY.STORAGE_OBSERVATION`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+  - **Invocation callbacks** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+    - **EventSink** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **emit(event)** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.RELAY.PORT.EventSink.emit` - For this invocation, synchronously report validated correlated events to the runner callback.
+          - Applicability: Host supplies a conforming replacement and otherwise-valid boundary inputs..
+          - Required/observable: For this invocation, synchronously report validated correlated events to the runner callback.. Forbidden: Callback is not an eighth extension port or a terminal Outcome.
+          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/relay/ports/__init__.py:10-28.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.DRIVER. Domain `D.RELAY.DRIVER`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+  - **Observability** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+    - **Observer** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.OBSERVER.ERROR` - Isolate and annotate diagnostic
+        - Applicability: Observer callback raises.
+        - Required/observable: Isolate and annotate diagnostic; Do not abort semantic run solely for observer failure. Forbidden: Do not abort semantic run solely for observer failure
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/architecture.md:85-89.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.STORAGE_OBSERVATION. Domain `D.RELAY.STORAGE_OBSERVATION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+  - **Policies** - 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+    - **Occurrence** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.POLICY.NO_RECORD` - Raise NO_OCCURRENCE with no RunRecord
+        - Applicability: Opportunity inactive or unselected.
+        - Required/observable: Raise NO_OCCURRENCE with no RunRecord; Do not fabricate occurrence. Forbidden: Do not fabricate occurrence
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/architecture.md:55-62.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.HOST_API. Domain `D.RELAY.HOST_API`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Opportunity** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.POLICY.IDENTITY` - Generate fresh UUID; explicit identity supports local repeatability
+        - Applicability: Relay host omits opportunity identity.
+        - Required/observable: Generate fresh UUID; explicit identity supports local repeatability; No portable probability bucket promise. Forbidden: No portable probability bucket promise
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/architecture.md:55-62.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.HOST_API. Domain `D.RELAY.HOST_API`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+  - **Preparation** - 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+    - **Inputs** - 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **BIND_BEFORE_POLICIES** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.RELAY.PREP.SNAPSHOT.BIND_BEFORE_POLICIES` - Resolve graph and policy operation bindings before invoking policies.
+          - Applicability: Definition and inputs valid.
+          - Required/observable: Binding failure precedes any policy execution.. Forbidden: Scheduling must not perform hidden selection or defer required binding validation.
+          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/architecture.md:55-62.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.BINDING. Domain `D.RELAY.BINDING`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **SNAPSHOT** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.RELAY.PREP.SNAPSHOT.SNAPSHOT` - Snapshot and validate definition and supplied JSON inputs.
+          - Applicability: Relay run begins.
+          - Required/observable: Occurrence retains prepared snapshots.. Forbidden: No caller mutation may change authored occurrence stimulus after preparation.
+          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/architecture.md:55-62.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.BINDING. Domain `D.RELAY.BINDING`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+  - **Process execution** - 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+    - **Host configuration** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.PROCESS.ARGV_ENV` - Use argv and explicit absolute cwd without shell=True; inherit host environment unless complete env supplied, supplement only required Windows SystemRoot.
+        - Applicability: Launch a trusted configured subprocess.
+        - Required/observable: Actual launch arguments/environment and host-owned privileges.. Forbidden: Graph configuration never grants executable authorization; do not silently copy ambient secrets into semantic inputs/log payloads.
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/security.md:27-33.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.PROCESS. Domain `D.RELAY.PROCESS`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Windows lifetime** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.PROCESS.WINDOWS_PRESTART` - Establish kill-on-close Job Object before tool code starts; descendants remain in job after parent exit.
+        - Applicability: A Windows tool is launched under Relay supervision.
+        - Required/observable: Prestart supervision and tree cleanup boundary.. Forbidden: Do not claim containment against hostile process escaping OS mechanisms or cross-platform test execution.
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/security.md:44-50.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.PROCESS. Domain `D.RELAY.PROCESS`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+  - **Providers** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+    - **Concurrency** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.PROVIDER.SHARING` - Serialize unless explicit concurrency_safe=True
+        - Applicability: Host shares Python provider.
+        - Required/observable: Serialize unless explicit concurrency_safe=True; No implicit provider state safety. Forbidden: No implicit provider state safety
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/architecture.md:72-76.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.SCHEDULER. Domain `D.RELAY.SCHEDULER`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+  - **Public API** - 9 canonical primary records; INCOMPLETE.
+    - **Relay.run** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.API.RUN` - Accept Graph/Definition/serialized VCP through same validation path; return Run(record)
+        - Applicability: Host submits graph representation and explicit inputs.
+        - Required/observable: Accept Graph/Definition/serialized VCP through same validation path; return Run(record); No representation-specific semantics or fabricated global verdict. Forbidden: No representation-specific semantics or fabricated global verdict
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/architecture.md:8-22.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.HOST_API. Domain `D.RELAY.HOST_API`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Run** - 5 canonical primary records; INCOMPLETE.
+      - **DECISIONS** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.RELAY.API.VIEWS.DECISIONS` - decisions returns exactly NodeRecord decisions that are present, keyed by node_id.
+          - Applicability: Run returned.
+          - Required/observable: Accepted recorded Decisions only.. Forbidden: No synthesized decisions for other nodes.
+          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/architecture.md:31-38.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.HOST_API. Domain `D.RELAY.HOST_API`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **EVIDENCE** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.RELAY.API.VIEWS.EVIDENCE` - evidence returns each node observation evidence followed by its Result evidence.
+          - Applicability: Run returned.
+          - Required/observable: Ordered evidence snapshots per node.. Forbidden: Repeated snapshots do not imply additional measurements.
+          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/architecture.md:31-38.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.HOST_API. Domain `D.RELAY.HOST_API`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **RESULTS** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.RELAY.API.VIEWS.RESULTS` - results returns complete final_results mapping including bookkeeping states.
+          - Applicability: Run returned.
+          - Required/observable: Per-node final Results.. Forbidden: No fabricated overall verdict.
+          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/architecture.md:31-38.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.HOST_API. Domain `D.RELAY.HOST_API`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **SERIALIZATION** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.RELAY.API.VIEWS.SERIALIZATION` - to_json serializes complete SDK RunRecord.
+          - Applicability: Run returned.
+          - Required/observable: Wire-compatible complete record JSON.. Forbidden: No lossy display-only summary as serialized provenance.
+          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/architecture.md:31-38.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.HOST_API. Domain `D.RELAY.HOST_API`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **USAGE** - 1 canonical primary records; INCOMPLETE.
+        - `CM.RELAY.API.VIEWS.USAGE` - usage returns per-node node usage preserving dimensions/units.
+          - Applicability: Run returned.
+          - Required/observable: Per-node ResourceVector mapping.. Forbidden: No automatic global summation or conversion.
+          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/architecture.md:31-38.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.HOST_API. Domain `D.RELAY.HOST_API`. No test/proof coverage is claimed.
+          - Review status: INCOMPLETE - Q.RELAY_TIMING_KEY.
+    - **verify_before** - 3 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **ACTION** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.RELAY.API.GATE.ACTION` - Invoke and await provided action once and return its result.
+          - Applicability: Verification passes selected gate.
+          - Required/observable: Action result or action exception delivered to caller.. Forbidden: No promise to mediate unrelated host actions.
+          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/integration.md:16-25.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.HOST_API. Domain `D.RELAY.HOST_API`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **POLICY** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.RELAY.API.GATE.POLICY` - Require nonempty Results and every Result EXECUTED SUCCESS APPLICABLE KNOWN PASS.
+          - Applicability: Default passing_gate applied to Run.
+          - Required/observable: Boolean acceptance exactly equals this conjunction.. Forbidden: Reject FAIL, UNKNOWN, ERROR, nonexecution, NOT_APPLICABLE and score-only outcomes.
+          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/integration.md:16-25.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.HOST_API. Domain `D.RELAY.HOST_API`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **WAIT** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.RELAY.API.GATE.WAIT` - Await verification and gate before invoking action.
+          - Applicability: verify_before called with zero-argument async action.
+          - Required/observable: GATE_REJECTED on rejected gate; verification errors propagate.. Forbidden: Do not invoke action on gate rejection or verification failure.
+          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/integration.md:16-25.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.HOST_API. Domain `D.RELAY.HOST_API`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+  - **Public SDK** - 48 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+    - **FileAccess** - 4 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **BOUNDS** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.SDK.FILEACCESS.BOUNDS` - Default max_bytes2MiB and max_files10000; enforce configured bounds.
+          - Applicability: Read/selection performed.
+          - Required/observable: Bounded data or error.. Forbidden: No unbounded file observation or selection.
+          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/standard/filesystem.py:17-61.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.READ_FILE. Domain `D.STANDARD.READ_FILE`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **RELATIVE** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.SDK.FILEACCESS.RELATIVE` - Require explicit base or exactly one configured root.
+          - Applicability: Relative path supplied.
+          - Required/observable: Deterministic anchored path or ValueError.. Forbidden: No ambient choice among multiple roots.
+          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/standard/filesystem.py:17-61.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.READ_FILE. Domain `D.STANDARD.READ_FILE`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **ROOTS** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.SDK.FILEACCESS.ROOTS` - Resolve symlinks and require containment in a resolved authorized root.
+          - Applicability: FileAccess authorizes a local path.
+          - Required/observable: Authorized resolved path or rejection.. Forbidden: No escaping symlink or unauthored root authorization.
+          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/standard/filesystem.py:17-61.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.READ_FILE. Domain `D.STANDARD.READ_FILE`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **SNAPSHOT** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.SDK.FILEACCESS.SNAPSHOT` - Return exact bounded bytes and identity path,sha256,size from the same read bytes.
+          - Applicability: File bytes successfully read.
+          - Required/observable: Hash and size identify returned byte sequence.. Forbidden: No second changing read for identity.
+          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/standard/filesystem.py:17-61.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.READ_FILE. Domain `D.STANDARD.READ_FILE`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **FunctionProvider** - 9 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.FUNCTION_PROVIDER.ASYNC` - Reject non-coroutine functions with TypeError.
+        - Applicability: A computation is decorated.
+        - Required/observable: Decorator failure before registration.. Forbidden: Do not run blocking sync callback inside wrapper.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/relay/providers.py:127-166.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.FUNCTION_PROVIDER. Domain `D.SDK.FUNCTION_PROVIDER`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.FUNCTION_PROVIDER.BUDGET` - Reject before computation because wrapper cannot enforce budgets.
+        - Applicability: Invocation contains resource_budget.
+        - Required/observable: Pre-work rejection.. Forbidden: Do not silently ignore upper limits.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/relay/providers.py:56-124.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.FUNCTION_PROVIDER. Domain `D.SDK.FUNCTION_PROVIDER`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.FUNCTION_PROVIDER.DECISION` - Normalize to decision port mapping.
+        - Applicability: Coroutine returns Decision.
+        - Required/observable: Output object.. Forbidden: Do not coerce Decision into Result.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/relay/providers.py:56-124.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.FUNCTION_PROVIDER. Domain `D.SDK.FUNCTION_PROVIDER`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.FUNCTION_PROVIDER.EXCEPTION` - Yield ERROR with openverify.computation_error.
+        - Applicability: Computation raises ordinary exception.
+        - Required/observable: ERROR Outcome.. Forbidden: Do not convert exception into binary FAIL.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/relay/providers.py:56-124.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.FUNCTION_PROVIDER. Domain `D.SDK.FUNCTION_PROVIDER`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.FUNCTION_PROVIDER.MANIFEST` - Validate and publish the exact supplied identity/schemas with Contract 0.1, VCP draft and streaming/cancellation/resource reporting enabled, deadlines disabled.
+        - Applicability: Decorator has explicit schemas/kind/identities.
+        - Required/observable: Validated manifest.. Forbidden: Do not advertise deadline enforcement.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/relay/providers.py:127-166.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.FUNCTION_PROVIDER. Domain `D.SDK.FUNCTION_PROVIDER`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.FUNCTION_PROVIDER.OBSERVATION` - Emit observation evidence and nonempty usage before terminal; preserve usage on explicit execution error.
+        - Applicability: Coroutine returns ExecutionObservation.
+        - Required/observable: Events plus final usage.. Forbidden: Do not lose valid reported incurred usage because semantic outputs fail later.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/relay/providers.py:56-124.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.FUNCTION_PROVIDER. Domain `D.SDK.FUNCTION_PROVIDER`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.FUNCTION_PROVIDER.POLICY` - Return outcome as the direct output object.
+        - Applicability: Coroutine returns Activation/Selection/Admission.
+        - Required/observable: Policy wire object.. Forbidden: Do not wrap as result/decision port mapping.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/relay/providers.py:56-124.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.FUNCTION_PROVIDER. Domain `D.SDK.FUNCTION_PROVIDER`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.FUNCTION_PROVIDER.RESULT` - Normalize to result port mapping; retain Result usage as observation usage.
+        - Applicability: Coroutine returns Result.
+        - Required/observable: COMPLETED output object or later contract validation.. Forbidden: Do not apply this wrapping rule to arbitrary external transport output.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/relay/providers.py:56-124.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.FUNCTION_PROVIDER. Domain `D.SDK.FUNCTION_PROVIDER`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.FUNCTION_PROVIDER.TASK_CANCEL` - Propagate CancelledError.
+        - Applicability: Invocation coroutine is cancelled by asyncio.
+        - Required/observable: Task cancellation.. Forbidden: Do not fabricate provider COMPLETED Outcome.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/relay/providers.py:56-124.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.FUNCTION_PROVIDER. Domain `D.SDK.FUNCTION_PROVIDER`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Graph constructor** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.AUTHORING.CONSTRUCTOR` - Default exact version1, declared-input subject {id,type,locator.graph}, Criterion tied to id, judgment schema true and MANUAL/EXPLICIT/ALWAYS policy are materialized; explicit supplied objects replace corresponding defaults.
+        - Applicability: Host authors Graph(id,...).
+        - Required/observable: Authored portable Definition after build validation.. Forbidden: No hidden runtime semantic inputs or automatic executable authorization.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/authoring/graph.py:72-99.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.AUTHORING. Domain `D.SDK.AUTHORING`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Graph.add_node** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.AUTHORING.GRAPH.ADD_NODE` - Add a deep copy of an explicitly supplied SDK graph node.
+        - Applicability: Host authors a graph.
+        - Required/observable: Documented local authoring result or validation error.. Forbidden: Do not create a second protocol semantics or bypass ordinary validation.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/authoring/graph.py:232-240.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.AUTHORING.GRAPH.ADD_NODE. Domain `D.SDK.AUTHORING.GRAPH.ADD_NODE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Graph.aggregate** - 3 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **CONFIG** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.SDK.AUTHORING.GRAPH.AGGREGATE.CONFIG` - For openverify.aggregate write explicit reducer and handling; missing or empty supplied handling convenience authors REJECT for every exceptional class. Custom capability retains supplied config.
+          - Applicability: Graph.aggregate capability/config supplied.
+          - Required/observable: Complete authored config in resulting definition.. Forbidden: Do not call this builder default a hidden portable reducer default.
+          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/authoring/graph.py:192-224.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.AUTHORING. Domain `D.SDK.AUTHORING`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **ORDER** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.SDK.AUTHORING.GRAPH.AGGREGATE.ORDER` - Declare aggregate_inputs in authored map order and members Constant equal to that name list.
+          - Applicability: Graph.aggregate members ordered map supplied.
+          - Required/observable: Custom and standard Aggregate receive explicit member order.. Forbidden: No edge-order or JSON key-order implicit membership.
+          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/authoring/graph.py:192-224.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.AUTHORING. Domain `D.SDK.AUTHORING`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **RESERVED** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.SDK.AUTHORING.GRAPH.AGGREGATE.RESERVED` - Reject subject, criterion or members as member names.
+          - Applicability: Graph.aggregate member name supplied.
+          - Required/observable: ValueError.. Forbidden: No collision with reserved semantic inputs.
+          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/authoring/graph.py:192-224.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.AUTHORING. Domain `D.SDK.AUTHORING`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Graph.build** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.AUTHORING.GRAPH.BUILD` - Construct, serialize and parse a validated portable VerificationDefinition snapshot.
+        - Applicability: Host authors a graph.
+        - Required/observable: Documented local authoring result or validation error.. Forbidden: Do not create a second protocol semantics or bypass ordinary validation.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/authoring/graph.py:242-253.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.AUTHORING.GRAPH.BUILD. Domain `D.SDK.AUTHORING.GRAPH.BUILD`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Graph.edge** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.AUTHORING.GRAPH.EDGE` - Append dependency edge; replacing the same source/destination pair updates its guard.
+        - Applicability: Host authors a graph.
+        - Required/observable: Documented local authoring result or validation error.. Forbidden: Do not create a second protocol semantics or bypass ordinary validation.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/authoring/graph.py:226-230.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.AUTHORING.GRAPH.EDGE. Domain `D.SDK.AUTHORING.GRAPH.EDGE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Graph.input** - 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **PORT** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.SDK.AUTHORING.GRAPH.INPUT.PORT` - Append port with copied schema; required uses BLOCK; optional with explicit Constant uses DEFAULT, otherwise OMIT.
+          - Applicability: Graph.input called.
+          - Required/observable: Typed declaration in builder.. Forbidden: No implicit schema default insertion.
+          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/authoring/graph.py:94-111.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.AUTHORING. Domain `D.SDK.AUTHORING`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **REF** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.SDK.AUTHORING.GRAPH.INPUT.REF` - Return RUN_INPUT Ref naming declared input with copied schema.
+          - Applicability: Graph.input called.
+          - Required/observable: Explicit reusable Ref.. Forbidden: No ambient Context lookup source.
+          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/authoring/graph.py:94-111.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.AUTHORING. Domain `D.SDK.AUTHORING`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Graph.inspect** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.AUTHORING.GRAPH.INSPECT` - Build and call inspect_definition on the validated snapshot.
+        - Applicability: Host authors a graph.
+        - Required/observable: Documented local authoring result or validation error.. Forbidden: Do not create a second protocol semantics or bypass ordinary validation.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/authoring/graph.py:258-259.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.AUTHORING.GRAPH.INSPECT. Domain `D.SDK.AUTHORING.GRAPH.INSPECT`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Graph.node** - 6 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **BINDINGS** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.SDK.AUTHORING.GRAPH.NODE.BINDINGS` - Deepcopy source constructors into bindings; synthesize required BLOCK ports from Ref schema unless explicit input_port with that name supplied.
+          - Applicability: Graph.node input Refs supplied.
+          - Required/observable: Authored typed port/binding pair.. Forbidden: Do not derive data from dependency edges.
+          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/authoring/graph.py:113-181.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.AUTHORING. Domain `D.SDK.AUTHORING`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **CONFIG_SNAPSHOT** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.SDK.AUTHORING.GRAPH.NODE.CONFIG_SNAPSHOT` - Deepcopy config, optional config_schema and estimate into authored node.
+          - Applicability: Graph.node config/schema/estimate supplied.
+          - Required/observable: Independent node settings snapshot.. Forbidden: Later caller mutation cannot replace copied authored fields.
+          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/authoring/graph.py:113-181.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.AUTHORING. Domain `D.SDK.AUTHORING`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **DEPENDENCIES** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.SDK.AUTHORING.GRAPH.NODE.DEPENDENCIES` - Add prerequisite edges to authored predecessor identities, once per distinct predecessor in this call.
+          - Applicability: Input Ref is UPSTREAM_OUTPUT or explicit dependencies supplied.
+          - Required/observable: Required ordering paths materialized.. Forbidden: Dependencies alone do not transfer values.
+          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/authoring/graph.py:113-181.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.AUTHORING. Domain `D.SDK.AUTHORING`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **OPERATION** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.SDK.AUTHORING.GRAPH.NODE.OPERATION` - Materialize exact capability_id/version and selected node kind.
+          - Applicability: Graph.node called with typed arguments.
+          - Required/observable: New SDK Node in builder state.. Forbidden: Operation identity never authorizes imports or fallback.
+          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/authoring/graph.py:113-181.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.AUTHORING. Domain `D.SDK.AUTHORING`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **OUTPUTS** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.SDK.AUTHORING.GRAPH.NODE.OUTPUTS` - Declare INFORMATION outputs plus result RESULT for EVAL/AGG or decision DECISION forCONTROL.
+          - Applicability: Graph.node declared information outputs supplied.
+          - Required/observable: Returned NodeRef exposes exactly declared output names.. Forbidden: Do not fabricate primary Result for DERIVE.
+          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/authoring/graph.py:113-181.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.AUTHORING. Domain `D.SDK.AUTHORING`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **SEMANTIC_INPUTS** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.SDK.AUTHORING.GRAPH.NODE.SEMANTIC_INPUTS` - Bind exact definition subject and criterion Constants as explicit semantic ports; reject caller overriding either reserved binding.
+          - Applicability: Builder authors EVALUATE or AGGREGATE.
+          - Required/observable: ValueError on reserved override; exact authored snapshots otherwise.. Forbidden: No implicit ambient subject or criterion selected from config.
+          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/authoring/graph.py:113-181.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.AUTHORING. Domain `D.SDK.AUTHORING`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Graph.to_json** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.AUTHORING.GRAPH.TO_JSON` - Serialize the built validated definition.
+        - Applicability: Host authors a graph.
+        - Required/observable: Documented local authoring result or validation error.. Forbidden: Do not create a second protocol semantics or bypass ordinary validation.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/authoring/graph.py:261-262.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.AUTHORING.GRAPH.TO_JSON. Domain `D.SDK.AUTHORING.GRAPH.TO_JSON`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Graph.validate** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.AUTHORING.GRAPH.VALIDATE` - Build and validate; return None if successful.
+        - Applicability: Host authors a graph.
+        - Required/observable: Documented local authoring result or validation error.. Forbidden: Do not create a second protocol semantics or bypass ordinary validation.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/authoring/graph.py:255-256.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.AUTHORING.GRAPH.VALIDATE. Domain `D.SDK.AUTHORING.GRAPH.VALIDATE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **GraphService.definition** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.SERVICE.GRAPHSERVICE.DEFINITION` - Return a newly parsed stored graph snapshot; unauthorized name raises GRAPH_UNAVAILABLE.
+        - Applicability: Authorized name.
+        - Required/observable: Definition or RelayError.. Forbidden: Do not expose arbitrary executable or graph-path loading.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/relay/entrypoints/service.py:35-38.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.SERVICE.GRAPHSERVICE.DEFINITION. Domain `D.SDK.SERVICE.GRAPHSERVICE.DEFINITION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **GraphService.describe_graph** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.SERVICE.GRAPHSERVICE.DESCRIBE_GRAPH` - Inspect authorized definition without invocation.
+        - Applicability: Graph name.
+        - Required/observable: Definition summary or GRAPH_UNAVAILABLE.. Forbidden: Do not expose arbitrary executable or graph-path loading.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/relay/entrypoints/service.py:43-44.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.SERVICE.GRAPHSERVICE.DESCRIBE_GRAPH. Domain `D.SDK.SERVICE.GRAPHSERVICE.DESCRIBE_GRAPH`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **GraphService.inspect_result** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.SERVICE.GRAPHSERVICE.INSPECT_RESULT` - Read service store; absent record raises RUN_UNAVAILABLE, otherwise return record data.
+        - Applicability: Run id.
+        - Required/observable: Record or RelayError.. Forbidden: Do not expose arbitrary executable or graph-path loading.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/relay/entrypoints/service.py:53-59.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.SERVICE.GRAPHSERVICE.INSPECT_RESULT. Domain `D.SDK.SERVICE.GRAPHSERVICE.INSPECT_RESULT`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **GraphService.list_graphs** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.SERVICE.GRAPHSERVICE.LIST_GRAPHS` - Return sorted authorized graph names.
+        - Applicability: Service constructed.
+        - Required/observable: Sorted list.. Forbidden: Do not expose arbitrary executable or graph-path loading.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/relay/entrypoints/service.py:40-41.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.SERVICE.GRAPHSERVICE.LIST_GRAPHS. Domain `D.SDK.SERVICE.GRAPHSERVICE.LIST_GRAPHS`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **GraphService.run_graph** - 3 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **AUTHORIZATION** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.SDK.SERVICE.GRAPHSERVICE.RUN_GRAPH.AUTHORIZATION` - Resolve only host-authorized named graph.
+          - Applicability: run_graph called.
+          - Required/observable: GRAPH_UNAVAILABLE for unknown name.. Forbidden: No arbitrary file path or graph JSON service execution.
+          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/relay/entrypoints/service.py:46-51.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.ENTRYPOINTS. Domain `D.RELAY.ENTRYPOINTS`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **LIMIT** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.SDK.SERVICE.GRAPHSERVICE.RUN_GRAPH.LIMIT` - Hold service semaphore during awaited Relay.run.
+          - Applicability: Authorized run requested.
+          - Required/observable: Active run bound respected.. Forbidden: No promise that service limit replaces provider concurrency safety.
+          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/relay/entrypoints/service.py:46-51.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.ENTRYPOINTS. Domain `D.RELAY.ENTRYPOINTS`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **RESULT** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.SDK.SERVICE.GRAPHSERVICE.RUN_GRAPH.RESULT` - Return full RunRecord wire data.
+          - Applicability: Authorized run completes.
+          - Required/observable: Structured complete provenance JSON.. Forbidden: Do not convert completed verification FAIL into service exception.
+          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/relay/entrypoints/service.py:46-51.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.ENTRYPOINTS. Domain `D.RELAY.ENTRYPOINTS`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **NodeRef.__getitem__** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.NODE.OUTPUT` - Return the declared output Ref; undeclared name raises KeyError.
+        - Applicability: Output name requested.
+        - Required/observable: Ref or KeyError.. Forbidden: Do not synthesize undeclared output.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/authoring/graph.py:45-46.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.NODE.OUTPUT. Domain `D.SDK.NODE.OUTPUT`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Relay.run_sync** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.RELAY.RUN_SYNC` - Execute Relay.run through asyncio.run and return Run.
+        - Applicability: No already-running event loop in this calling thread.
+        - Required/observable: Run or propagated error.. Forbidden: Do not claim compatibility with nested event loops or expose a cancellation argument absent from this signature.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/relay/api.py:143-150.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.RELAY.RUN_SYNC. Domain `D.SDK.RELAY.RUN_SYNC`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **RuntimeConfig.__post_init__** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.RELAY.CONFIG` - Require exact positive integer max_concurrency and finite positive timeout; reject invalid settings with ValueError.
+        - Applicability: Host configuration constructed.
+        - Required/observable: Constructed config or ValueError.. Forbidden: Do not accept Boolean max_concurrency as an integer.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/relay/config.py:17-21.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.RELAY.CONFIG. Domain `D.SDK.RELAY.CONFIG`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Shipped graph builders** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.TEMPLATES` - Return ordinary authored Graph. text requires Migration/Rollback and prohibits TODO/TBD with ALL; document adds read_text. guardrail action_policy->ALL->gate. code WORKTREE/untracked captures scope, Ruff F and Python print AST, AST changed-line filtering, post-tool freshness and ALL; code_spans also filters Ruff.
+        - Applicability: Host requests text/document/guardrail/code/code_spans template.
+        - Required/observable: Inspectable ordinary VCP graph with declared inputs and exact typed links.. Forbidden: No hidden index bytes, factual/semantic checking, host-action execution, different graph language or auto tool installation.
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/relay/templates.py:1-129.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.STANDARD_HOST. Domain `D.RELAY.STANDARD_HOST`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Tools** - 3 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **DISCOVERY** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.SDK.TOOLS.DISCOVERY` - Resolve active Python scripts directory then PATH; explicit host paths remain authoritative.
+          - Applicability: installed_tools invoked.
+          - Required/observable: Tools configuration, with missing tools diagnosable.. Forbidden: Do not infer a successful tool run from discovery.
+          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/standard/tools.py:1-52.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.STANDARD_HOST. Domain `D.RELAY.STANDARD_HOST`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **EXECUTABLE** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.SDK.TOOLS.EXECUTABLE` - Select configured named Ruff/pytest/astgrep executable or raise actionable FileNotFoundError.
+          - Applicability: Tool executable requested.
+          - Required/observable: Configured executable path or missing-tool error.. Forbidden: No tool emulation.
+          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/standard/tools.py:1-52.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.STANDARD_HOST. Domain `D.RELAY.STANDARD_HOST`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **FILES** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.SDK.TOOLS.FILES` - Authorize cwd and each target inside cwd, keep existing files in authored input order and skip absent/nonfile candidates.
+          - Applicability: Tool target list supplied.
+          - Required/observable: Ordered authorized existing file list.. Forbidden: No target outside cwd or unauthorized root.
+          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/standard/tools.py:1-52.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.STANDARD_HOST. Domain `D.RELAY.STANDARD_HOST`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **constant** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.REFERENCE.CONSTANT` - Return Ref carrying a CONSTANT ValueSource and the supplied schema.
+        - Applicability: JSON value and optional schema.
+        - Required/observable: Ref value/schema.. Forbidden: Do not infer hidden runtime context.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/authoring/references.py:16-17.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.REFERENCE.CONSTANT. Domain `D.SDK.REFERENCE.CONSTANT`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **external** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.REFERENCE.EXTERNAL` - Return Ref carrying an EXTERNAL_REFERENCE source and object schema.
+        - Applicability: ArtifactRef supplied.
+        - Required/observable: Ref preserving reference.. Forbidden: Do not fetch referenced bytes.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/authoring/references.py:20-21.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.REFERENCE.EXTERNAL. Domain `D.SDK.REFERENCE.EXTERNAL`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **serve_stdio** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.SERVE_STDIO` - Read and emit published framed requests/events/results with observed session/lifecycle validation; accept/reject controls in receive order, active invokes are tasks; cancel delegates and emits requested CANCELLED when helper interrupts; EOF awaits/validates completion, finally cancels remaining tasks.
+        - Applicability: Trusted SDK Provider is served on stdio under supported helper constraints.
+        - Required/observable: Framed standard binding exchange or propagated helper/protocol failure.. Forbidden: No discovery/pooling/replay/physical deadline or budget enforcement promised; logs cannot enter stdout framing; failure is not a fabricated VCP FAIL.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/relay/adapters/server.py:25-125.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PROVIDER_SERVER. Domain `D.SDK.PROVIDER_SERVER`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+  - **Records** - 6 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+    - **Acceptance** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.STORE.VALIDATE` - Parse RunRecord before storage and return
+        - Applicability: Occurrence finishes.
+        - Required/observable: Parse RunRecord before storage and return; Do not persist/return contradictory record as valid. Forbidden: Do not persist/return contradictory record as valid
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/architecture.md:85-89.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.STORAGE_OBSERVATION. Domain `D.RELAY.STORAGE_OBSERVATION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Annotations** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.ANNOTATION.SCOPE` - Optional unauthenticated annotation supplements normative ProviderBinding
+        - Applicability: Invocation correlation metadata retained.
+        - Required/observable: Optional unauthenticated annotation supplements normative ProviderBinding; No replacement of graph binding or VCP authentication/replay promise. Forbidden: No replacement of graph binding or VCP authentication/replay promise
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/architecture.md:85-89.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.STORAGE_OBSERVATION. Domain `D.RELAY.STORAGE_OBSERVATION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Default stores** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.STORE.DUPLICATE` - Reject duplicate identity with ValueError and preserve existing snapshot. JsonlStore loads every existing line at construction and propagates malformed/duplicate/I/O errors; get returns new parsed snapshot or None.
+        - Applicability: Default MemoryStore or JsonlStore receives a RunRecord whose run_id is already retained.
+        - Required/observable: Stored snapshot/get/None or propagated store error.. Forbidden: No silent overwrite, deep mutable history rewriting, fsync/transaction/multiprocess guarantee.
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/relay/adapters/memory.py:8-21.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.STORAGE_OBSERVATION. Domain `D.RELAY.STORAGE_OBSERVATION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Stores** - 3 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.STORE.COPY` - Snapshot both directions
+        - Applicability: Memory/JSONL store writes or retrieves.
+        - Required/observable: Snapshot both directions; Caller mutation must not alter retained record. Forbidden: Caller mutation must not alter retained record
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/integration.md:113-119.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.STORAGE_OBSERVATION. Domain `D.RELAY.STORAGE_OBSERVATION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.STORE.ERROR` - Propagate to host
+        - Applicability: Store operation fails.
+        - Required/observable: Propagate to host; Do not claim persistence success. Forbidden: Do not claim persistence success
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/integration.md:113-119.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.STORAGE_OBSERVATION. Domain `D.RELAY.STORAGE_OBSERVATION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.STORE.SCOPE` - Memory volatile; JSONL single-process nontransactional append/reload
+        - Applicability: Host chooses supplied store.
+        - Required/observable: Memory volatile; JSONL single-process nontransactional append/reload; No fsync/multiprocess/durable recovery promise. Forbidden: No fsync/multiprocess/durable recovery promise
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/limitations.md:7-40.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.STORAGE_OBSERVATION. Domain `D.RELAY.STORAGE_OBSERVATION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+  - **Scheduler** - 5 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+    - **Acceptance** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.SCHED.ORDER` - Accept records in definition order within wave
+        - Applicability: Wave tasks finish in arbitrary order.
+        - Required/observable: Accept records in definition order within wave; Completion order must not change Control semantics. Forbidden: Completion order must not change Control semantics
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/architecture.md:64-70.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.SCHEDULER. Domain `D.RELAY.SCHEDULER`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Barriers** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.SCHED.CONTROL` - Serial barrier without concurrently affected wave peers
+        - Applicability: Control is ready.
+        - Required/observable: Serial barrier without concurrently affected wave peers; Do not race STOP/ROUTE/RETRY/DEFER with active independent work. Forbidden: Do not race STOP/ROUTE/RETRY/DEFER with active independent work
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/architecture.md:64-70.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.SCHEDULER. Domain `D.RELAY.SCHEDULER`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Concurrent runs** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.SCHED.ISOLATION` - Keep states/inputs/records/cancellation occurrence-local
+        - Applicability: Relay serves concurrent runs on one event loop.
+        - Required/observable: Keep states/inputs/records/cancellation occurrence-local; Do not share mutable run state. Forbidden: Do not share mutable run state
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/architecture.md:72-76.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.SCHEDULER. Domain `D.RELAY.SCHEDULER`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Waves** - 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **BARRIER** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.RELAY.SCHED.WAVE.BARRIER` - Wait for every wave member before starting successors.
+          - Applicability: At least one wave member still unsettled.
+          - Required/observable: Whole-wave completion precedes successor invocation.. Forbidden: No early consumer start after only one producer settles.
+          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/architecture.md:64-70.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.SCHEDULER. Domain `D.RELAY.SCHEDULER`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **MEMBERSHIP** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.RELAY.SCHED.WAVE.MEMBERSHIP` - Select a ready wave bounded by configured max_concurrency.
+          - Applicability: Ready independent non-Control nodes eligible.
+          - Required/observable: Wave consists only of currently eligible non-Control nodes.. Forbidden: No unready node or Control peer in parallel wave.
+          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/architecture.md:64-70.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.SCHEDULER. Domain `D.RELAY.SCHEDULER`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+  - **Standard providers** - 42 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+    - **Action policy** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.ACTION.PREFIX` - Only descendants of valid relative prefixes pass; tmp and tmp/ equivalent; prefix itself, siblings, absolute/traversal/ambiguous paths fail
+        - Applicability: Action policy authorizes delete target.
+        - Required/observable: Only descendants of valid relative prefixes pass; tmp and tmp/ equivalent; prefix itself, siblings, absolute/traversal/ambiguous paths fail. Forbidden: Do not grant filesystem access or authenticate a later resolved target
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/providers.md:72-91.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.ACTION_POLICY. Domain `D.STANDARD.ACTION_POLICY`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Coordinates** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.SCOPE.RANGES` - Half-open end coordinates; zero-length ranges intersect nothing; return original finding file strings/coordinates
+        - Applicability: Scope compares source ranges.
+        - Required/observable: Half-open end coordinates; zero-length ranges intersect nothing; return original finding file strings/coordinates. Forbidden: Do not mutate reported coordinates via lexical normalization
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/providers.md:112-118.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.SCOPE. Domain `D.STANDARD.SCOPE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Default catalog** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.STANDARD.CATALOG` - Create 17 standard providers: text; json_parse/schema; read_text/read_file/select_files; scope/no_findings; git_scope/candidate_unchanged; action_policy/gate; command_check; ruff; pytest; astgrep; aggregate. Register concurrency_safe=True; roots default construction cwd, supplied Tools.access takes precedence.
+        - Applicability: Host constructs standard_catalog with optional roots/Tools.
+        - Required/observable: Trusted Catalog with exact version1 standard capabilities.. Forbidden: No generic command launcher or unbundled external engine automatically registered.
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/standard/__init__.py:21-65.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.STANDARD_HOST. Domain `D.RELAY.STANDARD_HOST`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **FileAccess** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.SECURITY.FILES` - Authorize resolved roots/cwd, reject escaping symlinks and enforce read/selection bounds
+        - Applicability: Filesystem provider reads/selects.
+        - Required/observable: Authorize resolved roots/cwd, reject escaping symlinks and enforce read/selection bounds; No graph-granted access or atomic hostile-race sandbox. Forbidden: No graph-granted access or atomic hostile-race sandbox
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/security.md:18-25.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.READ_FILE. Domain `D.STANDARD.READ_FILE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Git** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.SECURITY.FRESHNESS` - Compare observed worktree/HEAD/content identities later
+        - Applicability: Candidate freshness checked.
+        - Required/observable: Compare observed worktree/HEAD/content identities later; No atomic snapshot or guaranteed change/revert detection. Forbidden: No atomic snapshot or guaranteed change/revert detection
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/security.md:60-66.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.CANDIDATE_UNCHANGED. Domain `D.STANDARD.CANDIDATE_UNCHANGED`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Git scope** - 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.GIT.CHANGES` - Untracked gets whole-file new ranges; renames retain old/new identities; deletions reported separately/excluded from executable file scope
+        - Applicability: git_scope observes changes.
+        - Required/observable: Untracked gets whole-file new ranges; renames retain old/new identities; deletions reported separately/excluded from executable file scope. Forbidden: Do not assign new-file lines to zero-count deletions
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/providers.md:129-136.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.GIT_SCOPE. Domain `D.STANDARD.GIT_SCOPE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.GIT.MODES` - WORKTREE compares base to tracked worktree; STAGED base to index; UNSTAGED index to worktree with empty base; include_untracked explicit
+        - Applicability: git_scope is configured.
+        - Required/observable: WORKTREE compares base to tracked worktree; STAGED base to index; UNSTAGED index to worktree with empty base; include_untracked explicit. Forbidden: Do not claim tools checked index bytes merely from STAGED scope
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/providers.md:129-136.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.GIT_SCOPE. Domain `D.STANDARD.GIT_SCOPE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Scope paths** - 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.SCOPE.INVALID` - Empty file list selects nothing; empty directory, NUL, traversal, ambiguous Windows paths/reserved paths reject; dot explicitly selects cwd
+        - Applicability: Scope provider validates selection.
+        - Required/observable: Empty file list selects nothing; empty directory, NUL, traversal, ambiguous Windows paths/reserved paths reject; dot explicitly selects cwd. Forbidden: Do not broaden invalid input into unrestricted selection
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/providers.md:112-118.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.SCOPE. Domain `D.STANDARD.SCOPE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.SCOPE.PATH` - Platform-native component/case rules; relative paths use cwd; trailing separator preserves directory membership; POSIX backslash literal
+        - Applicability: Scope provider compares paths.
+        - Required/observable: Platform-native component/case rules; relative paths use cwd; trailing separator preserves directory membership; POSIX backslash literal. Forbidden: Do not use string prefix matching that includes selected-other or require files to exist
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/providers.md:102-110.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.SCOPE. Domain `D.STANDARD.SCOPE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Text** - 4 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **LINECOL** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.RELAY.TEXT.COORDINATES.LINECOL` - Lines and columns are one-based.
+          - Applicability: Text finding has line/column coordinates.
+          - Required/observable: Line counts newlines before offset; column is offset since preceding newline plus one.. Forbidden: Do not expose zero-based tool coordinates directly.
+          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/providers.md:93-98.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.TEXT. Domain `D.STANDARD.TEXT`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **OFFSETS** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.RELAY.TEXT.COORDINATES.OFFSETS` - Offsets are zero-based Unicode character indexes with exclusive end.
+          - Applicability: Text finding has start/end offsets.
+          - Required/observable: Exact character range identifies the literal occurrence.. Forbidden: Do not count UTF8 bytes.
+          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/providers.md:93-98.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.TEXT. Domain `D.STANDARD.TEXT`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **TERMS** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.RELAY.TEXT.COORDINATES.TERMS` - Concatenate declared bound terms and configured terms in their respective order.
+          - Applicability: Text input and config terms supplied.
+          - Required/observable: Both sets participate in literal checks.. Forbidden: Config cannot replace bound terms.
+          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/providers.md:93-98.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.TEXT. Domain `D.STANDARD.TEXT`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.SECURITY.TEXT` - Bounded regex worker and capped findings
+        - Applicability: Regex/literal capability executes.
+        - Required/observable: Bounded regex worker and capped findings; Deterministic text properties are not factual truth. Forbidden: Deterministic text properties are not factual truth
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/security.md:52-58.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.TEXT. Domain `D.STANDARD.TEXT`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Tool selection** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.STANDARD.TOOLS_DISCOVERY` - Find tools in active Python scripts directory then PATH unless host Tools specifies executable paths; Git separately installed; missing tool is actionable execution ERROR.
+        - Applicability: Trusted standard catalog locates installed tools.
+        - Required/observable: Chosen executable or execution ERROR.. Forbidden: Do not emulate missing tools, change tool-selection order or infer tool success from installation.
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/providers.md:138-144.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.STANDARD_HOST. Domain `D.RELAY.STANDARD_HOST`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Tools** - 3 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.TOOL.AST` - Actual installed ast-grep patterns/authorized rule files; whole-file findings and half-open range intersection
+        - Applicability: astgrep capability executes.
+        - Required/observable: Actual installed ast-grep patterns/authorized rule files; whole-file findings and half-open range intersection. Forbidden: Do not substitute a custom parser or line-only overlap for full AST ranges
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/providers.md:138-144.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.ASTGREP. Domain `D.STANDARD.ASTGREP`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.TOOL.PYTEST` - Run actual configured tests/plugins with process privileges; default full scope; exit 1 FAIL and exits 2-5 ERROR
+        - Applicability: pytest capability executes.
+        - Required/observable: Run actual configured tests/plugins with process privileges; default full scope; exit 1 FAIL and exits 2-5 ERROR. Forbidden: Do not claim Python execution is sandboxed
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/providers.md:138-144.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.PYTEST. Domain `D.STANDARD.PYTEST`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.TOOL.RUFF` - Use actual isolated tool and explicit diagnostic codes; lint exit 1 means FAIL
+        - Applicability: Ruff capability executes.
+        - Required/observable: Use actual isolated tool and explicit diagnostic codes; lint exit 1 means FAIL. Forbidden: Do not execute repository Ruff config implicitly or replace execution error with FAIL
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/providers.md:138-144.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.RUFF. Domain `D.STANDARD.RUFF`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **action_policy** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.STANDARD.ACTION_POLICY` - Only delete with a nonempty relative target strictly below a valid relative directory prefix passes. Invalid supplied prefix, traversal, absolute/ambiguous path or a prefix itself fails closed.
+        - Applicability: Exact version 1 standard capability with validated input/config and trusted host resources..
+        - Required/observable: result:Result; valid FAIL remains an ordinary completed verification operation.. Forbidden: Do not substitute a different mechanism, silently broaden scope or turn execution failure into a verification FAIL.
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/standard/control.py:1-53.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.ACTION_POLICY. Domain `D.STANDARD.ACTION_POLICY`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **aggregate** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.STANDARD.AGGREGATE` - Use explicit ordered members and the declared standard VCP reducer laws. Member values remain tied to names when filtering/weighting.
+        - Applicability: Exact version 1 standard capability with validated input/config and trusted host resources..
+        - Required/observable: result:Result; valid FAIL remains an ordinary completed verification operation.. Forbidden: Do not substitute a different mechanism, silently broaden scope or turn execution failure into a verification FAIL.
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/standard/__init__.py:1-68.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.AGGREGATE. Domain `D.STANDARD.AGGREGATE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **astgrep** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.STANDARD.ASTGREP` - Run actual ast-grep pattern or authorized rule file on selected whole files; normalize zero-based tool coordinates to one-based half-open findings. Invalid option combination/tool failure is ERROR.
+        - Applicability: Exact version 1 standard capability with validated input/config and trusted host resources..
+        - Required/observable: findings:array; valid FAIL remains an ordinary completed verification operation.. Forbidden: Do not substitute a different mechanism, silently broaden scope or turn execution failure into a verification FAIL.
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/standard/astgrep.py:15-75.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.ASTGREP. Domain `D.STANDARD.ASTGREP`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **candidate_unchanged** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.STANDARD.CANDIDATE_UNCHANGED` - Recheck supplied worktree identity, file content identities, HEAD, compared diff and untracked scope. Changed checked state yields stale_candidate; mismatched cwd yields candidate_worktree_mismatch.
+        - Applicability: Exact version 1 standard capability with validated input/config and trusted host resources..
+        - Required/observable: result:Result; valid FAIL remains an ordinary completed verification operation.. Forbidden: Do not substitute a different mechanism, silently broaden scope or turn execution failure into a verification FAIL.
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/standard/git.py:1-210.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.CANDIDATE_UNCHANGED. Domain `D.STANDARD.CANDIDATE_UNCHANGED`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **command** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.STANDARD.COMMAND` - Run only the host-authored command, bounded by timeout/output limits, and return its observation without deriving a verification verdict.
+        - Applicability: Exact version 1 standard capability with validated input/config and trusted host resources..
+        - Required/observable: observation:{argv,cwd,returncode,stdout,stderr}; valid FAIL remains an ordinary completed verification operation.. Forbidden: Do not substitute a different mechanism, silently broaden scope or turn execution failure into a verification FAIL.
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/standard/command.py:25-44.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.COMMAND. Domain `D.STANDARD.COMMAND`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **command_check** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.STANDARD.COMMAND_CHECK` - Compare exact return code and optional required substrings. Produce unexpected_exit/output_missing findings for mismatches, preserving the checked observation.
+        - Applicability: Exact version 1 standard capability with validated input/config and trusted host resources..
+        - Required/observable: result:Result; valid FAIL remains an ordinary completed verification operation.. Forbidden: Do not substitute a different mechanism, silently broaden scope or turn execution failure into a verification FAIL.
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/standard/command.py:1-86.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.COMMAND_CHECK. Domain `D.STANDARD.COMMAND_CHECK`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **gate** - 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.STANDARD.GATE` - Parse checked as a Result, then CONTINUE only for EXECUTED/SUCCESS/APPLICABLE/KNOWN/PASS; every other valid Result yields STOP_FAILURE.
+        - Applicability: Exact version 1 standard capability with validated input/config and trusted host resources..
+        - Required/observable: decision:Decision; valid FAIL remains an ordinary completed verification operation.. Forbidden: Do not substitute a different mechanism, silently broaden scope or turn execution failure into a verification FAIL.
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/standard/control.py:1-53.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.GATE. Domain `D.STANDARD.GATE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.STANDARD.GATE.INVALID` - Reject operation input; do not produce an ordinary denial Decision.
+        - Applicability: checked object violates VCP Result semantics.
+        - Required/observable: Provider ERROR.. Forbidden: Do not coerce invalid Result into STOP_FAILURE.
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/standard/control.py:1-53.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.GATE. Domain `D.STANDARD.GATE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **git_scope** - 3 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.STANDARD.GIT.DELETE` - Keep deletion identities separate; zero-count hunk contains no new-file lines.
+        - Applicability: A deleted path or zero-count new-file hunk.
+        - Required/observable: deleted_files, changed_files, changed_hunks.. Forbidden: Do not invoke tools on deleted paths through executable scopes.
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/standard/git.py:1-210.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.GIT_SCOPE. Domain `D.STANDARD.GIT_SCOPE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.STANDARD.GIT.FRESHNESS` - Reject the detected inconsistent capture.
+        - Applicability: Workspace changes during a scope capture and mismatch is observed.
+        - Required/observable: Execution ERROR or coherent observed candidate.. Forbidden: Do not promise atomic filesystem snapshot or detect change-and-revert.
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/standard/git.py:1-210.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.GIT_SCOPE. Domain `D.STANDARD.GIT_SCOPE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.STANDARD.GIT_SCOPE` - WORKTREE compares base to worktree, STAGED base to index, UNSTAGED index to worktree with empty base. Preserve rename identities, separate deletions, include explicit untracked policy and reject detected changes during capture.
+        - Applicability: Exact version 1 standard capability with validated input/config and trusted host resources..
+        - Required/observable: changed_files,changed_hunks,diff,candidate,changes,deleted_files; valid FAIL remains an ordinary completed verification operation.. Forbidden: Do not substitute a different mechanism, silently broaden scope or turn execution failure into a verification FAIL.
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/standard/git.py:1-210.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.GIT_SCOPE. Domain `D.STANDARD.GIT_SCOPE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **json_parse** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.STANDARD.JSON_PARSE` - Parse strict JSON, rejecting duplicate keys, malformed text and nonfinite tokens. Preserve parsed JSON type/value.
+        - Applicability: Exact version 1 standard capability with validated input/config and trusted host resources..
+        - Required/observable: value:any JSON; valid FAIL remains an ordinary completed verification operation.. Forbidden: Do not substitute a different mechanism, silently broaden scope or turn execution failure into a verification FAIL.
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/standard/structured.py:1-37.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.JSON_PARSE. Domain `D.STANDARD.JSON_PARSE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **no_findings** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.STANDARD.NO_FINDINGS` - PASS iff the supplied findings list is empty; otherwise FAIL retaining structured finding evidence.
+        - Applicability: Exact version 1 standard capability with validated input/config and trusted host resources..
+        - Required/observable: result:Result; valid FAIL remains an ordinary completed verification operation.. Forbidden: Do not substitute a different mechanism, silently broaden scope or turn execution failure into a verification FAIL.
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/standard/scope.py:1-105.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.NO_FINDINGS. Domain `D.STANDARD.NO_FINDINGS`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **pytest** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.STANDARD.PYTEST` - Run real pytest with supplied selectors; no selectors means full scope. Exit 0 passes, 1 fails, 2 through 5 are execution ERROR; Python/plugins execute with host privileges.
+        - Applicability: Exact version 1 standard capability with validated input/config and trusted host resources..
+        - Required/observable: result:Result; valid FAIL remains an ordinary completed verification operation.. Forbidden: Do not substitute a different mechanism, silently broaden scope or turn execution failure into a verification FAIL.
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/standard/pytest.py:11-44.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.PYTEST. Domain `D.STANDARD.PYTEST`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **read_file** - 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.STANDARD.FILES.IDENTITY` - sha256 and size describe precisely the same byte snapshot returned through base64.
+        - Applicability: Bytes successfully read.
+        - Required/observable: identity.size and sha256.. Forbidden: Do not hash a second changing read.
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/standard/filesystem.py:1-124.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.READ_FILE. Domain `D.STANDARD.READ_FILE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.STANDARD.READ_FILE` - Read bounded authorized bytes; base64 encodes those bytes, sha256 and size describe the same bytes.
+        - Applicability: Exact version 1 standard capability with validated input/config and trusted host resources..
+        - Required/observable: base64:string; identity:{path,sha256,size}; valid FAIL remains an ordinary completed verification operation.. Forbidden: Do not substitute a different mechanism, silently broaden scope or turn execution failure into a verification FAIL.
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/standard/filesystem.py:1-124.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.READ_FILE. Domain `D.STANDARD.READ_FILE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **read_text** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.STANDARD.READ_TEXT` - Read bounded authorized bytes, reject NUL/binary and invalid UTF-8, return decoded text and identity over the exact read bytes.
+        - Applicability: Exact version 1 standard capability with validated input/config and trusted host resources..
+        - Required/observable: text:string; identity:{path,sha256,size}; valid FAIL remains an ordinary completed verification operation.. Forbidden: Do not substitute a different mechanism, silently broaden scope or turn execution failure into a verification FAIL.
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/standard/filesystem.py:1-124.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.READ_TEXT. Domain `D.STANDARD.READ_TEXT`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **ruff** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.STANDARD.RUFF` - Run installed Ruff isolated with explicit select codes on authorized Python files; report normalized actual diagnostics. Empty scope passes without process invocation; tool failures are ERROR.
+        - Applicability: Exact version 1 standard capability with validated input/config and trusted host resources..
+        - Required/observable: findings:array; result:Result; valid FAIL remains an ordinary completed verification operation.. Forbidden: Do not substitute a different mechanism, silently broaden scope or turn execution failure into a verification FAIL.
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/standard/ruff.py:15-86.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.RUFF. Domain `D.STANDARD.RUFF`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **schema** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.STANDARD.SCHEMA` - Validate the configured self-contained schema, then check supplied value offline. A valid-schema instance mismatch is a schema_mismatch finding, not an execution failure.
+        - Applicability: Exact version 1 standard capability with validated input/config and trusted host resources..
+        - Required/observable: result:Result; valid FAIL remains an ordinary completed verification operation.. Forbidden: Do not substitute a different mechanism, silently broaden scope or turn execution failure into a verification FAIL.
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/standard/structured.py:1-37.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.SCHEMA. Domain `D.STANDARD.SCHEMA`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **scope** - 4 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.STANDARD.SCOPE` - Filter supplied findings in their original order using normalized local file identity or half-open ranges. Preserve original finding strings and coordinates.
+        - Applicability: Exact version 1 standard capability with validated input/config and trusted host resources..
+        - Required/observable: findings:array; valid FAIL remains an ordinary completed verification operation.. Forbidden: Do not substitute a different mechanism, silently broaden scope or turn execution failure into a verification FAIL.
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/standard/scope.py:1-105.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.SCOPE. Domain `D.STANDARD.SCOPE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.STANDARD.SCOPE.EMPTY` - Return no selected findings.
+        - Applicability: Mode files/changed_files and empty files.
+        - Required/observable: Empty list.. Forbidden: Do not treat empty as unrestricted.
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/standard/scope.py:1-105.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.SCOPE. Domain `D.STANDARD.SCOPE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.STANDARD.SCOPE.LEXICAL` - Compare lexical platform-normalized components without reading files or resolving symlinks.
+        - Applicability: Paths used only for finding comparison.
+        - Required/observable: Finding selection.. Forbidden: Do not require missing/deleted paths to exist.
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/standard/scope.py:1-105.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.SCOPE. Domain `D.STANDARD.SCOPE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.STANDARD.SCOPE.ORDER` - Return selected values in original input order with original file strings and coordinates.
+        - Applicability: Input findings selected by predicate.
+        - Required/observable: Exact returned subsequence.. Forbidden: Do not sort/rewrite findings.
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/standard/scope.py:1-105.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.SCOPE. Domain `D.STANDARD.SCOPE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **select_files** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.STANDARD.SELECT_FILES` - Authorize selected files within host roots; choose explicit files, supplied/default glob or recursive directory traversal; return sorted paths bounded by file limit.
+        - Applicability: Exact version 1 standard capability with validated input/config and trusted host resources..
+        - Required/observable: files:array; valid FAIL remains an ordinary completed verification operation.. Forbidden: Do not substitute a different mechanism, silently broaden scope or turn execution failure into a verification FAIL.
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/standard/filesystem.py:1-124.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.SELECT_FILES. Domain `D.STANDARD.SELECT_FILES`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **text** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.RELAY.STANDARD.TEXT` - Combine bound and configured terms. Missing required literals, present prohibited literals and unmatched required regex produce structured findings; PASS iff no findings.
+        - Applicability: Exact version 1 standard capability with validated input/config and trusted host resources..
+        - Required/observable: result:Result; valid FAIL remains an ordinary completed verification operation.. Forbidden: Do not substitute a different mechanism, silently broaden scope or turn execution failure into a verification FAIL.
+        - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source src/openverify/standard/text.py:72-84.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.STANDARD.TEXT. Domain `D.STANDARD.TEXT`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+  - **Transport** - 4 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+    - **Processes** - 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **LAUNCH** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.RELAY.PROCESS.CLEANUP.LAUNCH` - Use argv array and absolute cwd, without shell.
+          - Applicability: Host-authorized external process starts.
+          - Required/observable: Host-selected process execution.. Forbidden: No graph-derived executable authorization or command-string shell interpretation.
+          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/security.md:27-33.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.PROCESS. Domain `D.RELAY.PROCESS`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **TEARDOWN** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.RELAY.PROCESS.CLEANUP.TEARDOWN` - Clean up process tree using supported platform lifecycle mechanism.
+          - Applicability: Timeout, cancellation or process completion requires cleanup.
+          - Required/observable: Process descendants terminated according to local supported cleanup contract.. Forbidden: Do not claim hostile-code sandbox or isolation from process privileges.
+          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/security.md:27-33.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.PROCESS. Domain `D.RELAY.PROCESS`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Stdio** - 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **FRESH** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.RELAY.STDIO.SESSION.FRESH` - Create a fresh initialized isolated session for that invocation.
+          - Applicability: Registered stdio provider invoked.
+          - Required/observable: Invocation-local session/process lifecycle.. Forbidden: No pooling, restart, replay or remote discovery promised.
+          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/providers.md:43-50.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.PROCESS. Domain `D.RELAY.PROCESS`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **MANIFEST** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.RELAY.STDIO.SESSION.MANIFEST` - Require manifest equality with trusted catalog snapshot.
+          - Applicability: Stdio initialization returns manifest.
+          - Required/observable: Reject mismatched returned manifest before work.. Forbidden: No mid-session schema/identity substitution.
+          - Authority: DOCUMENTED_RELAY_PROFILE_OR_LOCAL_PUBLIC_IMPLEMENTATION; source docs/relay/providers.md:43-50.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RELAY.PROCESS. Domain `D.RELAY.PROCESS`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+- **SHARED** - 72 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+  - **JSON value and schema semantics** - 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+    - **JSON_EQUALITY** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SHARED.JSON_EQUALITY` - JSON booleans and numbers are distinct; numbers compare by JSON numeric value; arrays are ordered; object member ordering does not alter object value. This same equality is used for reconstructed provenance snapshots.
+        - Applicability: Evaluate a declared JSON/schema predicate in its applicator context..
+        - Required/observable: Type-aware and context-correct predicate evaluation. Forbidden: Do not use Python True==1 or stringify values for identity.
+        - Authority: SHARED_JSON_OR_SCHEMA_SEMANTICS; source provider-contract/spec/draft/capabilities.md:1-51.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.WIRE.JSON. Domain `D.WIRE.JSON`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **SCHEMA_APPLICATORS** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SHARED.SCHEMA_APPLICATORS` - Evaluate allOf conjunctively, anyOf existentially, oneOf with exactly one successful child, not by negation, and if solely as a branch selector; apply child properties/items/propertyNames only at their actual locations.
+        - Applicability: Evaluate a declared JSON/schema predicate in its applicator context..
+        - Required/observable: Type-aware and context-correct predicate evaluation. Forbidden: Do not turn branch constraints or annotations into unconditional root predicates.
+        - Authority: SHARED_JSON_OR_SCHEMA_SEMANTICS; source provider-contract/schemas/draft/outcome.schema.json:1-92.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SCHEMA.EMBEDDED. Domain `D.SCHEMA.EMBEDDED`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+  - **Public SDK** - 70 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+    - **Aggregation** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **Exact local configuration** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.SDK.AGGREGATE.CONFIGURATION` - Require exact config keys reducer/handling, plus weights only for WEIGHTED_AVERAGE or severity_domain only for WORST_SEVERITY. Handling keys exactly7 with REJECT/IGNORE. Ordered weights nonempty/nonnegative/positive and match provided count; severity domain parsed.
+          - Applicability: Direct SDK aggregate configuration validator or local standard reducer validates config..
+          - Required/observable: AGGREGATE_CONFIG for local configuration rejection.. Forbidden: Do not generalize this local exact key whitelist to arbitrary custom Aggregate config or every portable capability.
+          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/validation/__init__.py:368-400.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.CONFIGURATION. Domain `D.AGG.CONFIGURATION`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Cancellation** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.CANCELLATION.TOKEN` - Token starts without reason; cancel requires exact nonempty string and retains the first reason; repeated valid cancel does not replace it.
+        - Applicability: Host constructs/cancels a cooperative token.
+        - Required/observable: Stable first explicit reason or ValueError for invalid reason.. Forbidden: No provider Result inference, forced blocking-code preemption or ambient semantic input.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/lifecycle.py:74-84.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.CANCELLATION. Domain `D.SDK.CANCELLATION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Extensions** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **Unsupported required meaning** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.SDK.EXTENSIONS.NONE` - No required extension capability implementations exist, so reject required extensions as EXTENSION_UNSUPPORTED.
+          - Applicability: Reference SDK or Engine consumes a required VCP extension..
+          - Required/observable: Local unsupported-extension rejection.. Forbidden: Do not imply every portable consumer must reject a supported required extension.
+          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source spec/draft/extensions.md:11-13.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.EXT.REQUIRED_SUPPORT. Domain `D.EXT.REQUIRED_SUPPORT`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Frame codec** - 4 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **DECODE** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.SDK.PROVIDER.FRAME.DECODE` - Buffer partial frames and emit all complete coalesced JSON-object messages in order.
+          - Applicability: Byte chunks fed to FrameDecoder.
+          - Required/observable: Ordered decoded message list, remainder retained.. Forbidden: No speculative resynchronization.
+          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/stdio.py:25-109.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.TRANSPORT. Domain `D.PROVIDER.TRANSPORT`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **ENCODE** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.SDK.PROVIDER.FRAME.ENCODE` - Encode UTF8 body and exact ASCII Content-Length header measured in bytes.
+          - Applicability: JSON object frame authored.
+          - Required/observable: One complete frame bytes.. Forbidden: No newline delimiter or character-count length.
+          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/stdio.py:25-109.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.TRANSPORT. Domain `D.PROVIDER.TRANSPORT`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **FAILURE** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.SDK.PROVIDER.FRAME.FAILURE` - Failure poisons decoder; finish rejects failed or partial state.
+          - Applicability: Framing/JSON fails or EOF declared.
+          - Required/observable: ProviderContractError and closed decoding path.. Forbidden: Do not resume parsing after failure or accept truncated EOF.
+          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/stdio.py:25-109.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.TRANSPORT. Domain `D.PROVIDER.TRANSPORT`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **LIMITS** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.SDK.PROVIDER.FRAME.LIMITS` - Require positive message/header limits; defaults 16MiB and8192 bytes.
+          - Applicability: FrameDecoder configured.
+          - Required/observable: ValueError on invalid limits.. Forbidden: No zero/negative configured limit.
+          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/stdio.py:25-109.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROVIDER.TRANSPORT. Domain `D.PROVIDER.TRANSPORT`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Integer normalization** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.MODEL.INTEGRAL_NORMALIZATION` - Normalize integral float notation to SDK int while retaining strict rejection of Boolean/string by typed model; fractional values remain noninteger and fail.
+        - Applicability: SDK constructs SeverityLevel.rank or ProviderEvent.sequence from an integral finite float.
+        - Required/observable: Local integer representation implementing JSON integer notation.. Forbidden: No Boolean/numeric-string coercion or new portable integer semantics.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/model/__init__.py:68-76.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.MODEL. Domain `D.SDK.MODEL`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **LifecycleValidator** - 7 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **ACCEPT** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.SDK.PROVIDER.LIFECYCLE.ACCEPT` - Validate exact capability/version/input/config/constraints before running; reserve attempt identity including rejected attempt.
+          - Applicability: Observed invocation offered.
+          - Required/observable: Accepted state or structured rejection, no capability execution by validator.. Forbidden: No acceptance of invalid request or replay of rejected identity.
+          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/lifecycle.py:43-190.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PROVIDER_OBSERVER. Domain `D.SDK.PROVIDER_OBSERVER`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **CANCEL** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.SDK.PROVIDER.LIFECYCLE.CANCEL` - Running supported request records cancellation; terminal request succeeds without mutation.
+          - Applicability: Observed cancellation offered.
+          - Required/observable: Requested state stays nonterminal.. Forbidden: Unknown/rejected or unsupported running cancellation rejects.
+          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/lifecycle.py:43-190.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PROVIDER_OBSERVER. Domain `D.SDK.PROVIDER_OBSERVER`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **EVENT** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.SDK.PROVIDER.LIFECYCLE.EVENT` - Validate correlation, feature eligibility, payload and increasing per-attempt sequence.
+          - Applicability: Observed event offered.
+          - Required/observable: Accepted event advances sequence history only.. Forbidden: No unknown, duplicate, reordered or after-terminal event.
+          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/lifecycle.py:43-190.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PROVIDER_OBSERVER. Domain `D.SDK.PROVIDER_OBSERVER`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **FINISH** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.SDK.PROVIDER.LIFECYCLE.FINISH` - Reject uninitialized session or unfinished accepted attempts.
+          - Applicability: Observed trace declared finished.
+          - Required/observable: None on completed valid trace; structured error otherwise.. Forbidden: No assumed terminal completion from silence.
+          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/lifecycle.py:43-190.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PROVIDER_OBSERVER. Domain `D.SDK.PROVIDER_OBSERVER`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **INITIALIZE** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.SDK.PROVIDER.LIFECYCLE.INITIALIZE` - Validate offered lists, negotiate exact supported version and latch one successful initialization; failure closes session.
+          - Applicability: Initialization attempted.
+          - Required/observable: Structured ProviderContractError for illegal session operation.. Forbidden: No repeated initialization or work before initialization.
+          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/lifecycle.py:43-190.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PROVIDER_OBSERVER. Domain `D.SDK.PROVIDER_OBSERVER`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **MANIFEST** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.SDK.PROVIDER.LIFECYCLE.MANIFEST` - Snapshot and validate manifest for observed session.
+          - Applicability: ProviderLifecycle constructed.
+          - Required/observable: Session validates against retained exact manifest.. Forbidden: Do not let caller mutation change validation authority.
+          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/lifecycle.py:43-190.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PROVIDER_OBSERVER. Domain `D.SDK.PROVIDER_OBSERVER`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **OUTCOME** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.SDK.PROVIDER.LIFECYCLE.OUTCOME` - Check correlation, cancellation cause, clock/deadline, output and usage; latch terminal once.
+          - Applicability: Observed terminal outcome offered.
+          - Required/observable: One accepted terminal state.. Forbidden: No unsolicited CANCELLED, premature deadline, late nondeadline outcome or duplicate terminal.
+          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/lifecycle.py:43-190.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PROVIDER_OBSERVER. Domain `D.SDK.PROVIDER_OBSERVER`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Portable harness helpers** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.CONFORMANCE.HARNESS` - VCP check_manifest parses each documented object case and compares actual structured code with declared expected code, returning mismatched case IDs; Provider additionally dispatches documented lifecycle/session/framing forms, including EOF completion.
+        - Applicability: Host explicitly supplies portable manifest directory/case.
+        - Required/observable: Failure-ID list/None case check or propagated malformed-harness/I/O error.. Forbidden: No fixture corpus determines semantics, messages not compared, no implicit provider execution or mutation of expected files.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/conformance.py:1-67.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.CONFORMANCE_HARNESS. Domain `D.SDK.CONFORMANCE_HARNESS`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **ProtocolError.as_dict** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.ERROR.ASDICT` - Return code,message,path,details preserving string code and diagnostic fields.
+        - Applicability: ProtocolError instance.
+        - Required/observable: Four-key mapping.. Forbidden: Do not classify from diagnostic wording.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/errors.py:26-32.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.ERROR.ASDICT. Domain `D.SDK.ERROR.ASDICT`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Provider Protocol** - 3 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **cancel** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.SDK.PROVIDER.INTERFACE.CANCEL` - cancel(invocation_id,reason) is an async None-returning control method, with Provider Contract state/feature/cause semantics.
+          - Applicability: Caller routes cooperative cancellation concurrently with invocation as supported..
+          - Required/observable: Cancellation acknowledgement and final operation outcome remain separate.. Forbidden: Return is not a terminal Outcome or guarantee physical interruption.
+          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/__init__.py:40-52.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PROVIDER_INTERFACE. Domain `D.SDK.PROVIDER_INTERFACE`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **invoke** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.SDK.PROVIDER.INTERFACE.INVOKE` - invoke(invocation) asynchronously yields zero or more events followed by exactly one Outcome; before-acceptance exceptions reject, accepted failures yield ERROR.
+          - Applicability: Caller supplies initialization and validates matched invocation boundaries..
+          - Required/observable: Actual stream conforms to Provider Contract under caller lifecycle/correlation checks.. Forbidden: No missing/duplicate terminal or postterminal item; no VCP verdict inferred from lifecycle completion.
+          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/__init__.py:40-50.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PROVIDER_INTERFACE. Domain `D.SDK.PROVIDER_INTERFACE`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **manifest** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.SDK.PROVIDER.INTERFACE.MANIFEST` - manifest() returns ProviderManifest describing its advertised identities/schemas/features.
+          - Applicability: Host obtains an in-process Provider description..
+          - Required/observable: Caller validates manifest and supplies initialization/session handling.. Forbidden: Do not infer automatic discovery, authentication or provider execution from description.
+          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/__init__.py:40-48.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PROVIDER_INTERFACE. Domain `D.SDK.PROVIDER_INTERFACE`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **ProviderContractError.as_dict** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.PROVIDER.ERROR.ASDICT` - Return code,message,details without a VCP path field.
+        - Applicability: ProviderContractError instance.
+        - Required/observable: Three-key mapping.. Forbidden: Do not collapse Provider and VCP vocabularies.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/validation.py:63-64.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PROVIDER.ERROR.ASDICT. Domain `D.SDK.PROVIDER.ERROR.ASDICT`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Reference Engine** - 5 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **FINALIZE** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.SDK.ENGINE.ATTEMPT.FINALIZE` - Apply cooperative cancellation and validate complete RunRecord before return.
+          - Applicability: Attempt completes.
+          - Required/observable: Validated complete occurrence record.. Forbidden: No accepted output after observed cancellation; no incomplete record.
+          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/engine/__init__.py:86-135.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.ENGINE. Domain `D.SDK.ENGINE`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **POLICIES** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.SDK.ENGINE.ATTEMPT.POLICIES` - Run ordered policies; return None on inactive/unselected, otherwise create occurrence after valid admission.
+          - Applicability: Definition/input preflight succeeds.
+          - Required/observable: None or complete RunRecord.. Forbidden: No fabricated occurrence before admission.
+          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/engine/__init__.py:86-135.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.ENGINE. Domain `D.SDK.ENGINE`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **SCHEDULER** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.SDK.ENGINE.ATTEMPT.SCHEDULER` - Execute sequentially in topological order, using definition order among ready nodes.
+          - Applicability: Occurrence admission RUN.
+          - Required/observable: Dependency-respecting terminal record order.. Forbidden: No parallel execution promise for reference Engine.
+          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/engine/__init__.py:86-135.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.ENGINE. Domain `D.SDK.ENGINE`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **SNAPSHOTS** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.SDK.ENGINE.ATTEMPT.SNAPSHOTS` - Snapshot definition, run inputs, ambient metadata and supplied bindings.
+          - Applicability: Engine attempt begins.
+          - Required/observable: Independent occurrence state.. Forbidden: Caller mutation cannot alter retained authored occurrence stimulus.
+          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/engine/__init__.py:86-135.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.ENGINE. Domain `D.SDK.ENGINE`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.ENGINE.RUN` - Engine.run returns its occurrence record; None from attempt becomes NO_OCCURRENCE.
+        - Applicability: Same arguments as Engine.attempt.
+        - Required/observable: RunRecord or ProtocolError(NO_OCCURRENCE).. Forbidden: Do not invent an occurrence for inactive/unselected opportunities.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/engine/__init__.py:66-84.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.ENGINE. Domain `D.SDK.ENGINE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Reference registry** - 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **IDENTITY** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.SDK.REGISTRY.REGISTER.IDENTITY` - Store adapter under exact capability_id/capability_version pair; replace existing same pair.
+          - Applicability: Registry.register called.
+          - Required/observable: Subsequent exact lookup sees most recently registered adapter.. Forbidden: No version range or fallback.
+          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/adapters/__init__.py:14-28.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.REGISTRY. Domain `D.SDK.REGISTRY`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **ROLE_ALIASES** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.SDK.REGISTRY.REGISTER.ROLE_ALIASES` - Delegate to exact pair registration with default version1.
+          - Applicability: Role-named registry convenience called.
+          - Required/observable: Same stored adapter as explicit register call.. Forbidden: No role-specific hidden operation semantics.
+          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/adapters/__init__.py:14-28.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.REGISTRY. Domain `D.SDK.REGISTRY`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Reference stores** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.LEGACY_STORE` - append validates and serializes snapshot; records returns newly parsed independent records in append order. JsonlStore uses UTF8 newline records; blank lines ignored on retrieval; I/O/validation errors propagate.
+        - Applicability: Valid RunRecord supplied to legacy MemoryStore/JsonlStore.
+        - Required/observable: Stored snapshot or propagated error.. Forbidden: No mutable history rewriting, remote backend/durable/multiprocess/transaction promise.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provenance/__init__.py:1-41.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.LEGACY_STORAGE. Domain `D.SDK.LEGACY_STORAGE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **StdioSessionValidator** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.PROVIDER.SESSION` - Track unique RPC and attempt identities, one initialize/version verification, provisional invoke accept/reject, event-before-terminal and contract cancellation acknowledgement; finish requires no pending RPC or accepted attempts; malformed/correlation/closed-session errors reject.
+        - Applicability: Observed declared JSON-RPC messages supplied in direction order.
+        - Required/observable: Stateful None/ProviderContractError validation result.. Forbidden: No process execution, network-clock claim or acceptance message added to protocol.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/stdio.py:109-250.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PROVIDER_OBSERVER. Domain `D.SDK.PROVIDER_OBSERVER`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **String normalization** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.JSON.NORMALIZE` - Accept exact JSON primitive/container types; normalize StrEnum values and string-subclass mapping keys using their underlying string rather than overridden display/equality. Reject other non-JSON value subclasses. Reuse unchanged containers, copy only changed containers and leave caller data untouched.
+        - Applicability: SDK JSON normalization receives strings/StrEnum nested in lists or string-keyed mappings.
+        - Required/observable: Plain-string JSON snapshot, caller preservation, rejection of invalid types.. Forbidden: No numeric Enum/nonJSON admission, Boolean/number coercion or reserved-code impersonation.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source docs/relay/error-contract-hardening.md:21-23.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.WIRE.JSON. Domain `D.WIRE.JSON`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Typed value construction** - 4 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **EXTRA** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.SDK.MODEL.CONSTRUCTION.EXTRA` - Forbid extra attributes.
+          - Applicability: SDK object constructed with undeclared field.
+          - Required/observable: Model validation failure.. Forbidden: Do not retain unknown core attributes silently.
+          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/model/__init__.py:8-9.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.MODEL. Domain `D.SDK.MODEL`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **FROZEN** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.SDK.MODEL.CONSTRUCTION.FROZEN` - Forbid field reassignment; nested mutable containers remain mutable.
+          - Applicability: SDK object already constructed.
+          - Required/observable: Assignment failure, nested mutability requires caller snapshot boundaries.. Forbidden: Do not claim recursive deep immutability.
+          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/model/__init__.py:8-9.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.MODEL. Domain `D.SDK.MODEL`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **SEMANTIC_BOUNDARY** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.SDK.MODEL.CONSTRUCTION.SEMANTIC_BOUNDARY` - Explicit parse/validate boundary still enforces root schemas and prose invariants.
+          - Applicability: Typed model construction succeeds.
+          - Required/observable: Constructed object may still fail explicit semantic validation.. Forbidden: Typed construction alone is not complete contract acceptance.
+          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/model/__init__.py:8-9.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.MODEL. Domain `D.SDK.MODEL`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **TYPES** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.SDK.MODEL.CONSTRUCTION.TYPES` - Apply declared strict model field types and reject nonfinite model numbers.
+          - Applicability: SDK object constructed.
+          - Required/observable: Typed object or model validation error, not full portable semantic validation.. Forbidden: No Boolean/string coercion into numeric semantic fields.
+          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/model/__init__.py:8-9.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.MODEL. Domain `D.SDK.MODEL`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Wire validation** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **Shipped timestamp format** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.SDK.WIRE.TIME_FORMAT` - Apply SDK registered date-time checker using explicit syntax and Python calendar validation, alongside root UTC suffix pattern. Embedded capability/port format remains annotation-only.
+          - Applicability: Validate shipped VCP root containing date-time format fields..
+          - Required/observable: Invalid SDK timestamp field fails wire validation with PROTOCOL_STRUCTURE.. Forbidden: Do not generalize shipped-root format assertion to embedded schemas or claim Python datetime precision/calendar limits are portable numeric canonicalization.
+          - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/validation/__init__.py:96-130.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.VALIDATION. Domain `D.SDK.VALIDATION`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **check_schema** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.SCHEMA.CHECK` - Require Draft2020-12-valid Boolean/object schema and supported local schema-position references; unsupported dialect/nestedIDs/anchors/dynamic/external/invalid pointers reject SCHEMA_UNSUPPORTED; root ID allowed.
+        - Applicability: Embedded schema supplied.
+        - Required/observable: None or ProtocolError.. Forbidden: No annotation target execution/network fetching or instance default insertion.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/json_schema.py:62-127.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SCHEMA.EMBEDDED. Domain `D.SCHEMA.EMBEDDED`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **fingerprint** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.FINGERPRINT` - Return local-sha256: followed by SHA256 hex of the SDK serialized UTF-8 bytes.
+        - Applicability: VerificationDefinition supplied.
+        - Required/observable: Opaque reference-only string.. Forbidden: Do not infer authenticity or cross-language canonical identity.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/fingerprint/__init__.py:9-11.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.FINGERPRINT. Domain `D.SDK.FINGERPRINT`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **flattened_status** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.FLATTEN` - Validate Result, then use the partial standard projection; undefined states raise SDK RESULT_PROJECTION.
+        - Applicability: Result supplied.
+        - Required/observable: String or ProtocolError.. Forbidden: Do not add portable statuses for unprojectable states.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/inspection.py:56-68.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RESULT.FLATTENED. Domain `D.RESULT.FLATTENED`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **inspect_definition** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.INSPECT` - Validate definition, then expose id/version/subject/criterion, topological node order, policy/run-input/port/binding data and declared upstream consumers including guards.
+        - Applicability: Definition supplied.
+        - Required/observable: Definition summary mapping.. Forbidden: Do not inspect by executing providers.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/inspection.py:13-53.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.INSPECT. Domain `D.SDK.INSPECT`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **json_equal** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.JSON.EQUALITY` - Compare numbers numerically, Boolean separately; lists positionally; object key order immaterial.
+        - Applicability: Validated parsed JSON values.
+        - Required/observable: Boolean equality.. Forbidden: Do not identify true and 1.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/serialization/__init__.py:13-33.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.JSON.EQUALITY. Domain `D.SDK.JSON.EQUALITY`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **load_provider_schema** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.PROVIDER.SCHEMA.LOAD` - Return one of the nine packaged Provider schemas; unknown root raises PROTOCOL_VIOLATION.
+        - Applicability: Requested Provider root name.
+        - Required/observable: Schema mapping.. Forbidden: Do not import remote schemas.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/validation.py:80-90.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PROVIDER.SCHEMA.LOAD. Domain `D.SDK.PROVIDER.SCHEMA.LOAD`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **load_schema** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.SCHEMA.LOAD` - Return packaged named schema, including value-source; unknown root raises PROTOCOL_STRUCTURE.
+        - Applicability: Requested root name string.
+        - Required/observable: Schema mapping.. Forbidden: Do not retrieve schemas from a network.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/validation/__init__.py:81-91.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.SCHEMA.LOAD. Domain `D.SDK.SCHEMA.LOAD`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **negotiate_contract_version** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.PROVIDER.NEGOTIATE` - SDK selects first list element present in provider list, then requires that element equal 0.1 or raises CONTRACT_VERSION_UNSUPPORTED.
+        - Applicability: Ordered exact version string lists supplied.
+        - Required/observable: 0.1 or ProviderContractError.. Forbidden: No SemVer/coercion/fallback; portable mixed future-version interpretation remains separately reviewed rather than inferred from this local helper.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/lifecycle.py:25-30.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PROVIDER_NEGOTIATION. Domain `D.SDK.PROVIDER_NEGOTIATION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **obvious_incompatible** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.SCHEMA.INCOMPATIBLE` - Return true for a false schema, disjoint explicit primitive types with integer/number overlap, or finite source const/enum with no target-accepted candidate; otherwise false means no established contradiction.
+        - Applicability: Valid supported source and target schemas supplied.
+        - Required/observable: Conservative compatibility Boolean.. Forbidden: False is not a proof of arbitrary schema subsumption or actual value validity.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/json_schema.py:130-156.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SCHEMA.EMBEDDED. Domain `D.SCHEMA.EMBEDDED`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **parse_cancel_request** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.PROVIDER.PARSE_CANCEL_REQUEST` - Delegate to parse_provider_object for cancel-request; return its typed value after structure and local semantic validation.
+        - Applicability: str/bytes/JSON value.
+        - Required/observable: Typed value or ProviderContractError.. Forbidden: Do not treat object parsing as a complete session/manifest-dependent lifecycle validation.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/validation.py:347-348.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PROVIDER.PARSE_CANCEL_REQUEST. Domain `D.SDK.PROVIDER.PARSE_CANCEL_REQUEST`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **parse_definition** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.PARSE.DEFINITION` - Decode strict JSON, validate the named shipped root and its prose semantics, return the typed verification-definition value.
+        - Applicability: str/bytes/parsed JSON supplied.
+        - Required/observable: Typed value or ProtocolError.. Forbidden: Do not accept construction alone as full validation or execute providers.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/validation/__init__.py:168-169.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PARSE.DEFINITION. Domain `D.SDK.PARSE.DEFINITION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **parse_invocation** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.PROVIDER.PARSE_INVOCATION` - Delegate to parse_provider_object for invocation; return its typed value after structure and local semantic validation.
+        - Applicability: str/bytes/JSON value.
+        - Required/observable: Typed value or ProviderContractError.. Forbidden: Do not treat object parsing as a complete session/manifest-dependent lifecycle validation.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/validation.py:335-336.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PROVIDER.PARSE_INVOCATION. Domain `D.SDK.PROVIDER.PARSE_INVOCATION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **parse_object** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.PARSE.OBJECT` - Decode strict JSON, validate named root, construct appropriate typed SDK object and apply prose semantic checks; value-source dispatches exact kind; unknown names PROTOCOL_STRUCTURE.
+        - Applicability: Named wire root and str/bytes/parsed JSON supplied.
+        - Required/observable: Typed value or exact applicable structural/semantic ProtocolError.. Forbidden: No construction-only acceptance, provider execution or metadata-as-schema traversal.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/validation/__init__.py:142-165.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.VALIDATION. Domain `D.SDK.VALIDATION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **parse_outcome** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.PROVIDER.PARSE_OUTCOME` - Delegate to parse_provider_object for outcome; return its typed value after structure and local semantic validation.
+        - Applicability: str/bytes/JSON value.
+        - Required/observable: Typed value or ProviderContractError.. Forbidden: Do not treat object parsing as a complete session/manifest-dependent lifecycle validation.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/validation.py:343-344.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PROVIDER.PARSE_OUTCOME. Domain `D.SDK.PROVIDER.PARSE_OUTCOME`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **parse_provider_event** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.PROVIDER.PARSE_PROVIDER_EVENT` - Delegate to parse_provider_object for provider-event; return its typed value after structure and local semantic validation.
+        - Applicability: str/bytes/JSON value.
+        - Required/observable: Typed value or ProviderContractError.. Forbidden: Do not treat object parsing as a complete session/manifest-dependent lifecycle validation.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/validation.py:339-340.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PROVIDER.PARSE_PROVIDER_EVENT. Domain `D.SDK.PROVIDER.PARSE_PROVIDER_EVENT`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **parse_provider_manifest** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.PROVIDER.PARSE_PROVIDER_MANIFEST` - Delegate to parse_provider_object for provider-manifest; return its typed value after structure and local semantic validation.
+        - Applicability: str/bytes/JSON value.
+        - Required/observable: Typed value or ProviderContractError.. Forbidden: Do not treat object parsing as a complete session/manifest-dependent lifecycle validation.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/validation.py:331-332.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PROVIDER.PARSE_PROVIDER_MANIFEST. Domain `D.SDK.PROVIDER.PARSE_PROVIDER_MANIFEST`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **parse_provider_object** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.PROVIDER.PARSE_OBJECT` - Validate strict JSON/root/model/standalone semantics offline; unknown root PROTOCOL_VIOLATION, present wrong contract version CONTRACT_VERSION_UNSUPPORTED; malformed invocation INVALID_INVOCATION, malformed cancel/initialize request PROTOCOL_VIOLATION, other peer objects INVALID_PROVIDER_OUTPUT.
+        - Applicability: Named Provider root and encoded/parsed JSON supplied.
+        - Required/observable: Typed Provider value or ProviderContractError with diagnostic cause.. Forbidden: No session/capability-dependent acceptance inferred from standalone parsing; preserve explicit null payloads.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/validation.py:146-201.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.VALIDATION. Domain `D.SDK.VALIDATION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **parse_result** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.PARSE.RESULT` - Decode strict JSON, validate the named shipped root and its prose semantics, return the typed result value.
+        - Applicability: str/bytes/parsed JSON supplied.
+        - Required/observable: Typed value or ProtocolError.. Forbidden: Do not accept construction alone as full validation or execute providers.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/validation/__init__.py:172-173.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PARSE.RESULT. Domain `D.SDK.PARSE.RESULT`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **parse_run_record** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.PARSE.RECORD` - Decode strict JSON, validate the named shipped root and its prose semantics, return the typed run-record value.
+        - Applicability: str/bytes/parsed JSON supplied.
+        - Required/observable: Typed value or ProtocolError.. Forbidden: Do not accept construction alone as full validation or execute providers.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/validation/__init__.py:176-177.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PARSE.RECORD. Domain `D.SDK.PARSE.RECORD`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **serialize** - 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.PROVIDER.SERIALIZE` - Return compact ensure_ascii JSON of wire_data with nonfinite values prohibited.
+        - Applicability: ProviderValue supplied.
+        - Required/observable: String.. Forbidden: Do not claim sorted keys or portable canonical bytes.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/validation.py:76-77.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PROVIDER.SERIALIZE. Domain `D.SDK.PROVIDER.SERIALIZE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.SERIALIZE.BYTES` - Return compact sorted-key ensure_ascii JSON with nonfinite output prohibited.
+        - Applicability: SDK Value supplied.
+        - Required/observable: String bytes determined by local serializer.. Forbidden: Do not promise portable canonical bytes or signing.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/serialization/__init__.py:68-71.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.SERIALIZE.BYTES. Domain `D.SDK.SERIALIZE.BYTES`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **to_data** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.SERIALIZE.DATA` - Recursively materialize wire fields; omit unsupplied empty metadata/extensions and optional null controls; retain explicitly set Result judgment/output and InputResolution value, including null.
+        - Applicability: SDK Value supplied.
+        - Required/observable: JSON-compatible wire snapshot.. Forbidden: Do not erase explicitly emitted null payload or invent default annotations.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/serialization/__init__.py:36-55.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.SERIALIZE.DATA. Domain `D.SDK.SERIALIZE.DATA`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **validate_definition** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.VALIDATE.DEFINITION` - Validate by serializing to wire data and applying parse_definition; return None on success.
+        - Applicability: Typed value supplied.
+        - Required/observable: None or ProtocolError.. Forbidden: Do not assume a typed model is semantically valid.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/validation/__init__.py:180-181.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.VALIDATE.DEFINITION. Domain `D.SDK.VALIDATE.DEFINITION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **validate_invocation** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.PROVIDER.VALIDATE_INVOCATION` - Reparse wire_data through the corresponding object parser and return None on success.
+        - Applicability: Typed Invocation.
+        - Required/observable: None or ProviderContractError.. Forbidden: Do not skip validation because a typed instance exists.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/validation.py:355-356.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PROVIDER.VALIDATE_INVOCATION. Domain `D.SDK.PROVIDER.VALIDATE_INVOCATION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **validate_lifecycle** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.PROVIDER.TRACE` - Require exactly manifest/initialize/steps/finish with typed action payload/optional clock, run observed validation steps, call finish only when true; return None for accepted complete trace or permitted unfinished prefix.
+        - Applicability: Portable trace object supplied.
+        - Required/observable: None or ProviderContractError.. Forbidden: No RPC execution, missing deadline clock or fabricated finish terminal.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/lifecycle.py:193-229.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PROVIDER_OBSERVER. Domain `D.SDK.PROVIDER_OBSERVER`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **validate_outcome** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.PROVIDER.VALIDATE_OUTCOME` - Reparse wire_data through the corresponding object parser and return None on success.
+        - Applicability: Typed Outcome.
+        - Required/observable: None or ProviderContractError.. Forbidden: Do not skip validation because a typed instance exists.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/validation.py:363-364.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PROVIDER.VALIDATE_OUTCOME. Domain `D.SDK.PROVIDER.VALIDATE_OUTCOME`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **validate_payload** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.PROVIDER.PAYLOAD` - Validate offline Draft2020-12 instance; return None or ProviderContractError using caller code and cause/details.
+        - Applicability: Supported checked capability schema and JSON value/caller code supplied.
+        - Required/observable: None or caller-classified failure.. Forbidden: No network/schema-default insertion, standalone payload validation does not initialize/invoke a provider.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/validation.py:322-328.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.VALIDATION. Domain `D.SDK.VALIDATION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **validate_provider_event** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.PROVIDER.VALIDATE_PROVIDER_EVENT` - Reparse wire_data through the corresponding object parser and return None on success.
+        - Applicability: Typed ProviderEvent.
+        - Required/observable: None or ProviderContractError.. Forbidden: Do not skip validation because a typed instance exists.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/validation.py:359-360.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PROVIDER.VALIDATE_PROVIDER_EVENT. Domain `D.SDK.PROVIDER.VALIDATE_PROVIDER_EVENT`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **validate_provider_manifest** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.PROVIDER.VALIDATE_PROVIDER_MANIFEST` - Reparse wire_data through the corresponding object parser and return None on success.
+        - Applicability: Typed ProviderManifest.
+        - Required/observable: None or ProviderContractError.. Forbidden: Do not skip validation because a typed instance exists.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/validation.py:351-352.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PROVIDER.VALIDATE_PROVIDER_MANIFEST. Domain `D.SDK.PROVIDER.VALIDATE_PROVIDER_MANIFEST`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **validate_result** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.VALIDATE.RESULT` - Validate by serializing to wire data and applying parse_result; return None on success.
+        - Applicability: Typed value supplied.
+        - Required/observable: None or ProtocolError.. Forbidden: Do not assume a typed model is semantically valid.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/validation/__init__.py:184-185.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.VALIDATE.RESULT. Domain `D.SDK.VALIDATE.RESULT`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **validate_run_inputs** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.RUN_INPUTS` - Reject unknown names/missing required/schema-invalid supplied values as RUN_INPUT; return a deep snapshot with declared explicit optional Constant defaults inserted, omitted optional ports absent.
+        - Applicability: A validated Definition and supplied JSON object are provided.
+        - Required/observable: Normalized mapping or ProtocolError before invocation.. Forbidden: No schema-default insertion, caller mutation or null fallback; this helper does not independently validate the entire Definition.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/dataflow.py:322-334.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RUN_INPUT.NORMALIZATION. Domain `D.RUN_INPUT.NORMALIZATION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **validate_value** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.SCHEMA.VALUE` - Offline Draft2020-12 evaluation returns None on acceptance; validation/evaluation exception raises ProtocolError using caller code, default local DATAFLOW_VALUE, retaining cause/details.
+        - Applicability: A checked supported schema and JSON instance are supplied.
+        - Required/observable: None or caller-classified ProtocolError.. Forbidden: Do not treat this default SDK diagnostic as portable VCP error; format annotations not enforced here.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/json_schema.py:134-139.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.VALIDATION. Domain `D.SDK.VALIDATION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **validate_wire** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.VALIDATE.WIRE` - Check strict JSON; wrong present protocol marker PROTOCOL_VERSION before root validation; schema failure PROTOCOL_STRUCTURE with escaped JSON Pointer path. Return None if structural check passes.
+        - Applicability: Named VCP root and parsed JSON supplied.
+        - Required/observable: None or ProtocolError with path.. Forbidden: Do not imply full prose semantics from this structural helper.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/validation/__init__.py:127-139.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.VALIDATION. Domain `D.SDK.VALIDATION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **wire_data** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.SDK.PROVIDER.WIRE_DATA` - Use JSON model dump with exclude_unset=True, preserving explicitly supplied null and extension values.
+        - Applicability: ProviderValue supplied.
+        - Required/observable: JSON object.. Forbidden: Do not erase explicit null output or invent unsupplied optional fields.
+        - Authority: PUBLIC_SDK_IMPLEMENTATION_CONTRACT; source src/openverify/provider/validation.py:71-73.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SDK.PROVIDER.WIRE_DATA. Domain `D.SDK.PROVIDER.WIRE_DATA`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+- **VCP** - 266 canonical primary records; INCOMPLETE.
+  - **Aggregation** - 33 canonical primary records; INCOMPLETE.
+    - **Evidence** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.AGG.EVIDENCE_ORDER` - Concatenate retained evidence in authored membership order
+        - Applicability: Any standard reducer succeeds.
+        - Required/observable: Stable evidence sequence. Forbidden: Do not reorder evidence using commutativity of numeric/verdict calculation
+        - Authority: NORMATIVE_VCP; source spec/draft/aggregation.md:20-38.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.MEMBERSHIP. Domain `D.AGG.MEMBERSHIP`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Handling** - 3 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.AGG.IGNORE` - Exclude that member only; retain order and identities of others
+        - Applicability: A member matches exceptional class handled IGNORE.
+        - Required/observable: Reduction uses retained sequence. Forbidden: Do not turn ignored members into scores/verdicts
+        - Authority: NORMATIVE_VCP; source spec/draft/aggregation.md:10-18.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.EXCEPTION_ACTION. Domain `D.AGG.EXCEPTION_ACTION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.AGG.MISSING` - Use MISSING handling
+        - Applicability: A KNOWN member lacks reducer-required verdict/score/severity.
+        - Required/observable: Configured missing-observation path. Forbidden: Do not recategorize KNOWN without verdict as UNKNOWN
+        - Authority: NORMATIVE_VCP; source spec/draft/aggregation.md:10-18.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.EXCEPTION_ACTION. Domain `D.AGG.EXCEPTION_ACTION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.AGG.REJECT` - Reject reduction with AGGREGATE_INPUT and record ERROR
+        - Applicability: A member matches an exceptional class handled REJECT.
+        - Required/observable: Explicit aggregate failure. Forbidden: Do not invent satisfaction value
+        - Authority: NORMATIVE_VCP; source spec/draft/aggregation.md:10-18.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.EXCEPTION_ACTION. Domain `D.AGG.EXCEPTION_ACTION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Logical reducers** - 5 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.AGG.ALL` - PASS iff every retained verdict is PASS
+        - Applicability: ALL has retained binary verdicts.
+        - Required/observable: Successful applicable KNOWN logical Result. Forbidden: Do not return PASS when any retained verdict is FAIL
+        - Authority: NORMATIVE_VCP; source spec/draft/aggregation.md:20-38.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.LOGICAL. Domain `D.AGG.LOGICAL`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.AGG.ANY` - PASS iff at least one retained verdict is PASS
+        - Applicability: ANY has retained binary verdicts.
+        - Required/observable: Successful applicable KNOWN logical Result. Forbidden: Do not pass an all-FAIL retained sequence
+        - Authority: NORMATIVE_VCP; source spec/draft/aggregation.md:20-38.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.LOGICAL. Domain `D.AGG.LOGICAL`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.AGG.MAJORITY.FAIL` - Return FAIL.
+        - Applicability: Retained binary verdicts have more FAIL than PASS.
+        - Required/observable: Successful applicable KNOWN Result.. Forbidden: Do not choose PASS or a tie policy.
+        - Authority: NORMATIVE_VCP; source spec/draft/aggregation.md:20-38.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.LOGICAL. Domain `D.AGG.LOGICAL`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.AGG.MAJORITY.PASS` - Return PASS.
+        - Applicability: Retained binary verdicts have more PASS than FAIL.
+        - Required/observable: Successful applicable KNOWN Result.. Forbidden: Do not choose FAIL or a tie policy.
+        - Authority: NORMATIVE_VCP; source spec/draft/aggregation.md:20-38.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.LOGICAL. Domain `D.AGG.LOGICAL`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.AGG.MAJORITY.TIE` - Reject reduction.
+        - Applicability: Retained binary verdict counts tie.
+        - Required/observable: Aggregate error.. Forbidden: Do not invent deterministic or random tie break.
+        - Authority: NORMATIVE_VCP; source spec/draft/aggregation.md:20-38.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.LOGICAL. Domain `D.AGG.LOGICAL`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Membership** - 8 canonical primary records; INCOMPLETE.
+      - `CM.VCP.AGG.MEMBERS.COMPLETE` - Include that binding in aggregate_inputs.
+        - Applicability: An Aggregate input binds a RESULT-role output.
+        - Required/observable: Reject incomplete structural membership.. Forbidden: Do not silently omit declared Result binding.
+        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:127-140.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.MEMBERSHIP. Domain `D.AGG.MEMBERSHIP`. No test/proof coverage is claimed.
+        - Review status: INCOMPLETE - Q.CUSTOM_AGG_EMPTY.
+      - `CM.VCP.AGG.MEMBERS.ORDER` - aggregate_inputs is an authored ordered list.
+        - Applicability: An Aggregate membership is declared.
+        - Required/observable: Stable ordered membership input.. Forbidden: Do not derive order from predecessor edges or JSON object order.
+        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:127-140.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.MEMBERSHIP. Domain `D.AGG.MEMBERSHIP`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.AGG.MEMBERS.REQUIREDNESS` - Input is required BLOCK.
+        - Applicability: An Aggregate member input is declared.
+        - Required/observable: Reject invalid member declaration.. Forbidden: Do not OMIT/DEFAULT a structural Result member.
+        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:127-140.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.MEMBERSHIP. Domain `D.AGG.MEMBERSHIP`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.AGG.MEMBERS.SOURCE_ROLE` - Member binds existing upstream RESULT-role output.
+        - Applicability: A member name is declared.
+        - Required/observable: Reject invalid typed membership.. Forbidden: Do not include INFORMATION/DECISION or Derive/Control bookkeeping as Result members.
+        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:127-140.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.MEMBERSHIP. Domain `D.AGG.MEMBERSHIP`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.AGG.MEMBERS.UNIQUE` - Member input names are unique.
+        - Applicability: An Aggregate membership is declared.
+        - Required/observable: Reject duplicate membership.. Forbidden: Do not include same input identity twice.
+        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:127-140.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.MEMBERSHIP. Domain `D.AGG.MEMBERSHIP`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.AGG.MEMBERS_INPUT.CONSTANT` - Required members input is CONSTANT equal to aggregate_inputs.
+        - Applicability: An Aggregate is declared.
+        - Required/observable: Provider receives exact ordered membership.. Forbidden: Do not rely on object-key order or inconsistent copied list.
+        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:127-140.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.MEMBERSHIP. Domain `D.AGG.MEMBERSHIP`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.AGG.MEMBERS_INPUT.RESERVED` - subject, criterion and members are not member names.
+        - Applicability: An Aggregate member input is named.
+        - Required/observable: Reject reserved member identity.. Forbidden: Do not conflate semantic or ordering ports with reducer members.
+        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:127-140.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.MEMBERSHIP. Domain `D.AGG.MEMBERSHIP`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.AGG.MEMBER_STATES` - Keep it in membership and apply handling; unavailable values block
+        - Applicability: A Result member is ERROR or nonexecuted.
+        - Required/observable: Exact retained/rejected member set. Forbidden: Do not silently discard exceptional members before configured handling
+        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:127-140.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.MEMBERSHIP. Domain `D.AGG.MEMBERSHIP`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Numeric reducers** - 6 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **ORIGINAL_WEIGHTS** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.AGG.WEIGHTED.ORIGINAL_WEIGHTS` - Exactly n finite nonnegative weights aligned with original positions.
+          - Applicability: Direct weighted reduction has n original members.
+          - Required/observable: AGGREGATE_CONFIG/INPUT as scoped.. Forbidden: No missing/negative/nonfinite weight.
+          - Authority: NORMATIVE_VCP; source spec/draft/aggregation.md:20-38.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.NUMERIC. Domain `D.AGG.NUMERIC`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **RETAINED_TOTAL** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.AGG.WEIGHTED.RETAINED_TOTAL` - sum(w_i,i in K)>0.
+          - Applicability: Filtering retains member set K.
+          - Required/observable: AGGREGATE_INPUT on zero.. Forbidden: No zero retained total or invented normalization.
+          - Authority: NORMATIVE_VCP; source spec/draft/aggregation.md:20-38.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.NUMERIC. Domain `D.AGG.NUMERIC`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **SCORE** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.AGG.WEIGHTED.SCORE` - score=sum(w_i*s_i,i in K)/sum(w_i,i in K).
+          - Applicability: Weighted reduction has valid retained scores/weights.
+          - Required/observable: Successful applicable KNOWN score.. Forbidden: No verdict inference or weight reindexing.
+          - Authority: NORMATIVE_VCP; source spec/draft/aggregation.md:20-38.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.NUMERIC. Domain `D.AGG.NUMERIC`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.AGG.MAX` - Output score is mathematical maximum
+        - Applicability: MAX_SCORE has retained scores.
+        - Required/observable: Successful applicable KNOWN score Result. Forbidden: Do not imply verdict from score
+        - Authority: NORMATIVE_VCP; source spec/draft/aggregation.md:20-38.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.NUMERIC. Domain `D.AGG.NUMERIC`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.AGG.MEAN` - Output score is arithmetic mean sum(x_i)/n
+        - Applicability: AVERAGE has retained scores x_i.
+        - Required/observable: Mathematical mean within implementation representability limits. Forbidden: Do not require portable binary64 bit identity
+        - Authority: NORMATIVE_VCP; source spec/draft/aggregation.md:20-38.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.NUMERIC. Domain `D.AGG.NUMERIC`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.AGG.MIN` - Output score is mathematical minimum
+        - Applicability: MIN_SCORE has retained scores.
+        - Required/observable: Successful applicable KNOWN score Result. Forbidden: Do not imply verdict from score
+        - Authority: NORMATIVE_VCP; source spec/draft/aggregation.md:20-38.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.NUMERIC. Domain `D.AGG.NUMERIC`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Severity** - 6 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **EXPLICIT** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.AGG.SEVERITY_DOMAIN.EXPLICIT` - Explicit severity_domain id/levels supplied and structurally valid.
+          - Applicability: WORST_SEVERITY configured.
+          - Required/observable: AGGREGATE_CONFIG or PROFILE_DOMAIN at declared boundary.. Forbidden: No global/implicit registry fallback.
+          - Authority: NORMATIVE_VCP; source spec/draft/aggregation.md:20-38.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SEVERITY.DOMAIN. Domain `D.SEVERITY.DOMAIN`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **LABEL_UNIQUE** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.AGG.SEVERITY_DOMAIN.LABEL_UNIQUE` - Labels are nonempty and unique.
+          - Applicability: Explicit severity levels declared.
+          - Required/observable: PROFILE_DOMAIN rejection.. Forbidden: No ambiguous duplicate/empty label.
+          - Authority: NORMATIVE_VCP; source spec/draft/aggregation.md:20-38.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SEVERITY.DOMAIN. Domain `D.SEVERITY.DOMAIN`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **MEMBER_DOMAIN** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.AGG.SEVERITY_DOMAIN.MEMBER_DOMAIN` - Member.domain equals explicit domain.id.
+          - Applicability: Retained severity member examined.
+          - Required/observable: AGGREGATE_INPUT otherwise.. Forbidden: No foreign domain comparison.
+          - Authority: NORMATIVE_VCP; source spec/draft/aggregation.md:20-38.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SEVERITY.DOMAIN. Domain `D.SEVERITY.DOMAIN`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **MEMBER_LABEL** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.AGG.SEVERITY_DOMAIN.MEMBER_LABEL` - Member.label belongs to explicit domain levels.
+          - Applicability: Retained severity member examined.
+          - Required/observable: AGGREGATE_INPUT otherwise.. Forbidden: No unresolved label ordering.
+          - Authority: NORMATIVE_VCP; source spec/draft/aggregation.md:20-38.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SEVERITY.DOMAIN. Domain `D.SEVERITY.DOMAIN`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **RANK_UNIQUE** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.AGG.SEVERITY_DOMAIN.RANK_UNIQUE` - Ranks satisfy JSON integer semantics and are pairwise distinct; higher is worse.
+          - Applicability: Explicit severity levels declared.
+          - Required/observable: PROFILE_DOMAIN rejection.. Forbidden: No Boolean/string/fractional/duplicate rank.
+          - Authority: NORMATIVE_VCP; source spec/draft/aggregation.md:20-38.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SEVERITY.DOMAIN. Domain `D.SEVERITY.DOMAIN`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.AGG.SEVERITY_RESULT` - Output label has greatest rank in explicit domain
+        - Applicability: WORST_SEVERITY has valid retained members.
+        - Required/observable: Successful applicable KNOWN severity Result. Forbidden: Do not imply binary verdict
+        - Authority: NORMATIVE_VCP; source spec/draft/aggregation.md:20-38.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SEVERITY.DOMAIN. Domain `D.SEVERITY.DOMAIN`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Standard config** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.AGG.CONFIG` - Provide reducer and handling with every exceptional category explicitly REJECT or IGNORE
+        - Applicability: Standard openverify.aggregate version 1 is invoked.
+        - Required/observable: AGGREGATE_CONFIG for invalid configuration; exact coexistence precedence unspecified. Forbidden: Do not insert hidden handling defaults
+        - Authority: NORMATIVE_VCP; source spec/draft/aggregation.md:10-18.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.CONFIGURATION. Domain `D.AGG.CONFIGURATION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Standard domain** - 1 canonical primary records; INCOMPLETE.
+      - `CM.VCP.AGG.NONEMPTY` - Reject empty reduction
+        - Applicability: Standard reduction has empty original or retained input.
+        - Required/observable: Aggregate error; custom-definition scope is not inferred here. Forbidden: Do not return vacuous PASS or invented score
+        - Authority: NORMATIVE_VCP; source spec/draft/aggregation.md:10-18.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.MEMBERSHIP. Domain `D.AGG.MEMBERSHIP`. No test/proof coverage is claimed.
+        - Review status: INCOMPLETE - Q.CUSTOM_AGG_EMPTY.
+    - **Weights** - 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **EXACT_KEYS** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.AGG.WEIGHT_KEYS.EXACT_KEYS` - Weight mapping key set equals ordered aggregate_inputs member identity set.
+          - Applicability: Graph reducer WEIGHTED_AVERAGE.
+          - Required/observable: Graph config validity.. Forbidden: No extra/missing name or object-order positional identity.
+          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:127-140.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.NUMERIC. Domain `D.AGG.NUMERIC`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **IDENTITY** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.AGG.WEIGHT_KEYS.IDENTITY` - Retained member keeps its originally authored named weight.
+          - Applicability: Weighted members are filtered.
+          - Required/observable: Identity-preserving score law.. Forbidden: Do not shift weights onto neighbors.
+          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:127-140.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.NUMERIC. Domain `D.AGG.NUMERIC`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+  - **Composition** - 12 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+    - **Control scope** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.BOUNDARY.NO_ACTION` - Control Decisions affect verification eligibility only; the host owns arbitrary external business actions.
+        - Applicability: Portable verification execution is requested.
+        - Required/observable: Verification state/Decision, no automatically authorized external action.. Forbidden: Do not execute an external business action solely because a Control Decision names a route/stop/retry/defer.
+        - Authority: NORMATIVE_VCP; source spec/draft/boundary.md:5-10.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.CONFORMANCE.SCOPE. Domain `D.CONFORMANCE.SCOPE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Dependencies** - 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.GRAPH.NO_DATA` - The edge only imposes dependency/eligibility
+        - Applicability: An execution edge exists.
+        - Required/observable: Only explicit bindings and guards transport/gate semantics. Forbidden: Do not inject values or implicitly propagate predecessor failure/nonexecution
+        - Authority: NORMATIVE_VCP; source spec/draft/composition.md:5-9.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.COMPOSITION. Domain `D.COMPOSITION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.GRAPH.READINESS` - Every incoming predecessor has reached a terminal occurrence state
+        - Applicability: A node may begin execution.
+        - Required/observable: Dependency-respecting execution and recorded timing. Forbidden: Do not start a consumer early
+        - Authority: NORMATIVE_VCP; source spec/draft/composition.md:5-9.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.COMPOSITION. Domain `D.COMPOSITION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Features** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.GRAPH.UNSUPPORTED` - Reject unsupported executable features
+        - Applicability: A graph requests cycles/iteration or DYNAMIC_EXPANSION.
+        - Required/observable: GRAPH_UNSUPPORTED. Forbidden: Do not assign invented iteration semantics
+        - Authority: NORMATIVE_VCP; source spec/draft/composition.md:24-24.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.COMPOSITION. Domain `D.COMPOSITION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Guards** - 3 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.GUARD.ABSENT` - Guard evaluates false
+        - Applicability: A valid runtime guard pointer encounters unavailable optional data.
+        - Required/observable: GUARD_FALSE nonexecution. Forbidden: Do not invoke the gated node using an invented operand
+        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:120-125.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.COMPOSITION. Domain `D.COMPOSITION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.GUARD.EQUALITY` - Compare its explicit source at JSON Pointer with authored JSON literal; empty pointer selects entire value
+        - Applicability: A guard is evaluated.
+        - Required/observable: Boolean equality result gates eligibility. Forbidden: Do not evaluate expressions or global Context lookups
+        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:120-125.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.COMPOSITION. Domain `D.COMPOSITION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.GUARD.VALIDITY` - Validate source ancestry, pointer and known operand types before execution
+        - Applicability: A guard source/pointer/operand is statically known.
+        - Required/observable: Reject invalid definition. Forbidden: Do not defer statically invalid guards into runtime false
+        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:120-125.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.COMPOSITION. Domain `D.COMPOSITION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Ordering** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.GRAPH.ORDER` - Any topologically valid order is portable
+        - Applicability: Several independent nodes are ready.
+        - Required/observable: Portable order constraints are partial. Forbidden: Do not treat definition-array order as data identity or universal execution sequence
+        - Authority: NORMATIVE_VCP; source spec/draft/composition.md:11-13.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.COMPOSITION. Domain `D.COMPOSITION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Results** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.GRAPH.NO_VERDICT` - Retain per-node Results without synthesizing an overall verdict
+        - Applicability: A graph has no explicit aggregate.
+        - Required/observable: Per-node final Results remain distinct. Forbidden: Do not equate STOP_SUCCESS with verification PASS
+        - Authority: NORMATIVE_VCP; source spec/draft/composition.md:15-22.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.COMPOSITION. Domain `D.COMPOSITION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Topology** - 3 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.GRAPH.IDENTITY.EDGE_ID` - Directed execution edges are unique.
+        - Applicability: A finite graph is validated.
+        - Required/observable: Graph identity rejection.. Forbidden: Do not accept duplicate directed pair.
+        - Authority: NORMATIVE_VCP; source spec/draft/composition.md:5-9.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.GRAPH.IDENTITY. Domain `D.GRAPH.IDENTITY`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.GRAPH.IDENTITY.ENDPOINT` - Every edge endpoint names an existing node.
+        - Applicability: A finite graph is validated.
+        - Required/observable: GRAPH_REFERENCE.. Forbidden: Do not accept dangling execution endpoints.
+        - Authority: NORMATIVE_VCP; source spec/draft/composition.md:5-9.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.GRAPH.IDENTITY. Domain `D.GRAPH.IDENTITY`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.GRAPH.IDENTITY.NODE_ID` - Node IDs are unique.
+        - Applicability: A finite graph is validated.
+        - Required/observable: GRAPH_DUPLICATE/GRAPH_REFERENCE category as specified, no invented coexistence precedence.. Forbidden: Do not overwrite duplicate node identities.
+        - Authority: NORMATIVE_VCP; source spec/draft/composition.md:5-9.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.GRAPH.IDENTITY. Domain `D.GRAPH.IDENTITY`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+  - **Computation** - 13 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+    - **Acceptance** - 4 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.DATA.ATOMIC_OUTPUT.ATOMIC` - Publish no partial accepted INFORMATION mapping.
+        - Applicability: At least one output/judgment/Result/Decision fails acceptance.
+        - Required/observable: Information publication is all-or-nothing.. Forbidden: Do not leak values validated before a later failure.
+        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:74-85.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.OUTPUT.ACCEPTANCE. Domain `D.OUTPUT.ACCEPTANCE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.DATA.ATOMIC_OUTPUT.EXTRA` - Reject semantic output acceptance.
+        - Applicability: An invoked node returns any undeclared output.
+        - Required/observable: Semantic output rejection; this prose does not mandate a unique code between OUTPUT_MISSING/OUTPUT_INVALID for extra names, or precedence against another invalid output.. Forbidden: Do not expose additional semantic outputs.
+        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:74-85.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.OUTPUT.ACCEPTANCE. Domain `D.OUTPUT.ACCEPTANCE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.DATA.ATOMIC_OUTPUT.MISSING` - Reject semantic output acceptance.
+        - Applicability: An invoked node omits any declared output.
+        - Required/observable: OUTPUT_MISSING where specified.. Forbidden: Do not mark incomplete output successful.
+        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:74-85.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.OUTPUT.ACCEPTANCE. Domain `D.OUTPUT.ACCEPTANCE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.DATA.JUDGMENT` - Validate that value against the definition judgment_schema
+        - Applicability: A Result explicitly emits judgment, including null.
+        - Required/observable: JUDGMENT_INVALID and unsuccessful acceptance on failure. Forbidden: Do not validate an absent judgment as if it were emitted null
+        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:87-94.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.JUDGMENT.ACCEPTANCE. Domain `D.JUDGMENT.ACCEPTANCE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Evaluator** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.RESULT.INVOKED` - Only EXECUTED SUCCESS or ERROR may be returned
+        - Applicability: EVALUATE or AGGREGATE actually invokes an implementation.
+        - Required/observable: OUTPUT_INVALID becomes EXECUTED/ERROR. Forbidden: Do not accept standalone SKIPPED, DEFERRED or CANCELLED output as provider-claimed nonexecution
+        - Authority: NORMATIVE_VCP; source spec/draft/result.md:48-53.
+        - Mathematics: Own finite quotient C=18, V/I/N=12/6/0. Domain `D.RESULT.INVOKED`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Node outputs** - 8 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **CARDINALITY** - 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.DATA.PRIMARY_DECISION.CARDINALITY` - Exactly one DECISION-role output exists.
+          - Applicability: Node kind CONTROL.
+          - Required/observable: Definition validity predicate.. Forbidden: No zero/multiple primary Decisions.
+          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:74-85.
+          - Mathematics: Own finite quotient C=3, V/I/N=1/2/0. Domain `D.PORT.DECLARATIONS`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.DATA.PRIMARY_RESULT.CARDINALITY` - Exactly one RESULT-role output exists.
+          - Applicability: Node kind EVALUATE or AGGREGATE.
+          - Required/observable: Definition validity predicate.. Forbidden: No zero/multiple primary Results.
+          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:74-85.
+          - Mathematics: Own finite quotient C=3, V/I/N=1/2/0. Domain `D.PORT.DECLARATIONS`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **NAME** - 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.DATA.PRIMARY_DECISION.NAME` - That primary output name is decision.
+          - Applicability: Control declares its DECISION output.
+          - Required/observable: Definition validity predicate.. Forbidden: No renamed primary output.
+          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:74-85.
+          - Mathematics: Own finite quotient C=2, V/I/N=1/1/0. Domain `D.PORT.DECLARATIONS`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.DATA.PRIMARY_RESULT.NAME` - That primary output name is result.
+          - Applicability: Evaluator declares its RESULT output.
+          - Required/observable: Definition validity predicate.. Forbidden: No renamed primary output.
+          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:74-85.
+          - Mathematics: Own finite quotient C=2, V/I/N=1/1/0. Domain `D.PORT.DECLARATIONS`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **ROLES** - 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.DATA.PRIMARY_DECISION.ROLES` - Every other output role is INFORMATION.
+          - Applicability: Control declares additional outputs.
+          - Required/observable: Definition validity predicate.. Forbidden: No RESULT output.
+          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:74-85.
+          - Mathematics: Own finite quotient C=3, V/I/N=1/2/0. Domain `D.PORT.DECLARATIONS`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.DATA.PRIMARY_RESULT.ROLES` - Every other output role is INFORMATION.
+          - Applicability: Evaluator declares additional outputs.
+          - Required/observable: Definition validity predicate.. Forbidden: No DECISION output.
+          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:74-85.
+          - Mathematics: Own finite quotient C=3, V/I/N=1/2/0. Domain `D.PORT.DECLARATIONS`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.DATA.DERIVE_ROLE` - Every declared output role is INFORMATION
+        - Applicability: Node kind is DERIVE.
+        - Required/observable: Reject forbidden role. Forbidden: Do not expose bookkeeping Result as a declared Result port
+        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:74-85.
+        - Mathematics: Own finite quotient C=3, V/I/N=1/2/0. Domain `D.NODE.OUTPUT_ROLE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.DATA.PRIMARY_VALIDITY` - Value validates against VCP semantics and its port schema
+        - Applicability: A Result/Decision output is emitted.
+        - Required/observable: Reject invalid attempt output. Forbidden: Do not let structurally typed envelopes bypass semantic validation
+        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:74-85.
+        - Mathematics: Own finite quotient C=4, V/I/N=1/3/0. Domain `D.PORT.DECLARATIONS`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+  - **Conformance** - 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+    - **Consumer stages** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.CONFORMANCE.STAGES` - Check shipped structural schema and semantic invariants; unsupported execution rejects distinctly
+        - Applicability: A VCP consumer receives interchange.
+        - Required/observable: Check shipped structural schema and semantic invariants; unsupported execution rejects distinctly. Forbidden: Do not infer supported execution from structurally valid data
+        - Authority: NORMATIVE_VCP; source spec/draft/conformance.md:5-8.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.CONFORMANCE.SCOPE. Domain `D.CONFORMANCE.SCOPE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Portable harness** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.CONFORMANCE.FIXTURE_PROTOCOL` - Valid manifest entries pass structure and semantics; invalid entries fail declared stage/code
+        - Applicability: An implementation voluntarily claims this revision conformance suite.
+        - Required/observable: Valid manifest entries pass structure and semantics; invalid entries fail declared stage/code. Forbidden: Do not derive semantic requirements from fixture existence; corpus content is not read in this assignment
+        - Authority: NORMATIVE_VCP; source spec/draft/conformance.md:10-14.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.CONFORMANCE.SCOPE. Domain `D.CONFORMANCE.SCOPE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+  - **Dataflow** - 37 canonical primary records; INCOMPLETE.
+    - **Availability** - 1 canonical primary records; INCOMPLETE.
+      - `CM.VCP.DATA.BOOKKEEPING` - Its declared Result port exposes the recorded Result only if that port schema accepts it
+        - Applicability: A producer records ERROR or nonexecution.
+        - Required/observable: Result may be AVAILABLE or INVALID independently of producer execution success. Forbidden: Do not let bookkeeping bypass producer schema or publish bookkeeping from Derive/Control as ports
+        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:74-85.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.TYPED_AVAILABILITY. Domain `D.TYPED_AVAILABILITY`. No test/proof coverage is claimed.
+        - Review status: INCOMPLETE - Q.AVAILABILITY_OVERLAP.
+    - **Bindings** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.DATA.BIND_TARGET` - Every required input has exactly one binding; binding targets name declared inputs
+        - Applicability: A node or typed policy binds input sources.
+        - Required/observable: Reject binding before execution. Forbidden: Do not accept unknown targets or multiple source constructors for one binding
+        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:27-33.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PORT.DECLARATIONS. Domain `D.PORT.DECLARATIONS`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Configuration** - 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **SCHEMA** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.DATA.CONFIG.SCHEMA` - Validate config under that valid supported schema before invocation.
+          - Applicability: Definition declares config_schema.
+          - Required/observable: DATAFLOW_CONFIG where specified; noninvocation.. Forbidden: No runtime work with rejected config.
+          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:42-47.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PORT.DECLARATIONS. Domain `D.PORT.DECLARATIONS`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **SEPARATE** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.DATA.CONFIG.SEPARATE` - Pass definition config separately without overriding any bound value.
+          - Applicability: Invocation has bound values and config.
+          - Required/observable: Exact input/config snapshots.. Forbidden: No semantic input replacement by config.
+          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:42-47.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PORT.DECLARATIONS. Domain `D.PORT.DECLARATIONS`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Input ports** - 3 canonical primary records; INCOMPLETE.
+      - **CONSTANT** - 1 canonical primary records; INCOMPLETE.
+        - `CM.VCP.DATA.DEFAULT.CONSTANT` - An explicit Constant default must be supplied, including possible JSON null.
+          - Applicability: A port uses DEFAULT.
+          - Required/observable: Definition validity; unused-default portability separate.. Forbidden: No absent default or schema-annotation fallback.
+          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:20-25.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.DEFAULT.PRESENCE. Domain `D.DEFAULT.PRESENCE`. No test/proof coverage is claimed.
+          - Review status: INCOMPLETE - Q.DEFAULT_UNUSED.
+      - **VALUE_SCHEMA** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.DATA.DEFAULT.VALUE_SCHEMA` - Its exact value validates against the port schema before invocation.
+          - Applicability: A DEFAULT Constant is supplied.
+          - Required/observable: Typed default acceptance.. Forbidden: No unvalidated default payload.
+          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:20-25.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SCHEMA.EMBEDDED. Domain `D.SCHEMA.EMBEDDED`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.DATA.PORT_HANDLING` - Required ports use BLOCK; optional ports use OMIT or DEFAULT
+        - Applicability: An input port is declared.
+        - Required/observable: Reject invalid declaration. Forbidden: Do not permit required OMIT/DEFAULT or optional BLOCK
+        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:27-33.
+        - Mathematics: Own finite quotient C=6, V/I/N=3/3/0. Domain `D.PORT.HANDLER`. No test/proof coverage is claimed.
+        - Review status: INCOMPLETE - Q.DEFAULT_UNUSED.
+    - **Isolation** - 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **AMBIENT** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.DATA.CONTEXT.AMBIENT` - Retain Context only as nonsemantic host metadata.
+          - Applicability: Occurrence has initial_context.
+          - Required/observable: Authored initial_context retained separately from input_values.. Forbidden: Derive must not mutate ambient Context or consume it as hidden semantic input.
+          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:149-153.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.WIRE.JSON. Domain `D.WIRE.JSON`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **ISOLATION** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.DATA.CONTEXT.ISOLATION` - Pass a fresh exact resolved input object and separate config.
+          - Applicability: Operation invoked.
+          - Required/observable: One invocation cannot mutate another semantic input object.. Forbidden: No injected predecessor Results or initial_context.
+          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:149-153.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.WIRE.JSON. Domain `D.WIRE.JSON`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Operation** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.DATA.OPERATION` - Use exact capability_id/version pair with no provider identity in the requirement
+        - Applicability: An operation requirement is matched.
+        - Required/observable: Provider-neutral exact match. Forbidden: Do not treat versions as ranges or operation strings as executable imports
+        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:57-72.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.OPERATION.IDENTITY. Domain `D.OPERATION.IDENTITY`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Ports** - 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **INPUT** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.DATA.PORT_NAMES.INPUT` - Input names are unique within that sequence.
+          - Applicability: Node input port sequence declared.
+          - Required/observable: Definition rejection on duplicate.. Forbidden: No positional/duplicate input identity.
+          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:27-33.
+          - Mathematics: Own finite quotient C=2, V/I/N=1/1/0. Domain `D.PORT.DECLARATIONS`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **OUTPUT** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.DATA.PORT_NAMES.OUTPUT` - Output names are unique within that sequence.
+          - Applicability: Node output sequence declared.
+          - Required/observable: Definition rejection on duplicate.. Forbidden: No duplicate output identity.
+          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:27-33.
+          - Mathematics: Own finite quotient C=2, V/I/N=1/1/0. Domain `D.PORT.DECLARATIONS`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Provider boundary** - 3 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **CONFIG** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.DATA.CAPABILITY_SHAPE.CONFIG` - Capability config is exactly node config, separate from bound inputs.
+          - Applicability: Direct capability invocation from graph node.
+          - Required/observable: Provider receives separate authored config snapshot.. Forbidden: No config override of bound inputs.
+          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:57-72.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.OPERATION.IDENTITY. Domain `D.OPERATION.IDENTITY`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **INPUT** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.DATA.CAPABILITY_SHAPE.INPUT` - Capability input is exactly the resolved port-name object.
+          - Applicability: Direct capability invocation from graph ports.
+          - Required/observable: Provider receives authored resolved JSON object.. Forbidden: No primitive wrapping or injected ambient context.
+          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:57-72.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.OPERATION.IDENTITY. Domain `D.OPERATION.IDENTITY`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **OUTPUT** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.DATA.CAPABILITY_SHAPE.OUTPUT` - Capability output is the output-port-name object.
+          - Applicability: Direct capability COMPLETED outcome.
+          - Required/observable: Provider output schema acceptance precedes port and semantic acceptance.. Forbidden: COMPLETED alone does not imply VCP success or verification PASS.
+          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:57-72.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.OPERATION.IDENTITY. Domain `D.OPERATION.IDENTITY`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Resolution** - 14 canonical primary records; INCOMPLETE.
+      - **INPUT** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.DATA.RESOLVE_OMIT.INPUT` - Exclude that key from invocation input object.
+          - Applicability: Optional input has OMIT handling and unavailable/invalid source.
+          - Required/observable: Exact consumed object lacks the key.. Forbidden: Do not insert null.
+          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:107-118.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.TYPED_AVAILABILITY. Domain `D.TYPED_AVAILABILITY`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **PROVENANCE** - 3 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.DATA.RESOLVE_AVAILABLE.PROVENANCE` - Record exact source identity, AVAILABLE status, exact value and used_default=false.
+          - Applicability: Available schema-valid input consumed.
+          - Required/observable: input_values equals exact authored/reconstructed source value.. Forbidden: No stale/unrelated source substitution.
+          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:107-118.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.TYPED_AVAILABILITY. Domain `D.TYPED_AVAILABILITY`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.DATA.RESOLVE_DEFAULT.PROVENANCE` - Retain original source and availability with used_default=true and explicit consumed value.
+          - Applicability: Default substituted for unavailable/invalid bound source.
+          - Required/observable: InputResolution explains why and what default was consumed.. Forbidden: Do not replace original status with AVAILABLE.
+          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:107-118.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.TYPED_AVAILABILITY. Domain `D.TYPED_AVAILABILITY`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.DATA.RESOLVE_OMIT.PROVENANCE` - Retain original availability and source in resolution with no usable value and used_default=false.
+          - Applicability: Optional input omitted.
+          - Required/observable: InputResolution records omission.. Forbidden: Do not erase resolution or claim a consumed value.
+          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:107-118.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.TYPED_AVAILABILITY. Domain `D.TYPED_AVAILABILITY`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **SUBSTITUTE** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.DATA.RESOLVE_DEFAULT.SUBSTITUTE` - Use the authored validated Constant as the consumed value.
+          - Applicability: Input has DEFAULT handling and original availability is not AVAILABLE.
+          - Required/observable: Exact default value appears in assembled invocation inputs.. Forbidden: No stale value, implicit null, or other producer fallback.
+          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:107-118.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.TYPED_AVAILABILITY. Domain `D.TYPED_AVAILABILITY`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **VALIDATION** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.DATA.RESOLVE_AVAILABLE.VALIDATION` - Validate the value against target port schema before use.
+          - Applicability: Resolved source supplies a candidate value.
+          - Required/observable: Invalid value follows configured unavailable handler.. Forbidden: Do not consume schema-invalid value.
+          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:107-118.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.TYPED_AVAILABILITY. Domain `D.TYPED_AVAILABILITY`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.DATA.RESOLVE_ALL` - Retain a resolution for every declared input
+        - Applicability: A node is disabled or enabled.
+        - Required/observable: Complete resolution snapshot. Forbidden: Do not erase resolution evidence merely because lifecycle prevents invocation
+        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:107-118.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.TYPED_AVAILABILITY. Domain `D.TYPED_AVAILABILITY`. No test/proof coverage is claimed.
+        - Review status: INCOMPLETE - Q.AVAILABILITY_OVERLAP.
+      - `CM.VCP.DATA.RESOLVE_BLOCK.DOWNSTREAM` - Execution edges themselves do not disable descendants; explicit bindings/guards determine downstream eligibility.
+        - Applicability: Blocked predecessor settles terminal with typed declared outputs.
+        - Required/observable: Downstream readiness and availability follow their own contracts.. Forbidden: Do not propagate nonexecution implicitly on dependency edges.
+        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:107-118.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.COMPOSITION. Domain `D.COMPOSITION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.DATA.RESOLVE_BLOCK.NONINVOCATION` - Do not invoke the graph provider.
+        - Applicability: Required BLOCK input unavailable/invalid; no higher-precedence lifecycle cause.
+        - Required/observable: Zero invocation for this node.. Forbidden: Do not spend provider work despite blocked input.
+        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:107-118.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.HANDLING.EFFECTS. Domain `D.HANDLING.EFFECTS`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.DATA.RESOLVE_BLOCK.PROVENANCE` - No executor identity, observation, Decision or accepted information/executor usage.
+        - Applicability: Blocked node never invoked.
+        - Required/observable: RunRecord lineage consistent with noninvocation.. Forbidden: Do not fabricate incurred provider work.
+        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:107-118.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.DATA.RESOLVE_BLOCK.REASON` - NodeRecord.reason and diagnostic Result.output.reason equal INPUT_UNAVAILABLE.
+        - Applicability: Required BLOCK input unavailable/invalid; no higher-precedence lifecycle cause.
+        - Required/observable: Machine-readable reason and repeated diagnostic.. Forbidden: Do not erase the exact cause.
+        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:107-118.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.HANDLING.EFFECTS. Domain `D.HANDLING.EFFECTS`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.DATA.RESOLVE_BLOCK.RESOLUTION` - Preserve source and original availability, used_default=false, no usable input value.
+        - Applicability: Required BLOCK input unavailable/invalid.
+        - Required/observable: Exact input resolution and assembled input omission.. Forbidden: Do not substitute stale/null/unrelated values.
+        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:107-118.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.TYPED_AVAILABILITY. Domain `D.TYPED_AVAILABILITY`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.DATA.RESOLVE_BLOCK.RESULT` - Synthesized Result disposition is SKIPPED.
+        - Applicability: Required BLOCK input unavailable/invalid; no higher-precedence lifecycle cause.
+        - Required/observable: SKIPPED Result.. Forbidden: Do not synthesize FAIL or UNKNOWN.
+        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:107-118.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.HANDLING.EFFECTS. Domain `D.HANDLING.EFFECTS`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.DATA.RESOLVE_BLOCK.STATE` - NodeRecord.state is NONEXECUTED.
+        - Applicability: Required BLOCK input unavailable/invalid; no higher-precedence lifecycle cause.
+        - Required/observable: Terminal nonexecution state.. Forbidden: Do not record SUCCESS or executed ERROR for prevented work.
+        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:107-118.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.HANDLING.EFFECTS. Domain `D.HANDLING.EFFECTS`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Run inputs** - 4 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.DATA.RUN_ACCEPT.MISSING_REQUIRED` - Reject occurrence inputs before policy/node invocation.
+        - Applicability: Host omits required run-input value.
+        - Required/observable: RUN_INPUT.. Forbidden: Do not invent null/default for a required missing value.
+        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:20-25.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RUN_INPUT.PREFLIGHT. Domain `D.RUN_INPUT.PREFLIGHT`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.DATA.RUN_ACCEPT.UNKNOWN_NAME` - Reject occurrence inputs before policy/node invocation.
+        - Applicability: Host supplies run-input key absent from declarations.
+        - Required/observable: RUN_INPUT.. Forbidden: Do not inject unknown names.
+        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:20-25.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RUN_INPUT.PREFLIGHT. Domain `D.RUN_INPUT.PREFLIGHT`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.DATA.RUN_ACCEPT.VALUE_SCHEMA` - Reject occurrence inputs before policy/node invocation.
+        - Applicability: Host supplies value violating declared run-input schema.
+        - Required/observable: RUN_INPUT.. Forbidden: Do not coerce or postpone actual input validation.
+        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:20-25.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RUN_INPUT.PREFLIGHT. Domain `D.RUN_INPUT.PREFLIGHT`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.DATA.RUN_NAMES` - Run input names are unique
+        - Applicability: Run inputs are declared.
+        - Required/observable: Reject definition before implementation invocation. Forbidden: Do not resolve duplicate declarations by array order
+        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:20-25.
+        - Mathematics: Own finite quotient C=2, V/I/N=1/1/0. Domain `D.RUN_INPUT.NORMALIZATION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Sources** - 4 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.DATA.ANCESTOR.OUTPUT_EXISTS` - Named declared output exists.
+        - Applicability: UPSTREAM_OUTPUT producer exists.
+        - Required/observable: Definition binding rejection.. Forbidden: Do not use undeclared output names or bookkeeping-only values as ports.
+        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:49-55.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SOURCE.REACHABILITY. Domain `D.SOURCE.REACHABILITY`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.DATA.ANCESTOR.PRODUCER_EXISTS` - Producer node exists.
+        - Applicability: UPSTREAM_OUTPUT source is declared.
+        - Required/observable: Definition binding rejection.. Forbidden: Do not accept dangling node_id.
+        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:49-55.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SOURCE.REACHABILITY. Domain `D.SOURCE.REACHABILITY`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.DATA.ANCESTOR.STRICT_ANCESTRY` - Producer is strict execution ancestor of consumer.
+        - Applicability: UPSTREAM_OUTPUT producer/output exist.
+        - Required/observable: Definition binding rejection.. Forbidden: Do not infer ancestry from array position or bind self/unordered peer.
+        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:49-55.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SOURCE.REACHABILITY. Domain `D.SOURCE.REACHABILITY`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.DATA.RUN_SOURCE` - Name refers to a declared run input
+        - Applicability: Source kind is RUN_INPUT.
+        - Required/observable: Reject source identity before execution. Forbidden: Do not consult ambient names or undeclared inputs
+        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:37-40.
+        - Mathematics: Own finite quotient C=2, V/I/N=1/1/0. Domain `D.RUN_INPUT.NORMALIZATION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+  - **Decisions** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+    - **Shape** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.DECISION.DESTINATION` - ROUTE has a nonempty destination; every other kind has no non-null destination
+        - Applicability: Decision is validated.
+        - Required/observable: Reject invalid Decision semantics. Forbidden: Do not treat Decision as a judgment or infer PASS from STOP_SUCCESS
+        - Authority: NORMATIVE_VCP; source spec/draft/result.md:30-33.
+        - Mathematics: Own finite quotient C=24, V/I/N=11/13/0. Domain `D.DECISION.DESTINATION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+  - **Extensions** - 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+    - **Optional** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.EXT.PRESERVE` - Preserve data without interpreting unknown semantics
+        - Applicability: Unknown optional VCP extension is consumed.
+        - Required/observable: Lossless optional extension handling. Forbidden: Do not let metadata/extension data override core meaning
+        - Authority: NORMATIVE_VCP; source spec/draft/extensions.md:5-13.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.EXTENSIONS.ANNOTATIONS. Domain `D.EXTENSIONS.ANNOTATIONS`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Required** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.EXT.REQUIRED` - Report EXTENSION_UNSUPPORTED
+        - Applicability: Required VCP extension lacks implementation support.
+        - Required/observable: Reject unsupported capability. Forbidden: Do not silently consume required unknown meaning
+        - Authority: NORMATIVE_VCP; source spec/draft/extensions.md:5-13.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.EXT.REQUIRED_SUPPORT. Domain `D.EXT.REQUIRED_SUPPORT`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+  - **Knowledge** - 3 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+    - **ArtifactRef** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.KNOWLEDGE.REFERENCE` - Pass its exact reference snapshot as information; locator is opaque
+        - Applicability: An ArtifactRef is consumed.
+        - Required/observable: Explicit retrieval is host/provider owned. Forbidden: Do not assume bytes or fetch content automatically
+        - Authority: NORMATIVE_VCP; source spec/draft/knowledge.md:5-9.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.REFERENCES.OPAQUE. Domain `D.REFERENCES.OPAQUE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Evidence** - 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.KNOWLEDGE.EVIDENCE` - At least one of message, artifact_ref, locator, structured_data is non-null; message is nonempty; empty containers count
+        - Applicability: Evidence is validated.
+        - Required/observable: EVIDENCE_EMPTY when meaning is absent. Forbidden: Do not let id, metadata or extensions alone establish meaningful evidence
+        - Authority: NORMATIVE_VCP; source spec/draft/knowledge.md:11-14.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.EVIDENCE.MEANING. Domain `D.EVIDENCE.MEANING`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.KNOWLEDGE.NEUTRAL` - Core property vocabulary remains domain-neutral; code-specific coordinates belong in opaque locator/structured data
+        - Applicability: A portable Evidence object is authored.
+        - Required/observable: Core property vocabulary remains domain-neutral; code-specific coordinates belong in opaque locator/structured data. Forbidden: Do not introduce file/line-specific fundamental Evidence fields
+        - Authority: NORMATIVE_VCP; source spec/draft/knowledge.md:16-17.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.REFERENCES.OPAQUE. Domain `D.REFERENCES.OPAQUE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+  - **Lifecycle** - 22 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+    - **Cancellation** - 8 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **EVENT** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.LIFECYCLE.CANCEL_BEFORE.EVENT` - Record first affected node, BEFORE_START phase and explicit host reason.
+          - Applicability: Host cancellation first affects unstarted work.
+          - Required/observable: RunRecord.cancellation identifies actual host event.. Forbidden: No inferred cancellation origin.
+          - Authority: NORMATIVE_VCP; source spec/draft/lifecycle.md:61-67.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.COMPOSITION. Domain `D.COMPOSITION`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **NODE** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.LIFECYCLE.CANCEL_BEFORE.NODE` - Affected and subsequent unstarted nodes are NONEXECUTED with CANCELLED Result and CANCELLATION reason.
+          - Applicability: Host cancellation first affects an unstarted node.
+          - Required/observable: Complete cancelled nonexecution records.. Forbidden: No executor identity, observations or usage on unstarted nodes.
+          - Authority: NORMATIVE_VCP; source spec/draft/lifecycle.md:61-67.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.COMPOSITION. Domain `D.COMPOSITION`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.LIFECYCLE.CANCEL_ADMISSION` - Admission must be RUN
+        - Applicability: Host records occurrence cancellation.
+        - Required/observable: Reject contradictory cancellation provenance. Forbidden: Do not attach a cancellation event to SKIP/DEFER occurrence
+        - Authority: NORMATIVE_VCP; source spec/draft/lifecycle.md:61-67.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.COMPOSITION. Domain `D.COMPOSITION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.LIFECYCLE.CANCEL_ORIGIN` - Only explicit host cancellation establishes occurrence cancellation
+        - Applicability: A provider supplies a Result.
+        - Required/observable: No invented cancellation provenance. Forbidden: Do not infer host cancellation from a provider Result
+        - Authority: NORMATIVE_VCP; source spec/draft/lifecycle.md:61-67.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.COMPOSITION. Domain `D.COMPOSITION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.LIFECYCLE.CANCEL_RUNNING.LATER` - Later unstarted nodes are NONEXECUTED with CANCELLED Results.
+        - Applicability: Host cancellation has interrupted the first affected attempt.
+        - Required/observable: No further invocation.. Forbidden: Do not start remaining providers.
+        - Authority: NORMATIVE_VCP; source spec/draft/lifecycle.md:61-67.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.COMPOSITION. Domain `D.COMPOSITION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.LIFECYCLE.CANCEL_RUNNING.OBSERVATION` - Retain valid unaccepted observations and incurred usage separately.
+        - Applicability: Cancelled attempt incurred observable usage/evidence.
+        - Required/observable: Cancellation does not erase incurred resources.. Forbidden: Do not publish accepted information or Decision from cancelled attempt.
+        - Authority: NORMATIVE_VCP; source spec/draft/lifecycle.md:61-67.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.OBSERVATION.USAGE. Domain `D.OBSERVATION.USAGE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.LIFECYCLE.CANCEL_RUNNING.RESULT` - Affected Result disposition is CANCELLED with no accepted evaluation fields.
+        - Applicability: Host cancellation interrupts the affected attempt.
+        - Required/observable: Cancellation Result.. Forbidden: Do not convert interruption into FAIL or accepted UNKNOWN.
+        - Authority: NORMATIVE_VCP; source spec/draft/lifecycle.md:61-67.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.NODE.TERMINAL_RESULT. Domain `D.NODE.TERMINAL_RESULT`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.LIFECYCLE.CANCEL_RUNNING.STATE` - Affected NodeRecord.state is CANCELLED.
+        - Applicability: Host cancellation interrupts the affected attempt.
+        - Required/observable: Interrupted terminal state.. Forbidden: Do not record completed success after observed cancellation.
+        - Authority: NORMATIVE_VCP; source spec/draft/lifecycle.md:61-67.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.CANCEL.ADMISSION. Domain `D.CANCEL.ADMISSION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Causes** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.LIFECYCLE.NONEXEC_CAUSE` - Result.output.reason repeats NodeRecord.reason using the cause table
+        - Applicability: Runner synthesizes nonexecution.
+        - Required/observable: Exact cause/disposition mapping in the lifecycle table. Forbidden: Do not conflate admission, guard, route, control, cancellation or blocked-input reasons
+        - Authority: NORMATIVE_VCP; source spec/draft/lifecycle.md:26-27.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.COMPOSITION. Domain `D.COMPOSITION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Control** - 4 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.LIFECYCLE.CONTINUE` - Leave other eligibility unchanged
+        - Applicability: Control returns CONTINUE.
+        - Required/observable: Existing readiness rules continue. Forbidden: Do not invent a verification verdict
+        - Authority: NORMATIVE_VCP; source spec/draft/lifecycle.md:41-44.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.COMPOSITION. Domain `D.COMPOSITION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.LIFECYCLE.DEFER` - Prevent further work in this occurrence with DEFERRED/CONTROL_DEFER
+        - Applicability: Control returns DEFER.
+        - Required/observable: Deferred remainder. Forbidden: Do not create external scheduling
+        - Authority: NORMATIVE_VCP; source spec/draft/lifecycle.md:41-44.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.COMPOSITION. Domain `D.COMPOSITION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.LIFECYCLE.RETRY` - End local pass, retain Decision and mark remaining work SKIPPED/RETRY_REQUESTED
+        - Applicability: Control returns RETRY.
+        - Required/observable: Explicit retry request only. Forbidden: Do not run an implicit new attempt or occurrence
+        - Authority: NORMATIVE_VCP; source spec/draft/lifecycle.md:41-44.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.COMPOSITION. Domain `D.COMPOSITION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.LIFECYCLE.STOP` - End further work as specified with SKIPPED/CONTROL_STOP
+        - Applicability: Control returns STOP_SUCCESS or STOP_FAILURE.
+        - Required/observable: Remaining unstarted work has diagnostic nonexecution. Forbidden: Do not synthesize a PASS/FAIL judgment
+        - Authority: NORMATIVE_VCP; source spec/draft/lifecycle.md:41-44.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.COMPOSITION. Domain `D.COMPOSITION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Eligibility** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.LIFECYCLE.PRECEDENCE` - Select admission non-RUN, observed cancellation, terminating control, route exclusion, false guard, blocked input in that order
+        - Applicability: Multiple nonexecution causes apply to an unstarted node.
+        - Required/observable: Stable highest-precedence lifecycle reason. Forbidden: Do not collapse cancellation/DEFER into INPUT_UNAVAILABLE
+        - Authority: NORMATIVE_VCP; source spec/draft/lifecycle.md:54-57.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.COMPOSITION. Domain `D.COMPOSITION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Guards** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.LIFECYCLE.GUARD_JOIN` - Every incoming guard must hold
+        - Applicability: A node has multiple guarded incoming edges.
+        - Required/observable: GUARD_FALSE only where eligibility requires it. Forbidden: Do not use any-guard semantics or implicitly disable all unguarded descendants after false guard
+        - Authority: NORMATIVE_VCP; source spec/draft/lifecycle.md:46-52.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.COMPOSITION. Domain `D.COMPOSITION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Logical phases** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.LIFECYCLE.PHASES` - Pending awaits all predecessors; Ready additionally satisfies eligibility; starting the attempt is Running; completion/nonexecution is Terminal. Pending/Ready may terminate without invocation; terminal records are SUCCESS/ERROR/NONEXECUTED/CANCELLED.
+        - Applicability: Observe one node within an admitted occurrence.
+        - Required/observable: Trace/readiness and terminal-record compatibility.. Forbidden: Do not treat these logical phases as a new wire enum, start before prerequisites/eligibility, or reopen a terminal attempt.
+        - Authority: NORMATIVE_VCP; source spec/draft/lifecycle.md:9-13.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.LIFECYCLE.PHASE. Domain `D.LIFECYCLE.PHASE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Nodes** - 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **CARDINALITY** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.LIFECYCLE.TERMINAL.CARDINALITY` - Exactly one terminal NodeRecord for every definition node, including noninvoked nodes.
+          - Applicability: Occurrence exists.
+          - Required/observable: Definition node identities equal terminal record identities.. Forbidden: No missing or duplicated terminal records.
+          - Authority: NORMATIVE_VCP; source spec/draft/lifecycle.md:5-7.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.COMPOSITION. Domain `D.COMPOSITION`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **IMMUTABILITY** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.LIFECYCLE.TERMINAL.IMMUTABILITY` - Terminal record never changes retroactively.
+          - Applicability: Node has reached terminal state.
+          - Required/observable: Stable terminal snapshot.. Forbidden: No later control, cancellation or output can overwrite it.
+          - Authority: NORMATIVE_VCP; source spec/draft/lifecycle.md:5-7.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.COMPOSITION. Domain `D.COMPOSITION`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Routing** - 4 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **ACCUMULATE** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.LIFECYCLE.ROUTE_EXCLUSION.ACCUMULATE` - Accumulate exclusions; later routing cannot undo prior exclusion.
+          - Applicability: Multiple routing controls apply.
+          - Required/observable: Monotone excluded set.. Forbidden: Do not re-enable previously excluded node.
+          - Authority: NORMATIVE_VCP; source spec/draft/lifecycle.md:29-39.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.COMPOSITION. Domain `D.COMPOSITION`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **BRANCHES** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.LIFECYCLE.ROUTE_EXCLUSION.BRANCHES` - Exclude other successors and descendants except nodes also reachable from selected successor.
+          - Applicability: Control emits valid ROUTE to direct successor.
+          - Required/observable: Only exclusive competing branches receive ROUTE_EXCLUDED.. Forbidden: Do not exclude shared reachable joins or independent work outside branches.
+          - Authority: NORMATIVE_VCP; source spec/draft/lifecycle.md:29-39.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.COMPOSITION. Domain `D.COMPOSITION`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **DEPENDENCIES** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.LIFECYCLE.ROUTE_EXCLUSION.DEPENDENCIES` - Still require ordinary prerequisites and all incoming guards.
+          - Applicability: ROUTE-selected successor considered for execution.
+          - Required/observable: Selected branch obeys dependency/guard eligibility.. Forbidden: Routing cannot bypass readiness or guards.
+          - Authority: NORMATIVE_VCP; source spec/draft/lifecycle.md:29-39.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.COMPOSITION. Domain `D.COMPOSITION`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.LIFECYCLE.ROUTE_TARGET` - Destination is a direct outgoing execution successor
+        - Applicability: Control returns ROUTE.
+        - Required/observable: Reject invalid Control output. Forbidden: Do not accept a mere transitive descendant or unknown target
+        - Authority: NORMATIVE_VCP; source spec/draft/lifecycle.md:46-52.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.COMPOSITION. Domain `D.COMPOSITION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+  - **Meaning** - 6 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+    - **Capability behavior** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.DATA.HONEST_EVALUATION` - Evaluate the subject/criterion actually supplied in semantic ports
+        - Applicability: A trusted capability implements evaluation.
+        - Required/observable: Capability semantic conformance, not cryptographic authentication. Forbidden: Do not claim arbitrary provider honesty is proven by record validation
+        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:87-94.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.CONFORMANCE.SCOPE. Domain `D.CONFORMANCE.SCOPE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Criterion** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **Declarative identity** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.MEANING.CRITERION_DATA` - Criterion id/description/metadata identify and describe the property; they are not executable expressions. Evaluate implementation executes declared criterion.
+          - Applicability: Criterion metadata consumed..
+          - Required/observable: Portable meaning tied to explicitly supplied Criterion snapshot.. Forbidden: Do not interpret criterion metadata as expression language or executable import.
+          - Authority: NORMATIVE_VCP; source spec/draft/meaning.md:16-20.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.CONFORMANCE.SCOPE. Domain `D.CONFORMANCE.SCOPE`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Evaluator inputs** - 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.DATA.SEMANTIC_SUBJECT.CRITERION` - Required criterion input is CONSTANT-bound to the exact definition criterion snapshot.
+        - Applicability: Node kind EVALUATE or AGGREGATE.
+        - Required/observable: SEMANTIC_BINDING on mismatch; provider input contains authored semantic snapshot.. Forbidden: Do not omit, change or source criterion from an unrelated value.
+        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:87-94.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SEMANTIC_BINDING. Domain `D.SEMANTIC_BINDING`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.DATA.SEMANTIC_SUBJECT.SUBJECT` - Required subject input is CONSTANT-bound to the exact definition subject snapshot.
+        - Applicability: Node kind EVALUATE or AGGREGATE.
+        - Required/observable: SEMANTIC_BINDING on mismatch; provider input contains authored semantic snapshot.. Forbidden: Do not omit, change or source subject from an unrelated value.
+        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:87-94.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SEMANTIC_BINDING. Domain `D.SEMANTIC_BINDING`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Satisfaction mapping** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **Adapter ownership** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.MEANING.SATISFACTION_MAPPING` - It describes mapping identity/configuration; execution is adapter-owned and core derives no verdict automatically.
+          - Applicability: Optional satisfaction_mapping supplied..
+          - Required/observable: Known judgment may remain without verdict or score.. Forbidden: Do not execute an invented portable mapping language.
+          - Authority: NORMATIVE_VCP; source spec/draft/meaning.md:10-14.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.CONFORMANCE.SCOPE. Domain `D.CONFORMANCE.SCOPE`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Selection versus criterion** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.MEANING.SELECTION_DISTINCT` - Selection chooses subject inclusion; Criterion identifies property to establish
+        - Applicability: A definition chooses subjects and evaluates a criterion.
+        - Required/observable: Selection chooses subject inclusion; Criterion identifies property to establish. Forbidden: Do not change criterion through selection or treat selection as evaluation
+        - Authority: NORMATIVE_VCP; source spec/draft/meaning.md:5-7.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.CONFORMANCE.SCOPE. Domain `D.CONFORMANCE.SCOPE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+  - **Policies** - 22 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+    - **Built-ins** - 6 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **BOUNDARIES** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.POLICY.PROBABILITY.BOUNDARIES` - p=0 returns SKIP; p=1 returns RUN.
+          - Applicability: PROBABILITY evaluated with valid explicit p.
+          - Required/observable: Exact endpoint admission.. Forbidden: Do not sample contrary endpoint outcome.
+          - Authority: NORMATIVE_VCP; source spec/draft/execution-policy.md:36-43.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.POLICY.PROBABILITY. Domain `D.POLICY.PROBABILITY`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **DOMAIN** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.POLICY.PROBABILITY.DOMAIN` - Probability is a finite JSON number p in [0,1].
+          - Applicability: PROBABILITY admission declared.
+          - Required/observable: Invalid policy declaration rejected.. Forbidden: No bool, nonfinite, out-of-range or implicit probability.
+          - Authority: NORMATIVE_VCP; source spec/draft/execution-policy.md:36-43.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.POLICY.PROBABILITY. Domain `D.POLICY.PROBABILITY`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **INTERIOR** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.POLICY.PROBABILITY.INTERIOR` - Return RUN or SKIP using explicit structural sampler inputs.
+          - Applicability: 0<p<1 with definition fingerprint, subject identity, opportunity_id and explicit p.
+          - Required/observable: Recorded admission stays in RUN/SKIP; reference-only bucket not enforced portably.. Forbidden: No hidden budget/history/clock/environment; portable bucket identity not promised.
+          - Authority: NORMATIVE_VCP; source spec/draft/execution-policy.md:36-43.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.POLICY.PROBABILITY. Domain `D.POLICY.PROBABILITY`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.POLICY.ALWAYS` - Return RUN
+        - Applicability: Built-in ALWAYS admission is evaluated.
+        - Required/observable: Admission outcome. Forbidden: Do not silently sample
+        - Authority: NORMATIVE_VCP; source spec/draft/execution-policy.md:36-43.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.POLICY.SEQUENTIAL. Domain `D.POLICY.SEQUENTIAL`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.POLICY.EXPLICIT` - Select the exact definition subject snapshot
+        - Applicability: Built-in EXPLICIT selection is evaluated.
+        - Required/observable: Selection outcome. Forbidden: Do not invent a candidate universe
+        - Authority: NORMATIVE_VCP; source spec/draft/execution-policy.md:36-43.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.POLICY.SEQUENTIAL. Domain `D.POLICY.SEQUENTIAL`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.POLICY.MANUAL` - Return ACTIVATE
+        - Applicability: Built-in MANUAL activation receives a host opportunity.
+        - Required/observable: Activation outcome. Forbidden: Do not schedule a periodic trigger implicitly
+        - Authority: NORMATIVE_VCP; source spec/draft/execution-policy.md:36-43.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.POLICY.SEQUENTIAL. Domain `D.POLICY.SEQUENTIAL`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Declarations** - 3 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.POLICY.DECLARATION.BUILTIN_INPUTS` - No ports, bindings or config are attached.
+        - Applicability: A built-in shorthand is authored.
+        - Required/observable: Reject mixed declaration.. Forbidden: Do not add hidden typed/custom computation to shorthand.
+        - Authority: NORMATIVE_VCP; source spec/draft/execution-policy.md:36-43.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.POLICY.BUILTIN_FIELDS. Domain `D.POLICY.BUILTIN_FIELDS`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.POLICY.DECLARATION.DISCRIMINATOR` - Exactly one custom operation or built-in discriminator.
+        - Applicability: A policy is authored.
+        - Required/observable: Policy declaration rejection.. Forbidden: Do not omit both or mix both.
+        - Authority: NORMATIVE_VCP; source spec/draft/execution-policy.md:36-43.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.POLICY.DECLARATION. Domain `D.POLICY.DECLARATION`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.POLICY.DECLARATION.PROBABILITY_FIELD` - No probability field is used.
+        - Applicability: A policy other than built-in PROBABILITY is authored.
+        - Required/observable: Reject invalid declaration.. Forbidden: Do not attach probability to custom/other built-in roles.
+        - Authority: NORMATIVE_VCP; source spec/draft/execution-policy.md:36-43.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.POLICY.BUILTIN_FIELDS. Domain `D.POLICY.BUILTIN_FIELDS`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Failure** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.POLICY.FAILURE` - Abort policy evaluation without decision or occurrence
+        - Applicability: Policy input is required unavailable/invalid, implementation raises, or outcome invalid.
+        - Required/observable: POLICY_INPUT/POLICY_OUTPUT where specified; no RunRecord. Forbidden: Do not invent admission or fabricate a record
+        - Authority: NORMATIVE_VCP; source spec/draft/execution-policy.md:9-17.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.POLICY.SEQUENTIAL. Domain `D.POLICY.SEQUENTIAL`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Identity** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.POLICY.OPPORTUNITY` - Supply nonempty opportunity_id
+        - Applicability: VCP occurrence opportunity is offered.
+        - Required/observable: Reject empty identity; Relay may explicitly generate one as host behavior. Forbidden: Do not derive semantic opportunity identity from hidden ambient state
+        - Authority: NORMATIVE_VCP; source spec/draft/execution-policy.md:45-51.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.POLICY.OPPORTUNITY. Domain `D.POLICY.OPPORTUNITY`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Inputs** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.POLICY.SOURCES` - Only CONSTANT, RUN_INPUT and EXTERNAL_REFERENCE bindings are legal
+        - Applicability: Custom typed policy is declared.
+        - Required/observable: Reject policy definition. Forbidden: Do not allow pre-graph UPSTREAM_OUTPUT or undeclared Context
+        - Authority: NORMATIVE_VCP; source spec/draft/execution-policy.md:9-17.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.POLICY.SOURCE. Domain `D.POLICY.SOURCE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Occurrence boundary** - 5 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.POLICY.ADMISSION` - Create occurrence for RUN, SKIP or DEFER
+        - Applicability: Activated selected subject receives valid admission.
+        - Required/observable: RunRecord exists after valid admission. Forbidden: Do not require actual graph execution to call it an occurrence
+        - Authority: NORMATIVE_VCP; source spec/draft/execution-policy.md:60-65.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.POLICY.SEQUENTIAL. Domain `D.POLICY.SEQUENTIAL`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.POLICY.DEFER` - Every node terminal DEFERRED with ADMISSION_DEFER without invocation
+        - Applicability: Admission returns DEFER.
+        - Required/observable: Complete deferred records. Forbidden: Do not execute graph providers or schedule invisible retries
+        - Authority: NORMATIVE_VCP; source spec/draft/execution-policy.md:60-65.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.POLICY.SEQUENTIAL. Domain `D.POLICY.SEQUENTIAL`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.POLICY.INACTIVE` - Stop before selection with no occurrence
+        - Applicability: Activation returns DO_NOT_ACTIVATE.
+        - Required/observable: No occurrence. Forbidden: Do not create RunRecord or node records
+        - Authority: NORMATIVE_VCP; source spec/draft/execution-policy.md:55-58.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.POLICY.SEQUENTIAL. Domain `D.POLICY.SEQUENTIAL`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.POLICY.SKIP` - Every node terminal SKIPPED with ADMISSION_SKIP without invocation
+        - Applicability: Admission returns SKIP.
+        - Required/observable: Complete nonexecution records. Forbidden: Do not label this FAIL, UNKNOWN or execution ERROR
+        - Authority: NORMATIVE_VCP; source spec/draft/execution-policy.md:60-65.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.POLICY.SEQUENTIAL. Domain `D.POLICY.SEQUENTIAL`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.POLICY.UNSELECTED` - Stop before admission with no occurrence
+        - Applicability: Selection returns empty set.
+        - Required/observable: No occurrence. Forbidden: Do not create RunRecord or node records
+        - Authority: NORMATIVE_VCP; source spec/draft/execution-policy.md:55-58.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.POLICY.SEQUENTIAL. Domain `D.POLICY.SEQUENTIAL`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Outcomes** - 3 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.POLICY.OUTCOME_ACTIVATION` - Return Activation with ACTIVATE or DO_NOT_ACTIVATE and nonempty reason
+        - Applicability: Activation provider returns.
+        - Required/observable: Role-constrained activation outcome. Forbidden: Do not accept Result, Decision, envelope or boolean
+        - Authority: NORMATIVE_VCP; source spec/draft/execution-policy.md:23-26.
+        - Mathematics: Own finite quotient C=3, V/I/N=1/2/0. Domain `D.POLICY.SEQUENTIAL`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.POLICY.OUTCOME_ADMISSION` - Return Admission RUN, SKIP or DEFER with nonempty reason
+        - Applicability: Admission provider returns.
+        - Required/observable: Reject invalid policy output. Forbidden: Do not accept other role outcomes
+        - Authority: NORMATIVE_VCP; source spec/draft/execution-policy.md:23-26.
+        - Mathematics: Own finite quotient C=3, V/I/N=1/2/0. Domain `D.POLICY.SEQUENTIAL`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.POLICY.OUTCOME_SELECTION` - Return Selection with reason and an identity-unique subject set that is empty or exact definition subject
+        - Applicability: Selection provider returns.
+        - Required/observable: Reject invalid policy output. Forbidden: Do not select foreign snapshots, duplicate IDs or expand the graph
+        - Authority: NORMATIVE_VCP; source spec/draft/execution-policy.md:23-26.
+        - Mathematics: Own finite quotient C=3, V/I/N=1/2/0. Domain `D.POLICY.SEQUENTIAL`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Stages** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.POLICY.ORDER` - Evaluate activation, then selection, then admission before graph work
+        - Applicability: An opportunity is evaluated.
+        - Required/observable: Exact policy evaluation order. Forbidden: Do not let policies inspect graph execution
+        - Authority: NORMATIVE_VCP; source spec/draft/execution-policy.md:5-7.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.POLICY.SEQUENTIAL. Domain `D.POLICY.SEQUENTIAL`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Validation** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.POLICY.PREFLIGHT` - Validate complete definition, schemas, constants and bindings first
+        - Applicability: Any policy or graph implementation might be invoked.
+        - Required/observable: No implementation side effects before preflight. Forbidden: Do not invoke on partially validated definitions
+        - Authority: NORMATIVE_VCP; source spec/draft/execution-policy.md:9-17.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.POLICY.SEQUENTIAL. Domain `D.POLICY.SEQUENTIAL`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+  - **Profiles** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+    - **standard-draft** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **Severity** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.PROFILE.STANDARD_SEVERITY` - Use ordered INFO=10, WARNING=20, ERROR=30, BLOCKER=40 under domain id standard-draft.
+          - Applicability: The standard-draft severity domain snapshot is explicitly selected..
+          - Required/observable: Exact selected label rank order.. Forbidden: Do not interpret an unresolved different domain through these labels or derive a binary verdict.
+          - Authority: SELECTED_STANDARD_VCP_PROFILE; source profiles/standard-draft/profile.json:1-97.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.PROFILE.STANDARD. Domain `D.PROFILE.STANDARD`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+  - **Provenance** - 28 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+    - **Evidence** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.OBS.EVIDENCE` - Invalidate acceptance and retain observed snapshot plus valid usage
+        - Applicability: Observed Evidence is structurally typed but semantically invalid.
+        - Required/observable: Recorded rejected observation. Forbidden: Do not promote invalid evidence into accepted evaluation evidence
+        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:155-169.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.OBSERVATION.USAGE. Domain `D.OBSERVATION.USAGE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Execution observation** - 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **SNAPSHOT** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.OBS.RETENTION.SNAPSHOT` - Retain observed snapshot separately from accepted semantic outputs.
+          - Applicability: Attempt observations fail semantic acceptance.
+          - Required/observable: Raw observation retained.. Forbidden: Do not replace it by fabricated successful output.
+          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:155-169.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.OBSERVATION.USAGE. Domain `D.OBSERVATION.USAGE`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **USAGE** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.OBS.RETENTION.USAGE` - Retain that incurred usage independently of semantic rejection.
+          - Applicability: Attempt reports valid incurred usage but output/judgment/error acceptance fails.
+          - Required/observable: Recorded authoritative usage.. Forbidden: Do not erase known consumption.
+          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:155-169.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.OBSERVATION.USAGE. Domain `D.OBSERVATION.USAGE`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Lineage** - 4 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **NO_RERUN** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.PROV.RECONSTRUCT.NO_RERUN` - Do not execute provider/custom policy logic to validate stored lineage.
+          - Applicability: RunRecord is validated.
+          - Required/observable: Zero rerun validation.. Forbidden: No replay requirement or provider side effects during validation.
+          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:171-182.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **RESOLUTIONS** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.PROV.RECONSTRUCT.RESOLUTIONS` - Reconstruct each resolution from definition, normalized run inputs and recorded predecessor/source values.
+          - Applicability: RunRecord validates declared consumed inputs.
+          - Required/observable: PROVENANCE_LINEAGE on contradiction.. Forbidden: Do not accept mutually copied forged values without source reconstruction.
+          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:171-182.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **VALUES** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.PROV.RECONSTRUCT.VALUES` - Exact assembled input_values equals the usable/defaulted resolved port values, with omissions absent.
+          - Applicability: Reconstructed input resolutions are available.
+          - Required/observable: Exact consumed input snapshot.. Forbidden: No unbound/stale/null fallback values.
+          - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:171-182.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.PROV.UNBOUND` - Reject unbound consumed values and membership drift
+        - Applicability: Recorded inputs or aggregate membership disagree with declarations.
+        - Required/observable: PROVENANCE_LINEAGE. Forbidden: Do not accept invented semantic inputs
+        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:171-182.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **NodeRecord** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **Direct upstream snapshots** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.PROV.UPSTREAM_SNAPSHOTS` - Record direct upstream identities and Result snapshots consistent with actual execution prerequisites and earlier node records.
+          - Applicability: Occurrence node provenance validated..
+          - Required/observable: PROVENANCE_LINEAGE on inconsistent direct lineage.. Forbidden: Do not substitute transitive/unrelated producer snapshots or silently drift upstream Result values.
+          - Authority: NORMATIVE_VCP; source spec/draft/provenance.md:11-19.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Nonexecution** - 4 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.PROV.UNSTARTED.EXECUTOR` - Executor identity/version are absent.
+        - Applicability: Node never started.
+        - Required/observable: Identity absence.. Forbidden: No fabricated provider identity for uninvoked work.
+        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:171-182.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.PROV.UNSTARTED.INFORMATION` - Accepted information and Decision are absent.
+        - Applicability: Node never started.
+        - Required/observable: Accepted-output absence.. Forbidden: No accepted output without execution.
+        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:171-182.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.PROV.UNSTARTED.OBSERVATION` - No executor observation is retained.
+        - Applicability: Node never started.
+        - Required/observable: Observation absence.. Forbidden: No fabricated output/evidence snapshot.
+        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:171-182.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.PROV.UNSTARTED.USAGE` - Executor usage is absent; runner wall time is separate bookkeeping.
+        - Applicability: Node never started.
+        - Required/observable: Usage provenance.. Forbidden: Do not claim provider consumption without work.
+        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:171-182.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.OBSERVATION.USAGE. Domain `D.OBSERVATION.USAGE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Policies** - 7 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **ACTIVATION** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.PROV.ADMISSION_EQUALITY.ACTIVATION` - Recorded Activation outcome is ACTIVATE.
+          - Applicability: RunRecord describes an occurrence.
+          - Required/observable: PROVENANCE_LINEAGE otherwise.. Forbidden: No inactive RunRecord.
+          - Authority: NORMATIVE_VCP; source spec/draft/provenance.md:42-51.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **ADMISSION** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.PROV.ADMISSION_EQUALITY.ADMISSION` - Policy admission object equals RunRecord.admission under JSON typed equality.
+          - Applicability: Occurrence records policy admission.
+          - Required/observable: PROVENANCE_LINEAGE otherwise.. Forbidden: No drift between copies.
+          - Authority: NORMATIVE_VCP; source spec/draft/provenance.md:42-51.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **BUILTINS** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.PROV.POLICY_ORDER.BUILTINS` - Check built-in semantic outcomes including probability endpoints, but not portable interior bucket identity.
+          - Applicability: Built-in outcome recorded.
+          - Required/observable: Endpoint or role inconsistency is PROVENANCE_LINEAGE.. Forbidden: No blanket trust of built-in label or rerunning custom logic.
+          - Authority: NORMATIVE_VCP; source spec/draft/provenance.md:42-51.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **ELIGIBILITY** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.PROV.POLICY_ORDER.ELIGIBILITY` - Activation is ACTIVATE; selection is exact definition subject; admission equals RunRecord.admission.
+          - Applicability: RunRecord policy outcomes validated.
+          - Required/observable: PROVENANCE_LINEAGE on inconsistent occurrence evidence.. Forbidden: No occurrence for inactive/unselected opportunity.
+          - Authority: NORMATIVE_VCP; source spec/draft/provenance.md:42-51.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **INPUTS** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.PROV.POLICY_ORDER.INPUTS` - Reconstruct exact policy resolutions/values from definition and supplied run inputs.
+          - Applicability: Policy provenance validated.
+          - Required/observable: PROVENANCE_LINEAGE on reconstructed input mismatch.. Forbidden: Do not rerun custom policy implementation.
+          - Authority: NORMATIVE_VCP; source spec/draft/provenance.md:42-51.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **SELECTION** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.PROV.ADMISSION_EQUALITY.SELECTION` - Recorded selection contains exact definition subject snapshot.
+          - Applicability: RunRecord describes an occurrence.
+          - Required/observable: PROVENANCE_LINEAGE otherwise.. Forbidden: No empty/foreign subject occurrence.
+          - Authority: NORMATIVE_VCP; source spec/draft/provenance.md:42-51.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **STAGES** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.PROV.POLICY_ORDER.STAGES` - Exactly ACTIVATION, SELECTION, ADMISSION policy evaluations in order.
+          - Applicability: RunRecord exists.
+          - Required/observable: Role sequence equals authored stage order.. Forbidden: No omitted/reordered/duplicated stage.
+          - Authority: NORMATIVE_VCP; source spec/draft/provenance.md:42-51.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **RunRecord** - 4 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **FINGERPRINT** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.PROV.RECORD_ANCHOR.FINGERPRINT` - Treat fingerprint as opaque reference identity, not portable integrity signature.
+          - Applicability: Definition fingerprint consumed.
+          - Required/observable: Consistency guarantees remain bounded by external trust.. Forbidden: Do not infer signing or authenticity from local-sha256 label.
+          - Authority: NORMATIVE_VCP; source spec/draft/provenance.md:5-9.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **SNAPSHOTS** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.PROV.RECORD_ANCHOR.SNAPSHOTS` - Definition, subject, initial supplied run_inputs and initial_context are immutable authored occurrence snapshots.
+          - Applicability: Occurrence recorded.
+          - Required/observable: Record anchors compare with externally known occurrence inputs when available.. Forbidden: Do not substitute matching copied observed fields for authored inputs.
+          - Authority: NORMATIVE_VCP; source spec/draft/provenance.md:5-9.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.PROV.NODE_SET.EXACT` - Exactly one NodeRecord for every definition node.
+        - Applicability: An occurrence is recorded.
+        - Required/observable: Node identity set and cardinality.. Forbidden: No duplicates, missing or invented nodes.
+        - Authority: NORMATIVE_VCP; source spec/draft/provenance.md:5-9.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.PROV.NODE_SET.ORDER` - Records follow dependency order.
+        - Applicability: Dependency-related nodes are recorded.
+        - Required/observable: Record sequence.. Forbidden: Do not accept a consumer record ahead of its prerequisite.
+        - Authority: NORMATIVE_VCP; source spec/draft/provenance.md:5-9.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Timing** - 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.PROV.TIMING.DEPENDENCY` - Every predecessor finishes before consumer starts.
+        - Applicability: Consumer has execution predecessors.
+        - Required/observable: Recorded dependency timing.. Forbidden: Do not infer readiness from node array position.
+        - Authority: NORMATIVE_VCP; source spec/draft/provenance.md:22-27.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.PROV.TIMING.INTERVAL` - Node start/finish lie within the run interval with nonnegative duration.
+        - Applicability: Node record has timestamps.
+        - Required/observable: Recorded interval validity.. Forbidden: Do not accept reversed/outside timestamps.
+        - Authority: NORMATIVE_VCP; source spec/draft/provenance.md:22-27.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Trust boundary** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.PROV.TRUST_LIMIT` - Claim consistency detection only, without replay/authentication
+        - Applicability: An entire record is internally coherent.
+        - Required/observable: No portable signing/attestation guarantee. Forbidden: Do not claim detection of coordinated rewriting or dishonest provider truth without external trust
+        - Authority: NORMATIVE_VCP; source spec/draft/provenance.md:29-32.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Usage** - 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.OBS.AUTHORITY.NO_SUM` - Do not add repeated usage as additional charge.
+        - Applicability: Observation and Result repeat usage.
+        - Required/observable: Per-attempt usage.. Forbidden: No double accounting.
+        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:155-169.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.OBSERVATION.USAGE. Domain `D.OBSERVATION.USAGE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.OBS.AUTHORITY.OVERLAP` - Repeated dimensions agree exactly with authoritative observation.
+        - Applicability: Result repeats execution observation usage dimensions.
+        - Required/observable: Semantic rejection on mismatch.. Forbidden: Do not accept contradictory dimensions.
+        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:155-169.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.OBSERVATION.USAGE. Domain `D.OBSERVATION.USAGE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+  - **Provider binding** - 12 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+    - **Contract boundaries** - 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.BIND.INPUT` - Exact port input and node config validate against capability schemas before invocation
+        - Applicability: Resolved bound invocation is assembled.
+        - Required/observable: INVALID_INPUT/INVALID_CONFIG boundary. Forbidden: Do not insert defaults, override ports or wrap primitives
+        - Authority: NORMATIVE_VCP; source spec/draft/provider-binding.md:12-18.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.OPERATION.IDENTITY. Domain `D.OPERATION.IDENTITY`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.BIND.OUTPUT` - Validate exact output object against capability schema before VCP port/Result/Decision/judgment acceptance
+        - Applicability: Provider returns COMPLETED output.
+        - Required/observable: Independent contract and semantic acceptance. Forbidden: Do not equate COMPLETED with VCP success/PASS
+        - Authority: NORMATIVE_VCP; source spec/draft/provider-binding.md:20-28.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.OPERATION.IDENTITY. Domain `D.OPERATION.IDENTITY`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Identity** - 3 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **COMPATIBILITY** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.BIND.PRECHECK.COMPATIBILITY` - Enforce Provider Contract version/interchange compatibility.
+          - Applicability: Bound capability exchanges contract/VCP objects.
+          - Required/observable: Incompatible binding rejected before invocation.. Forbidden: Do not infer compatible revision from marker alone.
+          - Authority: NORMATIVE_VCP; source spec/draft/provider-binding.md:12-18.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.OPERATION.IDENTITY. Domain `D.OPERATION.IDENTITY`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **IDENTITY** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.BIND.PRECHECK.IDENTITY` - Binding provider identity/version equals manifest; capability pair equals node requirement and advertised exact pair.
+          - Applicability: Concrete binding selects graph node.
+          - Required/observable: Identity/pair conflicts reject before invocation.. Forbidden: No fallback to another provider or version.
+          - Authority: NORMATIVE_VCP; source spec/draft/provider-binding.md:12-18.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.OPERATION.IDENTITY. Domain `D.OPERATION.IDENTITY`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **STRUCTURE** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.BIND.PRECHECK.STRUCTURE` - Validate binding and complete bound manifest structural and semantic validity before invocation, including capability schemas.
+          - Applicability: Concrete binding supplied.
+          - Required/observable: Preinvocation rejection.. Forbidden: Do not invoke from malformed binding/manifest.
+          - Authority: NORMATIVE_VCP; source spec/draft/provider-binding.md:12-18.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.OPERATION.IDENTITY. Domain `D.OPERATION.IDENTITY`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Provenance** - 4 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **EXECUTOR** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.BIND.PROVENANCE.EXECUTOR` - executor_ref/provider_id and executor_version/provider_version are equal.
+          - Applicability: Bound invocation records executor identity/version.
+          - Required/observable: PROVENANCE_LINEAGE on mismatch.. Forbidden: No invented different executor.
+          - Authority: NORMATIVE_VCP; source spec/draft/provider-binding.md:30-39.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **NODE_COPY** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.BIND.PROVENANCE.NODE_COPY` - NodeRecord.provider_binding equals actual occurrence invocation binding and operation pair.
+          - Applicability: Bound invocation NodeRecord exists.
+          - Required/observable: PROVENANCE_LINEAGE on mismatch.. Forbidden: No divergent provenance copies.
+          - Authority: NORMATIVE_VCP; source spec/draft/provider-binding.md:30-39.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **OCCURRENCE_MAP** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.BIND.PROVENANCE.OCCURRENCE_MAP` - Occurrence provider_bindings[node_id] equals exact actual four-part binding.
+          - Applicability: Bound graph node actually invokes, including raised/interrupted invocation.
+          - Required/observable: Recorded binding.. Forbidden: No drift or missing invocation map identity.
+          - Authority: NORMATIVE_VCP; source spec/draft/provider-binding.md:30-39.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **ONLY_INVOKED** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.BIND.PROVENANCE.ONLY_INVOKED` - No concrete invocation binding is fabricated.
+          - Applicability: Node never invoked or local implementation has no Provider manifest.
+          - Required/observable: Binding absence for noninvocation.. Forbidden: No binding on lifecycle-disabled/preflight-rejected/local unbound work.
+          - Authority: NORMATIVE_VCP; source spec/draft/provider-binding.md:30-39.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Rejected output** - 3 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **ACCEPTANCE** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.BIND.OUTPUT_REJECTION.ACCEPTANCE` - No accepted information or Decision; terminal ERROR with corresponding bookkeeping Result, or interrupted CANCELLED.
+          - Applicability: Provider output schema rejection recorded.
+          - Required/observable: Bookkeeping Result remains subject to declared Result-port schema.. Forbidden: Invalid raw information never becomes consumable downstream.
+          - Authority: NORMATIVE_VCP; source spec/draft/provider-binding.md:41-49.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **DIAGNOSIS** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.BIND.OUTPUT_REJECTION.DIAGNOSIS` - Record provider_output_error with INVALID_PROVIDER_OUTPUT and diagnostic message; requires provider binding.
+          - Applicability: Provider output schema rejects observation without execution error.
+          - Required/observable: Separate host validation rejection provenance.. Forbidden: No provider_output_error without binding or for execution-error observation.
+          - Authority: NORMATIVE_VCP; source spec/draft/provider-binding.md:41-49.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **RETAIN** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.BIND.OUTPUT_REJECTION.RETAIN` - Retain exact binding, raw observation and valid incurred usage.
+          - Applicability: Provider output schema rejects successful raw observation.
+          - Required/observable: Raw snapshot remains observation only.. Forbidden: Do not discard valid usage because semantic output rejected.
+          - Authority: NORMATIVE_VCP; source spec/draft/provider-binding.md:41-49.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RECORD.ELIGIBILITY. Domain `D.RECORD.ELIGIBILITY`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+  - **Resources** - 5 canonical primary records; INCOMPLETE.
+    - **Accounting** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.RES.UNITS` - Preserve explicit units and separate runner duration from executor usage
+        - Applicability: Usage is combined or reported.
+        - Required/observable: No duplicated or unitless charge. Forbidden: Do not sum incompatible units or convert implicitly
+        - Authority: NORMATIVE_VCP; source spec/draft/resources.md:5-12.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RESOURCES.SEMANTICS. Domain `D.RESOURCES.SEMANTICS`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Measurements** - 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.RES.KINDS` - EXACT/ESTIMATED have nonnegative finite value only; RANGE has nonnegative finite minimum/maximum only; UNKNOWN has neither
+        - Applicability: A resource measurement is validated.
+        - Required/observable: RESOURCE_MEASUREMENT for semantic violation. Forbidden: Do not populate numeric fields for another kind
+        - Authority: NORMATIVE_VCP; source spec/draft/resources.md:5-12.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RESOURCES.SEMANTICS. Domain `D.RESOURCES.SEMANTICS`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.RES.ORDER` - minimum <= maximum
+        - Applicability: A RANGE measurement is validated.
+        - Required/observable: RESOURCE_MEASUREMENT. Forbidden: Do not accept reversed bounds
+        - Authority: NORMATIVE_VCP; source spec/draft/resources.md:5-12.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RESOURCES.SEMANTICS. Domain `D.RESOURCES.SEMANTICS`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Reference profile** - 2 canonical primary records; INCOMPLETE.
+      - **MEASUREMENT** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.RES.WALL_TIME.MEASUREMENT` - Record EXACT seconds using monotonic elapsed clock.
+          - Applicability: Reference engine measures own wall_time.
+          - Required/observable: Nonnegative monotonic elapsed measurement.. Forbidden: Do not promise physical clock precision or substitute UTC subtraction.
+          - Authority: NORMATIVE_VCP; source spec/draft/resources.md:14-18.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RESOURCES.SEMANTICS. Domain `D.RESOURCES.SEMANTICS`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **SEPARATE** - 1 canonical primary records; INCOMPLETE.
+        - `CM.VCP.RES.WALL_TIME.SEPARATE` - Retain adapter usage and record engine duration separately.
+          - Applicability: Reference engine records node usage.
+          - Required/observable: Executor usage and engine timing distinguishable.. Forbidden: No merging incompatible units or duplicating executor charge.
+          - Authority: NORMATIVE_VCP; source spec/draft/resources.md:14-18.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RESOURCES.SEMANTICS. Domain `D.RESOURCES.SEMANTICS`. No test/proof coverage is claimed.
+          - Review status: INCOMPLETE - Q.RELAY_TIMING_KEY.
+  - **Result** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+    - **Score** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **Normalized meaning** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.RESULT.SCORE_MEANING` - Score is a JSON number in[0,1], with1 meaning stronger satisfaction and0 stronger violation; it does not imply verdict.
+          - Applicability: A Result contains nonnull score..
+          - Required/observable: Typed normalized observation retains declared orientation.. Forbidden: Do not reverse direction or infer score-to-verdict mapping.
+          - Authority: NORMATIVE_VCP; source spec/draft/result.md:18-22.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.AGG.NUMERIC. Domain `D.AGG.NUMERIC`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+  - **Results** - 30 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+    - **Evidence** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.RESULT.NONEXEC_EVIDENCE` - Evidence may explain nonexecution
+        - Applicability: A standalone nonexecution Result carries evidence.
+        - Required/observable: Reject misleading accepted evaluation evidence. Forbidden: Do not claim successful evaluation; runner nonexecution carries diagnostic reason without evaluation evidence
+        - Authority: NORMATIVE_VCP; source spec/draft/result.md:55-57.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.EVIDENCE.PURPOSE. Domain `D.EVIDENCE.PURPOSE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Observations** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.RESULT.INDEPENDENCE` - Judgment, verdict, score and severity are independently optional observations
+        - Applicability: Successful applicable KNOWN evaluation.
+        - Required/observable: Accept valid combinations without fabricated observations. Forbidden: Do not derive a verdict from score/severity or add implicit satisfaction mappings
+        - Authority: NORMATIVE_VCP; source spec/draft/result.md:5-16.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.RESULT.WIRE. Domain `D.RESULT.WIRE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Projection** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.RESULT.FLATTEN` - KNOWN with verdict maps to verdict; UNKNOWN to UNKNOWN; executed ERROR to ERROR; SKIPPED to SKIP
+        - Applicability: A consumer requests the standard convenience projection.
+        - Required/observable: Partial projection is undefined for those remaining states. Forbidden: Do not invent projection values for DEFERRED, CANCELLED, NOT_APPLICABLE or KNOWN without verdict
+        - Authority: NORMATIVE_VCP; source spec/draft/result.md:24-28.
+        - Mathematics: Own finite quotient C=9, V/I/N=5/0/4. Domain `D.RESULT.FLATTENED`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Severity** - 2 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.RESULT.SEVERITY` - Preserve domain/label as opaque identifiers
+        - Applicability: Result severity has no explicit domain snapshot.
+        - Required/observable: Unresolved domain alone is not a parsing failure. Forbidden: Do not resolve a registry or assert label membership
+        - Authority: NORMATIVE_VCP; source spec/draft/result.md:18-22.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SEVERITY.DOMAIN. Domain `D.SEVERITY.DOMAIN`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.SEVERITY.VERSION` - Domain identifier identifies the versioned semantic domain
+        - Applicability: Severity meaning depends on version.
+        - Required/observable: Domain identifier identifies the versioned semantic domain. Forbidden: Do not use an ambiguous unversioned registry lookup to change meaning
+        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:184-188.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SEVERITY.DOMAIN. Domain `D.SEVERITY.DOMAIN`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **State** - 25 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.RESULT.DETERMINATION` - determination is KNOWN or UNKNOWN
+        - Applicability: Successful applicable evaluation.
+        - Required/observable: RESULT_STATE on violation. Forbidden: Do not leave the determination unspecified
+        - Authority: NORMATIVE_VCP; source spec/draft/result.md:5-16.
+        - Mathematics: Own finite quotient C=8, V/I/N=2/2/4. Domain `D.RESULT.WIRE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.RESULT.ERROR.APPLICABILITY` - applicability is absent or explicitly null under VCP nullable-control semantics.
+        - Applicability: Executed outcome is ERROR.
+        - Required/observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.. Forbidden: Do not accept a forbidden applicability observation in this Result state.
+        - Authority: NORMATIVE_VCP; source spec/draft/result.md:5-16.
+        - Mathematics: Own finite quotient C=6, V/I/N=2/1/3. Domain `D.RESULT.WIRE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.RESULT.ERROR.DETERMINATION` - determination is absent or explicitly null under VCP nullable-control semantics.
+        - Applicability: Executed outcome is ERROR.
+        - Required/observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.. Forbidden: Do not accept a forbidden determination observation in this Result state.
+        - Authority: NORMATIVE_VCP; source spec/draft/result.md:5-16.
+        - Mathematics: Own finite quotient C=6, V/I/N=2/1/3. Domain `D.RESULT.WIRE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.RESULT.ERROR.JUDGMENT` - The judgment key is absent.
+        - Applicability: Executed outcome is ERROR.
+        - Required/observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.. Forbidden: Do not accept a forbidden judgment observation in this Result state.
+        - Authority: NORMATIVE_VCP; source spec/draft/result.md:5-16.
+        - Mathematics: Own finite quotient C=6, V/I/N=1/2/3. Domain `D.RESULT.OBSERVATION_MASK`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.RESULT.ERROR.SCORE` - score is absent or explicitly null under VCP nullable-control semantics.
+        - Applicability: Executed outcome is ERROR.
+        - Required/observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.. Forbidden: Do not accept a forbidden score observation in this Result state.
+        - Authority: NORMATIVE_VCP; source spec/draft/result.md:5-16.
+        - Mathematics: Own finite quotient C=6, V/I/N=2/1/3. Domain `D.RESULT.WIRE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.RESULT.ERROR.SEVERITY` - severity is absent or explicitly null under VCP nullable-control semantics.
+        - Applicability: Executed outcome is ERROR.
+        - Required/observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.. Forbidden: Do not accept a forbidden severity observation in this Result state.
+        - Authority: NORMATIVE_VCP; source spec/draft/result.md:5-16.
+        - Mathematics: Own finite quotient C=6, V/I/N=2/1/3. Domain `D.RESULT.WIRE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.RESULT.ERROR.VERDICT` - verdict is absent or explicitly null under VCP nullable-control semantics.
+        - Applicability: Executed outcome is ERROR.
+        - Required/observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.. Forbidden: Do not accept a forbidden verdict observation in this Result state.
+        - Authority: NORMATIVE_VCP; source spec/draft/result.md:5-16.
+        - Mathematics: Own finite quotient C=6, V/I/N=2/1/3. Domain `D.RESULT.WIRE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.RESULT.NONEXECUTION.APPLICABILITY` - applicability is absent or explicitly null under VCP nullable-control semantics.
+        - Applicability: Result.disposition is SKIPPED, DEFERRED or CANCELLED.
+        - Required/observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.. Forbidden: Do not accept a forbidden applicability observation in this Result state.
+        - Authority: NORMATIVE_VCP; source spec/draft/result.md:5-16.
+        - Mathematics: Own finite quotient C=12, V/I/N=6/3/3. Domain `D.RESULT.WIRE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.RESULT.NONEXECUTION.DETERMINATION` - determination is absent or explicitly null under VCP nullable-control semantics.
+        - Applicability: Result.disposition is SKIPPED, DEFERRED or CANCELLED.
+        - Required/observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.. Forbidden: Do not accept a forbidden determination observation in this Result state.
+        - Authority: NORMATIVE_VCP; source spec/draft/result.md:5-16.
+        - Mathematics: Own finite quotient C=12, V/I/N=6/3/3. Domain `D.RESULT.WIRE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.RESULT.NONEXECUTION.EXECUTION_OUTCOME` - execution_outcome is absent or explicitly null under VCP nullable-control semantics.
+        - Applicability: Result.disposition is SKIPPED, DEFERRED or CANCELLED.
+        - Required/observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.. Forbidden: Do not accept a forbidden execution_outcome observation in this Result state.
+        - Authority: NORMATIVE_VCP; source spec/draft/result.md:5-16.
+        - Mathematics: Own finite quotient C=12, V/I/N=6/3/3. Domain `D.RESULT.WIRE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.RESULT.NONEXECUTION.JUDGMENT` - The judgment key is absent.
+        - Applicability: Result.disposition is SKIPPED, DEFERRED or CANCELLED.
+        - Required/observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.. Forbidden: Do not accept a forbidden judgment observation in this Result state.
+        - Authority: NORMATIVE_VCP; source spec/draft/result.md:5-16.
+        - Mathematics: Own finite quotient C=12, V/I/N=3/6/3. Domain `D.RESULT.OBSERVATION_MASK`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.RESULT.NONEXECUTION.SCORE` - score is absent or explicitly null under VCP nullable-control semantics.
+        - Applicability: Result.disposition is SKIPPED, DEFERRED or CANCELLED.
+        - Required/observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.. Forbidden: Do not accept a forbidden score observation in this Result state.
+        - Authority: NORMATIVE_VCP; source spec/draft/result.md:5-16.
+        - Mathematics: Own finite quotient C=12, V/I/N=6/3/3. Domain `D.RESULT.WIRE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.RESULT.NONEXECUTION.SEVERITY` - severity is absent or explicitly null under VCP nullable-control semantics.
+        - Applicability: Result.disposition is SKIPPED, DEFERRED or CANCELLED.
+        - Required/observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.. Forbidden: Do not accept a forbidden severity observation in this Result state.
+        - Authority: NORMATIVE_VCP; source spec/draft/result.md:5-16.
+        - Mathematics: Own finite quotient C=12, V/I/N=6/3/3. Domain `D.RESULT.WIRE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.RESULT.NONEXECUTION.VERDICT` - verdict is absent or explicitly null under VCP nullable-control semantics.
+        - Applicability: Result.disposition is SKIPPED, DEFERRED or CANCELLED.
+        - Required/observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.. Forbidden: Do not accept a forbidden verdict observation in this Result state.
+        - Authority: NORMATIVE_VCP; source spec/draft/result.md:5-16.
+        - Mathematics: Own finite quotient C=12, V/I/N=6/3/3. Domain `D.RESULT.WIRE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.RESULT.NOT_APPLICABLE.DETERMINATION` - determination is absent or explicitly null under VCP nullable-control semantics.
+        - Applicability: Successful outcome is NOT_APPLICABLE.
+        - Required/observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.. Forbidden: Do not accept a forbidden determination observation in this Result state.
+        - Authority: NORMATIVE_VCP; source spec/draft/result.md:5-16.
+        - Mathematics: Own finite quotient C=6, V/I/N=2/1/3. Domain `D.RESULT.WIRE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.RESULT.NOT_APPLICABLE.JUDGMENT` - The judgment key is absent.
+        - Applicability: Successful outcome is NOT_APPLICABLE.
+        - Required/observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.. Forbidden: Do not accept a forbidden judgment observation in this Result state.
+        - Authority: NORMATIVE_VCP; source spec/draft/result.md:5-16.
+        - Mathematics: Own finite quotient C=6, V/I/N=1/2/3. Domain `D.RESULT.OBSERVATION_MASK`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.RESULT.NOT_APPLICABLE.SCORE` - score is absent or explicitly null under VCP nullable-control semantics.
+        - Applicability: Successful outcome is NOT_APPLICABLE.
+        - Required/observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.. Forbidden: Do not accept a forbidden score observation in this Result state.
+        - Authority: NORMATIVE_VCP; source spec/draft/result.md:5-16.
+        - Mathematics: Own finite quotient C=6, V/I/N=2/1/3. Domain `D.RESULT.WIRE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.RESULT.NOT_APPLICABLE.SEVERITY` - severity is absent or explicitly null under VCP nullable-control semantics.
+        - Applicability: Successful outcome is NOT_APPLICABLE.
+        - Required/observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.. Forbidden: Do not accept a forbidden severity observation in this Result state.
+        - Authority: NORMATIVE_VCP; source spec/draft/result.md:5-16.
+        - Mathematics: Own finite quotient C=6, V/I/N=2/1/3. Domain `D.RESULT.WIRE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.RESULT.NOT_APPLICABLE.VERDICT` - verdict is absent or explicitly null under VCP nullable-control semantics.
+        - Applicability: Successful outcome is NOT_APPLICABLE.
+        - Required/observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.. Forbidden: Do not accept a forbidden verdict observation in this Result state.
+        - Authority: NORMATIVE_VCP; source spec/draft/result.md:5-16.
+        - Mathematics: Own finite quotient C=6, V/I/N=2/1/3. Domain `D.RESULT.WIRE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.RESULT.OUTCOME` - execution_outcome is SUCCESS or ERROR
+        - Applicability: Result.disposition is EXECUTED.
+        - Required/observable: RESULT_STATE on violation. Forbidden: Do not accept absent/null outcome for an executed Result
+        - Authority: NORMATIVE_VCP; source spec/draft/result.md:5-16.
+        - Mathematics: Own finite quotient C=16, V/I/N=2/2/12. Domain `D.RESULT.WIRE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.RESULT.SUCCESS` - applicability is APPLICABLE or NOT_APPLICABLE
+        - Applicability: Executed outcome is SUCCESS.
+        - Required/observable: RESULT_STATE on violation. Forbidden: Do not omit applicability
+        - Authority: NORMATIVE_VCP; source spec/draft/result.md:5-16.
+        - Mathematics: Own finite quotient C=8, V/I/N=2/2/4. Domain `D.RESULT.WIRE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.RESULT.UNKNOWN.JUDGMENT` - The judgment key is absent.
+        - Applicability: determination is UNKNOWN.
+        - Required/observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.. Forbidden: Do not accept a forbidden judgment observation in this Result state.
+        - Authority: NORMATIVE_VCP; source spec/draft/result.md:5-16.
+        - Mathematics: Own finite quotient C=6, V/I/N=1/2/3. Domain `D.RESULT.OBSERVATION_MASK`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.RESULT.UNKNOWN.SCORE` - score is absent or explicitly null under VCP nullable-control semantics.
+        - Applicability: determination is UNKNOWN.
+        - Required/observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.. Forbidden: Do not accept a forbidden score observation in this Result state.
+        - Authority: NORMATIVE_VCP; source spec/draft/result.md:5-16.
+        - Mathematics: Own finite quotient C=6, V/I/N=2/1/3. Domain `D.RESULT.WIRE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.RESULT.UNKNOWN.SEVERITY` - severity is absent or explicitly null under VCP nullable-control semantics.
+        - Applicability: determination is UNKNOWN.
+        - Required/observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.. Forbidden: Do not accept a forbidden severity observation in this Result state.
+        - Authority: NORMATIVE_VCP; source spec/draft/result.md:5-16.
+        - Mathematics: Own finite quotient C=6, V/I/N=2/1/3. Domain `D.RESULT.WIRE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.RESULT.UNKNOWN.VERDICT` - verdict is absent or explicitly null under VCP nullable-control semantics.
+        - Applicability: determination is UNKNOWN.
+        - Required/observable: RESULT_STATE on the forbidden observation; diagnostic output/usage remain independent.. Forbidden: Do not accept a forbidden verdict observation in this Result state.
+        - Authority: NORMATIVE_VCP; source spec/draft/result.md:5-16.
+        - Mathematics: Own finite quotient C=6, V/I/N=2/1/3. Domain `D.RESULT.WIRE`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+  - **Schemas** - 3 canonical primary records; INCOMPLETE.
+    - **Compatibility** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.SCHEMA.STATIC` - Validate authored constants/defaults/references; reject source/target bindings with false schemas, disjoint explicit primitive-type sets or incompatible finite const/enum values. Integer overlaps number. Other implication is deferred to runtime.
+        - Applicability: Static source/target compatibility and authored constant/default/reference checks for a definition..
+        - Required/observable: Reject known incompatibility; defer other implication to runtime. Forbidden: Do not reinterpret a false JSON Schema as syntactically invalid everywhere: a valid false judgment schema admits no emitted judgments but does not itself forbid an absent judgment.
+        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:96-105.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SCHEMA.EMBEDDED. Domain `D.SCHEMA.EMBEDDED`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Embedded** - 1 canonical primary records; INCOMPLETE.
+      - `CM.VCP.SCHEMA.SUBSET` - Valid Draft 2020-12 object/boolean; only resolvable local JSON Pointer references; no nested IDs, anchors/dynamic refs or external resolution
+        - Applicability: An embedded schema is declared.
+        - Required/observable: SCHEMA_UNSUPPORTED before invocation for unsupported resolution. Forbidden: Do not execute annotation objects as schemas or resolve arbitrary documents
+        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:96-105.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SCHEMA.EMBEDDED. Domain `D.SCHEMA.EMBEDDED`. No test/proof coverage is claimed.
+        - Review status: INCOMPLETE - Q.NONPROGRESSING_SCHEMA_REFERENCE.
+    - **Instances** - 1 canonical primary records; INCOMPLETE.
+      - `CM.VCP.SCHEMA.RUNTIME` - Validate actual values against all applicable schemas
+        - Applicability: Every actual input or output is accepted.
+        - Required/observable: No invalid value becomes consumable. Forbidden: Do not substitute static overlap for runtime instance validity
+        - Authority: NORMATIVE_VCP; source spec/draft/dataflow.md:96-105.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.SCHEMA.EMBEDDED. Domain `D.SCHEMA.EMBEDDED`. No test/proof coverage is claimed.
+        - Review status: INCOMPLETE - Q.NONPROGRESSING_SCHEMA_REFERENCE.
+  - **Wire roots** - 24 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+    - **activation** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.ROOT.ACTIVATION` - Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Applicability: Wire object submitted to this named root.
+        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Authority: NORMATIVE_SCHEMA_ROOT; source schemas/draft/activation.schema.json:1-24.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.VCP.activation. Domain `D.ROOT.VCP.activation`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **admission** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.ROOT.ADMISSION` - Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Applicability: Wire object submitted to this named root.
+        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Authority: NORMATIVE_SCHEMA_ROOT; source schemas/draft/admission.schema.json:1-25.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.VCP.admission. Domain `D.ROOT.VCP.admission`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **artifact-ref** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.ROOT.ARTIFACT_REF` - Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Applicability: Wire object submitted to this named root.
+        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Authority: NORMATIVE_SCHEMA_ROOT; source schemas/draft/artifact-ref.schema.json:1-43.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.VCP.artifact-ref. Domain `D.ROOT.VCP.artifact-ref`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **cancellation-event** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.ROOT.CANCELLATION_EVENT` - Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Applicability: Wire object submitted to this named root.
+        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Authority: NORMATIVE_SCHEMA_ROOT; source schemas/draft/cancellation-event.schema.json:1-29.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.VCP.cancellation-event. Domain `D.ROOT.VCP.cancellation-event`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **decision** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.ROOT.DECISION` - Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Applicability: Wire object submitted to this named root.
+        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Authority: NORMATIVE_SCHEMA_ROOT; source schemas/draft/decision.schema.json:1-58.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.VCP.decision. Domain `D.ROOT.VCP.decision`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **evidence** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.ROOT.EVIDENCE` - Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Applicability: Wire object submitted to this named root.
+        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Authority: NORMATIVE_SCHEMA_ROOT; source schemas/draft/evidence.schema.json:1-53.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.VCP.evidence. Domain `D.ROOT.VCP.evidence`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **execution-observation** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.ROOT.EXECUTION_OBSERVATION` - Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Applicability: Wire object submitted to this named root.
+        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Authority: NORMATIVE_SCHEMA_ROOT; source schemas/draft/execution-observation.schema.json:1-51.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.VCP.execution-observation. Domain `D.ROOT.VCP.execution-observation`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **extension** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.ROOT.EXTENSION` - Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Applicability: Wire object submitted to this named root.
+        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Authority: NORMATIVE_SCHEMA_ROOT; source schemas/draft/extension.schema.json:1-28.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.VCP.extension. Domain `D.ROOT.VCP.extension`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **graph** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.ROOT.GRAPH` - Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Applicability: Wire object submitted to this named root.
+        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Authority: NORMATIVE_SCHEMA_ROOT; source schemas/draft/graph.schema.json:1-158.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.VCP.graph. Domain `D.ROOT.VCP.graph`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **input-port** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.ROOT.INPUT_PORT` - Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Applicability: Wire object submitted to this named root.
+        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Authority: NORMATIVE_SCHEMA_ROOT; source schemas/draft/input-port.schema.json:1-50.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.VCP.input-port. Domain `D.ROOT.VCP.input-port`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **input-resolution** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.ROOT.INPUT_RESOLUTION` - Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Applicability: Wire object submitted to this named root.
+        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Authority: NORMATIVE_SCHEMA_ROOT; source schemas/draft/input-resolution.schema.json:1-31.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.VCP.input-resolution. Domain `D.ROOT.VCP.input-resolution`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **operation-requirement** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.ROOT.OPERATION_REQUIREMENT` - Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Applicability: Wire object submitted to this named root.
+        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Authority: NORMATIVE_SCHEMA_ROOT; source schemas/draft/operation-requirement.schema.json:1-22.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.VCP.operation-requirement. Domain `D.ROOT.VCP.operation-requirement`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **output-port** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.ROOT.OUTPUT_PORT` - Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Applicability: Wire object submitted to this named root.
+        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Authority: NORMATIVE_SCHEMA_ROOT; source schemas/draft/output-port.schema.json:1-32.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.VCP.output-port. Domain `D.ROOT.VCP.output-port`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **policy-evaluation** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.ROOT.POLICY_EVALUATION` - Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Applicability: Wire object submitted to this named root.
+        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Authority: NORMATIVE_SCHEMA_ROOT; source schemas/draft/policy-evaluation.schema.json:1-67.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.VCP.policy-evaluation. Domain `D.ROOT.VCP.policy-evaluation`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **profile** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.ROOT.PROFILE` - Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Applicability: Wire object submitted to this named root.
+        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Authority: NORMATIVE_SCHEMA_ROOT; source schemas/draft/profile.schema.json:1-77.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.VCP.profile. Domain `D.ROOT.VCP.profile`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **provider-binding** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.ROOT.PROVIDER_BINDING` - Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Applicability: Wire object submitted to this named root.
+        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Authority: NORMATIVE_SCHEMA_ROOT; source schemas/draft/provider-binding.schema.json:1-33.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.VCP.provider-binding. Domain `D.ROOT.VCP.provider-binding`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **resource** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.ROOT.RESOURCE` - Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Applicability: Wire object submitted to this named root.
+        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Authority: NORMATIVE_SCHEMA_ROOT; source schemas/draft/resource.schema.json:1-59.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.VCP.resource. Domain `D.ROOT.VCP.resource`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **resource-dimension** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.ROOT.RESOURCE_DIMENSION` - Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Applicability: Wire object submitted to this named root.
+        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Authority: NORMATIVE_SCHEMA_ROOT; source schemas/draft/resource-dimension.schema.json:1-35.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.VCP.resource-dimension. Domain `D.ROOT.VCP.resource-dimension`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **result** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.ROOT.RESULT` - Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Applicability: Wire object submitted to this named root.
+        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Authority: NORMATIVE_SCHEMA_ROOT; source schemas/draft/result.schema.json:1-145.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.VCP.result. Domain `D.ROOT.VCP.result`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **run-record** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.ROOT.RUN_RECORD` - Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Applicability: Wire object submitted to this named root.
+        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Authority: NORMATIVE_SCHEMA_ROOT; source schemas/draft/run-record.schema.json:1-269.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.VCP.run-record. Domain `D.ROOT.VCP.run-record`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **selection** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.ROOT.SELECTION` - Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Applicability: Wire object submitted to this named root.
+        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Authority: NORMATIVE_SCHEMA_ROOT; source schemas/draft/selection.schema.json:1-23.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.VCP.selection. Domain `D.ROOT.VCP.selection`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **severity-domain** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.ROOT.SEVERITY_DOMAIN` - Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Applicability: Wire object submitted to this named root.
+        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Authority: NORMATIVE_SCHEMA_ROOT; source schemas/draft/severity-domain.schema.json:1-37.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.VCP.severity-domain. Domain `D.ROOT.VCP.severity-domain`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **value-source** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.ROOT.VALUE_SOURCE` - Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Applicability: Wire object submitted to this named root.
+        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Authority: NORMATIVE_SCHEMA_ROOT; source schemas/draft/value-source.schema.json:1-76.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.VCP.value-source. Domain `D.ROOT.VCP.value-source`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **verification-definition** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.ROOT.VERIFICATION_DEFINITION` - Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+        - Applicability: Wire object submitted to this named root.
+        - Required/observable: Structural accept/reject of this root, separate from executable-profile support and higher semantic acceptance.. Forbidden: No coercion, default insertion, ignored root conjunct, alternative flattening or acceptance by presence alone.
+        - Authority: NORMATIVE_SCHEMA_ROOT; source schemas/draft/verification-definition.schema.json:1-235.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.ROOT.VCP.verification-definition. Domain `D.ROOT.VCP.verification-definition`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+  - **Wire semantics** - 9 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+    - **JSON** - 4 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **DUPLICATE_KEYS** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.WIRE.JSON.DUPLICATE_KEYS` - Reject duplicate keys rather than selecting an occurrence.
+          - Applicability: JSON object text has repeated member name at any depth.
+          - Required/observable: PROTOCOL_JSON.. Forbidden: No silent last/first key overwrite.
+          - Authority: NORMATIVE_VCP; source spec/draft/wire-format.md:5-14.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.WIRE.JSON. Domain `D.WIRE.JSON`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **FINITE** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.WIRE.JSON.FINITE` - Reject NaN/Infinity/nonfinite values.
+          - Applicability: JSON number is parsed or supplied as a value.
+          - Required/observable: PROTOCOL_JSON.. Forbidden: No numeric coercion or nonfinite sentinel.
+          - Authority: NORMATIVE_VCP; source spec/draft/wire-format.md:5-14.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.WIRE.JSON. Domain `D.WIRE.JSON`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **JSON_TYPES** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.WIRE.JSON.JSON_TYPES` - Accept only finite JSON null,Boolean,number,string,array,object with string keys.
+          - Applicability: A parsed/SDK wire value is supplied.
+          - Required/observable: Strict JSON value or PROTOCOL_JSON.. Forbidden: No binary bytes, arbitrary Python values or nonstring map keys inside JSON data.
+          - Authority: NORMATIVE_VCP; source spec/draft/wire-format.md:5-14.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.WIRE.JSON. Domain `D.WIRE.JSON`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **UTF8** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.WIRE.JSON.UTF8` - Decode only well-formed UTF-8 JSON text.
+          - Applicability: Encoded wire bytes submitted.
+          - Required/observable: Strict JSON parse or PROTOCOL_JSON.. Forbidden: No arbitrary binary/invalid UTF8 admission.
+          - Authority: NORMATIVE_VCP; source spec/draft/wire-format.md:5-14.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.WIRE.JSON. Domain `D.WIRE.JSON`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Null** - 3 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - **CONTROLS** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.WIRE.NULL.CONTROLS` - Treat explicit null as absent for that nullable control.
+          - Applicability: An optional nullable VCP control field is consumed.
+          - Required/observable: Equivalent control semantics.. Forbidden: No forced value from null control.
+          - Authority: NORMATIVE_VCP; source spec/draft/wire-format.md:5-14.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.WIRE.JSON. Domain `D.WIRE.JSON`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **NO_DEFAULT_INSERTION** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.WIRE.NULL.NO_DEFAULT_INSERTION` - Do not insert instance fields from that annotation.
+          - Applicability: Schema carries default annotation.
+          - Required/observable: Only explicitly authored port default can supply value.. Forbidden: No hidden default transformation.
+          - Authority: NORMATIVE_VCP; source spec/draft/wire-format.md:5-14.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.WIRE.JSON. Domain `D.WIRE.JSON`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+      - **PAYLOADS** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+        - `CM.VCP.WIRE.NULL.PAYLOADS` - Retain the emitted null value and its presence.
+          - Applicability: Constant/resolution value or explicitly emitted Result judgment/output is null.
+          - Required/observable: Presence-aware snapshots and judgment acceptance.. Forbidden: Do not erase emitted payload null or identify missing judgment with null.
+          - Authority: NORMATIVE_VCP; source spec/draft/wire-format.md:5-14.
+          - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.WIRE.JSON. Domain `D.WIRE.JSON`. No test/proof coverage is claimed.
+          - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **References** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.WIRE.OFFLINE` - Resolve from supplied local schemas
+        - Applicability: A shipped schema reference is resolved.
+        - Required/observable: Offline structural validation. Forbidden: Do not fetch network schemas
+        - Authority: NORMATIVE_VCP; source spec/draft/wire-format.md:16-20.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.WIRE.JSON. Domain `D.WIRE.JSON`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
+    - **Version** - 1 canonical primary records; COMPLETE FOR DECLARED RULE SCOPE.
+      - `CM.VCP.WIRE.VERSION` - Require the published draft marker
+        - Applicability: A marked top-level object is submitted.
+        - Required/observable: PROTOCOL_VERSION for unsupported marker; structural and semantic failures remain distinguishable. Forbidden: Do not infer compatibility from implementation package version
+        - Authority: NORMATIVE_VCP; source spec/draft/wire-format.md:5-14.
+        - Mathematics: Full relation symbolic/unbounded; concrete classes/predicate and related projections in D.WIRE.JSON. Domain `D.WIRE.JSON`. No test/proof coverage is claimed.
+        - Review status: COMPLETE FOR DECLARED RULE SCOPE.
 
-156 noncomponent IDs lack a reviewed domain; exact IDs are in CANONICAL_AUDIT.md. Related-domain links on inherited records are partial, not proofs.
+## Explicit blocked or limited subspaces
 
-There is no global candidate sum. Domain references overlap across branches. Requirement ownership is unique; mathematically overlapping projections are not independent requirement totals.
+| ID | Status | Known boundary / unresolved coordinate |
+| --- | --- | --- |
+| Q.CUSTOM_AGG_EMPTY | EXPLICIT_SEMANTIC_BLOCKER | The standard reducer section rejects empty input; the universal structural membership paragraph does not explicitly require nonempty custom membership. No custom reducer output or definition-rejection stage is invented. |
+| Q.RELAY_TIMING_KEY | DOCUMENTED_PROFILE_KEY_UNDERSPECIFICATION | Docs specifically describe relay_wall_time when provider wall_time uses another unit; code chooses it whenever that key exists. Exact same-unit key naming is not resolved into a portable requirement. |
+| Q.AVAILABILITY_OVERLAP | EXPLICIT_SEMANTIC_BLOCKER | Normative prose names six statuses without complete priority among output missing/invalid/error causes, and does not assign an unavailable status to interrupted CANCELLED information/Decision producer. Disjoint available/error/unstarted contexts and all handler effects are specified. |
+| Q.ROUNDING | UNBOUNDED_PRECISION_LIMIT_NO_BITWISE_REQUIREMENT | No portable cross-language float-bit/rounding oracle. Exact rational intermediate behavior is implementation descriptive. |
+| Q.DEFAULT_UNUSED | EXPLICIT_SEMANTIC_BLOCKER | Prose does not expressly prohibit an unused default on BLOCK/OMIT; SDK rejects it. Portable rejection for that unused-field coordinate is not established. |
+| Q.VERSION_FUTURE_INTERSECTION | UNSUPPORTED_FUTURE_PROFILE_LIMIT | For lists advertising an earlier shared future version before0.1, generic preference text and local supported-version restriction do not define a portable multi-version implementation profile. |
+| Q.NONPROGRESSING_SCHEMA_REFERENCE | EXTERNAL_UNDEFINED_SEMANTICS | A same-instance local reference cycle has undefined Boolean validation behavior in JSON Schema Core9.4.1; OpenVerify does not specify a portable accept/reject/error-code rule for it. |
+| Q.BOOLEAN_ANNOTATION_REFERENCE | SCOPE_AMBIGUITY | Provider prose specifically constrains object targets, while SDK membership check also applies only to dictionaries and can admit a boolean under annotation data. Core9.4.2 defines non-schema target interpretation as nonportable. VCP says annotation payloads are not schemas. No portable expected Boolean result is invented for the Provider boolean-annotation corner. |
 
-## Open questions and limits
-
-- Q.CUSTOM_AGG_EMPTY: The standard reducer section rejects empty input; the universal structural membership paragraph does not explicitly require nonempty custom membership. No custom reducer output or definition-rejection stage is invented. Custom empty-membership expectation cannot be closed without an explicit authority/scope decision; other membership and standard reducer rules continue.
-- Q.RELAY_TIMING_KEY: Docs specifically describe relay_wall_time when provider wall_time uses another unit; code chooses it whenever that key exists. Exact same-unit key naming is not resolved into a portable requirement. Exact local same-unit timing-key expectation requires clarification of the documented profile; retain both source statements.
-- Q.AVAILABILITY_OVERLAP: No universally specified precedence for multiple simultaneous invalid snapshot/source causes. OUTPUT_MISSING is a status but coherent successful outputs cannot omit declared ports. Do not label arbitrary raw source/status coordinates reachable. This is not a blocker for disjoint valid-runtime contexts; the dependent relation still needs full closure.
-- Q.ROUNDING: No portable cross-language float-bit/rounding oracle. Exact rational intermediate behavior is implementation descriptive. Use algebraic semantics and declared number fidelity; no bit-identical portable claim.
+See CANONICAL_AUDIT.md for source reconciliation and remaining questions; CANONICAL_MATH.md for complete domain predicates and equations. No tests, fixtures, frozen expectations or production/specification changes are part of this review.

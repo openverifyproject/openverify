@@ -1,12 +1,14 @@
-# Canonical mathematics v2 — PARTIAL
+# Canonical mathematics v2
 
-84 newly derived finite projections; 109 explicit symbolic-domain records; 1 conditional typed-availability relation. The 724 retained local components have provisional v1 domain descriptions ({'FINITE_EQUIVALENCE': 543, 'SYMBOLIC': 181}), not independently reverified mathematics.
+85 named finite projections; 150 symbolic domains; 2 conditional domains. In addition, 44 leaf-specific finite quotients and 54 declared-name presence projections within the 18 standard capability contracts are nested, explicitly scoped projections. The retained schema components have 543 local logical finite projections and 181 symbolic predicates. These categories overlap and are not one global combination count.
 
-Candidate totals count coordinates within each stated projection. Valid means satisfaction of that projection, not whole-object or executable-contract validity. Inapplicable is a precondition/dimension mismatch; unsupported and ambiguous scope are separate. No sums of overlapping projections are formed.
+Every named finite projection was independently recalculated. Every finite leaf quotient reconciles C=V+I+N. The conditional full InputPort default/handler domain intentionally remains 12=3 valid+7 invalid+0 inapplicable+2 unresolved; it does not meet the closed identity without resolving Q.DEFAULT_UNUSED. Typed availability is a dependent relation with explicit ambiguous status coordinates, not a raw Cartesian count.
 
-## Independently calculated finite projections
+Counts mean validity of the stated projection under its assumptions, never complete arbitrary JSON validity, implementation correctness or executed coverage. Domain links to a joint family do not copy its count into every leaf. Each JSONL semantic record retains its own predicate/applicability, and leaf-specific counts are labeled as such.
 
-| Projection | Formula | Candidates | Valid | Invalid | Inapplicable |
+## Named finite projections
+
+| Domain | Formula | C | V | I | N |
 | --- | --- | --- | --- | --- | --- |
 | D.RESULT.WIRE | 4 * 4 * 4 * 4 * 4 | 1024 | 66 | 958 | 0 |
 | D.RESULT.QUOTIENT | 4 * 3 * 3 * 3 * 3 | 324 | 9 | 315 | 0 |
@@ -92,9 +94,14 @@ Candidate totals count coordinates within each stated projection. Valid means sa
 | D.ERROR.DECLARATIONS | len(unique declarations across three separately owned enums) | 53 | 53 | 0 | 0 |
 | D.PRESENCE.VCP.CRITERION | 2^4; key-valid=2^2 | 16 | 4 | 12 | 0 |
 | D.PRESENCE.VCP.NODE_RECORD | 2^20; key-valid=2^8 | 1048576 | 256 | 1048320 | 0 |
+| D.RELAY.CLI.EXIT_QUOTIENT | 2*4 | 8 | 8 | 0 | 0 |
 
+## Conditional domains
 
-Every table row satisfies C=V+I+N. Arithmetic reconciliation is necessary but does not prove generator/domain completeness or source completeness.
+| Domain | Candidates | Status |
+| --- | --- | --- |
+| D.TYPED_AVAILABILITY | For fixed definition D and finite observed trace T: sum over declared target ports of applicable source contexts Reach(D,T,p); unbounded across D,T,schemas,values. | DISJOINT_CONTEXT_RELATION_DERIVED; NORMATIVE_STATUS_AMBIGUITIES_EXPLICIT |
+| D.PORT.REQUIREDNESS_DEFAULT_JOINT | 12 | BLOCKED_ONLY_UNUSED_DEFAULT_PORTABLE_COORDINATES |
 
 ## Worked identities
 
@@ -110,18 +117,18 @@ Required-key masks: n declared fields and r mandatory fields gives 2^n masks; ex
 
 Weighted n-member sign space is 3^n, with 2^n-1 admissible before filtering. After filtering K, retained sum must be positive; an admissible original vector may cease to be admissible. A weight belongs to its authored identity, so permuting scores alone is not a reduction. Evidence order also prevents a blanket commutativity reduction.
 
+The independent source-set inclusion-exclusion calculation reproduces the same DAG counts as the explicit topology predicate. Required-key monotonicity proves only the required-presence projection, not value/lineage/conditional validity. For fixed retained K the admissible nonnegative sign count is (2^|K|-1)*2^(n-|K|). Logical majority ties number binomial(n,n/2) for even n; the remaining 2^n-ties split equally between strict PASS and FAIL majorities.
+
 ## Whole-schema validity language
 
-P_schema(x) is the conjunction of the nodes in its AND expression. REF invokes the resolved offline predicate while retaining sibling conjuncts. allOf requires all, anyOf at least one, oneOf exactly one, not negates; IF selects then/else. properties/items and object/array/string/number keywords apply only at their proper instance/type locations; required does not validate absent optional property values. additionalProperties false rejects names outside evaluated named/pattern property declarations. Embedded defaults and format are annotations. Named timestamp fields additionally require the prose UTC/date semantics; annotation handling is not a substitute for those requirements.
-
-Each root expression below expands every published URN reference. There are no unresolved or recursive root references in this checkout. This reconstruction is syntax-preserving, not an independent proof that every prose interaction or local component is correct.
+P_root is the conjunction of its AND children. REF evaluates the offline target while retaining siblings; allOf/anyOf/oneOf/not and IF retain Boolean scope. Type-specific assertions apply at their actual instance/type location. additionalProperties uses properties/patternProperties in the SAME schema object; unevaluatedProperties/items use their annotation footprints. Defaults and embedded format are annotations. Shipped timestamp syntax/calendar requirements and local SDK format checks are separately owned. Every published root reference is resolved; the 33 shipped-root reference closure is acyclic. Arbitrary embedded recursion has a separately recorded undefined corner. Complete embedded evaluation vocabulary and restrictions are in D.SCHEMA.EMBEDDED.
 
 ## Domain definitions and reproducible classification relations
 
 
 ### D.RESULT.WIRE
 
-Status: DERIVED. Canonical links: CM.VCP.RESULT.OUTCOME, CM.VCP.RESULT.SUCCESS, CM.VCP.RESULT.DETERMINATION, CM.VCP.RESULT.INDEPENDENCE, CM.VCP.RESULT.SEVERITY, CM.VCP.RESULT.FLATTEN, CM.VCP.RESULT.INVOKED, CM.VCP.RESULT.NONEXEC_EVIDENCE, CM.VCP.RESULT.NONEXECUTION.EXECUTION_OUTCOME, CM.VCP.RESULT.NONEXECUTION.APPLICABILITY, CM.VCP.RESULT.NONEXECUTION.DETERMINATION, CM.VCP.RESULT.NONEXECUTION.VERDICT, CM.VCP.RESULT.NONEXECUTION.SCORE, CM.VCP.RESULT.NONEXECUTION.SEVERITY, CM.VCP.RESULT.ERROR.APPLICABILITY, CM.VCP.RESULT.ERROR.DETERMINATION, CM.VCP.RESULT.ERROR.VERDICT, CM.VCP.RESULT.ERROR.SCORE, CM.VCP.RESULT.ERROR.SEVERITY, CM.VCP.RESULT.NOT_APPLICABLE.DETERMINATION, CM.VCP.RESULT.NOT_APPLICABLE.VERDICT, CM.VCP.RESULT.NOT_APPLICABLE.SCORE, CM.VCP.RESULT.NOT_APPLICABLE.SEVERITY, CM.VCP.RESULT.UNKNOWN.VERDICT, CM.VCP.RESULT.UNKNOWN.SCORE, CM.VCP.RESULT.UNKNOWN.SEVERITY.
+Canonical links: CM.VCP.RESULT.INVOKED, CM.VCP.RESULT.NONEXEC_EVIDENCE, CM.VCP.RESULT.INDEPENDENCE, CM.VCP.RESULT.FLATTEN, CM.VCP.RESULT.SEVERITY, CM.VCP.RESULT.DETERMINATION, CM.VCP.RESULT.ERROR.APPLICABILITY, CM.VCP.RESULT.ERROR.DETERMINATION, CM.VCP.RESULT.ERROR.SCORE, CM.VCP.RESULT.ERROR.SEVERITY, CM.VCP.RESULT.ERROR.VERDICT, CM.VCP.RESULT.NONEXECUTION.APPLICABILITY, CM.VCP.RESULT.NONEXECUTION.DETERMINATION, CM.VCP.RESULT.NONEXECUTION.EXECUTION_OUTCOME, CM.VCP.RESULT.NONEXECUTION.SCORE, CM.VCP.RESULT.NONEXECUTION.SEVERITY, CM.VCP.RESULT.NONEXECUTION.VERDICT, CM.VCP.RESULT.NOT_APPLICABLE.DETERMINATION, CM.VCP.RESULT.NOT_APPLICABLE.SCORE, CM.VCP.RESULT.NOT_APPLICABLE.SEVERITY, CM.VCP.RESULT.NOT_APPLICABLE.VERDICT, CM.VCP.RESULT.OUTCOME, CM.VCP.RESULT.SUCCESS, CM.VCP.RESULT.UNKNOWN.SCORE, CM.VCP.RESULT.UNKNOWN.SEVERITY, CM.VCP.RESULT.UNKNOWN.VERDICT
 
 ```json
 {
@@ -192,6 +199,15 @@ Status: DERIVED. Canonical links: CM.VCP.RESULT.OUTCOME, CM.VCP.RESULT.SUCCESS, 
   "domain_id": "D.RESULT.WIRE",
   "formula": "4 * 4 * 4 * 4 * 4",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "candidate_count": 1024,
+    "counts": {
+      "INVALID": 958,
+      "VALID": 66
+    },
+    "method": "Separate hand-authored source-semantic classifier, no production import or observed outputs.",
+    "status": "RECONCILED"
+  },
   "invalid_count": 958,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -201,11 +217,9 @@ Status: DERIVED. Canonical links: CM.VCP.RESULT.OUTCOME, CM.VCP.RESULT.SUCCESS, 
 }
 ```
 
-Source references: spec/draft/result.md:5-16 [sha256 14acc3ccf0b4bc26570687be3a9f9a78746deb29007756626c2c1677e9e695ba], spec/draft/result.md:5-16 [sha256 14acc3ccf0b4bc26570687be3a9f9a78746deb29007756626c2c1677e9e695ba], spec/draft/result.md:5-16 [sha256 14acc3ccf0b4bc26570687be3a9f9a78746deb29007756626c2c1677e9e695ba], spec/draft/result.md:5-16 [sha256 14acc3ccf0b4bc26570687be3a9f9a78746deb29007756626c2c1677e9e695ba], spec/draft/result.md:18-22 [sha256 14acc3ccf0b4bc26570687be3a9f9a78746deb29007756626c2c1677e9e695ba], spec/draft/result.md:24-28 [sha256 14acc3ccf0b4bc26570687be3a9f9a78746deb29007756626c2c1677e9e695ba], spec/draft/result.md:48-53 [sha256 14acc3ccf0b4bc26570687be3a9f9a78746deb29007756626c2c1677e9e695ba], spec/draft/lifecycle.md:15-17 [sha256 7a64e510300c0a326985bab7435ed5dd65f3c0745bb003202df6d03c9b52af02], spec/draft/result.md:55-57 [sha256 14acc3ccf0b4bc26570687be3a9f9a78746deb29007756626c2c1677e9e695ba], spec/draft/result.md:5-16 [sha256 14acc3ccf0b4bc26570687be3a9f9a78746deb29007756626c2c1677e9e695ba], spec/draft/result.md:5-16 [sha256 14acc3ccf0b4bc26570687be3a9f9a78746deb29007756626c2c1677e9e695ba], spec/draft/result.md:5-16 [sha256 14acc3ccf0b4bc26570687be3a9f9a78746deb29007756626c2c1677e9e695ba], spec/draft/result.md:5-16 [sha256 14acc3ccf0b4bc26570687be3a9f9a78746deb29007756626c2c1677e9e695ba], spec/draft/result.md:1-57 [sha256 14acc3ccf0b4bc26570687be3a9f9a78746deb29007756626c2c1677e9e695ba], spec/draft/wire-format.md:1-37 [sha256 e2ff9695699de355d19490a67a27480dbb382c533f8fa408ef404900909e78ee]
-
 ### D.RESULT.QUOTIENT
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -265,6 +279,15 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.RESULT.QUOTIENT",
   "formula": "4 * 3 * 3 * 3 * 3",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "candidate_count": 324,
+    "counts": {
+      "INVALID": 315,
+      "VALID": 9
+    },
+    "method": "Separate hand-authored source-semantic classifier, no production import or observed outputs.",
+    "status": "RECONCILED"
+  },
   "invalid_count": 315,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -274,11 +297,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: spec/draft/result.md:1-57 [sha256 14acc3ccf0b4bc26570687be3a9f9a78746deb29007756626c2c1677e9e695ba], spec/draft/wire-format.md:1-37 [sha256 e2ff9695699de355d19490a67a27480dbb382c533f8fa408ef404900909e78ee]
-
 ### D.RESULT.OBSERVATION_MASK
 
-Status: DERIVED. Canonical links: CM.VCP.RESULT.NONEXECUTION.JUDGMENT, CM.VCP.RESULT.ERROR.JUDGMENT, CM.VCP.RESULT.NOT_APPLICABLE.JUDGMENT, CM.VCP.RESULT.UNKNOWN.JUDGMENT.
+Canonical links: CM.VCP.RESULT.ERROR.JUDGMENT, CM.VCP.RESULT.NONEXECUTION.JUDGMENT, CM.VCP.RESULT.NOT_APPLICABLE.JUDGMENT, CM.VCP.RESULT.UNKNOWN.JUDGMENT
 
 ```json
 {
@@ -573,6 +594,15 @@ Status: DERIVED. Canonical links: CM.VCP.RESULT.NONEXECUTION.JUDGMENT, CM.VCP.RE
   "domain_id": "D.RESULT.OBSERVATION_MASK",
   "formula": "9 * 256",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "candidate_count": 2304,
+    "counts": {
+      "INVALID": 1344,
+      "VALID": 960
+    },
+    "method": "Separate hand-authored source-semantic classifier, no production import or observed outputs.",
+    "status": "RECONCILED"
+  },
   "invalid_count": 1344,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -582,11 +612,9 @@ Status: DERIVED. Canonical links: CM.VCP.RESULT.NONEXECUTION.JUDGMENT, CM.VCP.RE
 }
 ```
 
-Source references: spec/draft/result.md:5-16 [sha256 14acc3ccf0b4bc26570687be3a9f9a78746deb29007756626c2c1677e9e695ba], spec/draft/result.md:5-16 [sha256 14acc3ccf0b4bc26570687be3a9f9a78746deb29007756626c2c1677e9e695ba], spec/draft/result.md:5-16 [sha256 14acc3ccf0b4bc26570687be3a9f9a78746deb29007756626c2c1677e9e695ba], spec/draft/result.md:5-16 [sha256 14acc3ccf0b4bc26570687be3a9f9a78746deb29007756626c2c1677e9e695ba], spec/draft/result.md:1-57 [sha256 14acc3ccf0b4bc26570687be3a9f9a78746deb29007756626c2c1677e9e695ba], spec/draft/wire-format.md:1-37 [sha256 e2ff9695699de355d19490a67a27480dbb382c533f8fa408ef404900909e78ee]
-
 ### D.JUDGMENT.ACCEPTANCE
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: CM.VCP.DATA.JUDGMENT
 
 ```json
 {
@@ -621,20 +649,31 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.JUDGMENT.ACCEPTANCE",
   "formula": "3 * 2",
   "inapplicable_count": 2,
+  "independent_recalculation": {
+    "candidate_count": 6,
+    "counts": {
+      "INAPPLICABLE": 2,
+      "INVALID": 2,
+      "VALID": 2
+    },
+    "method": "Separate hand-authored source-semantic classifier, no production import or observed outputs.",
+    "status": "RECONCILED"
+  },
   "invalid_count": 2,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
   "meaning": "An emitted null judgment is validated as data; absent judgment does not invoke judgment-schema acceptance.",
   "outcomes": null,
+  "requirement_ids": [
+    "CM.VCP.DATA.JUDGMENT"
+  ],
   "valid_count": 2
 }
 ```
 
-Source references: spec/draft/meaning.md:1-30 [sha256 7dfc04cad4db77ed6eeda32a97f13460b8a271159260b7b3e89ef17e54dec55c], spec/draft/dataflow.md:1-195 [sha256 50c60efcd2701f35d93b05040bc0aef5a2f3dcf8252e026a3df956c4d4554c02]
-
 ### D.DECISION.DESTINATION
 
-Status: DERIVED. Canonical links: CM.VCP.DECISION.DESTINATION.
+Canonical links: CM.VCP.DECISION.DESTINATION
 
 ```json
 {
@@ -671,6 +710,15 @@ Status: DERIVED. Canonical links: CM.VCP.DECISION.DESTINATION.
   "domain_id": "D.DECISION.DESTINATION",
   "formula": "6 * 4",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "candidate_count": 24,
+    "counts": {
+      "INVALID": 13,
+      "VALID": 11
+    },
+    "method": "Separate hand-authored source-semantic classifier, no production import or observed outputs.",
+    "status": "RECONCILED"
+  },
   "invalid_count": 13,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -680,11 +728,9 @@ Status: DERIVED. Canonical links: CM.VCP.DECISION.DESTINATION.
 }
 ```
 
-Source references: spec/draft/result.md:30-33 [sha256 14acc3ccf0b4bc26570687be3a9f9a78746deb29007756626c2c1677e9e695ba], spec/draft/result.md:1-57 [sha256 14acc3ccf0b4bc26570687be3a9f9a78746deb29007756626c2c1677e9e695ba], spec/draft/lifecycle.md:1-74 [sha256 7a64e510300c0a326985bab7435ed5dd65f3c0745bb003202df6d03c9b52af02]
-
 ### D.NODE.OUTPUT_ROLE
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: CM.VCP.DATA.DERIVE_ROLE
 
 ```json
 {
@@ -718,20 +764,30 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.NODE.OUTPUT_ROLE",
   "formula": "4 * 3",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "candidate_count": 12,
+    "counts": {
+      "INVALID": 5,
+      "VALID": 7
+    },
+    "method": "Separate hand-authored source-semantic classifier, no production import or observed outputs.",
+    "status": "RECONCILED"
+  },
   "invalid_count": 5,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
   "meaning": "Permitted role membership only; primary name/cardinality is independent.",
   "outcomes": null,
+  "requirement_ids": [
+    "CM.VCP.DATA.DERIVE_ROLE"
+  ],
   "valid_count": 7
 }
 ```
 
-Source references: spec/draft/dataflow.md:1-195 [sha256 50c60efcd2701f35d93b05040bc0aef5a2f3dcf8252e026a3df956c4d4554c02], spec/draft/lifecycle.md:1-74 [sha256 7a64e510300c0a326985bab7435ed5dd65f3c0745bb003202df6d03c9b52af02]
-
 ### D.PORT.HANDLER
 
-Status: DERIVED. Canonical links: CM.VCP.DATA.PORT_HANDLING.
+Canonical links: CM.VCP.DATA.PORT_HANDLING
 
 ```json
 {
@@ -763,20 +819,30 @@ Status: DERIVED. Canonical links: CM.VCP.DATA.PORT_HANDLING.
   "domain_id": "D.PORT.HANDLER",
   "formula": "2 * 3",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "candidate_count": 6,
+    "counts": {
+      "INVALID": 3,
+      "VALID": 3
+    },
+    "method": "Separate hand-authored source-semantic classifier, no production import or observed outputs.",
+    "status": "RECONCILED"
+  },
   "invalid_count": 3,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
   "meaning": "InputPort requiredness and on_unavailable consistency.",
   "outcomes": null,
+  "requirement_ids": [
+    "CM.VCP.DATA.PORT_HANDLING"
+  ],
   "valid_count": 3
 }
 ```
 
-Source references: spec/draft/dataflow.md:27-33 [sha256 50c60efcd2701f35d93b05040bc0aef5a2f3dcf8252e026a3df956c4d4554c02], spec/draft/dataflow.md:1-195 [sha256 50c60efcd2701f35d93b05040bc0aef5a2f3dcf8252e026a3df956c4d4554c02]
-
 ### D.DEFAULT.PRESENCE
 
-Status: DERIVED. Canonical links: CM.VCP.DATA.DEFAULT.
+Canonical links: CM.VCP.DATA.DEFAULT.CONSTANT
 
 ```json
 {
@@ -811,20 +877,31 @@ Status: DERIVED. Canonical links: CM.VCP.DATA.DEFAULT.
   "domain_id": "D.DEFAULT.PRESENCE",
   "formula": "3 * 2",
   "inapplicable_count": 4,
+  "independent_recalculation": {
+    "candidate_count": 6,
+    "counts": {
+      "INAPPLICABLE": 4,
+      "INVALID": 1,
+      "VALID": 1
+    },
+    "method": "Separate hand-authored source-semantic classifier, no production import or observed outputs.",
+    "status": "RECONCILED"
+  },
   "invalid_count": 1,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
   "meaning": "DEFAULT requires an explicit Constant; this requirement does not decide unused default fields on other handlers. Null is data when its schema admits it.",
   "outcomes": null,
+  "requirement_ids": [
+    "CM.VCP.DATA.DEFAULT.CONSTANT"
+  ],
   "valid_count": 1
 }
 ```
 
-Source references: spec/draft/dataflow.md:20-25 [sha256 50c60efcd2701f35d93b05040bc0aef5a2f3dcf8252e026a3df956c4d4554c02], spec/draft/dataflow.md:1-195 [sha256 50c60efcd2701f35d93b05040bc0aef5a2f3dcf8252e026a3df956c4d4554c02]
-
 ### D.POLICY.SOURCE
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: CM.VCP.POLICY.SOURCES
 
 ```json
 {
@@ -858,20 +935,30 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.POLICY.SOURCE",
   "formula": "3 * 4",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "candidate_count": 12,
+    "counts": {
+      "INVALID": 3,
+      "VALID": 9
+    },
+    "method": "Separate hand-authored source-semantic classifier, no production import or observed outputs.",
+    "status": "RECONCILED"
+  },
   "invalid_count": 3,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
   "meaning": "Policy input bindings exist before graph execution; graph-output source is forbidden for every policy role.",
   "outcomes": null,
+  "requirement_ids": [
+    "CM.VCP.POLICY.SOURCES"
+  ],
   "valid_count": 9
 }
 ```
 
-Source references: spec/draft/execution-policy.md:1-81 [sha256 2bb545ce77cbf3790261a35a9955104fecb8c18be1f56e51c1ff0c2d251ce4cf]
-
 ### D.GUARD.BOOLEAN
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -901,6 +988,14 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.GUARD.BOOLEAN",
   "formula": "2 * 2",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "candidate_count": 4,
+    "counts": {
+      "VALID": 4
+    },
+    "method": "Separate hand-authored source-semantic classifier, no production import or observed outputs.",
+    "status": "RECONCILED"
+  },
   "invalid_count": 0,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -910,11 +1005,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: spec/draft/dataflow.md [sha256 50c60efcd2701f35d93b05040bc0aef5a2f3dcf8252e026a3df956c4d4554c02]
-
 ### D.RESOURCE.PRESENCE
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -953,6 +1046,15 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.RESOURCE.PRESENCE",
   "formula": "4 * 8",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "candidate_count": 32,
+    "counts": {
+      "INVALID": 28,
+      "VALID": 4
+    },
+    "method": "Separate hand-authored source-semantic classifier, no production import or observed outputs.",
+    "status": "RECONCILED"
+  },
   "invalid_count": 28,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -962,11 +1064,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: spec/draft/resources.md:1-32 [sha256 69fc4771421d8f1672488e7b2266397d0bba6b8a179a08834a9a0b981357ea72], spec/draft/wire-format.md:1-37 [sha256 e2ff9695699de355d19490a67a27480dbb382c533f8fa408ef404900909e78ee]
-
 ### D.RESOURCE.NULLABLE
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -1016,6 +1116,15 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.RESOURCE.NULLABLE",
   "formula": "4 * 3 * 3 * 3",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "candidate_count": 108,
+    "counts": {
+      "INVALID": 90,
+      "VALID": 18
+    },
+    "method": "Separate hand-authored source-semantic classifier, no production import or observed outputs.",
+    "status": "RECONCILED"
+  },
   "invalid_count": 90,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -1025,11 +1134,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: spec/draft/resources.md:1-32 [sha256 69fc4771421d8f1672488e7b2266397d0bba6b8a179a08834a9a0b981357ea72], spec/draft/wire-format.md:1-37 [sha256 e2ff9695699de355d19490a67a27480dbb382c533f8fa408ef404900909e78ee]
-
 ### D.RESOURCE.RANGE
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -1054,6 +1161,15 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.RESOURCE.RANGE",
   "formula": "3",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "candidate_count": 3,
+    "counts": {
+      "INVALID": 1,
+      "VALID": 2
+    },
+    "method": "Separate hand-authored source-semantic classifier, no production import or observed outputs.",
+    "status": "RECONCILED"
+  },
   "invalid_count": 1,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -1063,11 +1179,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: spec/draft/resources.md:1-32 [sha256 69fc4771421d8f1672488e7b2266397d0bba6b8a179a08834a9a0b981357ea72], spec/draft/wire-format.md:1-37 [sha256 e2ff9695699de355d19490a67a27480dbb382c533f8fa408ef404900909e78ee]
-
 ### D.POLICY.ROLE_OUTCOME
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -1100,6 +1214,15 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.POLICY.ROLE_OUTCOME",
   "formula": "3 * 3",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "candidate_count": 9,
+    "counts": {
+      "INVALID": 6,
+      "VALID": 3
+    },
+    "method": "Separate hand-authored source-semantic classifier, no production import or observed outputs.",
+    "status": "RECONCILED"
+  },
   "invalid_count": 6,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -1109,11 +1232,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: spec/draft/execution-policy.md:1-81 [sha256 2bb545ce77cbf3790261a35a9955104fecb8c18be1f56e51c1ff0c2d251ce4cf]
-
 ### D.POLICY.DECLARATION
 
-Status: DERIVED. Canonical links: CM.VCP.POLICY.DECLARATION.DISCRIMINATOR.
+Canonical links: CM.VCP.POLICY.DECLARATION.DISCRIMINATOR
 
 ```json
 {
@@ -1144,6 +1265,15 @@ Status: DERIVED. Canonical links: CM.VCP.POLICY.DECLARATION.DISCRIMINATOR.
   "domain_id": "D.POLICY.DECLARATION",
   "formula": "2 * 2",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "candidate_count": 4,
+    "counts": {
+      "INVALID": 2,
+      "VALID": 2
+    },
+    "method": "Separate hand-authored source-semantic classifier, no production import or observed outputs.",
+    "status": "RECONCILED"
+  },
   "invalid_count": 2,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -1153,11 +1283,9 @@ Status: DERIVED. Canonical links: CM.VCP.POLICY.DECLARATION.DISCRIMINATOR.
 }
 ```
 
-Source references: spec/draft/execution-policy.md:36-43 [sha256 2bb545ce77cbf3790261a35a9955104fecb8c18be1f56e51c1ff0c2d251ce4cf], spec/draft/execution-policy.md:1-81 [sha256 2bb545ce77cbf3790261a35a9955104fecb8c18be1f56e51c1ff0c2d251ce4cf]
-
 ### D.POLICY.ORDER
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -1209,6 +1337,15 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.POLICY.ORDER",
   "formula": "6",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "candidate_count": 6,
+    "counts": {
+      "INVALID": 5,
+      "VALID": 1
+    },
+    "method": "Separate hand-authored source-semantic classifier, no production import or observed outputs.",
+    "status": "RECONCILED"
+  },
   "invalid_count": 5,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -1218,11 +1355,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: spec/draft/execution-policy.md:1-81 [sha256 2bb545ce77cbf3790261a35a9955104fecb8c18be1f56e51c1ff0c2d251ce4cf]
-
 ### D.CANCEL.ADMISSION
 
-Status: DERIVED. Canonical links: CM.VCP.LIFECYCLE.CANCEL_RUNNING.STATE.
+Canonical links: CM.VCP.LIFECYCLE.CANCEL_RUNNING.STATE
 
 ```json
 {
@@ -1254,6 +1389,15 @@ Status: DERIVED. Canonical links: CM.VCP.LIFECYCLE.CANCEL_RUNNING.STATE.
   "domain_id": "D.CANCEL.ADMISSION",
   "formula": "2 * 3",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "candidate_count": 6,
+    "counts": {
+      "INVALID": 4,
+      "VALID": 2
+    },
+    "method": "Separate hand-authored source-semantic classifier, no production import or observed outputs.",
+    "status": "RECONCILED"
+  },
   "invalid_count": 4,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -1263,11 +1407,9 @@ Status: DERIVED. Canonical links: CM.VCP.LIFECYCLE.CANCEL_RUNNING.STATE.
 }
 ```
 
-Source references: spec/draft/lifecycle.md:61-67 [sha256 7a64e510300c0a326985bab7435ed5dd65f3c0745bb003202df6d03c9b52af02], spec/draft/lifecycle.md:1-74 [sha256 7a64e510300c0a326985bab7435ed5dd65f3c0745bb003202df6d03c9b52af02]
-
 ### D.LIFECYCLE.PHASE
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: CM.VCP.LIFECYCLE.PHASES
 
 ```json
 {
@@ -1303,20 +1445,31 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.LIFECYCLE.PHASE",
   "formula": "4 * 4",
   "inapplicable_count": 4,
+  "independent_recalculation": {
+    "candidate_count": 16,
+    "counts": {
+      "INAPPLICABLE": 4,
+      "INVALID": 7,
+      "VALID": 5
+    },
+    "method": "Separate hand-authored source-semantic classifier, no production import or observed outputs.",
+    "status": "RECONCILED"
+  },
   "invalid_count": 7,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
   "meaning": "Logical progression arcs, stutter observations and forbidden progression. Stutters are inapplicable to an advance action, not schema-invalid observations.",
   "outcomes": null,
+  "requirement_ids": [
+    "CM.VCP.LIFECYCLE.PHASES"
+  ],
   "valid_count": 5
 }
 ```
 
-Source references: spec/draft/lifecycle.md:1-74 [sha256 7a64e510300c0a326985bab7435ed5dd65f3c0745bb003202df6d03c9b52af02]
-
 ### D.NODE.TERMINAL_RESULT
 
-Status: DERIVED. Canonical links: CM.VCP.LIFECYCLE.CANCEL_RUNNING.RESULT.
+Canonical links: CM.VCP.LIFECYCLE.CANCEL_RUNNING.RESULT
 
 ```json
 {
@@ -1363,6 +1516,15 @@ Status: DERIVED. Canonical links: CM.VCP.LIFECYCLE.CANCEL_RUNNING.RESULT.
   "domain_id": "D.NODE.TERMINAL_RESULT",
   "formula": "2 * 4 * 9",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "candidate_count": 72,
+    "counts": {
+      "INVALID": 52,
+      "VALID": 20
+    },
+    "method": "Separate hand-authored source-semantic classifier, no production import or observed outputs.",
+    "status": "RECONCILED"
+  },
   "invalid_count": 52,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -1372,11 +1534,9 @@ Status: DERIVED. Canonical links: CM.VCP.LIFECYCLE.CANCEL_RUNNING.RESULT.
 }
 ```
 
-Source references: spec/draft/lifecycle.md:61-67 [sha256 7a64e510300c0a326985bab7435ed5dd65f3c0745bb003202df6d03c9b52af02], spec/draft/dataflow.md:1-195 [sha256 50c60efcd2701f35d93b05040bc0aef5a2f3dcf8252e026a3df956c4d4554c02], spec/draft/lifecycle.md:1-74 [sha256 7a64e510300c0a326985bab7435ed5dd65f3c0745bb003202df6d03c9b52af02]
-
 ### D.PROVIDER.EVENT_FEATURES
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: CM.PROVIDER.FEATURE.RESOURCE, CM.PROVIDER.FEATURE.STREAM
 
 ```json
 {
@@ -1425,20 +1585,31 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.PROVIDER.EVENT_FEATURES",
   "formula": "6 * 2 * 2 * 2",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "candidate_count": 48,
+    "counts": {
+      "INVALID": 31,
+      "VALID": 17
+    },
+    "method": "Separate hand-authored source-semantic classifier, no production import or observed outputs.",
+    "status": "RECONCILED"
+  },
   "invalid_count": 31,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
   "meaning": "Actual advertised feature eligibility and standard VCP event payloads; not arbitrary event-JSON validity.",
   "outcomes": null,
+  "requirement_ids": [
+    "CM.PROVIDER.FEATURE.STREAM",
+    "CM.PROVIDER.FEATURE.RESOURCE"
+  ],
   "valid_count": 17
 }
 ```
 
-Source references: provider-contract/spec/draft/capabilities.md:1-51 [sha256 9ac03569a88e9982b5a75ceb705daa59cd0ff21aa3ab440d9ee0e3b2afcaa66a], provider-contract/spec/draft/lifecycle.md:1-72 [sha256 122e8e4aaa8deb60d0cf6397d9857294d096f063c5c7ecde59d3d0359596177d], provider-contract/spec/draft/wire-format.md:1-65 [sha256 23d1e6bc4518225afa86f422d15eee22214d7a285b369c42c6843f45d06895a7], provider-contract/spec/draft/versioning.md:1-34 [sha256 2656dd1dbd2a872bd9d9912b8dba4c2ec61fc4dbaf145d091f7cda1203132921]
-
 ### D.PROVIDER.OUTCOME_FIELDS
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -1478,6 +1649,15 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.PROVIDER.OUTCOME_FIELDS",
   "formula": "4 * 2 * 2",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "candidate_count": 16,
+    "counts": {
+      "INVALID": 12,
+      "VALID": 4
+    },
+    "method": "Separate hand-authored source-semantic classifier, no production import or observed outputs.",
+    "status": "RECONCILED"
+  },
   "invalid_count": 12,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -1487,11 +1667,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: provider-contract/spec/draft/capabilities.md:1-51 [sha256 9ac03569a88e9982b5a75ceb705daa59cd0ff21aa3ab440d9ee0e3b2afcaa66a], provider-contract/spec/draft/lifecycle.md:1-72 [sha256 122e8e4aaa8deb60d0cf6397d9857294d096f063c5c7ecde59d3d0359596177d], provider-contract/spec/draft/wire-format.md:1-65 [sha256 23d1e6bc4518225afa86f422d15eee22214d7a285b369c42c6843f45d06895a7], provider-contract/spec/draft/versioning.md:1-34 [sha256 2656dd1dbd2a872bd9d9912b8dba4c2ec61fc4dbaf145d091f7cda1203132921]
-
 ### D.PROVIDER.USAGE
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -1538,6 +1716,15 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.PROVIDER.USAGE",
   "formula": "2 * 4 * 2 * 2",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "candidate_count": 32,
+    "counts": {
+      "INVALID": 12,
+      "VALID": 20
+    },
+    "method": "Separate hand-authored source-semantic classifier, no production import or observed outputs.",
+    "status": "RECONCILED"
+  },
   "invalid_count": 12,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -1547,11 +1734,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: provider-contract/spec/draft/capabilities.md:1-51 [sha256 9ac03569a88e9982b5a75ceb705daa59cd0ff21aa3ab440d9ee0e3b2afcaa66a], provider-contract/spec/draft/lifecycle.md:1-72 [sha256 122e8e4aaa8deb60d0cf6397d9857294d096f063c5c7ecde59d3d0359596177d], provider-contract/spec/draft/wire-format.md:1-65 [sha256 23d1e6bc4518225afa86f422d15eee22214d7a285b369c42c6843f45d06895a7], provider-contract/spec/draft/versioning.md:1-34 [sha256 2656dd1dbd2a872bd9d9912b8dba4c2ec61fc4dbaf145d091f7cda1203132921]
-
 ### D.PROVIDER.CANCEL
 
-Status: DERIVED. Canonical links: CM.PROVIDER.CANCEL.RUNNING, CM.PROVIDER.CANCEL.CAUSE, CM.PROVIDER.CANCEL.TERMINAL, CM.PROVIDER.CANCEL.UNKNOWN.
+Canonical links: CM.PROVIDER.CANCEL.CAUSE, CM.PROVIDER.CANCEL.TERMINAL, CM.PROVIDER.CANCEL.UNKNOWN, CM.PROVIDER.CANCEL.RUNNING.REQUEST, CM.PROVIDER.CANCEL.RUNNING.REPEAT, CM.PROVIDER.CANCEL.RUNNING.NO_BOUND
 
 ```json
 {
@@ -1584,20 +1769,32 @@ Status: DERIVED. Canonical links: CM.PROVIDER.CANCEL.RUNNING, CM.PROVIDER.CANCEL
   "domain_id": "D.PROVIDER.CANCEL",
   "formula": "4 * 2",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "candidate_count": 8,
+    "counts": {
+      "INVALID": 5,
+      "VALID": 3
+    },
+    "method": "Separate hand-authored source-semantic classifier, no production import or observed outputs.",
+    "status": "RECONCILED"
+  },
   "invalid_count": 5,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
   "meaning": "Terminal cancellation no-op, supported running request, forbidden unknown/rejected/unsupported running request.",
   "outcomes": null,
+  "requirement_ids": [
+    "CM.PROVIDER.CANCEL.RUNNING.REQUEST",
+    "CM.PROVIDER.CANCEL.RUNNING.REPEAT",
+    "CM.PROVIDER.CANCEL.RUNNING.NO_BOUND"
+  ],
   "valid_count": 3
 }
 ```
 
-Source references: provider-contract/spec/draft/lifecycle.md:20-27 [sha256 122e8e4aaa8deb60d0cf6397d9857294d096f063c5c7ecde59d3d0359596177d], provider-contract/spec/draft/lifecycle.md:20-27 [sha256 122e8e4aaa8deb60d0cf6397d9857294d096f063c5c7ecde59d3d0359596177d], provider-contract/spec/draft/lifecycle.md:20-27 [sha256 122e8e4aaa8deb60d0cf6397d9857294d096f063c5c7ecde59d3d0359596177d], provider-contract/spec/draft/lifecycle.md:20-27 [sha256 122e8e4aaa8deb60d0cf6397d9857294d096f063c5c7ecde59d3d0359596177d], provider-contract/spec/draft/capabilities.md:1-51 [sha256 9ac03569a88e9982b5a75ceb705daa59cd0ff21aa3ab440d9ee0e3b2afcaa66a], provider-contract/spec/draft/lifecycle.md:1-72 [sha256 122e8e4aaa8deb60d0cf6397d9857294d096f063c5c7ecde59d3d0359596177d], provider-contract/spec/draft/wire-format.md:1-65 [sha256 23d1e6bc4518225afa86f422d15eee22214d7a285b369c42c6843f45d06895a7], provider-contract/spec/draft/versioning.md:1-34 [sha256 2656dd1dbd2a872bd9d9912b8dba4c2ec61fc4dbaf145d091f7cda1203132921]
-
 ### D.PROVIDER.ATTEMPT_ACTION
 
-Status: DERIVED. Canonical links: CM.PROVIDER.LIFE.TERMINAL, CM.PROVIDER.LIFE.INTERLEAVING, CM.PROVIDER.LIFE.OUTPUT, CM.PROVIDER.LIFE.CORRELATION.UNKNOWN, CM.PROVIDER.LIFE.CORRELATION.AFTER_TERMINAL, CM.PROVIDER.LIFE.CORRELATION.DUPLICATE_OUTCOME.
+Canonical links: CM.PROVIDER.LIFE.OUTPUT, CM.PROVIDER.LIFE.INTERLEAVING, CM.PROVIDER.LIFE.CORRELATION.AFTER_TERMINAL, CM.PROVIDER.LIFE.CORRELATION.DUPLICATE_OUTCOME, CM.PROVIDER.LIFE.CORRELATION.UNKNOWN, CM.PROVIDER.LIFE.TERMINAL.EXACTLY_ONCE, CM.PROVIDER.LIFE.TERMINAL.ZERO_EVENTS
 
 ```json
 {
@@ -1632,20 +1829,31 @@ Status: DERIVED. Canonical links: CM.PROVIDER.LIFE.TERMINAL, CM.PROVIDER.LIFE.IN
   "domain_id": "D.PROVIDER.ATTEMPT_ACTION",
   "formula": "4 * 4",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "candidate_count": 16,
+    "counts": {
+      "INVALID": 11,
+      "VALID": 5
+    },
+    "method": "Separate hand-authored source-semantic classifier, no production import or observed outputs.",
+    "status": "RECONCILED"
+  },
   "invalid_count": 11,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
   "meaning": "One correlation identity. Initialized session, supported streaming/cancel and valid action payloads/deadline preconditions held.",
   "outcomes": null,
+  "requirement_ids": [
+    "CM.PROVIDER.LIFE.TERMINAL.EXACTLY_ONCE",
+    "CM.PROVIDER.LIFE.TERMINAL.ZERO_EVENTS"
+  ],
   "valid_count": 5
 }
 ```
 
-Source references: provider-contract/spec/draft/lifecycle.md:10-18 [sha256 122e8e4aaa8deb60d0cf6397d9857294d096f063c5c7ecde59d3d0359596177d], provider-contract/spec/draft/overview.md:8-9 [sha256 b2d0b56c135323accc4927db85b0af447b7f925c4bb8debc00443ec495487807], provider-contract/spec/draft/lifecycle.md:10-18 [sha256 122e8e4aaa8deb60d0cf6397d9857294d096f063c5c7ecde59d3d0359596177d], provider-contract/spec/draft/lifecycle.md:10-18 [sha256 122e8e4aaa8deb60d0cf6397d9857294d096f063c5c7ecde59d3d0359596177d], provider-contract/spec/draft/lifecycle.md:10-18 [sha256 122e8e4aaa8deb60d0cf6397d9857294d096f063c5c7ecde59d3d0359596177d], provider-contract/spec/draft/capabilities.md:1-51 [sha256 9ac03569a88e9982b5a75ceb705daa59cd0ff21aa3ab440d9ee0e3b2afcaa66a], provider-contract/spec/draft/lifecycle.md:1-72 [sha256 122e8e4aaa8deb60d0cf6397d9857294d096f063c5c7ecde59d3d0359596177d], provider-contract/spec/draft/wire-format.md:1-65 [sha256 23d1e6bc4518225afa86f422d15eee22214d7a285b369c42c6843f45d06895a7], provider-contract/spec/draft/versioning.md:1-34 [sha256 2656dd1dbd2a872bd9d9912b8dba4c2ec61fc4dbaf145d091f7cda1203132921]
-
 ### D.PROVIDER.DEADLINE_COMMIT
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -1686,6 +1894,15 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.PROVIDER.DEADLINE_COMMIT",
   "formula": "4 * 2 * 3",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "candidate_count": 24,
+    "counts": {
+      "INVALID": 12,
+      "VALID": 12
+    },
+    "method": "Separate hand-authored source-semantic classifier, no production import or observed outputs.",
+    "status": "RECONCILED"
+  },
   "invalid_count": 12,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -1695,11 +1912,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: provider-contract/spec/draft/capabilities.md:1-51 [sha256 9ac03569a88e9982b5a75ceb705daa59cd0ff21aa3ab440d9ee0e3b2afcaa66a], provider-contract/spec/draft/lifecycle.md:1-72 [sha256 122e8e4aaa8deb60d0cf6397d9857294d096f063c5c7ecde59d3d0359596177d], provider-contract/spec/draft/wire-format.md:1-65 [sha256 23d1e6bc4518225afa86f422d15eee22214d7a285b369c42c6843f45d06895a7], provider-contract/spec/draft/versioning.md:1-34 [sha256 2656dd1dbd2a872bd9d9912b8dba4c2ec61fc4dbaf145d091f7cda1203132921]
-
 ### D.PROVIDER.DEADLINE_FEATURE
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -1730,6 +1945,15 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.PROVIDER.DEADLINE_FEATURE",
   "formula": "2 * 2",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "candidate_count": 4,
+    "counts": {
+      "INVALID": 1,
+      "VALID": 3
+    },
+    "method": "Separate hand-authored source-semantic classifier, no production import or observed outputs.",
+    "status": "RECONCILED"
+  },
   "invalid_count": 1,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -1739,11 +1963,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: provider-contract/spec/draft/capabilities.md:1-51 [sha256 9ac03569a88e9982b5a75ceb705daa59cd0ff21aa3ab440d9ee0e3b2afcaa66a], provider-contract/spec/draft/lifecycle.md:1-72 [sha256 122e8e4aaa8deb60d0cf6397d9857294d096f063c5c7ecde59d3d0359596177d], provider-contract/spec/draft/wire-format.md:1-65 [sha256 23d1e6bc4518225afa86f422d15eee22214d7a285b369c42c6843f45d06895a7], provider-contract/spec/draft/versioning.md:1-34 [sha256 2656dd1dbd2a872bd9d9912b8dba4c2ec61fc4dbaf145d091f7cda1203132921]
-
 ### D.PROVIDER.BUDGET_VCP
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -1774,6 +1996,15 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.PROVIDER.BUDGET_VCP",
   "formula": "2 * 2",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "candidate_count": 4,
+    "counts": {
+      "INVALID": 1,
+      "VALID": 3
+    },
+    "method": "Separate hand-authored source-semantic classifier, no production import or observed outputs.",
+    "status": "RECONCILED"
+  },
   "invalid_count": 1,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -1783,11 +2014,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: provider-contract/spec/draft/capabilities.md:1-51 [sha256 9ac03569a88e9982b5a75ceb705daa59cd0ff21aa3ab440d9ee0e3b2afcaa66a], provider-contract/spec/draft/lifecycle.md:1-72 [sha256 122e8e4aaa8deb60d0cf6397d9857294d096f063c5c7ecde59d3d0359596177d], provider-contract/spec/draft/wire-format.md:1-65 [sha256 23d1e6bc4518225afa86f422d15eee22214d7a285b369c42c6843f45d06895a7], provider-contract/spec/draft/versioning.md:1-34 [sha256 2656dd1dbd2a872bd9d9912b8dba4c2ec61fc4dbaf145d091f7cda1203132921]
-
 ### D.EXT.REQUIRED_SUPPORT
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: CM.VCP.EXT.REQUIRED, CM.SDK.EXTENSIONS.NONE
 
 ```json
 {
@@ -1818,143 +2047,181 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.EXT.REQUIRED_SUPPORT",
   "formula": "2 * 2",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "candidate_count": 4,
+    "counts": {
+      "INVALID": 1,
+      "VALID": 3
+    },
+    "method": "Separate hand-authored source-semantic classifier, no production import or observed outputs.",
+    "status": "RECONCILED"
+  },
   "invalid_count": 1,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
   "meaning": "Consumability: required unsupported extension rejects EXTENSION_UNSUPPORTED. Invalid here means unconsumable, not malformed wire syntax.",
   "outcomes": null,
+  "requirement_ids": [
+    "CM.VCP.EXT.REQUIRED"
+  ],
   "valid_count": 3
 }
 ```
 
-Source references: spec/draft/extensions.md:1-24 [sha256 fc57202300c344967487f4d631e7b6bbc99281634a1f4391249ce2a7ec7040d7]
-
 ### D.TYPED_AVAILABILITY
 
-Status: PARTIAL_TYPED_RELATION; REACHABILITY_AND_OVERLAP_CLOSURE_NOT_PROVED. Canonical links: CM.VCP.DATA.RESOLVE_AVAILABLE, CM.VCP.DATA.RESOLVE_OMIT, CM.VCP.DATA.RESOLVE_DEFAULT, CM.VCP.DATA.RESOLVE_ALL, CM.VCP.DATA.RESOLVE_BLOCK.RESOLUTION.
+Canonical links: CM.VCP.DATA.BOOKKEEPING, CM.VCP.DATA.RESOLVE_ALL, CM.VCP.DATA.RESOLVE_BLOCK.RESOLUTION, CM.VCP.DATA.RESOLVE_DEFAULT.SUBSTITUTE, CM.VCP.DATA.RESOLVE_DEFAULT.PROVENANCE, CM.VCP.DATA.RESOLVE_OMIT.INPUT, CM.VCP.DATA.RESOLVE_OMIT.PROVENANCE, CM.VCP.DATA.RESOLVE_AVAILABLE.VALIDATION, CM.VCP.DATA.RESOLVE_AVAILABLE.PROVENANCE
 
 ```json
 {
   "axes": [
-    {
-      "name": "source",
-      "values": [
-        "UNBOUND_OPTIONAL",
-        "CONSTANT",
-        "RUN_INPUT",
-        "EXTERNAL_REFERENCE",
-        "UPSTREAM_OUTPUT"
-      ]
-    },
-    {
-      "name": "port",
-      "values": [
-        "REQUIRED_BLOCK",
-        "OPTIONAL_OMIT",
-        "OPTIONAL_DEFAULT"
-      ]
-    },
-    {
-      "name": "producer_role",
-      "values": [
-        "INFORMATION",
-        "RESULT",
-        "DECISION"
-      ]
-    },
-    {
-      "name": "producer_terminal",
-      "values": [
-        "SUCCESS",
-        "ERROR",
-        "NONEXECUTED",
-        "CANCELLED"
-      ]
-    },
-    {
-      "name": "target_schema_relation",
-      "values": [
-        "ACCEPTS",
-        "REJECTS"
-      ]
-    },
-    {
-      "name": "trace_condition",
-      "values": [
-        "VALID_TERMINAL_ANCESTOR",
-        "MISSING_OR_NOT_ANCESTOR",
-        "INCOHERENT_SNAPSHOT"
-      ]
-    }
+    "Authored target port p=(required,handler,target schema,optional explicit default)",
+    "Source s in optional-unbound,CONSTANT,RUN_INPUT,EXTERNAL_REFERENCE,UPSTREAM_OUTPUT",
+    "For UPSTREAM only: existing strict ancestor, declared role, terminal state, recorded semantic acceptance and optional candidate value",
+    "For candidate values only: producer-port and target-schema acceptance; otherwise candidate-schema axis inapplicable",
+    "Source/target/reference validity and occurrence preflight as separate static constraints"
   ],
   "boundary_conditions": [
     "Run-input normalization is an explicit first stage; node resolution a second stage.",
     "Boolean/number distinction and payload null preserved.",
     "On unavailable/invalid: OMIT absent key; DEFAULT validated constant with used_default=true; BLOCK no invocation and SKIPPED/INPUT_UNAVAILABLE unless higher-precedence cause."
   ],
-  "candidate_count": "conditional",
-  "derivation": "Typed relation, not raw sources*statuses*handlers. Finite coordinate cardinality depends on declaration and trace. Category priority at overlapping failures is an explicit ambiguity, not an invented total.",
+  "candidate_count": "For fixed definition D and finite observed trace T: sum over declared target ports of applicable source contexts Reach(D,T,p); unbounded across D,T,schemas,values.",
+  "derivation": "Dependent sum over valid declarations, ancestor/role/state applicability and candidate existence. Candidate-schema dimensions disappear when no candidate exists. Valid preflight removes impossible constant/reference and required-run-input failure runtime coordinates. Six status labels alone do not determine complete typed reachability.",
   "domain_id": "D.TYPED_AVAILABILITY",
+  "handler_function": {
+    "AVAILABLE": "used_default=false; explicit value preserved; validate target; assemble exact key/value.",
+    "UNAVAILABLE_OR_INVALID/BLOCK": "used_default=false; no usable value; do not invoke; SKIPPED/INPUT_UNAVAILABLE unless higher-precedence lifecycle cause.",
+    "UNAVAILABLE_OR_INVALID/DEFAULT": "used_default=true; exact validated authored default including null; retain original status/source.",
+    "UNAVAILABLE_OR_INVALID/OMIT": "used_default=false; no usable value; omit key; retain original status/source."
+  },
   "inapplicable_set": "Producer dimensions do not apply to non-upstream sources; missing required run values reject occurrence before node resolution.",
   "invalid_set": "Required unbound input, nonancestor/missing output identity, invalid source schema, forged resolution/value/default snapshot.",
   "kind": "CONDITIONAL",
-  "mathematics_status": "PARTIAL_TYPED_RELATION; REACHABILITY_AND_OVERLAP_CLOSURE_NOT_PROVED",
+  "mathematics_status": "DISJOINT_CONTEXT_RELATION_DERIVED; NORMATIVE_STATUS_AMBIGUITIES_EXPLICIT",
   "partitions": [
     {
-      "condition": "No binding on optional port",
-      "source": "UNBOUND_OPTIONAL",
+      "classification": "REACHABLE",
+      "context": "Optional unbound input",
+      "source_snapshot": "source field absent, not a fabricated fifth ValueSource wire kind",
+      "status": "ABSENT",
+      "value": "no source value"
+    },
+    {
+      "classification": "INVALID_DEFINITION",
+      "context": "Required unbound input",
+      "reason": "Required input must be bound; not a runtime ABSENT path."
+    },
+    {
+      "classification": "REACHABLE",
+      "context": "CONSTANT after valid complete preflight",
+      "reason": "Invalid constant/default/known schema constraints reject definition before invocation.",
+      "status": "AVAILABLE",
+      "value": "exact authored Constant JSON including null"
+    },
+    {
+      "classification": "REACHABLE",
+      "context": "EXTERNAL_REFERENCE after valid source/target preflight",
+      "status": "AVAILABLE",
+      "value": "exact authored ArtifactRef snapshot, never fetched bytes"
+    },
+    {
+      "classification": "REACHABLE",
+      "context": "RUN_INPUT declared, effective normalized value present and target accepts",
+      "status": "AVAILABLE",
+      "value": "exact effective run input"
+    },
+    {
+      "classification": "REACHABLE",
+      "context": "RUN_INPUT declared optional with effective value omitted",
       "status": "ABSENT"
     },
     {
-      "condition": "Definition/schema preflight succeeded",
-      "source": "CONSTANT",
-      "status": "AVAILABLE",
-      "value": "exact authored value including null"
-    },
-    {
-      "condition": "Valid authored reference; no fetching",
-      "source": "EXTERNAL_REFERENCE",
-      "status": "AVAILABLE",
-      "value": "exact ArtifactRef"
-    },
-    {
-      "condition": "Declared validated run-input value after explicit run-port default/omit handling",
-      "source": "RUN_INPUT",
-      "status": "AVAILABLE or ABSENT"
-    },
-    {
-      "condition": "EVALUATE/AGGREGATE recorded Result exists; even ERROR/nonexecution is AVAILABLE if producer port and target schema admit it",
-      "source": "UPSTREAM_OUTPUT/RESULT",
-      "status": "AVAILABLE or INVALID"
-    },
-    {
-      "condition": "Producer published accepted value on semantic success and target admits value",
-      "source": "UPSTREAM_OUTPUT/INFORMATION or DECISION",
-      "status": "AVAILABLE"
-    },
-    {
-      "condition": "Producer did not publish because failure/nonexecution; exact competing invalid-snapshot status priority is not fully specified",
-      "source": "UPSTREAM_OUTPUT/INFORMATION or DECISION",
-      "status": "PRODUCER_ERROR or PRODUCER_NOT_EXECUTED"
-    },
-    {
-      "condition": "A named declared output is absent in the available snapshot; coherent successful publication forbids missing declared outputs. Its reachability in partially invalid record prefixes is a separate scope, not a valid-runtime Cartesian coordinate.",
-      "status": "OUTPUT_MISSING"
-    },
-    {
-      "condition": "Present candidate/bookkeeping violates applicable source/target schema; cannot be usable information",
+      "classification": "REACHABLE_UNLESS_STATIC_CONTRADICTION_REJECTS_DEFINITION",
+      "context": "RUN_INPUT present passes run declaration but violates narrower target schema",
       "status": "INVALID"
+    },
+    {
+      "classification": "INVALID_OCCURRENCE_INPUT",
+      "context": "Missing required supplied run input, unknown supplied name, or invalid supplied declaration value",
+      "reason": "Rejected before any implementation; not node-level runtime status."
+    },
+    {
+      "classification": "INVALID_DEFINITION",
+      "context": "UPSTREAM_OUTPUT missing producer, missing declared output, self/nonancestor reference",
+      "reason": "No valid-ready runtime source coordinate."
+    },
+    {
+      "classification": "REACHABLE",
+      "context": "UPSTREAM RESULT role from EVALUATE/AGGREGATE with recorded Result; producer port and target admit it",
+      "status": "AVAILABLE",
+      "value": "exact recorded bookkeeping/semantic Result even ERROR or nonexecution"
+    },
+    {
+      "classification": "REACHABLE",
+      "context": "UPSTREAM RESULT role candidate rejected by producer port or target schema",
+      "status": "INVALID"
+    },
+    {
+      "classification": "REACHABLE",
+      "context": "UPSTREAM INFORMATION/DECISION accepted and published on semantic SUCCESS; target accepts",
+      "status": "AVAILABLE",
+      "value": "exact accepted authored-source output"
+    },
+    {
+      "classification": "REACHABLE",
+      "context": "Accepted published candidate violates target schema despite no known static incompatibility",
+      "status": "INVALID"
+    },
+    {
+      "classification": "DISJOINT_NONEXECUTION_CONTEXT",
+      "context": "Unstarted upstream producer NONEXECUTED, INFORMATION or DECISION not published",
+      "status": "PRODUCER_NOT_EXECUTED"
+    },
+    {
+      "classification": "DISJOINT_ERROR_CONTEXT",
+      "context": "Upstream ERROR with no accepted INFORMATION/DECISION and no competing missing/invalid cause",
+      "status": "PRODUCER_ERROR"
+    },
+    {
+      "classification": "AMBIGUOUS_STATUS_PRIORITY",
+      "context": "Declared output missing in observed successful attempt mapping",
+      "question_id": "Q.AVAILABILITY_OVERLAP",
+      "status": "OUTPUT_MISSING is named, but atomic semantic rejection also establishes ERROR/no publication"
+    },
+    {
+      "classification": "AMBIGUOUS_STATUS_MAPPING",
+      "context": "Interrupted CANCELLED producer, no accepted information/Decision",
+      "question_id": "Q.AVAILABILITY_OVERLAP",
+      "reason": "Cancellation can interrupt started work; prose lists statuses but does not specify whether nonexecuted/error/missing classification wins here."
+    },
+    {
+      "classification": "UNUSABLE_OBSERVATION",
+      "context": "Raw invalid observed output never accepted",
+      "status": "No published AVAILABLE information; exact competing unavailable status not universally prioritized."
     }
+  ],
+  "remaining_limits": [
+    "Exact OUTPUT_MISSING versus PRODUCER_ERROR/INVALID precedence for simultaneous invalid output causes.",
+    "Unavailable status for interrupted CANCELLED INFORMATION/DECISION producer.",
+    "No portable classification of arbitrary forged record prefixes; consistency validation rejects invalid provenance."
+  ],
+  "requirement_ids": [
+    "CM.VCP.DATA.BOOKKEEPING",
+    "CM.VCP.DATA.RESOLVE_DEFAULT.SUBSTITUTE",
+    "CM.VCP.DATA.RESOLVE_DEFAULT.PROVENANCE",
+    "CM.VCP.DATA.RESOLVE_OMIT.INPUT",
+    "CM.VCP.DATA.RESOLVE_OMIT.PROVENANCE",
+    "CM.VCP.DATA.RESOLVE_AVAILABLE.VALIDATION",
+    "CM.VCP.DATA.RESOLVE_AVAILABLE.PROVENANCE"
   ],
   "valid_set": "A well-typed reachable binding resolves a value or one of the explicitly supported unavailable states; handler preserves original status, value/default presence and noninvocation semantics."
 }
 ```
 
-Source references: spec/draft/dataflow.md:107-118 [sha256 50c60efcd2701f35d93b05040bc0aef5a2f3dcf8252e026a3df956c4d4554c02], spec/draft/dataflow.md:107-118 [sha256 50c60efcd2701f35d93b05040bc0aef5a2f3dcf8252e026a3df956c4d4554c02], spec/draft/dataflow.md:107-118 [sha256 50c60efcd2701f35d93b05040bc0aef5a2f3dcf8252e026a3df956c4d4554c02], spec/draft/dataflow.md:107-118 [sha256 50c60efcd2701f35d93b05040bc0aef5a2f3dcf8252e026a3df956c4d4554c02], spec/draft/dataflow.md:107-118 [sha256 50c60efcd2701f35d93b05040bc0aef5a2f3dcf8252e026a3df956c4d4554c02], spec/draft/dataflow.md:1-195 [sha256 50c60efcd2701f35d93b05040bc0aef5a2f3dcf8252e026a3df956c4d4554c02]
-
 ### D.EVENT.SEQUENCE
 
-Status: DERIVED. Canonical links: CM.PROVIDER.LIFE.SEQUENCE.FIRST, CM.PROVIDER.LIFE.SEQUENCE.INCREASE, CM.PROVIDER.LIFE.SEQUENCE.GAPS, CM.PROVIDER.LIFE.SEQUENCE.DUPLICATE, CM.PROVIDER.LIFE.SEQUENCE.REORDER.
+Canonical links: CM.PROVIDER.LIFE.SEQUENCE.DUPLICATE, CM.PROVIDER.LIFE.SEQUENCE.FIRST, CM.PROVIDER.LIFE.SEQUENCE.GAPS, CM.PROVIDER.LIFE.SEQUENCE.INCREASE, CM.PROVIDER.LIFE.SEQUENCE.REORDER
 
 ```json
 {
@@ -2004,11 +2271,9 @@ Status: DERIVED. Canonical links: CM.PROVIDER.LIFE.SEQUENCE.FIRST, CM.PROVIDER.L
 }
 ```
 
-Source references: provider-contract/spec/draft/lifecycle.md:10-18 [sha256 122e8e4aaa8deb60d0cf6397d9857294d096f063c5c7ecde59d3d0359596177d], provider-contract/spec/draft/lifecycle.md:1-72 [sha256 122e8e4aaa8deb60d0cf6397d9857294d096f063c5c7ecde59d3d0359596177d], provider-contract/spec/draft/wire-format.md:1-65 [sha256 23d1e6bc4518225afa86f422d15eee22214d7a285b369c42c6843f45d06895a7]
-
 ### D.HANDLING.EFFECTS
 
-Status: DERIVED. Canonical links: CM.VCP.DATA.RESOLVE_BLOCK.NONINVOCATION, CM.VCP.DATA.RESOLVE_BLOCK.STATE, CM.VCP.DATA.RESOLVE_BLOCK.RESULT, CM.VCP.DATA.RESOLVE_BLOCK.REASON.
+Canonical links: CM.VCP.DATA.RESOLVE_BLOCK.NONINVOCATION, CM.VCP.DATA.RESOLVE_BLOCK.REASON, CM.VCP.DATA.RESOLVE_BLOCK.RESULT, CM.VCP.DATA.RESOLVE_BLOCK.STATE
 
 ```json
 {
@@ -2045,6 +2310,14 @@ Status: DERIVED. Canonical links: CM.VCP.DATA.RESOLVE_BLOCK.NONINVOCATION, CM.VC
   "domain_id": "D.HANDLING.EFFECTS",
   "formula": "6 * 3",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "candidate_count": 18,
+    "counts": {
+      "VALID": 18
+    },
+    "method": "Separate hand-authored source-semantic classifier, no production import or observed outputs.",
+    "status": "RECONCILED"
+  },
   "invalid_count": 0,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -2059,11 +2332,9 @@ Status: DERIVED. Canonical links: CM.VCP.DATA.RESOLVE_BLOCK.NONINVOCATION, CM.VC
 }
 ```
 
-Source references: spec/draft/dataflow.md:107-118 [sha256 50c60efcd2701f35d93b05040bc0aef5a2f3dcf8252e026a3df956c4d4554c02], spec/draft/dataflow.md:1-195 [sha256 50c60efcd2701f35d93b05040bc0aef5a2f3dcf8252e026a3df956c4d4554c02]
-
 ### D.RUN_INPUT.PREFLIGHT
 
-Status: DERIVED. Canonical links: CM.VCP.DATA.RUN_ACCEPT.UNKNOWN_NAME, CM.VCP.DATA.RUN_ACCEPT.MISSING_REQUIRED, CM.VCP.DATA.RUN_ACCEPT.VALUE_SCHEMA.
+Canonical links: CM.VCP.DATA.RUN_ACCEPT.MISSING_REQUIRED, CM.VCP.DATA.RUN_ACCEPT.UNKNOWN_NAME, CM.VCP.DATA.RUN_ACCEPT.VALUE_SCHEMA
 
 ```json
 {
@@ -2111,6 +2382,16 @@ Status: DERIVED. Canonical links: CM.VCP.DATA.RUN_ACCEPT.UNKNOWN_NAME, CM.VCP.DA
   "domain_id": "D.RUN_INPUT.PREFLIGHT",
   "formula": "2 * 2 * 2 * 2",
   "inapplicable_count": 9,
+  "independent_recalculation": {
+    "candidate_count": 16,
+    "counts": {
+      "INAPPLICABLE": 9,
+      "INVALID": 4,
+      "VALID": 3
+    },
+    "method": "Separate hand-authored source-semantic classifier, no production import or observed outputs.",
+    "status": "RECONCILED"
+  },
   "invalid_count": 4,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -2120,11 +2401,9 @@ Status: DERIVED. Canonical links: CM.VCP.DATA.RUN_ACCEPT.UNKNOWN_NAME, CM.VCP.DA
 }
 ```
 
-Source references: spec/draft/dataflow.md:20-25 [sha256 50c60efcd2701f35d93b05040bc0aef5a2f3dcf8252e026a3df956c4d4554c02], spec/draft/dataflow.md:1-195 [sha256 50c60efcd2701f35d93b05040bc0aef5a2f3dcf8252e026a3df956c4d4554c02]
-
 ### D.OUTPUT.ACCEPTANCE
 
-Status: DERIVED. Canonical links: CM.VCP.DATA.ATOMIC_OUTPUT.MISSING, CM.VCP.DATA.ATOMIC_OUTPUT.EXTRA, CM.VCP.DATA.ATOMIC_OUTPUT.ATOMIC.
+Canonical links: CM.VCP.DATA.ATOMIC_OUTPUT.ATOMIC, CM.VCP.DATA.ATOMIC_OUTPUT.EXTRA, CM.VCP.DATA.ATOMIC_OUTPUT.MISSING
 
 ```json
 {
@@ -2162,6 +2441,15 @@ Status: DERIVED. Canonical links: CM.VCP.DATA.ATOMIC_OUTPUT.MISSING, CM.VCP.DATA
   "domain_id": "D.OUTPUT.ACCEPTANCE",
   "formula": "2 * 2 * 2",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "candidate_count": 8,
+    "counts": {
+      "INVALID": 7,
+      "VALID": 1
+    },
+    "method": "Separate hand-authored source-semantic classifier, no production import or observed outputs.",
+    "status": "RECONCILED"
+  },
   "invalid_count": 7,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -2171,11 +2459,9 @@ Status: DERIVED. Canonical links: CM.VCP.DATA.ATOMIC_OUTPUT.MISSING, CM.VCP.DATA
 }
 ```
 
-Source references: spec/draft/dataflow.md:74-85 [sha256 50c60efcd2701f35d93b05040bc0aef5a2f3dcf8252e026a3df956c4d4554c02], spec/draft/dataflow.md:1-195 [sha256 50c60efcd2701f35d93b05040bc0aef5a2f3dcf8252e026a3df956c4d4554c02]
-
 ### D.SEMANTIC_BINDING
 
-Status: DERIVED. Canonical links: CM.VCP.DATA.SEMANTIC_SUBJECT.SUBJECT, CM.VCP.DATA.SEMANTIC_SUBJECT.CRITERION.
+Canonical links: CM.VCP.DATA.SEMANTIC_SUBJECT.CRITERION, CM.VCP.DATA.SEMANTIC_SUBJECT.SUBJECT
 
 ```json
 {
@@ -2220,6 +2506,15 @@ Status: DERIVED. Canonical links: CM.VCP.DATA.SEMANTIC_SUBJECT.SUBJECT, CM.VCP.D
   "domain_id": "D.SEMANTIC_BINDING",
   "formula": "2 * 2 * 2 * 2",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "candidate_count": 16,
+    "counts": {
+      "INVALID": 12,
+      "VALID": 4
+    },
+    "method": "Separate hand-authored source-semantic classifier, no production import or observed outputs.",
+    "status": "RECONCILED"
+  },
   "invalid_count": 12,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -2229,11 +2524,9 @@ Status: DERIVED. Canonical links: CM.VCP.DATA.SEMANTIC_SUBJECT.SUBJECT, CM.VCP.D
 }
 ```
 
-Source references: spec/draft/dataflow.md:87-94 [sha256 50c60efcd2701f35d93b05040bc0aef5a2f3dcf8252e026a3df956c4d4554c02]
-
 ### D.SOURCE.REACHABILITY
 
-Status: DERIVED. Canonical links: CM.VCP.DATA.ANCESTOR.PRODUCER_EXISTS, CM.VCP.DATA.ANCESTOR.OUTPUT_EXISTS, CM.VCP.DATA.ANCESTOR.STRICT_ANCESTRY.
+Canonical links: CM.VCP.DATA.ANCESTOR.OUTPUT_EXISTS, CM.VCP.DATA.ANCESTOR.PRODUCER_EXISTS, CM.VCP.DATA.ANCESTOR.STRICT_ANCESTRY
 
 ```json
 {
@@ -2272,6 +2565,16 @@ Status: DERIVED. Canonical links: CM.VCP.DATA.ANCESTOR.PRODUCER_EXISTS, CM.VCP.D
   "domain_id": "D.SOURCE.REACHABILITY",
   "formula": "2 * 2 * 2",
   "inapplicable_count": 3,
+  "independent_recalculation": {
+    "candidate_count": 8,
+    "counts": {
+      "INAPPLICABLE": 3,
+      "INVALID": 4,
+      "VALID": 1
+    },
+    "method": "Separate hand-authored source-semantic classifier, no production import or observed outputs.",
+    "status": "RECONCILED"
+  },
   "invalid_count": 4,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -2281,11 +2584,9 @@ Status: DERIVED. Canonical links: CM.VCP.DATA.ANCESTOR.PRODUCER_EXISTS, CM.VCP.D
 }
 ```
 
-Source references: spec/draft/dataflow.md:49-55 [sha256 50c60efcd2701f35d93b05040bc0aef5a2f3dcf8252e026a3df956c4d4554c02], spec/draft/dataflow.md:1-195 [sha256 50c60efcd2701f35d93b05040bc0aef5a2f3dcf8252e026a3df956c4d4554c02]
-
 ### D.GRAPH.IDENTITY
 
-Status: DERIVED. Canonical links: CM.VCP.GRAPH.IDENTITY.NODE_ID, CM.VCP.GRAPH.IDENTITY.EDGE_ID, CM.VCP.GRAPH.IDENTITY.ENDPOINT.
+Canonical links: CM.VCP.GRAPH.IDENTITY.EDGE_ID, CM.VCP.GRAPH.IDENTITY.ENDPOINT, CM.VCP.GRAPH.IDENTITY.NODE_ID, CM.VCP.DATA.RUN_NAMES, CM.VCP.DATA.RUN_SOURCE
 
 ```json
 {
@@ -2311,15 +2612,17 @@ Status: DERIVED. Canonical links: CM.VCP.GRAPH.IDENTITY.NODE_ID, CM.VCP.GRAPH.ID
     "missing target endpoint",
     "self-loop separately unsupported cyclic topology"
   ],
+  "requirement_ids": [
+    "CM.VCP.DATA.RUN_NAMES",
+    "CM.VCP.DATA.RUN_SOURCE"
+  ],
   "valid_set": "Node IDs unique; each edge pair unique; endpoints in node IDs."
 }
 ```
 
-Source references: spec/draft/composition.md:5-9 [sha256 cd930f696dbfe7c5897930a848f999575241570fbdaa81fa51a167828f7299cc], spec/draft/composition.md:1-29 [sha256 cd930f696dbfe7c5897930a848f999575241570fbdaa81fa51a167828f7299cc]
-
 ### D.POLICY.BUILTIN_FIELDS
 
-Status: DERIVED. Canonical links: CM.VCP.POLICY.DECLARATION.BUILTIN_INPUTS, CM.VCP.POLICY.DECLARATION.PROBABILITY_FIELD.
+Canonical links: CM.VCP.POLICY.DECLARATION.BUILTIN_INPUTS, CM.VCP.POLICY.DECLARATION.PROBABILITY_FIELD
 
 ```json
 {
@@ -2360,6 +2663,15 @@ Status: DERIVED. Canonical links: CM.VCP.POLICY.DECLARATION.BUILTIN_INPUTS, CM.V
   "domain_id": "D.POLICY.BUILTIN_FIELDS",
   "formula": "5 * 2 * 2",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "candidate_count": 20,
+    "counts": {
+      "INVALID": 14,
+      "VALID": 6
+    },
+    "method": "Separate hand-authored source-semantic classifier, no production import or observed outputs.",
+    "status": "RECONCILED"
+  },
   "invalid_count": 14,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -2369,11 +2681,9 @@ Status: DERIVED. Canonical links: CM.VCP.POLICY.DECLARATION.BUILTIN_INPUTS, CM.V
 }
 ```
 
-Source references: spec/draft/execution-policy.md:36-43 [sha256 2bb545ce77cbf3790261a35a9955104fecb8c18be1f56e51c1ff0c2d251ce4cf], spec/draft/execution-policy.md:1-81 [sha256 2bb545ce77cbf3790261a35a9955104fecb8c18be1f56e51c1ff0c2d251ce4cf]
-
 ### D.AGG.MEMBERSHIP
 
-Status: DERIVED. Canonical links: CM.VCP.AGG.MEMBER_STATES, CM.VCP.AGG.WEIGHT_KEYS, CM.VCP.AGG.CONFIG, CM.VCP.AGG.REJECT, CM.VCP.AGG.IGNORE, CM.VCP.AGG.MISSING, CM.VCP.AGG.NONEMPTY, CM.VCP.AGG.ALL, CM.VCP.AGG.ANY, CM.VCP.AGG.MIN, CM.VCP.AGG.MAX, CM.VCP.AGG.MEAN, CM.VCP.AGG.WEIGHTED, CM.VCP.AGG.SEVERITY_DOMAIN, CM.VCP.AGG.SEVERITY_RESULT, CM.VCP.AGG.EVIDENCE_ORDER, CM.VCP.AGG.MEMBERS.ORDER, CM.VCP.AGG.MEMBERS.UNIQUE, CM.VCP.AGG.MEMBERS.SOURCE_ROLE, CM.VCP.AGG.MEMBERS.COMPLETE, CM.VCP.AGG.MEMBERS.REQUIREDNESS, CM.VCP.AGG.MEMBERS_INPUT.CONSTANT, CM.VCP.AGG.MEMBERS_INPUT.RESERVED.
+Canonical links: CM.VCP.AGG.EVIDENCE_ORDER, CM.VCP.AGG.IGNORE, CM.VCP.AGG.MISSING, CM.VCP.AGG.REJECT, CM.VCP.AGG.ALL, CM.VCP.AGG.ANY, CM.VCP.AGG.MEMBERS.COMPLETE, CM.VCP.AGG.MEMBERS.ORDER, CM.VCP.AGG.MEMBERS.REQUIREDNESS, CM.VCP.AGG.MEMBERS.SOURCE_ROLE, CM.VCP.AGG.MEMBERS.UNIQUE, CM.VCP.AGG.MEMBERS_INPUT.CONSTANT, CM.VCP.AGG.MEMBERS_INPUT.RESERVED, CM.VCP.AGG.MEMBER_STATES, CM.VCP.AGG.MAX, CM.VCP.AGG.MEAN, CM.VCP.AGG.MIN, CM.VCP.AGG.SEVERITY_RESULT, CM.VCP.AGG.CONFIG, CM.VCP.AGG.NONEMPTY
 
 ```json
 {
@@ -2404,11 +2714,9 @@ Status: DERIVED. Canonical links: CM.VCP.AGG.MEMBER_STATES, CM.VCP.AGG.WEIGHT_KE
 }
 ```
 
-Source references: spec/draft/dataflow.md:127-140 [sha256 50c60efcd2701f35d93b05040bc0aef5a2f3dcf8252e026a3df956c4d4554c02], spec/draft/dataflow.md:127-140 [sha256 50c60efcd2701f35d93b05040bc0aef5a2f3dcf8252e026a3df956c4d4554c02], spec/draft/aggregation.md:10-18 [sha256 9c5599e6c6553ed7da5da13ffe65294c97402be7b6c221c326c7efbf98b8da8d], spec/draft/aggregation.md:10-18 [sha256 9c5599e6c6553ed7da5da13ffe65294c97402be7b6c221c326c7efbf98b8da8d], spec/draft/aggregation.md:10-18 [sha256 9c5599e6c6553ed7da5da13ffe65294c97402be7b6c221c326c7efbf98b8da8d], spec/draft/aggregation.md:10-18 [sha256 9c5599e6c6553ed7da5da13ffe65294c97402be7b6c221c326c7efbf98b8da8d], spec/draft/aggregation.md:10-18 [sha256 9c5599e6c6553ed7da5da13ffe65294c97402be7b6c221c326c7efbf98b8da8d], spec/draft/aggregation.md:20-38 [sha256 9c5599e6c6553ed7da5da13ffe65294c97402be7b6c221c326c7efbf98b8da8d], spec/draft/aggregation.md:20-38 [sha256 9c5599e6c6553ed7da5da13ffe65294c97402be7b6c221c326c7efbf98b8da8d], spec/draft/aggregation.md:20-38 [sha256 9c5599e6c6553ed7da5da13ffe65294c97402be7b6c221c326c7efbf98b8da8d], spec/draft/aggregation.md:20-38 [sha256 9c5599e6c6553ed7da5da13ffe65294c97402be7b6c221c326c7efbf98b8da8d], spec/draft/aggregation.md:20-38 [sha256 9c5599e6c6553ed7da5da13ffe65294c97402be7b6c221c326c7efbf98b8da8d], spec/draft/aggregation.md:20-38 [sha256 9c5599e6c6553ed7da5da13ffe65294c97402be7b6c221c326c7efbf98b8da8d], spec/draft/aggregation.md:20-38 [sha256 9c5599e6c6553ed7da5da13ffe65294c97402be7b6c221c326c7efbf98b8da8d], spec/draft/aggregation.md:20-38 [sha256 9c5599e6c6553ed7da5da13ffe65294c97402be7b6c221c326c7efbf98b8da8d], spec/draft/dataflow.md:127-140 [sha256 50c60efcd2701f35d93b05040bc0aef5a2f3dcf8252e026a3df956c4d4554c02], spec/draft/dataflow.md:127-140 [sha256 50c60efcd2701f35d93b05040bc0aef5a2f3dcf8252e026a3df956c4d4554c02], spec/draft/aggregation.md:1-57 [sha256 9c5599e6c6553ed7da5da13ffe65294c97402be7b6c221c326c7efbf98b8da8d], spec/draft/dataflow.md:1-195 [sha256 50c60efcd2701f35d93b05040bc0aef5a2f3dcf8252e026a3df956c4d4554c02]
-
 ### D.AGG.LOGICAL
 
-Status: DERIVED. Canonical links: CM.VCP.AGG.MAJORITY.PASS, CM.VCP.AGG.MAJORITY.FAIL, CM.VCP.AGG.MAJORITY.TIE.
+Canonical links: CM.VCP.AGG.ALL, CM.VCP.AGG.ANY, CM.VCP.AGG.MAJORITY.FAIL, CM.VCP.AGG.MAJORITY.PASS, CM.VCP.AGG.MAJORITY.TIE
 
 ```json
 {
@@ -2416,6 +2724,23 @@ Status: DERIVED. Canonical links: CM.VCP.AGG.MAJORITY.PASS, CM.VCP.AGG.MAJORITY.
     "Reducer in ALL,ANY,MAJORITY",
     "n>=1 binary verdict sequence"
   ],
+  "binary_sequence_counts_by_n": {
+    "ALL": {
+      "FAIL": "2^n-1",
+      "PASS": "1"
+    },
+    "ANY": {
+      "FAIL": "1",
+      "PASS": "2^n-1"
+    },
+    "MAJORITY": {
+      "FAIL": "(2^n-TIE_REJECT)/2",
+      "PASS": "(2^n-TIE_REJECT)/2",
+      "TIE_REJECT": "binomial(n,n/2) if n even else0"
+    },
+    "domain": "n>=1 retained binary verdicts,2^n sequences",
+    "proof": "Complement PASS<->FAIL is a bijection between strict majorities; only equal-count even-n ties are fixed between classes. Empty retained sequence is independently rejected."
+  },
   "boundary_conditions": [
     "n=1",
     "even n tie",
@@ -2436,15 +2761,17 @@ Status: DERIVED. Canonical links: CM.VCP.AGG.MAJORITY.PASS, CM.VCP.AGG.MAJORITY.
     "even-length tie",
     "missing verdict handled as MISSING"
   ],
+  "requirement_ids": [
+    "CM.VCP.AGG.ALL",
+    "CM.VCP.AGG.ANY"
+  ],
   "valid_set": "ALL iff all PASS; ANY iff some PASS; MAJORITY iff strictly larger count; tie rejected."
 }
 ```
 
-Source references: spec/draft/aggregation.md:20-38 [sha256 9c5599e6c6553ed7da5da13ffe65294c97402be7b6c221c326c7efbf98b8da8d], spec/draft/aggregation.md:1-57 [sha256 9c5599e6c6553ed7da5da13ffe65294c97402be7b6c221c326c7efbf98b8da8d], spec/draft/dataflow.md:1-195 [sha256 50c60efcd2701f35d93b05040bc0aef5a2f3dcf8252e026a3df956c4d4554c02]
-
 ### D.COMPOSITION
 
-Status: CONDITIONAL_ARGUMENT; IMPLEMENTATION_PREMISES_NOT_TESTED. Canonical links: CM.VCP.GUARD.EQUALITY, CM.VCP.GUARD.VALIDITY, CM.VCP.GUARD.ABSENT, CM.VCP.GRAPH.READINESS, CM.VCP.GRAPH.NO_DATA, CM.VCP.GRAPH.ORDER, CM.VCP.GRAPH.UNSUPPORTED, CM.VCP.GRAPH.NO_VERDICT, CM.VCP.LIFECYCLE.TERMINAL, CM.VCP.LIFECYCLE.NONEXEC_CAUSE, CM.VCP.LIFECYCLE.CONTINUE, CM.VCP.LIFECYCLE.STOP, CM.VCP.LIFECYCLE.DEFER, CM.VCP.LIFECYCLE.RETRY, CM.VCP.LIFECYCLE.ROUTE_TARGET, CM.VCP.LIFECYCLE.ROUTE_EXCLUSION, CM.VCP.LIFECYCLE.GUARD_JOIN, CM.VCP.LIFECYCLE.PRECEDENCE, CM.VCP.LIFECYCLE.CANCEL_ADMISSION, CM.VCP.LIFECYCLE.CANCEL_BEFORE, CM.VCP.LIFECYCLE.CANCEL_ORIGIN, CM.VCP.DATA.RESOLVE_BLOCK.DOWNSTREAM, CM.VCP.LIFECYCLE.CANCEL_RUNNING.LATER.
+Canonical links: CM.VCP.GRAPH.NO_DATA, CM.VCP.GRAPH.READINESS, CM.VCP.GRAPH.UNSUPPORTED, CM.VCP.GUARD.ABSENT, CM.VCP.GUARD.EQUALITY, CM.VCP.GUARD.VALIDITY, CM.VCP.GRAPH.ORDER, CM.VCP.GRAPH.NO_VERDICT, CM.VCP.DATA.RESOLVE_BLOCK.DOWNSTREAM, CM.VCP.LIFECYCLE.CANCEL_ADMISSION, CM.VCP.LIFECYCLE.CANCEL_ORIGIN, CM.VCP.LIFECYCLE.CANCEL_RUNNING.LATER, CM.VCP.LIFECYCLE.NONEXEC_CAUSE, CM.VCP.LIFECYCLE.CONTINUE, CM.VCP.LIFECYCLE.DEFER, CM.VCP.LIFECYCLE.RETRY, CM.VCP.LIFECYCLE.STOP, CM.VCP.LIFECYCLE.PRECEDENCE, CM.VCP.LIFECYCLE.GUARD_JOIN, CM.VCP.LIFECYCLE.ROUTE_TARGET, CM.VCP.LIFECYCLE.CANCEL_BEFORE.NODE, CM.VCP.LIFECYCLE.CANCEL_BEFORE.EVENT, CM.VCP.LIFECYCLE.TERMINAL.CARDINALITY, CM.VCP.LIFECYCLE.TERMINAL.IMMUTABILITY, CM.VCP.LIFECYCLE.ROUTE_EXCLUSION.BRANCHES, CM.VCP.LIFECYCLE.ROUTE_EXCLUSION.ACCUMULATE, CM.VCP.LIFECYCLE.ROUTE_EXCLUSION.DEPENDENCIES
 
 ```json
 {
@@ -2480,15 +2807,38 @@ Status: CONDITIONAL_ARGUMENT; IMPLEMENTATION_PREMISES_NOT_TESTED. Canonical link
     "Relay waves: no successor before whole ready wave settles; Control serial barrier.",
     "Multiple runs: state/source identity includes run_id; no reused mutable snapshot."
   ],
+  "requirement_ids": [
+    "CM.VCP.LIFECYCLE.CANCEL_BEFORE.NODE",
+    "CM.VCP.LIFECYCLE.CANCEL_BEFORE.EVENT",
+    "CM.VCP.LIFECYCLE.TERMINAL.CARDINALITY",
+    "CM.VCP.LIFECYCLE.TERMINAL.IMMUTABILITY",
+    "CM.VCP.LIFECYCLE.ROUTE_EXCLUSION.BRANCHES",
+    "CM.VCP.LIFECYCLE.ROUTE_EXCLUSION.ACCUMULATE",
+    "CM.VCP.LIFECYCLE.ROUTE_EXCLUSION.DEPENDENCIES"
+  ],
+  "topological_induction": {
+    "base": "Any source node has no upstream port source requiring an unavailable predecessor; values come solely from declared constants/run inputs/external refs and satisfy preflight/resolution.",
+    "couplings": "Join all-predecessor readiness and all incoming guards; route/shared-join exclusion; concurrent wave settlement and deterministic Control acceptance; admission+cancellation+record; filtering+weight identity+evidence order.",
+    "limit": "This is a conditional semantic theorem, not a proof that arbitrary production mutable-state/scheduler implementation satisfies every premise. This task executes no tests and certifies no implementation.",
+    "premises": [
+      "Complete valid definition/schema/constant preflight.",
+      "A node starts only after all prerequisites terminal and applicable lifecycle/guard eligibility.",
+      "Node acceptance is atomically correct for its declared roles and schemas.",
+      "Resolution uses exact declared source identity from immutable run inputs/preceding records; no stale mutable alias.",
+      "All run state, cancellation and snapshots are isolated.",
+      "Control barriers serialize global eligibility effects; exclusions monotone and terminal records immutable.",
+      "Observation/usage retention independent of output acceptance; weights and member evidence order tied to original authored identities."
+    ],
+    "step": "Assume earlier terminals preserve exact source snapshots. Every predecessor of next eligible node belongs to that prefix; binding ancestry ensures referenced producer terminal. Resolution selects exactly declared output role/schema or unavailable handler. Atomic acceptance publishes only valid complete information; append immutable run-local record. Disabled nodes append cause-correct nonexecution without invoking.",
+    "theorem": "For every finite DAG and topological execution consistent with the premises, each accepted consumer reads exactly its authored source snapshot and no unlisted value; terminal records remain local and immutable."
+  },
   "valid_set": "Every predecessor settles before a successor attempt; only explicit bindings carry values; all incoming guards hold; routing exclusions accumulate and preserve shared joins."
 }
 ```
 
-Source references: spec/draft/dataflow.md:120-125 [sha256 50c60efcd2701f35d93b05040bc0aef5a2f3dcf8252e026a3df956c4d4554c02], spec/draft/dataflow.md:120-125 [sha256 50c60efcd2701f35d93b05040bc0aef5a2f3dcf8252e026a3df956c4d4554c02], spec/draft/dataflow.md:120-125 [sha256 50c60efcd2701f35d93b05040bc0aef5a2f3dcf8252e026a3df956c4d4554c02], spec/draft/composition.md:5-9 [sha256 cd930f696dbfe7c5897930a848f999575241570fbdaa81fa51a167828f7299cc], spec/draft/composition.md:5-9 [sha256 cd930f696dbfe7c5897930a848f999575241570fbdaa81fa51a167828f7299cc], spec/draft/composition.md:11-13 [sha256 cd930f696dbfe7c5897930a848f999575241570fbdaa81fa51a167828f7299cc], spec/draft/composition.md:24-24 [sha256 cd930f696dbfe7c5897930a848f999575241570fbdaa81fa51a167828f7299cc], spec/draft/composition.md:15-22 [sha256 cd930f696dbfe7c5897930a848f999575241570fbdaa81fa51a167828f7299cc], spec/draft/lifecycle.md:5-7 [sha256 7a64e510300c0a326985bab7435ed5dd65f3c0745bb003202df6d03c9b52af02], spec/draft/lifecycle.md:26-27 [sha256 7a64e510300c0a326985bab7435ed5dd65f3c0745bb003202df6d03c9b52af02], spec/draft/lifecycle.md:41-44 [sha256 7a64e510300c0a326985bab7435ed5dd65f3c0745bb003202df6d03c9b52af02], spec/draft/lifecycle.md:41-44 [sha256 7a64e510300c0a326985bab7435ed5dd65f3c0745bb003202df6d03c9b52af02], spec/draft/lifecycle.md:41-44 [sha256 7a64e510300c0a326985bab7435ed5dd65f3c0745bb003202df6d03c9b52af02], spec/draft/lifecycle.md:41-44 [sha256 7a64e510300c0a326985bab7435ed5dd65f3c0745bb003202df6d03c9b52af02], spec/draft/lifecycle.md:46-52 [sha256 7a64e510300c0a326985bab7435ed5dd65f3c0745bb003202df6d03c9b52af02], spec/draft/lifecycle.md:29-39 [sha256 7a64e510300c0a326985bab7435ed5dd65f3c0745bb003202df6d03c9b52af02], spec/draft/lifecycle.md:46-52 [sha256 7a64e510300c0a326985bab7435ed5dd65f3c0745bb003202df6d03c9b52af02], spec/draft/lifecycle.md:54-57 [sha256 7a64e510300c0a326985bab7435ed5dd65f3c0745bb003202df6d03c9b52af02], spec/draft/lifecycle.md:61-67 [sha256 7a64e510300c0a326985bab7435ed5dd65f3c0745bb003202df6d03c9b52af02], spec/draft/lifecycle.md:61-67 [sha256 7a64e510300c0a326985bab7435ed5dd65f3c0745bb003202df6d03c9b52af02], spec/draft/lifecycle.md:61-67 [sha256 7a64e510300c0a326985bab7435ed5dd65f3c0745bb003202df6d03c9b52af02], spec/draft/dataflow.md:107-118 [sha256 50c60efcd2701f35d93b05040bc0aef5a2f3dcf8252e026a3df956c4d4554c02], spec/draft/lifecycle.md:61-67 [sha256 7a64e510300c0a326985bab7435ed5dd65f3c0745bb003202df6d03c9b52af02], spec/draft/composition.md:1-29 [sha256 cd930f696dbfe7c5897930a848f999575241570fbdaa81fa51a167828f7299cc], spec/draft/lifecycle.md:1-74 [sha256 7a64e510300c0a326985bab7435ed5dd65f3c0745bb003202df6d03c9b52af02], docs/relay/architecture.md:1-94 [sha256 39dd8e1f1266998cef3b1c565398dd0945c991210f9ae83ab445ee9c617840b1]
-
 ### D.RECORD.ELIGIBILITY
 
-Status: DERIVED. Canonical links: CM.VCP.PROV.RECONSTRUCT, CM.VCP.PROV.UNBOUND, CM.VCP.PROV.RECORD_ANCHOR, CM.VCP.PROV.POLICY_ORDER, CM.VCP.PROV.ADMISSION_EQUALITY, CM.VCP.PROV.TRUST_LIMIT, CM.VCP.DATA.RESOLVE_BLOCK.PROVENANCE, CM.VCP.PROV.NODE_SET.EXACT, CM.VCP.PROV.NODE_SET.ORDER, CM.VCP.PROV.TIMING.INTERVAL, CM.VCP.PROV.TIMING.DEPENDENCY, CM.VCP.PROV.UNSTARTED.EXECUTOR, CM.VCP.PROV.UNSTARTED.OBSERVATION, CM.VCP.PROV.UNSTARTED.INFORMATION.
+Canonical links: CM.VCP.DATA.RESOLVE_BLOCK.PROVENANCE, CM.VCP.PROV.UNBOUND, CM.VCP.PROV.UNSTARTED.EXECUTOR, CM.VCP.PROV.UNSTARTED.INFORMATION, CM.VCP.PROV.UNSTARTED.OBSERVATION, CM.VCP.PROV.NODE_SET.EXACT, CM.VCP.PROV.NODE_SET.ORDER, CM.VCP.PROV.TIMING.DEPENDENCY, CM.VCP.PROV.TIMING.INTERVAL, CM.VCP.PROV.TRUST_LIMIT, CM.VCP.PROV.ADMISSION_EQUALITY.ACTIVATION, CM.VCP.PROV.ADMISSION_EQUALITY.SELECTION, CM.VCP.PROV.ADMISSION_EQUALITY.ADMISSION, CM.VCP.PROV.RECONSTRUCT.RESOLUTIONS, CM.VCP.PROV.RECONSTRUCT.VALUES, CM.VCP.PROV.RECONSTRUCT.NO_RERUN, CM.VCP.BIND.PROVENANCE.OCCURRENCE_MAP, CM.VCP.BIND.PROVENANCE.NODE_COPY, CM.VCP.BIND.PROVENANCE.EXECUTOR, CM.VCP.BIND.PROVENANCE.ONLY_INVOKED, CM.VCP.PROV.POLICY_ORDER.STAGES, CM.VCP.PROV.POLICY_ORDER.INPUTS, CM.VCP.PROV.POLICY_ORDER.ELIGIBILITY, CM.VCP.PROV.POLICY_ORDER.BUILTINS, CM.VCP.PROV.RECORD_ANCHOR.SNAPSHOTS, CM.VCP.PROV.RECORD_ANCHOR.FINGERPRINT, CM.VCP.BIND.PRECHECK.STRUCTURE, CM.VCP.BIND.PRECHECK.IDENTITY, CM.VCP.BIND.PRECHECK.COMPATIBILITY, CM.VCP.BIND.OUTPUT_REJECTION.RETAIN, CM.VCP.BIND.OUTPUT_REJECTION.DIAGNOSIS, CM.VCP.BIND.OUTPUT_REJECTION.ACCEPTANCE, CM.VCP.PROV.UPSTREAM_SNAPSHOTS
 
 ```json
 {
@@ -2521,15 +2871,37 @@ Status: DERIVED. Canonical links: CM.VCP.PROV.RECONSTRUCT, CM.VCP.PROV.UNBOUND, 
     "Earlier terminal records immutable after later cancellation/control.",
     "RunRecord final_results equals actual per-node bookkeeping, not an invented aggregate verdict."
   ],
+  "requirement_ids": [
+    "CM.VCP.PROV.ADMISSION_EQUALITY.ACTIVATION",
+    "CM.VCP.PROV.ADMISSION_EQUALITY.SELECTION",
+    "CM.VCP.PROV.ADMISSION_EQUALITY.ADMISSION",
+    "CM.VCP.PROV.RECONSTRUCT.RESOLUTIONS",
+    "CM.VCP.PROV.RECONSTRUCT.VALUES",
+    "CM.VCP.PROV.RECONSTRUCT.NO_RERUN",
+    "CM.VCP.BIND.PROVENANCE.OCCURRENCE_MAP",
+    "CM.VCP.BIND.PROVENANCE.NODE_COPY",
+    "CM.VCP.BIND.PROVENANCE.EXECUTOR",
+    "CM.VCP.BIND.PROVENANCE.ONLY_INVOKED",
+    "CM.VCP.PROV.POLICY_ORDER.STAGES",
+    "CM.VCP.PROV.POLICY_ORDER.INPUTS",
+    "CM.VCP.PROV.POLICY_ORDER.ELIGIBILITY",
+    "CM.VCP.PROV.POLICY_ORDER.BUILTINS",
+    "CM.VCP.PROV.RECORD_ANCHOR.SNAPSHOTS",
+    "CM.VCP.PROV.RECORD_ANCHOR.FINGERPRINT",
+    "CM.VCP.BIND.PRECHECK.STRUCTURE",
+    "CM.VCP.BIND.PRECHECK.IDENTITY",
+    "CM.VCP.BIND.PRECHECK.COMPATIBILITY",
+    "CM.VCP.BIND.OUTPUT_REJECTION.RETAIN",
+    "CM.VCP.BIND.OUTPUT_REJECTION.DIAGNOSIS",
+    "CM.VCP.BIND.OUTPUT_REJECTION.ACCEPTANCE"
+  ],
   "valid_set": "Reconstruct each resolution and exact consumed snapshot from authored definition, normalized run inputs and predecessor records. Executor observations require a started attempt; terminal state and Result/Decision agree with cause."
 }
 ```
 
-Source references: spec/draft/dataflow.md:171-182 [sha256 50c60efcd2701f35d93b05040bc0aef5a2f3dcf8252e026a3df956c4d4554c02], spec/draft/dataflow.md:171-182 [sha256 50c60efcd2701f35d93b05040bc0aef5a2f3dcf8252e026a3df956c4d4554c02], spec/draft/provenance.md:5-9 [sha256 3e02714727ab1b957df766739e37871362ae1ece47bd7623c7cfe90e5464818a], spec/draft/provenance.md:42-51 [sha256 3e02714727ab1b957df766739e37871362ae1ece47bd7623c7cfe90e5464818a], spec/draft/provenance.md:42-51 [sha256 3e02714727ab1b957df766739e37871362ae1ece47bd7623c7cfe90e5464818a], spec/draft/provenance.md:29-32 [sha256 3e02714727ab1b957df766739e37871362ae1ece47bd7623c7cfe90e5464818a], spec/draft/dataflow.md:107-118 [sha256 50c60efcd2701f35d93b05040bc0aef5a2f3dcf8252e026a3df956c4d4554c02], spec/draft/provenance.md:5-9 [sha256 3e02714727ab1b957df766739e37871362ae1ece47bd7623c7cfe90e5464818a], spec/draft/provenance.md:22-27 [sha256 3e02714727ab1b957df766739e37871362ae1ece47bd7623c7cfe90e5464818a], spec/draft/dataflow.md:171-182 [sha256 50c60efcd2701f35d93b05040bc0aef5a2f3dcf8252e026a3df956c4d4554c02], spec/draft/dataflow.md:1-195 [sha256 50c60efcd2701f35d93b05040bc0aef5a2f3dcf8252e026a3df956c4d4554c02], spec/draft/provenance.md:1-60 [sha256 3e02714727ab1b957df766739e37871362ae1ece47bd7623c7cfe90e5464818a]
-
 ### D.OBSERVATION.USAGE
 
-Status: DERIVED. Canonical links: CM.VCP.OBS.RETENTION, CM.VCP.OBS.EVIDENCE, CM.VCP.LIFECYCLE.CANCEL_RUNNING.OBSERVATION, CM.VCP.PROV.UNSTARTED.USAGE, CM.VCP.OBS.AUTHORITY.OVERLAP, CM.VCP.OBS.AUTHORITY.NO_SUM.
+Canonical links: CM.VCP.LIFECYCLE.CANCEL_RUNNING.OBSERVATION, CM.VCP.OBS.EVIDENCE, CM.VCP.PROV.UNSTARTED.USAGE, CM.VCP.OBS.AUTHORITY.NO_SUM, CM.VCP.OBS.AUTHORITY.OVERLAP, CM.VCP.OBS.RETENTION.USAGE, CM.VCP.OBS.RETENTION.SNAPSHOT, CM.PROVIDER.USAGE.FINAL.AUTHORITY, CM.PROVIDER.USAGE.FINAL.SNAPSHOTS
 
 ```json
 {
@@ -2560,15 +2932,19 @@ Status: DERIVED. Canonical links: CM.VCP.OBS.RETENTION, CM.VCP.OBS.EVIDENCE, CM.
     "Result usage overlapping dimensions must agree with observation.",
     "Provider resource_reporting=false or invocation VCP-disabled forbids usage."
   ],
+  "requirement_ids": [
+    "CM.VCP.OBS.RETENTION.USAGE",
+    "CM.VCP.OBS.RETENTION.SNAPSHOT",
+    "CM.PROVIDER.USAGE.FINAL.AUTHORITY",
+    "CM.PROVIDER.USAGE.FINAL.SNAPSHOTS"
+  ],
   "valid_set": "Retain valid incurred observation usage even when output/judgment/evidence acceptance fails; final Provider usage supersedes partial snapshots; Result repeats compatible dimensions without additive charge."
 }
 ```
 
-Source references: spec/draft/dataflow.md:155-169 [sha256 50c60efcd2701f35d93b05040bc0aef5a2f3dcf8252e026a3df956c4d4554c02], spec/draft/dataflow.md:155-169 [sha256 50c60efcd2701f35d93b05040bc0aef5a2f3dcf8252e026a3df956c4d4554c02], spec/draft/lifecycle.md:61-67 [sha256 7a64e510300c0a326985bab7435ed5dd65f3c0745bb003202df6d03c9b52af02], spec/draft/dataflow.md:171-182 [sha256 50c60efcd2701f35d93b05040bc0aef5a2f3dcf8252e026a3df956c4d4554c02], spec/draft/dataflow.md:155-169 [sha256 50c60efcd2701f35d93b05040bc0aef5a2f3dcf8252e026a3df956c4d4554c02], spec/draft/dataflow.md:1-195 [sha256 50c60efcd2701f35d93b05040bc0aef5a2f3dcf8252e026a3df956c4d4554c02], provider-contract/spec/draft/lifecycle.md:1-72 [sha256 122e8e4aaa8deb60d0cf6397d9857294d096f063c5c7ecde59d3d0359596177d]
-
 ### D.RESULT.FLATTENED
 
-Status: DERIVED. Canonical links: CM.SDK.FLATTEN.
+Canonical links: CM.SDK.FLATTEN, CM.VCP.RESULT.FLATTEN
 
 ```json
 {
@@ -2599,20 +2975,30 @@ Status: DERIVED. Canonical links: CM.SDK.FLATTEN.
   "domain_id": "D.RESULT.FLATTENED",
   "formula": "9",
   "inapplicable_count": 4,
+  "independent_recalculation": {
+    "candidate_count": 9,
+    "counts": {
+      "INAPPLICABLE": 4,
+      "VALID": 5
+    },
+    "method": "Separate hand-authored source-semantic classifier, no production import or observed outputs.",
+    "status": "RECONCILED"
+  },
   "invalid_count": 0,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
   "meaning": "Projection definedness, not wire validity. All nine source states are valid; four lack a portable flattened status.",
   "outcomes": null,
+  "requirement_ids": [
+    "CM.VCP.RESULT.FLATTEN"
+  ],
   "valid_count": 5
 }
 ```
 
-Source references: src/openverify/inspection.py:56-68 [sha256 24da3a1930d931e2307906a12b8bb60ced0e2635023801365595215af4824c8d], spec/draft/result.md:1-57 [sha256 14acc3ccf0b4bc26570687be3a9f9a78746deb29007756626c2c1677e9e695ba], spec/draft/wire-format.md:1-37 [sha256 e2ff9695699de355d19490a67a27480dbb382c533f8fa408ef404900909e78ee]
-
 ### D.RESULT.INVOKED
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: CM.VCP.RESULT.INVOKED
 
 ```json
 {
@@ -2650,20 +3036,30 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.RESULT.INVOKED",
   "formula": "2 * 9",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "candidate_count": 18,
+    "counts": {
+      "INVALID": 6,
+      "VALID": 12
+    },
+    "method": "Separate hand-authored source-semantic classifier, no production import or observed outputs.",
+    "status": "RECONCILED"
+  },
   "invalid_count": 6,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
   "meaning": "An invoked evaluator cannot claim nonexecution. SUCCESS and ERROR are distinct executed classes.",
   "outcomes": null,
+  "requirement_ids": [
+    "CM.VCP.RESULT.INVOKED"
+  ],
   "valid_count": 12
 }
 ```
 
-Source references: spec/draft/result.md:1-57 [sha256 14acc3ccf0b4bc26570687be3a9f9a78746deb29007756626c2c1677e9e695ba], spec/draft/wire-format.md:1-37 [sha256 e2ff9695699de355d19490a67a27480dbb382c533f8fa408ef404900909e78ee]
-
 ### D.AGG.HANDLING_MAP
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -2825,6 +3221,14 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.AGG.HANDLING_MAP",
   "formula": "8 * 128",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "candidate_count": 1024,
+    "counts": {
+      "VALID": 1024
+    },
+    "method": "Separate hand-authored source-semantic classifier, no production import or observed outputs.",
+    "status": "RECONCILED"
+  },
   "invalid_count": 0,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -2834,11 +3238,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: spec/draft/aggregation.md:1-57 [sha256 9c5599e6c6553ed7da5da13ffe65294c97402be7b6c221c326c7efbf98b8da8d], spec/draft/dataflow.md:1-195 [sha256 50c60efcd2701f35d93b05040bc0aef5a2f3dcf8252e026a3df956c4d4554c02]
-
 ### D.AGG.EXCEPTION_ACTION
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: CM.VCP.AGG.IGNORE, CM.VCP.AGG.MISSING, CM.VCP.AGG.REJECT
 
 ```json
 {
@@ -2886,20 +3288,31 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.AGG.EXCEPTION_ACTION",
   "formula": "8 * 7 * 2",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "candidate_count": 112,
+    "counts": {
+      "VALID": 112
+    },
+    "method": "Separate hand-authored source-semantic classifier, no production import or observed outputs.",
+    "status": "RECONCILED"
+  },
   "invalid_count": 0,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
   "meaning": "Law coordinates: REJECT raises AGGREGATE_INPUT; IGNORE filters without replacing a satisfaction value. Retained nonempty check follows filtering.",
   "outcomes": null,
+  "requirement_ids": [
+    "CM.VCP.AGG.IGNORE",
+    "CM.VCP.AGG.MISSING",
+    "CM.VCP.AGG.REJECT"
+  ],
   "valid_count": 112
 }
 ```
 
-Source references: spec/draft/aggregation.md:1-57 [sha256 9c5599e6c6553ed7da5da13ffe65294c97402be7b6c221c326c7efbf98b8da8d], spec/draft/dataflow.md:1-195 [sha256 50c60efcd2701f35d93b05040bc0aef5a2f3dcf8252e026a3df956c4d4554c02]
-
 ### D.AGG.WEIGHT_SIGNS_2
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -2932,6 +3345,15 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.AGG.WEIGHT_SIGNS_2",
   "formula": "3 * 3",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "candidate_count": 9,
+    "counts": {
+      "INVALID": 6,
+      "VALID": 3
+    },
+    "method": "Separate hand-authored source-semantic classifier, no production import or observed outputs.",
+    "status": "RECONCILED"
+  },
   "invalid_count": 6,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -2941,11 +3363,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: spec/draft/aggregation.md:1-57 [sha256 9c5599e6c6553ed7da5da13ffe65294c97402be7b6c221c326c7efbf98b8da8d], spec/draft/dataflow.md:1-195 [sha256 50c60efcd2701f35d93b05040bc0aef5a2f3dcf8252e026a3df956c4d4554c02]
-
 ### D.AGG.NUMERIC
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: CM.VCP.AGG.MAX, CM.VCP.AGG.MEAN, CM.VCP.AGG.MIN, CM.VCP.AGG.WEIGHTED.ORIGINAL_WEIGHTS, CM.VCP.AGG.WEIGHTED.RETAINED_TOTAL, CM.VCP.AGG.WEIGHTED.SCORE, CM.VCP.AGG.WEIGHT_KEYS.EXACT_KEYS, CM.VCP.AGG.WEIGHT_KEYS.IDENTITY, CM.VCP.RESULT.SCORE_MEANING
 
 ```json
 {
@@ -2976,15 +3396,32 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
     "zero-weight retained members do not influence mean",
     "filtering preserves original mapping"
   ],
+  "requirement_ids": [
+    "CM.VCP.AGG.WEIGHTED.ORIGINAL_WEIGHTS",
+    "CM.VCP.AGG.WEIGHTED.RETAINED_TOTAL",
+    "CM.VCP.AGG.WEIGHTED.SCORE",
+    "CM.VCP.AGG.WEIGHT_KEYS.EXACT_KEYS",
+    "CM.VCP.AGG.WEIGHT_KEYS.IDENTITY",
+    "CM.VCP.AGG.MAX",
+    "CM.VCP.AGG.MIN",
+    "CM.VCP.AGG.MEAN"
+  ],
+  "sign_classification_by_n": {
+    "candidate_count": "3^n",
+    "derivation": "Discard every vector containing a negative weight, leaving2^n nonnegative sign vectors; discard all-zero vector.",
+    "fixed_retained_subset_K": "For K subset of original n member identities, valid original nonnegative signs with positive retained total = (2^|K|-1)*2^(n-|K|). Empty K yields0. Other original signs invalid. No identity reassignment after filtering.",
+    "inapplicable_count": 0,
+    "invalid_count": "3^n-2^n+1",
+    "preconditions": "n>=1, all original weights finite; sign classes NEGATIVE,ZERO,POSITIVE only.",
+    "valid_count": "2^n-1"
+  },
   "valid_set": "MIN=min(s_i); MAX=max(s_i); AVERAGE=sum(s_i)/n; WEIGHTED_AVERAGE=sum(w_i*s_i)/sum(w_i), i in K, sum retained weights>0; score-only KNOWN output."
 }
 ```
 
-Source references: spec/draft/aggregation.md:1-57 [sha256 9c5599e6c6553ed7da5da13ffe65294c97402be7b6c221c326c7efbf98b8da8d], spec/draft/dataflow.md:1-195 [sha256 50c60efcd2701f35d93b05040bc0aef5a2f3dcf8252e026a3df956c4d4554c02]
-
 ### D.AGG.MEMBER_ROLE
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -3018,6 +3455,15 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.AGG.MEMBER_ROLE",
   "formula": "4 * 3",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "candidate_count": 12,
+    "counts": {
+      "INVALID": 10,
+      "VALID": 2
+    },
+    "method": "Separate hand-authored source-semantic classifier, no production import or observed outputs.",
+    "status": "RECONCILED"
+  },
   "invalid_count": 10,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -3027,11 +3473,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: spec/draft/aggregation.md:1-57 [sha256 9c5599e6c6553ed7da5da13ffe65294c97402be7b6c221c326c7efbf98b8da8d], spec/draft/dataflow.md:1-195 [sha256 50c60efcd2701f35d93b05040bc0aef5a2f3dcf8252e026a3df956c4d4554c02]
-
 ### D.BIND.IDENTITY
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -3076,6 +3520,15 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.BIND.IDENTITY",
   "formula": "2 * 2 * 2 * 2",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "candidate_count": 16,
+    "counts": {
+      "INVALID": 15,
+      "VALID": 1
+    },
+    "method": "Separate hand-authored source-semantic classifier, no production import or observed outputs.",
+    "status": "RECONCILED"
+  },
   "invalid_count": 15,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -3085,11 +3538,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: spec/draft/provider-binding.md:1-84 [sha256 0e0b75547db6e869aaa66d17ba43b5fe4cf2473f3ea7eb344844f332b0b61f8f]
-
 ### D.PROVIDER.FLAGS
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -3133,6 +3584,14 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.PROVIDER.FLAGS",
   "formula": "2 * 2 * 2 * 2",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "candidate_count": 16,
+    "counts": {
+      "VALID": 16
+    },
+    "method": "Separate hand-authored source-semantic classifier, no production import or observed outputs.",
+    "status": "RECONCILED"
+  },
   "invalid_count": 0,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -3142,11 +3601,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: provider-contract/spec/draft/capabilities.md:1-51 [sha256 9ac03569a88e9982b5a75ceb705daa59cd0ff21aa3ab440d9ee0e3b2afcaa66a], provider-contract/spec/draft/lifecycle.md:1-72 [sha256 122e8e4aaa8deb60d0cf6397d9857294d096f063c5c7ecde59d3d0359596177d], provider-contract/spec/draft/wire-format.md:1-65 [sha256 23d1e6bc4518225afa86f422d15eee22214d7a285b369c42c6843f45d06895a7], provider-contract/spec/draft/versioning.md:1-34 [sha256 2656dd1dbd2a872bd9d9912b8dba4c2ec61fc4dbaf145d091f7cda1203132921]
-
 ### D.PROVIDER.CAPABILITY_VCP
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -3177,6 +3634,15 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.PROVIDER.CAPABILITY_VCP",
   "formula": "2 * 2",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "candidate_count": 4,
+    "counts": {
+      "INVALID": 1,
+      "VALID": 3
+    },
+    "method": "Separate hand-authored source-semantic classifier, no production import or observed outputs.",
+    "status": "RECONCILED"
+  },
   "invalid_count": 1,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -3186,11 +3652,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: provider-contract/spec/draft/capabilities.md:1-51 [sha256 9ac03569a88e9982b5a75ceb705daa59cd0ff21aa3ab440d9ee0e3b2afcaa66a], provider-contract/spec/draft/lifecycle.md:1-72 [sha256 122e8e4aaa8deb60d0cf6397d9857294d096f063c5c7ecde59d3d0359596177d], provider-contract/spec/draft/wire-format.md:1-65 [sha256 23d1e6bc4518225afa86f422d15eee22214d7a285b369c42c6843f45d06895a7], provider-contract/spec/draft/versioning.md:1-34 [sha256 2656dd1dbd2a872bd9d9912b8dba4c2ec61fc4dbaf145d091f7cda1203132921]
-
 ### D.POLICY.SEQUENTIAL
 
-Status: DERIVED. Canonical links: CM.VCP.POLICY.ORDER, CM.VCP.POLICY.SOURCES, CM.VCP.POLICY.PREFLIGHT, CM.VCP.POLICY.FAILURE, CM.VCP.POLICY.OUTCOME_ACTIVATION, CM.VCP.POLICY.OUTCOME_SELECTION, CM.VCP.POLICY.OUTCOME_ADMISSION, CM.VCP.POLICY.MANUAL, CM.VCP.POLICY.EXPLICIT, CM.VCP.POLICY.ALWAYS, CM.VCP.POLICY.PROBABILITY, CM.VCP.POLICY.OPPORTUNITY, CM.VCP.POLICY.INACTIVE, CM.VCP.POLICY.UNSELECTED, CM.VCP.POLICY.ADMISSION, CM.VCP.POLICY.SKIP, CM.VCP.POLICY.DEFER.
+Canonical links: CM.VCP.POLICY.ALWAYS, CM.VCP.POLICY.EXPLICIT, CM.VCP.POLICY.MANUAL, CM.VCP.POLICY.FAILURE, CM.VCP.POLICY.OPPORTUNITY, CM.VCP.POLICY.SOURCES, CM.VCP.POLICY.ADMISSION, CM.VCP.POLICY.DEFER, CM.VCP.POLICY.INACTIVE, CM.VCP.POLICY.SKIP, CM.VCP.POLICY.UNSELECTED, CM.VCP.POLICY.OUTCOME_ACTIVATION, CM.VCP.POLICY.OUTCOME_ADMISSION, CM.VCP.POLICY.OUTCOME_SELECTION, CM.VCP.POLICY.ORDER, CM.VCP.POLICY.PREFLIGHT, CM.VCP.POLICY.PROBABILITY.DOMAIN, CM.VCP.POLICY.PROBABILITY.BOUNDARIES, CM.VCP.POLICY.PROBABILITY.INTERIOR
 
 ```json
 {
@@ -3216,20 +3680,31 @@ Status: DERIVED. Canonical links: CM.VCP.POLICY.ORDER, CM.VCP.POLICY.SOURCES, CM
   "domain_id": "D.POLICY.SEQUENTIAL",
   "formula": "5",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "candidate_count": 5,
+    "counts": {
+      "VALID": 5
+    },
+    "method": "Separate hand-authored source-semantic classifier, no production import or observed outputs.",
+    "status": "RECONCILED"
+  },
   "invalid_count": 0,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
   "meaning": "Five reachable sequential policy outcomes: activation short-circuit; selection short-circuit; three admission outcomes. Inactive/unselected create no occurrence.",
   "outcomes": null,
+  "requirement_ids": [
+    "CM.VCP.POLICY.PROBABILITY.DOMAIN",
+    "CM.VCP.POLICY.PROBABILITY.BOUNDARIES",
+    "CM.VCP.POLICY.PROBABILITY.INTERIOR"
+  ],
   "valid_count": 5
 }
 ```
 
-Source references: spec/draft/execution-policy.md:5-7 [sha256 2bb545ce77cbf3790261a35a9955104fecb8c18be1f56e51c1ff0c2d251ce4cf], spec/draft/execution-policy.md:9-17 [sha256 2bb545ce77cbf3790261a35a9955104fecb8c18be1f56e51c1ff0c2d251ce4cf], spec/draft/dataflow.md:142-147 [sha256 50c60efcd2701f35d93b05040bc0aef5a2f3dcf8252e026a3df956c4d4554c02], spec/draft/execution-policy.md:28-34 [sha256 2bb545ce77cbf3790261a35a9955104fecb8c18be1f56e51c1ff0c2d251ce4cf], spec/draft/execution-policy.md:9-17 [sha256 2bb545ce77cbf3790261a35a9955104fecb8c18be1f56e51c1ff0c2d251ce4cf], spec/draft/execution-policy.md:9-17 [sha256 2bb545ce77cbf3790261a35a9955104fecb8c18be1f56e51c1ff0c2d251ce4cf], spec/draft/execution-policy.md:23-26 [sha256 2bb545ce77cbf3790261a35a9955104fecb8c18be1f56e51c1ff0c2d251ce4cf], spec/draft/execution-policy.md:23-26 [sha256 2bb545ce77cbf3790261a35a9955104fecb8c18be1f56e51c1ff0c2d251ce4cf], spec/draft/execution-policy.md:23-26 [sha256 2bb545ce77cbf3790261a35a9955104fecb8c18be1f56e51c1ff0c2d251ce4cf], spec/draft/execution-policy.md:36-43 [sha256 2bb545ce77cbf3790261a35a9955104fecb8c18be1f56e51c1ff0c2d251ce4cf], spec/draft/execution-policy.md:36-43 [sha256 2bb545ce77cbf3790261a35a9955104fecb8c18be1f56e51c1ff0c2d251ce4cf], spec/draft/execution-policy.md:36-43 [sha256 2bb545ce77cbf3790261a35a9955104fecb8c18be1f56e51c1ff0c2d251ce4cf], spec/draft/execution-policy.md:36-43 [sha256 2bb545ce77cbf3790261a35a9955104fecb8c18be1f56e51c1ff0c2d251ce4cf], spec/draft/execution-policy.md:45-51 [sha256 2bb545ce77cbf3790261a35a9955104fecb8c18be1f56e51c1ff0c2d251ce4cf], spec/draft/execution-policy.md:55-58 [sha256 2bb545ce77cbf3790261a35a9955104fecb8c18be1f56e51c1ff0c2d251ce4cf], spec/draft/execution-policy.md:55-58 [sha256 2bb545ce77cbf3790261a35a9955104fecb8c18be1f56e51c1ff0c2d251ce4cf], spec/draft/execution-policy.md:60-65 [sha256 2bb545ce77cbf3790261a35a9955104fecb8c18be1f56e51c1ff0c2d251ce4cf], spec/draft/execution-policy.md:60-65 [sha256 2bb545ce77cbf3790261a35a9955104fecb8c18be1f56e51c1ff0c2d251ce4cf], spec/draft/execution-policy.md:60-65 [sha256 2bb545ce77cbf3790261a35a9955104fecb8c18be1f56e51c1ff0c2d251ce4cf], spec/draft/execution-policy.md:1-81 [sha256 2bb545ce77cbf3790261a35a9955104fecb8c18be1f56e51c1ff0c2d251ce4cf]
-
 ### D.LIFECYCLE.CAUSE
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -3259,6 +3734,14 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.LIFECYCLE.CAUSE",
   "formula": "9",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "candidate_count": 9,
+    "counts": {
+      "VALID": 9
+    },
+    "method": "Separate hand-authored source-semantic classifier, no production import or observed outputs.",
+    "status": "RECONCILED"
+  },
   "invalid_count": 0,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -3278,11 +3761,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: spec/draft/lifecycle.md:1-74 [sha256 7a64e510300c0a326985bab7435ed5dd65f3c0745bb003202df6d03c9b52af02]
-
 ### D.GRAPH.TOPOLOGY
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -3303,6 +3784,25 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.GRAPH.TOPOLOGY",
   "formula": "sum(2^(n(n-1)),n=0..4)",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "DAG_counts_by_n": [
+      1,
+      1,
+      3,
+      25,
+      543
+    ],
+    "all_counts_by_n": [
+      1,
+      1,
+      4,
+      64,
+      4096
+    ],
+    "proof": "Every DAG has a nonempty source set. Inclusion-exclusion over selected source vertices: no incoming edges to those vertices, arbitrary k(n-k) outgoing choices, and a(n-k) DAG on remaining labels. Cyclic count is complement in loop-free directed topology space.",
+    "recurrence": "a(0)=1; a(n)=sum_{k=1..n}(-1)^(k+1) binomial(n,k) 2^(k(n-k)) a(n-k)",
+    "status": "RECONCILED"
+  },
   "invalid_count": 3593,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -3343,11 +3843,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: spec/draft/composition.md:1-29 [sha256 cd930f696dbfe7c5897930a848f999575241570fbdaa81fa51a167828f7299cc]
-
 ### D.ROOT.PROVIDER.cancel-request
 
-Status: DERIVED. Canonical links: CM.PROVIDER.ROOT.CANCEL_REQUEST.
+Canonical links: CM.PROVIDER.ROOT.CANCEL_REQUEST
 
 ```json
 {
@@ -3474,11 +3972,9 @@ Status: DERIVED. Canonical links: CM.PROVIDER.ROOT.CANCEL_REQUEST.
 }
 ```
 
-Source references: provider-contract/schemas/draft/cancel-request.schema.json:1-28 [sha256 7e5fe523a3533558a28049c73b927550460bc6f5cddf8b41c3e2de45121379fa]
-
 ### D.ROOT.PROVIDER.capability
 
-Status: DERIVED. Canonical links: CM.PROVIDER.ROOT.CAPABILITY.
+Canonical links: CM.PROVIDER.ROOT.CAPABILITY
 
 ```json
 {
@@ -3728,11 +4224,9 @@ Status: DERIVED. Canonical links: CM.PROVIDER.ROOT.CAPABILITY.
 }
 ```
 
-Source references: provider-contract/schemas/draft/capability.schema.json:1-80 [sha256 66242f836060a987d7dd7208872630a3ffc9f865b81565410950213d1f667dad]
-
 ### D.ROOT.PROVIDER.initialize-request
 
-Status: DERIVED. Canonical links: CM.PROVIDER.ROOT.INITIALIZE_REQUEST.
+Canonical links: CM.PROVIDER.ROOT.INITIALIZE_REQUEST
 
 ```json
 {
@@ -3896,11 +4390,9 @@ Status: DERIVED. Canonical links: CM.PROVIDER.ROOT.INITIALIZE_REQUEST.
 }
 ```
 
-Source references: provider-contract/schemas/draft/initialize-request.schema.json:1-38 [sha256 e23a6c9c372c72f39cc29443d24c37e70844a6c2d65eb68c2ae0a649137b63da]
-
 ### D.ROOT.PROVIDER.initialize-result
 
-Status: DERIVED. Canonical links: CM.PROVIDER.ROOT.INITIALIZE_RESULT.
+Canonical links: CM.PROVIDER.ROOT.INITIALIZE_RESULT
 
 ```json
 {
@@ -4410,11 +4902,9 @@ Status: DERIVED. Canonical links: CM.PROVIDER.ROOT.INITIALIZE_RESULT.
 }
 ```
 
-Source references: provider-contract/schemas/draft/initialize-result.schema.json:1-27 [sha256 71686e48b7b398b8efe786dc433c1a2e2f25d311e2ba89e402b22efae062ee62]
-
 ### D.ROOT.PROVIDER.invocation
 
-Status: DERIVED. Canonical links: CM.PROVIDER.ROOT.INVOCATION.
+Canonical links: CM.PROVIDER.ROOT.INVOCATION
 
 ```json
 {
@@ -4789,11 +5279,9 @@ Status: DERIVED. Canonical links: CM.PROVIDER.ROOT.INVOCATION.
 }
 ```
 
-Source references: provider-contract/schemas/draft/invocation.schema.json:1-60 [sha256 f10b9cda14d7f18e58289d981da5b8b8261bfa3d246d71c8cc7c2b473adf24e6]
-
 ### D.ROOT.PROVIDER.outcome
 
-Status: DERIVED. Canonical links: CM.PROVIDER.ROOT.OUTCOME.
+Canonical links: CM.PROVIDER.ROOT.OUTCOME
 
 ```json
 {
@@ -5332,11 +5820,9 @@ Status: DERIVED. Canonical links: CM.PROVIDER.ROOT.OUTCOME.
 }
 ```
 
-Source references: provider-contract/schemas/draft/outcome.schema.json:1-92 [sha256 7df6c6622b35d483bb42589ff571b061be2cbdd97d85fe4030b6aef6719d85c8]
-
 ### D.ROOT.PROVIDER.provider-error
 
-Status: DERIVED. Canonical links: CM.PROVIDER.ROOT.PROVIDER_ERROR.
+Canonical links: CM.PROVIDER.ROOT.PROVIDER_ERROR
 
 ```json
 {
@@ -5464,11 +5950,9 @@ Status: DERIVED. Canonical links: CM.PROVIDER.ROOT.PROVIDER_ERROR.
 }
 ```
 
-Source references: provider-contract/schemas/draft/provider-error.schema.json:1-38 [sha256 eebf40e65a56ddeeda103cf2a18df73eeb65e8a5bdca2733caf84342e4dfe5d9]
-
 ### D.ROOT.PROVIDER.provider-event
 
-Status: DERIVED. Canonical links: CM.PROVIDER.ROOT.PROVIDER_EVENT.
+Canonical links: CM.PROVIDER.ROOT.PROVIDER_EVENT
 
 ```json
 {
@@ -6655,11 +7139,9 @@ Status: DERIVED. Canonical links: CM.PROVIDER.ROOT.PROVIDER_EVENT.
 }
 ```
 
-Source references: provider-contract/schemas/draft/provider-event.schema.json:1-131 [sha256 0bf4bb10e54b99f7c9edd1bcb64d71b2146b164cf3397ceb0a948514263f885e]
-
 ### D.ROOT.PROVIDER.provider-manifest
 
-Status: DERIVED. Canonical links: CM.PROVIDER.ROOT.PROVIDER_MANIFEST.
+Canonical links: CM.PROVIDER.ROOT.PROVIDER_MANIFEST
 
 ```json
 {
@@ -7088,11 +7570,9 @@ Status: DERIVED. Canonical links: CM.PROVIDER.ROOT.PROVIDER_MANIFEST.
 }
 ```
 
-Source references: provider-contract/schemas/draft/provider-manifest.schema.json:1-56 [sha256 e2c5c88d4e2c5e906a4218722a791154d847664f86af121d8f747480286cae49]
-
 ### D.ROOT.VCP.activation
 
-Status: DERIVED. Canonical links: CM.VCP.ROOT.ACTIVATION.
+Canonical links: CM.VCP.ROOT.ACTIVATION
 
 ```json
 {
@@ -7187,11 +7667,9 @@ Status: DERIVED. Canonical links: CM.VCP.ROOT.ACTIVATION.
 }
 ```
 
-Source references: schemas/draft/activation.schema.json:1-24 [sha256 6e37ab4712eb1e96d5a5ff866f2b27bde808ec51a81dca8b47dfd9e2655b0dc9]
-
 ### D.ROOT.VCP.admission
 
-Status: DERIVED. Canonical links: CM.VCP.ROOT.ADMISSION.
+Canonical links: CM.VCP.ROOT.ADMISSION
 
 ```json
 {
@@ -7287,11 +7765,9 @@ Status: DERIVED. Canonical links: CM.VCP.ROOT.ADMISSION.
 }
 ```
 
-Source references: schemas/draft/admission.schema.json:1-25 [sha256 bcbcee1094ba855888dc566a48004a0f1ee5d9625e5f94a7138ae293b676953f]
-
 ### D.ROOT.VCP.artifact-ref
 
-Status: DERIVED. Canonical links: CM.VCP.ROOT.ARTIFACT_REF.
+Canonical links: CM.VCP.ROOT.ARTIFACT_REF
 
 ```json
 {
@@ -7522,11 +7998,9 @@ Status: DERIVED. Canonical links: CM.VCP.ROOT.ARTIFACT_REF.
 }
 ```
 
-Source references: schemas/draft/artifact-ref.schema.json:1-43 [sha256 7bf26b3364910fc080867c4cef15e4cb7fd3c416f4fee6b7f2650d01373e1f2d]
-
 ### D.ROOT.VCP.cancellation-event
 
-Status: DERIVED. Canonical links: CM.VCP.ROOT.CANCELLATION_EVENT.
+Canonical links: CM.VCP.ROOT.CANCELLATION_EVENT
 
 ```json
 {
@@ -7635,11 +8109,9 @@ Status: DERIVED. Canonical links: CM.VCP.ROOT.CANCELLATION_EVENT.
 }
 ```
 
-Source references: schemas/draft/cancellation-event.schema.json:1-29 [sha256 9cbac956328c63c971092e1d07c1a9cc49d63b692893ffd4c1ce0fecccf4f641]
-
 ### D.ROOT.VCP.decision
 
-Status: DERIVED. Canonical links: CM.VCP.ROOT.DECISION.
+Canonical links: CM.VCP.ROOT.DECISION
 
 ```json
 {
@@ -7900,11 +8372,9 @@ Status: DERIVED. Canonical links: CM.VCP.ROOT.DECISION.
 }
 ```
 
-Source references: schemas/draft/decision.schema.json:1-58 [sha256 47ebf3ea5ab3fd1f4cd434ec2d18981d5593f7f66dd3cdeb9a2f6b15160723ee]
-
 ### D.ROOT.VCP.evidence
 
-Status: DERIVED. Canonical links: CM.VCP.ROOT.EVIDENCE.
+Canonical links: CM.VCP.ROOT.EVIDENCE
 
 ```json
 {
@@ -8361,11 +8831,9 @@ Status: DERIVED. Canonical links: CM.VCP.ROOT.EVIDENCE.
 }
 ```
 
-Source references: schemas/draft/evidence.schema.json:1-53 [sha256 e5fe25b8d81739697c6139d5d6e7b541ad6910f58c543a6a90b5f1e9e44a688f]
-
 ### D.ROOT.VCP.execution-observation
 
-Status: DERIVED. Canonical links: CM.VCP.ROOT.EXECUTION_OBSERVATION.
+Canonical links: CM.VCP.ROOT.EXECUTION_OBSERVATION
 
 ```json
 {
@@ -9124,11 +9592,9 @@ Status: DERIVED. Canonical links: CM.VCP.ROOT.EXECUTION_OBSERVATION.
 }
 ```
 
-Source references: schemas/draft/execution-observation.schema.json:1-51 [sha256 3925c1e9077ecfb9eaa47094325aa4c6c4a22871aadede4f977b06d0fd8115b4]
-
 ### D.ROOT.VCP.extension
 
-Status: DERIVED. Canonical links: CM.VCP.ROOT.EXTENSION.
+Canonical links: CM.VCP.ROOT.EXTENSION
 
 ```json
 {
@@ -9239,11 +9705,9 @@ Status: DERIVED. Canonical links: CM.VCP.ROOT.EXTENSION.
 }
 ```
 
-Source references: schemas/draft/extension.schema.json:1-28 [sha256 d311028d33dc5062da712c553eb75d61a1f6d9038ec35b6e7a15b6fafaa12abc]
-
 ### D.ROOT.VCP.graph
 
-Status: DERIVED. Canonical links: CM.VCP.ROOT.GRAPH.
+Canonical links: CM.VCP.ROOT.GRAPH
 
 ```json
 {
@@ -11016,11 +11480,9 @@ Status: DERIVED. Canonical links: CM.VCP.ROOT.GRAPH.
 }
 ```
 
-Source references: schemas/draft/graph.schema.json:1-158 [sha256 d363f055c63cf2692a566885b71030da8f8ac9ab2d024798f652c2c3f119d86c]
-
 ### D.ROOT.VCP.input-port
 
-Status: DERIVED. Canonical links: CM.VCP.ROOT.INPUT_PORT.
+Canonical links: CM.VCP.ROOT.INPUT_PORT
 
 ```json
 {
@@ -11179,11 +11641,9 @@ Status: DERIVED. Canonical links: CM.VCP.ROOT.INPUT_PORT.
 }
 ```
 
-Source references: schemas/draft/input-port.schema.json:1-50 [sha256 06bf28b97b7d3c4cb92d058ff2866cc334120c00c5279cba8fda8425c7f9d3c9]
-
 ### D.ROOT.VCP.input-resolution
 
-Status: DERIVED. Canonical links: CM.VCP.ROOT.INPUT_RESOLUTION.
+Canonical links: CM.VCP.ROOT.INPUT_RESOLUTION
 
 ```json
 {
@@ -11690,11 +12150,9 @@ Status: DERIVED. Canonical links: CM.VCP.ROOT.INPUT_RESOLUTION.
 }
 ```
 
-Source references: schemas/draft/input-resolution.schema.json:1-31 [sha256 b648c5a0866f5c56bbc62e20fa8a93b9ef9c389be522126bb322023a3e35349f]
-
 ### D.ROOT.VCP.operation-requirement
 
-Status: DERIVED. Canonical links: CM.VCP.ROOT.OPERATION_REQUIREMENT.
+Canonical links: CM.VCP.ROOT.OPERATION_REQUIREMENT
 
 ```json
 {
@@ -11790,11 +12248,9 @@ Status: DERIVED. Canonical links: CM.VCP.ROOT.OPERATION_REQUIREMENT.
 }
 ```
 
-Source references: schemas/draft/operation-requirement.schema.json:1-22 [sha256 93f38eb5c2c21f7afcfebc46e05fe36143b7cdcede959ffae69a0e9eee919af0]
-
 ### D.ROOT.VCP.output-port
 
-Status: DERIVED. Canonical links: CM.VCP.ROOT.OUTPUT_PORT.
+Canonical links: CM.VCP.ROOT.OUTPUT_PORT
 
 ```json
 {
@@ -11903,11 +12359,9 @@ Status: DERIVED. Canonical links: CM.VCP.ROOT.OUTPUT_PORT.
 }
 ```
 
-Source references: schemas/draft/output-port.schema.json:1-32 [sha256 6c4160672d752a4b12340290b6069f305eebaf9d2e7ea4fbb2d61ef1cc25f2bf]
-
 ### D.ROOT.VCP.policy-evaluation
 
-Status: DERIVED. Canonical links: CM.VCP.ROOT.POLICY_EVALUATION.
+Canonical links: CM.VCP.ROOT.POLICY_EVALUATION
 
 ```json
 {
@@ -12957,11 +13411,9 @@ Status: DERIVED. Canonical links: CM.VCP.ROOT.POLICY_EVALUATION.
 }
 ```
 
-Source references: schemas/draft/policy-evaluation.schema.json:1-67 [sha256 cd4cb6210e17891149edbe908dc1a1daab8abb8f8471e6c14fdaaed45e132806]
-
 ### D.ROOT.VCP.profile
 
-Status: DERIVED. Canonical links: CM.VCP.ROOT.PROFILE.
+Canonical links: CM.VCP.ROOT.PROFILE
 
 ```json
 {
@@ -13571,11 +14023,9 @@ Status: DERIVED. Canonical links: CM.VCP.ROOT.PROFILE.
 }
 ```
 
-Source references: schemas/draft/profile.schema.json:1-77 [sha256 1c46b09ba4bb431f5781f8663b30774895fa719fe3ba08753960f3df8478aedd]
-
 ### D.ROOT.VCP.provider-binding
 
-Status: DERIVED. Canonical links: CM.VCP.ROOT.PROVIDER_BINDING.
+Canonical links: CM.VCP.ROOT.PROVIDER_BINDING
 
 ```json
 {
@@ -13703,11 +14153,9 @@ Status: DERIVED. Canonical links: CM.VCP.ROOT.PROVIDER_BINDING.
 }
 ```
 
-Source references: schemas/draft/provider-binding.schema.json:1-33 [sha256 b3230a926aac92122ba09889966dbcbce0985f2b6f37773874c9d5331af4933d]
-
 ### D.ROOT.VCP.resource-dimension
 
-Status: DERIVED. Canonical links: CM.VCP.ROOT.RESOURCE_DIMENSION.
+Canonical links: CM.VCP.ROOT.RESOURCE_DIMENSION
 
 ```json
 {
@@ -13915,11 +14363,9 @@ Status: DERIVED. Canonical links: CM.VCP.ROOT.RESOURCE_DIMENSION.
 }
 ```
 
-Source references: schemas/draft/resource-dimension.schema.json:1-35 [sha256 fa4e4bcdc4d442c5db8e19c7e9cfeee041c1f843355454eccbfc0d0132f1bb29]
-
 ### D.ROOT.VCP.resource
 
-Status: DERIVED. Canonical links: CM.VCP.ROOT.RESOURCE.
+Canonical links: CM.VCP.ROOT.RESOURCE
 
 ```json
 {
@@ -14112,11 +14558,9 @@ Status: DERIVED. Canonical links: CM.VCP.ROOT.RESOURCE.
 }
 ```
 
-Source references: schemas/draft/resource.schema.json:1-59 [sha256 da075a12e91b40d9110f7e5f07ef4aad6a3d4dfcf0edc499219098b7c4cb2145]
-
 ### D.ROOT.VCP.result
 
-Status: DERIVED. Canonical links: CM.VCP.ROOT.RESULT.
+Canonical links: CM.VCP.ROOT.RESULT
 
 ```json
 {
@@ -15197,11 +15641,9 @@ Status: DERIVED. Canonical links: CM.VCP.ROOT.RESULT.
 }
 ```
 
-Source references: schemas/draft/result.schema.json:1-145 [sha256 41625c8616ebb6cbe5da97a88bb8d7e747b40d40db35b82eb0ea4a534a4c2173]
-
 ### D.ROOT.VCP.run-record
 
-Status: DERIVED. Canonical links: CM.VCP.ROOT.RUN_RECORD.
+Canonical links: CM.VCP.ROOT.RUN_RECORD
 
 ```json
 {
@@ -26939,11 +27381,9 @@ Status: DERIVED. Canonical links: CM.VCP.ROOT.RUN_RECORD.
 }
 ```
 
-Source references: schemas/draft/run-record.schema.json:1-269 [sha256 f0d812b54bd748d282e39016885d3776207a7865763969365002e052aca02773]
-
 ### D.ROOT.VCP.selection
 
-Status: DERIVED. Canonical links: CM.VCP.ROOT.SELECTION.
+Canonical links: CM.VCP.ROOT.SELECTION
 
 ```json
 {
@@ -27235,11 +27675,9 @@ Status: DERIVED. Canonical links: CM.VCP.ROOT.SELECTION.
 }
 ```
 
-Source references: schemas/draft/selection.schema.json:1-23 [sha256 d6c0f5e13bf50425e9b934254188a95a968465dc27774f61187caec77f5000b9]
-
 ### D.ROOT.VCP.severity-domain
 
-Status: DERIVED. Canonical links: CM.VCP.ROOT.SEVERITY_DOMAIN.
+Canonical links: CM.VCP.ROOT.SEVERITY_DOMAIN
 
 ```json
 {
@@ -27379,11 +27817,9 @@ Status: DERIVED. Canonical links: CM.VCP.ROOT.SEVERITY_DOMAIN.
 }
 ```
 
-Source references: schemas/draft/severity-domain.schema.json:1-37 [sha256 5451af1a9db01672b874f8d38811ea265f9635fb9f8b9892cfe0f07a693540fd]
-
 ### D.ROOT.VCP.value-source
 
-Status: DERIVED. Canonical links: CM.VCP.ROOT.VALUE_SOURCE.
+Canonical links: CM.VCP.ROOT.VALUE_SOURCE
 
 ```json
 {
@@ -27821,11 +28257,9 @@ Status: DERIVED. Canonical links: CM.VCP.ROOT.VALUE_SOURCE.
 }
 ```
 
-Source references: schemas/draft/value-source.schema.json:1-76 [sha256 d2b60c21b86c717dfd76aa10573bd85750aebcf653f93d04b57535e1ae73e3d5]
-
 ### D.ROOT.VCP.verification-definition
 
-Status: DERIVED. Canonical links: CM.VCP.ROOT.VERIFICATION_DEFINITION.
+Canonical links: CM.VCP.ROOT.VERIFICATION_DEFINITION
 
 ```json
 {
@@ -32482,11 +32916,9 @@ Status: DERIVED. Canonical links: CM.VCP.ROOT.VERIFICATION_DEFINITION.
 }
 ```
 
-Source references: schemas/draft/verification-definition.schema.json:1-235 [sha256 4830194f7bfc1c33ba1d6f9d977ac402231f9bcc59e2990ab076ba0e7b545294]
-
 ### D.PRESENCE.PROVIDER.cancel-request
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -32505,6 +32937,13 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.PRESENCE.PROVIDER.cancel-request",
   "formula": "2^3; required-key pass count 2^2",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "declared_property_count": 3,
+    "formula": "C=2^3; V=2^(3-1); I=C-V; N=0",
+    "scope": "Unconditional required-key monotonicity only. Values, prose and conditional requirements independently apply.",
+    "status": "RECONCILED",
+    "unconditional_required_count": 1
+  },
   "invalid_count": 4,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -32521,11 +32960,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: provider-contract/schemas/draft/cancel-request.schema.json [sha256 7e5fe523a3533558a28049c73b927550460bc6f5cddf8b41c3e2de45121379fa]
-
 ### D.PRESENCE.PROVIDER.capability
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -32549,6 +32986,13 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.PRESENCE.PROVIDER.capability",
   "formula": "2^8; required-key pass count 2^2",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "declared_property_count": 8,
+    "formula": "C=2^8; V=2^(8-6); I=C-V; N=0",
+    "scope": "Unconditional required-key monotonicity only. Values, prose and conditional requirements independently apply.",
+    "status": "RECONCILED",
+    "unconditional_required_count": 6
+  },
   "invalid_count": 252,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -32570,11 +33014,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: provider-contract/schemas/draft/capability.schema.json [sha256 66242f836060a987d7dd7208872630a3ffc9f865b81565410950213d1f667dad]
-
 ### D.PRESENCE.PROVIDER.initialize-request
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -32593,6 +33035,13 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.PRESENCE.PROVIDER.initialize-request",
   "formula": "2^3; required-key pass count 2^1",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "declared_property_count": 3,
+    "formula": "C=2^3; V=2^(3-2); I=C-V; N=0",
+    "scope": "Unconditional required-key monotonicity only. Values, prose and conditional requirements independently apply.",
+    "status": "RECONCILED",
+    "unconditional_required_count": 2
+  },
   "invalid_count": 6,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -32609,11 +33058,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: provider-contract/schemas/draft/initialize-request.schema.json [sha256 e23a6c9c372c72f39cc29443d24c37e70844a6c2d65eb68c2ae0a649137b63da]
-
 ### D.PRESENCE.PROVIDER.initialize-result
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -32632,6 +33079,13 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.PRESENCE.PROVIDER.initialize-result",
   "formula": "2^3; required-key pass count 2^1",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "declared_property_count": 3,
+    "formula": "C=2^3; V=2^(3-2); I=C-V; N=0",
+    "scope": "Unconditional required-key monotonicity only. Values, prose and conditional requirements independently apply.",
+    "status": "RECONCILED",
+    "unconditional_required_count": 2
+  },
   "invalid_count": 6,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -32648,11 +33102,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: provider-contract/schemas/draft/initialize-result.schema.json [sha256 71686e48b7b398b8efe786dc433c1a2e2f25d311e2ba89e402b22efae062ee62]
-
 ### D.PRESENCE.PROVIDER.invocation
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -32679,6 +33131,13 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.PRESENCE.PROVIDER.invocation",
   "formula": "2^11; required-key pass count 2^5",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "declared_property_count": 11,
+    "formula": "C=2^11; V=2^(11-6); I=C-V; N=0",
+    "scope": "Unconditional required-key monotonicity only. Values, prose and conditional requirements independently apply.",
+    "status": "RECONCILED",
+    "unconditional_required_count": 6
+  },
   "invalid_count": 2016,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -32703,11 +33162,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: provider-contract/schemas/draft/invocation.schema.json [sha256 f10b9cda14d7f18e58289d981da5b8b8261bfa3d246d71c8cc7c2b473adf24e6]
-
 ### D.PRESENCE.PROVIDER.outcome
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -32729,6 +33186,13 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.PRESENCE.PROVIDER.outcome",
   "formula": "2^6; required-key pass count 2^4",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "declared_property_count": 6,
+    "formula": "C=2^6; V=2^(6-2); I=C-V; N=0",
+    "scope": "Unconditional required-key monotonicity only. Values, prose and conditional requirements independently apply.",
+    "status": "RECONCILED",
+    "unconditional_required_count": 2
+  },
   "invalid_count": 48,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -32748,11 +33212,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: provider-contract/schemas/draft/outcome.schema.json [sha256 7df6c6622b35d483bb42589ff571b061be2cbdd97d85fe4030b6aef6719d85c8]
-
 ### D.PRESENCE.PROVIDER.provider-error
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -32771,6 +33233,13 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.PRESENCE.PROVIDER.provider-error",
   "formula": "2^3; required-key pass count 2^1",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "declared_property_count": 3,
+    "formula": "C=2^3; V=2^(3-2); I=C-V; N=0",
+    "scope": "Unconditional required-key monotonicity only. Values, prose and conditional requirements independently apply.",
+    "status": "RECONCILED",
+    "unconditional_required_count": 2
+  },
   "invalid_count": 6,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -32787,11 +33256,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: provider-contract/schemas/draft/provider-error.schema.json [sha256 eebf40e65a56ddeeda103cf2a18df73eeb65e8a5bdca2733caf84342e4dfe5d9]
-
 ### D.PRESENCE.PROVIDER.provider-event
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -32813,6 +33280,13 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.PRESENCE.PROVIDER.provider-event",
   "formula": "2^6; required-key pass count 2^2",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "declared_property_count": 6,
+    "formula": "C=2^6; V=2^(6-4); I=C-V; N=0",
+    "scope": "Unconditional required-key monotonicity only. Values, prose and conditional requirements independently apply.",
+    "status": "RECONCILED",
+    "unconditional_required_count": 4
+  },
   "invalid_count": 60,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -32832,11 +33306,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: provider-contract/schemas/draft/provider-event.schema.json [sha256 0bf4bb10e54b99f7c9edd1bcb64d71b2146b164cf3397ceb0a948514263f885e]
-
 ### D.PRESENCE.PROVIDER.provider-manifest
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -32858,6 +33330,13 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.PRESENCE.PROVIDER.provider-manifest",
   "formula": "2^6; required-key pass count 2^1",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "declared_property_count": 6,
+    "formula": "C=2^6; V=2^(6-5); I=C-V; N=0",
+    "scope": "Unconditional required-key monotonicity only. Values, prose and conditional requirements independently apply.",
+    "status": "RECONCILED",
+    "unconditional_required_count": 5
+  },
   "invalid_count": 62,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -32877,11 +33356,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: provider-contract/schemas/draft/provider-manifest.schema.json [sha256 e2c5c88d4e2c5e906a4218722a791154d847664f86af121d8f747480286cae49]
-
 ### D.PRESENCE.VCP.activation
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -32899,6 +33376,13 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.PRESENCE.VCP.activation",
   "formula": "2^2; required-key pass count 2^0",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "declared_property_count": 2,
+    "formula": "C=2^2; V=2^(2-2); I=C-V; N=0",
+    "scope": "Unconditional required-key monotonicity only. Values, prose and conditional requirements independently apply.",
+    "status": "RECONCILED",
+    "unconditional_required_count": 2
+  },
   "invalid_count": 3,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -32913,11 +33397,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: schemas/draft/activation.schema.json [sha256 6e37ab4712eb1e96d5a5ff866f2b27bde808ec51a81dca8b47dfd9e2655b0dc9]
-
 ### D.PRESENCE.VCP.admission
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -32935,6 +33417,13 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.PRESENCE.VCP.admission",
   "formula": "2^2; required-key pass count 2^0",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "declared_property_count": 2,
+    "formula": "C=2^2; V=2^(2-2); I=C-V; N=0",
+    "scope": "Unconditional required-key monotonicity only. Values, prose and conditional requirements independently apply.",
+    "status": "RECONCILED",
+    "unconditional_required_count": 2
+  },
   "invalid_count": 3,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -32949,11 +33438,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: schemas/draft/admission.schema.json [sha256 bcbcee1094ba855888dc566a48004a0f1ee5d9625e5f94a7138ae293b676953f]
-
 ### D.PRESENCE.VCP.artifact-ref
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -32975,6 +33462,13 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.PRESENCE.VCP.artifact-ref",
   "formula": "2^6; required-key pass count 2^3",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "declared_property_count": 6,
+    "formula": "C=2^6; V=2^(6-3); I=C-V; N=0",
+    "scope": "Unconditional required-key monotonicity only. Values, prose and conditional requirements independently apply.",
+    "status": "RECONCILED",
+    "unconditional_required_count": 3
+  },
   "invalid_count": 56,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -32994,11 +33488,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: schemas/draft/artifact-ref.schema.json [sha256 7bf26b3364910fc080867c4cef15e4cb7fd3c416f4fee6b7f2650d01373e1f2d]
-
 ### D.PRESENCE.VCP.cancellation-event
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -33017,6 +33509,13 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.PRESENCE.VCP.cancellation-event",
   "formula": "2^3; required-key pass count 2^0",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "declared_property_count": 3,
+    "formula": "C=2^3; V=2^(3-3); I=C-V; N=0",
+    "scope": "Unconditional required-key monotonicity only. Values, prose and conditional requirements independently apply.",
+    "status": "RECONCILED",
+    "unconditional_required_count": 3
+  },
   "invalid_count": 7,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -33032,11 +33531,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: schemas/draft/cancellation-event.schema.json [sha256 9cbac956328c63c971092e1d07c1a9cc49d63b692893ffd4c1ce0fecccf4f641]
-
 ### D.PRESENCE.VCP.decision
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -33058,6 +33555,13 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.PRESENCE.VCP.decision",
   "formula": "2^6; required-key pass count 2^4",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "declared_property_count": 6,
+    "formula": "C=2^6; V=2^(6-2); I=C-V; N=0",
+    "scope": "Unconditional required-key monotonicity only. Values, prose and conditional requirements independently apply.",
+    "status": "RECONCILED",
+    "unconditional_required_count": 2
+  },
   "invalid_count": 48,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -33077,11 +33581,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: schemas/draft/decision.schema.json [sha256 47ebf3ea5ab3fd1f4cd434ec2d18981d5593f7f66dd3cdeb9a2f6b15160723ee]
-
 ### D.PRESENCE.VCP.evidence
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -33104,6 +33606,13 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.PRESENCE.VCP.evidence",
   "formula": "2^7; required-key pass count 2^7",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "declared_property_count": 7,
+    "formula": "C=2^7; V=2^(7-0); I=C-V; N=0",
+    "scope": "Unconditional required-key monotonicity only. Values, prose and conditional requirements independently apply.",
+    "status": "RECONCILED",
+    "unconditional_required_count": 0
+  },
   "invalid_count": 0,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -33123,11 +33632,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: schemas/draft/evidence.schema.json [sha256 e5fe25b8d81739697c6139d5d6e7b541ad6910f58c543a6a90b5f1e9e44a688f]
-
 ### D.PRESENCE.VCP.execution-observation
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -33147,6 +33654,13 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.PRESENCE.VCP.execution-observation",
   "formula": "2^4; required-key pass count 2^1",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "declared_property_count": 4,
+    "formula": "C=2^4; V=2^(4-3); I=C-V; N=0",
+    "scope": "Unconditional required-key monotonicity only. Values, prose and conditional requirements independently apply.",
+    "status": "RECONCILED",
+    "unconditional_required_count": 3
+  },
   "invalid_count": 14,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -33164,11 +33678,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: schemas/draft/execution-observation.schema.json [sha256 3925c1e9077ecfb9eaa47094325aa4c6c4a22871aadede4f977b06d0fd8115b4]
-
 ### D.PRESENCE.VCP.extension
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -33188,6 +33700,13 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.PRESENCE.VCP.extension",
   "formula": "2^4; required-key pass count 2^0",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "declared_property_count": 4,
+    "formula": "C=2^4; V=2^(4-4); I=C-V; N=0",
+    "scope": "Unconditional required-key monotonicity only. Values, prose and conditional requirements independently apply.",
+    "status": "RECONCILED",
+    "unconditional_required_count": 4
+  },
   "invalid_count": 15,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -33204,11 +33723,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: schemas/draft/extension.schema.json [sha256 d311028d33dc5062da712c553eb75d61a1f6d9038ec35b6e7a15b6fafaa12abc]
-
 ### D.PRESENCE.VCP.graph
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -33227,6 +33744,13 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.PRESENCE.VCP.graph",
   "formula": "2^3; required-key pass count 2^2",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "declared_property_count": 3,
+    "formula": "C=2^3; V=2^(3-1); I=C-V; N=0",
+    "scope": "Unconditional required-key monotonicity only. Values, prose and conditional requirements independently apply.",
+    "status": "RECONCILED",
+    "unconditional_required_count": 1
+  },
   "invalid_count": 4,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -33243,11 +33767,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: schemas/draft/graph.schema.json [sha256 d363f055c63cf2692a566885b71030da8f8ac9ab2d024798f652c2c3f119d86c]
-
 ### D.PRESENCE.VCP.input-port
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -33268,6 +33790,13 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.PRESENCE.VCP.input-port",
   "formula": "2^5; required-key pass count 2^1",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "declared_property_count": 5,
+    "formula": "C=2^5; V=2^(5-4); I=C-V; N=0",
+    "scope": "Unconditional required-key monotonicity only. Values, prose and conditional requirements independently apply.",
+    "status": "RECONCILED",
+    "unconditional_required_count": 4
+  },
   "invalid_count": 30,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -33286,11 +33815,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: schemas/draft/input-port.schema.json [sha256 06bf28b97b7d3c4cb92d058ff2866cc334120c00c5279cba8fda8425c7f9d3c9]
-
 ### D.PRESENCE.VCP.input-resolution
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -33310,6 +33837,13 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.PRESENCE.VCP.input-resolution",
   "formula": "2^4; required-key pass count 2^2",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "declared_property_count": 4,
+    "formula": "C=2^4; V=2^(4-2); I=C-V; N=0",
+    "scope": "Unconditional required-key monotonicity only. Values, prose and conditional requirements independently apply.",
+    "status": "RECONCILED",
+    "unconditional_required_count": 2
+  },
   "invalid_count": 12,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -33327,11 +33861,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: schemas/draft/input-resolution.schema.json [sha256 b648c5a0866f5c56bbc62e20fa8a93b9ef9c389be522126bb322023a3e35349f]
-
 ### D.PRESENCE.VCP.operation-requirement
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -33349,6 +33881,13 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.PRESENCE.VCP.operation-requirement",
   "formula": "2^2; required-key pass count 2^0",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "declared_property_count": 2,
+    "formula": "C=2^2; V=2^(2-2); I=C-V; N=0",
+    "scope": "Unconditional required-key monotonicity only. Values, prose and conditional requirements independently apply.",
+    "status": "RECONCILED",
+    "unconditional_required_count": 2
+  },
   "invalid_count": 3,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -33363,11 +33902,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: schemas/draft/operation-requirement.schema.json [sha256 93f38eb5c2c21f7afcfebc46e05fe36143b7cdcede959ffae69a0e9eee919af0]
-
 ### D.PRESENCE.VCP.output-port
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -33386,6 +33923,13 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.PRESENCE.VCP.output-port",
   "formula": "2^3; required-key pass count 2^0",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "declared_property_count": 3,
+    "formula": "C=2^3; V=2^(3-3); I=C-V; N=0",
+    "scope": "Unconditional required-key monotonicity only. Values, prose and conditional requirements independently apply.",
+    "status": "RECONCILED",
+    "unconditional_required_count": 3
+  },
   "invalid_count": 7,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -33401,11 +33945,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: schemas/draft/output-port.schema.json [sha256 6c4160672d752a4b12340290b6069f305eebaf9d2e7ea4fbb2d61ef1cc25f2bf]
-
 ### D.PRESENCE.VCP.policy-evaluation
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -33427,6 +33969,13 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.PRESENCE.VCP.policy-evaluation",
   "formula": "2^6; required-key pass count 2^2",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "declared_property_count": 6,
+    "formula": "C=2^6; V=2^(6-4); I=C-V; N=0",
+    "scope": "Unconditional required-key monotonicity only. Values, prose and conditional requirements independently apply.",
+    "status": "RECONCILED",
+    "unconditional_required_count": 4
+  },
   "invalid_count": 60,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -33446,11 +33995,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: schemas/draft/policy-evaluation.schema.json [sha256 cd4cb6210e17891149edbe908dc1a1daab8abb8f8471e6c14fdaaed45e132806]
-
 ### D.PRESENCE.VCP.profile
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -33477,6 +34024,13 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.PRESENCE.VCP.profile",
   "formula": "2^11; required-key pass count 2^2",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "declared_property_count": 11,
+    "formula": "C=2^11; V=2^(11-9); I=C-V; N=0",
+    "scope": "Unconditional required-key monotonicity only. Values, prose and conditional requirements independently apply.",
+    "status": "RECONCILED",
+    "unconditional_required_count": 9
+  },
   "invalid_count": 2044,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -33501,11 +34055,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: schemas/draft/profile.schema.json [sha256 1c46b09ba4bb431f5781f8663b30774895fa719fe3ba08753960f3df8478aedd]
-
 ### D.PRESENCE.VCP.provider-binding
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -33525,6 +34077,13 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.PRESENCE.VCP.provider-binding",
   "formula": "2^4; required-key pass count 2^0",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "declared_property_count": 4,
+    "formula": "C=2^4; V=2^(4-4); I=C-V; N=0",
+    "scope": "Unconditional required-key monotonicity only. Values, prose and conditional requirements independently apply.",
+    "status": "RECONCILED",
+    "unconditional_required_count": 4
+  },
   "invalid_count": 15,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -33541,11 +34100,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: schemas/draft/provider-binding.schema.json [sha256 b3230a926aac92122ba09889966dbcbce0985f2b6f37773874c9d5331af4933d]
-
 ### D.PRESENCE.VCP.resource-dimension
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -33566,6 +34123,13 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.PRESENCE.VCP.resource-dimension",
   "formula": "2^5; required-key pass count 2^2",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "declared_property_count": 5,
+    "formula": "C=2^5; V=2^(5-3); I=C-V; N=0",
+    "scope": "Unconditional required-key monotonicity only. Values, prose and conditional requirements independently apply.",
+    "status": "RECONCILED",
+    "unconditional_required_count": 3
+  },
   "invalid_count": 28,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -33584,11 +34148,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: schemas/draft/resource-dimension.schema.json [sha256 fa4e4bcdc4d442c5db8e19c7e9cfeee041c1f843355454eccbfc0d0132f1bb29]
-
 ### D.PRESENCE.VCP.resource
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -33609,6 +34171,13 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.PRESENCE.VCP.resource",
   "formula": "2^5; required-key pass count 2^3",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "declared_property_count": 5,
+    "formula": "C=2^5; V=2^(5-2); I=C-V; N=0",
+    "scope": "Unconditional required-key monotonicity only. Values, prose and conditional requirements independently apply.",
+    "status": "RECONCILED",
+    "unconditional_required_count": 2
+  },
   "invalid_count": 24,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -33627,11 +34196,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: schemas/draft/resource.schema.json [sha256 da075a12e91b40d9110f7e5f07ef4aad6a3d4dfcf0edc499219098b7c4cb2145]
-
 ### D.PRESENCE.VCP.result
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -33661,6 +34228,13 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.PRESENCE.VCP.result",
   "formula": "2^14; required-key pass count 2^12",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "declared_property_count": 14,
+    "formula": "C=2^14; V=2^(14-2); I=C-V; N=0",
+    "scope": "Unconditional required-key monotonicity only. Values, prose and conditional requirements independently apply.",
+    "status": "RECONCILED",
+    "unconditional_required_count": 2
+  },
   "invalid_count": 12288,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -33688,11 +34262,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: schemas/draft/result.schema.json [sha256 41625c8616ebb6cbe5da97a88bb8d7e747b40d40db35b82eb0ea4a534a4c2173]
-
 ### D.PRESENCE.VCP.run-record
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -33726,6 +34298,13 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.PRESENCE.VCP.run-record",
   "formula": "2^18; required-key pass count 2^4",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "declared_property_count": 18,
+    "formula": "C=2^18; V=2^(18-14); I=C-V; N=0",
+    "scope": "Unconditional required-key monotonicity only. Values, prose and conditional requirements independently apply.",
+    "status": "RECONCILED",
+    "unconditional_required_count": 14
+  },
   "invalid_count": 262128,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -33757,11 +34336,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: schemas/draft/run-record.schema.json [sha256 f0d812b54bd748d282e39016885d3776207a7865763969365002e052aca02773]
-
 ### D.PRESENCE.VCP.selection
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -33779,6 +34356,13 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.PRESENCE.VCP.selection",
   "formula": "2^2; required-key pass count 2^0",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "declared_property_count": 2,
+    "formula": "C=2^2; V=2^(2-2); I=C-V; N=0",
+    "scope": "Unconditional required-key monotonicity only. Values, prose and conditional requirements independently apply.",
+    "status": "RECONCILED",
+    "unconditional_required_count": 2
+  },
   "invalid_count": 3,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -33793,11 +34377,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: schemas/draft/selection.schema.json [sha256 d6c0f5e13bf50425e9b934254188a95a968465dc27774f61187caec77f5000b9]
-
 ### D.PRESENCE.VCP.severity-domain
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -33815,6 +34397,13 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.PRESENCE.VCP.severity-domain",
   "formula": "2^2; required-key pass count 2^0",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "declared_property_count": 2,
+    "formula": "C=2^2; V=2^(2-2); I=C-V; N=0",
+    "scope": "Unconditional required-key monotonicity only. Values, prose and conditional requirements independently apply.",
+    "status": "RECONCILED",
+    "unconditional_required_count": 2
+  },
   "invalid_count": 3,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -33829,11 +34418,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: schemas/draft/severity-domain.schema.json [sha256 5451af1a9db01672b874f8d38811ea265f9635fb9f8b9892cfe0f07a693540fd]
-
 ### D.PRESENCE.VCP.verification-definition
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -33861,6 +34448,13 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.PRESENCE.VCP.verification-definition",
   "formula": "2^12; required-key pass count 2^3",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "declared_property_count": 12,
+    "formula": "C=2^12; V=2^(12-9); I=C-V; N=0",
+    "scope": "Unconditional required-key monotonicity only. Values, prose and conditional requirements independently apply.",
+    "status": "RECONCILED",
+    "unconditional_required_count": 9
+  },
   "invalid_count": 4088,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -33886,11 +34480,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: schemas/draft/verification-definition.schema.json [sha256 4830194f7bfc1c33ba1d6f9d977ac402231f9bcc59e2990ab076ba0e7b545294]
-
 ### D.STANDARD.READ_TEXT
 
-Status: DERIVED. Canonical links: CM.RELAY.STANDARD.READ_TEXT.
+Canonical links: CM.RELAY.STANDARD.READ_TEXT
 
 ```json
 {
@@ -33909,10 +34501,58 @@ Status: DERIVED. Canonical links: CM.RELAY.STANDARD.READ_TEXT.
   "candidate_count": "unbounded",
   "derivation": "Published local capability meaning and authored schema declarations, with distinct environment failures. Arrays/text/filesystem state are unbounded; named partitions are semantic classes, not exhaustive arbitrary JSON samples.",
   "domain_id": "D.STANDARD.READ_TEXT",
+  "exact_capability_contract": {
+    "authority": "LOCAL_STANDARD_PROVIDER_SCHEMA; portable VCP acceptance remains an additional boundary",
+    "capability_id": "openverify.read_text",
+    "capability_version": "1",
+    "config_schema": {
+      "additionalProperties": false,
+      "properties": {},
+      "required": [],
+      "type": "object"
+    },
+    "input_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "file": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "file"
+      ],
+      "type": "object"
+    },
+    "operation_kind": "DERIVE",
+    "output_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "identity": {
+          "type": "object"
+        },
+        "text": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "text",
+        "identity"
+      ],
+      "type": "object"
+    },
+    "provider_id": "openverify.standard.read_text",
+    "provider_version": "1",
+    "source": {
+      "line_end": 101,
+      "line_start": 99,
+      "path": "src/openverify/standard/filesystem.py",
+      "sha256": "8e72d8e8a03c78677d1ff1582fbde88eeb072c3f2f3975b8fdcfca4b25f8f85e"
+    }
+  },
   "inapplicable_set": "Unavailable optional tools and host filesystem/process authorization are explicit host preconditions.",
   "invalid_set": "Any contrary verdict, fabricated observation or acceptance beyond the declared schema/precondition. Runtime execution failures use Provider ERROR, not a fabricated FAIL.",
   "kind": "SYMBOLIC",
-  "mathematics_status": "DERIVED",
+  "mathematics_status": "EXACT_WIRE_SCHEMAS_AND_SEMANTIC_PARTITIONS_REVIEWED",
   "partitions": [
     "missing file",
     "outside authorized roots",
@@ -33922,15 +34562,56 @@ Status: DERIVED. Canonical links: CM.RELAY.STANDARD.READ_TEXT.
     "empty text",
     "valid multibyte text"
   ],
+  "presence_projections": {
+    "config_schema": {
+      "axes": {},
+      "candidate_count": 1,
+      "derivation": "2^0 declared-key masks; mandatory key set of size0 leaves 0 optional bits. Values and conditional behavioral requirements separate.",
+      "inapplicable_count": 0,
+      "invalid_count": 0,
+      "scope": "Declared names only; unexpected keys rejected by closed object predicate.",
+      "valid_count": 1
+    },
+    "input_schema": {
+      "axes": {
+        "file": [
+          "ABSENT",
+          "PRESENT"
+        ]
+      },
+      "candidate_count": 2,
+      "derivation": "2^1 declared-key masks; mandatory key set of size1 leaves 0 optional bits. Values and conditional behavioral requirements separate.",
+      "inapplicable_count": 0,
+      "invalid_count": 1,
+      "scope": "Declared names only; unexpected keys rejected by closed object predicate.",
+      "valid_count": 1
+    },
+    "output_schema": {
+      "axes": {
+        "identity": [
+          "ABSENT",
+          "PRESENT"
+        ],
+        "text": [
+          "ABSENT",
+          "PRESENT"
+        ]
+      },
+      "candidate_count": 4,
+      "derivation": "2^2 declared-key masks; mandatory key set of size2 leaves 0 optional bits. Values and conditional behavioral requirements separate.",
+      "inapplicable_count": 0,
+      "invalid_count": 3,
+      "scope": "Declared names only; unexpected keys rejected by closed object predicate.",
+      "valid_count": 1
+    }
+  },
   "valid_set": "Read bounded authorized bytes, reject NUL/binary and invalid UTF-8, return decoded text and identity over the exact read bytes."
 }
 ```
 
-Source references: src/openverify/standard/filesystem.py:1-124 [sha256 8e72d8e8a03c78677d1ff1582fbde88eeb072c3f2f3975b8fdcfca4b25f8f85e], docs/relay/providers.md:72-91 [sha256 f066a4343ad905b727ab59b3a9dcb4d3940a0cca0258f615ee98c04f72bd86fa]
-
 ### D.STANDARD.READ_FILE
 
-Status: DERIVED. Canonical links: CM.RELAY.STANDARD.READ_FILE, CM.RELAY.STANDARD.FILES.IDENTITY.
+Canonical links: CM.RELAY.SECURITY.FILES, CM.RELAY.STANDARD.FILES.IDENTITY, CM.RELAY.STANDARD.READ_FILE, CM.SDK.FILEACCESS.ROOTS, CM.SDK.FILEACCESS.RELATIVE, CM.SDK.FILEACCESS.BOUNDS, CM.SDK.FILEACCESS.SNAPSHOT
 
 ```json
 {
@@ -33949,10 +34630,58 @@ Status: DERIVED. Canonical links: CM.RELAY.STANDARD.READ_FILE, CM.RELAY.STANDARD
   "candidate_count": "unbounded",
   "derivation": "Published local capability meaning and authored schema declarations, with distinct environment failures. Arrays/text/filesystem state are unbounded; named partitions are semantic classes, not exhaustive arbitrary JSON samples.",
   "domain_id": "D.STANDARD.READ_FILE",
+  "exact_capability_contract": {
+    "authority": "LOCAL_STANDARD_PROVIDER_SCHEMA; portable VCP acceptance remains an additional boundary",
+    "capability_id": "openverify.read_file",
+    "capability_version": "1",
+    "config_schema": {
+      "additionalProperties": false,
+      "properties": {},
+      "required": [],
+      "type": "object"
+    },
+    "input_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "file": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "file"
+      ],
+      "type": "object"
+    },
+    "operation_kind": "DERIVE",
+    "output_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "base64": {
+          "type": "string"
+        },
+        "identity": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "base64",
+        "identity"
+      ],
+      "type": "object"
+    },
+    "provider_id": "openverify.standard.read_file",
+    "provider_version": "1",
+    "source": {
+      "line_end": 108,
+      "line_start": 102,
+      "path": "src/openverify/standard/filesystem.py",
+      "sha256": "8e72d8e8a03c78677d1ff1582fbde88eeb072c3f2f3975b8fdcfca4b25f8f85e"
+    }
+  },
   "inapplicable_set": "Unavailable optional tools and host filesystem/process authorization are explicit host preconditions.",
   "invalid_set": "Any contrary verdict, fabricated observation or acceptance beyond the declared schema/precondition. Runtime execution failures use Provider ERROR, not a fabricated FAIL.",
   "kind": "SYMBOLIC",
-  "mathematics_status": "DERIVED",
+  "mathematics_status": "EXACT_WIRE_SCHEMAS_AND_SEMANTIC_PARTITIONS_REVIEWED",
   "partitions": [
     "missing",
     "escape",
@@ -33960,15 +34689,63 @@ Status: DERIVED. Canonical links: CM.RELAY.STANDARD.READ_FILE, CM.RELAY.STANDARD
     "zero bytes",
     "arbitrary binary"
   ],
+  "presence_projections": {
+    "config_schema": {
+      "axes": {},
+      "candidate_count": 1,
+      "derivation": "2^0 declared-key masks; mandatory key set of size0 leaves 0 optional bits. Values and conditional behavioral requirements separate.",
+      "inapplicable_count": 0,
+      "invalid_count": 0,
+      "scope": "Declared names only; unexpected keys rejected by closed object predicate.",
+      "valid_count": 1
+    },
+    "input_schema": {
+      "axes": {
+        "file": [
+          "ABSENT",
+          "PRESENT"
+        ]
+      },
+      "candidate_count": 2,
+      "derivation": "2^1 declared-key masks; mandatory key set of size1 leaves 0 optional bits. Values and conditional behavioral requirements separate.",
+      "inapplicable_count": 0,
+      "invalid_count": 1,
+      "scope": "Declared names only; unexpected keys rejected by closed object predicate.",
+      "valid_count": 1
+    },
+    "output_schema": {
+      "axes": {
+        "base64": [
+          "ABSENT",
+          "PRESENT"
+        ],
+        "identity": [
+          "ABSENT",
+          "PRESENT"
+        ]
+      },
+      "candidate_count": 4,
+      "derivation": "2^2 declared-key masks; mandatory key set of size2 leaves 0 optional bits. Values and conditional behavioral requirements separate.",
+      "inapplicable_count": 0,
+      "invalid_count": 3,
+      "scope": "Declared names only; unexpected keys rejected by closed object predicate.",
+      "valid_count": 1
+    }
+  },
+  "requirement_ids": [
+    "CM.RELAY.SECURITY.FILES",
+    "CM.SDK.FILEACCESS.ROOTS",
+    "CM.SDK.FILEACCESS.RELATIVE",
+    "CM.SDK.FILEACCESS.BOUNDS",
+    "CM.SDK.FILEACCESS.SNAPSHOT"
+  ],
   "valid_set": "Read bounded authorized bytes; base64 encodes those bytes, sha256 and size describe the same bytes."
 }
 ```
 
-Source references: src/openverify/standard/filesystem.py:1-124 [sha256 8e72d8e8a03c78677d1ff1582fbde88eeb072c3f2f3975b8fdcfca4b25f8f85e], docs/relay/providers.md:72-91 [sha256 f066a4343ad905b727ab59b3a9dcb4d3940a0cca0258f615ee98c04f72bd86fa], docs/relay/providers.md:1-147 [sha256 f066a4343ad905b727ab59b3a9dcb4d3940a0cca0258f615ee98c04f72bd86fa]
-
 ### D.STANDARD.SELECT_FILES
 
-Status: DERIVED. Canonical links: CM.RELAY.STANDARD.SELECT_FILES.
+Canonical links: CM.RELAY.STANDARD.SELECT_FILES
 
 ```json
 {
@@ -33987,10 +34764,73 @@ Status: DERIVED. Canonical links: CM.RELAY.STANDARD.SELECT_FILES.
   "candidate_count": "unbounded",
   "derivation": "Published local capability meaning and authored schema declarations, with distinct environment failures. Arrays/text/filesystem state are unbounded; named partitions are semantic classes, not exhaustive arbitrary JSON samples.",
   "domain_id": "D.STANDARD.SELECT_FILES",
+  "exact_capability_contract": {
+    "authority": "LOCAL_STANDARD_PROVIDER_SCHEMA; portable VCP acceptance remains an additional boundary",
+    "capability_id": "openverify.select_files",
+    "capability_version": "1",
+    "config_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "files": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "glob": {
+          "type": "string"
+        },
+        "mode": {
+          "enum": [
+            "files",
+            "glob",
+            "directory"
+          ]
+        }
+      },
+      "required": [
+        "mode"
+      ],
+      "type": "object"
+    },
+    "input_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "directory": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "directory"
+      ],
+      "type": "object"
+    },
+    "operation_kind": "DERIVE",
+    "output_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "files": {
+          "type": "array"
+        }
+      },
+      "required": [
+        "files"
+      ],
+      "type": "object"
+    },
+    "provider_id": "openverify.standard.select_files",
+    "provider_version": "1",
+    "source": {
+      "line_end": 123,
+      "line_start": 109,
+      "path": "src/openverify/standard/filesystem.py",
+      "sha256": "8e72d8e8a03c78677d1ff1582fbde88eeb072c3f2f3975b8fdcfca4b25f8f85e"
+    }
+  },
   "inapplicable_set": "Unavailable optional tools and host filesystem/process authorization are explicit host preconditions.",
   "invalid_set": "Any contrary verdict, fabricated observation or acceptance beyond the declared schema/precondition. Runtime execution failures use Provider ERROR, not a fabricated FAIL.",
   "kind": "SYMBOLIC",
-  "mathematics_status": "DERIVED",
+  "mathematics_status": "EXACT_WIRE_SCHEMAS_AND_SEMANTIC_PARTITIONS_REVIEWED",
   "partitions": [
     "explicit files",
     "glob",
@@ -34000,15 +34840,65 @@ Status: DERIVED. Canonical links: CM.RELAY.STANDARD.SELECT_FILES.
     "empty selection",
     "file limit"
   ],
+  "presence_projections": {
+    "config_schema": {
+      "axes": {
+        "files": [
+          "ABSENT",
+          "PRESENT"
+        ],
+        "glob": [
+          "ABSENT",
+          "PRESENT"
+        ],
+        "mode": [
+          "ABSENT",
+          "PRESENT"
+        ]
+      },
+      "candidate_count": 8,
+      "derivation": "2^3 declared-key masks; mandatory key set of size1 leaves 2 optional bits. Values and conditional behavioral requirements separate.",
+      "inapplicable_count": 0,
+      "invalid_count": 4,
+      "scope": "Declared names only; unexpected keys rejected by closed object predicate.",
+      "valid_count": 4
+    },
+    "input_schema": {
+      "axes": {
+        "directory": [
+          "ABSENT",
+          "PRESENT"
+        ]
+      },
+      "candidate_count": 2,
+      "derivation": "2^1 declared-key masks; mandatory key set of size1 leaves 0 optional bits. Values and conditional behavioral requirements separate.",
+      "inapplicable_count": 0,
+      "invalid_count": 1,
+      "scope": "Declared names only; unexpected keys rejected by closed object predicate.",
+      "valid_count": 1
+    },
+    "output_schema": {
+      "axes": {
+        "files": [
+          "ABSENT",
+          "PRESENT"
+        ]
+      },
+      "candidate_count": 2,
+      "derivation": "2^1 declared-key masks; mandatory key set of size1 leaves 0 optional bits. Values and conditional behavioral requirements separate.",
+      "inapplicable_count": 0,
+      "invalid_count": 1,
+      "scope": "Declared names only; unexpected keys rejected by closed object predicate.",
+      "valid_count": 1
+    }
+  },
   "valid_set": "Authorize selected files within host roots; choose explicit files, supplied/default glob or recursive directory traversal; return sorted paths bounded by file limit."
 }
 ```
 
-Source references: src/openverify/standard/filesystem.py:1-124 [sha256 8e72d8e8a03c78677d1ff1582fbde88eeb072c3f2f3975b8fdcfca4b25f8f85e], docs/relay/providers.md:72-91 [sha256 f066a4343ad905b727ab59b3a9dcb4d3940a0cca0258f615ee98c04f72bd86fa]
-
 ### D.STANDARD.TEXT
 
-Status: DERIVED. Canonical links: CM.RELAY.STANDARD.TEXT, CM.RELAY.STANDARD.TEXT.TERMS, CM.RELAY.STANDARD.TEXT.OFFSETS, CM.RELAY.STANDARD.TEXT.LINECOL.
+Canonical links: CM.RELAY.SECURITY.TEXT, CM.RELAY.STANDARD.TEXT, CM.RELAY.TEXT.COORDINATES.TERMS, CM.RELAY.TEXT.COORDINATES.OFFSETS, CM.RELAY.TEXT.COORDINATES.LINECOL
 
 ```json
 {
@@ -34027,10 +34917,98 @@ Status: DERIVED. Canonical links: CM.RELAY.STANDARD.TEXT, CM.RELAY.STANDARD.TEXT
   "candidate_count": "unbounded",
   "derivation": "Published local capability meaning and authored schema declarations, with distinct environment failures. Arrays/text/filesystem state are unbounded; named partitions are semantic classes, not exhaustive arbitrary JSON samples.",
   "domain_id": "D.STANDARD.TEXT",
+  "exact_capability_contract": {
+    "authority": "LOCAL_STANDARD_PROVIDER_SCHEMA; portable VCP acceptance remains an additional boundary",
+    "capability_id": "openverify.text",
+    "capability_version": "1",
+    "config_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "patterns": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "prohibited": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "required": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "input_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "criterion": {
+          "type": "object"
+        },
+        "prohibited_terms": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "required_terms": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "subject": {
+          "type": "object"
+        },
+        "text": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "text",
+        "subject",
+        "criterion"
+      ],
+      "type": "object"
+    },
+    "operation_kind": "EVALUATE",
+    "output_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "result": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "result"
+      ],
+      "type": "object"
+    },
+    "provider_id": "openverify.standard.text",
+    "provider_version": "1",
+    "source": {
+      "line_end": 84,
+      "line_start": 73,
+      "path": "src/openverify/standard/text.py",
+      "sha256": "98eab2a5ca35d2a79a3182e1c60c64073369f6a516b6c398f9661af2cc54d22e"
+    }
+  },
   "inapplicable_set": "Unavailable optional tools and host filesystem/process authorization are explicit host preconditions.",
   "invalid_set": "Any contrary verdict, fabricated observation or acceptance beyond the declared schema/precondition. Runtime execution failures use Provider ERROR, not a fabricated FAIL.",
   "kind": "SYMBOLIC",
-  "mathematics_status": "DERIVED",
+  "literal_predicates": {
+    "pattern": "One pattern_missing per authored pattern with no regex search match; invalid regex/worker failure is execution error.",
+    "prohibited": "For each authored term t enumerate nonoverlapping find positions from start0; end=start+len(t), next=start+max(1,len(t)); preserve term order then ascending occurrence offset.",
+    "required": "One required_text_missing per authored required term t iff t not substring(text)."
+  },
+  "mathematics_status": "EXACT_WIRE_SCHEMAS_AND_SEMANTIC_PARTITIONS_REVIEWED",
   "partitions": [
     "missing required",
     "present prohibited",
@@ -34038,17 +35016,95 @@ Status: DERIVED. Canonical links: CM.RELAY.STANDARD.TEXT, CM.RELAY.STANDARD.TEXT
     "no findings",
     "Unicode coordinates",
     "invalid regex",
-    "text/regex limit"
+    "text/regex limit",
+    "empty required literal always present",
+    "empty prohibited literal matches at all len(text)+1 positions, including zero-width final position",
+    "duplicate authored terms retain repeated observations",
+    "empty regex matches any text",
+    "case-sensitive literal matching",
+    "non-overlapping repeated prohibited matches using next_start=offset+max(1,len(term))"
+  ],
+  "presence_projections": {
+    "config_schema": {
+      "axes": {
+        "patterns": [
+          "ABSENT",
+          "PRESENT"
+        ],
+        "prohibited": [
+          "ABSENT",
+          "PRESENT"
+        ],
+        "required": [
+          "ABSENT",
+          "PRESENT"
+        ]
+      },
+      "candidate_count": 8,
+      "derivation": "2^3 declared-key masks; mandatory key set of size0 leaves 3 optional bits. Values and conditional behavioral requirements separate.",
+      "inapplicable_count": 0,
+      "invalid_count": 0,
+      "scope": "Declared names only; unexpected keys rejected by closed object predicate.",
+      "valid_count": 8
+    },
+    "input_schema": {
+      "axes": {
+        "criterion": [
+          "ABSENT",
+          "PRESENT"
+        ],
+        "prohibited_terms": [
+          "ABSENT",
+          "PRESENT"
+        ],
+        "required_terms": [
+          "ABSENT",
+          "PRESENT"
+        ],
+        "subject": [
+          "ABSENT",
+          "PRESENT"
+        ],
+        "text": [
+          "ABSENT",
+          "PRESENT"
+        ]
+      },
+      "candidate_count": 32,
+      "derivation": "2^5 declared-key masks; mandatory key set of size3 leaves 2 optional bits. Values and conditional behavioral requirements separate.",
+      "inapplicable_count": 0,
+      "invalid_count": 28,
+      "scope": "Declared names only; unexpected keys rejected by closed object predicate.",
+      "valid_count": 4
+    },
+    "output_schema": {
+      "axes": {
+        "result": [
+          "ABSENT",
+          "PRESENT"
+        ]
+      },
+      "candidate_count": 2,
+      "derivation": "2^1 declared-key masks; mandatory key set of size1 leaves 0 optional bits. Values and conditional behavioral requirements separate.",
+      "inapplicable_count": 0,
+      "invalid_count": 1,
+      "scope": "Declared names only; unexpected keys rejected by closed object predicate.",
+      "valid_count": 1
+    }
+  },
+  "requirement_ids": [
+    "CM.RELAY.SECURITY.TEXT",
+    "CM.RELAY.TEXT.COORDINATES.TERMS",
+    "CM.RELAY.TEXT.COORDINATES.OFFSETS",
+    "CM.RELAY.TEXT.COORDINATES.LINECOL"
   ],
   "valid_set": "Combine bound and configured terms. Missing required literals, present prohibited literals and unmatched required regex produce structured findings; PASS iff no findings."
 }
 ```
 
-Source references: src/openverify/standard/text.py:72-84 [sha256 98eab2a5ca35d2a79a3182e1c60c64073369f6a516b6c398f9661af2cc54d22e], docs/relay/providers.md:72-91 [sha256 f066a4343ad905b727ab59b3a9dcb4d3940a0cca0258f615ee98c04f72bd86fa], src/openverify/standard/text.py:1-84 [sha256 98eab2a5ca35d2a79a3182e1c60c64073369f6a516b6c398f9661af2cc54d22e], docs/relay/providers.md:1-147 [sha256 f066a4343ad905b727ab59b3a9dcb4d3940a0cca0258f615ee98c04f72bd86fa]
-
 ### D.STANDARD.JSON_PARSE
 
-Status: DERIVED. Canonical links: CM.RELAY.STANDARD.JSON_PARSE.
+Canonical links: CM.RELAY.STANDARD.JSON_PARSE
 
 ```json
 {
@@ -34067,10 +35123,52 @@ Status: DERIVED. Canonical links: CM.RELAY.STANDARD.JSON_PARSE.
   "candidate_count": "unbounded",
   "derivation": "Published local capability meaning and authored schema declarations, with distinct environment failures. Arrays/text/filesystem state are unbounded; named partitions are semantic classes, not exhaustive arbitrary JSON samples.",
   "domain_id": "D.STANDARD.JSON_PARSE",
+  "exact_capability_contract": {
+    "authority": "LOCAL_STANDARD_PROVIDER_SCHEMA; portable VCP acceptance remains an additional boundary",
+    "capability_id": "openverify.json_parse",
+    "capability_version": "1",
+    "config_schema": {
+      "additionalProperties": false,
+      "properties": {},
+      "required": [],
+      "type": "object"
+    },
+    "input_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "text": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "text"
+      ],
+      "type": "object"
+    },
+    "operation_kind": "DERIVE",
+    "output_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "value": true
+      },
+      "required": [
+        "value"
+      ],
+      "type": "object"
+    },
+    "provider_id": "openverify.standard.json_parse",
+    "provider_version": "1",
+    "source": {
+      "line_end": 28,
+      "line_start": 28,
+      "path": "src/openverify/standard/structured.py",
+      "sha256": "8930b3d022eee59a86fe7d57f5bb29b04a1d54e83c795a25ad3c7b805c5d188a"
+    }
+  },
   "inapplicable_set": "Unavailable optional tools and host filesystem/process authorization are explicit host preconditions.",
   "invalid_set": "Any contrary verdict, fabricated observation or acceptance beyond the declared schema/precondition. Runtime execution failures use Provider ERROR, not a fabricated FAIL.",
   "kind": "SYMBOLIC",
-  "mathematics_status": "DERIVED",
+  "mathematics_status": "EXACT_WIRE_SCHEMAS_AND_SEMANTIC_PARTITIONS_REVIEWED",
   "partitions": [
     "object",
     "array",
@@ -34080,15 +35178,52 @@ Status: DERIVED. Canonical links: CM.RELAY.STANDARD.JSON_PARSE.
     "malformed",
     "nonfinite"
   ],
+  "presence_projections": {
+    "config_schema": {
+      "axes": {},
+      "candidate_count": 1,
+      "derivation": "2^0 declared-key masks; mandatory key set of size0 leaves 0 optional bits. Values and conditional behavioral requirements separate.",
+      "inapplicable_count": 0,
+      "invalid_count": 0,
+      "scope": "Declared names only; unexpected keys rejected by closed object predicate.",
+      "valid_count": 1
+    },
+    "input_schema": {
+      "axes": {
+        "text": [
+          "ABSENT",
+          "PRESENT"
+        ]
+      },
+      "candidate_count": 2,
+      "derivation": "2^1 declared-key masks; mandatory key set of size1 leaves 0 optional bits. Values and conditional behavioral requirements separate.",
+      "inapplicable_count": 0,
+      "invalid_count": 1,
+      "scope": "Declared names only; unexpected keys rejected by closed object predicate.",
+      "valid_count": 1
+    },
+    "output_schema": {
+      "axes": {
+        "value": [
+          "ABSENT",
+          "PRESENT"
+        ]
+      },
+      "candidate_count": 2,
+      "derivation": "2^1 declared-key masks; mandatory key set of size1 leaves 0 optional bits. Values and conditional behavioral requirements separate.",
+      "inapplicable_count": 0,
+      "invalid_count": 1,
+      "scope": "Declared names only; unexpected keys rejected by closed object predicate.",
+      "valid_count": 1
+    }
+  },
   "valid_set": "Parse strict JSON, rejecting duplicate keys, malformed text and nonfinite tokens. Preserve parsed JSON type/value."
 }
 ```
 
-Source references: src/openverify/standard/structured.py:1-37 [sha256 8930b3d022eee59a86fe7d57f5bb29b04a1d54e83c795a25ad3c7b805c5d188a], docs/relay/providers.md:72-91 [sha256 f066a4343ad905b727ab59b3a9dcb4d3940a0cca0258f615ee98c04f72bd86fa]
-
 ### D.STANDARD.SCHEMA
 
-Status: DERIVED. Canonical links: CM.RELAY.STANDARD.SCHEMA.
+Canonical links: CM.RELAY.STANDARD.SCHEMA
 
 ```json
 {
@@ -34107,10 +35242,69 @@ Status: DERIVED. Canonical links: CM.RELAY.STANDARD.SCHEMA.
   "candidate_count": "unbounded",
   "derivation": "Published local capability meaning and authored schema declarations, with distinct environment failures. Arrays/text/filesystem state are unbounded; named partitions are semantic classes, not exhaustive arbitrary JSON samples.",
   "domain_id": "D.STANDARD.SCHEMA",
+  "exact_capability_contract": {
+    "authority": "LOCAL_STANDARD_PROVIDER_SCHEMA; portable VCP acceptance remains an additional boundary",
+    "capability_id": "openverify.schema",
+    "capability_version": "1",
+    "config_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "schema": {
+          "type": [
+            "object",
+            "boolean"
+          ]
+        }
+      },
+      "required": [
+        "schema"
+      ],
+      "type": "object"
+    },
+    "input_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "criterion": {
+          "type": "object"
+        },
+        "subject": {
+          "type": "object"
+        },
+        "value": true
+      },
+      "required": [
+        "value",
+        "subject",
+        "criterion"
+      ],
+      "type": "object"
+    },
+    "operation_kind": "EVALUATE",
+    "output_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "result": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "result"
+      ],
+      "type": "object"
+    },
+    "provider_id": "openverify.standard.schema",
+    "provider_version": "1",
+    "source": {
+      "line_end": 36,
+      "line_start": 29,
+      "path": "src/openverify/standard/structured.py",
+      "sha256": "8930b3d022eee59a86fe7d57f5bb29b04a1d54e83c795a25ad3c7b805c5d188a"
+    }
+  },
   "inapplicable_set": "Unavailable optional tools and host filesystem/process authorization are explicit host preconditions.",
   "invalid_set": "Any contrary verdict, fabricated observation or acceptance beyond the declared schema/precondition. Runtime execution failures use Provider ERROR, not a fabricated FAIL.",
   "kind": "SYMBOLIC",
-  "mathematics_status": "DERIVED",
+  "mathematics_status": "EXACT_WIRE_SCHEMAS_AND_SEMANTIC_PARTITIONS_REVIEWED",
   "partitions": [
     "valid schema accepted instance",
     "valid schema rejected instance",
@@ -34118,15 +35312,65 @@ Status: DERIVED. Canonical links: CM.RELAY.STANDARD.SCHEMA.
     "true/false schema",
     "emitted null"
   ],
+  "presence_projections": {
+    "config_schema": {
+      "axes": {
+        "schema": [
+          "ABSENT",
+          "PRESENT"
+        ]
+      },
+      "candidate_count": 2,
+      "derivation": "2^1 declared-key masks; mandatory key set of size1 leaves 0 optional bits. Values and conditional behavioral requirements separate.",
+      "inapplicable_count": 0,
+      "invalid_count": 1,
+      "scope": "Declared names only; unexpected keys rejected by closed object predicate.",
+      "valid_count": 1
+    },
+    "input_schema": {
+      "axes": {
+        "criterion": [
+          "ABSENT",
+          "PRESENT"
+        ],
+        "subject": [
+          "ABSENT",
+          "PRESENT"
+        ],
+        "value": [
+          "ABSENT",
+          "PRESENT"
+        ]
+      },
+      "candidate_count": 8,
+      "derivation": "2^3 declared-key masks; mandatory key set of size3 leaves 0 optional bits. Values and conditional behavioral requirements separate.",
+      "inapplicable_count": 0,
+      "invalid_count": 7,
+      "scope": "Declared names only; unexpected keys rejected by closed object predicate.",
+      "valid_count": 1
+    },
+    "output_schema": {
+      "axes": {
+        "result": [
+          "ABSENT",
+          "PRESENT"
+        ]
+      },
+      "candidate_count": 2,
+      "derivation": "2^1 declared-key masks; mandatory key set of size1 leaves 0 optional bits. Values and conditional behavioral requirements separate.",
+      "inapplicable_count": 0,
+      "invalid_count": 1,
+      "scope": "Declared names only; unexpected keys rejected by closed object predicate.",
+      "valid_count": 1
+    }
+  },
   "valid_set": "Validate the configured self-contained schema, then check supplied value offline. A valid-schema instance mismatch is a schema_mismatch finding, not an execution failure."
 }
 ```
 
-Source references: src/openverify/standard/structured.py:1-37 [sha256 8930b3d022eee59a86fe7d57f5bb29b04a1d54e83c795a25ad3c7b805c5d188a], docs/relay/providers.md:72-91 [sha256 f066a4343ad905b727ab59b3a9dcb4d3940a0cca0258f615ee98c04f72bd86fa]
-
 ### D.STANDARD.SCOPE
 
-Status: DERIVED. Canonical links: CM.RELAY.STANDARD.SCOPE, CM.RELAY.STANDARD.SCOPE.LEXICAL, CM.RELAY.STANDARD.SCOPE.ORDER, CM.RELAY.STANDARD.SCOPE.EMPTY.
+Canonical links: CM.RELAY.SCOPE.RANGES, CM.RELAY.SCOPE.INVALID, CM.RELAY.SCOPE.PATH, CM.RELAY.STANDARD.SCOPE, CM.RELAY.STANDARD.SCOPE.EMPTY, CM.RELAY.STANDARD.SCOPE.LEXICAL, CM.RELAY.STANDARD.SCOPE.ORDER
 
 ```json
 {
@@ -34145,10 +35389,80 @@ Status: DERIVED. Canonical links: CM.RELAY.STANDARD.SCOPE, CM.RELAY.STANDARD.SCO
   "candidate_count": "unbounded",
   "derivation": "Published local capability meaning and authored schema declarations, with distinct environment failures. Arrays/text/filesystem state are unbounded; named partitions are semantic classes, not exhaustive arbitrary JSON samples.",
   "domain_id": "D.STANDARD.SCOPE",
+  "exact_capability_contract": {
+    "authority": "LOCAL_STANDARD_PROVIDER_SCHEMA; portable VCP acceptance remains an additional boundary",
+    "capability_id": "openverify.scope",
+    "capability_version": "1",
+    "config_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "directory": {
+          "type": "string"
+        },
+        "mode": {
+          "enum": [
+            "files",
+            "changed_files",
+            "directory",
+            "changed_spans",
+            "ast_ranges"
+          ]
+        }
+      },
+      "required": [
+        "mode"
+      ],
+      "type": "object"
+    },
+    "input_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "files": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "findings": {
+          "type": "array"
+        },
+        "ranges": {
+          "type": "array"
+        }
+      },
+      "required": [
+        "findings",
+        "files",
+        "ranges"
+      ],
+      "type": "object"
+    },
+    "operation_kind": "DERIVE",
+    "output_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "findings": {
+          "type": "array"
+        }
+      },
+      "required": [
+        "findings"
+      ],
+      "type": "object"
+    },
+    "provider_id": "openverify.standard.scope",
+    "provider_version": "1",
+    "source": {
+      "line_end": 103,
+      "line_start": 82,
+      "path": "src/openverify/standard/scope.py",
+      "sha256": "935b8b2996a0f6416c4292f2155a5e4220295fe49728c944b51bf59699482ab6"
+    }
+  },
   "inapplicable_set": "Unavailable optional tools and host filesystem/process authorization are explicit host preconditions.",
   "invalid_set": "Any contrary verdict, fabricated observation or acceptance beyond the declared schema/precondition. Runtime execution failures use Provider ERROR, not a fabricated FAIL.",
   "kind": "SYMBOLIC",
-  "mathematics_status": "DERIVED",
+  "mathematics_status": "EXACT_WIRE_SCHEMAS_AND_SEMANTIC_PARTITIONS_REVIEWED",
   "partitions": [
     "empty files",
     "exact file",
@@ -34158,15 +35472,74 @@ Status: DERIVED. Canonical links: CM.RELAY.STANDARD.SCOPE, CM.RELAY.STANDARD.SCO
     "empty range",
     "invalid path"
   ],
+  "presence_projections": {
+    "config_schema": {
+      "axes": {
+        "directory": [
+          "ABSENT",
+          "PRESENT"
+        ],
+        "mode": [
+          "ABSENT",
+          "PRESENT"
+        ]
+      },
+      "candidate_count": 4,
+      "derivation": "2^2 declared-key masks; mandatory key set of size1 leaves 1 optional bits. Values and conditional behavioral requirements separate.",
+      "inapplicable_count": 0,
+      "invalid_count": 2,
+      "scope": "Declared names only; unexpected keys rejected by closed object predicate.",
+      "valid_count": 2
+    },
+    "input_schema": {
+      "axes": {
+        "files": [
+          "ABSENT",
+          "PRESENT"
+        ],
+        "findings": [
+          "ABSENT",
+          "PRESENT"
+        ],
+        "ranges": [
+          "ABSENT",
+          "PRESENT"
+        ]
+      },
+      "candidate_count": 8,
+      "derivation": "2^3 declared-key masks; mandatory key set of size3 leaves 0 optional bits. Values and conditional behavioral requirements separate.",
+      "inapplicable_count": 0,
+      "invalid_count": 7,
+      "scope": "Declared names only; unexpected keys rejected by closed object predicate.",
+      "valid_count": 1
+    },
+    "output_schema": {
+      "axes": {
+        "findings": [
+          "ABSENT",
+          "PRESENT"
+        ]
+      },
+      "candidate_count": 2,
+      "derivation": "2^1 declared-key masks; mandatory key set of size1 leaves 0 optional bits. Values and conditional behavioral requirements separate.",
+      "inapplicable_count": 0,
+      "invalid_count": 1,
+      "scope": "Declared names only; unexpected keys rejected by closed object predicate.",
+      "valid_count": 1
+    }
+  },
+  "requirement_ids": [
+    "CM.RELAY.SCOPE.RANGES",
+    "CM.RELAY.SCOPE.INVALID",
+    "CM.RELAY.SCOPE.PATH"
+  ],
   "valid_set": "Filter supplied findings in their original order using normalized local file identity or half-open ranges. Preserve original finding strings and coordinates."
 }
 ```
 
-Source references: src/openverify/standard/scope.py:1-105 [sha256 935b8b2996a0f6416c4292f2155a5e4220295fe49728c944b51bf59699482ab6], docs/relay/providers.md:72-91 [sha256 f066a4343ad905b727ab59b3a9dcb4d3940a0cca0258f615ee98c04f72bd86fa], docs/relay/providers.md:1-147 [sha256 f066a4343ad905b727ab59b3a9dcb4d3940a0cca0258f615ee98c04f72bd86fa]
-
 ### D.STANDARD.NO_FINDINGS
 
-Status: DERIVED. Canonical links: CM.RELAY.STANDARD.NO_FINDINGS.
+Canonical links: CM.RELAY.STANDARD.NO_FINDINGS
 
 ```json
 {
@@ -34185,24 +35558,121 @@ Status: DERIVED. Canonical links: CM.RELAY.STANDARD.NO_FINDINGS.
   "candidate_count": "unbounded",
   "derivation": "Published local capability meaning and authored schema declarations, with distinct environment failures. Arrays/text/filesystem state are unbounded; named partitions are semantic classes, not exhaustive arbitrary JSON samples.",
   "domain_id": "D.STANDARD.NO_FINDINGS",
+  "exact_capability_contract": {
+    "authority": "LOCAL_STANDARD_PROVIDER_SCHEMA; portable VCP acceptance remains an additional boundary",
+    "capability_id": "openverify.no_findings",
+    "capability_version": "1",
+    "config_schema": {
+      "additionalProperties": false,
+      "properties": {},
+      "required": [],
+      "type": "object"
+    },
+    "input_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "criterion": {
+          "type": "object"
+        },
+        "findings": {
+          "type": "array"
+        },
+        "subject": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "findings",
+        "subject",
+        "criterion"
+      ],
+      "type": "object"
+    },
+    "operation_kind": "EVALUATE",
+    "output_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "result": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "result"
+      ],
+      "type": "object"
+    },
+    "provider_id": "openverify.standard.no_findings",
+    "provider_version": "1",
+    "source": {
+      "line_end": 104,
+      "line_start": 104,
+      "path": "src/openverify/standard/scope.py",
+      "sha256": "935b8b2996a0f6416c4292f2155a5e4220295fe49728c944b51bf59699482ab6"
+    }
+  },
   "inapplicable_set": "Unavailable optional tools and host filesystem/process authorization are explicit host preconditions.",
   "invalid_set": "Any contrary verdict, fabricated observation or acceptance beyond the declared schema/precondition. Runtime execution failures use Provider ERROR, not a fabricated FAIL.",
   "kind": "SYMBOLIC",
-  "mathematics_status": "DERIVED",
+  "mathematics_status": "EXACT_WIRE_SCHEMAS_AND_SEMANTIC_PARTITIONS_REVIEWED",
   "partitions": [
     "empty array",
     "one finding",
     "many findings"
   ],
+  "presence_projections": {
+    "config_schema": {
+      "axes": {},
+      "candidate_count": 1,
+      "derivation": "2^0 declared-key masks; mandatory key set of size0 leaves 0 optional bits. Values and conditional behavioral requirements separate.",
+      "inapplicable_count": 0,
+      "invalid_count": 0,
+      "scope": "Declared names only; unexpected keys rejected by closed object predicate.",
+      "valid_count": 1
+    },
+    "input_schema": {
+      "axes": {
+        "criterion": [
+          "ABSENT",
+          "PRESENT"
+        ],
+        "findings": [
+          "ABSENT",
+          "PRESENT"
+        ],
+        "subject": [
+          "ABSENT",
+          "PRESENT"
+        ]
+      },
+      "candidate_count": 8,
+      "derivation": "2^3 declared-key masks; mandatory key set of size3 leaves 0 optional bits. Values and conditional behavioral requirements separate.",
+      "inapplicable_count": 0,
+      "invalid_count": 7,
+      "scope": "Declared names only; unexpected keys rejected by closed object predicate.",
+      "valid_count": 1
+    },
+    "output_schema": {
+      "axes": {
+        "result": [
+          "ABSENT",
+          "PRESENT"
+        ]
+      },
+      "candidate_count": 2,
+      "derivation": "2^1 declared-key masks; mandatory key set of size1 leaves 0 optional bits. Values and conditional behavioral requirements separate.",
+      "inapplicable_count": 0,
+      "invalid_count": 1,
+      "scope": "Declared names only; unexpected keys rejected by closed object predicate.",
+      "valid_count": 1
+    }
+  },
   "valid_set": "PASS iff the supplied findings list is empty; otherwise FAIL retaining structured finding evidence."
 }
 ```
 
-Source references: src/openverify/standard/scope.py:1-105 [sha256 935b8b2996a0f6416c4292f2155a5e4220295fe49728c944b51bf59699482ab6], docs/relay/providers.md:72-91 [sha256 f066a4343ad905b727ab59b3a9dcb4d3940a0cca0258f615ee98c04f72bd86fa]
-
 ### D.STANDARD.ACTION_POLICY
 
-Status: DERIVED. Canonical links: CM.RELAY.STANDARD.ACTION_POLICY, CM.RELAY.STANDARD.ACTION.PREFIX_SELF.
+Canonical links: CM.RELAY.ACTION.PREFIX, CM.RELAY.STANDARD.ACTION_POLICY
 
 ```json
 {
@@ -34221,10 +35691,73 @@ Status: DERIVED. Canonical links: CM.RELAY.STANDARD.ACTION_POLICY, CM.RELAY.STAN
   "candidate_count": "unbounded",
   "derivation": "Published local capability meaning and authored schema declarations, with distinct environment failures. Arrays/text/filesystem state are unbounded; named partitions are semantic classes, not exhaustive arbitrary JSON samples.",
   "domain_id": "D.STANDARD.ACTION_POLICY",
+  "exact_capability_contract": {
+    "authority": "LOCAL_STANDARD_PROVIDER_SCHEMA; portable VCP acceptance remains an additional boundary",
+    "capability_id": "openverify.action_policy",
+    "capability_version": "1",
+    "config_schema": {
+      "additionalProperties": false,
+      "properties": {},
+      "required": [],
+      "type": "object"
+    },
+    "input_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "action": {
+          "type": "string"
+        },
+        "allowed_prefixes": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "criterion": {
+          "type": "object"
+        },
+        "subject": {
+          "type": "object"
+        },
+        "target": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "action",
+        "target",
+        "allowed_prefixes",
+        "subject",
+        "criterion"
+      ],
+      "type": "object"
+    },
+    "operation_kind": "EVALUATE",
+    "output_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "result": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "result"
+      ],
+      "type": "object"
+    },
+    "provider_id": "openverify.standard.action_policy",
+    "provider_version": "1",
+    "source": {
+      "line_end": 51,
+      "line_start": 45,
+      "path": "src/openverify/standard/control.py",
+      "sha256": "5ae8c4250ac674ffd11a81f5049633468b788b103a0749106b1d1eda4a67a8ab"
+    }
+  },
   "inapplicable_set": "Unavailable optional tools and host filesystem/process authorization are explicit host preconditions.",
   "invalid_set": "Any contrary verdict, fabricated observation or acceptance beyond the declared schema/precondition. Runtime execution failures use Provider ERROR, not a fabricated FAIL.",
   "kind": "SYMBOLIC",
-  "mathematics_status": "DERIVED",
+  "mathematics_status": "EXACT_WIRE_SCHEMAS_AND_SEMANTIC_PARTITIONS_REVIEWED",
   "partitions": [
     "allowed descendant",
     "prefix itself",
@@ -34235,15 +35768,71 @@ Status: DERIVED. Canonical links: CM.RELAY.STANDARD.ACTION_POLICY, CM.RELAY.STAN
     "other action",
     "empty allowlist"
   ],
+  "presence_projections": {
+    "config_schema": {
+      "axes": {},
+      "candidate_count": 1,
+      "derivation": "2^0 declared-key masks; mandatory key set of size0 leaves 0 optional bits. Values and conditional behavioral requirements separate.",
+      "inapplicable_count": 0,
+      "invalid_count": 0,
+      "scope": "Declared names only; unexpected keys rejected by closed object predicate.",
+      "valid_count": 1
+    },
+    "input_schema": {
+      "axes": {
+        "action": [
+          "ABSENT",
+          "PRESENT"
+        ],
+        "allowed_prefixes": [
+          "ABSENT",
+          "PRESENT"
+        ],
+        "criterion": [
+          "ABSENT",
+          "PRESENT"
+        ],
+        "subject": [
+          "ABSENT",
+          "PRESENT"
+        ],
+        "target": [
+          "ABSENT",
+          "PRESENT"
+        ]
+      },
+      "candidate_count": 32,
+      "derivation": "2^5 declared-key masks; mandatory key set of size5 leaves 0 optional bits. Values and conditional behavioral requirements separate.",
+      "inapplicable_count": 0,
+      "invalid_count": 31,
+      "scope": "Declared names only; unexpected keys rejected by closed object predicate.",
+      "valid_count": 1
+    },
+    "output_schema": {
+      "axes": {
+        "result": [
+          "ABSENT",
+          "PRESENT"
+        ]
+      },
+      "candidate_count": 2,
+      "derivation": "2^1 declared-key masks; mandatory key set of size1 leaves 0 optional bits. Values and conditional behavioral requirements separate.",
+      "inapplicable_count": 0,
+      "invalid_count": 1,
+      "scope": "Declared names only; unexpected keys rejected by closed object predicate.",
+      "valid_count": 1
+    }
+  },
+  "requirement_ids": [
+    "CM.RELAY.ACTION.PREFIX"
+  ],
   "valid_set": "Only delete with a nonempty relative target strictly below a valid relative directory prefix passes. Invalid supplied prefix, traversal, absolute/ambiguous path or a prefix itself fails closed."
 }
 ```
 
-Source references: src/openverify/standard/control.py:1-53 [sha256 5ae8c4250ac674ffd11a81f5049633468b788b103a0749106b1d1eda4a67a8ab], docs/relay/providers.md:72-91 [sha256 f066a4343ad905b727ab59b3a9dcb4d3940a0cca0258f615ee98c04f72bd86fa], docs/relay/providers.md:1-147 [sha256 f066a4343ad905b727ab59b3a9dcb4d3940a0cca0258f615ee98c04f72bd86fa]
-
 ### D.STANDARD.GATE
 
-Status: DERIVED. Canonical links: CM.RELAY.STANDARD.GATE, CM.RELAY.STANDARD.GATE.INVALID.
+Canonical links: CM.RELAY.STANDARD.GATE, CM.RELAY.STANDARD.GATE.INVALID
 
 ```json
 {
@@ -34262,10 +35851,54 @@ Status: DERIVED. Canonical links: CM.RELAY.STANDARD.GATE, CM.RELAY.STANDARD.GATE
   "candidate_count": "unbounded",
   "derivation": "Published local capability meaning and authored schema declarations, with distinct environment failures. Arrays/text/filesystem state are unbounded; named partitions are semantic classes, not exhaustive arbitrary JSON samples.",
   "domain_id": "D.STANDARD.GATE",
+  "exact_capability_contract": {
+    "authority": "LOCAL_STANDARD_PROVIDER_SCHEMA; portable VCP acceptance remains an additional boundary",
+    "capability_id": "openverify.gate",
+    "capability_version": "1",
+    "config_schema": {
+      "additionalProperties": false,
+      "properties": {},
+      "required": [],
+      "type": "object"
+    },
+    "input_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "checked": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "checked"
+      ],
+      "type": "object"
+    },
+    "operation_kind": "CONTROL",
+    "output_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "decision": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "decision"
+      ],
+      "type": "object"
+    },
+    "provider_id": "openverify.standard.gate",
+    "provider_version": "1",
+    "source": {
+      "line_end": 52,
+      "line_start": 52,
+      "path": "src/openverify/standard/control.py",
+      "sha256": "5ae8c4250ac674ffd11a81f5049633468b788b103a0749106b1d1eda4a67a8ab"
+    }
+  },
   "inapplicable_set": "Unavailable optional tools and host filesystem/process authorization are explicit host preconditions.",
   "invalid_set": "Any contrary verdict, fabricated observation or acceptance beyond the declared schema/precondition. Runtime execution failures use Provider ERROR, not a fabricated FAIL.",
   "kind": "SYMBOLIC",
-  "mathematics_status": "DERIVED",
+  "mathematics_status": "EXACT_WIRE_SCHEMAS_AND_SEMANTIC_PARTITIONS_REVIEWED",
   "partitions": [
     "known pass",
     "known fail",
@@ -34276,15 +35909,52 @@ Status: DERIVED. Canonical links: CM.RELAY.STANDARD.GATE, CM.RELAY.STANDARD.GATE
     "nonexecution",
     "invalid Result"
   ],
+  "presence_projections": {
+    "config_schema": {
+      "axes": {},
+      "candidate_count": 1,
+      "derivation": "2^0 declared-key masks; mandatory key set of size0 leaves 0 optional bits. Values and conditional behavioral requirements separate.",
+      "inapplicable_count": 0,
+      "invalid_count": 0,
+      "scope": "Declared names only; unexpected keys rejected by closed object predicate.",
+      "valid_count": 1
+    },
+    "input_schema": {
+      "axes": {
+        "checked": [
+          "ABSENT",
+          "PRESENT"
+        ]
+      },
+      "candidate_count": 2,
+      "derivation": "2^1 declared-key masks; mandatory key set of size1 leaves 0 optional bits. Values and conditional behavioral requirements separate.",
+      "inapplicable_count": 0,
+      "invalid_count": 1,
+      "scope": "Declared names only; unexpected keys rejected by closed object predicate.",
+      "valid_count": 1
+    },
+    "output_schema": {
+      "axes": {
+        "decision": [
+          "ABSENT",
+          "PRESENT"
+        ]
+      },
+      "candidate_count": 2,
+      "derivation": "2^1 declared-key masks; mandatory key set of size1 leaves 0 optional bits. Values and conditional behavioral requirements separate.",
+      "inapplicable_count": 0,
+      "invalid_count": 1,
+      "scope": "Declared names only; unexpected keys rejected by closed object predicate.",
+      "valid_count": 1
+    }
+  },
   "valid_set": "Parse checked as a Result, then CONTINUE only for EXECUTED/SUCCESS/APPLICABLE/KNOWN/PASS; every other valid Result yields STOP_FAILURE."
 }
 ```
 
-Source references: src/openverify/standard/control.py:1-53 [sha256 5ae8c4250ac674ffd11a81f5049633468b788b103a0749106b1d1eda4a67a8ab], docs/relay/providers.md:72-91 [sha256 f066a4343ad905b727ab59b3a9dcb4d3940a0cca0258f615ee98c04f72bd86fa], docs/relay/providers.md:1-147 [sha256 f066a4343ad905b727ab59b3a9dcb4d3940a0cca0258f615ee98c04f72bd86fa]
-
 ### D.STANDARD.COMMAND
 
-Status: DERIVED. Canonical links: CM.RELAY.STANDARD.COMMAND, CM.RELAY.STANDARD.COMMAND.NO_VERDICT.
+Canonical links: CM.RELAY.STANDARD.COMMAND
 
 ```json
 {
@@ -34303,10 +35973,48 @@ Status: DERIVED. Canonical links: CM.RELAY.STANDARD.COMMAND, CM.RELAY.STANDARD.C
   "candidate_count": "unbounded",
   "derivation": "Published local capability meaning and authored schema declarations, with distinct environment failures. Arrays/text/filesystem state are unbounded; named partitions are semantic classes, not exhaustive arbitrary JSON samples.",
   "domain_id": "D.STANDARD.COMMAND",
+  "exact_capability_contract": {
+    "authority": "LOCAL_STANDARD_PROVIDER_SCHEMA; portable VCP acceptance remains an additional boundary",
+    "capability_id": "openverify.command",
+    "capability_version": "1",
+    "config_schema": {
+      "additionalProperties": false,
+      "properties": {},
+      "required": [],
+      "type": "object"
+    },
+    "input_schema": {
+      "additionalProperties": false,
+      "properties": {},
+      "required": [],
+      "type": "object"
+    },
+    "operation_kind": "DERIVE",
+    "output_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "observation": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "observation"
+      ],
+      "type": "object"
+    },
+    "provider_id": "openverify.standard.command",
+    "provider_version": "1",
+    "source": {
+      "line_end": 44,
+      "line_start": 44,
+      "path": "src/openverify/standard/command.py",
+      "sha256": "1532d1dfb2f3a6820bcb26458d589b422562dbbe34fc4ebff6df39a41eab1b52"
+    }
+  },
   "inapplicable_set": "Unavailable optional tools and host filesystem/process authorization are explicit host preconditions.",
   "invalid_set": "Any contrary verdict, fabricated observation or acceptance beyond the declared schema/precondition. Runtime execution failures use Provider ERROR, not a fabricated FAIL.",
   "kind": "SYMBOLIC",
-  "mathematics_status": "DERIVED",
+  "mathematics_status": "EXACT_WIRE_SCHEMAS_AND_SEMANTIC_PARTITIONS_REVIEWED",
   "partitions": [
     "zero/nonzero exit",
     "stdout/stderr",
@@ -34314,15 +36022,47 @@ Status: DERIVED. Canonical links: CM.RELAY.STANDARD.COMMAND, CM.RELAY.STANDARD.C
     "output limit",
     "process launch error"
   ],
+  "presence_projections": {
+    "config_schema": {
+      "axes": {},
+      "candidate_count": 1,
+      "derivation": "2^0 declared-key masks; mandatory key set of size0 leaves 0 optional bits. Values and conditional behavioral requirements separate.",
+      "inapplicable_count": 0,
+      "invalid_count": 0,
+      "scope": "Declared names only; unexpected keys rejected by closed object predicate.",
+      "valid_count": 1
+    },
+    "input_schema": {
+      "axes": {},
+      "candidate_count": 1,
+      "derivation": "2^0 declared-key masks; mandatory key set of size0 leaves 0 optional bits. Values and conditional behavioral requirements separate.",
+      "inapplicable_count": 0,
+      "invalid_count": 0,
+      "scope": "Declared names only; unexpected keys rejected by closed object predicate.",
+      "valid_count": 1
+    },
+    "output_schema": {
+      "axes": {
+        "observation": [
+          "ABSENT",
+          "PRESENT"
+        ]
+      },
+      "candidate_count": 2,
+      "derivation": "2^1 declared-key masks; mandatory key set of size1 leaves 0 optional bits. Values and conditional behavioral requirements separate.",
+      "inapplicable_count": 0,
+      "invalid_count": 1,
+      "scope": "Declared names only; unexpected keys rejected by closed object predicate.",
+      "valid_count": 1
+    }
+  },
   "valid_set": "Run only the host-authored command, bounded by timeout/output limits, and return its observation without deriving a verification verdict."
 }
 ```
 
-Source references: src/openverify/standard/command.py:25-44 [sha256 1532d1dfb2f3a6820bcb26458d589b422562dbbe34fc4ebff6df39a41eab1b52], docs/relay/providers.md:72-91 [sha256 f066a4343ad905b727ab59b3a9dcb4d3940a0cca0258f615ee98c04f72bd86fa], src/openverify/standard/command.py:1-86 [sha256 1532d1dfb2f3a6820bcb26458d589b422562dbbe34fc4ebff6df39a41eab1b52], docs/relay/providers.md:1-147 [sha256 f066a4343ad905b727ab59b3a9dcb4d3940a0cca0258f615ee98c04f72bd86fa]
-
 ### D.STANDARD.COMMAND_CHECK
 
-Status: DERIVED. Canonical links: CM.RELAY.STANDARD.COMMAND_CHECK.
+Canonical links: CM.RELAY.STANDARD.COMMAND_CHECK
 
 ```json
 {
@@ -34341,10 +36081,97 @@ Status: DERIVED. Canonical links: CM.RELAY.STANDARD.COMMAND_CHECK.
   "candidate_count": "unbounded",
   "derivation": "Published local capability meaning and authored schema declarations, with distinct environment failures. Arrays/text/filesystem state are unbounded; named partitions are semantic classes, not exhaustive arbitrary JSON samples.",
   "domain_id": "D.STANDARD.COMMAND_CHECK",
+  "exact_capability_contract": {
+    "authority": "LOCAL_STANDARD_PROVIDER_SCHEMA; portable VCP acceptance remains an additional boundary",
+    "capability_id": "openverify.command_check",
+    "capability_version": "1",
+    "config_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "exit_code": {
+          "type": "integer"
+        },
+        "stderr": {
+          "type": "string"
+        },
+        "stdout": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "exit_code"
+      ],
+      "type": "object"
+    },
+    "input_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "criterion": {
+          "type": "object"
+        },
+        "observation": {
+          "additionalProperties": false,
+          "properties": {
+            "argv": {
+              "type": "array"
+            },
+            "cwd": {
+              "type": "string"
+            },
+            "returncode": {
+              "type": "integer"
+            },
+            "stderr": {
+              "type": "string"
+            },
+            "stdout": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "returncode",
+            "stdout",
+            "stderr"
+          ],
+          "type": "object"
+        },
+        "subject": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "observation",
+        "subject",
+        "criterion"
+      ],
+      "type": "object"
+    },
+    "operation_kind": "EVALUATE",
+    "output_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "result": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "result"
+      ],
+      "type": "object"
+    },
+    "provider_id": "openverify.standard.command_check",
+    "provider_version": "1",
+    "source": {
+      "line_end": 86,
+      "line_start": 72,
+      "path": "src/openverify/standard/command.py",
+      "sha256": "1532d1dfb2f3a6820bcb26458d589b422562dbbe34fc4ebff6df39a41eab1b52"
+    }
+  },
   "inapplicable_set": "Unavailable optional tools and host filesystem/process authorization are explicit host preconditions.",
   "invalid_set": "Any contrary verdict, fabricated observation or acceptance beyond the declared schema/precondition. Runtime execution failures use Provider ERROR, not a fabricated FAIL.",
   "kind": "SYMBOLIC",
-  "mathematics_status": "DERIVED",
+  "mathematics_status": "EXACT_WIRE_SCHEMAS_AND_SEMANTIC_PARTITIONS_REVIEWED",
   "partitions": [
     "matching code",
     "nonmatching code",
@@ -34352,15 +36179,73 @@ Status: DERIVED. Canonical links: CM.RELAY.STANDARD.COMMAND_CHECK.
     "substring absent",
     "no substring constraint"
   ],
+  "presence_projections": {
+    "config_schema": {
+      "axes": {
+        "exit_code": [
+          "ABSENT",
+          "PRESENT"
+        ],
+        "stderr": [
+          "ABSENT",
+          "PRESENT"
+        ],
+        "stdout": [
+          "ABSENT",
+          "PRESENT"
+        ]
+      },
+      "candidate_count": 8,
+      "derivation": "2^3 declared-key masks; mandatory key set of size1 leaves 2 optional bits. Values and conditional behavioral requirements separate.",
+      "inapplicable_count": 0,
+      "invalid_count": 4,
+      "scope": "Declared names only; unexpected keys rejected by closed object predicate.",
+      "valid_count": 4
+    },
+    "input_schema": {
+      "axes": {
+        "criterion": [
+          "ABSENT",
+          "PRESENT"
+        ],
+        "observation": [
+          "ABSENT",
+          "PRESENT"
+        ],
+        "subject": [
+          "ABSENT",
+          "PRESENT"
+        ]
+      },
+      "candidate_count": 8,
+      "derivation": "2^3 declared-key masks; mandatory key set of size3 leaves 0 optional bits. Values and conditional behavioral requirements separate.",
+      "inapplicable_count": 0,
+      "invalid_count": 7,
+      "scope": "Declared names only; unexpected keys rejected by closed object predicate.",
+      "valid_count": 1
+    },
+    "output_schema": {
+      "axes": {
+        "result": [
+          "ABSENT",
+          "PRESENT"
+        ]
+      },
+      "candidate_count": 2,
+      "derivation": "2^1 declared-key masks; mandatory key set of size1 leaves 0 optional bits. Values and conditional behavioral requirements separate.",
+      "inapplicable_count": 0,
+      "invalid_count": 1,
+      "scope": "Declared names only; unexpected keys rejected by closed object predicate.",
+      "valid_count": 1
+    }
+  },
   "valid_set": "Compare exact return code and optional required substrings. Produce unexpected_exit/output_missing findings for mismatches, preserving the checked observation."
 }
 ```
 
-Source references: src/openverify/standard/command.py:1-86 [sha256 1532d1dfb2f3a6820bcb26458d589b422562dbbe34fc4ebff6df39a41eab1b52], docs/relay/providers.md:72-91 [sha256 f066a4343ad905b727ab59b3a9dcb4d3940a0cca0258f615ee98c04f72bd86fa]
-
 ### D.STANDARD.RUFF
 
-Status: DERIVED. Canonical links: CM.RELAY.STANDARD.RUFF.
+Canonical links: CM.RELAY.TOOL.RUFF, CM.RELAY.STANDARD.RUFF
 
 ```json
 {
@@ -34371,18 +36256,87 @@ Status: DERIVED. Canonical links: CM.RELAY.STANDARD.RUFF.
     "output": "findings:array; result:Result"
   },
   "boundary_conditions": [
-    "empty/nonempty",
-    "null rejected unless schema admits it",
-    "host-configured limits",
-    "no external artifact auto-fetch"
+    "Resolve configured executable before file-empty fast path. Empty authorized Python scope avoids process invocation but does not suppress missing-tool configuration error."
   ],
   "candidate_count": "unbounded",
   "derivation": "Published local capability meaning and authored schema declarations, with distinct environment failures. Arrays/text/filesystem state are unbounded; named partitions are semantic classes, not exhaustive arbitrary JSON samples.",
   "domain_id": "D.STANDARD.RUFF",
+  "exact_capability_contract": {
+    "authority": "LOCAL_STANDARD_PROVIDER_SCHEMA; portable VCP acceptance remains an additional boundary",
+    "capability_id": "openverify.ruff",
+    "capability_version": "1",
+    "config_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "select": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "select"
+      ],
+      "type": "object"
+    },
+    "input_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "criterion": {
+          "type": "object"
+        },
+        "cwd": {
+          "type": "string"
+        },
+        "files": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "subject": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "cwd",
+        "files",
+        "subject",
+        "criterion"
+      ],
+      "type": "object"
+    },
+    "operation_kind": "EVALUATE",
+    "output_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "findings": {
+          "type": "array"
+        },
+        "result": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "findings",
+        "result"
+      ],
+      "type": "object"
+    },
+    "provider_id": "openverify.standard.ruff",
+    "provider_version": "1",
+    "source": {
+      "line_end": 86,
+      "line_start": 79,
+      "path": "src/openverify/standard/ruff.py",
+      "sha256": "f1ba8ae9c316f96e0d56a4fe1a66a490db8e354617633af36f68bce7a27c4c52"
+    }
+  },
   "inapplicable_set": "Unavailable optional tools and host filesystem/process authorization are explicit host preconditions.",
   "invalid_set": "Any contrary verdict, fabricated observation or acceptance beyond the declared schema/precondition. Runtime execution failures use Provider ERROR, not a fabricated FAIL.",
   "kind": "SYMBOLIC",
-  "mathematics_status": "DERIVED",
+  "mathematics_status": "EXACT_WIRE_SCHEMAS_AND_SEMANTIC_PARTITIONS_REVIEWED",
   "partitions": [
     "empty Python scope",
     "exit 0",
@@ -34391,15 +36345,76 @@ Status: DERIVED. Canonical links: CM.RELAY.STANDARD.RUFF.
     "invalid code",
     "missing tool"
   ],
+  "presence_projections": {
+    "config_schema": {
+      "axes": {
+        "select": [
+          "ABSENT",
+          "PRESENT"
+        ]
+      },
+      "candidate_count": 2,
+      "derivation": "2^1 declared-key masks; mandatory key set of size1 leaves 0 optional bits. Values and conditional behavioral requirements separate.",
+      "inapplicable_count": 0,
+      "invalid_count": 1,
+      "scope": "Declared names only; unexpected keys rejected by closed object predicate.",
+      "valid_count": 1
+    },
+    "input_schema": {
+      "axes": {
+        "criterion": [
+          "ABSENT",
+          "PRESENT"
+        ],
+        "cwd": [
+          "ABSENT",
+          "PRESENT"
+        ],
+        "files": [
+          "ABSENT",
+          "PRESENT"
+        ],
+        "subject": [
+          "ABSENT",
+          "PRESENT"
+        ]
+      },
+      "candidate_count": 16,
+      "derivation": "2^4 declared-key masks; mandatory key set of size4 leaves 0 optional bits. Values and conditional behavioral requirements separate.",
+      "inapplicable_count": 0,
+      "invalid_count": 15,
+      "scope": "Declared names only; unexpected keys rejected by closed object predicate.",
+      "valid_count": 1
+    },
+    "output_schema": {
+      "axes": {
+        "findings": [
+          "ABSENT",
+          "PRESENT"
+        ],
+        "result": [
+          "ABSENT",
+          "PRESENT"
+        ]
+      },
+      "candidate_count": 4,
+      "derivation": "2^2 declared-key masks; mandatory key set of size2 leaves 0 optional bits. Values and conditional behavioral requirements separate.",
+      "inapplicable_count": 0,
+      "invalid_count": 3,
+      "scope": "Declared names only; unexpected keys rejected by closed object predicate.",
+      "valid_count": 1
+    }
+  },
+  "requirement_ids": [
+    "CM.RELAY.TOOL.RUFF"
+  ],
   "valid_set": "Run installed Ruff isolated with explicit select codes on authorized Python files; report normalized actual diagnostics. Empty scope passes without process invocation; tool failures are ERROR."
 }
 ```
 
-Source references: src/openverify/standard/ruff.py:15-86 [sha256 f1ba8ae9c316f96e0d56a4fe1a66a490db8e354617633af36f68bce7a27c4c52], docs/relay/providers.md:72-91 [sha256 f066a4343ad905b727ab59b3a9dcb4d3940a0cca0258f615ee98c04f72bd86fa]
-
 ### D.STANDARD.PYTEST
 
-Status: DERIVED. Canonical links: CM.RELAY.STANDARD.PYTEST, CM.RELAY.STANDARD.PYTEST.PRIVILEGES.
+Canonical links: CM.RELAY.TOOL.PYTEST, CM.RELAY.STANDARD.PYTEST
 
 ```json
 {
@@ -34418,10 +36433,69 @@ Status: DERIVED. Canonical links: CM.RELAY.STANDARD.PYTEST, CM.RELAY.STANDARD.PY
   "candidate_count": "unbounded",
   "derivation": "Published local capability meaning and authored schema declarations, with distinct environment failures. Arrays/text/filesystem state are unbounded; named partitions are semantic classes, not exhaustive arbitrary JSON samples.",
   "domain_id": "D.STANDARD.PYTEST",
+  "exact_capability_contract": {
+    "authority": "LOCAL_STANDARD_PROVIDER_SCHEMA; portable VCP acceptance remains an additional boundary",
+    "capability_id": "openverify.pytest",
+    "capability_version": "1",
+    "config_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "tests": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "input_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "criterion": {
+          "type": "object"
+        },
+        "cwd": {
+          "type": "string"
+        },
+        "subject": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "cwd",
+        "subject",
+        "criterion"
+      ],
+      "type": "object"
+    },
+    "operation_kind": "EVALUATE",
+    "output_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "result": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "result"
+      ],
+      "type": "object"
+    },
+    "provider_id": "openverify.standard.pytest",
+    "provider_version": "1",
+    "source": {
+      "line_end": 44,
+      "line_start": 37,
+      "path": "src/openverify/standard/pytest.py",
+      "sha256": "4306df9f9a1f7aa274805bdf49f1013dd870fac71c5fc8e1719125fa2116d692"
+    }
+  },
   "inapplicable_set": "Unavailable optional tools and host filesystem/process authorization are explicit host preconditions.",
   "invalid_set": "Any contrary verdict, fabricated observation or acceptance beyond the declared schema/precondition. Runtime execution failures use Provider ERROR, not a fabricated FAIL.",
   "kind": "SYMBOLIC",
-  "mathematics_status": "DERIVED",
+  "mathematics_status": "EXACT_WIRE_SCHEMAS_AND_SEMANTIC_PARTITIONS_REVIEWED",
   "partitions": [
     "empty selectors",
     "explicit selector",
@@ -34431,15 +36505,68 @@ Status: DERIVED. Canonical links: CM.RELAY.STANDARD.PYTEST, CM.RELAY.STANDARD.PY
     "exit 2..5",
     "missing executable"
   ],
+  "presence_projections": {
+    "config_schema": {
+      "axes": {
+        "tests": [
+          "ABSENT",
+          "PRESENT"
+        ]
+      },
+      "candidate_count": 2,
+      "derivation": "2^1 declared-key masks; mandatory key set of size0 leaves 1 optional bits. Values and conditional behavioral requirements separate.",
+      "inapplicable_count": 0,
+      "invalid_count": 0,
+      "scope": "Declared names only; unexpected keys rejected by closed object predicate.",
+      "valid_count": 2
+    },
+    "input_schema": {
+      "axes": {
+        "criterion": [
+          "ABSENT",
+          "PRESENT"
+        ],
+        "cwd": [
+          "ABSENT",
+          "PRESENT"
+        ],
+        "subject": [
+          "ABSENT",
+          "PRESENT"
+        ]
+      },
+      "candidate_count": 8,
+      "derivation": "2^3 declared-key masks; mandatory key set of size3 leaves 0 optional bits. Values and conditional behavioral requirements separate.",
+      "inapplicable_count": 0,
+      "invalid_count": 7,
+      "scope": "Declared names only; unexpected keys rejected by closed object predicate.",
+      "valid_count": 1
+    },
+    "output_schema": {
+      "axes": {
+        "result": [
+          "ABSENT",
+          "PRESENT"
+        ]
+      },
+      "candidate_count": 2,
+      "derivation": "2^1 declared-key masks; mandatory key set of size1 leaves 0 optional bits. Values and conditional behavioral requirements separate.",
+      "inapplicable_count": 0,
+      "invalid_count": 1,
+      "scope": "Declared names only; unexpected keys rejected by closed object predicate.",
+      "valid_count": 1
+    }
+  },
+  "requirement_ids": [
+    "CM.RELAY.TOOL.PYTEST"
+  ],
   "valid_set": "Run real pytest with supplied selectors; no selectors means full scope. Exit 0 passes, 1 fails, 2 through 5 are execution ERROR; Python/plugins execute with host privileges."
 }
 ```
 
-Source references: src/openverify/standard/pytest.py:11-44 [sha256 4306df9f9a1f7aa274805bdf49f1013dd870fac71c5fc8e1719125fa2116d692], docs/relay/providers.md:72-91 [sha256 f066a4343ad905b727ab59b3a9dcb4d3940a0cca0258f615ee98c04f72bd86fa], src/openverify/standard/pytest.py:1-44 [sha256 4306df9f9a1f7aa274805bdf49f1013dd870fac71c5fc8e1719125fa2116d692], docs/relay/providers.md:1-147 [sha256 f066a4343ad905b727ab59b3a9dcb4d3940a0cca0258f615ee98c04f72bd86fa]
-
 ### D.STANDARD.ASTGREP
 
-Status: DERIVED. Canonical links: CM.RELAY.STANDARD.ASTGREP.
+Canonical links: CM.RELAY.TOOL.AST, CM.RELAY.STANDARD.ASTGREP
 
 ```json
 {
@@ -34458,10 +36585,71 @@ Status: DERIVED. Canonical links: CM.RELAY.STANDARD.ASTGREP.
   "candidate_count": "unbounded",
   "derivation": "Published local capability meaning and authored schema declarations, with distinct environment failures. Arrays/text/filesystem state are unbounded; named partitions are semantic classes, not exhaustive arbitrary JSON samples.",
   "domain_id": "D.STANDARD.ASTGREP",
+  "exact_capability_contract": {
+    "authority": "LOCAL_STANDARD_PROVIDER_SCHEMA; portable VCP acceptance remains an additional boundary",
+    "capability_id": "openverify.astgrep",
+    "capability_version": "1",
+    "config_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "language": {
+          "type": "string"
+        },
+        "pattern": {
+          "type": "string"
+        },
+        "rule_file": {
+          "type": "string"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "input_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "cwd": {
+          "type": "string"
+        },
+        "files": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "cwd",
+        "files"
+      ],
+      "type": "object"
+    },
+    "operation_kind": "DERIVE",
+    "output_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "findings": {
+          "type": "array"
+        }
+      },
+      "required": [
+        "findings"
+      ],
+      "type": "object"
+    },
+    "provider_id": "openverify.standard.astgrep",
+    "provider_version": "1",
+    "source": {
+      "line_end": 75,
+      "line_start": 65,
+      "path": "src/openverify/standard/astgrep.py",
+      "sha256": "ae28d7f38f65a96580fa41c86518321086ddc8be0d86fde4fcfcdd1321e7b2e6"
+    }
+  },
   "inapplicable_set": "Unavailable optional tools and host filesystem/process authorization are explicit host preconditions.",
   "invalid_set": "Any contrary verdict, fabricated observation or acceptance beyond the declared schema/precondition. Runtime execution failures use Provider ERROR, not a fabricated FAIL.",
   "kind": "SYMBOLIC",
-  "mathematics_status": "DERIVED",
+  "mathematics_status": "EXACT_WIRE_SCHEMAS_AND_SEMANTIC_PARTITIONS_REVIEWED",
   "partitions": [
     "language+pattern",
     "rule file",
@@ -34471,15 +36659,72 @@ Status: DERIVED. Canonical links: CM.RELAY.STANDARD.ASTGREP.
     "exit 0/1",
     "tool failure"
   ],
+  "presence_projections": {
+    "config_schema": {
+      "axes": {
+        "language": [
+          "ABSENT",
+          "PRESENT"
+        ],
+        "pattern": [
+          "ABSENT",
+          "PRESENT"
+        ],
+        "rule_file": [
+          "ABSENT",
+          "PRESENT"
+        ]
+      },
+      "candidate_count": 8,
+      "derivation": "2^3 declared-key masks; mandatory key set of size0 leaves 3 optional bits. Values and conditional behavioral requirements separate.",
+      "inapplicable_count": 0,
+      "invalid_count": 0,
+      "scope": "Declared names only; unexpected keys rejected by closed object predicate.",
+      "valid_count": 8
+    },
+    "input_schema": {
+      "axes": {
+        "cwd": [
+          "ABSENT",
+          "PRESENT"
+        ],
+        "files": [
+          "ABSENT",
+          "PRESENT"
+        ]
+      },
+      "candidate_count": 4,
+      "derivation": "2^2 declared-key masks; mandatory key set of size2 leaves 0 optional bits. Values and conditional behavioral requirements separate.",
+      "inapplicable_count": 0,
+      "invalid_count": 3,
+      "scope": "Declared names only; unexpected keys rejected by closed object predicate.",
+      "valid_count": 1
+    },
+    "output_schema": {
+      "axes": {
+        "findings": [
+          "ABSENT",
+          "PRESENT"
+        ]
+      },
+      "candidate_count": 2,
+      "derivation": "2^1 declared-key masks; mandatory key set of size1 leaves 0 optional bits. Values and conditional behavioral requirements separate.",
+      "inapplicable_count": 0,
+      "invalid_count": 1,
+      "scope": "Declared names only; unexpected keys rejected by closed object predicate.",
+      "valid_count": 1
+    }
+  },
+  "requirement_ids": [
+    "CM.RELAY.TOOL.AST"
+  ],
   "valid_set": "Run actual ast-grep pattern or authorized rule file on selected whole files; normalize zero-based tool coordinates to one-based half-open findings. Invalid option combination/tool failure is ERROR."
 }
 ```
 
-Source references: src/openverify/standard/astgrep.py:15-75 [sha256 ae28d7f38f65a96580fa41c86518321086ddc8be0d86fde4fcfcdd1321e7b2e6], docs/relay/providers.md:72-91 [sha256 f066a4343ad905b727ab59b3a9dcb4d3940a0cca0258f615ee98c04f72bd86fa]
-
 ### D.STANDARD.GIT_SCOPE
 
-Status: DERIVED. Canonical links: CM.RELAY.STANDARD.GIT_SCOPE, CM.RELAY.STANDARD.GIT.DELETE, CM.RELAY.STANDARD.GIT.FRESHNESS.
+Canonical links: CM.RELAY.GIT.CHANGES, CM.RELAY.GIT.MODES, CM.RELAY.STANDARD.GIT.DELETE, CM.RELAY.STANDARD.GIT.FRESHNESS, CM.RELAY.STANDARD.GIT_SCOPE
 
 ```json
 {
@@ -34498,10 +36743,92 @@ Status: DERIVED. Canonical links: CM.RELAY.STANDARD.GIT_SCOPE, CM.RELAY.STANDARD
   "candidate_count": "unbounded",
   "derivation": "Published local capability meaning and authored schema declarations, with distinct environment failures. Arrays/text/filesystem state are unbounded; named partitions are semantic classes, not exhaustive arbitrary JSON samples.",
   "domain_id": "D.STANDARD.GIT_SCOPE",
+  "exact_capability_contract": {
+    "authority": "LOCAL_STANDARD_PROVIDER_SCHEMA; portable VCP acceptance remains an additional boundary",
+    "capability_id": "openverify.git_scope",
+    "capability_version": "1",
+    "config_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "include_untracked": {
+          "type": "boolean"
+        },
+        "mode": {
+          "enum": [
+            "WORKTREE",
+            "STAGED",
+            "UNSTAGED"
+          ]
+        }
+      },
+      "required": [
+        "mode",
+        "include_untracked"
+      ],
+      "type": "object"
+    },
+    "input_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "base": {
+          "type": "string"
+        },
+        "cwd": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "cwd",
+        "base"
+      ],
+      "type": "object"
+    },
+    "operation_kind": "DERIVE",
+    "output_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "candidate": {
+          "type": "object"
+        },
+        "changed_files": {
+          "type": "array"
+        },
+        "changed_hunks": {
+          "type": "array"
+        },
+        "changes": {
+          "type": "array"
+        },
+        "deleted_files": {
+          "type": "array"
+        },
+        "diff": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "changed_files",
+        "changed_hunks",
+        "diff",
+        "candidate",
+        "changes",
+        "deleted_files"
+      ],
+      "type": "object"
+    },
+    "provider_id": "openverify.standard.git_scope",
+    "provider_version": "1",
+    "source": {
+      "line_end": 206,
+      "line_start": 187,
+      "path": "src/openverify/standard/git.py",
+      "sha256": "9ff2cee66ebaccb377bd325a6ec879f18fa473e43f54274004c7017d8673b218"
+    }
+  },
   "inapplicable_set": "Unavailable optional tools and host filesystem/process authorization are explicit host preconditions.",
   "invalid_set": "Any contrary verdict, fabricated observation or acceptance beyond the declared schema/precondition. Runtime execution failures use Provider ERROR, not a fabricated FAIL.",
   "kind": "SYMBOLIC",
-  "mathematics_status": "DERIVED",
+  "mathematics_status": "EXACT_WIRE_SCHEMAS_AND_SEMANTIC_PARTITIONS_REVIEWED",
   "partitions": [
     "three modes",
     "untracked excluded/included",
@@ -34512,15 +36839,89 @@ Status: DERIVED. Canonical links: CM.RELAY.STANDARD.GIT_SCOPE, CM.RELAY.STANDARD
     "non-repository root",
     "concurrent detected change"
   ],
+  "presence_projections": {
+    "config_schema": {
+      "axes": {
+        "include_untracked": [
+          "ABSENT",
+          "PRESENT"
+        ],
+        "mode": [
+          "ABSENT",
+          "PRESENT"
+        ]
+      },
+      "candidate_count": 4,
+      "derivation": "2^2 declared-key masks; mandatory key set of size2 leaves 0 optional bits. Values and conditional behavioral requirements separate.",
+      "inapplicable_count": 0,
+      "invalid_count": 3,
+      "scope": "Declared names only; unexpected keys rejected by closed object predicate.",
+      "valid_count": 1
+    },
+    "input_schema": {
+      "axes": {
+        "base": [
+          "ABSENT",
+          "PRESENT"
+        ],
+        "cwd": [
+          "ABSENT",
+          "PRESENT"
+        ]
+      },
+      "candidate_count": 4,
+      "derivation": "2^2 declared-key masks; mandatory key set of size2 leaves 0 optional bits. Values and conditional behavioral requirements separate.",
+      "inapplicable_count": 0,
+      "invalid_count": 3,
+      "scope": "Declared names only; unexpected keys rejected by closed object predicate.",
+      "valid_count": 1
+    },
+    "output_schema": {
+      "axes": {
+        "candidate": [
+          "ABSENT",
+          "PRESENT"
+        ],
+        "changed_files": [
+          "ABSENT",
+          "PRESENT"
+        ],
+        "changed_hunks": [
+          "ABSENT",
+          "PRESENT"
+        ],
+        "changes": [
+          "ABSENT",
+          "PRESENT"
+        ],
+        "deleted_files": [
+          "ABSENT",
+          "PRESENT"
+        ],
+        "diff": [
+          "ABSENT",
+          "PRESENT"
+        ]
+      },
+      "candidate_count": 64,
+      "derivation": "2^6 declared-key masks; mandatory key set of size6 leaves 0 optional bits. Values and conditional behavioral requirements separate.",
+      "inapplicable_count": 0,
+      "invalid_count": 63,
+      "scope": "Declared names only; unexpected keys rejected by closed object predicate.",
+      "valid_count": 1
+    }
+  },
+  "requirement_ids": [
+    "CM.RELAY.GIT.CHANGES",
+    "CM.RELAY.GIT.MODES"
+  ],
   "valid_set": "WORKTREE compares base to worktree, STAGED base to index, UNSTAGED index to worktree with empty base. Preserve rename identities, separate deletions, include explicit untracked policy and reject detected changes during capture."
 }
 ```
 
-Source references: src/openverify/standard/git.py:1-210 [sha256 9ff2cee66ebaccb377bd325a6ec879f18fa473e43f54274004c7017d8673b218], docs/relay/providers.md:72-91 [sha256 f066a4343ad905b727ab59b3a9dcb4d3940a0cca0258f615ee98c04f72bd86fa], docs/relay/providers.md:1-147 [sha256 f066a4343ad905b727ab59b3a9dcb4d3940a0cca0258f615ee98c04f72bd86fa]
-
 ### D.STANDARD.CANDIDATE_UNCHANGED
 
-Status: DERIVED. Canonical links: CM.RELAY.STANDARD.CANDIDATE_UNCHANGED.
+Canonical links: CM.RELAY.SECURITY.FRESHNESS, CM.RELAY.STANDARD.CANDIDATE_UNCHANGED
 
 ```json
 {
@@ -34539,10 +36940,66 @@ Status: DERIVED. Canonical links: CM.RELAY.STANDARD.CANDIDATE_UNCHANGED.
   "candidate_count": "unbounded",
   "derivation": "Published local capability meaning and authored schema declarations, with distinct environment failures. Arrays/text/filesystem state are unbounded; named partitions are semantic classes, not exhaustive arbitrary JSON samples.",
   "domain_id": "D.STANDARD.CANDIDATE_UNCHANGED",
+  "exact_capability_contract": {
+    "authority": "LOCAL_STANDARD_PROVIDER_SCHEMA; portable VCP acceptance remains an additional boundary",
+    "capability_id": "openverify.candidate_unchanged",
+    "capability_version": "1",
+    "config_schema": {
+      "additionalProperties": false,
+      "properties": {},
+      "required": [],
+      "type": "object"
+    },
+    "input_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "candidate": {
+          "type": "object"
+        },
+        "criterion": {
+          "type": "object"
+        },
+        "cwd": {
+          "type": "string"
+        },
+        "subject": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "cwd",
+        "candidate",
+        "subject",
+        "criterion"
+      ],
+      "type": "object"
+    },
+    "operation_kind": "EVALUATE",
+    "output_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "result": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "result"
+      ],
+      "type": "object"
+    },
+    "provider_id": "openverify.standard.candidate_unchanged",
+    "provider_version": "1",
+    "source": {
+      "line_end": 209,
+      "line_start": 207,
+      "path": "src/openverify/standard/git.py",
+      "sha256": "9ff2cee66ebaccb377bd325a6ec879f18fa473e43f54274004c7017d8673b218"
+    }
+  },
   "inapplicable_set": "Unavailable optional tools and host filesystem/process authorization are explicit host preconditions.",
   "invalid_set": "Any contrary verdict, fabricated observation or acceptance beyond the declared schema/precondition. Runtime execution failures use Provider ERROR, not a fabricated FAIL.",
   "kind": "SYMBOLIC",
-  "mathematics_status": "DERIVED",
+  "mathematics_status": "EXACT_WIRE_SCHEMAS_AND_SEMANTIC_PARTITIONS_REVIEWED",
   "partitions": [
     "unchanged",
     "changed checked file",
@@ -34552,15 +37009,67 @@ Status: DERIVED. Canonical links: CM.RELAY.STANDARD.CANDIDATE_UNCHANGED.
     "cwd mismatch",
     "change-and-revert unobservable"
   ],
+  "presence_projections": {
+    "config_schema": {
+      "axes": {},
+      "candidate_count": 1,
+      "derivation": "2^0 declared-key masks; mandatory key set of size0 leaves 0 optional bits. Values and conditional behavioral requirements separate.",
+      "inapplicable_count": 0,
+      "invalid_count": 0,
+      "scope": "Declared names only; unexpected keys rejected by closed object predicate.",
+      "valid_count": 1
+    },
+    "input_schema": {
+      "axes": {
+        "candidate": [
+          "ABSENT",
+          "PRESENT"
+        ],
+        "criterion": [
+          "ABSENT",
+          "PRESENT"
+        ],
+        "cwd": [
+          "ABSENT",
+          "PRESENT"
+        ],
+        "subject": [
+          "ABSENT",
+          "PRESENT"
+        ]
+      },
+      "candidate_count": 16,
+      "derivation": "2^4 declared-key masks; mandatory key set of size4 leaves 0 optional bits. Values and conditional behavioral requirements separate.",
+      "inapplicable_count": 0,
+      "invalid_count": 15,
+      "scope": "Declared names only; unexpected keys rejected by closed object predicate.",
+      "valid_count": 1
+    },
+    "output_schema": {
+      "axes": {
+        "result": [
+          "ABSENT",
+          "PRESENT"
+        ]
+      },
+      "candidate_count": 2,
+      "derivation": "2^1 declared-key masks; mandatory key set of size1 leaves 0 optional bits. Values and conditional behavioral requirements separate.",
+      "inapplicable_count": 0,
+      "invalid_count": 1,
+      "scope": "Declared names only; unexpected keys rejected by closed object predicate.",
+      "valid_count": 1
+    }
+  },
+  "requirement_ids": [
+    "CM.RELAY.SECURITY.FRESHNESS"
+  ],
   "valid_set": "Recheck supplied worktree identity, file content identities, HEAD, compared diff and untracked scope. Changed checked state yields stale_candidate; mismatched cwd yields candidate_worktree_mismatch."
 }
 ```
 
-Source references: src/openverify/standard/git.py:1-210 [sha256 9ff2cee66ebaccb377bd325a6ec879f18fa473e43f54274004c7017d8673b218], docs/relay/providers.md:72-91 [sha256 f066a4343ad905b727ab59b3a9dcb4d3940a0cca0258f615ee98c04f72bd86fa]
-
 ### D.STANDARD.AGGREGATE
 
-Status: DERIVED. Canonical links: CM.RELAY.STANDARD.AGGREGATE.
+Canonical links: CM.RELAY.STANDARD.AGGREGATE
 
 ```json
 {
@@ -34579,10 +37088,47 @@ Status: DERIVED. Canonical links: CM.RELAY.STANDARD.AGGREGATE.
   "candidate_count": "unbounded",
   "derivation": "Published local capability meaning and authored schema declarations, with distinct environment failures. Arrays/text/filesystem state are unbounded; named partitions are semantic classes, not exhaustive arbitrary JSON samples.",
   "domain_id": "D.STANDARD.AGGREGATE",
+  "exact_capability_contract": {
+    "authority": "LOCAL_STANDARD_PROVIDER_SCHEMA",
+    "capability_id": "openverify.aggregate",
+    "capability_version": "1",
+    "config_schema": {
+      "type": "object"
+    },
+    "input_schema": {
+      "required": [
+        "subject",
+        "criterion",
+        "members"
+      ],
+      "type": "object"
+    },
+    "kind": "AGGREGATE",
+    "output_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "result": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "result"
+      ],
+      "type": "object"
+    },
+    "provider_id": "openverify.standard.aggregate",
+    "provider_version": "1",
+    "source": {
+      "line_end": 50,
+      "line_start": 38,
+      "path": "src/openverify/standard/__init__.py",
+      "sha256": "2ad7f0c2cf4ae6a03f1a7939f1df2b51947519485fc5248858705482fdd5e96f"
+    }
+  },
   "inapplicable_set": "Unavailable optional tools and host filesystem/process authorization are explicit host preconditions.",
   "invalid_set": "Any contrary verdict, fabricated observation or acceptance beyond the declared schema/precondition. Runtime execution failures use Provider ERROR, not a fabricated FAIL.",
   "kind": "SYMBOLIC",
-  "mathematics_status": "DERIVED",
+  "mathematics_status": "EXACT_WIRE_SCHEMAS_AND_SEMANTIC_PARTITIONS_REVIEWED",
   "partitions": [
     "logical",
     "numeric",
@@ -34592,20 +37138,67 @@ Status: DERIVED. Canonical links: CM.RELAY.STANDARD.AGGREGATE.
     "empty retained set",
     "identity mismatch"
   ],
+  "presence_projections": {
+    "config_schema": {
+      "axes": {},
+      "candidate_count": 1,
+      "derivation": "2^0 declared-key masks; mandatory key set of size0 leaves 0 optional bits. Values and conditional behavioral requirements separate.",
+      "inapplicable_count": 0,
+      "invalid_count": 0,
+      "scope": "Aggregate unknown dynamic member names are not bounded by this declared-name projection.",
+      "valid_count": 1
+    },
+    "input_schema": {
+      "axes": {
+        "criterion": [
+          "ABSENT",
+          "PRESENT"
+        ],
+        "members": [
+          "ABSENT",
+          "PRESENT"
+        ],
+        "subject": [
+          "ABSENT",
+          "PRESENT"
+        ]
+      },
+      "candidate_count": 8,
+      "derivation": "2^3 declared-key masks; mandatory key set of size3 leaves 0 optional bits. Values and conditional behavioral requirements separate.",
+      "inapplicable_count": 0,
+      "invalid_count": 7,
+      "scope": "Aggregate unknown dynamic member names are not bounded by this declared-name projection.",
+      "valid_count": 1
+    },
+    "output_schema": {
+      "axes": {
+        "result": [
+          "ABSENT",
+          "PRESENT"
+        ]
+      },
+      "candidate_count": 2,
+      "derivation": "2^1 declared-key masks; mandatory key set of size1 leaves 0 optional bits. Values and conditional behavioral requirements separate.",
+      "inapplicable_count": 0,
+      "invalid_count": 1,
+      "scope": "Aggregate unknown dynamic member names are not bounded by this declared-name projection.",
+      "valid_count": 1
+    }
+  },
   "valid_set": "Use explicit ordered members and the declared standard VCP reducer laws. Member values remain tied to names when filtering/weighting."
 }
 ```
 
-Source references: src/openverify/standard/__init__.py:1-68 [sha256 2ad7f0c2cf4ae6a03f1a7939f1df2b51947519485fc5248858705482fdd5e96f], docs/relay/providers.md:72-91 [sha256 f066a4343ad905b727ab59b3a9dcb4d3940a0cca0258f615ee98c04f72bd86fa]
-
 ### D.SDK.SERIALIZE.DATA
 
-Status: DERIVED. Canonical links: CM.SDK.SERIALIZE.DATA.
+Canonical links: CM.SDK.SERIALIZE.DATA
 
 ```json
 {
   "axes": [
-    "typed API arguments and JSON values; exact classes below"
+    "SDK Value model v",
+    "model_fields_set distinguishing supplied from default fields",
+    "nested models/lists/string-key maps; optional control null versus explicit Result judgment/output or InputResolution value null"
   ],
   "boundary_conditions": [
     "missing versus null",
@@ -34619,7 +37212,7 @@ Status: DERIVED. Canonical links: CM.SDK.SERIALIZE.DATA.
   "inapplicable_set": "Other operations/false preconditions.",
   "invalid_set": "Do not erase explicitly emitted null payload or invent default annotations.",
   "kind": "SYMBOLIC",
-  "mathematics_status": "DERIVED",
+  "mathematics_status": "EXPLICIT_OPERATION_ARGUMENT_DOMAIN_AND_PARTITIONS_REVIEWED",
   "partitions": [
     "unsupplied optional",
     "explicit payload null",
@@ -34630,16 +37223,16 @@ Status: DERIVED. Canonical links: CM.SDK.SERIALIZE.DATA.
 }
 ```
 
-Source references: src/openverify/serialization/__init__.py:36-55 [sha256 7a2f46c623f94a81925d12d8e92f446db440f2415508f0db4ae6e06e542a7110]
-
 ### D.SDK.SERIALIZE.BYTES
 
-Status: DERIVED. Canonical links: CM.SDK.SERIALIZE.BYTES.
+Canonical links: CM.SDK.SERIALIZE.BYTES
 
 ```json
 {
   "axes": [
-    "typed API arguments and JSON values; exact classes below"
+    "SDK Value v",
+    "to_data(v) finite JSON tree",
+    "Unicode strings and object key order; nonfinite numeric model rejection"
   ],
   "boundary_conditions": [
     "missing versus null",
@@ -34653,7 +37246,7 @@ Status: DERIVED. Canonical links: CM.SDK.SERIALIZE.BYTES.
   "inapplicable_set": "Other operations/false preconditions.",
   "invalid_set": "Do not promise portable canonical bytes or signing.",
   "kind": "SYMBOLIC",
-  "mathematics_status": "DERIVED",
+  "mathematics_status": "EXPLICIT_OPERATION_ARGUMENT_DOMAIN_AND_PARTITIONS_REVIEWED",
   "partitions": [
     "Unicode",
     "mapping order",
@@ -34664,16 +37257,16 @@ Status: DERIVED. Canonical links: CM.SDK.SERIALIZE.BYTES.
 }
 ```
 
-Source references: src/openverify/serialization/__init__.py:68-71 [sha256 7a2f46c623f94a81925d12d8e92f446db440f2415508f0db4ae6e06e542a7110]
-
 ### D.SDK.JSON.EQUALITY
 
-Status: DERIVED. Canonical links: CM.SDK.JSON.EQUALITY.
+Canonical links: CM.SDK.JSON.EQUALITY
 
 ```json
 {
   "axes": [
-    "typed API arguments and JSON values; exact classes below"
+    "Two validated JSON trees x,y",
+    "disjoint JSON type classes; numeric int/float sharing JSON number",
+    "ordered arrays and key-order-independent objects; underlying string value comparison"
   ],
   "boundary_conditions": [
     "missing versus null",
@@ -34687,7 +37280,7 @@ Status: DERIVED. Canonical links: CM.SDK.JSON.EQUALITY.
   "inapplicable_set": "Other operations/false preconditions.",
   "invalid_set": "Do not identify true and 1.",
   "kind": "SYMBOLIC",
-  "mathematics_status": "DERIVED",
+  "mathematics_status": "EXPLICIT_OPERATION_ARGUMENT_DOMAIN_AND_PARTITIONS_REVIEWED",
   "partitions": [
     "numeric/integral equivalence",
     "Boolean/number distinction",
@@ -34698,16 +37291,16 @@ Status: DERIVED. Canonical links: CM.SDK.JSON.EQUALITY.
 }
 ```
 
-Source references: src/openverify/serialization/__init__.py:13-33 [sha256 7a2f46c623f94a81925d12d8e92f446db440f2415508f0db4ae6e06e542a7110]
-
 ### D.SDK.FINGERPRINT
 
-Status: DERIVED. Canonical links: CM.SDK.FINGERPRINT.
+Canonical links: CM.SDK.FINGERPRINT
 
 ```json
 {
   "axes": [
-    "typed API arguments and JSON values; exact classes below"
+    "Validated VerificationDefinition v",
+    "exact local serialize(v) string encoded UTF8",
+    "SHA256 digest of local byte sequence, not portable canonical bytes"
   ],
   "boundary_conditions": [
     "missing versus null",
@@ -34721,7 +37314,7 @@ Status: DERIVED. Canonical links: CM.SDK.FINGERPRINT.
   "inapplicable_set": "Other operations/false preconditions.",
   "invalid_set": "Do not infer authenticity or cross-language canonical identity.",
   "kind": "SYMBOLIC",
-  "mathematics_status": "DERIVED",
+  "mathematics_status": "EXPLICIT_OPERATION_ARGUMENT_DOMAIN_AND_PARTITIONS_REVIEWED",
   "partitions": [
     "same local serialized bytes",
     "changed local serialized bytes"
@@ -34730,16 +37323,16 @@ Status: DERIVED. Canonical links: CM.SDK.FINGERPRINT.
 }
 ```
 
-Source references: src/openverify/fingerprint/__init__.py:9-11 [sha256 f5ced653c2ba3ea6aa54dda046b3b6c8d1c13e290c0e97ab2fa4385dd6895d34]
-
 ### D.SDK.INSPECT
 
-Status: DERIVED. Canonical links: CM.SDK.INSPECT.
+Canonical links: CM.SDK.INSPECT
 
 ```json
 {
   "axes": [
-    "typed API arguments and JSON values; exact classes below"
+    "VerificationDefinition v",
+    "graph node/edge identities and typed bindings including guard sources",
+    "topological order with local tie-break; ports/policies/run inputs and upstream consumers"
   ],
   "boundary_conditions": [
     "missing versus null",
@@ -34753,7 +37346,7 @@ Status: DERIVED. Canonical links: CM.SDK.INSPECT.
   "inapplicable_set": "Other operations/false preconditions.",
   "invalid_set": "Do not inspect by executing providers.",
   "kind": "SYMBOLIC",
-  "mathematics_status": "DERIVED",
+  "mathematics_status": "EXPLICIT_OPERATION_ARGUMENT_DOMAIN_AND_PARTITIONS_REVIEWED",
   "partitions": [
     "invalid definition",
     "binding consumers",
@@ -34764,16 +37357,15 @@ Status: DERIVED. Canonical links: CM.SDK.INSPECT.
 }
 ```
 
-Source references: src/openverify/inspection.py:13-53 [sha256 24da3a1930d931e2307906a12b8bb60ced0e2635023801365595215af4824c8d]
-
 ### D.SDK.ERROR.ASDICT
 
-Status: DERIVED. Canonical links: CM.SDK.ERROR.ASDICT.
+Canonical links: CM.SDK.ERROR.ASDICT
 
 ```json
 {
   "axes": [
-    "typed API arguments and JSON values; exact classes below"
+    "ProtocolError code string or authority-owned enum",
+    "message string, path string default empty, details arbitrary JSON default null"
   ],
   "boundary_conditions": [
     "missing versus null",
@@ -34787,7 +37379,7 @@ Status: DERIVED. Canonical links: CM.SDK.ERROR.ASDICT.
   "inapplicable_set": "Other operations/false preconditions.",
   "invalid_set": "Do not classify from diagnostic wording.",
   "kind": "SYMBOLIC",
-  "mathematics_status": "DERIVED",
+  "mathematics_status": "EXPLICIT_OPERATION_ARGUMENT_DOMAIN_AND_PARTITIONS_REVIEWED",
   "partitions": [
     "known VCP code",
     "known Provider code",
@@ -34799,16 +37391,15 @@ Status: DERIVED. Canonical links: CM.SDK.ERROR.ASDICT.
 }
 ```
 
-Source references: src/openverify/errors.py:26-32 [sha256 2dce7a2f896b8ced248c1b7be8f4ee9ff5bd2dedc96bbb118612c660ecde930a]
-
 ### D.SDK.PROVIDER.ERROR.ASDICT
 
-Status: DERIVED. Canonical links: CM.SDK.PROVIDER.ERROR.ASDICT.
+Canonical links: CM.SDK.PROVIDER.ERROR.ASDICT
 
 ```json
 {
   "axes": [
-    "typed API arguments and JSON values; exact classes below"
+    "ProviderContractError code/message/details",
+    "reserved or provider-namespaced code with arbitrary JSON details"
   ],
   "boundary_conditions": [
     "missing versus null",
@@ -34822,7 +37413,7 @@ Status: DERIVED. Canonical links: CM.SDK.PROVIDER.ERROR.ASDICT.
   "inapplicable_set": "Other operations/false preconditions.",
   "invalid_set": "Do not collapse Provider and VCP vocabularies.",
   "kind": "SYMBOLIC",
-  "mathematics_status": "DERIVED",
+  "mathematics_status": "EXPLICIT_OPERATION_ARGUMENT_DOMAIN_AND_PARTITIONS_REVIEWED",
   "partitions": [
     "reserved code",
     "provider-specific code",
@@ -34832,16 +37423,17 @@ Status: DERIVED. Canonical links: CM.SDK.PROVIDER.ERROR.ASDICT.
 }
 ```
 
-Source references: src/openverify/provider/validation.py:63-64 [sha256 c087fa9fd79a68d4907322a5173acc9c31453570f679f1942d3066499d416be4]
-
 ### D.SDK.PARSE.DEFINITION
 
-Status: DERIVED. Canonical links: CM.SDK.PARSE.DEFINITION.
+Canonical links: CM.SDK.PARSE.DEFINITION
 
 ```json
 {
   "axes": [
-    "typed API arguments and JSON values; exact classes below"
+    "Named parser operation for its exact shipped root",
+    "str/bytes/materialized JSON input",
+    "strict JSON encoding, root structural validity, standalone prose semantics",
+    "lifecycle context absent: separate invocation/session validation required for contextual rules"
   ],
   "boundary_conditions": [
     "missing versus null",
@@ -34867,16 +37459,17 @@ Status: DERIVED. Canonical links: CM.SDK.PARSE.DEFINITION.
 }
 ```
 
-Source references: src/openverify/validation/__init__.py:168-169 [sha256 cef5aa3510c1657692209d8fb9c8bb06377ddafacb4c7f267e3b52868da6cfc8]
-
 ### D.SDK.PARSE.RESULT
 
-Status: DERIVED. Canonical links: CM.SDK.PARSE.RESULT.
+Canonical links: CM.SDK.PARSE.RESULT
 
 ```json
 {
   "axes": [
-    "typed API arguments and JSON values; exact classes below"
+    "Named parser operation for its exact shipped root",
+    "str/bytes/materialized JSON input",
+    "strict JSON encoding, root structural validity, standalone prose semantics",
+    "lifecycle context absent: separate invocation/session validation required for contextual rules"
   ],
   "boundary_conditions": [
     "missing versus null",
@@ -34902,16 +37495,17 @@ Status: DERIVED. Canonical links: CM.SDK.PARSE.RESULT.
 }
 ```
 
-Source references: src/openverify/validation/__init__.py:172-173 [sha256 cef5aa3510c1657692209d8fb9c8bb06377ddafacb4c7f267e3b52868da6cfc8]
-
 ### D.SDK.PARSE.RECORD
 
-Status: DERIVED. Canonical links: CM.SDK.PARSE.RECORD.
+Canonical links: CM.SDK.PARSE.RECORD
 
 ```json
 {
   "axes": [
-    "typed API arguments and JSON values; exact classes below"
+    "Named parser operation for its exact shipped root",
+    "str/bytes/materialized JSON input",
+    "strict JSON encoding, root structural validity, standalone prose semantics",
+    "lifecycle context absent: separate invocation/session validation required for contextual rules"
   ],
   "boundary_conditions": [
     "missing versus null",
@@ -34937,16 +37531,16 @@ Status: DERIVED. Canonical links: CM.SDK.PARSE.RECORD.
 }
 ```
 
-Source references: src/openverify/validation/__init__.py:176-177 [sha256 cef5aa3510c1657692209d8fb9c8bb06377ddafacb4c7f267e3b52868da6cfc8]
-
 ### D.SDK.VALIDATE.DEFINITION
 
-Status: DERIVED. Canonical links: CM.SDK.VALIDATE.DEFINITION.
+Canonical links: CM.SDK.VALIDATE.DEFINITION
 
 ```json
 {
   "axes": [
-    "typed API arguments and JSON values; exact classes below"
+    "Typed model instance for named operation",
+    "wire serialization snapshot",
+    "structural and standalone semantic validity; successful operation returns None"
   ],
   "boundary_conditions": [
     "missing versus null",
@@ -34969,16 +37563,16 @@ Status: DERIVED. Canonical links: CM.SDK.VALIDATE.DEFINITION.
 }
 ```
 
-Source references: src/openverify/validation/__init__.py:180-181 [sha256 cef5aa3510c1657692209d8fb9c8bb06377ddafacb4c7f267e3b52868da6cfc8]
-
 ### D.SDK.VALIDATE.RESULT
 
-Status: DERIVED. Canonical links: CM.SDK.VALIDATE.RESULT.
+Canonical links: CM.SDK.VALIDATE.RESULT
 
 ```json
 {
   "axes": [
-    "typed API arguments and JSON values; exact classes below"
+    "Typed model instance for named operation",
+    "wire serialization snapshot",
+    "structural and standalone semantic validity; successful operation returns None"
   ],
   "boundary_conditions": [
     "missing versus null",
@@ -35001,16 +37595,15 @@ Status: DERIVED. Canonical links: CM.SDK.VALIDATE.RESULT.
 }
 ```
 
-Source references: src/openverify/validation/__init__.py:184-185 [sha256 cef5aa3510c1657692209d8fb9c8bb06377ddafacb4c7f267e3b52868da6cfc8]
-
 ### D.SDK.SCHEMA.LOAD
 
-Status: DERIVED. Canonical links: CM.SDK.SCHEMA.LOAD.
+Canonical links: CM.SDK.SCHEMA.LOAD
 
 ```json
 {
   "axes": [
-    "typed API arguments and JSON values; exact classes below"
+    "Root name in24 shipped VCP names or unknown string",
+    "packaged schema object with transitive shipped URN references"
   ],
   "boundary_conditions": [
     "missing versus null",
@@ -35024,7 +37617,7 @@ Status: DERIVED. Canonical links: CM.SDK.SCHEMA.LOAD.
   "inapplicable_set": "Other operations/false preconditions.",
   "invalid_set": "Do not retrieve schemas from a network.",
   "kind": "SYMBOLIC",
-  "mathematics_status": "DERIVED",
+  "mathematics_status": "EXPLICIT_OPERATION_ARGUMENT_DOMAIN_AND_PARTITIONS_REVIEWED",
   "partitions": [
     "known root",
     "value-source",
@@ -35034,16 +37627,15 @@ Status: DERIVED. Canonical links: CM.SDK.SCHEMA.LOAD.
 }
 ```
 
-Source references: src/openverify/validation/__init__.py:81-91 [sha256 cef5aa3510c1657692209d8fb9c8bb06377ddafacb4c7f267e3b52868da6cfc8]
-
 ### D.SDK.PROVIDER.SCHEMA.LOAD
 
-Status: DERIVED. Canonical links: CM.SDK.PROVIDER.SCHEMA.LOAD.
+Canonical links: CM.SDK.PROVIDER.SCHEMA.LOAD
 
 ```json
 {
   "axes": [
-    "typed API arguments and JSON values; exact classes below"
+    "Root name in9 Provider shipped names or unknown string",
+    "packaged schema object including VCP-root reference closure"
   ],
   "boundary_conditions": [
     "missing versus null",
@@ -35057,7 +37649,7 @@ Status: DERIVED. Canonical links: CM.SDK.PROVIDER.SCHEMA.LOAD.
   "inapplicable_set": "Other operations/false preconditions.",
   "invalid_set": "Do not import remote schemas.",
   "kind": "SYMBOLIC",
-  "mathematics_status": "DERIVED",
+  "mathematics_status": "EXPLICIT_OPERATION_ARGUMENT_DOMAIN_AND_PARTITIONS_REVIEWED",
   "partitions": [
     "nine declared names",
     "unknown name"
@@ -35066,16 +37658,16 @@ Status: DERIVED. Canonical links: CM.SDK.PROVIDER.SCHEMA.LOAD.
 }
 ```
 
-Source references: src/openverify/provider/validation.py:80-90 [sha256 c087fa9fd79a68d4907322a5173acc9c31453570f679f1942d3066499d416be4]
-
 ### D.SDK.PROVIDER.WIRE_DATA
 
-Status: DERIVED. Canonical links: CM.SDK.PROVIDER.WIRE_DATA.
+Canonical links: CM.SDK.PROVIDER.WIRE_DATA
 
 ```json
 {
   "axes": [
-    "typed API arguments and JSON values; exact classes below"
+    "Provider Contract model v",
+    "explicitly supplied fields versus unset optional fields",
+    "arbitrary JSON null and extension mapping values"
   ],
   "boundary_conditions": [
     "missing versus null",
@@ -35089,7 +37681,7 @@ Status: DERIVED. Canonical links: CM.SDK.PROVIDER.WIRE_DATA.
   "inapplicable_set": "Other operations/false preconditions.",
   "invalid_set": "Do not erase explicit null output or invent unsupplied optional fields.",
   "kind": "SYMBOLIC",
-  "mathematics_status": "DERIVED",
+  "mathematics_status": "EXPLICIT_OPERATION_ARGUMENT_DOMAIN_AND_PARTITIONS_REVIEWED",
   "partitions": [
     "explicit null",
     "unsupplied optional",
@@ -35099,16 +37691,16 @@ Status: DERIVED. Canonical links: CM.SDK.PROVIDER.WIRE_DATA.
 }
 ```
 
-Source references: src/openverify/provider/validation.py:71-73 [sha256 c087fa9fd79a68d4907322a5173acc9c31453570f679f1942d3066499d416be4]
-
 ### D.SDK.PROVIDER.SERIALIZE
 
-Status: DERIVED. Canonical links: CM.SDK.PROVIDER.SERIALIZE.
+Canonical links: CM.SDK.PROVIDER.SERIALIZE
 
 ```json
 {
   "axes": [
-    "typed API arguments and JSON values; exact classes below"
+    "Provider Contract model v",
+    "wire_data(v) finite JSON tree",
+    "compact ensure_ascii encoding; nonfinite serialization rejection"
   ],
   "boundary_conditions": [
     "missing versus null",
@@ -35122,7 +37714,7 @@ Status: DERIVED. Canonical links: CM.SDK.PROVIDER.SERIALIZE.
   "inapplicable_set": "Other operations/false preconditions.",
   "invalid_set": "Do not claim sorted keys or portable canonical bytes.",
   "kind": "SYMBOLIC",
-  "mathematics_status": "DERIVED",
+  "mathematics_status": "EXPLICIT_OPERATION_ARGUMENT_DOMAIN_AND_PARTITIONS_REVIEWED",
   "partitions": [
     "null",
     "Unicode",
@@ -35132,16 +37724,17 @@ Status: DERIVED. Canonical links: CM.SDK.PROVIDER.SERIALIZE.
 }
 ```
 
-Source references: src/openverify/provider/validation.py:76-77 [sha256 c087fa9fd79a68d4907322a5173acc9c31453570f679f1942d3066499d416be4]
-
 ### D.SDK.PROVIDER.PARSE_PROVIDER_MANIFEST
 
-Status: DERIVED. Canonical links: CM.SDK.PROVIDER.PARSE_PROVIDER_MANIFEST.
+Canonical links: CM.SDK.PROVIDER.PARSE_PROVIDER_MANIFEST
 
 ```json
 {
   "axes": [
-    "typed API arguments and JSON values; exact classes below"
+    "Named parser operation for its exact shipped root",
+    "str/bytes/materialized JSON input",
+    "strict JSON encoding, root structural validity, standalone prose semantics",
+    "lifecycle context absent: separate invocation/session validation required for contextual rules"
   ],
   "boundary_conditions": [
     "missing versus null",
@@ -35166,16 +37759,17 @@ Status: DERIVED. Canonical links: CM.SDK.PROVIDER.PARSE_PROVIDER_MANIFEST.
 }
 ```
 
-Source references: src/openverify/provider/validation.py:331-332 [sha256 c087fa9fd79a68d4907322a5173acc9c31453570f679f1942d3066499d416be4]
-
 ### D.SDK.PROVIDER.PARSE_INVOCATION
 
-Status: DERIVED. Canonical links: CM.SDK.PROVIDER.PARSE_INVOCATION.
+Canonical links: CM.SDK.PROVIDER.PARSE_INVOCATION
 
 ```json
 {
   "axes": [
-    "typed API arguments and JSON values; exact classes below"
+    "Named parser operation for its exact shipped root",
+    "str/bytes/materialized JSON input",
+    "strict JSON encoding, root structural validity, standalone prose semantics",
+    "lifecycle context absent: separate invocation/session validation required for contextual rules"
   ],
   "boundary_conditions": [
     "missing versus null",
@@ -35200,16 +37794,17 @@ Status: DERIVED. Canonical links: CM.SDK.PROVIDER.PARSE_INVOCATION.
 }
 ```
 
-Source references: src/openverify/provider/validation.py:335-336 [sha256 c087fa9fd79a68d4907322a5173acc9c31453570f679f1942d3066499d416be4]
-
 ### D.SDK.PROVIDER.PARSE_PROVIDER_EVENT
 
-Status: DERIVED. Canonical links: CM.SDK.PROVIDER.PARSE_PROVIDER_EVENT.
+Canonical links: CM.SDK.PROVIDER.PARSE_PROVIDER_EVENT
 
 ```json
 {
   "axes": [
-    "typed API arguments and JSON values; exact classes below"
+    "Named parser operation for its exact shipped root",
+    "str/bytes/materialized JSON input",
+    "strict JSON encoding, root structural validity, standalone prose semantics",
+    "lifecycle context absent: separate invocation/session validation required for contextual rules"
   ],
   "boundary_conditions": [
     "missing versus null",
@@ -35234,16 +37829,17 @@ Status: DERIVED. Canonical links: CM.SDK.PROVIDER.PARSE_PROVIDER_EVENT.
 }
 ```
 
-Source references: src/openverify/provider/validation.py:339-340 [sha256 c087fa9fd79a68d4907322a5173acc9c31453570f679f1942d3066499d416be4]
-
 ### D.SDK.PROVIDER.PARSE_OUTCOME
 
-Status: DERIVED. Canonical links: CM.SDK.PROVIDER.PARSE_OUTCOME.
+Canonical links: CM.SDK.PROVIDER.PARSE_OUTCOME
 
 ```json
 {
   "axes": [
-    "typed API arguments and JSON values; exact classes below"
+    "Named parser operation for its exact shipped root",
+    "str/bytes/materialized JSON input",
+    "strict JSON encoding, root structural validity, standalone prose semantics",
+    "lifecycle context absent: separate invocation/session validation required for contextual rules"
   ],
   "boundary_conditions": [
     "missing versus null",
@@ -35268,16 +37864,17 @@ Status: DERIVED. Canonical links: CM.SDK.PROVIDER.PARSE_OUTCOME.
 }
 ```
 
-Source references: src/openverify/provider/validation.py:343-344 [sha256 c087fa9fd79a68d4907322a5173acc9c31453570f679f1942d3066499d416be4]
-
 ### D.SDK.PROVIDER.PARSE_CANCEL_REQUEST
 
-Status: DERIVED. Canonical links: CM.SDK.PROVIDER.PARSE_CANCEL_REQUEST.
+Canonical links: CM.SDK.PROVIDER.PARSE_CANCEL_REQUEST
 
 ```json
 {
   "axes": [
-    "typed API arguments and JSON values; exact classes below"
+    "Named parser operation for its exact shipped root",
+    "str/bytes/materialized JSON input",
+    "strict JSON encoding, root structural validity, standalone prose semantics",
+    "lifecycle context absent: separate invocation/session validation required for contextual rules"
   ],
   "boundary_conditions": [
     "missing versus null",
@@ -35302,16 +37899,16 @@ Status: DERIVED. Canonical links: CM.SDK.PROVIDER.PARSE_CANCEL_REQUEST.
 }
 ```
 
-Source references: src/openverify/provider/validation.py:347-348 [sha256 c087fa9fd79a68d4907322a5173acc9c31453570f679f1942d3066499d416be4]
-
 ### D.SDK.PROVIDER.VALIDATE_PROVIDER_MANIFEST
 
-Status: DERIVED. Canonical links: CM.SDK.PROVIDER.VALIDATE_PROVIDER_MANIFEST.
+Canonical links: CM.SDK.PROVIDER.VALIDATE_PROVIDER_MANIFEST
 
 ```json
 {
   "axes": [
-    "typed API arguments and JSON values; exact classes below"
+    "Typed model instance for named operation",
+    "wire serialization snapshot",
+    "structural and standalone semantic validity; successful operation returns None"
   ],
   "boundary_conditions": [
     "missing versus null",
@@ -35334,16 +37931,16 @@ Status: DERIVED. Canonical links: CM.SDK.PROVIDER.VALIDATE_PROVIDER_MANIFEST.
 }
 ```
 
-Source references: src/openverify/provider/validation.py:351-352 [sha256 c087fa9fd79a68d4907322a5173acc9c31453570f679f1942d3066499d416be4]
-
 ### D.SDK.PROVIDER.VALIDATE_INVOCATION
 
-Status: DERIVED. Canonical links: CM.SDK.PROVIDER.VALIDATE_INVOCATION.
+Canonical links: CM.SDK.PROVIDER.VALIDATE_INVOCATION
 
 ```json
 {
   "axes": [
-    "typed API arguments and JSON values; exact classes below"
+    "Typed model instance for named operation",
+    "wire serialization snapshot",
+    "structural and standalone semantic validity; successful operation returns None"
   ],
   "boundary_conditions": [
     "missing versus null",
@@ -35366,16 +37963,16 @@ Status: DERIVED. Canonical links: CM.SDK.PROVIDER.VALIDATE_INVOCATION.
 }
 ```
 
-Source references: src/openverify/provider/validation.py:355-356 [sha256 c087fa9fd79a68d4907322a5173acc9c31453570f679f1942d3066499d416be4]
-
 ### D.SDK.PROVIDER.VALIDATE_PROVIDER_EVENT
 
-Status: DERIVED. Canonical links: CM.SDK.PROVIDER.VALIDATE_PROVIDER_EVENT.
+Canonical links: CM.SDK.PROVIDER.VALIDATE_PROVIDER_EVENT
 
 ```json
 {
   "axes": [
-    "typed API arguments and JSON values; exact classes below"
+    "Typed model instance for named operation",
+    "wire serialization snapshot",
+    "structural and standalone semantic validity; successful operation returns None"
   ],
   "boundary_conditions": [
     "missing versus null",
@@ -35398,16 +37995,16 @@ Status: DERIVED. Canonical links: CM.SDK.PROVIDER.VALIDATE_PROVIDER_EVENT.
 }
 ```
 
-Source references: src/openverify/provider/validation.py:359-360 [sha256 c087fa9fd79a68d4907322a5173acc9c31453570f679f1942d3066499d416be4]
-
 ### D.SDK.PROVIDER.VALIDATE_OUTCOME
 
-Status: DERIVED. Canonical links: CM.SDK.PROVIDER.VALIDATE_OUTCOME.
+Canonical links: CM.SDK.PROVIDER.VALIDATE_OUTCOME
 
 ```json
 {
   "axes": [
-    "typed API arguments and JSON values; exact classes below"
+    "Typed model instance for named operation",
+    "wire serialization snapshot",
+    "structural and standalone semantic validity; successful operation returns None"
   ],
   "boundary_conditions": [
     "missing versus null",
@@ -35430,16 +38027,16 @@ Status: DERIVED. Canonical links: CM.SDK.PROVIDER.VALIDATE_OUTCOME.
 }
 ```
 
-Source references: src/openverify/provider/validation.py:363-364 [sha256 c087fa9fd79a68d4907322a5173acc9c31453570f679f1942d3066499d416be4]
-
 ### D.SDK.REFERENCE.CONSTANT
 
-Status: DERIVED. Canonical links: CM.SDK.REFERENCE.CONSTANT.
+Canonical links: CM.SDK.REFERENCE.CONSTANT
 
 ```json
 {
   "axes": [
-    "typed API arguments and JSON values; exact classes below"
+    "Arbitrary JSON Constant.value",
+    "explicit schema or default true schema",
+    "Ref source identity CONSTANT and returned schema"
   ],
   "boundary_conditions": [
     "missing versus null",
@@ -35453,7 +38050,7 @@ Status: DERIVED. Canonical links: CM.SDK.REFERENCE.CONSTANT.
   "inapplicable_set": "Other operations/false preconditions.",
   "invalid_set": "Do not infer hidden runtime context.",
   "kind": "SYMBOLIC",
-  "mathematics_status": "DERIVED",
+  "mathematics_status": "EXPLICIT_OPERATION_ARGUMENT_DOMAIN_AND_PARTITIONS_REVIEWED",
   "partitions": [
     "null constant",
     "other JSON",
@@ -35464,16 +38061,16 @@ Status: DERIVED. Canonical links: CM.SDK.REFERENCE.CONSTANT.
 }
 ```
 
-Source references: src/openverify/authoring/references.py:16-17 [sha256 97385c774624753bfde2a0802cefdb98259522ed630c8d98fd767f10e244dd67]
-
 ### D.SDK.REFERENCE.EXTERNAL
 
-Status: DERIVED. Canonical links: CM.SDK.REFERENCE.EXTERNAL.
+Canonical links: CM.SDK.REFERENCE.EXTERNAL
 
 ```json
 {
   "axes": [
-    "typed API arguments and JSON values; exact classes below"
+    "Authored ArtifactRef",
+    "opaque locator JSON and metadata",
+    "Ref source EXTERNAL_REFERENCE with object schema"
   ],
   "boundary_conditions": [
     "missing versus null",
@@ -35487,7 +38084,7 @@ Status: DERIVED. Canonical links: CM.SDK.REFERENCE.EXTERNAL.
   "inapplicable_set": "Other operations/false preconditions.",
   "invalid_set": "Do not fetch referenced bytes.",
   "kind": "SYMBOLIC",
-  "mathematics_status": "DERIVED",
+  "mathematics_status": "EXPLICIT_OPERATION_ARGUMENT_DOMAIN_AND_PARTITIONS_REVIEWED",
   "partitions": [
     "opaque locator",
     "reference snapshot"
@@ -35496,16 +38093,16 @@ Status: DERIVED. Canonical links: CM.SDK.REFERENCE.EXTERNAL.
 }
 ```
 
-Source references: src/openverify/authoring/references.py:20-21 [sha256 97385c774624753bfde2a0802cefdb98259522ed630c8d98fd767f10e244dd67]
-
 ### D.SDK.NODE.OUTPUT
 
-Status: DERIVED. Canonical links: CM.SDK.NODE.OUTPUT.
+Canonical links: CM.SDK.NODE.OUTPUT
 
 ```json
 {
   "axes": [
-    "typed API arguments and JSON values; exact classes below"
+    "NodeRef declared output-name map",
+    "requested name present or absent",
+    "result/decision property aliases exact reserved names"
   ],
   "boundary_conditions": [
     "missing versus null",
@@ -35519,7 +38116,7 @@ Status: DERIVED. Canonical links: CM.SDK.NODE.OUTPUT.
   "inapplicable_set": "Other operations/false preconditions.",
   "invalid_set": "Do not synthesize undeclared output.",
   "kind": "SYMBOLIC",
-  "mathematics_status": "DERIVED",
+  "mathematics_status": "EXPLICIT_OPERATION_ARGUMENT_DOMAIN_AND_PARTITIONS_REVIEWED",
   "partitions": [
     "declared",
     "undeclared"
@@ -35528,16 +38125,16 @@ Status: DERIVED. Canonical links: CM.SDK.NODE.OUTPUT.
 }
 ```
 
-Source references: src/openverify/authoring/graph.py:45-46 [sha256 48b0dce02e1487ccc3ca51d6a40e5446de78ca4010e95fff81e6217281fb5fad]
-
 ### D.SDK.AUTHORING.GRAPH.INPUT
 
-Status: DERIVED. Canonical links: CM.SDK.AUTHORING.GRAPH.INPUT.
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
   "axes": [
-    "typed API arguments and JSON values; exact classes below"
+    "Input name and schema",
+    "required Boolean; optional explicit Constant default including null",
+    "Ref RUN_INPUT source and copied input schema"
   ],
   "boundary_conditions": [
     "missing versus null",
@@ -35551,7 +38148,7 @@ Status: DERIVED. Canonical links: CM.SDK.AUTHORING.GRAPH.INPUT.
   "inapplicable_set": "Other operations/false preconditions.",
   "invalid_set": "Do not create a second protocol semantics or bypass ordinary validation.",
   "kind": "SYMBOLIC",
-  "mathematics_status": "DERIVED",
+  "mathematics_status": "EXPLICIT_OPERATION_ARGUMENT_DOMAIN_AND_PARTITIONS_REVIEWED",
   "partitions": [
     "required",
     "optional omit",
@@ -35561,16 +38158,16 @@ Status: DERIVED. Canonical links: CM.SDK.AUTHORING.GRAPH.INPUT.
 }
 ```
 
-Source references: src/openverify/authoring/graph.py:94-111 [sha256 48b0dce02e1487ccc3ca51d6a40e5446de78ca4010e95fff81e6217281fb5fad]
-
 ### D.SDK.AUTHORING.GRAPH.NODE
 
-Status: DERIVED. Canonical links: CM.SDK.AUTHORING.GRAPH.NODE.
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
   "axes": [
-    "typed API arguments and JSON values; exact classes below"
+    "Node kind DERIVE,EVALUATE,CONTROL,AGGREGATE",
+    "exact operation pair, typed Ref bindings, optional explicit input-port declarations",
+    "declared information outputs; auto primary result/decision; config; dependencies; resource estimate"
   ],
   "boundary_conditions": [
     "missing versus null",
@@ -35584,7 +38181,7 @@ Status: DERIVED. Canonical links: CM.SDK.AUTHORING.GRAPH.NODE.
   "inapplicable_set": "Other operations/false preconditions.",
   "invalid_set": "Do not create a second protocol semantics or bypass ordinary validation.",
   "kind": "SYMBOLIC",
-  "mathematics_status": "DERIVED",
+  "mathematics_status": "EXPLICIT_OPERATION_ARGUMENT_DOMAIN_AND_PARTITIONS_REVIEWED",
   "partitions": [
     "all four kinds",
     "reserved semantic bindings",
@@ -35595,16 +38192,16 @@ Status: DERIVED. Canonical links: CM.SDK.AUTHORING.GRAPH.NODE.
 }
 ```
 
-Source references: src/openverify/authoring/graph.py:113-181 [sha256 48b0dce02e1487ccc3ca51d6a40e5446de78ca4010e95fff81e6217281fb5fad]
-
 ### D.SDK.AUTHORING.GRAPH.AGGREGATE
 
-Status: DERIVED. Canonical links: CM.SDK.AUTHORING.GRAPH.AGGREGATE.
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
   "axes": [
-    "typed API arguments and JSON values; exact classes below"
+    "Ordered mapping member_name->Ref",
+    "standard versus custom capability",
+    "optional handling/reducer/config; reserved semantic names"
   ],
   "boundary_conditions": [
     "missing versus null",
@@ -35618,7 +38215,7 @@ Status: DERIVED. Canonical links: CM.SDK.AUTHORING.GRAPH.AGGREGATE.
   "inapplicable_set": "Other operations/false preconditions.",
   "invalid_set": "Do not create a second protocol semantics or bypass ordinary validation.",
   "kind": "SYMBOLIC",
-  "mathematics_status": "DERIVED",
+  "mathematics_status": "EXPLICIT_OPERATION_ARGUMENT_DOMAIN_AND_PARTITIONS_REVIEWED",
   "partitions": [
     "standard",
     "custom",
@@ -35629,16 +38226,16 @@ Status: DERIVED. Canonical links: CM.SDK.AUTHORING.GRAPH.AGGREGATE.
 }
 ```
 
-Source references: src/openverify/authoring/graph.py:192-224 [sha256 48b0dce02e1487ccc3ca51d6a40e5446de78ca4010e95fff81e6217281fb5fad]
-
 ### D.SDK.AUTHORING.GRAPH.EDGE
 
-Status: DERIVED. Canonical links: CM.SDK.AUTHORING.GRAPH.EDGE.
+Canonical links: CM.SDK.AUTHORING.GRAPH.EDGE
 
 ```json
 {
   "axes": [
-    "typed API arguments and JSON values; exact classes below"
+    "Predecessor and successor NodeRefs",
+    "existing directed pair absent or present",
+    "guard absent/present; edge replacement position"
   ],
   "boundary_conditions": [
     "missing versus null",
@@ -35652,7 +38249,7 @@ Status: DERIVED. Canonical links: CM.SDK.AUTHORING.GRAPH.EDGE.
   "inapplicable_set": "Other operations/false preconditions.",
   "invalid_set": "Do not create a second protocol semantics or bypass ordinary validation.",
   "kind": "SYMBOLIC",
-  "mathematics_status": "DERIVED",
+  "mathematics_status": "EXPLICIT_OPERATION_ARGUMENT_DOMAIN_AND_PARTITIONS_REVIEWED",
   "partitions": [
     "new edge",
     "same pair",
@@ -35662,16 +38259,15 @@ Status: DERIVED. Canonical links: CM.SDK.AUTHORING.GRAPH.EDGE.
 }
 ```
 
-Source references: src/openverify/authoring/graph.py:226-230 [sha256 48b0dce02e1487ccc3ca51d6a40e5446de78ca4010e95fff81e6217281fb5fad]
-
 ### D.SDK.AUTHORING.GRAPH.ADD_NODE
 
-Status: DERIVED. Canonical links: CM.SDK.AUTHORING.GRAPH.ADD_NODE.
+Canonical links: CM.SDK.AUTHORING.GRAPH.ADD_NODE
 
 ```json
 {
   "axes": [
-    "typed API arguments and JSON values; exact classes below"
+    "Explicit SDK Node with nested mutable JSON/schema declarations",
+    "original caller node versus builder snapshot"
   ],
   "boundary_conditions": [
     "missing versus null",
@@ -35685,7 +38281,7 @@ Status: DERIVED. Canonical links: CM.SDK.AUTHORING.GRAPH.ADD_NODE.
   "inapplicable_set": "Other operations/false preconditions.",
   "invalid_set": "Do not create a second protocol semantics or bypass ordinary validation.",
   "kind": "SYMBOLIC",
-  "mathematics_status": "DERIVED",
+  "mathematics_status": "EXPLICIT_OPERATION_ARGUMENT_DOMAIN_AND_PARTITIONS_REVIEWED",
   "partitions": [
     "snapshot isolation"
   ],
@@ -35693,16 +38289,16 @@ Status: DERIVED. Canonical links: CM.SDK.AUTHORING.GRAPH.ADD_NODE.
 }
 ```
 
-Source references: src/openverify/authoring/graph.py:232-240 [sha256 48b0dce02e1487ccc3ca51d6a40e5446de78ca4010e95fff81e6217281fb5fad]
-
 ### D.SDK.AUTHORING.GRAPH.BUILD
 
-Status: DERIVED. Canonical links: CM.SDK.AUTHORING.GRAPH.BUILD.
+Canonical links: CM.SDK.AUTHORING.GRAPH.BUILD
 
 ```json
 {
   "axes": [
-    "typed API arguments and JSON values; exact classes below"
+    "Current builder fields and node/edge/run-input state",
+    "portable root predicate and VCP semantic validity",
+    "later authoring mutation versus earlier built snapshot"
   ],
   "boundary_conditions": [
     "missing versus null",
@@ -35716,7 +38312,7 @@ Status: DERIVED. Canonical links: CM.SDK.AUTHORING.GRAPH.BUILD.
   "inapplicable_set": "Other operations/false preconditions.",
   "invalid_set": "Do not create a second protocol semantics or bypass ordinary validation.",
   "kind": "SYMBOLIC",
-  "mathematics_status": "DERIVED",
+  "mathematics_status": "EXPLICIT_OPERATION_ARGUMENT_DOMAIN_AND_PARTITIONS_REVIEWED",
   "partitions": [
     "valid graph",
     "invalid graph",
@@ -35726,16 +38322,15 @@ Status: DERIVED. Canonical links: CM.SDK.AUTHORING.GRAPH.BUILD.
 }
 ```
 
-Source references: src/openverify/authoring/graph.py:242-253 [sha256 48b0dce02e1487ccc3ca51d6a40e5446de78ca4010e95fff81e6217281fb5fad]
-
 ### D.SDK.AUTHORING.GRAPH.VALIDATE
 
-Status: DERIVED. Canonical links: CM.SDK.AUTHORING.GRAPH.VALIDATE.
+Canonical links: CM.SDK.AUTHORING.GRAPH.VALIDATE
 
 ```json
 {
   "axes": [
-    "typed API arguments and JSON values; exact classes below"
+    "Current builder state",
+    "build succeeds or raises structured construction/semantic error"
   ],
   "boundary_conditions": [
     "missing versus null",
@@ -35749,7 +38344,7 @@ Status: DERIVED. Canonical links: CM.SDK.AUTHORING.GRAPH.VALIDATE.
   "inapplicable_set": "Other operations/false preconditions.",
   "invalid_set": "Do not create a second protocol semantics or bypass ordinary validation.",
   "kind": "SYMBOLIC",
-  "mathematics_status": "DERIVED",
+  "mathematics_status": "EXPLICIT_OPERATION_ARGUMENT_DOMAIN_AND_PARTITIONS_REVIEWED",
   "partitions": [
     "valid",
     "invalid"
@@ -35758,16 +38353,15 @@ Status: DERIVED. Canonical links: CM.SDK.AUTHORING.GRAPH.VALIDATE.
 }
 ```
 
-Source references: src/openverify/authoring/graph.py:255-256 [sha256 48b0dce02e1487ccc3ca51d6a40e5446de78ca4010e95fff81e6217281fb5fad]
-
 ### D.SDK.AUTHORING.GRAPH.INSPECT
 
-Status: DERIVED. Canonical links: CM.SDK.AUTHORING.GRAPH.INSPECT.
+Canonical links: CM.SDK.AUTHORING.GRAPH.INSPECT
 
 ```json
 {
   "axes": [
-    "typed API arguments and JSON values; exact classes below"
+    "Current builder state",
+    "build result inspected without provider execution"
   ],
   "boundary_conditions": [
     "missing versus null",
@@ -35781,7 +38375,7 @@ Status: DERIVED. Canonical links: CM.SDK.AUTHORING.GRAPH.INSPECT.
   "inapplicable_set": "Other operations/false preconditions.",
   "invalid_set": "Do not create a second protocol semantics or bypass ordinary validation.",
   "kind": "SYMBOLIC",
-  "mathematics_status": "DERIVED",
+  "mathematics_status": "EXPLICIT_OPERATION_ARGUMENT_DOMAIN_AND_PARTITIONS_REVIEWED",
   "partitions": [
     "valid",
     "invalid"
@@ -35790,16 +38384,15 @@ Status: DERIVED. Canonical links: CM.SDK.AUTHORING.GRAPH.INSPECT.
 }
 ```
 
-Source references: src/openverify/authoring/graph.py:258-259 [sha256 48b0dce02e1487ccc3ca51d6a40e5446de78ca4010e95fff81e6217281fb5fad]
-
 ### D.SDK.AUTHORING.GRAPH.TO_JSON
 
-Status: DERIVED. Canonical links: CM.SDK.AUTHORING.GRAPH.TO_JSON.
+Canonical links: CM.SDK.AUTHORING.GRAPH.TO_JSON
 
 ```json
 {
   "axes": [
-    "typed API arguments and JSON values; exact classes below"
+    "Current builder state",
+    "built validated definition and local serialization bytes"
   ],
   "boundary_conditions": [
     "missing versus null",
@@ -35813,7 +38406,7 @@ Status: DERIVED. Canonical links: CM.SDK.AUTHORING.GRAPH.TO_JSON.
   "inapplicable_set": "Other operations/false preconditions.",
   "invalid_set": "Do not create a second protocol semantics or bypass ordinary validation.",
   "kind": "SYMBOLIC",
-  "mathematics_status": "DERIVED",
+  "mathematics_status": "EXPLICIT_OPERATION_ARGUMENT_DOMAIN_AND_PARTITIONS_REVIEWED",
   "partitions": [
     "valid",
     "invalid"
@@ -35822,16 +38415,16 @@ Status: DERIVED. Canonical links: CM.SDK.AUTHORING.GRAPH.TO_JSON.
 }
 ```
 
-Source references: src/openverify/authoring/graph.py:261-262 [sha256 48b0dce02e1487ccc3ca51d6a40e5446de78ca4010e95fff81e6217281fb5fad]
-
 ### D.SDK.SERVICE.GRAPHSERVICE.DEFINITION
 
-Status: DERIVED. Canonical links: CM.SDK.SERVICE.GRAPHSERVICE.DEFINITION.
+Canonical links: CM.SDK.SERVICE.GRAPHSERVICE.DEFINITION
 
 ```json
 {
   "axes": [
-    "typed API arguments and JSON values; exact classes below"
+    "Host-authorized name->serialized definition map",
+    "requested name present or absent",
+    "new parse snapshot versus retained source string"
   ],
   "boundary_conditions": [
     "missing versus null",
@@ -35845,7 +38438,7 @@ Status: DERIVED. Canonical links: CM.SDK.SERVICE.GRAPHSERVICE.DEFINITION.
   "inapplicable_set": "Other operations/false preconditions.",
   "invalid_set": "Do not expose arbitrary executable or graph-path loading. ",
   "kind": "SYMBOLIC",
-  "mathematics_status": "DERIVED",
+  "mathematics_status": "EXPLICIT_OPERATION_ARGUMENT_DOMAIN_AND_PARTITIONS_REVIEWED",
   "partitions": [
     "known name",
     "unknown name",
@@ -35855,16 +38448,15 @@ Status: DERIVED. Canonical links: CM.SDK.SERVICE.GRAPHSERVICE.DEFINITION.
 }
 ```
 
-Source references: src/openverify/relay/entrypoints/service.py:35-38 [sha256 0accc0770270fe8ea7c5229244da2cf9074218caf085f133d4b4b3527f04700d]
-
 ### D.SDK.SERVICE.GRAPHSERVICE.LIST_GRAPHS
 
-Status: DERIVED. Canonical links: CM.SDK.SERVICE.GRAPHSERVICE.LIST_GRAPHS.
+Canonical links: CM.SDK.SERVICE.GRAPHSERVICE.LIST_GRAPHS
 
 ```json
 {
   "axes": [
-    "typed API arguments and JSON values; exact classes below"
+    "Finite host-authorized name set",
+    "string lexical sort"
   ],
   "boundary_conditions": [
     "missing versus null",
@@ -35878,7 +38470,7 @@ Status: DERIVED. Canonical links: CM.SDK.SERVICE.GRAPHSERVICE.LIST_GRAPHS.
   "inapplicable_set": "Other operations/false preconditions.",
   "invalid_set": "Do not expose arbitrary executable or graph-path loading. ",
   "kind": "SYMBOLIC",
-  "mathematics_status": "DERIVED",
+  "mathematics_status": "EXPLICIT_OPERATION_ARGUMENT_DOMAIN_AND_PARTITIONS_REVIEWED",
   "partitions": [
     "empty",
     "multiple names"
@@ -35887,16 +38479,15 @@ Status: DERIVED. Canonical links: CM.SDK.SERVICE.GRAPHSERVICE.LIST_GRAPHS.
 }
 ```
 
-Source references: src/openverify/relay/entrypoints/service.py:40-41 [sha256 0accc0770270fe8ea7c5229244da2cf9074218caf085f133d4b4b3527f04700d]
-
 ### D.SDK.SERVICE.GRAPHSERVICE.DESCRIBE_GRAPH
 
-Status: DERIVED. Canonical links: CM.SDK.SERVICE.GRAPHSERVICE.DESCRIBE_GRAPH.
+Canonical links: CM.SDK.SERVICE.GRAPHSERVICE.DESCRIBE_GRAPH
 
 ```json
 {
   "axes": [
-    "typed API arguments and JSON values; exact classes below"
+    "Authorized graph name",
+    "stored validated definition snapshot and inspection projection"
   ],
   "boundary_conditions": [
     "missing versus null",
@@ -35910,7 +38501,7 @@ Status: DERIVED. Canonical links: CM.SDK.SERVICE.GRAPHSERVICE.DESCRIBE_GRAPH.
   "inapplicable_set": "Other operations/false preconditions.",
   "invalid_set": "Do not expose arbitrary executable or graph-path loading. ",
   "kind": "SYMBOLIC",
-  "mathematics_status": "DERIVED",
+  "mathematics_status": "EXPLICIT_OPERATION_ARGUMENT_DOMAIN_AND_PARTITIONS_REVIEWED",
   "partitions": [
     "authorized",
     "unauthorized"
@@ -35919,16 +38510,16 @@ Status: DERIVED. Canonical links: CM.SDK.SERVICE.GRAPHSERVICE.DESCRIBE_GRAPH.
 }
 ```
 
-Source references: src/openverify/relay/entrypoints/service.py:43-44 [sha256 0accc0770270fe8ea7c5229244da2cf9074218caf085f133d4b4b3527f04700d]
-
 ### D.SDK.SERVICE.GRAPHSERVICE.RUN_GRAPH
 
-Status: DERIVED. Canonical links: CM.SDK.SERVICE.GRAPHSERVICE.RUN_GRAPH.
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
   "axes": [
-    "typed API arguments and JSON values; exact classes below"
+    "Authorized graph name and explicit input object",
+    "service semaphore bound k, existing active calls",
+    "complete Relay record wire data versus run error"
   ],
   "boundary_conditions": [
     "missing versus null",
@@ -35942,7 +38533,7 @@ Status: DERIVED. Canonical links: CM.SDK.SERVICE.GRAPHSERVICE.RUN_GRAPH.
   "inapplicable_set": "Other operations/false preconditions.",
   "invalid_set": "Do not expose arbitrary executable or graph-path loading. ",
   "kind": "SYMBOLIC",
-  "mathematics_status": "DERIVED",
+  "mathematics_status": "EXPLICIT_OPERATION_ARGUMENT_DOMAIN_AND_PARTITIONS_REVIEWED",
   "partitions": [
     "authorization",
     "input validation",
@@ -35952,16 +38543,15 @@ Status: DERIVED. Canonical links: CM.SDK.SERVICE.GRAPHSERVICE.RUN_GRAPH.
 }
 ```
 
-Source references: src/openverify/relay/entrypoints/service.py:46-51 [sha256 0accc0770270fe8ea7c5229244da2cf9074218caf085f133d4b4b3527f04700d]
-
 ### D.SDK.SERVICE.GRAPHSERVICE.INSPECT_RESULT
 
-Status: DERIVED. Canonical links: CM.SDK.SERVICE.GRAPHSERVICE.INSPECT_RESULT.
+Canonical links: CM.SDK.SERVICE.GRAPHSERVICE.INSPECT_RESULT
 
 ```json
 {
   "axes": [
-    "typed API arguments and JSON values; exact classes below"
+    "run_id and current service RecordStore",
+    "record present or missing; exact returned record JSON"
   ],
   "boundary_conditions": [
     "missing versus null",
@@ -35975,7 +38565,7 @@ Status: DERIVED. Canonical links: CM.SDK.SERVICE.GRAPHSERVICE.INSPECT_RESULT.
   "inapplicable_set": "Other operations/false preconditions.",
   "invalid_set": "Do not expose arbitrary executable or graph-path loading. ",
   "kind": "SYMBOLIC",
-  "mathematics_status": "DERIVED",
+  "mathematics_status": "EXPLICIT_OPERATION_ARGUMENT_DOMAIN_AND_PARTITIONS_REVIEWED",
   "partitions": [
     "retained",
     "unavailable"
@@ -35984,16 +38574,16 @@ Status: DERIVED. Canonical links: CM.SDK.SERVICE.GRAPHSERVICE.INSPECT_RESULT.
 }
 ```
 
-Source references: src/openverify/relay/entrypoints/service.py:53-59 [sha256 0accc0770270fe8ea7c5229244da2cf9074218caf085f133d4b4b3527f04700d]
-
 ### D.SDK.RELAY.RUN_SYNC
 
-Status: DERIVED. Canonical links: CM.SDK.RELAY.RUN_SYNC.
+Canonical links: CM.SDK.RELAY.RUN_SYNC
 
 ```json
 {
   "axes": [
-    "typed API arguments and JSON values; exact classes below"
+    "Graph/Definition/serialized input accepted by Relay.run",
+    "typed inputs and optional opportunity id",
+    "synchronous host without existing active event loop"
   ],
   "boundary_conditions": [
     "missing versus null",
@@ -36007,7 +38597,7 @@ Status: DERIVED. Canonical links: CM.SDK.RELAY.RUN_SYNC.
   "inapplicable_set": "Other operations/false preconditions.",
   "invalid_set": "Do not claim compatibility with nested event loops or expose a cancellation argument absent from this signature.",
   "kind": "SYMBOLIC",
-  "mathematics_status": "DERIVED",
+  "mathematics_status": "EXPLICIT_OPERATION_ARGUMENT_DOMAIN_AND_PARTITIONS_REVIEWED",
   "partitions": [
     "valid synchronous host",
     "running loop misuse"
@@ -36016,11 +38606,9 @@ Status: DERIVED. Canonical links: CM.SDK.RELAY.RUN_SYNC.
 }
 ```
 
-Source references: src/openverify/relay/api.py:143-150 [sha256 3b01df667b8272016b0bd177defce7b5cfa33dfad238a945021782c3cc3f6549]
-
 ### D.SDK.RELAY.VERIFY_BEFORE
 
-Status: DERIVED. Canonical links: CM.SDK.RELAY.VERIFY_BEFORE.
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -36050,16 +38638,16 @@ Status: DERIVED. Canonical links: CM.SDK.RELAY.VERIFY_BEFORE.
 }
 ```
 
-Source references: src/openverify/relay/api.py:152-165 [sha256 3b01df667b8272016b0bd177defce7b5cfa33dfad238a945021782c3cc3f6549]
-
 ### D.SDK.RELAY.CONFIG
 
-Status: DERIVED. Canonical links: CM.SDK.RELAY.CONFIG.
+Canonical links: CM.SDK.RELAY.CONFIG
 
 ```json
 {
   "axes": [
-    "typed API arguments and JSON values; exact classes below"
+    "max_concurrency exact Python int k",
+    "finite positive timeout",
+    "explicit binding map keyed by node or policy role"
   ],
   "boundary_conditions": [
     "missing versus null",
@@ -36073,7 +38661,7 @@ Status: DERIVED. Canonical links: CM.SDK.RELAY.CONFIG.
   "inapplicable_set": "Other operations/false preconditions.",
   "invalid_set": "Do not accept Boolean max_concurrency as an integer.",
   "kind": "SYMBOLIC",
-  "mathematics_status": "DERIVED",
+  "mathematics_status": "EXPLICIT_OPERATION_ARGUMENT_DOMAIN_AND_PARTITIONS_REVIEWED",
   "partitions": [
     "zero/negative",
     "Boolean",
@@ -36084,11 +38672,9 @@ Status: DERIVED. Canonical links: CM.SDK.RELAY.CONFIG.
 }
 ```
 
-Source references: src/openverify/relay/config.py:17-21 [sha256 0baac5f1e572475560f0e62b555540423cdb549038d206f5634adcbb93e1d551]
-
 ### D.INPUT_RESOLUTION.CONSISTENCY
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -36140,6 +38726,15 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.INPUT_RESOLUTION.CONSISTENCY",
   "formula": "6 * 3 * 2 * 2",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "candidate_count": 72,
+    "counts": {
+      "INVALID": 54,
+      "VALID": 18
+    },
+    "method": "Separate hand-authored source-semantic classifier, no production import or observed outputs.",
+    "status": "RECONCILED"
+  },
   "invalid_count": 54,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -36149,11 +38744,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: spec/draft/dataflow.md:1-195 [sha256 50c60efcd2701f35d93b05040bc0aef5a2f3dcf8252e026a3df956c4d4554c02]
-
 ### D.EVIDENCE.MEANING
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: CM.VCP.KNOWLEDGE.EVIDENCE
 
 ```json
 {
@@ -36204,20 +38797,30 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.EVIDENCE.MEANING",
   "formula": "16 * 8",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "candidate_count": 128,
+    "counts": {
+      "INVALID": 8,
+      "VALID": 120
+    },
+    "method": "Separate hand-authored source-semantic classifier, no production import or observed outputs.",
+    "status": "RECONCILED"
+  },
   "invalid_count": 8,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
   "meaning": "Four meaningful fields message/artifact_ref/locator/structured_data and annotations id/metadata/extensions. Present payloads held valid; empty message is not in the valid-message class.",
   "outcomes": null,
+  "requirement_ids": [
+    "CM.VCP.KNOWLEDGE.EVIDENCE"
+  ],
   "valid_count": 120
 }
 ```
 
-Source references: spec/draft/knowledge.md:1-29 [sha256 46dd1dbb4b8ca84d87ada6fa3790eac4891be4814267b764d39fafd0293b4dd3]
-
 ### D.SCHEMA.TYPE_OVERLAP
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -36258,6 +38861,15 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.SCHEMA.TYPE_OVERLAP",
   "formula": "7 * 7",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "candidate_count": 49,
+    "counts": {
+      "INVALID": 40,
+      "VALID": 9
+    },
+    "method": "Separate hand-authored source-semantic classifier, no production import or observed outputs.",
+    "status": "RECONCILED"
+  },
   "invalid_count": 40,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -36267,11 +38879,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: spec/draft/dataflow.md:1-195 [sha256 50c60efcd2701f35d93b05040bc0aef5a2f3dcf8252e026a3df956c4d4554c02], provider-contract/spec/draft/capabilities.md:1-51 [sha256 9ac03569a88e9982b5a75ceb705daa59cd0ff21aa3ab440d9ee0e3b2afcaa66a]
-
 ### D.SCHEMA.EMBEDDED
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: CM.PROVIDER.SCHEMA.VALIDITY, CM.SHARED.SCHEMA_APPLICATORS, CM.VCP.SCHEMA.STATIC, CM.VCP.SCHEMA.SUBSET, CM.VCP.SCHEMA.RUNTIME, CM.SDK.SCHEMA.CHECK, CM.SDK.SCHEMA.INCOMPATIBLE, CM.VCP.DATA.DEFAULT.VALUE_SCHEMA, CM.PROVIDER.SCHEMA.REFERENCES.LOCAL, CM.PROVIDER.SCHEMA.REFERENCES.SCHEMA_TARGET, CM.PROVIDER.SCHEMA.REFERENCES.RESOURCE_SCOPE
 
 ```json
 {
@@ -36292,6 +38902,21 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "candidate_count": "unbounded",
   "derivation": "Let Pos(S) be standard schema-bearing keyword locations plus $defs. Resolve refs only inside Pos(S); Draft validity and supported-reference subset are separate predicates. Runtime P_S(x) handles all remaining instance constraints.",
   "domain_id": "D.SCHEMA.EMBEDDED",
+  "evaluation_calculus": {
+    "Boolean": "Eval(true,x).b=true; Eval(false,x).b=false.",
+    "annotations": "format, default, examples and content annotations do not execute or insert values in embedded schemas. Shipped SDK timestamp format checking is separate CM.SDK.WIRE.TIME_FORMAT.",
+    "array": "minItems/maxItems bound length; uniqueItems => forall i<j:not JSON_equal(x[i],x[j]). prefixItems applies corresponding children; items applies later indices. contains => count of matching items between minContains(default1) and optional maxContains; those bounds only with contains.",
+    "conjunction": "All applicable sibling assertion/applicator predicates conjoin; type-specific keywords impose no constraint on other instance types.",
+    "equality": "const:c => JSON_equal(x,c); enum:E => exists e in E:JSON_equal(x,e). Boolean distinct from number; arrays ordered.",
+    "footprint": "Union successful applicable child P/I; successful anyOf branches all contribute; oneOf successful branch contributes; selected if/then/else applies standard annotation scope. propertyNames does not mark values evaluated. unevaluatedProperties/items validate remaining names/indices after applicable evaluated footprints, not merely current properties/items keys.",
+    "judgment": "Eval(S,x)=(b,P,I): Boolean acceptance plus evaluated property-name and item-index sets. This is semantic notation, not production code.",
+    "limits": "Unsupported nested resource IDs/anchors/dynamic/external refs rejected before use; unknown annotation payloads are not traversed as schemas. No claim to validate arbitrary custom vocabularies or nonprogressing recursive evaluation.",
+    "logic": "allOf => all child b; anyOf => some b; oneOf => sum(b)=1; not => not child b. if chooses then or else; absent selected branch=true.",
+    "number": "multipleOf:m => x/m in Z; lower/upper and exclusive bounds apply to mathematical finite JSON number; integer iff x in Z.",
+    "object": "required:R => R subset keys(x); dependentRequired trigger key=>required key subset; properties/patternProperties validate matching values; additionalProperties validates names outside both covered sets; propertyNames validates every key string. min/maxProperties bound key count; dependentSchemas conditionally evaluate whole object.",
+    "reference": "Resolve supported local pointer to actual schema position and evaluate same instance; $defs declares locations without independently asserting them.",
+    "string": "minLength/maxLength bound Unicode length; pattern uses authored ECMA-compatible search match."
+  },
   "inapplicable_set": "No general static subsumption promise for schemas beyond the explicit conservative checks; format remains annotation-only in embedded schemas.",
   "invalid_set": "Invalid metaschema, unresolved pointer, annotation-object target, external URI, nested $id, anchors/dynamic refs, disjoint primitive types/false schema/incompatible finite value sets at static binding.",
   "kind": "SYMBOLIC",
@@ -36308,15 +38933,27 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
     "finite const/enum relation",
     "runtime-only incompatibility"
   ],
+  "recursion_limit": "Eval(S,x) is defined on well-founded instance/schema evaluation. Nonprogressing same-instance reference cycles are externally undefined, Q.NONPROGRESSING_SCHEMA_REFERENCE. No total Boolean oracle is asserted there.",
+  "requirement_ids": [
+    "CM.VCP.SCHEMA.STATIC",
+    "CM.VCP.SCHEMA.SUBSET",
+    "CM.VCP.SCHEMA.RUNTIME",
+    "CM.SHARED.SCHEMA_APPLICATORS",
+    "CM.VCP.DATA.DEFAULT.VALUE_SCHEMA",
+    "CM.PROVIDER.SCHEMA.VALIDITY",
+    "CM.PROVIDER.SCHEMA.REFERENCES.LOCAL",
+    "CM.PROVIDER.SCHEMA.REFERENCES.SCHEMA_TARGET",
+    "CM.PROVIDER.SCHEMA.REFERENCES.RESOURCE_SCOPE",
+    "CM.SDK.SCHEMA.CHECK",
+    "CM.SDK.SCHEMA.INCOMPATIBLE"
+  ],
   "valid_set": "Schema is Draft 2020-12-valid, every ref is # or #/pointer resolving to an actual schema position, no nested resource IDs/anchors/dynamic/external refs; then evaluate runtime instance under that schema."
 }
 ```
 
-Source references: spec/draft/dataflow.md:1-195 [sha256 50c60efcd2701f35d93b05040bc0aef5a2f3dcf8252e026a3df956c4d4554c02], provider-contract/spec/draft/capabilities.md:1-51 [sha256 9ac03569a88e9982b5a75ceb705daa59cd0ff21aa3ab440d9ee0e3b2afcaa66a]
-
 ### D.PROVIDER.INITIALIZATION
 
-Status: DERIVED. Canonical links: CM.PROVIDER.INIT.SELECT, CM.PROVIDER.INIT.VERIFY, CM.PROVIDER.INIT.ONCE.PREWORK, CM.PROVIDER.INIT.ONCE.ONCE, CM.PROVIDER.INIT.ONCE.FAIL_CLOSE.
+Canonical links: CM.PROVIDER.INIT.SELECT, CM.PROVIDER.INIT.VERIFY, CM.PROVIDER.COMPAT.REVISION, CM.PROVIDER.COMPAT.VCP_FIELDS, CM.PROVIDER.INIT.ONCE.FAIL_CLOSE, CM.PROVIDER.INIT.ONCE.ONCE, CM.PROVIDER.INIT.ONCE.PREWORK, CM.PROVIDER.COMPAT.VCP_INTERSECTION.INTERSECTION, CM.PROVIDER.COMPAT.VCP_INTERSECTION.CAPABILITY, CM.PROVIDER.COMPAT.CAPABILITY.CONTRACT_VERSION, CM.PROVIDER.COMPAT.CAPABILITY.IDENTITY
 
 ```json
 {
@@ -36333,7 +38970,7 @@ Status: DERIVED. Canonical links: CM.PROVIDER.INIT.SELECT, CM.PROVIDER.INIT.VERI
     "opaque exact versions, not numeric ranges"
   ],
   "candidate_count": "unbounded",
-  "derivation": "L=[r in R if r in P and locally supported]; success iff L nonempty; chosen=L[0]. V=runnerVCP intersect providerVCP. List/string universes unbounded; no fabricated universal list count.",
+  "derivation": "Let F be the first runner-list element also in provider advertised support. No F => CONTRACT_VERSION_UNSUPPORTED and no work. This declared implementation profile negotiates only0.1; hypothetical shared future markers are outside its supported multiversion profile, not a portable fallback rule that skips F. The local SDK first-common-then0.1 behavior has its own explicit domain. VCP availability is exact set intersection; ordinary nonVCP work does not require nonempty VCP intersection.",
   "domain_id": "D.PROVIDER.INITIALIZATION",
   "inapplicable_set": "Empty VCP intersection does not prevent ordinary non-VCP capabilities.",
   "invalid_set": "Wrong chosen version, no common version followed by work, reinitialization, invocation version different from session, VCP invocation outside negotiated intersection.",
@@ -36348,15 +38985,25 @@ Status: DERIVED. Canonical links: CM.PROVIDER.INIT.SELECT, CM.PROVIDER.INIT.VERI
     "repeat initialize",
     "ordinary versus VCP capability"
   ],
+  "requirement_ids": [
+    "CM.PROVIDER.COMPAT.REVISION",
+    "CM.PROVIDER.COMPAT.VCP_FIELDS",
+    "CM.PROVIDER.COMPAT.VCP_INTERSECTION.INTERSECTION",
+    "CM.PROVIDER.COMPAT.VCP_INTERSECTION.CAPABILITY",
+    "CM.PROVIDER.COMPAT.CAPABILITY.CONTRACT_VERSION",
+    "CM.PROVIDER.COMPAT.CAPABILITY.IDENTITY"
+  ],
+  "scope_limits": [
+    "No finite universe of version strings/lists. No hypothetical future-version preference count.",
+    "Q.VERSION_FUTURE_INTERSECTION is an unsupported future-profile limit, not a reason to invent fallback over earlier shared versions."
+  ],
   "valid_set": "For this draft select 0.1 iff supported by both, preserving runner preference rule for available versions; verify selected version against returned manifest; only one successful initialization and failure closes."
 }
 ```
 
-Source references: provider-contract/spec/draft/versioning.md:6-14 [sha256 2656dd1dbd2a872bd9d9912b8dba4c2ec61fc4dbaf145d091f7cda1203132921], provider-contract/spec/draft/versioning.md:6-14 [sha256 2656dd1dbd2a872bd9d9912b8dba4c2ec61fc4dbaf145d091f7cda1203132921], provider-contract/spec/draft/versioning.md:6-14 [sha256 2656dd1dbd2a872bd9d9912b8dba4c2ec61fc4dbaf145d091f7cda1203132921], provider-contract/spec/draft/capabilities.md:1-51 [sha256 9ac03569a88e9982b5a75ceb705daa59cd0ff21aa3ab440d9ee0e3b2afcaa66a], provider-contract/spec/draft/lifecycle.md:1-72 [sha256 122e8e4aaa8deb60d0cf6397d9857294d096f063c5c7ecde59d3d0359596177d], provider-contract/spec/draft/wire-format.md:1-65 [sha256 23d1e6bc4518225afa86f422d15eee22214d7a285b369c42c6843f45d06895a7], provider-contract/spec/draft/versioning.md:1-34 [sha256 2656dd1dbd2a872bd9d9912b8dba4c2ec61fc4dbaf145d091f7cda1203132921]
-
 ### D.PROVIDER.DEADLINE
 
-Status: DERIVED. Canonical links: CM.PROVIDER.DEADLINE.ACCEPT, CM.PROVIDER.DEADLINE.ACTIVE, CM.PROVIDER.DEADLINE.PRECISION, CM.PROVIDER.DEADLINE.IRREVERSIBLE.
+Canonical links: CM.PROVIDER.DEADLINE.IRREVERSIBLE, CM.PROVIDER.DEADLINE.ACCEPT.ACCEPT, CM.PROVIDER.DEADLINE.ACCEPT.NO_WORK, CM.PROVIDER.DEADLINE.ACCEPT.TERMINAL, CM.PROVIDER.DEADLINE.ACTIVE.MONITOR, CM.PROVIDER.DEADLINE.ACTIVE.STOP_WORK, CM.PROVIDER.DEADLINE.ACTIVE.COMMIT, CM.PROVIDER.DEADLINE.ACTIVE.NO_LATE_COMPLETE, CM.PROVIDER.DEADLINE.PRECISION.FRACTION, CM.PROVIDER.DEADLINE.PRECISION.CALENDAR
 
 ```json
 {
@@ -36390,15 +39037,24 @@ Status: DERIVED. Canonical links: CM.PROVIDER.DEADLINE.ACCEPT, CM.PROVIDER.DEADL
     "delayed delivery",
     "unsupported enforcement"
   ],
+  "requirement_ids": [
+    "CM.PROVIDER.DEADLINE.ACCEPT.ACCEPT",
+    "CM.PROVIDER.DEADLINE.ACCEPT.NO_WORK",
+    "CM.PROVIDER.DEADLINE.ACCEPT.TERMINAL",
+    "CM.PROVIDER.DEADLINE.ACTIVE.MONITOR",
+    "CM.PROVIDER.DEADLINE.ACTIVE.STOP_WORK",
+    "CM.PROVIDER.DEADLINE.ACTIVE.COMMIT",
+    "CM.PROVIDER.DEADLINE.ACTIVE.NO_LATE_COMPLETE",
+    "CM.PROVIDER.DEADLINE.PRECISION.FRACTION",
+    "CM.PROVIDER.DEADLINE.PRECISION.CALENDAR"
+  ],
   "valid_set": "Compare exact decimal fractions at same second; expired otherwise-valid acceptance performs no capability work and ends DEADLINE_EXCEEDED. Once expiry seen, deadline terminal remains mandatory even if clock moves backward."
 }
 ```
 
-Source references: provider-contract/spec/draft/lifecycle.md:29-39 [sha256 122e8e4aaa8deb60d0cf6397d9857294d096f063c5c7ecde59d3d0359596177d], provider-contract/spec/draft/lifecycle.md:29-39 [sha256 122e8e4aaa8deb60d0cf6397d9857294d096f063c5c7ecde59d3d0359596177d], provider-contract/spec/draft/lifecycle.md:41-45 [sha256 122e8e4aaa8deb60d0cf6397d9857294d096f063c5c7ecde59d3d0359596177d], provider-contract/spec/draft/lifecycle.md:41-45 [sha256 122e8e4aaa8deb60d0cf6397d9857294d096f063c5c7ecde59d3d0359596177d], provider-contract/spec/draft/capabilities.md:1-51 [sha256 9ac03569a88e9982b5a75ceb705daa59cd0ff21aa3ab440d9ee0e3b2afcaa66a], provider-contract/spec/draft/lifecycle.md:1-72 [sha256 122e8e4aaa8deb60d0cf6397d9857294d096f063c5c7ecde59d3d0359596177d], provider-contract/spec/draft/wire-format.md:1-65 [sha256 23d1e6bc4518225afa86f422d15eee22214d7a285b369c42c6843f45d06895a7], provider-contract/spec/draft/versioning.md:1-34 [sha256 2656dd1dbd2a872bd9d9912b8dba4c2ec61fc4dbaf145d091f7cda1203132921]
-
 ### D.ERROR.DECLARATIONS
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -36406,6 +39062,22 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.ERROR.DECLARATIONS",
   "formula": "len(unique declarations across three separately owned enums)",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "Relay": 10,
+    "SDK_diagnostics": [
+      "POLICY_ERROR",
+      "RESULT_PROJECTION"
+    ],
+    "enum_counts": {
+      "src/openverify/error_codes.py": 35,
+      "src/openverify/provider_codes.py": 8,
+      "src/openverify/relay/error_codes.py": 10
+    },
+    "normative_Provider": 8,
+    "normative_VCP": 33,
+    "scope": "Declares vocabulary only; no global error precedence or finite universe of provider-namespaced errors.",
+    "status": "RECONCILED"
+  },
   "invalid_count": 0,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -37525,11 +40197,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: src/openverify/error_codes.py [sha256 11b802c51c53b094e6aa694c5f0962270e399c6a3b356de788b20abac8373d8b], src/openverify/provider_codes.py [sha256 8c920dcfbb0c00e1eeb7d776be4719128ddeeb8021ca3e0c1b2e489d12dc23ec], src/openverify/relay/error_codes.py [sha256 d12a354eaa8cb5f769af97acba6e3cd46d06a76436de78e14bab4e12e15c98fc]
-
 ### D.SDK.FUNCTION_PROVIDER
 
-Status: DERIVED. Canonical links: CM.SDK.FUNCTION_PROVIDER.ASYNC, CM.SDK.FUNCTION_PROVIDER.MANIFEST, CM.SDK.FUNCTION_PROVIDER.RESULT, CM.SDK.FUNCTION_PROVIDER.DECISION, CM.SDK.FUNCTION_PROVIDER.POLICY, CM.SDK.FUNCTION_PROVIDER.OBSERVATION, CM.SDK.FUNCTION_PROVIDER.EXCEPTION, CM.SDK.FUNCTION_PROVIDER.TASK_CANCEL, CM.SDK.FUNCTION_PROVIDER.BUDGET.
+Canonical links: CM.SDK.FUNCTION_PROVIDER.ASYNC, CM.SDK.FUNCTION_PROVIDER.BUDGET, CM.SDK.FUNCTION_PROVIDER.DECISION, CM.SDK.FUNCTION_PROVIDER.EXCEPTION, CM.SDK.FUNCTION_PROVIDER.MANIFEST, CM.SDK.FUNCTION_PROVIDER.OBSERVATION, CM.SDK.FUNCTION_PROVIDER.POLICY, CM.SDK.FUNCTION_PROVIDER.RESULT, CM.SDK.FUNCTION_PROVIDER.TASK_CANCEL
 
 ```json
 {
@@ -37567,11 +40237,9 @@ Status: DERIVED. Canonical links: CM.SDK.FUNCTION_PROVIDER.ASYNC, CM.SDK.FUNCTIO
 }
 ```
 
-Source references: src/openverify/relay/providers.py:127-166 [sha256 c3b967ff59c7c3fbd6abb65da9b74292504f81ff04df0b24116a923704289d2c], src/openverify/relay/providers.py:56-124 [sha256 c3b967ff59c7c3fbd6abb65da9b74292504f81ff04df0b24116a923704289d2c]
-
 ### D.PRESENCE.VCP.CRITERION
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -37590,6 +40258,13 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.PRESENCE.VCP.CRITERION",
   "formula": "2^4; key-valid=2^2",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "declared_property_count": 4,
+    "formula": "C=2^4; V=2^(4-2); I=C-V; N=0",
+    "scope": "Unconditional required-key monotonicity only. Values, prose and conditional requirements independently apply.",
+    "status": "RECONCILED",
+    "unconditional_required_count": 2
+  },
   "invalid_count": 12,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -37603,11 +40278,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: schemas/draft/verification-definition.schema.json#/properties/criterion [sha256 4830194f7bfc1c33ba1d6f9d977ac402231f9bcc59e2990ab076ba0e7b545294]
-
 ### D.PRESENCE.VCP.NODE_RECORD
 
-Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic requirement..
+Canonical links: Related projection; not counted as a separate requirement.
 
 ```json
 {
@@ -37642,6 +40315,13 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
   "domain_id": "D.PRESENCE.VCP.NODE_RECORD",
   "formula": "2^20; key-valid=2^8",
   "inapplicable_count": 0,
+  "independent_recalculation": {
+    "declared_property_count": 20,
+    "formula": "C=2^20; V=2^(20-12); I=C-V; N=0",
+    "scope": "Unconditional required-key monotonicity only. Values, prose and conditional requirements independently apply.",
+    "status": "RECONCILED",
+    "unconditional_required_count": 12
+  },
   "invalid_count": 1048320,
   "kind": "FINITE",
   "mathematics_status": "DERIVED",
@@ -37655,11 +40335,9 @@ Status: DERIVED. Canonical links: Projection not yet bound to a reviewed atomic 
 }
 ```
 
-Source references: schemas/draft/run-record.schema.json#/properties/nodes/items [sha256 f0d812b54bd748d282e39016885d3776207a7865763969365002e052aca02773]
-
 ### D.PROFILE.STANDARD
 
-Status: DERIVED. Canonical links: CM.VCP.PROFILE.STANDARD_SEVERITY.
+Canonical links: CM.VCP.PROFILE.STANDARD_SEVERITY
 
 ```json
 {
@@ -37692,7 +40370,3604 @@ Status: DERIVED. Canonical links: CM.VCP.PROFILE.STANDARD_SEVERITY.
 }
 ```
 
-Source references: profiles/standard-draft/profile.json:1-97 [sha256 e67739ae4a45719b27f661f12a933a9b021fa6164c5bed19f3fc261034651ed4], profiles/standard-draft/README.md:1-17 [sha256 19adacdd0c48c7cda6dc1fbcb2b0fe8ec26567ffc7dfc3afd3a28bb2387237c4]
+### D.WIRE.JSON
+
+Canonical links: CM.SHARED.JSON_EQUALITY, CM.VCP.WIRE.OFFLINE, CM.VCP.WIRE.VERSION, CM.SDK.JSON.NORMALIZE, CM.VCP.WIRE.JSON.UTF8, CM.VCP.WIRE.JSON.DUPLICATE_KEYS, CM.VCP.WIRE.JSON.FINITE, CM.VCP.WIRE.JSON.JSON_TYPES, CM.VCP.WIRE.NULL.CONTROLS, CM.VCP.WIRE.NULL.PAYLOADS, CM.VCP.WIRE.NULL.NO_DEFAULT_INSERTION, CM.VCP.DATA.CONTEXT.ISOLATION, CM.VCP.DATA.CONTEXT.AMBIENT
+
+```json
+{
+  "axes": [
+    "Finite byte strings b interpreted as UTF8 JSON, or already-materialized finite JSON trees J",
+    "Value classes null, Boolean, object with string keys, array, string, integral number, nonintegral number",
+    "Optional control fields: ABSENT,NULL,valid nonnull,invalid type; payload fields retain ABSENT versus present NULL",
+    "Mapping key multiplicity and unknown core-key location"
+  ],
+  "candidate_count": "unbounded",
+  "derivation": "J is the least finite-tree set null|Boolean|string|finite JSON number|J*|finite maps string->J. No finite cardinality or portable canonical numeric byte representation is asserted.",
+  "domain_id": "D.WIRE.JSON",
+  "inapplicable_set": "Byte encoding dimensions do not apply to already-materialized JSON; required markers apply only to objects whose roots declare them.",
+  "invalid_set": "Invalid encoding/syntax/duplicate keys/nonfinite/nonJSON or unknown closed-core keys; unsupported protocol marker classified PROTOCOL_VERSION.",
+  "kind": "SYMBOLIC",
+  "mathematics_status": "DERIVED_SEMANTIC_PARTITION",
+  "partitions": [
+    "valid UTF8 including multibyte",
+    "invalid UTF8",
+    "duplicate at root or nested object",
+    "finite integer and fractional numeric notation",
+    "true versus1",
+    "payload explicit null versus absence",
+    "nullable control null versus absence",
+    "unknown core versus open payload/metadata/config",
+    "schema default annotation versus explicit authored default"
+  ],
+  "requirement_ids": [
+    "CM.VCP.WIRE.OFFLINE",
+    "CM.VCP.WIRE.VERSION",
+    "CM.VCP.WIRE.JSON.UTF8",
+    "CM.VCP.WIRE.JSON.DUPLICATE_KEYS",
+    "CM.VCP.WIRE.JSON.FINITE",
+    "CM.VCP.WIRE.JSON.JSON_TYPES",
+    "CM.VCP.WIRE.NULL.CONTROLS",
+    "CM.VCP.WIRE.NULL.PAYLOADS",
+    "CM.VCP.WIRE.NULL.NO_DEFAULT_INSERTION",
+    "CM.VCP.DATA.CONTEXT.ISOLATION",
+    "CM.VCP.DATA.CONTEXT.AMBIENT",
+    "CM.SHARED.JSON_EQUALITY",
+    "CM.SDK.JSON.NORMALIZE"
+  ],
+  "valid_set": "Accept iff UTF8 decode succeeds, syntax is JSON with unique mapping keys and finite faithfully representable numbers, no nonJSON values, supported version and root predicate hold. Nullable VCP controls quotient absence/null; arbitrary payload null remains a present value."
+}
+```
+
+### D.PORT.DECLARATIONS
+
+Canonical links: CM.VCP.DATA.DERIVE_ROLE, CM.VCP.DATA.PRIMARY_VALIDITY, CM.VCP.DATA.BIND_TARGET, CM.VCP.DATA.PORT_NAMES.INPUT, CM.VCP.DATA.PORT_NAMES.OUTPUT, CM.VCP.DATA.CONFIG.SEPARATE, CM.VCP.DATA.CONFIG.SCHEMA, CM.VCP.DATA.PRIMARY_RESULT.CARDINALITY, CM.VCP.DATA.PRIMARY_RESULT.NAME, CM.VCP.DATA.PRIMARY_RESULT.ROLES, CM.VCP.DATA.PRIMARY_DECISION.CARDINALITY, CM.VCP.DATA.PRIMARY_DECISION.NAME, CM.VCP.DATA.PRIMARY_DECISION.ROLES
+
+```json
+{
+  "axes": [
+    "Finite input/output name sequences I,O; binding partial function B:I->ValueSource",
+    "Node kind DERIVE,EVALUATE,AGGREGATE,CONTROL; primary output role/name/cardinality",
+    "Port schema S and optional config schema C; authored config JSON object"
+  ],
+  "candidate_count": "unbounded",
+  "derivation": "For n ports, name domain is unbounded finite strings; uniqueness is forall i<j: name_i!=name_j. Conditional primary cardinality equals1 only for owning kinds. No arbitrary n bound.",
+  "domain_id": "D.PORT.DECLARATIONS",
+  "inapplicable_set": "Primary RESULT constraints do not apply to DERIVE/CONTROL; primary DECISION does not apply to other kinds; config_schema absence removes only that optional schema assertion.",
+  "invalid_set": "Duplicate names, unknown binding target, unbound required input, illegal output role/cardinality/name, invalid config or port payload.",
+  "kind": "SYMBOLIC",
+  "mathematics_status": "DERIVED_SEMANTIC_PARTITION",
+  "partitions": [
+    "zero/one/multiple primary roles",
+    "correct versus wrong primary name",
+    "same name input and output allowed distinct namespaces",
+    "duplicate within one sequence forbidden",
+    "required bound versus required unbound",
+    "optional unbound versus supplied binding",
+    "config separate and cannot override inputs",
+    "present config_schema versus absent"
+  ],
+  "requirement_ids": [
+    "CM.VCP.DATA.PORT_NAMES.INPUT",
+    "CM.VCP.DATA.PORT_NAMES.OUTPUT",
+    "CM.VCP.DATA.CONFIG.SEPARATE",
+    "CM.VCP.DATA.CONFIG.SCHEMA",
+    "CM.VCP.DATA.PRIMARY_RESULT.CARDINALITY",
+    "CM.VCP.DATA.PRIMARY_RESULT.NAME",
+    "CM.VCP.DATA.PRIMARY_RESULT.ROLES",
+    "CM.VCP.DATA.PRIMARY_DECISION.CARDINALITY",
+    "CM.VCP.DATA.PRIMARY_DECISION.NAME",
+    "CM.VCP.DATA.PRIMARY_DECISION.ROLES",
+    "CM.VCP.DATA.DERIVE_ROLE",
+    "CM.VCP.DATA.BIND_TARGET",
+    "CM.VCP.DATA.PRIMARY_VALIDITY"
+  ],
+  "valid_set": "Input/output names unique within their own sequence; B keys declared and all required inputs bound; legal requiredness/handler pair. DERIVE all INFORMATION; EVAL/AGG exactly one RESULT named result; CONTROL exactly one DECISION named decision. Every declared value is validated against its applicable schema."
+}
+```
+
+### D.EXTENSIONS.ANNOTATIONS
+
+Canonical links: CM.PROVIDER.EXT.MANDATORY, CM.VCP.EXT.PRESERVE, CM.PROVIDER.EXT.ROUNDTRIP.PRESERVE, CM.PROVIDER.EXT.ROUNDTRIP.ANNOTATION_ONLY
+
+```json
+{
+  "axes": [
+    "VCP extension sequence {namespace,version,required,data}; Provider extension name->JSON object; metadata JSON mapping",
+    "Support predicate on exact extension meaning"
+  ],
+  "candidate_count": "unbounded",
+  "derivation": "Data ranges over J, an unbounded JSON domain. VCP consumability Boolean projection is separately four coordinates; this is not a finite total of annotation data.",
+  "domain_id": "D.EXTENSIONS.ANNOTATIONS",
+  "inapplicable_set": "Whitespace/key order are not part of JSON value roundtrip; Provider extension container differs from VCP extension sequence.",
+  "invalid_set": "Required unsupported meaning cannot silently pass; optional annotation cannot overwrite core meaning.",
+  "kind": "SYMBOLIC",
+  "mathematics_status": "DERIVED_SEMANTIC_PARTITION",
+  "partitions": [
+    "unknown optional",
+    "known optional",
+    "known required VCP",
+    "unknown required VCP",
+    "unknown Provider extension data",
+    "attempted mandatory Provider meaning",
+    "payload null/empty container",
+    "roundtrip without canonical byte claim"
+  ],
+  "requirement_ids": [
+    "CM.VCP.EXT.PRESERVE",
+    "CM.PROVIDER.EXT.MANDATORY",
+    "CM.PROVIDER.EXT.ROUNDTRIP.PRESERVE",
+    "CM.PROVIDER.EXT.ROUNDTRIP.ANNOTATION_ONLY"
+  ],
+  "valid_set": "Unknown optional annotation data preserved with JSON type/value; known core semantics invariant under optional annotations. Required unsupported VCP meaning is unconsumable; Provider0.1 has no mandatory-extension negotiation."
+}
+```
+
+### D.OPERATION.IDENTITY
+
+Canonical links: CM.VCP.DATA.OPERATION, CM.VCP.BIND.INPUT, CM.VCP.BIND.OUTPUT, CM.VCP.DATA.CAPABILITY_SHAPE.INPUT, CM.VCP.DATA.CAPABILITY_SHAPE.CONFIG, CM.VCP.DATA.CAPABILITY_SHAPE.OUTPUT, CM.VCP.BIND.PRECHECK.STRUCTURE, CM.VCP.BIND.PRECHECK.IDENTITY, CM.VCP.BIND.PRECHECK.COMPATIBILITY
+
+```json
+{
+  "axes": [
+    "Exact strings capability_id,capability_version",
+    "Optional concrete provider identity/version and trusted manifest",
+    "Selected capability input/config/output schemas"
+  ],
+  "candidate_count": "unbounded",
+  "derivation": "Identity strings and schema/JSON domains are unbounded. Four anchored identity equality bits have a separate16-coordinate conjunction, not a universal provider universe.",
+  "domain_id": "D.OPERATION.IDENTITY",
+  "inapplicable_set": "Manifest congruence applies only to concrete Provider binding, not a portable discovery policy.",
+  "invalid_set": "Range fallback, provider identity embedded as operation semantics, implicit primitive wrapping, config override, input/config/output schema violation.",
+  "kind": "SYMBOLIC",
+  "mathematics_status": "DERIVED_SEMANTIC_PARTITION",
+  "partitions": [
+    "exact match",
+    "ID absent",
+    "version absent",
+    "unbound local implementation",
+    "concrete provider binding",
+    "primitive capability incompatible with graph object shape",
+    "input/config failure before work",
+    "output schema rejection before VCP acceptance"
+  ],
+  "requirement_ids": [
+    "CM.VCP.DATA.OPERATION",
+    "CM.VCP.BIND.INPUT",
+    "CM.VCP.BIND.OUTPUT",
+    "CM.VCP.DATA.CAPABILITY_SHAPE.INPUT",
+    "CM.VCP.DATA.CAPABILITY_SHAPE.CONFIG",
+    "CM.VCP.DATA.CAPABILITY_SHAPE.OUTPUT",
+    "CM.VCP.BIND.PRECHECK.STRUCTURE",
+    "CM.VCP.BIND.PRECHECK.IDENTITY",
+    "CM.VCP.BIND.PRECHECK.COMPATIBILITY"
+  ],
+  "valid_set": "OperationRequirement names an exact provider-neutral pair. Local matching and optional concrete binding never reinterpret version ranges or authorize imports. Direct invocation input/config/output shapes equal authored port object/config/output object."
+}
+```
+
+### D.REFERENCES.OPAQUE
+
+Canonical links: CM.VCP.KNOWLEDGE.REFERENCE, CM.VCP.KNOWLEDGE.NEUTRAL
+
+```json
+{
+  "axes": [
+    "ArtifactRef exact authored JSON snapshot",
+    "Locator arbitrary JSON; optional schema_id",
+    "Host-supplied retrieval operation only when explicitly declared"
+  ],
+  "candidate_count": "unbounded",
+  "derivation": "ArtifactRef value space unbounded; snapshot equality is recursive JSON equality and type-sensitive. No finite retrieval behavior count is defined.",
+  "domain_id": "D.REFERENCES.OPAQUE",
+  "inapplicable_set": "External integrity, access and retrieval semantics belong to explicit host/provider contract.",
+  "invalid_set": "Implicit fetch, resolver, secret/environment/clock injection or interpretation of code coordinates as universal core fields.",
+  "kind": "SYMBOLIC",
+  "mathematics_status": "DERIVED_SEMANTIC_PARTITION",
+  "partitions": [
+    "null versus object locator",
+    "empty locator containers",
+    "external reference value versus fetched content",
+    "known authored id/type/locator",
+    "domain-specific evidence data"
+  ],
+  "requirement_ids": [
+    "CM.VCP.KNOWLEDGE.REFERENCE",
+    "CM.VCP.KNOWLEDGE.NEUTRAL"
+  ],
+  "valid_set": "Pass exact reference as information, without dereferencing locator or treating it as bytes. Locator/domain-specific coordinates are profile-owned; core remains domain-neutral."
+}
+```
+
+### D.RESOURCES.SEMANTICS
+
+Canonical links: CM.VCP.RES.UNITS, CM.VCP.RES.KINDS, CM.VCP.RES.ORDER, CM.VCP.RES.WALL_TIME.SEPARATE, CM.VCP.RES.WALL_TIME.MEASUREMENT
+
+```json
+{
+  "axes": [
+    "Finite dimension-name->measurement map R",
+    "unit arbitrary nonempty string; kind EXACT,ESTIMATED,RANGE,UNKNOWN",
+    "Exact finite nonnegative JSON numbers for present values/bounds; engine elapsed monotonic duration"
+  ],
+  "candidate_count": "unbounded",
+  "container_key_scope": "Key constraints belong to owning root. VCP usage/estimate containers explicitly use propertyNames minLength1; Provider resource containers omit that structural keyword. Do not invent a common global key regex or silently rewrite the root predicates.",
+  "derivation": "For each finite support set K, validity is conjunction over dimensions; no finite total over arbitrary supports/units/numbers. Kind-presence32 and nullable108 projections are separate from range-order3 and observation authority.",
+  "domain_id": "D.RESOURCES.SEMANTICS",
+  "inapplicable_set": "Absent/null VCP numeric controls are semantically absent; precision is not portable float-bit equality.",
+  "invalid_set": "Negative/nonfinite values, reversed bounds, wrong kind fields, unitless or incompatible implicit summation.",
+  "kind": "SYMBOLIC",
+  "mathematics_status": "DERIVED_SEMANTIC_PARTITION",
+  "partitions": [
+    "empty resource vector",
+    "custom dimension/unit",
+    "money explicit currency",
+    "value0 versus positive",
+    "min=max versus ordered/reversed",
+    "unknown versus estimated",
+    "same and different units",
+    "runner timing versus executor report"
+  ],
+  "requirement_ids": [
+    "CM.VCP.RES.UNITS",
+    "CM.VCP.RES.KINDS",
+    "CM.VCP.RES.ORDER",
+    "CM.VCP.RES.WALL_TIME.SEPARATE",
+    "CM.VCP.RES.WALL_TIME.MEASUREMENT"
+  ],
+  "valid_set": "Each kind satisfies its numeric-presence predicate; RANGE minimum<=maximum. Keep units explicit, no implicit incompatible-unit sum. Engine duration EXACT seconds separately from observed executor usage."
+}
+```
+
+### D.SEVERITY.DOMAIN
+
+Canonical links: CM.VCP.AGG.SEVERITY_RESULT, CM.VCP.RESULT.SEVERITY, CM.VCP.SEVERITY.VERSION, CM.VCP.AGG.SEVERITY_DOMAIN.EXPLICIT, CM.VCP.AGG.SEVERITY_DOMAIN.LABEL_UNIQUE, CM.VCP.AGG.SEVERITY_DOMAIN.RANK_UNIQUE, CM.VCP.AGG.SEVERITY_DOMAIN.MEMBER_DOMAIN, CM.VCP.AGG.SEVERITY_DOMAIN.MEMBER_LABEL
+
+```json
+{
+  "axes": [
+    "Opaque nonempty domain/label strings",
+    "When explicit domain supplied: finite levels sequence(label,integer rank)",
+    "Member severity domain and label; optional profile domain choice"
+  ],
+  "candidate_count": "unbounded",
+  "derivation": "For n declared unique levels, rank assignments are injective functions levels->Z, an unbounded set; selection is argmax over retained member ranks. No global closed severity enum.",
+  "domain_id": "D.SEVERITY.DOMAIN",
+  "inapplicable_set": "Unresolved domain membership is not a parser failure; domain version identity is required only when versions matter.",
+  "invalid_set": "Booleans/strings/fractional ranks, duplicate labels/ranks, foreign domain or missing member label under explicit reducer config.",
+  "kind": "SYMBOLIC",
+  "mathematics_status": "DERIVED_SEMANTIC_PARTITION",
+  "partitions": [
+    "opaque unregistered domain",
+    "explicit domain empty/nonempty",
+    "one level",
+    "integer versus integral numeric rank",
+    "duplicate label",
+    "duplicate rank",
+    "ascending rank gaps",
+    "greatest-rank selection"
+  ],
+  "requirement_ids": [
+    "CM.VCP.SEVERITY.VERSION",
+    "CM.VCP.AGG.SEVERITY_DOMAIN.EXPLICIT",
+    "CM.VCP.AGG.SEVERITY_DOMAIN.LABEL_UNIQUE",
+    "CM.VCP.AGG.SEVERITY_DOMAIN.RANK_UNIQUE",
+    "CM.VCP.AGG.SEVERITY_DOMAIN.MEMBER_DOMAIN",
+    "CM.VCP.AGG.SEVERITY_DOMAIN.MEMBER_LABEL",
+    "CM.VCP.AGG.SEVERITY_RESULT",
+    "CM.VCP.RESULT.SEVERITY"
+  ],
+  "valid_set": "Parsing opaque Result severity does not resolve label membership. Explicit WORST_SEVERITY domain uses unique nonempty labels and distinct integer ranks; members reference exact domain and declared labels; select greatest rank."
+}
+```
+
+### D.CONFORMANCE.SCOPE
+
+Canonical links: CM.PROVIDER.SEMANTIC_BOUNDARY, CM.VCP.CONFORMANCE.STAGES, CM.VCP.CONFORMANCE.FIXTURE_PROTOCOL, CM.VCP.DATA.HONEST_EVALUATION, CM.VCP.MEANING.SELECTION_DISTINCT, CM.VCP.BOUNDARY.NO_ACTION, CM.VCP.MEANING.CRITERION_DATA, CM.VCP.MEANING.SATISFACTION_MAPPING
+
+```json
+{
+  "axes": [
+    "Named root x JSON input",
+    "Structural predicate S_root, semantic predicate M_root and supported execution predicate E_profile",
+    "Stage/error category when explicitly specified"
+  ],
+  "candidate_count": "unbounded",
+  "derivation": "Acceptance relation S(x) and M(x); E(x) controls supported executable scope. J and capability meanings are unbounded; finite stage flags do not exhaust input values.",
+  "domain_id": "D.CONFORMANCE.SCOPE",
+  "inapplicable_set": "This model review does not inspect the fixture corpus or execute conformance suites.",
+  "invalid_set": "Inventing unsupported execution behavior or inferring contract requirements from fixture names/results.",
+  "kind": "SYMBOLIC",
+  "mathematics_status": "DERIVED_SEMANTIC_PARTITION",
+  "partitions": [
+    "S false",
+    "S true M false",
+    "S and M true E false",
+    "S M E true",
+    "informative capability meaning",
+    "host/provider honesty without authenticated anchor"
+  ],
+  "requirement_ids": [
+    "CM.VCP.CONFORMANCE.STAGES",
+    "CM.VCP.CONFORMANCE.FIXTURE_PROTOCOL",
+    "CM.VCP.DATA.HONEST_EVALUATION",
+    "CM.VCP.MEANING.SELECTION_DISTINCT",
+    "CM.VCP.BOUNDARY.NO_ACTION",
+    "CM.PROVIDER.SEMANTIC_BOUNDARY"
+  ],
+  "valid_set": "Structural acceptance and semantic acceptance both required for portable object conformance; supported execution is a separate scope. A fixture harness checks its declared manifest stage/code, without defining semantics from fixture existence."
+}
+```
+
+### D.RUN_INPUT.NORMALIZATION
+
+Canonical links: CM.VCP.DATA.RUN_NAMES, CM.VCP.DATA.RUN_SOURCE, CM.SDK.RUN_INPUTS
+
+```json
+{
+  "axes": [
+    "Finite declared run-port sequence P, authored supplied finite map I",
+    "Requiredness and BLOCK/OMIT/DEFAULT; optional explicit Constant default",
+    "Name identity, candidate JSON value, port schema acceptance"
+  ],
+  "candidate_count": "unbounded",
+  "derivation": "For n declared names, effective map is a partial function into J; no finite total over names/values/schema. Local dependent presence/reachability flags are separately D.RUN_INPUT.PREFLIGHT.",
+  "domain_id": "D.RUN_INPUT.NORMALIZATION",
+  "inapplicable_set": "No instance-validity axis for absent value; requiredness does not exist for undeclared name.",
+  "invalid_set": "Duplicate declaration, undeclared supplied key, missing required input, schema-invalid supplied/default value.",
+  "kind": "SYMBOLIC",
+  "mathematics_status": "DERIVED_SEMANTIC_PARTITION",
+  "partitions": [
+    "known present valid",
+    "known present invalid",
+    "undeclared supplied",
+    "missing required",
+    "missing optional OMIT",
+    "missing optional DEFAULT",
+    "explicit null admitted/rejected by schema",
+    "default null is present value"
+  ],
+  "requirement_ids": [
+    "CM.VCP.DATA.RUN_NAMES",
+    "CM.VCP.DATA.RUN_SOURCE",
+    "CM.SDK.RUN_INPUTS"
+  ],
+  "valid_set": "Names unique; supplied keys subset of declarations; present values satisfy their own schema. Missing required fails before any implementation. Missing optional OMIT absent; DEFAULT inserts exact validated authored Constant including null. Preserve supplied occurrence snapshot separately from effective normalized input map."
+}
+```
+
+### D.POLICY.PROBABILITY
+
+Canonical links: CM.VCP.POLICY.PROBABILITY.DOMAIN, CM.VCP.POLICY.PROBABILITY.BOUNDARIES, CM.VCP.POLICY.PROBABILITY.INTERIOR
+
+```json
+{
+  "axes": [
+    "p finite JSON number",
+    "definition fingerprint, subject identity, nonempty opportunity_id",
+    "Admission output RUN or SKIP"
+  ],
+  "candidate_count": "unbounded",
+  "derivation": "Real/JSON-number input space unbounded. Three valid p partitions have endpoint output singleton sets and interior two-element outcome set; no invented finite denominator or portable bucket count.",
+  "domain_id": "D.POLICY.PROBABILITY",
+  "inapplicable_set": "Exact interior bucket identity is reference-only; custom policy p field disallowed by declaration rule.",
+  "invalid_set": "Out-of-range/nonfinite/nonnumeric p; endpoint-inconsistent output; hidden sampler meaning.",
+  "kind": "SYMBOLIC",
+  "mathematics_status": "DERIVED_SEMANTIC_PARTITION",
+  "partitions": [
+    "p<0",
+    "p=0",
+    "0<p<1",
+    "p=1",
+    "p>1",
+    "nonfinite",
+    "Boolean/string",
+    "same explicit input versus different opportunity"
+  ],
+  "requirement_ids": [
+    "CM.VCP.POLICY.PROBABILITY.DOMAIN",
+    "CM.VCP.POLICY.PROBABILITY.BOUNDARIES",
+    "CM.VCP.POLICY.PROBABILITY.INTERIOR"
+  ],
+  "valid_set": "0<=p<=1; p0 implies SKIP, p1 implies RUN, 0<p<1 allows RUN/SKIP using declared complete structural sampler inputs. No hidden budget/history/clock input."
+}
+```
+
+### D.PROVIDER.WIRE
+
+Canonical links: CM.PROVIDER.WIRE.NUMBERS, CM.PROVIDER.WIRE.NULL, CM.PROVIDER.WIRE.ATTEMPT_ID.SESSION_UNIQUENESS, CM.PROVIDER.WIRE.ATTEMPT_ID.RETRY, CM.PROVIDER.INVOKE.CONTEXT_OPAQUE
+
+```json
+{
+  "axes": [
+    "UTF8 byte stream/finite JSON object",
+    "Optional core versus arbitrary JSON payload fields",
+    "Opaque case-sensitive invocation and RPC identifiers; finite numeric values"
+  ],
+  "candidate_count": "unbounded",
+  "derivation": "Unbounded byte/string/JSON domains; event sequence alone is bounded integer1..2^53-1. No finite universe of complete messages or canonical number encoding.",
+  "domain_id": "D.PROVIDER.WIRE",
+  "inapplicable_set": "Byte syntax does not apply to materialized objects; payload null is data and not optional absence.",
+  "invalid_set": "Duplicate keys, nonfinite/nonJSON, unknown core fields, null typed core fields, replayed identity or unfaithfully representable number.",
+  "kind": "SYMBOLIC",
+  "mathematics_status": "DERIVED_SEMANTIC_PARTITION",
+  "partitions": [
+    "optional control absent/null/non-null",
+    "payload absent/present null/present nonnull",
+    "rejected identity reused",
+    "new retry identity",
+    "numeric1 versus1.0 versus true versus string1",
+    "arbitrary precision value representable/unrepresentable"
+  ],
+  "requirement_ids": [
+    "CM.PROVIDER.WIRE.NUMBERS",
+    "CM.PROVIDER.WIRE.NULL",
+    "CM.PROVIDER.WIRE.ATTEMPT_ID.SESSION_UNIQUENESS",
+    "CM.PROVIDER.WIRE.ATTEMPT_ID.RETRY"
+  ],
+  "valid_set": "Strict UTF8 JSON and named shipped root; optional typed core fields absent instead of null, arbitrary JSON payload null preserved. Integral numeric notation accepted as integer, Boolean/string not numbers. Attempt identities unique per session including rejection."
+}
+```
+
+### D.PROVIDER.NAMESPACE
+
+Canonical links: CM.PROVIDER.NAMESPACE.OWNERSHIP, CM.PROVIDER.NAMESPACE.SYNTAX, CM.PROVIDER.CAPABILITY.PUBLISHED_SPEC
+
+```json
+{
+  "axes": [
+    "Identifier string split into dot-separated ASCII segments",
+    "Prefix-control relation publisher->domain; published capability specification",
+    "Standard openverify.* versus third-party prefix"
+  ],
+  "candidate_count": "unbounded",
+  "derivation": "Identifier set infinite. Lexical predicate and external publisher-control predicate are independent; capability meaning is declared by published specification, not derived from spelling.",
+  "domain_id": "D.PROVIDER.NAMESPACE",
+  "inapplicable_set": "Offline syntax parser cannot prove domain control or implementation honesty; no registry mandated.",
+  "invalid_set": "Invalid ASCII segments, too few segments, third party claiming uncontrolled/reserved authority; ID alone is not capability meaning.",
+  "kind": "SYMBOLIC",
+  "mathematics_status": "DERIVED_SEMANTIC_PARTITION",
+  "partitions": [
+    "reserved valid standard ID",
+    "valid third-party syntax controlled prefix",
+    "valid syntax uncontrolled prefix",
+    "uppercase/nonASCII/empty segment",
+    "conceptual family names without registered semantics",
+    "published specification versus bare ID"
+  ],
+  "requirement_ids": [
+    "CM.PROVIDER.NAMESPACE.OWNERSHIP",
+    "CM.PROVIDER.NAMESPACE.SYNTAX",
+    "CM.PROVIDER.CAPABILITY.PUBLISHED_SPEC"
+  ],
+  "valid_set": "Syntax [a-z][a-z0-9_]* per segment; openverify reserved standard prefix with at least2 segments; third party at least3 and controlled reversed-domain prefix of at least2 plus local identifier. Adapter publishes specification defining schema/meaning."
+}
+```
+
+### D.PROVIDER.MANIFEST
+
+Canonical links: CM.PROVIDER.MANIFEST.CAPABILITY_IDENTITY, CM.PROVIDER.MANIFEST.SNAPSHOT, CM.PROVIDER.COMPAT.CAPABILITY_VCP.ADVERTISEMENT, CM.PROVIDER.COMPAT.CAPABILITY_VCP.DECLARATION
+
+```json
+{
+  "axes": [
+    "Fixed session manifest M with finite version lists and capability sequence",
+    "Capability identity pair and feature booleans",
+    "Capability declared VCP version and actual VCP-bearing input/config/output/event semantics"
+  ],
+  "candidate_count": "unbounded",
+  "derivation": "For finite capability sequence length n, uniqueness forall i<j pair_i!=pair_j. Number of possible pairs/schema/value contracts unbounded. Four feature bits yield16 legal declarations, not16 sufficient capability contracts.",
+  "domain_id": "D.PROVIDER.MANIFEST",
+  "inapplicable_set": "NonVCP capability may execute with empty VCP intersection; manifest capabilities list may be empty.",
+  "invalid_set": "Duplicate pair or version, empty required string, session manifest substitution, VCP capability without required declaration.",
+  "kind": "SYMBOLIC",
+  "mathematics_status": "DERIVED_SEMANTIC_PARTITION",
+  "partitions": [
+    "no capabilities",
+    "one pair",
+    "same ID two versions",
+    "duplicate exact pair",
+    "empty VCP list",
+    "VCP declaration absent/present",
+    "all16 feature bit combinations",
+    "manifest mutation after initialization"
+  ],
+  "requirement_ids": [
+    "CM.PROVIDER.MANIFEST.CAPABILITY_IDENTITY",
+    "CM.PROVIDER.MANIFEST.SNAPSHOT",
+    "CM.PROVIDER.COMPAT.CAPABILITY_VCP.ADVERTISEMENT",
+    "CM.PROVIDER.COMPAT.CAPABILITY_VCP.DECLARATION"
+  ],
+  "valid_set": "Version arrays unique nonempty strings; capability pairs unique but same ID may advertise different versions. Manifest stays fixed in initialized session. Declared VCP marker belongs to manifest support; VCP-bearing specification declares it."
+}
+```
+
+### D.PROVIDER.CONSTRAINTS
+
+Canonical links: CM.PROVIDER.FEATURE.CANCEL, CM.PROVIDER.FEATURE.DEADLINE, CM.PROVIDER.BUDGET.EXACT, CM.PROVIDER.BUDGET.ENFORCE.PREACCEPT, CM.PROVIDER.BUDGET.ENFORCE.TERMINAL, CM.PROVIDER.BUDGET.ENFORCE.UNITS
+
+```json
+{
+  "axes": [
+    "Advertised cancellation/deadline/resource reporting booleans",
+    "Optional absolute UTC deadline and exact resource budget",
+    "Accepted/running/terminal/rejected attempt state; enforceability predicate per constraint"
+  ],
+  "candidate_count": "unbounded",
+  "derivation": "Constraints are dependent finite feature projections plus unbounded time/resource vectors. Accepted attempt transition relation is partitioned by correlation, request cause and clock order; arbitrary JSON payloads are not finite.",
+  "domain_id": "D.PROVIDER.CONSTRAINTS",
+  "inapplicable_set": "Resource reporting does not imply enforcement; cancel no timing bound; deadlines measure provider UTC not delivery latency.",
+  "invalid_set": "Unsupported running cancellation, accepted unenforceable constraint, dropped budget dimension/unit conversion, CANCELLED without runner cause, COMPLETED at/after deadline.",
+  "kind": "SYMBOLIC",
+  "mathematics_status": "DERIVED_SEMANTIC_PARTITION",
+  "partitions": [
+    "deadline absent/supported/unsupported",
+    "budget absent/enforceable/unenforceable",
+    "budget zero/positive per dimension",
+    "active expiry",
+    "cancel before expiry versus expiry first",
+    "terminal cancel without feature",
+    "provider clock rollback after expiry",
+    "transport delivery later than terminal commit"
+  ],
+  "requirement_ids": [
+    "CM.PROVIDER.FEATURE.CANCEL",
+    "CM.PROVIDER.FEATURE.DEADLINE",
+    "CM.PROVIDER.BUDGET.EXACT",
+    "CM.PROVIDER.BUDGET.ENFORCE.PREACCEPT",
+    "CM.PROVIDER.BUDGET.ENFORCE.TERMINAL",
+    "CM.PROVIDER.BUDGET.ENFORCE.UNITS"
+  ],
+  "valid_set": "Reject unenforceable supplied constraints before accepting work. Supported running cancel is cooperative; terminal cancel no-op independent of feature. Deadline expiry accepted/active follows irreversible clock rules. Budget every dimension EXACT finite nonnegative explicit unit and enforced; preventing completion yields ERROR with provider-namespaced error."
+}
+```
+
+### D.PROVIDER.PAYLOAD
+
+Canonical links: CM.PROVIDER.LIFE.OUTPUT, CM.PROVIDER.EVENT.PAYLOAD, CM.PROVIDER.INVOKE.VALIDATE.INPUT, CM.PROVIDER.INVOKE.VALIDATE.CONFIG, CM.PROVIDER.EVENT.TIMESTAMP
+
+```json
+{
+  "axes": [
+    "ProviderEvent kind progress,evidence,artifact,resource_usage,diagnostic,extension",
+    "Payload finite JSON value",
+    "Invocation VCP marker, advertised streaming/reporting features",
+    "Invocation input/config and COMPLETED output with matched capability schemas"
+  ],
+  "candidate_count": "unbounded",
+  "derivation": "Payload domains range over J and arbitrary supported schemas. Six kinds do not bound all payload values; eligibility48 and Outcome-presence16 projections remain separate.",
+  "domain_id": "D.PROVIDER.PAYLOAD",
+  "inapplicable_set": "Event timestamp does not establish ordering; sequence/history does. Payload schema validation cannot replace attempt lifecycle/correlation validation.",
+  "invalid_set": "Kind-invalid payload, VCP standard fields without invocation interchange, schema-invalid input/config/output, output/error shape contradiction.",
+  "kind": "SYMBOLIC",
+  "mathematics_status": "DERIVED_SEMANTIC_PARTITION",
+  "partitions": [
+    "arbitrary null advisory",
+    "empty/nonempty meaningful Evidence",
+    "ArtifactRef opaque locator",
+    "partial resource vector",
+    "extension namespace/data",
+    "schema true/false",
+    "completed null output present versus absent",
+    "input invalid/config invalid/output invalid"
+  ],
+  "requirement_ids": [
+    "CM.PROVIDER.EVENT.PAYLOAD",
+    "CM.PROVIDER.INVOKE.VALIDATE.INPUT",
+    "CM.PROVIDER.INVOKE.VALIDATE.CONFIG",
+    "CM.PROVIDER.LIFE.OUTPUT"
+  ],
+  "valid_set": "Progress/diagnostic payload arbitrary JSON; evidence satisfies VCP Evidence structure/meaning; artifact ArtifactRef; resource_usage ResourceVector; extension exact namespace/data object with namespaced key. Input/config/output satisfy corresponding advertised schemas, with COMPLETED null accepted when output schema allows it."
+}
+```
+
+### D.PROVIDER.TRANSPORT
+
+Canonical links: CM.PROVIDER.STDIO.CHANNELS, CM.PROVIDER.RPC.ERROR_CHANNEL, CM.PROVIDER.STDIO.FRAME, CM.PROVIDER.LOSS.SEPARATE, CM.PROVIDER.STDIO.RECEIVE.HEADER, CM.PROVIDER.STDIO.RECEIVE.PARTIAL, CM.PROVIDER.STDIO.RECEIVE.COALESCED, CM.PROVIDER.STDIO.RECEIVE.CLOSE, CM.PROVIDER.RPC.METHODS.OPERATIONS, CM.PROVIDER.RPC.METHODS.IDS, CM.PROVIDER.RPC.METHODS.PARAMS, CM.PROVIDER.RPC.CANCEL_ACK.NULL, CM.PROVIDER.RPC.CANCEL_ACK.RACE, CM.PROVIDER.RPC.RESERVED_ERRORS.NUMERIC_CODES, CM.PROVIDER.RPC.RESERVED_ERRORS.CONTRACT_REJECTION, CM.PROVIDER.RPC.RESERVED_ERRORS.INVALID_INVOKE_PARAMS, CM.PROVIDER.RPC.RESERVED_ERRORS.INVALID_NOTIFICATION, CM.PROVIDER.RPC.ACCEPT_ORDER.RECEIVE_ORDER, CM.PROVIDER.RPC.ACCEPT_ORDER.CONTROL_PROGRESS, CM.PROVIDER.RPC.EVENT_BEFORE_RESULT.EVENT_ORDER, CM.PROVIDER.RPC.EVENT_BEFORE_RESULT.DUAL_CORRELATION, CM.SDK.PROVIDER.FRAME.ENCODE, CM.SDK.PROVIDER.FRAME.DECODE, CM.SDK.PROVIDER.FRAME.LIMITS, CM.SDK.PROVIDER.FRAME.FAILURE
+
+```json
+{
+  "axes": [
+    "Session state before-initialize,initialized,closed",
+    "Method initialize,invoke,cancel,event or unsupported string",
+    "JSON-RPC ID/history, params object, notification/request direction",
+    "Byte frame chunk sequence and documented size limits",
+    "Per-invocation event sequence and terminal response"
+  ],
+  "candidate_count": "unbounded",
+  "derivation": "Byte chunkings and JSON values unbounded. For any finite concatenation of legal frames, decoding partition invariance requires same ordered objects and remainder; no finite common RPC/entrypoint parity universe.",
+  "domain_id": "D.PROVIDER.TRANSPORT",
+  "inapplicable_set": "No pause/resume/migrate/restart/replay or durable exactly-once delivery. Invalid notification never gets response; accepted computation errors use Outcome result.",
+  "invalid_set": "Unknown/duplicate RPC identity, wrong direction/method shape, invalid notification, unsolicited response, bad/oversized/truncated framing, event after terminal, unsupported batch.",
+  "kind": "SYMBOLIC",
+  "mathematics_status": "DERIVED_SEMANTIC_PARTITION",
+  "partitions": [
+    "partial header/body",
+    "multiple complete frames per chunk",
+    "invalid/duplicate/extra header",
+    "case-insensitive receiver header",
+    "UTF8 multibyte byte length",
+    "EOF with pending requests",
+    "receive-order invoke then cancel",
+    "cancel acknowledgement before/after Outcome",
+    "reserved numeric RPC error versus ProviderError category"
+  ],
+  "requirement_ids": [
+    "CM.PROVIDER.STDIO.CHANNELS",
+    "CM.PROVIDER.STDIO.FRAME",
+    "CM.PROVIDER.RPC.ERROR_CHANNEL",
+    "CM.PROVIDER.LOSS.SEPARATE",
+    "CM.PROVIDER.STDIO.RECEIVE.HEADER",
+    "CM.PROVIDER.STDIO.RECEIVE.PARTIAL",
+    "CM.PROVIDER.STDIO.RECEIVE.COALESCED",
+    "CM.PROVIDER.STDIO.RECEIVE.CLOSE",
+    "CM.PROVIDER.RPC.METHODS.OPERATIONS",
+    "CM.PROVIDER.RPC.METHODS.IDS",
+    "CM.PROVIDER.RPC.METHODS.PARAMS",
+    "CM.PROVIDER.RPC.CANCEL_ACK.NULL",
+    "CM.PROVIDER.RPC.CANCEL_ACK.RACE",
+    "CM.PROVIDER.RPC.RESERVED_ERRORS.NUMERIC_CODES",
+    "CM.PROVIDER.RPC.RESERVED_ERRORS.CONTRACT_REJECTION",
+    "CM.PROVIDER.RPC.RESERVED_ERRORS.INVALID_INVOKE_PARAMS",
+    "CM.PROVIDER.RPC.RESERVED_ERRORS.INVALID_NOTIFICATION",
+    "CM.PROVIDER.RPC.ACCEPT_ORDER.RECEIVE_ORDER",
+    "CM.PROVIDER.RPC.ACCEPT_ORDER.CONTROL_PROGRESS",
+    "CM.PROVIDER.RPC.EVENT_BEFORE_RESULT.EVENT_ORDER",
+    "CM.PROVIDER.RPC.EVENT_BEFORE_RESULT.DUAL_CORRELATION",
+    "CM.SDK.PROVIDER.FRAME.ENCODE",
+    "CM.SDK.PROVIDER.FRAME.DECODE",
+    "CM.SDK.PROVIDER.FRAME.LIMITS",
+    "CM.SDK.PROVIDER.FRAME.FAILURE"
+  ],
+  "valid_set": "Only published methods/directions, nonempty string RPC IDs unique entire session distinct from attempt identity, object params single messages no batch. Exact Content-Length positive UTF8 byte count; partial/coalesced reads work; invalid framing closes. Events precede own terminal response; dual correlation; cancel null acknowledges processing not termination."
+}
+```
+
+### D.ERROR.AUTHORITY
+
+Canonical links: CM.PROVIDER.ERROR.CLASSIFY, CM.PROVIDER.ERROR.NO_REWRITE, CM.PROVIDER.ERROR.CAPABILITY_UNAVAILABLE, CM.PROVIDER.ERROR.CAPABILITY_VERSION_UNSUPPORTED, CM.PROVIDER.ERROR.CONTRACT_VERSION_UNSUPPORTED, CM.PROVIDER.ERROR.INVALID_CONFIG, CM.PROVIDER.ERROR.INVALID_INPUT, CM.PROVIDER.ERROR.INVALID_INVOCATION, CM.PROVIDER.ERROR.INVALID_PROVIDER_OUTPUT, CM.PROVIDER.ERROR.PROTOCOL_VIOLATION, CM.PROVIDER.ERROR.PRECEDENCE.RECOMMENDED, CM.PROVIDER.ERROR.PRECEDENCE.CORRELATION_SCOPE
+
+```json
+{
+  "axes": [
+    "Error authority VCP,Provider,SDK,Relay",
+    "Declared stable code or provider-specific namespace code",
+    "Diagnostic message/path/details and coexisting error conditions"
+  ],
+  "candidate_count": "unbounded",
+  "derivation": "53 declarations=33 normative VCP+8 normative Provider+2 SDK diagnostics+10 Relay. This counts identifiers only; error trigger domain and namespaced codes are unbounded. Conditional priority relation is not a total order.",
+  "domain_id": "D.ERROR.AUTHORITY",
+  "inapplicable_set": "Only exact mandated precedence is enforceable; recommended SHOULD validation order remains recommendation.",
+  "invalid_set": "Conflated vocabularies, ERROR=>verification FAIL, treating recommended precedence as universal mandatory precedence, rewriting peer output as received valid object.",
+  "kind": "SYMBOLIC",
+  "mathematics_status": "DERIVED_SEMANTIC_PARTITION",
+  "partitions": [
+    "single declared category",
+    "multiple independent violations",
+    "correlation before body validation where mandated",
+    "namespaced provider code",
+    "unknown uppercase provider code",
+    "SDK-only POLICY_ERROR/RESULT_PROJECTION",
+    "supplementary literal CLI/HTTP diagnostics"
+  ],
+  "requirement_ids": [
+    "CM.PROVIDER.ERROR.CLASSIFY",
+    "CM.PROVIDER.ERROR.NO_REWRITE",
+    "CM.PROVIDER.ERROR.PRECEDENCE.RECOMMENDED",
+    "CM.PROVIDER.ERROR.PRECEDENCE.CORRELATION_SCOPE",
+    "CM.PROVIDER.ERROR.CAPABILITY_UNAVAILABLE",
+    "CM.PROVIDER.ERROR.CAPABILITY_VERSION_UNSUPPORTED",
+    "CM.PROVIDER.ERROR.CONTRACT_VERSION_UNSUPPORTED",
+    "CM.PROVIDER.ERROR.INVALID_CONFIG",
+    "CM.PROVIDER.ERROR.INVALID_INPUT",
+    "CM.PROVIDER.ERROR.INVALID_INVOCATION",
+    "CM.PROVIDER.ERROR.INVALID_PROVIDER_OUTPUT",
+    "CM.PROVIDER.ERROR.PROTOCOL_VIOLATION"
+  ],
+  "valid_set": "Use exact authority-owned category where specified, retaining diagnostic data without classifying from messages. Provider unknown bare uppercase codes invalid; namespaced provider errors open. Before acceptance RPC rejection differs from accepted execution Outcome; peer validation diagnosis is not fabricated received Outcome."
+}
+```
+
+### D.RELAY.SCHEDULER
+
+Canonical links: CM.RELAY.CANCEL.TOKEN, CM.RELAY.CANCEL.TASK, CM.RELAY.PROVIDER.SHARING, CM.RELAY.SCHED.ORDER, CM.RELAY.SCHED.CONTROL, CM.RELAY.SCHED.ISOLATION, CM.RELAY.SCHED.WAVE.MEMBERSHIP, CM.RELAY.SCHED.WAVE.BARRIER
+
+```json
+{
+  "axes": [
+    "Finite supported DAG and prepared per-run state",
+    "Per-node logical phase PENDING,READY,RUNNING,TERMINAL; terminal record immutable",
+    "Configured concurrency bound k>=1; ready waves and Control barriers",
+    "Host recorded token versus asyncio task cancellation",
+    "Async completion order and deterministic record acceptance order"
+  ],
+  "candidate_count": "unbounded",
+  "derivation": "For fixed n node phase coordinates 4^n are raw coordinates, not a reachability count. Values, traces and arbitrary graph sizes unbounded. Legal step relation uses current DAG readiness and run-local state; no invented global event total. Conditional DAG induction requires exact node correctness, source identity, readiness, fresh snapshots and global barriers/isolation.",
+  "domain_id": "D.RELAY.SCHEDULER",
+  "inapplicable_set": "Concurrency-safe providers are explicit host opt-in; no universal closed Relay event alphabet or maximal-throughput promise.",
+  "invalid_set": "Early consumer, Control racing affected wave peers, shared mutable occurrence state, terminal overwrite, fabricated completed record on task cancellation.",
+  "kind": "SYMBOLIC",
+  "mathematics_status": "DERIVED_SEMANTIC_PARTITION",
+  "partitions": [
+    "independent wave",
+    "chain",
+    "fork",
+    "all-predecessor join",
+    "diamond",
+    "ready Control barrier",
+    "completion order differs from definition order",
+    "recorded token before/during/after attempt",
+    "task cancellation of one of concurrent runs",
+    "shared provider default lock versus opt-in safe"
+  ],
+  "requirement_ids": [
+    "CM.RELAY.CANCEL.TOKEN",
+    "CM.RELAY.CANCEL.TASK",
+    "CM.RELAY.PROVIDER.SHARING",
+    "CM.RELAY.SCHED.ORDER",
+    "CM.RELAY.SCHED.CONTROL",
+    "CM.RELAY.SCHED.ISOLATION",
+    "CM.RELAY.SCHED.WAVE.MEMBERSHIP",
+    "CM.RELAY.SCHED.WAVE.BARRIER"
+  ],
+  "valid_set": "Only dependency/guard/route/input-eligible nodes start. Non-Control ready waves contain<=k and all settle before successors; accept records in definition order within wave. Control runs as serial barrier. Recorded token serializes that occurrence; task cancellation aborts call, cleans processes and raises CancelledError without completed record."
+}
+```
+
+### D.RELAY.BINDING
+
+Canonical links: CM.RELAY.BIND.SELECT, CM.RELAY.BIND.CHECK, CM.RELAY.CATALOG.ENTRYPOINTS, CM.RELAY.PORT.ProviderBinder.bind, CM.RELAY.PORT.ProviderCatalog.providers, CM.RELAY.PROVIDER_CONFIG.TRUST, CM.RELAY.CATALOG.FAILURE_CLASS, CM.RELAY.BINDER.FAILURE_CLASS, CM.RELAY.PREP.SNAPSHOT.SNAPSHOT, CM.RELAY.PREP.SNAPSHOT.BIND_BEFORE_POLICIES, CM.RELAY.CATALOG.TRUST.HOST, CM.RELAY.CATALOG.TRUST.DUPLICATE
+
+```json
+{
+  "axes": [
+    "Trusted finite catalog of AvailableProvider(manifest,transport)",
+    "Exact operation pair; optional explicit four-part binding",
+    "Prepared graph and policy requirements; manifest compatibility"
+  ],
+  "candidate_count": "unbounded",
+  "derivation": "Catalog length and identity/string/schema universe unbounded. Match cardinality partitions0,1,>=2 are exhaustive for selection; exact identity conjunction separately16 coordinates. No ranking/fallback policy inferred.",
+  "domain_id": "D.RELAY.BINDING",
+  "inapplicable_set": "Trust registration does not authenticate binary/endpoint/domain ownership; discovery does not execute factories until host allowlist authorizes.",
+  "invalid_set": "Fallback, untrusted substitute, invalid or duplicate catalog identity, manifest/capability/version mismatch, injected binder bypass.",
+  "kind": "SYMBOLIC",
+  "mathematics_status": "DERIVED_SEMANTIC_PARTITION",
+  "partitions": [
+    "zero compatible",
+    "one compatible",
+    "multiple compatible",
+    "explicit correct",
+    "explicit missing/untrusted",
+    "explicit incompatible",
+    "catalog initialization failure",
+    "binder failure versus category rejection",
+    "policy binding keys versus graph node keys"
+  ],
+  "requirement_ids": [
+    "CM.RELAY.BIND.SELECT",
+    "CM.RELAY.BIND.CHECK",
+    "CM.RELAY.CATALOG.ENTRYPOINTS",
+    "CM.RELAY.CATALOG.FAILURE_CLASS",
+    "CM.RELAY.BINDER.FAILURE_CLASS",
+    "CM.RELAY.PROVIDER_CONFIG.TRUST",
+    "CM.RELAY.PREP.SNAPSHOT.SNAPSHOT",
+    "CM.RELAY.PREP.SNAPSHOT.BIND_BEFORE_POLICIES",
+    "CM.RELAY.CATALOG.TRUST.HOST",
+    "CM.RELAY.CATALOG.TRUST.DUPLICATE",
+    "CM.RELAY.PORT.ProviderBinder.bind",
+    "CM.RELAY.PORT.ProviderCatalog.providers"
+  ],
+  "valid_set": "No explicit identity: choose unique compatible provider; zero match unavailable, multiple ambiguous. Explicit identity selects exact trusted compatible entry; mismatch/untrusted rejects. Independently validate catalog and binder results before policy execution."
+}
+```
+
+### D.RELAY.DRIVER
+
+Canonical links: CM.RELAY.DRIVER.CHECK, CM.RELAY.DRIVER.BOUNDS, CM.RELAY.DRIVER.TIMEOUT, CM.RELAY.PORT.EventSink.emit, CM.RELAY.PORT.ExecutionDriver.execute, CM.RELAY.PORT.ProviderTransport.invoke, CM.RELAY.INVOCATION.CONSTRAINT_SCOPE
+
+```json
+{
+  "axes": [
+    "Valid prepared InvocationRequest(manifest,invocation)",
+    "Permitted correlated ProviderEvent sequence and terminal Outcome or separate execution/transport error",
+    "Configured host timeout, event count and captured byte bounds",
+    "Callback EventSink; observer diagnostic path"
+  ],
+  "candidate_count": "unbounded",
+  "derivation": "Event payload/trace space unbounded. Count and byte limits are host parameters; legal length0..L is bounded but contents and chunking unbounded. Revalidation is a semantic boundary, not authentication.",
+  "domain_id": "D.RELAY.DRIVER",
+  "inapplicable_set": "Only conforming providers and replacement ports are runtime profile; malformed local protocol objects are invalid contract data, not required Byzantine external behavior.",
+  "invalid_set": "Unbounded capture, duplicate charge of partial/final usage, transport-loss fabricated Outcome, report bypassing contract validation.",
+  "kind": "SYMBOLIC",
+  "mathematics_status": "DERIVED_SEMANTIC_PARTITION",
+  "partitions": [
+    "legal zero-event COMPLETED",
+    "legal supported streaming",
+    "valid Provider ERROR",
+    "host cancellation with partial observations and explicit VCP cancellation event",
+    "host timeout separate ERROR",
+    "transport failure",
+    "count/byte bound",
+    "output-schema rejection preserving observation and usage",
+    "observer failure"
+  ],
+  "requirement_ids": [
+    "CM.RELAY.DRIVER.CHECK",
+    "CM.RELAY.DRIVER.BOUNDS",
+    "CM.RELAY.DRIVER.TIMEOUT",
+    "CM.RELAY.PORT.ExecutionDriver.execute",
+    "CM.RELAY.PORT.ProviderTransport.invoke",
+    "CM.RELAY.PORT.EventSink.emit"
+  ],
+  "scope_limits": [
+    "Relay graph/policy invocation builder supplies no Provider deadline or resource_budget. Resource estimates are not budgets.",
+    "A correct provider cannot emit DEADLINE_EXCEEDED without a supplied expired deadline or CANCELLED without runner cancellation cause. Do not multiply all Provider terminal states into every Relay invocation.",
+    "Default LocalDriver validates lifecycle without provider-clock observations; deadline-enabled standalone SDK traces are a different supported surface."
+  ],
+  "valid_set": "Driver captures permitted events bounded by count/bytes, validates Provider lifecycle/terminal output and returns InvocationReport. Application revalidates report before VCP acceptance. Host timeout default30s independent of provider deadline/budget and produces execution ERROR, never verification FAIL."
+}
+```
+
+### D.RELAY.STORAGE_OBSERVATION
+
+Canonical links: CM.RELAY.PORT.EventObserver.observe, CM.RELAY.PORT.RecordStore.get, CM.RELAY.PORT.RecordStore.put, CM.RELAY.OBSERVER.ERROR, CM.RELAY.STORE.VALIDATE, CM.RELAY.ANNOTATION.SCOPE, CM.RELAY.STORE.COPY, CM.RELAY.STORE.ERROR, CM.RELAY.STORE.SCOPE, CM.RELAY.STORE.DUPLICATE
+
+```json
+{
+  "axes": [
+    "Valid terminal RunRecord and run_id; replacement store get/put",
+    "In-memory versus single-process JSONL local storage",
+    "RelayEvent advisory kind string; observer callback success/exception",
+    "Caller mutation and retrieval lifetime"
+  ],
+  "candidate_count": "unbounded",
+  "derivation": "Record JSON and event kinds unbounded; run-store state finite maps over arbitrary record identities, not a finite total. Snapshot equality and error propagation define operation relations.",
+  "domain_id": "D.RELAY.STORAGE_OBSERVATION",
+  "inapplicable_set": "Memory volatile, JSONL nontransactional/no fsync/multiprocess/recovery guarantee. Callback return is not Provider Outcome or execution policy.",
+  "invalid_set": "Claiming persistence success after failure, mutable alias corrupting stored snapshot, observer diagnostic as semantic Evidence, closed universal Relay event alphabet, durability beyond local store promises.",
+  "kind": "SYMBOLIC",
+  "mathematics_status": "DERIVED_SEMANTIC_PARTITION",
+  "partitions": [
+    "put then caller mutation",
+    "get then caller mutation",
+    "missing id",
+    "duplicate same run_id local behavior",
+    "malformed serialized record on reload",
+    "observer normal/raises",
+    "store I/O failure",
+    "annotation present/absent"
+  ],
+  "requirement_ids": [
+    "CM.RELAY.PORT.RecordStore.get",
+    "CM.RELAY.PORT.RecordStore.put",
+    "CM.RELAY.PORT.EventObserver.observe",
+    "CM.RELAY.OBSERVER.ERROR",
+    "CM.RELAY.STORE.VALIDATE",
+    "CM.RELAY.STORE.COPY",
+    "CM.RELAY.STORE.ERROR",
+    "CM.RELAY.STORE.SCOPE",
+    "CM.RELAY.STORE.DUPLICATE",
+    "CM.RELAY.ANNOTATION.SCOPE"
+  ],
+  "valid_set": "Validate record before storage/return; store snapshots on write/read; get absent returns None, put returns None; storage failures propagate. Observer receives advisory lifecycle/provider events, exceptions isolated into diagnostics. Optional annotation supplements normative binding, without authenticity."
+}
+```
+
+### D.RELAY.HOST_API
+
+Canonical links: CM.RELAY.POLICY.NO_RECORD, CM.RELAY.POLICY.IDENTITY, CM.RELAY.API.RUN, CM.RELAY.API.VIEWS.RESULTS, CM.RELAY.API.VIEWS.DECISIONS, CM.RELAY.API.VIEWS.EVIDENCE, CM.RELAY.API.VIEWS.USAGE, CM.RELAY.API.VIEWS.SERIALIZATION, CM.RELAY.API.GATE.POLICY, CM.RELAY.API.GATE.WAIT, CM.RELAY.API.GATE.ACTION
+
+```json
+{
+  "axes": [
+    "Graph/VerificationDefinition/serialized JSON representations of same definition",
+    "Explicit input JSON, optional opportunity identity and cancellation token",
+    "Run(record), accessor operation, gate policy and zero-argument async action"
+  ],
+  "candidate_count": "unbounded",
+  "derivation": "JSON/graph/action result types unbounded. Method relation is composition of validated run, selected gate and one action call. Default gate has nonempty universal all-PASS predicate, separate from CLI terminal-result selection.",
+  "domain_id": "D.RELAY.HOST_API",
+  "inapplicable_set": "run_sync requires ordinary synchronous host without already-running event loop. Helper mediates only supplied action; explicit custom gate may choose different policy.",
+  "invalid_set": "Representation-specific verification meaning, ambient input injection, fabricated global verdict, action invocation before passing chosen gate.",
+  "kind": "SYMBOLIC",
+  "mathematics_status": "DERIVED_SEMANTIC_PARTITION",
+  "partitions": [
+    "same authored definition in3 representations",
+    "malformed serialized definition",
+    "invalid inputs",
+    "missing versus explicit opportunity id",
+    "no occurrence versus admitted RUN/SKIP/DEFER",
+    "gate allow/deny/raise",
+    "verification raises",
+    "action returns/raises",
+    "sync host versus active event loop"
+  ],
+  "requirement_ids": [
+    "CM.RELAY.API.RUN",
+    "CM.RELAY.POLICY.IDENTITY",
+    "CM.RELAY.POLICY.NO_RECORD",
+    "CM.RELAY.API.VIEWS.RESULTS",
+    "CM.RELAY.API.VIEWS.DECISIONS",
+    "CM.RELAY.API.VIEWS.EVIDENCE",
+    "CM.RELAY.API.VIEWS.USAGE",
+    "CM.RELAY.API.VIEWS.SERIALIZATION",
+    "CM.RELAY.API.GATE.POLICY",
+    "CM.RELAY.API.GATE.WAIT",
+    "CM.RELAY.API.GATE.ACTION"
+  ],
+  "valid_set": "All run forms use validation/preparation and return complete validated Run. Missing opportunity identity generated fresh UUID; inactive/unselected raises NO_OCCURRENCE. Accessors retain exact per-node Results/Decisions/evidence/usage; verify_before awaits run then gate then action once, returning action result or propagating errors."
+}
+```
+
+### D.RELAY.ENTRYPOINTS
+
+Canonical links: CM.RELAY.CLI.JSON, CM.RELAY.CLI.STDIN, CM.RELAY.SERVICE.ALLOWLIST, CM.RELAY.SERVICE.CONCURRENCY, CM.RELAY.HTTP.AUTH, CM.RELAY.HTTP.BOUND, CM.RELAY.HTTP.HEALTH, CM.RELAY.MCP.TOOLS, CM.RELAY.CLI.OPERATIONS, CM.RELAY.HTTP.SHAPE.REQUEST, CM.RELAY.HTTP.SHAPE.SEMANTIC_FAILURE, CM.RELAY.HTTP.SHAPE.INVALID_INPUT, CM.SDK.SERVICE.GRAPHSERVICE.RUN_GRAPH.AUTHORIZATION, CM.SDK.SERVICE.GRAPHSERVICE.RUN_GRAPH.LIMIT, CM.SDK.SERVICE.GRAPHSERVICE.RUN_GRAPH.RESULT
+
+```json
+{
+  "axes": [
+    "CLI command and argv/stdin/files; HTTP method/path/body/auth; MCP tool/name/args",
+    "Host-authorized named graph mapping, active-run bound, retained store",
+    "Exact request JSON and completion status"
+  ],
+  "candidate_count": "unbounded",
+  "derivation": "Each entrypoint has its own operation union; request values and graph names unbounded. No fabricated universal interface product. Service concurrency is count bound on active run interval, not provider-safety guarantee.",
+  "domain_id": "D.RELAY.ENTRYPOINTS",
+  "inapplicable_set": "Optional MCP/HTTP dependencies and localhost host boundary; tenant auth/TLS/remote hooks outside profile.",
+  "invalid_set": "Arbitrary graph path/executable-config service request, extra HTTP request keys, action from unauthorized graph, claim common operation parity across all entrypoints.",
+  "kind": "SYMBOLIC",
+  "mathematics_status": "DERIVED_SEMANTIC_PARTITION",
+  "partitions": [
+    "CLI JSON versus human mode",
+    "stdin graph versus stdin inputs versus conflicting use",
+    "CLI validation/inspection/run/provider listing/template listing",
+    "HTTP token configured/unconfigured",
+    "bounded body<=limit versus >limit",
+    "authorized/missing graph",
+    "retained/missing run",
+    "valid verification FAIL versus invalid input",
+    "MCP allowlisted tool versus unsupported operation"
+  ],
+  "requirement_ids": [
+    "CM.RELAY.CLI.JSON",
+    "CM.RELAY.CLI.STDIN",
+    "CM.RELAY.CLI.OPERATIONS",
+    "CM.RELAY.SERVICE.ALLOWLIST",
+    "CM.RELAY.SERVICE.CONCURRENCY",
+    "CM.RELAY.HTTP.AUTH",
+    "CM.RELAY.HTTP.BOUND",
+    "CM.RELAY.HTTP.HEALTH",
+    "CM.RELAY.MCP.TOOLS",
+    "CM.RELAY.HTTP.SHAPE.REQUEST",
+    "CM.RELAY.HTTP.SHAPE.SEMANTIC_FAILURE",
+    "CM.RELAY.HTTP.SHAPE.INVALID_INPUT",
+    "CM.SDK.SERVICE.GRAPHSERVICE.RUN_GRAPH.AUTHORIZATION",
+    "CM.SDK.SERVICE.GRAPHSERVICE.RUN_GRAPH.LIMIT",
+    "CM.SDK.SERVICE.GRAPHSERVICE.RUN_GRAPH.RESULT"
+  ],
+  "valid_set": "CLI stdout JSON excludes diagnostics, one stdin consumer, explicit provider config host trusted. HTTP health and bounded exact graph/inputs request, optional exact Bearer token; protocol invalid400, auth401, size413, valid FAIL200. MCP only list_graphs/describe_graph/run_graph/inspect_result over allowlisted graphs. Service bounds active calls default8."
+}
+```
+
+### D.RELAY.PROCESS
+
+Canonical links: CM.RELAY.PROCESS.ARGV_ENV, CM.RELAY.PROCESS.WINDOWS_PRESTART, CM.RELAY.STDIO.SESSION.FRESH, CM.RELAY.STDIO.SESSION.MANIFEST, CM.RELAY.PROCESS.CLEANUP.LAUNCH, CM.RELAY.PROCESS.CLEANUP.TEARDOWN
+
+```json
+{
+  "axes": [
+    "Trusted argv/cwd/env, platform POSIX or Windows",
+    "Process start, stream chunks, normal exit, timeout, cancellation, descendants",
+    "Configured stream/message/stderr limits and grace interval"
+  ],
+  "candidate_count": "unbounded",
+  "derivation": "Process programs, byte streams and schedules unbounded. Lifecycle contract gives ordering and bounds, not a finite schedule universe or distributed timing guarantee.",
+  "domain_id": "D.RELAY.PROCESS",
+  "inapplicable_set": "Host privileges apply; deliberate process-group escape/noncooperative in-process Python beyond lifetime mechanism. OS runtime behavior not claimed tested by this review.",
+  "invalid_set": "Graph-authorized arbitrary executable, secret injection into semantic inputs/logs, unbounded capture, escape-resistance/security-sandbox claim.",
+  "kind": "SYMBOLIC",
+  "mathematics_status": "DERIVED_SEMANTIC_PARTITION",
+  "partitions": [
+    "host inherited/explicit env",
+    "Unicode stdout/stderr",
+    "normal/nonzero exit",
+    "timeout",
+    "task cancellation",
+    "parent exits with descendant",
+    "Windows prestart job versus POSIX session",
+    "stdio initial manifest equality/mismatch",
+    "partial/coalesced frames"
+  ],
+  "requirement_ids": [
+    "CM.RELAY.PROCESS.ARGV_ENV",
+    "CM.RELAY.PROCESS.WINDOWS_PRESTART",
+    "CM.RELAY.STDIO.SESSION.FRESH",
+    "CM.RELAY.STDIO.SESSION.MANIFEST",
+    "CM.RELAY.PROCESS.CLEANUP.LAUNCH",
+    "CM.RELAY.PROCESS.CLEANUP.TEARDOWN"
+  ],
+  "valid_set": "argv array absolute cwd no shell; env inherits trusted host unless explicit complete map, Windows SystemRoot supplement when necessary. Bounded capture and platform process-tree cleanup; Windows kill-on-close Job before tool starts, POSIX process group cleanup. Stdio fresh initialized session and exact trusted manifest."
+}
+```
+
+### D.RELAY.ARCHITECTURE
+
+Canonical links: CM.RELAY.ARCH.DEPENDENCIES
+
+```json
+{
+  "axes": [
+    "Static module dependency graph and composition roots",
+    "Pure SDK/core/application/ports/adapters/entrypoint ownership",
+    "Trusted provider implementations versus portable semantics"
+  ],
+  "candidate_count": "unbounded",
+  "derivation": "Finite current module graph can be fully inspected, but arbitrary future modules unbounded. Edge permission relation is layer partial order, not a count of tests.",
+  "domain_id": "D.RELAY.ARCHITECTURE",
+  "inapplicable_set": "Architecture is local implementation contract, not cross-language portable graph semantics.",
+  "invalid_set": "Implementation import structure cannot invent protocol semantics; hidden shared mutable occurrence state or inverted infrastructure dependency violates documented profile.",
+  "kind": "SYMBOLIC",
+  "mathematics_status": "DERIVED_SEMANTIC_PARTITION",
+  "partitions": [
+    "allowed dependency direction",
+    "forbidden infrastructure dependency",
+    "explicit composition root",
+    "run-local state",
+    "trusted local implementation versus portable source authority"
+  ],
+  "requirement_ids": [
+    "CM.RELAY.ARCH.DEPENDENCIES"
+  ],
+  "valid_set": "Core may depend on SDK rules; application depends on core/ports/SDK, not infrastructure/standard; adapters implement ports; facade/entrypoints compose; authoring only SDK. No Reference Engine imports or mutable global run containers."
+}
+```
+
+### D.RELAY.STANDARD_HOST
+
+Canonical links: CM.RELAY.STANDARD.TOOLS_DISCOVERY, CM.RELAY.STANDARD.CATALOG, CM.RELAY.TEMPLATES, CM.SDK.TOOLS.EXECUTABLE, CM.SDK.TOOLS.FILES, CM.SDK.TOOLS.DISCOVERY
+
+```json
+{
+  "axes": [
+    "Host roots, optional Tools and explicit opt-in Command registration",
+    "17 default capability providers;18th opt-in command",
+    "Exactly5 template names: text,document,guardrail,code,code_spans; constructor variant parameters"
+  ],
+  "candidate_count": "unbounded",
+  "derivation": "Finite current default capability-name set has17 members, plus opt-in command. Actual schemas, files, tools/config and template-authored JSON values unbounded; counts of names do not exhaust behavior.",
+  "domain_id": "D.RELAY.STANDARD_HOST",
+  "inapplicable_set": "Templates are host authoring conveniences; dynamic capability membership still VCP checked; external implementations can be explicitly registered.",
+  "invalid_set": "Implicit command launcher, bundled fictional external tools, graph-supplied executable authorization, tool emulation when absent.",
+  "kind": "SYMBOLIC",
+  "mathematics_status": "DERIVED_SEMANTIC_PARTITION",
+  "partitions": [
+    "default catalog",
+    "explicit roots",
+    "explicit Tools access precedence",
+    "opt-in Command",
+    "missing installed tool",
+    "known template versus absent name",
+    "template graph supplied parameters"
+  ],
+  "requirement_ids": [
+    "CM.RELAY.STANDARD.TOOLS_DISCOVERY",
+    "CM.RELAY.STANDARD.CATALOG",
+    "CM.RELAY.TEMPLATES",
+    "CM.SDK.TOOLS.EXECUTABLE",
+    "CM.SDK.TOOLS.FILES",
+    "CM.SDK.TOOLS.DISCOVERY"
+  ],
+  "valid_set": "Default catalog registers exactly documented trusted standard capabilities concurrency_safe=True; supplied Tools.access supersedes roots; roots default construction cwd. Tools from scripts then PATH/explicit host path. Templates author ordinary VCP and do not introduce hidden scheduler actions or authorize generic command."
+}
+```
+
+### D.RELAY.CLI.EXIT_QUOTIENT
+
+Canonical links: CM.RELAY.CLI.EXIT.ERROR, CM.RELAY.CLI.EXIT.FAIL, CM.RELAY.CLI.EXIT.PASS, CM.RELAY.CLI.EXIT.OTHER
+
+```json
+{
+  "axes": [
+    {
+      "name": "any_execution_error",
+      "values": [
+        false,
+        true
+      ]
+    },
+    {
+      "name": "terminal_Result_selection",
+      "values": [
+        "EMPTY",
+        "ALL_PASS",
+        "HAS_FAIL",
+        "OTHER"
+      ]
+    }
+  ],
+  "candidate_count": 8,
+  "derivation": "Four disjoint selected-set summaries x presence of execution ERROR anywhere. Each valid input summary has one defined exit code; no claim of8 full records.",
+  "domain_id": "D.RELAY.CLI.EXIT_QUOTIENT",
+  "exact_outcome": {
+    "ERROR_ANY": "exit2",
+    "NO_ERROR_ALL_PASS": "exit0",
+    "NO_ERROR_EMPTY": "exit3",
+    "NO_ERROR_HAS_FAIL": "exit1",
+    "NO_ERROR_OTHER": "exit3"
+  },
+  "formula": "2*4",
+  "inapplicable_count": 0,
+  "independent_recalculation": {
+    "candidate_count": 8,
+    "counts": {
+      "VALID": 8
+    },
+    "status": "RECONCILED"
+  },
+  "invalid_count": 0,
+  "kind": "FINITE",
+  "mathematics_status": "DERIVED",
+  "meaning": "Law coordinates for valid records; terminal selected set has no represented strict-descendant Result. HAS_FAIL has precedence over OTHER when some other result is unknown. ERROR anywhere dominates all four selected-set classes.",
+  "requirement_ids": [
+    "CM.RELAY.CLI.EXIT.ERROR",
+    "CM.RELAY.CLI.EXIT.FAIL",
+    "CM.RELAY.CLI.EXIT.PASS",
+    "CM.RELAY.CLI.EXIT.OTHER"
+  ],
+  "valid_count": 8
+}
+```
+
+### D.SDK.MODEL
+
+Canonical links: CM.SDK.MODEL.INTEGRAL_NORMALIZATION, CM.SDK.MODEL.CONSTRUCTION.TYPES, CM.SDK.MODEL.CONSTRUCTION.EXTRA, CM.SDK.MODEL.CONSTRUCTION.FROZEN, CM.SDK.MODEL.CONSTRUCTION.SEMANTIC_BOUNDARY
+
+```json
+{
+  "axes": [
+    "Declared SDK model type, constructor keyword fields and model defaults",
+    "Exact JSON type classes plus integral float notation",
+    "Field assignment after construction versus mutation of nested list/dict"
+  ],
+  "candidate_count": "unbounded",
+  "constructor_boundary": "Pydantic model defaults and nullable annotations are local constructor behavior; wire/root/prose validity is checked separately. A typed constructed model can fail portable validation, including explicit Provider optional null.",
+  "declared_model_shapes": {
+    "Activation": {
+      "bases": [
+        "Value"
+      ],
+      "fields": [
+        {
+          "annotation": "Literal['ACTIVATE', 'DO_NOT_ACTIVATE']",
+          "default_expression": "<required>",
+          "line": 230,
+          "name": "outcome"
+        },
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 231,
+          "name": "reason"
+        }
+      ],
+      "line": 229,
+      "source": "src/openverify/model/__init__.py"
+    },
+    "Admission": {
+      "bases": [
+        "Value"
+      ],
+      "fields": [
+        {
+          "annotation": "Literal['RUN', 'SKIP', 'DEFER']",
+          "default_expression": "<required>",
+          "line": 225,
+          "name": "outcome"
+        },
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 226,
+          "name": "reason"
+        }
+      ],
+      "line": 224,
+      "source": "src/openverify/model/__init__.py"
+    },
+    "AdmissionPolicy": {
+      "bases": [
+        "PolicyOperation"
+      ],
+      "fields": [
+        {
+          "annotation": "str | None",
+          "default_expression": "None",
+          "line": 201,
+          "name": "strategy"
+        },
+        {
+          "annotation": "float | None",
+          "default_expression": "None",
+          "line": 202,
+          "name": "probability"
+        }
+      ],
+      "line": 200,
+      "source": "src/openverify/model/__init__.py"
+    },
+    "AnnotatedValue": {
+      "bases": [
+        "Value"
+      ],
+      "fields": [
+        {
+          "annotation": "dict[str, JsonValue]",
+          "default_expression": "Field(default_factory=dict)",
+          "line": 20,
+          "name": "metadata"
+        },
+        {
+          "annotation": "list[Extension]",
+          "default_expression": "Field(default_factory=lambda: list[Extension]())",
+          "line": 21,
+          "name": "extensions"
+        }
+      ],
+      "line": 19,
+      "source": "src/openverify/model/__init__.py"
+    },
+    "ArtifactRef": {
+      "bases": [
+        "AnnotatedValue"
+      ],
+      "fields": [
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 25,
+          "name": "id"
+        },
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 26,
+          "name": "type"
+        },
+        {
+          "annotation": "JsonValue",
+          "default_expression": "<required>",
+          "line": 27,
+          "name": "locator"
+        },
+        {
+          "annotation": "str | None",
+          "default_expression": "None",
+          "line": 28,
+          "name": "schema_id"
+        }
+      ],
+      "line": 24,
+      "source": "src/openverify/model/__init__.py"
+    },
+    "CancelRequest": {
+      "bases": [
+        "Extensible"
+      ],
+      "fields": [
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 72,
+          "name": "invocation_id"
+        },
+        {
+          "annotation": "str | None",
+          "default_expression": "None",
+          "line": 73,
+          "name": "reason"
+        }
+      ],
+      "line": 71,
+      "source": "src/openverify/provider/model.py"
+    },
+    "CancellationEvent": {
+      "bases": [
+        "Value"
+      ],
+      "fields": [
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 275,
+          "name": "node_id"
+        },
+        {
+          "annotation": "Literal['BEFORE_START', 'RUNNING']",
+          "default_expression": "<required>",
+          "line": 276,
+          "name": "phase"
+        },
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 277,
+          "name": "reason"
+        }
+      ],
+      "line": 274,
+      "source": "src/openverify/model/__init__.py"
+    },
+    "Capability": {
+      "bases": [
+        "Extensible"
+      ],
+      "fields": [
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 26,
+          "name": "capability_id"
+        },
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 27,
+          "name": "capability_version"
+        },
+        {
+          "annotation": "dict[str, JsonValue] | bool",
+          "default_expression": "<required>",
+          "line": 28,
+          "name": "input_schema"
+        },
+        {
+          "annotation": "dict[str, JsonValue] | bool",
+          "default_expression": "<required>",
+          "line": 29,
+          "name": "output_schema"
+        },
+        {
+          "annotation": "dict[str, JsonValue] | bool",
+          "default_expression": "<required>",
+          "line": 30,
+          "name": "config_schema"
+        },
+        {
+          "annotation": "LifecycleFeatures",
+          "default_expression": "<required>",
+          "line": 31,
+          "name": "lifecycle_features"
+        },
+        {
+          "annotation": "str | None",
+          "default_expression": "None",
+          "line": 32,
+          "name": "vcp_version"
+        }
+      ],
+      "line": 25,
+      "source": "src/openverify/provider/model.py"
+    },
+    "Constant": {
+      "bases": [
+        "Value"
+      ],
+      "fields": [
+        {
+          "annotation": "Literal['CONSTANT']",
+          "default_expression": "'CONSTANT'",
+          "line": 106,
+          "name": "kind"
+        },
+        {
+          "annotation": "JsonValue",
+          "default_expression": "<required>",
+          "line": 107,
+          "name": "value"
+        }
+      ],
+      "line": 105,
+      "source": "src/openverify/model/__init__.py"
+    },
+    "Criterion": {
+      "bases": [
+        "AnnotatedValue"
+      ],
+      "fields": [
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 184,
+          "name": "id"
+        },
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 185,
+          "name": "description"
+        }
+      ],
+      "line": 183,
+      "source": "src/openverify/model/__init__.py"
+    },
+    "Decision": {
+      "bases": [
+        "AnnotatedValue"
+      ],
+      "fields": [
+        {
+          "annotation": "Literal['draft']",
+          "default_expression": "'draft'",
+          "line": 96,
+          "name": "protocol"
+        },
+        {
+          "annotation": "Literal['CONTINUE', 'STOP_SUCCESS', 'STOP_FAILURE', 'ROUTE', 'RETRY', 'DEFER']",
+          "default_expression": "<required>",
+          "line": 97,
+          "name": "kind"
+        },
+        {
+          "annotation": "str | None",
+          "default_expression": "None",
+          "line": 98,
+          "name": "destination"
+        },
+        {
+          "annotation": "str | None",
+          "default_expression": "None",
+          "line": 99,
+          "name": "reason"
+        }
+      ],
+      "line": 95,
+      "source": "src/openverify/model/__init__.py"
+    },
+    "Edge": {
+      "bases": [
+        "Value"
+      ],
+      "fields": [
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 157,
+          "name": "from_node"
+        },
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 158,
+          "name": "to_node"
+        },
+        {
+          "annotation": "Guard | None",
+          "default_expression": "None",
+          "line": 159,
+          "name": "guard"
+        }
+      ],
+      "line": 156,
+      "source": "src/openverify/model/__init__.py"
+    },
+    "Evidence": {
+      "bases": [
+        "AnnotatedValue"
+      ],
+      "fields": [
+        {
+          "annotation": "str | None",
+          "default_expression": "None",
+          "line": 32,
+          "name": "id"
+        },
+        {
+          "annotation": "str | None",
+          "default_expression": "None",
+          "line": 33,
+          "name": "message"
+        },
+        {
+          "annotation": "ArtifactRef | None",
+          "default_expression": "None",
+          "line": 34,
+          "name": "artifact_ref"
+        },
+        {
+          "annotation": "JsonValue",
+          "default_expression": "None",
+          "line": 35,
+          "name": "locator"
+        },
+        {
+          "annotation": "JsonValue",
+          "default_expression": "None",
+          "line": 36,
+          "name": "structured_data"
+        }
+      ],
+      "line": 31,
+      "source": "src/openverify/model/__init__.py"
+    },
+    "ExecutionError": {
+      "bases": [
+        "Value"
+      ],
+      "fields": [
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 240,
+          "name": "code"
+        },
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 241,
+          "name": "message"
+        }
+      ],
+      "line": 239,
+      "source": "src/openverify/model/__init__.py"
+    },
+    "ExecutionObservation": {
+      "bases": [
+        "Value"
+      ],
+      "fields": [
+        {
+          "annotation": "Context",
+          "default_expression": "Field(default_factory=dict)",
+          "line": 245,
+          "name": "outputs"
+        },
+        {
+          "annotation": "ResourceVector",
+          "default_expression": "Field(default_factory=dict)",
+          "line": 246,
+          "name": "usage"
+        },
+        {
+          "annotation": "list[Evidence]",
+          "default_expression": "Field(default_factory=lambda: list[Evidence]())",
+          "line": 247,
+          "name": "evidence"
+        },
+        {
+          "annotation": "ExecutionError | None",
+          "default_expression": "None",
+          "line": 248,
+          "name": "error"
+        }
+      ],
+      "line": 244,
+      "source": "src/openverify/model/__init__.py"
+    },
+    "ExecutionPolicy": {
+      "bases": [
+        "Value"
+      ],
+      "fields": [
+        {
+          "annotation": "Capability",
+          "default_expression": "<required>",
+          "line": 206,
+          "name": "activation"
+        },
+        {
+          "annotation": "Capability",
+          "default_expression": "<required>",
+          "line": 207,
+          "name": "selection"
+        },
+        {
+          "annotation": "AdmissionPolicy",
+          "default_expression": "<required>",
+          "line": 208,
+          "name": "admission"
+        }
+      ],
+      "line": 205,
+      "source": "src/openverify/model/__init__.py"
+    },
+    "Extensible": {
+      "bases": [
+        "ProviderValue"
+      ],
+      "fields": [
+        {
+          "annotation": "dict[str, JsonValue]",
+          "default_expression": "Field(default_factory=dict)",
+          "line": 15,
+          "name": "extensions"
+        }
+      ],
+      "line": 14,
+      "source": "src/openverify/provider/model.py"
+    },
+    "Extension": {
+      "bases": [
+        "Value"
+      ],
+      "fields": [
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 13,
+          "name": "namespace"
+        },
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 14,
+          "name": "version"
+        },
+        {
+          "annotation": "bool",
+          "default_expression": "<required>",
+          "line": 15,
+          "name": "required"
+        },
+        {
+          "annotation": "JsonValue",
+          "default_expression": "<required>",
+          "line": 16,
+          "name": "data"
+        }
+      ],
+      "line": 12,
+      "source": "src/openverify/model/__init__.py"
+    },
+    "ExternalReference": {
+      "bases": [
+        "Value"
+      ],
+      "fields": [
+        {
+          "annotation": "Literal['EXTERNAL_REFERENCE']",
+          "default_expression": "'EXTERNAL_REFERENCE'",
+          "line": 116,
+          "name": "kind"
+        },
+        {
+          "annotation": "ArtifactRef",
+          "default_expression": "<required>",
+          "line": 117,
+          "name": "reference"
+        }
+      ],
+      "line": 115,
+      "source": "src/openverify/model/__init__.py"
+    },
+    "Graph": {
+      "bases": [
+        "Value"
+      ],
+      "fields": [
+        {
+          "annotation": "list[Node]",
+          "default_expression": "<required>",
+          "line": 176,
+          "name": "nodes"
+        },
+        {
+          "annotation": "list[Edge]",
+          "default_expression": "Field(default_factory=lambda: list[Edge]())",
+          "line": 177,
+          "name": "edges"
+        },
+        {
+          "annotation": "list[Literal['CYCLES', 'DYNAMIC_EXPANSION']]",
+          "default_expression": "Field(default_factory=lambda: list[Literal['CYCLES', 'DYNAMIC_EXPANSION']]())",
+          "line": 178,
+          "name": "features"
+        }
+      ],
+      "line": 175,
+      "source": "src/openverify/model/__init__.py"
+    },
+    "Guard": {
+      "bases": [
+        "Value"
+      ],
+      "fields": [
+        {
+          "annotation": "ValueSource",
+          "default_expression": "<required>",
+          "line": 151,
+          "name": "source"
+        },
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 152,
+          "name": "pointer"
+        },
+        {
+          "annotation": "JsonValue",
+          "default_expression": "<required>",
+          "line": 153,
+          "name": "value"
+        }
+      ],
+      "line": 150,
+      "source": "src/openverify/model/__init__.py"
+    },
+    "InitializeRequest": {
+      "bases": [
+        "Extensible"
+      ],
+      "fields": [
+        {
+          "annotation": "list[str]",
+          "default_expression": "<required>",
+          "line": 101,
+          "name": "supported_contract_versions"
+        },
+        {
+          "annotation": "list[str]",
+          "default_expression": "<required>",
+          "line": 102,
+          "name": "supported_vcp_versions"
+        }
+      ],
+      "line": 100,
+      "source": "src/openverify/provider/model.py"
+    },
+    "InitializeResult": {
+      "bases": [
+        "Extensible"
+      ],
+      "fields": [
+        {
+          "annotation": "Literal['0.1']",
+          "default_expression": "<required>",
+          "line": 106,
+          "name": "contract_version"
+        },
+        {
+          "annotation": "ProviderManifest",
+          "default_expression": "<required>",
+          "line": 107,
+          "name": "manifest"
+        }
+      ],
+      "line": 105,
+      "source": "src/openverify/provider/model.py"
+    },
+    "InputPort": {
+      "bases": [
+        "Value"
+      ],
+      "fields": [
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 132,
+          "name": "name"
+        },
+        {
+          "annotation": "JsonSchema",
+          "default_expression": "Field(alias='schema')",
+          "line": 133,
+          "name": "value_schema"
+        },
+        {
+          "annotation": "bool",
+          "default_expression": "<required>",
+          "line": 134,
+          "name": "required"
+        },
+        {
+          "annotation": "Literal['BLOCK', 'OMIT', 'DEFAULT']",
+          "default_expression": "<required>",
+          "line": 135,
+          "name": "on_unavailable"
+        },
+        {
+          "annotation": "Constant | None",
+          "default_expression": "None",
+          "line": 136,
+          "name": "default"
+        }
+      ],
+      "line": 131,
+      "source": "src/openverify/model/__init__.py"
+    },
+    "InputResolution": {
+      "bases": [
+        "Value"
+      ],
+      "fields": [
+        {
+          "annotation": "ValueSource | None",
+          "default_expression": "None",
+          "line": 252,
+          "name": "source"
+        },
+        {
+          "annotation": "Literal['AVAILABLE', 'ABSENT', 'PRODUCER_NOT_EXECUTED', 'PRODUCER_ERROR', 'OUTPUT_MISSING', 'INVALID']",
+          "default_expression": "<required>",
+          "line": 253,
+          "name": "status"
+        },
+        {
+          "annotation": "bool",
+          "default_expression": "False",
+          "line": 261,
+          "name": "used_default"
+        },
+        {
+          "annotation": "JsonValue",
+          "default_expression": "None",
+          "line": 262,
+          "name": "value"
+        }
+      ],
+      "line": 251,
+      "source": "src/openverify/model/__init__.py"
+    },
+    "Invocation": {
+      "bases": [
+        "Extensible"
+      ],
+      "fields": [
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 44,
+          "name": "invocation_id"
+        },
+        {
+          "annotation": "Literal['0.1']",
+          "default_expression": "<required>",
+          "line": 45,
+          "name": "contract_version"
+        },
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 46,
+          "name": "capability_id"
+        },
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 47,
+          "name": "capability_version"
+        },
+        {
+          "annotation": "JsonValue",
+          "default_expression": "<required>",
+          "line": 48,
+          "name": "input"
+        },
+        {
+          "annotation": "JsonValue",
+          "default_expression": "<required>",
+          "line": 49,
+          "name": "config"
+        },
+        {
+          "annotation": "JsonValue",
+          "default_expression": "None",
+          "line": 50,
+          "name": "context"
+        },
+        {
+          "annotation": "str | None",
+          "default_expression": "None",
+          "line": 51,
+          "name": "vcp_version"
+        },
+        {
+          "annotation": "str | None",
+          "default_expression": "None",
+          "line": 52,
+          "name": "deadline"
+        },
+        {
+          "annotation": "dict[str, JsonValue] | None",
+          "default_expression": "None",
+          "line": 53,
+          "name": "resource_budget"
+        }
+      ],
+      "line": 43,
+      "source": "src/openverify/provider/model.py"
+    },
+    "LifecycleFeatures": {
+      "bases": [
+        "ProviderValue"
+      ],
+      "fields": [
+        {
+          "annotation": "bool",
+          "default_expression": "<required>",
+          "line": 19,
+          "name": "streaming"
+        },
+        {
+          "annotation": "bool",
+          "default_expression": "<required>",
+          "line": 20,
+          "name": "cancellation"
+        },
+        {
+          "annotation": "bool",
+          "default_expression": "<required>",
+          "line": 21,
+          "name": "deadlines"
+        },
+        {
+          "annotation": "bool",
+          "default_expression": "<required>",
+          "line": 22,
+          "name": "resource_reporting"
+        }
+      ],
+      "line": 18,
+      "source": "src/openverify/provider/model.py"
+    },
+    "Measurement": {
+      "bases": [
+        "Value"
+      ],
+      "fields": [
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 40,
+          "name": "unit"
+        },
+        {
+          "annotation": "Literal['EXACT', 'ESTIMATED', 'RANGE', 'UNKNOWN']",
+          "default_expression": "<required>",
+          "line": 41,
+          "name": "kind"
+        },
+        {
+          "annotation": "float | None",
+          "default_expression": "None",
+          "line": 42,
+          "name": "value"
+        },
+        {
+          "annotation": "float | None",
+          "default_expression": "None",
+          "line": 43,
+          "name": "minimum"
+        },
+        {
+          "annotation": "float | None",
+          "default_expression": "None",
+          "line": 44,
+          "name": "maximum"
+        }
+      ],
+      "line": 39,
+      "source": "src/openverify/model/__init__.py"
+    },
+    "Node": {
+      "bases": [
+        "AnnotatedValue"
+      ],
+      "fields": [
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 163,
+          "name": "id"
+        },
+        {
+          "annotation": "Literal['DERIVE', 'EVALUATE', 'CONTROL', 'AGGREGATE']",
+          "default_expression": "<required>",
+          "line": 164,
+          "name": "kind"
+        },
+        {
+          "annotation": "OperationRequirement",
+          "default_expression": "<required>",
+          "line": 165,
+          "name": "operation"
+        },
+        {
+          "annotation": "list[InputPort]",
+          "default_expression": "Field(default_factory=lambda: list[InputPort]())",
+          "line": 166,
+          "name": "inputs"
+        },
+        {
+          "annotation": "list[OutputPort]",
+          "default_expression": "Field(default_factory=lambda: list[OutputPort]())",
+          "line": 167,
+          "name": "outputs"
+        },
+        {
+          "annotation": "dict[str, ValueSource]",
+          "default_expression": "Field(default_factory=dict)",
+          "line": 168,
+          "name": "bindings"
+        },
+        {
+          "annotation": "list[str]",
+          "default_expression": "Field(default_factory=list)",
+          "line": 169,
+          "name": "aggregate_inputs"
+        },
+        {
+          "annotation": "Context",
+          "default_expression": "Field(default_factory=dict)",
+          "line": 170,
+          "name": "config"
+        },
+        {
+          "annotation": "JsonSchema | None",
+          "default_expression": "None",
+          "line": 171,
+          "name": "config_schema"
+        },
+        {
+          "annotation": "ResourceVector",
+          "default_expression": "Field(default_factory=dict)",
+          "line": 172,
+          "name": "resource_estimate"
+        }
+      ],
+      "line": 162,
+      "source": "src/openverify/model/__init__.py"
+    },
+    "NodeRecord": {
+      "bases": [
+        "Value"
+      ],
+      "fields": [
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 290,
+          "name": "node_id"
+        },
+        {
+          "annotation": "Literal['DERIVE', 'EVALUATE', 'CONTROL', 'AGGREGATE']",
+          "default_expression": "<required>",
+          "line": 291,
+          "name": "kind"
+        },
+        {
+          "annotation": "OperationRequirement",
+          "default_expression": "<required>",
+          "line": 292,
+          "name": "operation"
+        },
+        {
+          "annotation": "str | None",
+          "default_expression": "None",
+          "line": 293,
+          "name": "executor_ref"
+        },
+        {
+          "annotation": "str | None",
+          "default_expression": "None",
+          "line": 294,
+          "name": "executor_version"
+        },
+        {
+          "annotation": "ProviderBinding | None",
+          "default_expression": "None",
+          "line": 295,
+          "name": "provider_binding"
+        },
+        {
+          "annotation": "ExecutionError | None",
+          "default_expression": "None",
+          "line": 296,
+          "name": "provider_output_error"
+        },
+        {
+          "annotation": "list[str]",
+          "default_expression": "<required>",
+          "line": 297,
+          "name": "upstream_node_ids"
+        },
+        {
+          "annotation": "Context",
+          "default_expression": "<required>",
+          "line": 298,
+          "name": "input_values"
+        },
+        {
+          "annotation": "dict[str, InputResolution]",
+          "default_expression": "<required>",
+          "line": 299,
+          "name": "input_resolutions"
+        },
+        {
+          "annotation": "dict[str, Result]",
+          "default_expression": "<required>",
+          "line": 300,
+          "name": "upstream_results"
+        },
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 301,
+          "name": "started_at"
+        },
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 302,
+          "name": "finished_at"
+        },
+        {
+          "annotation": "ResourceVector",
+          "default_expression": "<required>",
+          "line": 303,
+          "name": "usage"
+        },
+        {
+          "annotation": "Literal['SUCCESS', 'ERROR', 'NONEXECUTED', 'CANCELLED']",
+          "default_expression": "<required>",
+          "line": 304,
+          "name": "state"
+        },
+        {
+          "annotation": "str | None",
+          "default_expression": "None",
+          "line": 305,
+          "name": "reason"
+        },
+        {
+          "annotation": "ExecutionObservation | None",
+          "default_expression": "None",
+          "line": 306,
+          "name": "observation"
+        },
+        {
+          "annotation": "Context",
+          "default_expression": "Field(default_factory=dict)",
+          "line": 307,
+          "name": "information"
+        },
+        {
+          "annotation": "Result | None",
+          "default_expression": "None",
+          "line": 308,
+          "name": "result"
+        },
+        {
+          "annotation": "Decision | None",
+          "default_expression": "None",
+          "line": 309,
+          "name": "decision"
+        }
+      ],
+      "line": 289,
+      "source": "src/openverify/model/__init__.py"
+    },
+    "OperationRequirement": {
+      "bases": [
+        "Value"
+      ],
+      "fields": [
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 146,
+          "name": "capability_id"
+        },
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 147,
+          "name": "capability_version"
+        }
+      ],
+      "line": 145,
+      "source": "src/openverify/model/__init__.py"
+    },
+    "Outcome": {
+      "bases": [
+        "Extensible"
+      ],
+      "fields": [
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 93,
+          "name": "invocation_id"
+        },
+        {
+          "annotation": "Literal['COMPLETED', 'ERROR', 'CANCELLED', 'DEADLINE_EXCEEDED']",
+          "default_expression": "<required>",
+          "line": 94,
+          "name": "state"
+        },
+        {
+          "annotation": "JsonValue",
+          "default_expression": "None",
+          "line": 95,
+          "name": "output"
+        },
+        {
+          "annotation": "ProviderError | None",
+          "default_expression": "None",
+          "line": 96,
+          "name": "error"
+        },
+        {
+          "annotation": "dict[str, JsonValue] | None",
+          "default_expression": "None",
+          "line": 97,
+          "name": "resource_usage"
+        }
+      ],
+      "line": 92,
+      "source": "src/openverify/provider/model.py"
+    },
+    "OutputPort": {
+      "bases": [
+        "Value"
+      ],
+      "fields": [
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 140,
+          "name": "name"
+        },
+        {
+          "annotation": "JsonSchema",
+          "default_expression": "Field(alias='schema')",
+          "line": 141,
+          "name": "value_schema"
+        },
+        {
+          "annotation": "Literal['INFORMATION', 'RESULT', 'DECISION']",
+          "default_expression": "<required>",
+          "line": 142,
+          "name": "role"
+        }
+      ],
+      "line": 139,
+      "source": "src/openverify/model/__init__.py"
+    },
+    "PolicyEvaluation": {
+      "bases": [
+        "Value"
+      ],
+      "fields": [
+        {
+          "annotation": "Literal['ACTIVATION', 'SELECTION', 'ADMISSION']",
+          "default_expression": "<required>",
+          "line": 266,
+          "name": "role"
+        },
+        {
+          "annotation": "Context",
+          "default_expression": "<required>",
+          "line": 267,
+          "name": "input_values"
+        },
+        {
+          "annotation": "dict[str, InputResolution]",
+          "default_expression": "<required>",
+          "line": 268,
+          "name": "input_resolutions"
+        },
+        {
+          "annotation": "Activation | Selection | Admission",
+          "default_expression": "<required>",
+          "line": 269,
+          "name": "outcome"
+        },
+        {
+          "annotation": "str | None",
+          "default_expression": "None",
+          "line": 270,
+          "name": "executor_ref"
+        },
+        {
+          "annotation": "str | None",
+          "default_expression": "None",
+          "line": 271,
+          "name": "executor_version"
+        }
+      ],
+      "line": 265,
+      "source": "src/openverify/model/__init__.py"
+    },
+    "PolicyOperation": {
+      "bases": [
+        "Value"
+      ],
+      "fields": [
+        {
+          "annotation": "OperationRequirement | None",
+          "default_expression": "None",
+          "line": 189,
+          "name": "operation"
+        },
+        {
+          "annotation": "Context",
+          "default_expression": "Field(default_factory=dict)",
+          "line": 190,
+          "name": "config"
+        },
+        {
+          "annotation": "JsonSchema | None",
+          "default_expression": "None",
+          "line": 191,
+          "name": "config_schema"
+        },
+        {
+          "annotation": "list[InputPort]",
+          "default_expression": "Field(default_factory=lambda: list[InputPort]())",
+          "line": 192,
+          "name": "inputs"
+        },
+        {
+          "annotation": "dict[str, ValueSource]",
+          "default_expression": "Field(default_factory=dict)",
+          "line": 193,
+          "name": "bindings"
+        }
+      ],
+      "line": 188,
+      "source": "src/openverify/model/__init__.py"
+    },
+    "Profile": {
+      "bases": [
+        "AnnotatedValue"
+      ],
+      "fields": [
+        {
+          "annotation": "Literal['draft']",
+          "default_expression": "'draft'",
+          "line": 332,
+          "name": "protocol"
+        },
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 333,
+          "name": "id"
+        },
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 334,
+          "name": "version"
+        },
+        {
+          "annotation": "list[str]",
+          "default_expression": "<required>",
+          "line": 335,
+          "name": "flattened_statuses"
+        },
+        {
+          "annotation": "SeverityDomain",
+          "default_expression": "<required>",
+          "line": 336,
+          "name": "severity_domain"
+        },
+        {
+          "annotation": "list[str]",
+          "default_expression": "<required>",
+          "line": 337,
+          "name": "aggregators"
+        },
+        {
+          "annotation": "list[str]",
+          "default_expression": "<required>",
+          "line": 338,
+          "name": "admission_policies"
+        },
+        {
+          "annotation": "list[str]",
+          "default_expression": "<required>",
+          "line": 339,
+          "name": "decisions"
+        },
+        {
+          "annotation": "list[ResourceDimension]",
+          "default_expression": "<required>",
+          "line": 340,
+          "name": "resource_dimensions"
+        }
+      ],
+      "line": 331,
+      "source": "src/openverify/model/__init__.py"
+    },
+    "ProviderBinding": {
+      "bases": [
+        "Value"
+      ],
+      "fields": [
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 283,
+          "name": "provider_id"
+        },
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 284,
+          "name": "provider_version"
+        },
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 285,
+          "name": "capability_id"
+        },
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 286,
+          "name": "capability_version"
+        }
+      ],
+      "line": 280,
+      "source": "src/openverify/model/__init__.py"
+    },
+    "ProviderError": {
+      "bases": [
+        "ProviderValue"
+      ],
+      "fields": [
+        {
+          "annotation": "ProviderErrorCode | str",
+          "default_expression": "<required>",
+          "line": 77,
+          "name": "code"
+        },
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 78,
+          "name": "message"
+        },
+        {
+          "annotation": "JsonValue",
+          "default_expression": "None",
+          "line": 79,
+          "name": "details"
+        }
+      ],
+      "line": 76,
+      "source": "src/openverify/provider/model.py"
+    },
+    "ProviderEvent": {
+      "bases": [
+        "Extensible"
+      ],
+      "fields": [
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 57,
+          "name": "invocation_id"
+        },
+        {
+          "annotation": "int",
+          "default_expression": "<required>",
+          "line": 58,
+          "name": "sequence"
+        },
+        {
+          "annotation": "Literal['progress', 'evidence', 'artifact', 'resource_usage', 'diagnostic', 'extension']",
+          "default_expression": "<required>",
+          "line": 59,
+          "name": "kind"
+        },
+        {
+          "annotation": "JsonValue",
+          "default_expression": "<required>",
+          "line": 60,
+          "name": "payload"
+        },
+        {
+          "annotation": "str | None",
+          "default_expression": "None",
+          "line": 61,
+          "name": "timestamp"
+        }
+      ],
+      "line": 56,
+      "source": "src/openverify/provider/model.py"
+    },
+    "ProviderManifest": {
+      "bases": [
+        "Extensible"
+      ],
+      "fields": [
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 36,
+          "name": "provider_id"
+        },
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 37,
+          "name": "provider_version"
+        },
+        {
+          "annotation": "list[str]",
+          "default_expression": "<required>",
+          "line": 38,
+          "name": "supported_contract_versions"
+        },
+        {
+          "annotation": "list[str]",
+          "default_expression": "<required>",
+          "line": 39,
+          "name": "supported_vcp_versions"
+        },
+        {
+          "annotation": "list[Capability]",
+          "default_expression": "<required>",
+          "line": 40,
+          "name": "capabilities"
+        }
+      ],
+      "line": 35,
+      "source": "src/openverify/provider/model.py"
+    },
+    "ResourceDimension": {
+      "bases": [
+        "AnnotatedValue"
+      ],
+      "fields": [
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 52,
+          "name": "id"
+        },
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 53,
+          "name": "unit"
+        },
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 54,
+          "name": "description"
+        }
+      ],
+      "line": 51,
+      "source": "src/openverify/model/__init__.py"
+    },
+    "Result": {
+      "bases": [
+        "AnnotatedValue"
+      ],
+      "fields": [
+        {
+          "annotation": "Literal['draft']",
+          "default_expression": "'draft'",
+          "line": 81,
+          "name": "protocol"
+        },
+        {
+          "annotation": "Literal['EXECUTED', 'SKIPPED', 'DEFERRED', 'CANCELLED']",
+          "default_expression": "<required>",
+          "line": 82,
+          "name": "disposition"
+        },
+        {
+          "annotation": "Literal['SUCCESS', 'ERROR'] | None",
+          "default_expression": "None",
+          "line": 83,
+          "name": "execution_outcome"
+        },
+        {
+          "annotation": "Literal['APPLICABLE', 'NOT_APPLICABLE'] | None",
+          "default_expression": "None",
+          "line": 84,
+          "name": "applicability"
+        },
+        {
+          "annotation": "Literal['KNOWN', 'UNKNOWN'] | None",
+          "default_expression": "None",
+          "line": 85,
+          "name": "determination"
+        },
+        {
+          "annotation": "JsonValue",
+          "default_expression": "None",
+          "line": 86,
+          "name": "judgment"
+        },
+        {
+          "annotation": "Literal['PASS', 'FAIL'] | None",
+          "default_expression": "None",
+          "line": 87,
+          "name": "verdict"
+        },
+        {
+          "annotation": "float | None",
+          "default_expression": "None",
+          "line": 88,
+          "name": "score"
+        },
+        {
+          "annotation": "Severity | None",
+          "default_expression": "None",
+          "line": 89,
+          "name": "severity"
+        },
+        {
+          "annotation": "list[Evidence]",
+          "default_expression": "Field(default_factory=lambda: list[Evidence]())",
+          "line": 90,
+          "name": "evidence"
+        },
+        {
+          "annotation": "JsonValue",
+          "default_expression": "None",
+          "line": 91,
+          "name": "output"
+        },
+        {
+          "annotation": "ResourceVector",
+          "default_expression": "Field(default_factory=dict)",
+          "line": 92,
+          "name": "usage"
+        }
+      ],
+      "line": 80,
+      "source": "src/openverify/model/__init__.py"
+    },
+    "RunInput": {
+      "bases": [
+        "Value"
+      ],
+      "fields": [
+        {
+          "annotation": "Literal['RUN_INPUT']",
+          "default_expression": "'RUN_INPUT'",
+          "line": 111,
+          "name": "kind"
+        },
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 112,
+          "name": "name"
+        }
+      ],
+      "line": 110,
+      "source": "src/openverify/model/__init__.py"
+    },
+    "RunRecord": {
+      "bases": [
+        "AnnotatedValue"
+      ],
+      "fields": [
+        {
+          "annotation": "Literal['draft']",
+          "default_expression": "'draft'",
+          "line": 313,
+          "name": "protocol"
+        },
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 314,
+          "name": "run_id"
+        },
+        {
+          "annotation": "VerificationDefinition",
+          "default_expression": "<required>",
+          "line": 315,
+          "name": "definition"
+        },
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 316,
+          "name": "definition_fingerprint"
+        },
+        {
+          "annotation": "ArtifactRef",
+          "default_expression": "<required>",
+          "line": 317,
+          "name": "subject"
+        },
+        {
+          "annotation": "Context",
+          "default_expression": "<required>",
+          "line": 318,
+          "name": "initial_context"
+        },
+        {
+          "annotation": "Context",
+          "default_expression": "<required>",
+          "line": 319,
+          "name": "run_inputs"
+        },
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 320,
+          "name": "opportunity_id"
+        },
+        {
+          "annotation": "Admission",
+          "default_expression": "<required>",
+          "line": 321,
+          "name": "admission"
+        },
+        {
+          "annotation": "list[PolicyEvaluation]",
+          "default_expression": "<required>",
+          "line": 322,
+          "name": "policy_evaluations"
+        },
+        {
+          "annotation": "CancellationEvent | None",
+          "default_expression": "None",
+          "line": 323,
+          "name": "cancellation"
+        },
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 324,
+          "name": "started_at"
+        },
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 325,
+          "name": "finished_at"
+        },
+        {
+          "annotation": "list[NodeRecord]",
+          "default_expression": "<required>",
+          "line": 326,
+          "name": "nodes"
+        },
+        {
+          "annotation": "dict[str, ProviderBinding]",
+          "default_expression": "Field(default_factory=dict)",
+          "line": 327,
+          "name": "provider_bindings"
+        },
+        {
+          "annotation": "dict[str, Result]",
+          "default_expression": "<required>",
+          "line": 328,
+          "name": "final_results"
+        }
+      ],
+      "line": 312,
+      "source": "src/openverify/model/__init__.py"
+    },
+    "Selection": {
+      "bases": [
+        "Value"
+      ],
+      "fields": [
+        {
+          "annotation": "list[ArtifactRef]",
+          "default_expression": "<required>",
+          "line": 235,
+          "name": "subjects"
+        },
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 236,
+          "name": "reason"
+        }
+      ],
+      "line": 234,
+      "source": "src/openverify/model/__init__.py"
+    },
+    "Severity": {
+      "bases": [
+        "Value"
+      ],
+      "fields": [
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 58,
+          "name": "domain"
+        },
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 59,
+          "name": "label"
+        }
+      ],
+      "line": 57,
+      "source": "src/openverify/model/__init__.py"
+    },
+    "SeverityDomain": {
+      "bases": [
+        "Value"
+      ],
+      "fields": [
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 76,
+          "name": "id"
+        },
+        {
+          "annotation": "list[SeverityLevel]",
+          "default_expression": "<required>",
+          "line": 77,
+          "name": "levels"
+        }
+      ],
+      "line": 75,
+      "source": "src/openverify/model/__init__.py"
+    },
+    "SeverityLevel": {
+      "bases": [
+        "Value"
+      ],
+      "fields": [
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 63,
+          "name": "label"
+        },
+        {
+          "annotation": "int",
+          "default_expression": "<required>",
+          "line": 64,
+          "name": "rank"
+        }
+      ],
+      "line": 62,
+      "source": "src/openverify/model/__init__.py"
+    },
+    "UpstreamOutput": {
+      "bases": [
+        "Value"
+      ],
+      "fields": [
+        {
+          "annotation": "Literal['UPSTREAM_OUTPUT']",
+          "default_expression": "'UPSTREAM_OUTPUT'",
+          "line": 121,
+          "name": "kind"
+        },
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 122,
+          "name": "node_id"
+        },
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 123,
+          "name": "output"
+        }
+      ],
+      "line": 120,
+      "source": "src/openverify/model/__init__.py"
+    },
+    "VerificationDefinition": {
+      "bases": [
+        "AnnotatedValue"
+      ],
+      "fields": [
+        {
+          "annotation": "Literal['draft']",
+          "default_expression": "'draft'",
+          "line": 212,
+          "name": "protocol"
+        },
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 213,
+          "name": "id"
+        },
+        {
+          "annotation": "str",
+          "default_expression": "<required>",
+          "line": 214,
+          "name": "version"
+        },
+        {
+          "annotation": "ArtifactRef",
+          "default_expression": "<required>",
+          "line": 215,
+          "name": "subject"
+        },
+        {
+          "annotation": "Criterion",
+          "default_expression": "<required>",
+          "line": 216,
+          "name": "criterion"
+        },
+        {
+          "annotation": "JsonSchema",
+          "default_expression": "<required>",
+          "line": 217,
+          "name": "judgment_schema"
+        },
+        {
+          "annotation": "list[InputPort]",
+          "default_expression": "Field(default_factory=lambda: list[InputPort]())",
+          "line": 218,
+          "name": "run_inputs"
+        },
+        {
+          "annotation": "Context | None",
+          "default_expression": "None",
+          "line": 219,
+          "name": "satisfaction_mapping"
+        },
+        {
+          "annotation": "Graph",
+          "default_expression": "<required>",
+          "line": 220,
+          "name": "graph"
+        },
+        {
+          "annotation": "ExecutionPolicy",
+          "default_expression": "<required>",
+          "line": 221,
+          "name": "execution_policy"
+        }
+      ],
+      "line": 211,
+      "source": "src/openverify/model/__init__.py"
+    }
+  },
+  "derivation": "Model class/field declarations define dependent value domains; finite JSON-type quotient has7 classes, while numeric/string/container values unbounded. Construction, semantic validation and deep snapshot are different relations.",
+  "domain_id": "D.SDK.MODEL",
+  "inapplicable_set": "Each field uses its declared type; integral normalization is specific to integer fields, not every numeric payload.",
+  "invalid_set": "Unknown constructor fields, disallowed type coercion, nonfinite typed numbers or field reassignment. Do not infer complete semantic validity from construction.",
+  "kind": "SYMBOLIC",
+  "mathematics_status": "DERIVED_SEMANTIC_PARTITION",
+  "partitions": [
+    "valid strict type",
+    "Boolean in numeric field",
+    "numeric string",
+    "integral float rank",
+    "fractional rank",
+    "unknown field",
+    "field reassignment",
+    "nested mutable payload",
+    "constructed structurally typed but semantically invalid Result"
+  ],
+  "requirement_ids": [
+    "CM.SDK.MODEL.INTEGRAL_NORMALIZATION",
+    "CM.SDK.MODEL.CONSTRUCTION.TYPES",
+    "CM.SDK.MODEL.CONSTRUCTION.EXTRA",
+    "CM.SDK.MODEL.CONSTRUCTION.FROZEN",
+    "CM.SDK.MODEL.CONSTRUCTION.SEMANTIC_BOUNDARY"
+  ],
+  "valid_set": "Enforce declared strict field types, extra-forbid and finite numeric model constraints; normalize allowed integral float rank to int; fields frozen, nested containers not deeply frozen. Full root/prose validity still requires explicit parser/validator."
+}
+```
+
+### D.SDK.VALIDATION
+
+Canonical links: CM.SDK.PARSE.OBJECT, CM.SDK.VALIDATE.WIRE, CM.SDK.SCHEMA.VALUE, CM.SDK.PROVIDER.PARSE_OBJECT, CM.SDK.PROVIDER.PAYLOAD, CM.SDK.WIRE.TIME_FORMAT
+
+```json
+{
+  "axes": [
+    "Named shipped root and input encoded str/bytes or materialized JSON",
+    "Structural schema predicate, object standalone semantic predicate, optional lifecycle context",
+    "Caller-selected validation error code and JSON Pointer location"
+  ],
+  "candidate_count": "unbounded",
+  "derivation": "Validity is staged predicates on J, unbounded. Distinct operations return typed object versus None. API-specific code mapping retained in canonical propositions, not inferred from common helper signature.",
+  "domain_id": "D.SDK.VALIDATION",
+  "inapplicable_set": "Optional wrong-marker precedence only where parser specifies it. Library message text is diagnostic; exact structured code/path owned by corresponding API.",
+  "invalid_set": "Unknown root, malformed structure or object semantics. No network references, default insertion, Python bool-number conflation or assumed lifecycle acceptance from parse alone.",
+  "kind": "SYMBOLIC",
+  "mathematics_status": "DERIVED_SEMANTIC_PARTITION",
+  "partitions": [
+    "known/unknown root",
+    "str/bytes/materialized JSON",
+    "malformed JSON/UTF8",
+    "wrong marker",
+    "root structure invalid",
+    "structure valid semantic invalid",
+    "valid standalone with invalid absent lifecycle context",
+    "validate_value success/failure with caller-selected code"
+  ],
+  "requirement_ids": [
+    "CM.SDK.PARSE.OBJECT",
+    "CM.SDK.VALIDATE.WIRE",
+    "CM.SDK.SCHEMA.VALUE",
+    "CM.SDK.PROVIDER.PARSE_OBJECT",
+    "CM.SDK.PROVIDER.PAYLOAD"
+  ],
+  "valid_set": "Decode strict JSON; validate named root offline; construct typed object and apply its supported standalone semantic checks. Wire-only validation returns None and is not whole semantics. Present wrong protocol/contract version classified separately. Provider context-dependent lifecycle checks require observed session/clock, not object parser alone."
+}
+```
+
+### D.SDK.CANCELLATION
+
+Canonical links: CM.SDK.CANCELLATION.TOKEN
+
+```json
+{
+  "axes": [
+    "Token state reason=None or first nonempty exact str",
+    "cancel(reason) call; repeated call with same/different reason",
+    "Engine observation before attempt/after invocation/after terminal"
+  ],
+  "candidate_count": "unbounded",
+  "derivation": "Token state set {None} union nonempty strings, unbounded. Transition cancel maps None->reason and reason1->reason1; invalid argument leaves no authorized new reason. Engine effect depends on explicit observation point.",
+  "domain_id": "D.SDK.CANCELLATION",
+  "inapplicable_set": "Cooperative token cannot preempt blocking code; cancellation after final terminal has no effect.",
+  "invalid_set": "Empty/non-string reason, replacement of first reason, accepted semantic output after observed cancellation.",
+  "kind": "SYMBOLIC",
+  "mathematics_status": "DERIVED_SEMANTIC_PARTITION",
+  "partitions": [
+    "initial",
+    "first cancel",
+    "repeat same reason",
+    "repeat different reason",
+    "invalid empty",
+    "invalid subtype/nonstring",
+    "before start",
+    "during invoke",
+    "after final terminal"
+  ],
+  "requirement_ids": [
+    "CM.SDK.CANCELLATION.TOKEN"
+  ],
+  "valid_set": "Initially no cancellation; first valid cancel latches reason; repeated valid cancel retains first reason. Nonempty exact str required. Sequential Engine observes token before attempts and immediately after invoke before accepting outputs."
+}
+```
+
+### D.SDK.ENGINE
+
+Canonical links: CM.SDK.ENGINE.RUN, CM.SDK.ENGINE.ATTEMPT.SNAPSHOTS, CM.SDK.ENGINE.ATTEMPT.POLICIES, CM.SDK.ENGINE.ATTEMPT.SCHEDULER, CM.SDK.ENGINE.ATTEMPT.FINALIZE
+
+```json
+{
+  "axes": [
+    "Validated definition, explicit registry or bound Provider map",
+    "Supplied run inputs/ambient context and opportunity id",
+    "Ordered policy outcomes, sequential ready nodes, cancellation token",
+    "Attempt optional occurrence versus run required occurrence"
+  ],
+  "candidate_count": "unbounded",
+  "derivation": "For fixed DAG topological readiness is finite relation; values/policies/capability work/traces unbounded. Predicate composition of preflight, policies, node semantics and provenance; no sample graph-size universal guarantee.",
+  "domain_id": "D.SDK.ENGINE",
+  "inapplicable_set": "Reference Engine sequential implementation contract, distinct from Relay bounded waves and provider transport runner.",
+  "invalid_set": "Partially validated execution, policy failure fabricated admission, hidden context inputs, incomplete/cancellation-inconsistent record.",
+  "kind": "SYMBOLIC",
+  "mathematics_status": "DERIVED_SEMANTIC_PARTITION",
+  "partitions": [
+    "inactive",
+    "unselected",
+    "admission RUN/SKIP/DEFER",
+    "local exact registry lookup",
+    "provider bindings absent versus explicit empty map",
+    "missing required bound provider",
+    "cooperative token before/after invocation",
+    "attempt None versus run error"
+  ],
+  "requirement_ids": [
+    "CM.SDK.ENGINE.RUN",
+    "CM.SDK.ENGINE.ATTEMPT.SNAPSHOTS",
+    "CM.SDK.ENGINE.ATTEMPT.POLICIES",
+    "CM.SDK.ENGINE.ATTEMPT.SCHEDULER",
+    "CM.SDK.ENGINE.ATTEMPT.FINALIZE"
+  ],
+  "valid_set": "Snapshot caller-owned inputs; preflight then ordered policies. attempt returns None for inactive/unselected; otherwise sequential complete record validated before return. run turns absent occurrence into NO_OCCURRENCE. Ready ties definition order; explicit Provider bindings override local reducer/registry mode."
+}
+```
+
+### D.SDK.REGISTRY
+
+Canonical links: CM.SDK.REGISTRY.REGISTER.IDENTITY, CM.SDK.REGISTRY.REGISTER.ROLE_ALIASES
+
+```json
+{
+  "axes": [
+    "Registry finite map (capability_id,version)->trusted Adapter",
+    "register and derive/evaluate/control aliases",
+    "Existing exact pair absent/present"
+  ],
+  "candidate_count": "unbounded",
+  "derivation": "For finite map M and pair p, registration M[p:=a]; arbitrary string identity and adapter sets unbounded. Replacement law idempotent on same authored adapter, independent across distinct exact pairs.",
+  "domain_id": "D.SDK.REGISTRY",
+  "inapplicable_set": "Registry stores typed host adapters; it does not authenticate implementation honesty or perform Provider lifecycle by itself.",
+  "invalid_set": "Range/fallback lookup meaning or role alias changing capability semantics.",
+  "kind": "SYMBOLIC",
+  "mathematics_status": "DERIVED_SEMANTIC_PARTITION",
+  "partitions": [
+    "new pair",
+    "replace same pair",
+    "same ID different version",
+    "role convenience default version",
+    "explicit version"
+  ],
+  "requirement_ids": [
+    "CM.SDK.REGISTRY.REGISTER.IDENTITY",
+    "CM.SDK.REGISTRY.REGISTER.ROLE_ALIASES"
+  ],
+  "valid_set": "Store exact pair->adapter, replacing same pair; convenience aliases use default version1. Registry registration is explicit host trust, operation wire values are not executable imports."
+}
+```
+
+### D.SDK.LEGACY_STORAGE
+
+Canonical links: CM.SDK.LEGACY_STORE
+
+```json
+{
+  "axes": [
+    "Validated RunRecord sequence",
+    "Memory append/read versus UTF8 JSONL file",
+    "Blank/nonblank lines, I/O or record-parse failure"
+  ],
+  "candidate_count": "unbounded",
+  "derivation": "Finite sequence of arbitrary valid records, unbounded value universe. Read/append relations preserve ordered serializations, not file-byte canonical identity across implementations.",
+  "domain_id": "D.SDK.LEGACY_STORAGE",
+  "inapplicable_set": "Local replaceable convenience, no portable durability/transaction promise.",
+  "invalid_set": "Mutating returned objects changes stored snapshot or fabrication of successful persistence after failure.",
+  "kind": "SYMBOLIC",
+  "mathematics_status": "DERIVED_SEMANTIC_PARTITION",
+  "partitions": [
+    "empty sequence",
+    "one/many appends",
+    "mutation after append",
+    "mutation after read",
+    "blank JSONL line",
+    "invalid nonblank record",
+    "I/O failure"
+  ],
+  "requirement_ids": [
+    "CM.SDK.LEGACY_STORE"
+  ],
+  "valid_set": "append validates and stores serialization snapshot; records parses independent objects in append order. JSONL newline representation, blank lines ignored; I/O or invalid record errors propagate."
+}
+```
+
+### D.SDK.PROVIDER_OBSERVER
+
+Canonical links: CM.SDK.PROVIDER.TRACE, CM.SDK.PROVIDER.SESSION, CM.SDK.PROVIDER.LIFECYCLE.MANIFEST, CM.SDK.PROVIDER.LIFECYCLE.INITIALIZE, CM.SDK.PROVIDER.LIFECYCLE.ACCEPT, CM.SDK.PROVIDER.LIFECYCLE.EVENT, CM.SDK.PROVIDER.LIFECYCLE.CANCEL, CM.SDK.PROVIDER.LIFECYCLE.OUTCOME, CM.SDK.PROVIDER.LIFECYCLE.FINISH
+
+```json
+{
+  "axes": [
+    "Observed manifest, initialize request/result and steps accept/event/cancel/outcome",
+    "Per-attempt unseen/rejected/running/terminal state; request cause and precise provider clock",
+    "Framed runner/provider RPC messages and pending request map",
+    "finish flag or explicit finish()"
+  ],
+  "candidate_count": "unbounded",
+  "derivation": "Observed finite traces over explicitly typed step union; length and JSON payload unbounded. Transition legality given by Provider attempt/session relations; no invented finite trace total.",
+  "domain_id": "D.SDK.PROVIDER_OBSERVER",
+  "inapplicable_set": "now is provider-clock observation not trusted runner time; unknown future versions outside0.1 local helper. Contract rejection RPC shapes supported by this validator are not every conceivable JSON-RPC server fault.",
+  "invalid_set": "Wrong step/envelope fields, mismatched correlation, invalid state/event feature/sequence/cause/deadline; forged success for incompatible request; missing terminal at declared finish.",
+  "kind": "SYMBOLIC",
+  "mathematics_status": "DERIVED_SEMANTIC_PARTITION",
+  "partitions": [
+    "complete valid trace",
+    "valid unfinished prefix",
+    "finish true with pending attempt",
+    "initialize failure closes",
+    "repeat initialize",
+    "provisional invoke later rejected",
+    "cancel terminal no-op",
+    "event before terminal",
+    "pending RPC at finish",
+    "wrong dual correlation",
+    "expired acceptance/clock rollback"
+  ],
+  "requirement_ids": [
+    "CM.SDK.PROVIDER.TRACE",
+    "CM.SDK.PROVIDER.SESSION",
+    "CM.SDK.PROVIDER.LIFECYCLE.MANIFEST",
+    "CM.SDK.PROVIDER.LIFECYCLE.INITIALIZE",
+    "CM.SDK.PROVIDER.LIFECYCLE.ACCEPT",
+    "CM.SDK.PROVIDER.LIFECYCLE.EVENT",
+    "CM.SDK.PROVIDER.LIFECYCLE.CANCEL",
+    "CM.SDK.PROVIDER.LIFECYCLE.OUTCOME",
+    "CM.SDK.PROVIDER.LIFECYCLE.FINISH"
+  ],
+  "valid_set": "Read-only validators validate observed objects and declared transitions, never execute work or timers. Lifecycle finish requires initialized completed accepted attempts; trace finish=false allows valid unfinished prefix. Session tracks provisional accept/reject before terminal response and both identities; no pending request at finish."
+}
+```
+
+### D.SDK.PROVIDER_NEGOTIATION
+
+Canonical links: CM.SDK.PROVIDER.NEGOTIATE
+
+```json
+{
+  "axes": [
+    "Ordered runner version list R and provider list P",
+    "First shared list element or empty intersection",
+    "Locally supported literal0.1"
+  ],
+  "candidate_count": "unbounded",
+  "derivation": "Lists over infinite nonempty-string alphabet. First-match selection is deterministic finite-index search for each finite input; no finite universal list-count.",
+  "domain_id": "D.SDK.PROVIDER_NEGOTIATION",
+  "inapplicable_set": "Only0.1 implementation profile supported; hypothetical future support not inferred.",
+  "invalid_set": "SemVer ordering/range/coercion/fallback after first shared unsupported version.",
+  "kind": "SYMBOLIC",
+  "mathematics_status": "DERIVED_SEMANTIC_PARTITION",
+  "partitions": [
+    "0.1 first shared",
+    "empty intersection",
+    "earlier shared future literal then0.1",
+    "shared non0.1 only",
+    "runner order differs from provider order"
+  ],
+  "requirement_ids": [
+    "CM.SDK.PROVIDER.NEGOTIATE"
+  ],
+  "valid_set": "Compute first r in R that belongs to P; return it only if literal0.1, otherwise CONTRACT_VERSION_UNSUPPORTED. This is observed local helper behavior, with portable multi-version ambiguity separately recorded."
+}
+```
+
+### D.SDK.AUTHORING
+
+Canonical links: CM.SDK.AUTHORING.CONSTRUCTOR, CM.SDK.AUTHORING.GRAPH.NODE.OPERATION, CM.SDK.AUTHORING.GRAPH.NODE.BINDINGS, CM.SDK.AUTHORING.GRAPH.NODE.SEMANTIC_INPUTS, CM.SDK.AUTHORING.GRAPH.NODE.OUTPUTS, CM.SDK.AUTHORING.GRAPH.NODE.DEPENDENCIES, CM.SDK.AUTHORING.GRAPH.NODE.CONFIG_SNAPSHOT, CM.SDK.AUTHORING.GRAPH.AGGREGATE.ORDER, CM.SDK.AUTHORING.GRAPH.AGGREGATE.RESERVED, CM.SDK.AUTHORING.GRAPH.AGGREGATE.CONFIG, CM.SDK.AUTHORING.GRAPH.INPUT.PORT, CM.SDK.AUTHORING.GRAPH.INPUT.REF
+
+```json
+{
+  "axes": [
+    "Mutable Graph builder state: definition metadata, run ports, node list, edge list",
+    "Typed Ref sources, optional explicit schemas/ports/dependencies",
+    "Build/validate/inspect/to_json and output Ref access"
+  ],
+  "candidate_count": "unbounded",
+  "derivation": "Finite authored sequences and JSON/schema values unbounded. Exact operation-specific materialization functions define relational behavior. Finite role/source projections do not exhaust graph authoring.",
+  "domain_id": "D.SDK.AUTHORING",
+  "inapplicable_set": "Builder convenience default REJECT map is explicit authored wire config, not portable hidden reducer default. Reference schemas are declarations, not proof of general implication.",
+  "invalid_set": "Reserved semantic binding override, reserved member name, invalid definition escaping build, wrong output Ref lookup or shared builder mutation corrupting earlier built snapshot.",
+  "kind": "SYMBOLIC",
+  "mathematics_status": "DERIVED_SEMANTIC_PARTITION",
+  "partitions": [
+    "constructor defaults/explicit supplied values",
+    "four node kinds",
+    "constant/run/external/upstream Ref",
+    "optional unbound/default input",
+    "reserved subject/criterion override",
+    "standard/custom aggregate",
+    "existing edge replacement",
+    "undeclared output KeyError",
+    "build then mutate builder"
+  ],
+  "requirement_ids": [
+    "CM.SDK.AUTHORING.CONSTRUCTOR",
+    "CM.SDK.AUTHORING.GRAPH.NODE.OPERATION",
+    "CM.SDK.AUTHORING.GRAPH.NODE.BINDINGS",
+    "CM.SDK.AUTHORING.GRAPH.NODE.SEMANTIC_INPUTS",
+    "CM.SDK.AUTHORING.GRAPH.NODE.OUTPUTS",
+    "CM.SDK.AUTHORING.GRAPH.NODE.DEPENDENCIES",
+    "CM.SDK.AUTHORING.GRAPH.NODE.CONFIG_SNAPSHOT",
+    "CM.SDK.AUTHORING.GRAPH.AGGREGATE.ORDER",
+    "CM.SDK.AUTHORING.GRAPH.AGGREGATE.RESERVED",
+    "CM.SDK.AUTHORING.GRAPH.AGGREGATE.CONFIG",
+    "CM.SDK.AUTHORING.GRAPH.INPUT.PORT",
+    "CM.SDK.AUTHORING.GRAPH.INPUT.REF"
+  ],
+  "valid_set": "Constructor fills documented local defaults; node materializes exact operation and typed bindings, explicit semantic Constants and primary output role. Upstream refs add prerequisites; dependencies alone no data. Aggregate authors ordered membership and explicit default handling, reserved names rejected. edge replaces same pair guard; add_node deepcopies. build serializes/parses validated portable snapshot."
+}
+```
+
+### D.SDK.CONFORMANCE_HARNESS
+
+Canonical links: CM.SDK.CONFORMANCE.HARNESS
+
+```json
+{
+  "axes": [
+    "Trusted fixture manifest entries with object_type,input,error_code and id",
+    "Named VCP/Provider object, lifecycle, session or framing dispatch",
+    "Observed parser result code and expected code"
+  ],
+  "candidate_count": "unbounded",
+  "derivation": "Finite manifest sequence of arbitrary data; mismatch list computed by code equality per authored case. No count inherited from actual fixture corpus and no test execution.",
+  "domain_id": "D.SDK.CONFORMANCE_HARNESS",
+  "inapplicable_set": "Review reads helper code only, no Golden or portable fixture inventory is used for requirement discovery.",
+  "invalid_set": "Treating corpus entries, expected codes or tests as authority for protocol semantics.",
+  "kind": "SYMBOLIC",
+  "mathematics_status": "DERIVED_SEMANTIC_PARTITION",
+  "partitions": [
+    "matching successful case",
+    "matching rejection code",
+    "unexpected success",
+    "unexpected rejection",
+    "wrong rejection code",
+    "unknown object_type",
+    "documented trace/session/framing dispatch"
+  ],
+  "requirement_ids": [
+    "CM.SDK.CONFORMANCE.HARNESS"
+  ],
+  "valid_set": "Return exactly IDs whose actual parser code differs from declared expected error_code; success code None. Provider dispatch supports documented trace/session/framing representation and finish validation."
+}
+```
+
+### D.SDK.PROVIDER_SERVER
+
+Canonical links: CM.SDK.SERVE_STDIO
+
+```json
+{
+  "axes": [
+    "Conforming async SDK Provider and framed runner requests",
+    "Initialize state, active invoke task map, cooperative cancel, EOF/error shutdown",
+    "Capability lacks enforcement of deadlines/budgets in supplied helper"
+  ],
+  "candidate_count": "unbounded",
+  "derivation": "Finite request prefixes and active-task maps with unbounded payloads/schedules. Per-attempt state/correlation relations compose with frame decoder and explicit server shutdown; no universal execution timing count.",
+  "domain_id": "D.SDK.PROVIDER_SERVER",
+  "inapplicable_set": "Optional local Python server helper, not portable requirement that other languages import it; async provider cooperation and process cleanup scope explicit.",
+  "invalid_set": "Capability work before initialization, fabricated verification FAIL from exception/transport loss, unsupported deadline/budget acceptance.",
+  "kind": "SYMBOLIC",
+  "mathematics_status": "DERIVED_SEMANTIC_PARTITION",
+  "partitions": [
+    "initialize success/failure",
+    "ordinary completed/error invoke",
+    "permitted streamed events",
+    "supported running cancel",
+    "terminal cancel acknowledgement",
+    "unsupported constraint rejection",
+    "EOF active tasks",
+    "shutdown on invalid frame"
+  ],
+  "requirement_ids": [
+    "CM.SDK.SERVE_STDIO"
+  ],
+  "valid_set": "Serve published frames and read-only session/lifecycle validation; process invoke acceptance before later controls while work tasks run. Cancel delegates to provider; interrupted helper task emits requested CANCELLED. EOF drains/validates and final teardown cancels remaining tasks. Reject constraints helper cannot enforce."
+}
+```
+
+### D.SDK.PROVIDER_INTERFACE
+
+Canonical links: CM.SDK.PROVIDER.INTERFACE.MANIFEST, CM.SDK.PROVIDER.INTERFACE.INVOKE, CM.SDK.PROVIDER.INTERFACE.CANCEL
+
+```json
+{
+  "axes": [
+    "Provider Protocol operation manifest/invoke/cancel",
+    "Matched validated Invocation and concurrent CancelRequest cause",
+    "Async stream zero or more ProviderEvents followed by one terminal Outcome",
+    "Attempt/session correlation and advertised features"
+  ],
+  "candidate_count": "unbounded",
+  "derivation": "Typed method union has3 operations, but payload/stream histories unbounded; normative state/event eligibility remains Provider Contract relation.",
+  "domain_id": "D.SDK.PROVIDER_INTERFACE",
+  "inapplicable_set": "This is optional local Python protocol, not a requirement for portable external providers to implement Python methods. Caller supplies observed session/lifecycle and cancellation concurrency.",
+  "invalid_set": "Work before initialization, postacceptance exception substituted for required ERROR Outcome, event after terminal, control acknowledgement claimed as termination.",
+  "kind": "SYMBOLIC",
+  "mathematics_status": "DERIVED_SEMANTIC_PARTITION",
+  "partitions": [
+    "manifest description",
+    "zero-event completion",
+    "permitted stream",
+    "preacceptance rejection",
+    "accepted execution ERROR",
+    "supported running cancel",
+    "terminal cancel no-op",
+    "no automatic physical preemption"
+  ],
+  "requirement_ids": [],
+  "valid_set": "manifest returns declared ProviderManifest. invoke is async event/outcome iteration under caller-supplied initialization/validation; accepted invocation ends exactly once and events obey matched feature/correlation rules. cancel is cooperative async None-returning control, not terminal Outcome."
+}
+```
+
+### D.PORT.REQUIREDNESS_DEFAULT_JOINT
+
+Canonical links: CM.VCP.DATA.PORT_HANDLING, CM.VCP.DATA.DEFAULT.CONSTANT
+
+```json
+{
+  "ambiguous_count": 2,
+  "axes": [
+    {
+      "name": "required",
+      "values": [
+        false,
+        true
+      ]
+    },
+    {
+      "name": "handler",
+      "values": [
+        "BLOCK",
+        "OMIT",
+        "DEFAULT"
+      ]
+    },
+    {
+      "name": "explicit_Constant_default",
+      "values": [
+        false,
+        true
+      ]
+    }
+  ],
+  "candidate_count": 12,
+  "derivation": "Illegal requiredness/handler pairs:3*2=6 invalid. Legal DEFAULT absent adds1 invalid, present1 valid. Legal BLOCK/OMIT without default add2 valid. Their default-present cases are2 unresolved portable coordinates, Q.DEFAULT_UNUSED. Thus12=3+7+0+2; requested closed identity C=V+I+N is not achieved for this domain. SDK locally rejects the two extra cases: SDK V3/I9/N0.",
+  "domain_id": "D.PORT.REQUIREDNESS_DEFAULT_JOINT",
+  "formula": "2*3*2",
+  "inapplicable_count": 0,
+  "invalid_count": 7,
+  "kind": "CONDITIONAL",
+  "mathematics_status": "BLOCKED_ONLY_UNUSED_DEFAULT_PORTABLE_COORDINATES",
+  "requirement_ids": [
+    "CM.VCP.DATA.PORT_HANDLING",
+    "CM.VCP.DATA.DEFAULT.CONSTANT"
+  ],
+  "scope": "All names, schemas and supplied Constant payloads otherwise valid. D.DEFAULT.PRESENCE remains a narrower DEFAULT-only projection with nonDEFAULT inapplicability; do not mistake it for this full joint domain.",
+  "valid_count": 3
+}
+```
+
+### D.AGG.CONFIGURATION
+
+Canonical links: CM.VCP.AGG.CONFIG, CM.SDK.AGGREGATE.CONFIGURATION
+
+```json
+{
+  "axes": [
+    "Reducer in8 standard names",
+    "Handling map with7 declared exceptional keys and explicit REJECT/IGNORE",
+    "Reducer-specific original weights or explicit severity domain",
+    "Standard direct ordered API versus graph identity-keyed membership"
+  ],
+  "candidate_count": "unbounded",
+  "derivation": "Configuration JSON, schema, weight and domain universes unbounded.8*2^7 is only reducer/handling-map projection, not total config validity.",
+  "domain_id": "D.AGG.CONFIGURATION",
+  "inapplicable_set": "Normative core wire config is a JSON object; exact local SDK config-key whitelist is CM.SDK.AGGREGATE.CONFIGURATION, not inferred as a general rule for arbitrary custom capabilities.",
+  "invalid_set": "Missing reducer/handling, unknown reducer, missing/invalid handling action, invalid mandated weights/domain.",
+  "kind": "SYMBOLIC",
+  "mathematics_status": "DERIVED_SEMANTIC_PARTITION",
+  "partitions": [
+    "logical configuration",
+    "numeric configuration",
+    "weighted nonnegative original weights/alignment/positive retained total",
+    "explicit severity-domain labels/ranks",
+    "missing mandatory handling category",
+    "unknown local config key"
+  ],
+  "requirement_ids": [
+    "CM.VCP.AGG.CONFIG"
+  ],
+  "valid_set": "Provide declared reducer/handling, every exceptional class explicit, valid reducer-specific weights/domain; empty retained reduction rejected. Named handling-map projection is1024 legal configurations under these assumptions."
+}
+```
+
+### D.POLICY.OPPORTUNITY
+
+Canonical links: CM.VCP.POLICY.OPPORTUNITY
+
+```json
+{
+  "axes": [
+    "opportunity_id exact nonempty string",
+    "Host policy mode and explicit definition fingerprint/subject/p values",
+    "Custom policy typed binding for opportunity-dependent facts"
+  ],
+  "candidate_count": "unbounded",
+  "derivation": "Identity strings unbounded; sampler endpoints/interior separately partitioned. No finite count of opportunities or history coverage.",
+  "domain_id": "D.POLICY.OPPORTUNITY",
+  "inapplicable_set": "Relay may explicitly generate UUID as its host convenience; not a portable sampling bucket identity.",
+  "invalid_set": "Empty/missing identity, implicit ambient identity/history/clock/budget input.",
+  "kind": "SYMBOLIC",
+  "mathematics_status": "DERIVED_SEMANTIC_PARTITION",
+  "partitions": [
+    "nonempty explicit",
+    "empty",
+    "wrong type",
+    "Relay omitted host convenience",
+    "custom policy bound identity versus ambient hidden access"
+  ],
+  "requirement_ids": [
+    "CM.VCP.POLICY.OPPORTUNITY"
+  ],
+  "valid_set": "Host supplies nonempty opportunity identity; built-in sampler has only structural explicit inputs. Custom policy needing identity binds it normally."
+}
+```
+
+### D.EVIDENCE.PURPOSE
+
+Canonical links: CM.VCP.RESULT.NONEXEC_EVIDENCE
+
+```json
+{
+  "axes": [
+    "Standalone nonexecution Result versus runner-generated graph nonexecution",
+    "Evidence JSON and its capability/domain-defined asserted meaning",
+    "Lifecycle cause and executed/nonexecuted semantic class"
+  ],
+  "candidate_count": "unbounded",
+  "derivation": "Evidence payloads unbounded. Predicate on declared/asserted purpose depends on capability meaning; graph-generated evidence absence is exact structural effect. This is a semantic obligation, not a portable syntactic truth detector.",
+  "domain_id": "D.EVIDENCE.PURPOSE",
+  "inapplicable_set": "Truth/purpose of arbitrary natural-language evidence is not mechanically inferable from wire fields. Honest capability semantics are assumed; no cryptographic truth or generic language classifier promised.",
+  "invalid_set": "Accepted successful evaluation claim for nonexecution or fabricated graph evaluation evidence.",
+  "kind": "SYMBOLIC",
+  "mathematics_status": "DERIVED_SEMANTIC_PARTITION",
+  "partitions": [
+    "diagnostic explanation",
+    "successful evaluation claim",
+    "empty meaningful fields invalid by separate Evidence predicate",
+    "graph synthesized reason-only result",
+    "retained unaccepted interrupted observation separate from evaluation evidence"
+  ],
+  "requirement_ids": [
+    "CM.VCP.RESULT.NONEXEC_EVIDENCE"
+  ],
+  "valid_set": "Standalone evidence can explain nonexecution and must not assert successful evaluation; graph-generated nonexecution carries diagnostic reason without evaluation evidence."
+}
+```
+
+## Leaf-specific finite quotients
+
+These isolate one proposition; other root/semantic constraints remain independent. Full object validity is not inferred.
+
+| Requirement | Formula | C | V | I | N |
+| --- | --- | --- | --- | --- | --- |
+| CM.VCP.RESULT.INVOKED | 2 * 9 | 18 | 12 | 6 | 0 |
+| CM.VCP.DATA.DERIVE_ROLE | 3 | 3 | 1 | 2 | 0 |
+| CM.VCP.DATA.PRIMARY_VALIDITY | 2*2 | 4 | 1 | 3 | 0 |
+| CM.VCP.DATA.PORT_HANDLING | 2 * 3 | 6 | 3 | 3 | 0 |
+| CM.VCP.DATA.RUN_NAMES | 2 | 2 | 1 | 1 | 0 |
+| CM.VCP.DATA.RUN_SOURCE | 2 | 2 | 1 | 1 | 0 |
+| CM.VCP.DECISION.DESTINATION | 6 * 4 | 24 | 11 | 13 | 0 |
+| CM.VCP.POLICY.OUTCOME_ACTIVATION | 3 | 3 | 1 | 2 | 0 |
+| CM.VCP.POLICY.OUTCOME_ADMISSION | 3 | 3 | 1 | 2 | 0 |
+| CM.VCP.POLICY.OUTCOME_SELECTION | 3 | 3 | 1 | 2 | 0 |
+| CM.VCP.RESULT.FLATTEN | 9 | 9 | 5 | 0 | 4 |
+| CM.VCP.RESULT.DETERMINATION | 2*4 | 8 | 2 | 2 | 4 |
+| CM.VCP.RESULT.ERROR.APPLICABILITY | 2*3 | 6 | 2 | 1 | 3 |
+| CM.VCP.RESULT.ERROR.DETERMINATION | 2*3 | 6 | 2 | 1 | 3 |
+| CM.VCP.RESULT.ERROR.JUDGMENT | 2*3 | 6 | 1 | 2 | 3 |
+| CM.VCP.RESULT.ERROR.SCORE | 2*3 | 6 | 2 | 1 | 3 |
+| CM.VCP.RESULT.ERROR.SEVERITY | 2*3 | 6 | 2 | 1 | 3 |
+| CM.VCP.RESULT.ERROR.VERDICT | 2*3 | 6 | 2 | 1 | 3 |
+| CM.VCP.RESULT.NONEXECUTION.APPLICABILITY | 4*3 | 12 | 6 | 3 | 3 |
+| CM.VCP.RESULT.NONEXECUTION.DETERMINATION | 4*3 | 12 | 6 | 3 | 3 |
+| CM.VCP.RESULT.NONEXECUTION.EXECUTION_OUTCOME | 4*3 | 12 | 6 | 3 | 3 |
+| CM.VCP.RESULT.NONEXECUTION.JUDGMENT | 4*3 | 12 | 3 | 6 | 3 |
+| CM.VCP.RESULT.NONEXECUTION.SCORE | 4*3 | 12 | 6 | 3 | 3 |
+| CM.VCP.RESULT.NONEXECUTION.SEVERITY | 4*3 | 12 | 6 | 3 | 3 |
+| CM.VCP.RESULT.NONEXECUTION.VERDICT | 4*3 | 12 | 6 | 3 | 3 |
+| CM.VCP.RESULT.NOT_APPLICABLE.DETERMINATION | 2*3 | 6 | 2 | 1 | 3 |
+| CM.VCP.RESULT.NOT_APPLICABLE.JUDGMENT | 2*3 | 6 | 1 | 2 | 3 |
+| CM.VCP.RESULT.NOT_APPLICABLE.SCORE | 2*3 | 6 | 2 | 1 | 3 |
+| CM.VCP.RESULT.NOT_APPLICABLE.SEVERITY | 2*3 | 6 | 2 | 1 | 3 |
+| CM.VCP.RESULT.NOT_APPLICABLE.VERDICT | 2*3 | 6 | 2 | 1 | 3 |
+| CM.VCP.RESULT.OUTCOME | 4*4 | 16 | 2 | 2 | 12 |
+| CM.VCP.RESULT.SUCCESS | 2*4 | 8 | 2 | 2 | 4 |
+| CM.VCP.RESULT.UNKNOWN.JUDGMENT | 2*3 | 6 | 1 | 2 | 3 |
+| CM.VCP.RESULT.UNKNOWN.SCORE | 2*3 | 6 | 2 | 1 | 3 |
+| CM.VCP.RESULT.UNKNOWN.SEVERITY | 2*3 | 6 | 2 | 1 | 3 |
+| CM.VCP.RESULT.UNKNOWN.VERDICT | 2*3 | 6 | 2 | 1 | 3 |
+| CM.VCP.DATA.PORT_NAMES.INPUT | 2 | 2 | 1 | 1 | 0 |
+| CM.VCP.DATA.PORT_NAMES.OUTPUT | 2 | 2 | 1 | 1 | 0 |
+| CM.VCP.DATA.PRIMARY_RESULT.CARDINALITY | 3 | 3 | 1 | 2 | 0 |
+| CM.VCP.DATA.PRIMARY_RESULT.NAME | 2 | 2 | 1 | 1 | 0 |
+| CM.VCP.DATA.PRIMARY_RESULT.ROLES | 3 | 3 | 1 | 2 | 0 |
+| CM.VCP.DATA.PRIMARY_DECISION.CARDINALITY | 3 | 3 | 1 | 2 | 0 |
+| CM.VCP.DATA.PRIMARY_DECISION.NAME | 2 | 2 | 1 | 1 | 0 |
+| CM.VCP.DATA.PRIMARY_DECISION.ROLES | 3 | 3 | 1 | 2 | 0 |
 
 ## Pure calculation definitions
 
@@ -37729,13 +44004,11 @@ def acyclic(n,bits):
 
 For Result calculations controls=[execution_outcome,applicability,determination,verdict]; A is <absent>, N is <null>. opts/disps are the actual enum arrays in the hashed result schema. states is the list of valid quotient coordinates evaluated by result_ok; semantic_state is its zero-based index. observations is the actual non-control property order printed in D.RESULT.OBSERVATION_MASK. Enumerate itertools.product of each finite domain axes; evaluate its classifier relation and count each label. For graph topology use acyclic(n,bits) over range(2**(n*(n-1))). These computations assert no production output.
 
-## Unclosed mathematics
-
-Typed availability is a dependent partial relation, not a fully classified raw product. Root components still need independent context checking. Operation summaries and inherited records do not become mathematically closed merely by linking a related domain. Exact uncovered semantic totals cannot yet be established.
-
 ## Declared error authorities
 
-| Identifier | Actual authority | Declaration | Prose category references |
+53 enum identifiers =33 normative VCP+8 normative Provider Contract+2 SDK diagnostics+10 Relay-specific. This is a source-supported inventory correction, not a blueprint edit; no blueprint was consulted or changed in this continuation. Freeform ExecutionError codes and provider-namespaced errors are not closed by this count.
+
+| Identifier | Authority | Declaration | Semantic source |
 | --- | --- | --- | --- |
 | ADMISSION_POLICY | NORMATIVE_VCP | src/openverify/error_codes.py:7-7 | spec/draft/conformance.md:20-20 |
 | AGGREGATE_CONFIG | NORMATIVE_VCP | src/openverify/error_codes.py:8-8 | spec/draft/conformance.md:21-21; spec/draft/open-questions.md:95-95 |
@@ -37754,7 +44027,7 @@ Typed availability is a dependent partial relation, not a fully classified raw p
 | NO_OCCURRENCE | NORMATIVE_VCP | src/openverify/error_codes.py:21-21 | spec/draft/execution-policy.md:76-76 |
 | OUTPUT_INVALID | NORMATIVE_VCP | src/openverify/error_codes.py:22-22 | spec/draft/conformance.md:26-26; spec/draft/result.md:49-49 |
 | OUTPUT_MISSING | NORMATIVE_VCP | src/openverify/error_codes.py:23-23 | spec/draft/conformance.md:26-26; spec/draft/dataflow.md:109-109 |
-| POLICY_ERROR | PUBLIC_SDK_DIAGNOSTIC | src/openverify/error_codes.py:24-24 | Local diagnostic / implementation declaration |
+| POLICY_ERROR | PUBLIC_SDK_DIAGNOSTIC | src/openverify/error_codes.py:24-24 | Local SDK/Relay declaration; not portable normative |
 | POLICY_INPUT | NORMATIVE_VCP | src/openverify/error_codes.py:25-25 | spec/draft/execution-policy.md:77-77 |
 | POLICY_OUTPUT | NORMATIVE_VCP | src/openverify/error_codes.py:26-26 | spec/draft/execution-policy.md:78-78 |
 | POLICY_UNSUPPORTED | NORMATIVE_VCP | src/openverify/error_codes.py:27-27 | spec/draft/conformance.md:23-23 |
@@ -37767,7 +44040,7 @@ Typed availability is a dependent partial relation, not a fully classified raw p
 | PROVIDER_BINDING_REQUIRED | NORMATIVE_VCP | src/openverify/error_codes.py:34-34 | spec/draft/provider-binding.md:64-64 |
 | PROVIDER_MANIFEST_INVALID | NORMATIVE_VCP | src/openverify/error_codes.py:35-35 | spec/draft/provider-binding.md:72-72 |
 | RESOURCE_MEASUREMENT | NORMATIVE_VCP | src/openverify/error_codes.py:36-36 | spec/draft/conformance.md:19-19 |
-| RESULT_PROJECTION | PUBLIC_SDK_DIAGNOSTIC | src/openverify/error_codes.py:37-37 | Local diagnostic / implementation declaration |
+| RESULT_PROJECTION | PUBLIC_SDK_DIAGNOSTIC | src/openverify/error_codes.py:37-37 | Local SDK/Relay declaration; not portable normative |
 | RESULT_STATE | NORMATIVE_VCP | src/openverify/error_codes.py:38-38 | spec/draft/conformance.md:18-18 |
 | RUN_INPUT | NORMATIVE_VCP | src/openverify/error_codes.py:39-39 | spec/draft/conformance.md:26-26; spec/draft/dataflow.md:38-38; spec/draft/execution-policy.md:11-11 |
 | SCHEMA_UNSUPPORTED | NORMATIVE_VCP | src/openverify/error_codes.py:40-40 | spec/draft/conformance.md:25-25; spec/draft/dataflow.md:99-99 |
@@ -37780,16 +44053,30 @@ Typed availability is a dependent partial relation, not a fully classified raw p
 | INVALID_INVOCATION | NORMATIVE_PROVIDER | src/openverify/provider_codes.py:12-12 | provider-contract/spec/draft/errors.md:11-11; provider-contract/spec/draft/transports.md:53-53; provider-contract/spec/draft/versioning.md:27-27 |
 | INVALID_PROVIDER_OUTPUT | NORMATIVE_PROVIDER | src/openverify/provider_codes.py:13-13 | provider-contract/spec/draft/errors.md:14-14; provider-contract/spec/draft/lifecycle.md:18-18; provider-contract/spec/draft/versioning.md:27-27 |
 | PROTOCOL_VIOLATION | NORMATIVE_PROVIDER | src/openverify/provider_codes.py:14-14 | provider-contract/spec/draft/errors.md:15-15; provider-contract/spec/draft/lifecycle.md:16-16; provider-contract/spec/draft/lifecycle.md:25-25; provider-contract/spec/draft/lifecycle.md:26-26; provider-contract/spec/draft/transports.md:16-16; provider-contract/spec/draft/versioning.md:13-13; provider-contract/spec/draft/wire-format.md:62-62 |
-| BINDER_FAILURE | RELAY_IMPLEMENTATION | src/openverify/relay/error_codes.py:7-7 | Local diagnostic / implementation declaration |
-| CATALOG_FAILURE | RELAY_IMPLEMENTATION | src/openverify/relay/error_codes.py:8-8 | Local diagnostic / implementation declaration |
-| CATALOG_INVALID | RELAY_IMPLEMENTATION | src/openverify/relay/error_codes.py:9-9 | Local diagnostic / implementation declaration |
-| GATE_REJECTED | RELAY_IMPLEMENTATION | src/openverify/relay/error_codes.py:10-10 | Local diagnostic / implementation declaration |
-| GRAPH_UNAVAILABLE | RELAY_IMPLEMENTATION | src/openverify/relay/error_codes.py:11-11 | Local diagnostic / implementation declaration |
-| OPPORTUNITY_ID | RELAY_IMPLEMENTATION | src/openverify/relay/error_codes.py:12-12 | Local diagnostic / implementation declaration |
-| PROVIDER_AMBIGUOUS | RELAY_IMPLEMENTATION | src/openverify/relay/error_codes.py:13-13 | Local diagnostic / implementation declaration |
-| PROVIDER_CONFLICT | RELAY_IMPLEMENTATION | src/openverify/relay/error_codes.py:14-14 | Local diagnostic / implementation declaration |
-| PROVIDER_UNTRUSTED | RELAY_IMPLEMENTATION | src/openverify/relay/error_codes.py:15-15 | Local diagnostic / implementation declaration |
-| RUN_UNAVAILABLE | RELAY_IMPLEMENTATION | src/openverify/relay/error_codes.py:16-16 | Local diagnostic / implementation declaration |
+| BINDER_FAILURE | RELAY_IMPLEMENTATION | src/openverify/relay/error_codes.py:7-7 | Local SDK/Relay declaration; not portable normative |
+| CATALOG_FAILURE | RELAY_IMPLEMENTATION | src/openverify/relay/error_codes.py:8-8 | Local SDK/Relay declaration; not portable normative |
+| CATALOG_INVALID | RELAY_IMPLEMENTATION | src/openverify/relay/error_codes.py:9-9 | Local SDK/Relay declaration; not portable normative |
+| GATE_REJECTED | RELAY_IMPLEMENTATION | src/openverify/relay/error_codes.py:10-10 | Local SDK/Relay declaration; not portable normative |
+| GRAPH_UNAVAILABLE | RELAY_IMPLEMENTATION | src/openverify/relay/error_codes.py:11-11 | Local SDK/Relay declaration; not portable normative |
+| OPPORTUNITY_ID | RELAY_IMPLEMENTATION | src/openverify/relay/error_codes.py:12-12 | Local SDK/Relay declaration; not portable normative |
+| PROVIDER_AMBIGUOUS | RELAY_IMPLEMENTATION | src/openverify/relay/error_codes.py:13-13 | Local SDK/Relay declaration; not portable normative |
+| PROVIDER_CONFLICT | RELAY_IMPLEMENTATION | src/openverify/relay/error_codes.py:14-14 | Local SDK/Relay declaration; not portable normative |
+| PROVIDER_UNTRUSTED | RELAY_IMPLEMENTATION | src/openverify/relay/error_codes.py:15-15 | Local SDK/Relay declaration; not portable normative |
+| RUN_UNAVAILABLE | RELAY_IMPLEMENTATION | src/openverify/relay/error_codes.py:16-16 | Local SDK/Relay declaration; not portable normative |
 
+Supplementary literal diagnostics include DATAFLOW_VALUE, TIMEOUT, TRANSPORT_ERROR, PROVIDER_CONFIG, RELAY_ERROR, IO_ERROR and HTTP UNAUTHORIZED/BODY_TOO_LARGE/INVALID_REQUEST. They are separate from the three declared enums; no global error alphabet or mandatory total precedence is asserted.
 
-Corrected declaration count is 53: 8 NORMATIVE_PROVIDER, 33 NORMATIVE_VCP, 2 PUBLIC_SDK_DIAGNOSTIC, 10 RELAY_IMPLEMENTATION. This is not a normative 53-code union. Provider-specific namespaced identifiers are unbounded; unregistered raw diagnostic literals at other public boundaries are not silently promoted into these enums.
+## Unclosed/unsupported mathematical boundaries
+
+| Question | Classification | Effect |
+| --- | --- | --- |
+| Q.CUSTOM_AGG_EMPTY | EXPLICIT_SEMANTIC_BLOCKER | Custom empty-membership expectation cannot be closed without an explicit authority/scope decision; other membership and standard reducer rules continue. |
+| Q.RELAY_TIMING_KEY | DOCUMENTED_PROFILE_KEY_UNDERSPECIFICATION | Exact local same-unit timing-key expectation requires clarification of the documented profile; retain both source statements. |
+| Q.AVAILABILITY_OVERLAP | EXPLICIT_SEMANTIC_BLOCKER | Only exact ambiguous status coordinates remain blocked; rejection/nonpublication/default/omit/block effects remain derived. No raw source/status Cartesian total claimed. |
+| Q.ROUNDING | UNBOUNDED_PRECISION_LIMIT_NO_BITWISE_REQUIREMENT | Use algebraic semantics and declared number fidelity; no bit-identical portable claim. |
+| Q.DEFAULT_UNUSED | EXPLICIT_SEMANTIC_BLOCKER | Only this portable field-interaction expectation remains ambiguous; SDK rejection is a separate local behavior. |
+| Q.VERSION_FUTURE_INTERSECTION | UNSUPPORTED_FUTURE_PROFILE_LIMIT | 0.1-only declared profile is decidable; hypothetical future support not silently inferred. SDK helper first-common-then0.1 behavior separately specified. |
+| Q.NONPROGRESSING_SCHEMA_REFERENCE | EXTERNAL_UNDEFINED_SEMANTICS | Only exact expectation for nonprogressing cyclic embedded schemas remains blocked; shipped33 root reference closure is acyclic and unaffected. |
+| Q.BOOLEAN_ANNOTATION_REFERENCE | SCOPE_AMBIGUITY | Provider boolean targets outside recognized schema positions are not certified as either valid supported evaluation or a particular rejection code. |
+
+No production reducer/validator/resolution/lifecycle function was imported or executed for these calculations. The conditional DAG argument proves a theorem under its listed premises; it is not a universal proof of the implementation scheduler or shared mutable state. No sample graph bound is used to establish arbitrary-size correctness.
