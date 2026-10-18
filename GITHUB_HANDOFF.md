@@ -1,5 +1,7 @@
 # OpenVerify first GitHub handoff
 
+Current exact-name publication preparation: [FIRST_PUBLICATION.md](FIRST_PUBLICATION.md). Prior verification artifacts retain their original package identities and hashes.
+
 **Source handoff: READY. Package publication: BLOCKED pending the owner steps below. Full Golden certification remains unproved.**
 
 This preparation makes one complete source monorepo available for a normal branch push and pull request. It does not authorize package publication or claim that the existing semantic release gate passed. No push, repository creation, remote-setting change, main merge, release tag, package publication or existing worktree deletion was performed.
@@ -116,14 +118,14 @@ All SDK package versions currently start at independent `0.1.0`. Protocol versio
 
 | SDK | Package | Owner setup and environment credentials |
 |---|---|---|
-| Node | `@openverify/sdk` | Authorize npm scope `openverify`. Configure trusted publisher for owner `openverifyproject`, repo `openverify`, workflow `sdk-release-node.yml`, environment `sdk-node`. Node 24/current npm in the workflow meets OIDC prerequisites. If npm requires an owner bootstrap, explicitly approve the first verified tarball through npm's supported initial-publication flow; do not republish that version through CI. No long-lived npm token fallback is configured. [npm setup](https://docs.npmjs.com/trusted-publishers/) |
+| Node | `openverify` | Use an authorized npm account for the unscoped package `openverify`; no npm organization is required. Configure trusted publisher for owner `openverifyproject`, repo `openverify`, workflow `sdk-release-node.yml`, environment `sdk-node`. Node 24/current npm in the workflow meets OIDC prerequisites. If npm requires an owner bootstrap, explicitly approve the first verified tarball through npm's supported initial-publication flow; do not republish that version through CI. No long-lived npm token fallback is configured. [npm setup](https://docs.npmjs.com/trusted-publishers/) |
 | Python wire | `openverify-wire` | Create a PyPI pending trusted publisher: owner/repo above, workflow `sdk-release-python.yml`, environment `sdk-python`. No API token is required. Import name is `openverify_sdk`, distinct from the withheld root `openverify` distribution. [PyPI setup](https://docs.pypi.org/trusted-publishers/creating-a-project-through-oidc/) |
-| Rust | `openverify-sdk` | Confirm crates.io ownership; store a short-lived, crate-scoped publish token as `CARGO_REGISTRY_TOKEN` in `sdk-rust`. [Cargo publishing](https://doc.rust-lang.org/cargo/commands/cargo-publish.html) |
+| Rust | `openverify` | Confirm crates.io ownership; store a short-lived, crate-scoped publish token as `CARGO_REGISTRY_TOKEN` in `sdk-rust`. [Cargo publishing](https://doc.rust-lang.org/cargo/commands/cargo-publish.html) |
 | Go | `github.com/openverifyproject/openverify/sdk/go` | No registry token or mirror. Reviewed source must be public; the exact nested-module tag is `sdk/go/v0.1.0`. Pushing it makes that version public, before the verification job completes. [Go tag rules](https://go.dev/ref/mod#vcs-version) |
-| JVM | `io.github.openverifyproject:openverify-sdk` | Verify the `io.github.openverifyproject` namespace in Central Portal. In `sdk-jvm`, set Portal user-token `CENTRAL_USERNAME`, `CENTRAL_PASSWORD`, armored `MAVEN_GPG_PRIVATE_KEY` and `MAVEN_GPG_PASSPHRASE`. The release Maven profile signs and uses Central Portal, not retired OSSRH. [Maven setup](https://central.sonatype.org/publish/publish-portal-maven/) |
-| .NET | `OpenVerify.Sdk` | Confirm NuGet ownership; put an expiring package-scoped push key in `sdk-dotnet` as `NUGET_API_KEY`. [NuGet setup](https://learn.microsoft.com/en-us/nuget/nuget-org/publish-a-package) |
-| Ruby | `openverify-sdk` | Create a pending RubyGems trusted publisher for owner/repo above, `sdk-release-ruby.yml`, environment `sdk-ruby`. No long-lived gem key. [RubyGems setup](https://guides.rubygems.org/trusted-publishing/) |
-| PHP | `openverify/sdk` | Authorize an empty distribution mirror, e.g. `openverifyproject/sdk-php`, without an initial README/license commit. In `sdk-php`, set variable `SDK_PHP_MIRROR=openverifyproject/sdk-php` and secret `SDK_PHP_MIRROR_TOKEN`, a fine-grained token for **that mirror only**, Contents read/write. Register the mirror on Packagist and configure its GitHub synchronization/webhook. Source tags are `sdk/php/vX.Y.Z`; the tool creates mirror `vX.Y.Z` tags atomically without force. [Packagist setup](https://packagist.org/about) |
+| JVM | `io.github.openverifyproject:openverify` | Verify the `io.github.openverifyproject` namespace in Central Portal. In `sdk-jvm`, set Portal user-token `CENTRAL_USERNAME`, `CENTRAL_PASSWORD`, armored `MAVEN_GPG_PRIVATE_KEY` and `MAVEN_GPG_PASSPHRASE`. The release Maven profile signs and uses Central Portal, not retired OSSRH. [Maven setup](https://central.sonatype.org/publish/publish-portal-maven/) |
+| .NET | `OpenVerify` | Confirm NuGet ownership; put an expiring package-scoped push key in `sdk-dotnet` as `NUGET_API_KEY`. [NuGet setup](https://learn.microsoft.com/en-us/nuget/nuget-org/publish-a-package) |
+| Ruby | `openverify` | Create a pending RubyGems trusted publisher for owner/repo above, `sdk-release-ruby.yml`, environment `sdk-ruby`. No long-lived gem key. [RubyGems setup](https://guides.rubygems.org/trusted-publishing/) |
+| PHP | `openverify/openverify` | Authorize an empty distribution mirror, e.g. `openverifyproject/sdk-php`, without an initial README/license commit. In `sdk-php`, set variable `SDK_PHP_MIRROR=openverifyproject/sdk-php` and secret `SDK_PHP_MIRROR_TOKEN`, a fine-grained token for **that mirror only**, Contents read/write. Register the mirror on Packagist and configure its GitHub synchronization/webhook. Source tags are `sdk/php/vX.Y.Z`; the tool creates mirror `vX.Y.Z` tags atomically without force. [Packagist setup](https://packagist.org/about) |
 
 The PHP mirror tool derives its tree with `git subtree split --prefix=sdk/php`, rejects conflicting tags and unrelated/nonempty unexpected histories, and never force-pushes. Local guard tests pass; live mirror synchronization is intentionally untested without owner setup. The token is supplied only inside the protected PHP job. See [sdk/RELEASE.md](sdk/RELEASE.md) for detailed registry and mirror behavior.
 
@@ -205,8 +207,8 @@ inspect its cause rather than moving/deleting it or overwriting a registry versi
 
 If npm requires the first package to exist before trusted-publisher configuration,
 an authorized owner can instead bootstrap the **verified** first tarball with
-`npm.cmd login --auth-type=web --scope=@openverify`, followed by
-`npm.cmd publish .\dist\sdk\node\openverify-sdk-0.1.0.tgz --access public`.
+`npm.cmd login --auth-type=web `, followed by
+`npm.cmd publish .\dist\sdk\node\openverify-0.1.0.tgz --access public`.
 This is publication and requires separate explicit approval. Then configure npm's
 trusted publisher and use the next reviewed Node version for the first CI publish;
 do not retry the bootstrap version through its publishing workflow.

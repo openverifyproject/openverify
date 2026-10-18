@@ -6,14 +6,14 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 PACKAGES = {
     "node": (
-        "@openverify/sdk",
+        "openverify",
         "npm",
         "npm ci && npm test",
-        "import {parse, serialize} from '@openverify/sdk';\nconst object = parse('vcp', 'decision', '{\"protocol\":\"draft\",\"kind\":\"CONTINUE\"}');\nconsole.log(serialize(object));",
+        "import {parse, serialize} from 'openverify';\nconst object = parse('vcp', 'decision', '{\"protocol\":\"draft\",\"kind\":\"CONTINUE\"}');\nconsole.log(serialize(object));",
         "typescript",
     ),
     "rust": (
-        "openverify-sdk",
+        "openverify",
         "crates.io",
         "cargo test --locked",
         'let object = openverify_sdk::parse("vcp", "decision", r#"{"protocol":"draft","kind":"CONTINUE"}"#)?;\nlet json = openverify_sdk::serialize(&object)?;',
@@ -27,28 +27,28 @@ PACKAGES = {
         "go",
     ),
     "jvm": (
-        "io.github.openverifyproject:openverify-sdk",
+        "io.github.openverifyproject:openverify",
         "Maven Central",
         "mvn verify",
         'var object = org.openverify.sdk.Sdk.parse("vcp", "decision", """\n{"protocol":"draft","kind":"CONTINUE"}\n""");\nvar json = org.openverify.sdk.Sdk.serialize(object);',
         "java",
     ),
     "dotnet": (
-        "OpenVerify.Sdk",
+        "OpenVerify",
         "NuGet",
         "dotnet test OpenVerify.Sdk.Tests",
         'var value = OpenVerify.Sdk.Parse("vcp", "decision", """{"protocol":"draft","kind":"CONTINUE"}""");\nvar json = OpenVerify.Sdk.Serialize(value);',
         "csharp",
     ),
     "ruby": (
-        "openverify-sdk",
+        "openverify",
         "RubyGems",
         "bundle install && bundle exec ruby test/shared_test.rb",
         "require 'openverify'\nobject = OpenVerify.parse('vcp', 'decision', '{\"protocol\":\"draft\",\"kind\":\"CONTINUE\"}')\nputs OpenVerify.serialize(object)",
         "ruby",
     ),
     "php": (
-        "openverify/sdk",
+        "openverify/openverify",
         "Packagist",
         "composer install && composer test",
         "require 'vendor/autoload.php';\n$object = OpenVerify\\Sdk::parse('vcp', 'decision', '{\"protocol\":\"draft\",\"kind\":\"CONTINUE\"}');\necho OpenVerify\\Sdk::serialize($object);",
@@ -75,6 +75,8 @@ if __name__ == "__main__":
             if language == "python"
             else ""
         )
+        if language == "rust":
+            extra += '\nKeep existing Rust imports with this Cargo dependency alias:\n```toml\n[dependencies]\nopenverify_sdk = { package = "openverify", version = "0.1.0" }\n```\nThe library target remains `openverify_sdk`; the registry crate is `openverify`.\n'
         text = f"""# {name}
 
 OpenVerify DRAFT wire SDK for {language}. Independently versioned package **0.1.0**,

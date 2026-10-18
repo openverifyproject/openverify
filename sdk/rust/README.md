@@ -1,4 +1,4 @@
-# openverify-sdk
+# openverify
 
 OpenVerify DRAFT wire SDK for rust. Independently versioned package **0.1.0**,
 intended registry: crates.io. Names/ownership must be confirmed before publication.
@@ -57,6 +57,13 @@ native runner over the same versioned `conformance/sdk/manifest.json`, builds
 twice, compares package file contents and installs into a separate consumer.
 Dependency installation can use the network; actual schema validation is offline.
 The shared corpus is a bounded compatibility test, **not full protocol certification**.
+
+Keep existing Rust imports with this Cargo dependency alias:
+```toml
+[dependencies]
+openverify_sdk = { package = "openverify", version = "0.1.0" }
+```
+The library target remains `openverify_sdk`; the registry crate is `openverify`.
 
 ## Release
 

@@ -1,4 +1,4 @@
-# OpenVerify.Sdk
+# OpenVerify
 
 OpenVerify DRAFT wire SDK for dotnet. Independently versioned package **0.1.0**,
 intended registry: NuGet. Names/ownership must be confirmed before publication.

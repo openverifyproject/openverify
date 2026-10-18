@@ -48,7 +48,7 @@ def main():
     if branch:
         git("fetch", "--no-tags", remote, "refs/heads/main")
         document = json.loads(git("show", branch + ":composer.json"))
-        if document.get("name") != "openverify/sdk":
+        if document.get("name") != "openverify/openverify":
             raise RuntimeError("Mirror package name mismatch")
         ancestor = subprocess.run(
             ["git", "merge-base", "--is-ancestor", branch, split], cwd=ROOT

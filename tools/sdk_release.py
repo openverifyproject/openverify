@@ -12,24 +12,24 @@ from pathlib import Path
 from sdk_verify import ROOT, validate_version, version
 
 NAMES = {
-    "node": "@openverify/sdk",
+    "node": "openverify",
     "python": "openverify-wire",
-    "rust": "openverify-sdk",
+    "rust": "openverify",
     "go": "github.com/openverifyproject/openverify/sdk/go",
-    "jvm": "io.github.openverifyproject:openverify-sdk",
-    "dotnet": "OpenVerify.Sdk",
-    "ruby": "openverify-sdk",
-    "php": "openverify/sdk",
+    "jvm": "io.github.openverifyproject:openverify",
+    "dotnet": "OpenVerify",
+    "ruby": "openverify",
+    "php": "openverify/openverify",
 }
 NAME_URLS = {
-    "node": "https://registry.npmjs.org/@openverify%2fsdk",
+    "node": "https://registry.npmjs.org/openverify",
     "python": "https://pypi.org/pypi/openverify-wire/json",
-    "rust": "https://crates.io/api/v1/crates/openverify-sdk",
+    "rust": "https://crates.io/api/v1/crates/openverify",
     "go": "https://proxy.golang.org/github.com/openverifyproject/openverify/sdk/go/@v/list",
-    "jvm": "https://repo.maven.apache.org/maven2/io/github/openverifyproject/openverify-sdk/maven-metadata.xml",
-    "dotnet": "https://api.nuget.org/v3-flatcontainer/openverify.sdk/index.json",
-    "ruby": "https://rubygems.org/api/v1/gems/openverify-sdk.json",
-    "php": "https://repo.packagist.org/p2/openverify/sdk.json",
+    "jvm": "https://repo.maven.apache.org/maven2/io/github/openverifyproject/openverify/maven-metadata.xml",
+    "dotnet": "https://api.nuget.org/v3-flatcontainer/openverify/index.json",
+    "ruby": "https://rubygems.org/api/v1/gems/openverify.json",
+    "php": "https://repo.packagist.org/p2/openverify/openverify.json",
 }
 
 
@@ -88,17 +88,35 @@ def unpublished(language, release_version):
         "ruby": lambda: any(
             v["number"] == release_version
             for v in json.loads(
-                fetch("https://rubygems.org/api/v1/versions/openverify-sdk.json")[1]
+                fetch("https://rubygems.org/api/v1/versions/openverify.json")[1]
             )
         ),
         "php": lambda: any(
             v.get("version_normalized") == release_version + ".0"
             or v.get("version", "").lstrip("v") == release_version
-            for v in data.get("packages", {}).get("openverify/sdk", [])
+            for v in data.get("packages", {}).get("openverify/openverify", [])
         ),
     }[language]()
     if present:
         raise RuntimeError(f"{language} {release_version} is already published; refusing overwrite")
+
+
+def require_merged_source(head):
+    remote = subprocess.check_output(
+        ["git", "remote", "get-url", "origin"], cwd=ROOT, text=True
+    ).strip()
+    if remote not in (
+        "https://github.com/openverifyproject/openverify.git",
+        "git@github.com:openverifyproject/openverify.git",
+    ):
+        raise RuntimeError("Release source must use openverifyproject/openverify origin")
+    result = subprocess.run(
+        ["git", "merge-base", "--is-ancestor", head, "origin/main"],
+        cwd=ROOT,
+        check=False,
+    )
+    if result.returncode != 0:
+        raise RuntimeError("Release source must already be merged into origin/main")
 
 
 def preflight(language, tag, evidence=None):
@@ -115,6 +133,7 @@ def preflight(language, tag, evidence=None):
     ).strip()
     if head != tagged:
         raise RuntimeError("Checkout is not the tagged commit")
+    require_merged_source(head)
     if evidence:
         proof = json.loads(Path(evidence).read_text())
         if (

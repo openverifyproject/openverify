@@ -1,4 +1,4 @@
-# @openverify/sdk
+# openverify
 
 OpenVerify DRAFT wire SDK for node. Independently versioned package **0.1.0**,
 intended registry: npm. Names/ownership must be confirmed before publication.
@@ -12,7 +12,7 @@ Provider Contract: exact `0.1`. Both remain DRAFT with no stable 1.0 promise.
 Validation does not fetch schemas, artifact content or URLs.
 
 ```typescript
-import {parse, serialize} from '@openverify/sdk';
+import {parse, serialize} from 'openverify';
 const object = parse('vcp', 'decision', '{"protocol":"draft","kind":"CONTINUE"}');
 console.log(serialize(object));
 ```

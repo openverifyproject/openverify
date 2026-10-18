@@ -1,5 +1,5 @@
 {
-  "name": "@openverify/sdk",
+  "name": "openverify",
   "version": "0.1.0",
   "description": "OpenVerify DRAFT VCP and Provider Contract wire SDK",
   "type": "module",

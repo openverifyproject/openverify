@@ -108,7 +108,7 @@ def build(language):
         return latest("dist/sdk/node/*.tgz")
     if language == "rust":
         run("cargo", "package", "--locked", "--allow-dirty", cwd=directory, env=env)
-        source = latest("sdk/rust/target/package/openverify-sdk-*.crate")
+        source = latest("sdk/rust/target/package/openverify-[0-9]*.crate")
     elif language == "go":
         # A distributable source snapshot; public Go resolution is checked only after tagging.
         source = destination / "openverify-go.zip"
@@ -126,10 +126,10 @@ def build(language):
         return source
     elif language == "jvm":
         run(MVN, "-B", "package", "-DskipTests", cwd=directory, env=env)
-        source = ROOT / "sdk/jvm/target" / ("openverify-sdk-" + version("jvm") + ".jar")
-        for extra in directory.glob("target/*-sources.jar"):
+        source = ROOT / "sdk/jvm/target" / ("openverify-" + version("jvm") + ".jar")
+        for extra in directory.glob("target/openverify-" + version("jvm") + "-sources.jar"):
             shutil.copy2(extra, destination)
-        for extra in directory.glob("target/*-javadoc.jar"):
+        for extra in directory.glob("target/openverify-" + version("jvm") + "-javadoc.jar"):
             shutil.copy2(extra, destination)
     elif language == "dotnet":
         run(
@@ -142,21 +142,21 @@ def build(language):
             cwd=directory,
             env=env,
         )
-        return latest("dist/sdk/dotnet/OpenVerify.Sdk.*.nupkg")
+        return latest("dist/sdk/dotnet/OpenVerify.[0-9]*.nupkg")
     elif language == "ruby":
         run(
             GEM,
             "build",
-            "openverify-sdk.gemspec",
+            "openverify.gemspec",
             "--output",
-            destination / "openverify-sdk.gem",
+            destination / "openverify.gem",
             cwd=directory,
             env=env,
         )
-        return destination / "openverify-sdk.gem"
+        return destination / "openverify.gem"
     elif language == "php":
         # Composer infers the mirror tag version at release; an archive uses explicit metadata.
-        source = destination / "openverify-sdk.zip"
+        source = destination / "openverify.zip"
         with zipfile.ZipFile(source, "w", zipfile.ZIP_DEFLATED) as archive:
             for path in sorted(directory.rglob("*")):
                 relative = path.relative_to(directory)
@@ -196,25 +196,25 @@ def consumer(language, artifact=None, registry=False):
                 NPM,
                 "install",
                 "--ignore-scripts",
-                "@openverify/sdk@" + version(language) if registry else artifact,
+                "openverify@" + version(language) if registry else artifact,
                 cwd=directory,
             )
             write(
                 directory / "test.mjs",
-                "import {parse,serialize} from '@openverify/sdk'; const v=parse('vcp','decision','{\"protocol\":\"draft\",\"kind\":\"CONTINUE\"}'); if(JSON.parse(serialize(v)).kind!=='CONTINUE')throw Error('consumer');",
+                "import {parse,serialize} from 'openverify'; const v=parse('vcp','decision','{\"protocol\":\"draft\",\"kind\":\"CONTINUE\"}'); if(JSON.parse(serialize(v)).kind!=='CONTINUE')throw Error('consumer');",
             )
             run("node", "test.mjs", cwd=directory)
         elif language == "rust":
             if registry:
-                dependency = '"=' + version(language) + '"'
+                dependency = '{package="openverify",version="=' + version(language) + '"}'
             else:
                 with tarfile.open(artifact) as archive:
                     archive.extractall(directory / "package", filter="data")
                 package = next((directory / "package").iterdir()).as_posix()
-                dependency = "{path=" + json.dumps(package) + "}"
+                dependency = '{package="openverify",path=' + json.dumps(package) + "}"
             write(
                 directory / "Cargo.toml",
-                '[package]\nname="external-consumer"\nversion="0.0.0"\nedition="2024"\n[dependencies]\nopenverify-sdk='
+                '[package]\nname="external-consumer"\nversion="0.0.0"\nedition="2024"\n[dependencies]\nopenverify_sdk='
                 + dependency
                 + "\n",
             )
@@ -252,7 +252,7 @@ def consumer(language, artifact=None, registry=False):
                 run(MVN, "-B", "install", "-DskipTests", cwd=ROOT / "sdk/jvm")
             write(
                 directory / "pom.xml",
-                '<project xmlns="http://maven.apache.org/POM/4.0.0"><modelVersion>4.0.0</modelVersion><groupId>test</groupId><artifactId>consumer</artifactId><version>0.0.0</version><properties><maven.compiler.release>17</maven.compiler.release></properties><dependencies><dependency><groupId>io.github.openverifyproject</groupId><artifactId>openverify-sdk</artifactId><version>'
+                '<project xmlns="http://maven.apache.org/POM/4.0.0"><modelVersion>4.0.0</modelVersion><groupId>test</groupId><artifactId>consumer</artifactId><version>0.0.0</version><properties><maven.compiler.release>17</maven.compiler.release></properties><dependencies><dependency><groupId>io.github.openverifyproject</groupId><artifactId>openverify</artifactId><version>'
                 + version("jvm")
                 + "</version></dependency></dependencies><build><plugins><plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-compiler-plugin</artifactId><version>3.14.0</version></plugin><plugin><groupId>org.codehaus.mojo</groupId><artifactId>exec-maven-plugin</artifactId><version>3.5.0</version></plugin></plugins></build></project>",
             )
@@ -274,7 +274,7 @@ def consumer(language, artifact=None, registry=False):
         elif language == "dotnet":
             write(
                 directory / "Consumer.csproj",
-                '<Project Sdk="Microsoft.NET.Sdk"><PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net8.0</TargetFramework></PropertyGroup><ItemGroup><PackageReference Include="OpenVerify.Sdk" Version="'
+                '<Project Sdk="Microsoft.NET.Sdk"><PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net8.0</TargetFramework></PropertyGroup><ItemGroup><PackageReference Include="OpenVerify" Version="'
                 + version("dotnet")
                 + '"/></ItemGroup></Project>',
             )
@@ -298,7 +298,7 @@ def consumer(language, artifact=None, registry=False):
         elif language == "ruby":
             install = directory / "gems"
             package_args = (
-                ["openverify-sdk", "--version", version(language)] if registry else [artifact]
+                ["openverify", "--version", version(language)] if registry else [artifact]
             )
             run(
                 GEM,
@@ -322,7 +322,7 @@ def consumer(language, artifact=None, registry=False):
         elif language == "php":
             # Composer's package repository installs the exact built archive and
             # works without its optional artifact-repository PHP zip extension.
-            metadata = {"name": "external/consumer", "require": {"openverify/sdk": version("php")}}
+            metadata = {"name": "external/consumer", "require": {"openverify/openverify": version("php")}}
             if not registry:
                 with zipfile.ZipFile(artifact) as archive:
                     package = json.loads(archive.read("composer.json"))
@@ -379,8 +379,8 @@ def version(language):
         return (directory / "VERSION").read_text().strip()
     paths = {
         "go": ("openverify.go", r'SDKVersion\s*=\s*"([^"]+)"'),
-        "ruby": ("openverify-sdk.gemspec", r"s.version\s*=\s*'([^']+)'"),
-        "jvm": ("pom.xml", r"<artifactId>openverify-sdk</artifactId><version>([^<]+)</version>"),
+        "ruby": ("openverify.gemspec", r"s.version\s*=\s*'([^']+)'"),
+        "jvm": ("pom.xml", r"<artifactId>openverify</artifactId><version>([^<]+)</version>"),
         "dotnet": ("OpenVerify.Sdk/OpenVerify.Sdk.csproj", r"<Version>([^<]+)</Version>"),
     }
     path, pattern = paths[language]
