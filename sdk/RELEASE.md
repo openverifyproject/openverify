@@ -1,3 +1,5 @@
+> Superseded package setup: [VerifyAnything](../docs/releases/VERIFYANYTHING_SETUP.md) and [OpenVerify harness](../docs/releases/OPENVERIFY_SETUP.md). Commands below are historical.
+
 # Independent SDK releases
 
 Current exact-name publication preparation: [FIRST_PUBLICATION.md](../FIRST_PUBLICATION.md). Prior verification artifacts retain their original package identities and hashes.

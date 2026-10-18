@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
-  s.name = 'openverify'
+  s.name = 'verifyanything'
   s.version = '0.1.0'
-  s.summary = 'OpenVerify DRAFT VCP and Provider Contract wire SDK'
+  s.summary = 'VerifyAnything DRAFT VCP and Provider Contract wire SDK'
   s.authors = ['OpenVerify contributors']
   s.homepage = 'https://github.com/openverifyproject/openverify'
   s.license = 'MIT'

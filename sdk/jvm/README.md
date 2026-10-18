@@ -1,6 +1,6 @@
-# io.github.openverifyproject:openverify
+# io.github.openverifyproject:verifyanything
 
-OpenVerify DRAFT wire SDK for jvm. Independently versioned package **0.1.0**,
+VerifyAnything DRAFT wire SDK for jvm. Independently versioned package **0.1.0**,
 intended registry: Maven Central. Names/ownership must be confirmed before publication.
 
 VCP means portable verification semantics; Provider Contract means the portable
@@ -66,3 +66,5 @@ Tag only this language: `sdk/jvm/vX.Y.Z` after updating only its package.
 The protected release environment is `sdk-jvm`. First publication requires
 owner setup and explicit approval; no package has been published by this change.
 License: MIT (included in the distribution).
+
+Package setup: [VerifyAnything publication guide](https://github.com/openverifyproject/openverify/blob/main/docs/releases/VERIFYANYTHING_SETUP.md).

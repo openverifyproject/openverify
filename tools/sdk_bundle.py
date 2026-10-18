@@ -243,7 +243,7 @@ if __name__ == "__main__":
         "dotnet": "bundle.json",
         "ruby": "lib/openverify/bundle.json",
         "php": "resources/bundle.json",
-        "python": "src/openverify_sdk/bundle.json",
+        "python": "src/verifyanything/bundle.json",
     }.items():
         directory = ROOT / "sdk" / language
         path = directory / target

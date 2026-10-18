@@ -1,0 +1,287 @@
+{
+  "created_at": "2026-10-18T08:23:55.062019+00:00",
+  "source_base": "4706c3f91cb84412836496c4136d0e519ff3b61b",
+  "source_state": "Local working tree under review; proofs truthfully retain dirty_worktree=true. Release CI must regenerate exact-tag clean-source proof after merge.",
+  "sdk_packages": [
+    {
+      "language": "node",
+      "version": "0.1.0",
+      "commit": "4706c3f91cb84412836496c4136d0e519ff3b61b",
+      "dirty_worktree": true,
+      "tests_run": true,
+      "vcp_total": 52,
+      "provider_total": 45,
+      "consumer": "passed",
+      "repeated_package_contents": "identical",
+      "artifact": "verifyanything-0.1.0.tgz",
+      "sha256": "7de7fc79a619160a8d97aa6709f6b78239cb70802071239d9712d97920ba7040",
+      "contents_sha256": "54c5502b337e1382f43d257b681e1c141a30c8d5d3af4209dd843462b08dcdb8",
+      "execution": {
+        "language": "node",
+        "exit_code": 0,
+        "duration_seconds": 37.009
+      }
+    },
+    {
+      "language": "rust",
+      "version": "0.1.0",
+      "commit": "4706c3f91cb84412836496c4136d0e519ff3b61b",
+      "dirty_worktree": true,
+      "tests_run": true,
+      "vcp_total": 52,
+      "provider_total": 45,
+      "consumer": "passed",
+      "repeated_package_contents": "identical",
+      "artifact": "verifyanything-0.1.0.crate",
+      "sha256": "0ba1755fd85d0c8ddacf4d9b62e28089ec40a914765d279061784ca5d1582a36",
+      "contents_sha256": "b829b43fe43dcfc99ff307daa1f27c1b623767d67e2e793b94fe1cd0da19e2ca",
+      "execution": {
+        "language": "rust",
+        "exit_code": 0,
+        "duration_seconds": 49.043
+      }
+    },
+    {
+      "language": "ruby",
+      "version": "0.1.0",
+      "commit": "4706c3f91cb84412836496c4136d0e519ff3b61b",
+      "dirty_worktree": true,
+      "tests_run": true,
+      "vcp_total": 52,
+      "provider_total": 45,
+      "consumer": "passed",
+      "repeated_package_contents": "identical",
+      "artifact": "verifyanything.gem",
+      "sha256": "3403aa08914fcb2f58bc4ba3b553bb47e6179033b4258d2a07f155feddd90a95",
+      "contents_sha256": "803906b5d7201ef46f2d3f6860671883f80f1681164cae1376f01f68c6263cbc",
+      "execution": {
+        "language": "ruby",
+        "exit_code": 0,
+        "duration_seconds": 60.045
+      }
+    },
+    {
+      "language": "go",
+      "version": "0.1.0",
+      "commit": "4706c3f91cb84412836496c4136d0e519ff3b61b",
+      "dirty_worktree": true,
+      "tests_run": true,
+      "vcp_total": 52,
+      "provider_total": 45,
+      "consumer": "passed",
+      "repeated_package_contents": "identical",
+      "artifact": "openverify-go.zip",
+      "sha256": "9d88d0315eb71cb8fe7a4b7704d7967a0b7171cf3afc97e3174b4c4d8ba1e5b8",
+      "contents_sha256": "d284d497a42bb1a54d8fc188484d8a70cbae24fece10a0729088ae78fd5d1544",
+      "execution": {
+        "language": "go",
+        "exit_code": 0,
+        "duration_seconds": 15.949
+      }
+    },
+    {
+      "language": "python",
+      "version": "0.1.0",
+      "commit": "4706c3f91cb84412836496c4136d0e519ff3b61b",
+      "dirty_worktree": true,
+      "tests_run": true,
+      "vcp_total": 52,
+      "provider_total": 45,
+      "consumer": "passed",
+      "repeated_package_contents": "identical",
+      "artifact": "verifyanything-0.1.0-py3-none-any.whl",
+      "sha256": "190d94b53834ef9f6aebc3b0b21a61429d4f7a2afbab9e17c013eca40abd7dc1",
+      "contents_sha256": "ed658522b82920aea1be4baeff246ef6bf3f3bee858880dfb92c9827cff506a3",
+      "execution": {
+        "language": "python",
+        "exit_code": 0,
+        "duration_seconds": 38.43
+      }
+    },
+    {
+      "language": "dotnet",
+      "version": "0.1.0",
+      "commit": "4706c3f91cb84412836496c4136d0e519ff3b61b",
+      "dirty_worktree": true,
+      "tests_run": true,
+      "vcp_total": 52,
+      "provider_total": 45,
+      "consumer": "passed",
+      "repeated_package_contents": "identical",
+      "artifact": "VerifyAnything.0.1.0.nupkg",
+      "sha256": "d0c2686bbb9422931cc474497cb38fa1fa3a42ce3630459ec01f15bae1b20dc8",
+      "contents_sha256": "e60c6cbb759c4cfee9bb2fc16f9bef41ddd90d485d626b688af439792e807af0",
+      "execution": {
+        "language": "dotnet",
+        "exit_code": 0,
+        "duration_seconds": 12.037
+      }
+    },
+    {
+      "language": "jvm",
+      "version": "0.1.0",
+      "commit": "4706c3f91cb84412836496c4136d0e519ff3b61b",
+      "dirty_worktree": true,
+      "tests_run": true,
+      "vcp_total": 52,
+      "provider_total": 45,
+      "consumer": "passed",
+      "repeated_package_contents": "identical",
+      "artifact": "verifyanything-0.1.0.jar",
+      "sha256": "a083e3a7a43bd6c0c9a8298730eef81466b7a8db121aafa8fe859c0cf54c46a6",
+      "contents_sha256": "2877f0f0e89b3030ce9446a51589421a24287730afc9fce40acca9ca4a47ad11",
+      "execution": {
+        "language": "jvm",
+        "exit_code": 0,
+        "duration_seconds": 24.499
+      }
+    },
+    {
+      "language": "php",
+      "version": "0.1.0",
+      "commit": "4706c3f91cb84412836496c4136d0e519ff3b61b",
+      "dirty_worktree": true,
+      "tests_run": true,
+      "vcp_total": 52,
+      "provider_total": 45,
+      "consumer": "passed",
+      "repeated_package_contents": "identical",
+      "artifact": "verifyanything.zip",
+      "sha256": "45ae34db525e95835793555ffad022e2af41adbd02dc4274ecb67353f415fec3",
+      "contents_sha256": "ba76c58d1e3f9ca283664288941def8328cf69827a418ff4cfc09bca9298f5b8",
+      "execution": {
+        "language": "php",
+        "exit_code": 0,
+        "duration_seconds": 9.76
+      }
+    }
+  ],
+  "python_products": {
+    "status": "PASS",
+    "scenarios": [
+      {
+        "scenario": "sdk-alone",
+        "status": "PASS"
+      },
+      {
+        "scenario": "core-alone",
+        "status": "PASS"
+      },
+      {
+        "scenario": "sdk-then-core",
+        "status": "PASS"
+      },
+      {
+        "scenario": "core-then-sdk",
+        "status": "PASS"
+      }
+    ],
+    "commit": "4706c3f91cb84412836496c4136d0e519ff3b61b",
+    "dirty_worktree": true,
+    "wheels": {
+      "openverify-0.1.0-py3-none-any.whl": "2f3922ad7f54da916bf8725ca6e0fd132d8baacfd415b39b951c2516f02c5f67",
+      "verifyanything-0.1.0-py3-none-any.whl": "190d94b53834ef9f6aebc3b0b21a61429d4f7a2afbab9e17c013eca40abd7dc1"
+    },
+    "artifacts": {
+      "openverify-0.1.0-py3-none-any.whl": "2f3922ad7f54da916bf8725ca6e0fd132d8baacfd415b39b951c2516f02c5f67",
+      "verifyanything-0.1.0-py3-none-any.whl": "190d94b53834ef9f6aebc3b0b21a61429d4f7a2afbab9e17c013eca40abd7dc1",
+      "openverify-0.1.0.tar.gz": "9c3a09c11235dc1ab39d5295d088eac033454aacc4692b9cd6bb3dac7757c724"
+    },
+    "scope": "Local wheel isolation, installation order, API, resources and CLI; not universal conformance"
+  },
+  "harness_profiles": [
+    {
+      "platform": "windows",
+      "profile": "production",
+      "exit_code": 0,
+      "seconds": 154.0736933000153,
+      "command": [
+        "C:\\Users\\siddh\\OneDrive\\Desktop\\openverify\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/unit",
+        "tests/integration",
+        "tests/property",
+        "tests/conformance",
+        "tests/relay",
+        "tests/test_error_contract_hardening.py",
+        "--basetemp=C:\\Users\\siddh\\OneDrive\\Desktop\\openverify\\.worktrees\\verifyanything-packages\\.pytest_cache\\ci-verification\\windows-production",
+        "--junitxml=C:\\Users\\siddh\\OneDrive\\Desktop\\openverify\\.worktrees\\verifyanything-packages\\.sdk-cache\\windows-production.xml"
+      ],
+      "junit": {
+        "tests": 1040,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 1
+      }
+    },
+    {
+      "platform": "windows",
+      "profile": "golden",
+      "exit_code": 0,
+      "seconds": 50.638055699993856,
+      "command": [
+        "C:\\Users\\siddh\\OneDrive\\Desktop\\openverify\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "-q",
+        "-c",
+        "tests/golden_v4/pytest.ini",
+        "tests/golden_v4",
+        "--junitxml=C:\\Users\\siddh\\OneDrive\\Desktop\\openverify\\.worktrees\\verifyanything-packages\\.sdk-cache\\windows-golden.xml"
+      ],
+      "junit": {
+        "tests": 15236,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "platform": "windows",
+      "profile": "regressions",
+      "exit_code": 0,
+      "seconds": 8.662676499981899,
+      "command": [
+        "C:\\Users\\siddh\\OneDrive\\Desktop\\openverify\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/golden_v4_reconciliation",
+        "--basetemp=C:\\Users\\siddh\\OneDrive\\Desktop\\openverify\\.worktrees\\verifyanything-packages\\.pytest_cache\\ci-verification\\windows-regressions",
+        "--junitxml=C:\\Users\\siddh\\OneDrive\\Desktop\\openverify\\.worktrees\\verifyanything-packages\\.sdk-cache\\windows-regressions.xml"
+      ],
+      "junit": {
+        "tests": 388,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      }
+    }
+  ],
+  "tooling_tests": {
+    "passed": 51,
+    "failed": 0
+  },
+  "checks": {
+    "actionlint": "PASS",
+    "ruff": "PASS",
+    "twine": "4 distributions PASS",
+    "uv_lock_check": "PASS",
+    "frozen_integrity": "PASS; no issues",
+    "shared_fixtures_and_normative_sources": "UNCHANGED from source base",
+    "python_namespace_bundle": "exact bytes preserved across namespace move"
+  },
+  "limitations": [
+    "Windows native toolchains tested locally; new Ubuntu/Windows GitHub matrix awaits authorized push/PR.",
+    "Minimum runtime versions and arbitrary unbounded protocol values are not exhaustively verified.",
+    "No registry authentication, namespace ownership, OIDC exchange or registry install has been proved.",
+    "Historical harness full-scope release verdict remains BLOCKED; this is packaging verification, not universal certification."
+  ],
+  "published": false,
+  "remote_writes": false
+}

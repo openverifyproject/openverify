@@ -1,0 +1,97 @@
+{
+  "checked_at": "2026-10-18T08:22:07.581561+00:00",
+  "packages": [
+    {
+      "language": "node",
+      "package": "verifyanything",
+      "url": "https://registry.npmjs.org/verifyanything",
+      "http_status": 404,
+      "status": "unlisted; registration acceptance and reserved-name restrictions unverified",
+      "classification": "UNLISTED",
+      "ownership": "UNKNOWN; no authenticated registry ownership checked"
+    },
+    {
+      "language": "python",
+      "package": "verifyanything",
+      "url": "https://pypi.org/pypi/verifyanything/json",
+      "http_status": 404,
+      "status": "unlisted; registration acceptance and reserved-name restrictions unverified",
+      "classification": "UNLISTED",
+      "ownership": "UNKNOWN; no authenticated registry ownership checked"
+    },
+    {
+      "language": "rust",
+      "package": "verifyanything",
+      "url": "https://crates.io/api/v1/crates/verifyanything",
+      "http_status": 404,
+      "status": "unlisted; registration acceptance and reserved-name restrictions unverified",
+      "classification": "UNLISTED",
+      "ownership": "UNKNOWN; no authenticated registry ownership checked"
+    },
+    {
+      "language": "go",
+      "package": "github.com/openverifyproject/openverify/sdk/go",
+      "url": "https://proxy.golang.org/github.com/openverifyproject/openverify/sdk/go/@v/list",
+      "http_status": 200,
+      "status": "unlisted; registration acceptance and reserved-name restrictions unverified",
+      "classification": "UNLISTED",
+      "ownership": "UNKNOWN; no authenticated registry ownership checked"
+    },
+    {
+      "language": "jvm",
+      "package": "io.github.openverifyproject:verifyanything",
+      "url": "https://repo.maven.apache.org/maven2/io/github/openverifyproject/verifyanything/maven-metadata.xml",
+      "http_status": 404,
+      "status": "unlisted; registration acceptance and reserved-name restrictions unverified",
+      "classification": "UNLISTED",
+      "ownership": "UNKNOWN; no authenticated registry ownership checked"
+    },
+    {
+      "language": "dotnet",
+      "package": "VerifyAnything",
+      "url": "https://api.nuget.org/v3-flatcontainer/verifyanything/index.json",
+      "http_status": 404,
+      "status": "unlisted; registration acceptance and reserved-name restrictions unverified",
+      "classification": "UNLISTED",
+      "ownership": "UNKNOWN; no authenticated registry ownership checked"
+    },
+    {
+      "language": "ruby",
+      "package": "verifyanything",
+      "url": "https://rubygems.org/api/v1/gems/verifyanything.json",
+      "http_status": 404,
+      "status": "unlisted; registration acceptance and reserved-name restrictions unverified",
+      "classification": "UNLISTED",
+      "ownership": "UNKNOWN; no authenticated registry ownership checked"
+    },
+    {
+      "language": "php",
+      "package": "openverify/verifyanything",
+      "url": "https://repo.packagist.org/p2/openverify/verifyanything.json",
+      "http_status": 404,
+      "status": "unlisted; registration acceptance and reserved-name restrictions unverified",
+      "classification": "UNLISTED",
+      "ownership": "UNKNOWN; no authenticated registry ownership checked"
+    }
+  ],
+  "harness": {
+    "package": "openverify",
+    "url": "https://pypi.org/pypi/openverify/json",
+    "http_status": 404,
+    "classification": "UNLISTED",
+    "ownership": "UNKNOWN; no authenticated PyPI ownership checked",
+    "checked_at": "2026-10-18T08:23:54.640287+00:00"
+  },
+  "github_source": {
+    "repository": "openverifyproject/openverify",
+    "public": true,
+    "authenticated_permissions": {
+      "admin": true,
+      "push": true
+    },
+    "method": "gh api repos/openverifyproject/openverify",
+    "base_main": "4706c3f91cb84412836496c4136d0e519ff3b61b",
+    "base_ci": "OpenVerify CI and SDK CI succeeded at this SHA; changed branch not pushed"
+  },
+  "go_version_list": "HTTP 200 with empty body; no published versions observed"
+}
