@@ -7,6 +7,7 @@ from typing import cast
 
 from pydantic import JsonValue
 
+from openverify.errors import ProtocolError
 from openverify.provider import (
     InitializeRequest,
     Invocation,
@@ -29,10 +30,13 @@ async def serve_stdio(provider: Provider) -> None:
     tasks: dict[str, asyncio.Task[None]] = {}
     request_ids: dict[str, str] = {}
 
-    def send(message: JsonValue) -> None:
-        session.provider_message(message)
+    def write(message: JsonValue) -> None:
         sys.stdout.buffer.write(encode_frame(message))
         sys.stdout.buffer.flush()
+
+    def send(message: JsonValue) -> None:
+        session.provider_message(message)
+        write(message)
 
     async def invoke(request_id: str, invocation: Invocation) -> None:
         terminal = False
@@ -53,8 +57,50 @@ async def serve_stdio(provider: Provider) -> None:
 
     try:
         while chunk := await asyncio.to_thread(cast(BufferedReader, sys.stdin.buffer).read1, 65536):
-            for message in decoder.feed(chunk):
-                session.runner_message(message)
+            try:
+                messages = decoder.feed(chunk)
+            except ProviderContractError as exc:
+                # A complete, framed invalid JSON body has a known boundary.
+                # It cannot have established a pending session request/id.
+                if isinstance(exc.__cause__, ProtocolError):
+                    write(
+                        {
+                            "jsonrpc": "2.0",
+                            "id": None,
+                            "error": {"code": -32700, "message": "Parse error"},
+                        }
+                    )
+                raise
+            for message in messages:
+                try:
+                    session.runner_message(message)
+                except ProviderContractError as exc:
+                    # Malformed notifications receive no reply. An invalid
+                    # request is rejected before registration in the session.
+                    if "id" in message:
+                        identity = message["id"]
+                        envelope = (
+                            set(message) == {"jsonrpc", "id", "method", "params"}
+                            and message.get("jsonrpc") == "2.0"
+                            and isinstance(identity, str)
+                            and bool(identity)
+                            and isinstance(message.get("method"), str)
+                            and bool(message.get("method"))
+                            and isinstance(message.get("params"), dict)
+                        )
+                        error: dict[str, JsonValue] = (
+                            {"code": -32000, "message": exc.message, "data": exc.as_dict()}
+                            if envelope
+                            else {"code": -32600, "message": "Invalid Request"}
+                        )
+                        write(
+                            {
+                                "jsonrpc": "2.0",
+                                "id": identity if isinstance(identity, str) and identity else None,
+                                "error": error,
+                            }
+                        )
+                    raise
                 id = cast(str, message["id"])
                 params = message["params"]
                 method = message["method"]

@@ -1,0 +1,509 @@
+{
+  "verdict": "BLOCKED",
+  "base_commit": "4da463e489c9d9bdb26af9c47979269500ba141f",
+  "canonical_records": 615,
+  "semantic_requirements": 582,
+  "whole_schema_predicates": 33,
+  "dispositions": {
+    "PARTIALLY VERIFIED": 396,
+    "RELEASE BLOCKER": 218,
+    "VERIFIED": 1
+  },
+  "branches": {
+    "PROVIDER / Capabilities": {
+      "records": 1,
+      "counts": {
+        "RELEASE BLOCKER": 1
+      },
+      "status": "BLOCKED"
+    },
+    "PROVIDER / Compatibility": {
+      "records": 10,
+      "counts": {
+        "PARTIALLY VERIFIED": 3,
+        "RELEASE BLOCKER": 7
+      },
+      "status": "BLOCKED"
+    },
+    "PROVIDER / Control": {
+      "records": 18,
+      "counts": {
+        "PARTIALLY VERIFIED": 10,
+        "RELEASE BLOCKER": 8
+      },
+      "status": "BLOCKED"
+    },
+    "PROVIDER / Discovery": {
+      "records": 4,
+      "counts": {
+        "RELEASE BLOCKER": 3,
+        "PARTIALLY VERIFIED": 1
+      },
+      "status": "BLOCKED"
+    },
+    "PROVIDER / Errors": {
+      "records": 12,
+      "counts": {
+        "PARTIALLY VERIFIED": 9,
+        "RELEASE BLOCKER": 3
+      },
+      "status": "BLOCKED"
+    },
+    "PROVIDER / Events": {
+      "records": 1,
+      "counts": {
+        "RELEASE BLOCKER": 1
+      },
+      "status": "BLOCKED"
+    },
+    "PROVIDER / Extensions": {
+      "records": 3,
+      "counts": {
+        "RELEASE BLOCKER": 2,
+        "PARTIALLY VERIFIED": 1
+      },
+      "status": "BLOCKED"
+    },
+    "PROVIDER / Invocation": {
+      "records": 6,
+      "counts": {
+        "RELEASE BLOCKER": 3,
+        "PARTIALLY VERIFIED": 3
+      },
+      "status": "BLOCKED"
+    },
+    "PROVIDER / Lifecycle": {
+      "records": 5,
+      "counts": {
+        "PARTIALLY VERIFIED": 4,
+        "RELEASE BLOCKER": 1
+      },
+      "status": "BLOCKED"
+    },
+    "PROVIDER / Meaning": {
+      "records": 1,
+      "counts": {
+        "RELEASE BLOCKER": 1
+      },
+      "status": "BLOCKED"
+    },
+    "PROVIDER / Resources": {
+      "records": 7,
+      "counts": {
+        "PARTIALLY VERIFIED": 3,
+        "RELEASE BLOCKER": 4
+      },
+      "status": "BLOCKED"
+    },
+    "PROVIDER / Schemas": {
+      "records": 4,
+      "counts": {
+        "RELEASE BLOCKER": 4
+      },
+      "status": "BLOCKED"
+    },
+    "PROVIDER / Streaming": {
+      "records": 11,
+      "counts": {
+        "PARTIALLY VERIFIED": 11
+      },
+      "status": "BLOCKED"
+    },
+    "PROVIDER / Transport": {
+      "records": 21,
+      "counts": {
+        "RELEASE BLOCKER": 11,
+        "PARTIALLY VERIFIED": 10
+      },
+      "status": "BLOCKED"
+    },
+    "PROVIDER / Wire": {
+      "records": 2,
+      "counts": {
+        "RELEASE BLOCKER": 2
+      },
+      "status": "BLOCKED"
+    },
+    "PROVIDER / Wire roots": {
+      "records": 9,
+      "counts": {
+        "PARTIALLY VERIFIED": 9
+      },
+      "status": "BLOCKED"
+    },
+    "RELAY / Architecture": {
+      "records": 1,
+      "counts": {
+        "PARTIALLY VERIFIED": 1
+      },
+      "status": "BLOCKED"
+    },
+    "RELAY / Binding": {
+      "records": 4,
+      "counts": {
+        "PARTIALLY VERIFIED": 1,
+        "RELEASE BLOCKER": 3
+      },
+      "status": "BLOCKED"
+    },
+    "RELAY / Binding and execution": {
+      "records": 1,
+      "counts": {
+        "RELEASE BLOCKER": 1
+      },
+      "status": "BLOCKED"
+    },
+    "RELAY / Cancellation": {
+      "records": 2,
+      "counts": {
+        "PARTIALLY VERIFIED": 1,
+        "RELEASE BLOCKER": 1
+      },
+      "status": "BLOCKED"
+    },
+    "RELAY / Discovery": {
+      "records": 3,
+      "counts": {
+        "RELEASE BLOCKER": 2,
+        "PARTIALLY VERIFIED": 1
+      },
+      "status": "BLOCKED"
+    },
+    "RELAY / Entrypoints": {
+      "records": 17,
+      "counts": {
+        "PARTIALLY VERIFIED": 12,
+        "RELEASE BLOCKER": 5
+      },
+      "status": "BLOCKED"
+    },
+    "RELAY / Execution": {
+      "records": 3,
+      "counts": {
+        "RELEASE BLOCKER": 2,
+        "PARTIALLY VERIFIED": 1
+      },
+      "status": "BLOCKED"
+    },
+    "RELAY / Extension ports": {
+      "records": 7,
+      "counts": {
+        "PARTIALLY VERIFIED": 7
+      },
+      "status": "BLOCKED"
+    },
+    "RELAY / Invocation callbacks": {
+      "records": 1,
+      "counts": {
+        "PARTIALLY VERIFIED": 1
+      },
+      "status": "BLOCKED"
+    },
+    "RELAY / Observability": {
+      "records": 1,
+      "counts": {
+        "PARTIALLY VERIFIED": 1
+      },
+      "status": "BLOCKED"
+    },
+    "RELAY / Policies": {
+      "records": 2,
+      "counts": {
+        "RELEASE BLOCKER": 2
+      },
+      "status": "BLOCKED"
+    },
+    "RELAY / Preparation": {
+      "records": 2,
+      "counts": {
+        "RELEASE BLOCKER": 2
+      },
+      "status": "BLOCKED"
+    },
+    "RELAY / Process execution": {
+      "records": 2,
+      "counts": {
+        "PARTIALLY VERIFIED": 2
+      },
+      "status": "BLOCKED"
+    },
+    "RELAY / Providers": {
+      "records": 1,
+      "counts": {
+        "RELEASE BLOCKER": 1
+      },
+      "status": "BLOCKED"
+    },
+    "RELAY / Public API": {
+      "records": 9,
+      "counts": {
+        "PARTIALLY VERIFIED": 8,
+        "RELEASE BLOCKER": 1
+      },
+      "status": "BLOCKED"
+    },
+    "RELAY / Public SDK": {
+      "records": 48,
+      "counts": {
+        "PARTIALLY VERIFIED": 36,
+        "RELEASE BLOCKER": 12
+      },
+      "status": "BLOCKED"
+    },
+    "RELAY / Records": {
+      "records": 6,
+      "counts": {
+        "RELEASE BLOCKER": 3,
+        "PARTIALLY VERIFIED": 3
+      },
+      "status": "BLOCKED"
+    },
+    "RELAY / Scheduler": {
+      "records": 5,
+      "counts": {
+        "PARTIALLY VERIFIED": 4,
+        "RELEASE BLOCKER": 1
+      },
+      "status": "BLOCKED"
+    },
+    "RELAY / Standard providers": {
+      "records": 42,
+      "counts": {
+        "PARTIALLY VERIFIED": 28,
+        "RELEASE BLOCKER": 13,
+        "VERIFIED": 1
+      },
+      "status": "BLOCKED"
+    },
+    "RELAY / Transport": {
+      "records": 4,
+      "counts": {
+        "RELEASE BLOCKER": 3,
+        "PARTIALLY VERIFIED": 1
+      },
+      "status": "BLOCKED"
+    },
+    "SHARED / JSON value and schema semantics": {
+      "records": 3,
+      "counts": {
+        "PARTIALLY VERIFIED": 1,
+        "RELEASE BLOCKER": 2
+      },
+      "status": "BLOCKED"
+    },
+    "SHARED / Public SDK": {
+      "records": 70,
+      "counts": {
+        "PARTIALLY VERIFIED": 36,
+        "RELEASE BLOCKER": 34
+      },
+      "status": "BLOCKED"
+    },
+    "VCP / Aggregation": {
+      "records": 33,
+      "counts": {
+        "RELEASE BLOCKER": 7,
+        "PARTIALLY VERIFIED": 26
+      },
+      "status": "BLOCKED"
+    },
+    "VCP / Composition": {
+      "records": 12,
+      "counts": {
+        "PARTIALLY VERIFIED": 9,
+        "RELEASE BLOCKER": 3
+      },
+      "status": "BLOCKED"
+    },
+    "VCP / Computation": {
+      "records": 13,
+      "counts": {
+        "PARTIALLY VERIFIED": 11,
+        "RELEASE BLOCKER": 2
+      },
+      "status": "BLOCKED"
+    },
+    "VCP / Conformance": {
+      "records": 2,
+      "counts": {
+        "RELEASE BLOCKER": 2
+      },
+      "status": "BLOCKED"
+    },
+    "VCP / Dataflow": {
+      "records": 37,
+      "counts": {
+        "PARTIALLY VERIFIED": 26,
+        "RELEASE BLOCKER": 11
+      },
+      "status": "BLOCKED"
+    },
+    "VCP / Decisions": {
+      "records": 1,
+      "counts": {
+        "PARTIALLY VERIFIED": 1
+      },
+      "status": "BLOCKED"
+    },
+    "VCP / Extensions": {
+      "records": 2,
+      "counts": {
+        "RELEASE BLOCKER": 2
+      },
+      "status": "BLOCKED"
+    },
+    "VCP / Knowledge": {
+      "records": 3,
+      "counts": {
+        "PARTIALLY VERIFIED": 2,
+        "RELEASE BLOCKER": 1
+      },
+      "status": "BLOCKED"
+    },
+    "VCP / Lifecycle": {
+      "records": 22,
+      "counts": {
+        "PARTIALLY VERIFIED": 14,
+        "RELEASE BLOCKER": 8
+      },
+      "status": "BLOCKED"
+    },
+    "VCP / Meaning": {
+      "records": 6,
+      "counts": {
+        "RELEASE BLOCKER": 4,
+        "PARTIALLY VERIFIED": 2
+      },
+      "status": "BLOCKED"
+    },
+    "VCP / Policies": {
+      "records": 22,
+      "counts": {
+        "PARTIALLY VERIFIED": 14,
+        "RELEASE BLOCKER": 8
+      },
+      "status": "BLOCKED"
+    },
+    "VCP / Profiles": {
+      "records": 1,
+      "counts": {
+        "RELEASE BLOCKER": 1
+      },
+      "status": "BLOCKED"
+    },
+    "VCP / Provenance": {
+      "records": 28,
+      "counts": {
+        "RELEASE BLOCKER": 15,
+        "PARTIALLY VERIFIED": 13
+      },
+      "status": "BLOCKED"
+    },
+    "VCP / Provider binding": {
+      "records": 12,
+      "counts": {
+        "PARTIALLY VERIFIED": 8,
+        "RELEASE BLOCKER": 4
+      },
+      "status": "BLOCKED"
+    },
+    "VCP / Resources": {
+      "records": 5,
+      "counts": {
+        "RELEASE BLOCKER": 3,
+        "PARTIALLY VERIFIED": 2
+      },
+      "status": "BLOCKED"
+    },
+    "VCP / Result": {
+      "records": 1,
+      "counts": {
+        "PARTIALLY VERIFIED": 1
+      },
+      "status": "BLOCKED"
+    },
+    "VCP / Results": {
+      "records": 30,
+      "counts": {
+        "PARTIALLY VERIFIED": 28,
+        "RELEASE BLOCKER": 2
+      },
+      "status": "BLOCKED"
+    },
+    "VCP / Schemas": {
+      "records": 3,
+      "counts": {
+        "PARTIALLY VERIFIED": 2,
+        "RELEASE BLOCKER": 1
+      },
+      "status": "BLOCKED"
+    },
+    "VCP / Wire roots": {
+      "records": 24,
+      "counts": {
+        "PARTIALLY VERIFIED": 24
+      },
+      "status": "BLOCKED"
+    },
+    "VCP / Wire semantics": {
+      "records": 9,
+      "counts": {
+        "RELEASE BLOCKER": 5,
+        "PARTIALLY VERIFIED": 4
+      },
+      "status": "BLOCKED"
+    }
+  },
+  "profiles": {
+    "golden-final": {
+      "tests": 15236,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 15236,
+      "seconds": 232.889
+    },
+    "regression": {
+      "tests": 388,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 388,
+      "seconds": 16.811
+    },
+    "existing-final": {
+      "tests": 1038,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1,
+      "passed": 1037,
+      "seconds": 338.222
+    }
+  },
+  "records_with_current_revision_witnesses": 109,
+  "records_without_any_reviewed_link": 218,
+  "historical_links_are_complete_proofs": false,
+  "frozen_file_integrity": {
+    "conformance/golden-v4/BLUEPRINT.md": true,
+    "conformance/golden-v4/CASES.jsonl": true,
+    "conformance/golden-v4/OBLIGATIONS.jsonl": true,
+    "conformance/golden-v4/WITNESSES.jsonl": true,
+    "conformance/golden-v4/NORMATIVE_CLAUSES.jsonl": true,
+    "conformance/golden-v4/NORMATIVE_SOURCE_HASHES.json": true,
+    "conformance/golden-v4/ERROR_INVENTORY.json": true,
+    "conformance/golden-v4/PROJECTIONS.json": true,
+    "conformance/golden-v4/REDUCTION_LEDGER.jsonl": true,
+    "conformance/golden-v4/CONTRACT_INVENTORY.md": true,
+    "conformance/golden-v4/COUNT_PROOFS.md": true,
+    "conformance/golden-v4/COMPOSITION_PROOFS.md": true,
+    "conformance/golden-v4/DOMAIN_LIMITS.md": true,
+    "conformance/golden-v4/FROZEN_EXPECTATIONS/cases.jsonl": true,
+    "tests/golden_v4/oracle/model.py": true,
+    "tests/golden_v4/oracle/__init__.py": true,
+    "tools/golden_v4/discover.py": true,
+    "tools/golden_v4/freeze.py": true,
+    "tools/golden_v4/witness_authoring.py": true,
+    "tools/golden_v4/proofs.py": true,
+    "tools/golden_v4/seal.py": true
+  }
+}
