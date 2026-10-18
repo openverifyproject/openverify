@@ -16,6 +16,10 @@ this file does not resolve them or redefine the protocol.
    The new SDKs reject the standalone object with `INVALID_INVOCATION`. The
    compatibility audit records the existing parser case as an expected failure.
    No production Python/Relay source is changed by this task.
+   Integration update: the finalized production parser now rejects the unknown
+   marker with `INVALID_INVOCATION`. The compatibility audit no longer has an
+   expected-failure escape for this case. The original observation remains
+   historical evidence for the SDK branch's production baseline.
 3. Portable exact numeric representation, canonical hashing and cross-language
    normalization remain open in the normative draft. SDKs preserve supported JSON
    values and reject values outside their faithful native range. This bounded

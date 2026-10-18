@@ -58,6 +58,20 @@ def test_release_filters_only_one_language(language):
 
 
 @pytest.mark.parametrize("language", sdk_workflows.LANGUAGES)
+def test_publish_permissions_and_checkout_credentials(language):
+    text = (ROOT / f".github/workflows/sdk-release-{language}.yml").read_text()
+    assert ("id-token: write" in text) == (language in ("node", "python", "ruby"))
+    assert "persist-credentials: false" in text
+
+
+def test_sdk_ci_runs_for_every_pull_request():
+    text = (ROOT / ".github/workflows/sdk-ci.yml").read_text()
+    assert "pull_request:" in text
+    assert "paths:" not in text
+    assert "release/openverify-v0.1" in text
+
+
+@pytest.mark.parametrize("language", sdk_workflows.LANGUAGES)
 def test_independent_runtime_versions(language):
     import re
 

@@ -27,8 +27,10 @@ been used as implementation or certification sources.
 | Python wire library | `openverify-wire` (`openverify_sdk`) | PyPI | jsonschema, Draft 2020-12 |
 
 All begin at package version 0.1.0; these versions are independent. The original
-`openverify` Python package remains unchanged. Its API is audited separately
-against the shared corpus; its additional engine functionality is not copied.
+`openverify` Python package remains a separate distribution. Its integrated API
+is audited separately against the shared corpus; its engine functionality is not
+copied into these wire libraries. The former standalone invocation-version
+compatibility failure is fixed in the integrated production history.
 
 ## Supported functionality
 
@@ -60,6 +62,14 @@ contextual capability matching; clock/deadline semantics and enforcement; and
 transport framing. Parsing deadline/timestamp-bearing Provider objects explicitly
 fails with `SDK_UNSUPPORTED`. Structural validation remains separately available.
 No scheduler, runner, CLI, domain verifier or canonical hashing is supplied.
+
+The finalized CUSTOM-empty and snapshot-availability decisions govern the Python
+Relay and full VCP semantics. These SDKs do not implement aggregate execution or
+input resolution. Likewise, structural Definition acceptance is not semantic
+validation of unused InputPort defaults; semantic Definition parsing explicitly
+returns `SDK_UNSUPPORTED`. The schema-default annotation noninsertion law is
+covered by the shared corpus. Do not infer full finalized-contract conformance
+from the unchanged distributed schemas or the `draft` marker alone.
 
 The new numeric parsers reject unsupported lossy/nonfinite values where their
 native representation would lose data. Native direct object construction cannot

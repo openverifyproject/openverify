@@ -1,10 +1,8 @@
 name: SDK CI
 on:
   pull_request:
-    paths: ['sdk/**', 'conformance/sdk/**', 'tools/sdk_*.py', '.github/workflows/sdk-*.yml']
   push:
-    branches: ['main', 'feat/language-sdks']
-    paths: ['sdk/**', 'conformance/sdk/**', 'tools/sdk_*.py', '.github/workflows/sdk-*.yml']
+    branches: ['main', 'release/openverify-v0.1']
   workflow_dispatch:
 permissions:
   contents: read

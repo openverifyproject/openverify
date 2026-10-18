@@ -34,7 +34,9 @@ def verify_freeze():
             if revision_path:
                 revision=json.loads(Path(revision_path).read_text(encoding="utf-8"))
                 entry=revision["source_changes"].get(path)
-                approved=bool(entry and path in {"spec/draft/dataflow.md","spec/draft/aggregation.md","spec/draft/open-questions.md",
+                # The monorepo handoff appends documentation links to README;
+                # it still requires the exact old/new hashes and frozen seal.
+                approved=bool(entry and path in {"README.md","spec/draft/dataflow.md","spec/draft/aggregation.md","spec/draft/open-questions.md",
                               "src/openverify/dataflow.py","src/openverify/provider/stdio.py","src/openverify/relay/adapters/server.py",
                               "src/openverify/provider/validation.py","src/openverify/standard/text.py",
                               "src/openverify/standard/common.py","src/openverify/relay/application/execution.py"}
