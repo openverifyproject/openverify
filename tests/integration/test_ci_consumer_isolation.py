@@ -15,7 +15,7 @@ def test_consumer_workflow_installs_wheel_despite_source_egg_info(tmp_path):
     step = workflow.split(
         "      - name: Install wheel into a fresh consumer and exercise shipped API/CLI\n",
         1,
-    )[1].split("      - uses:", 1)[0]
+    )[1].split("\n      - ", 1)[0]
     script = textwrap.dedent(step.split("        run: |\n", 1)[1])
 
     # This is what setuptools leaves behind after the preceding CI build.

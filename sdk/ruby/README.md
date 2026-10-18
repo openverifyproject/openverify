@@ -1,6 +1,6 @@
-# openverify
+# verifyanything
 
-OpenVerify DRAFT wire SDK for ruby. Independently versioned package **0.1.0**,
+VerifyAnything DRAFT wire SDK for ruby. Independently versioned package **0.1.0**,
 intended registry: RubyGems. Names/ownership must be confirmed before publication.
 
 VCP means portable verification semantics; Provider Contract means the portable
@@ -12,9 +12,9 @@ Provider Contract: exact `0.1`. Both remain DRAFT with no stable 1.0 promise.
 Validation does not fetch schemas, artifact content or URLs.
 
 ```ruby
-require 'openverify'
-object = OpenVerify.parse('vcp', 'decision', '{"protocol":"draft","kind":"CONTINUE"}')
-puts OpenVerify.serialize(object)
+require 'verifyanything'
+object = VerifyAnything.parse('vcp', 'decision', '{"protocol":"draft","kind":"CONTINUE"}')
+puts VerifyAnything.serialize(object)
 ```
 
 ## Actual support
@@ -65,3 +65,5 @@ Tag only this language: `sdk/ruby/vX.Y.Z` after updating only its package.
 The protected release environment is `sdk-ruby`. First publication requires
 owner setup and explicit approval; no package has been published by this change.
 License: MIT (included in the distribution).
+
+Package setup: [VerifyAnything publication guide](https://github.com/openverifyproject/openverify/blob/main/docs/releases/VERIFYANYTHING_SETUP.md).

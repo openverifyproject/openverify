@@ -1,6 +1,6 @@
-# openverify/openverify
+# openverify/verifyanything
 
-OpenVerify DRAFT wire SDK for php. Independently versioned package **0.1.0**,
+VerifyAnything DRAFT wire SDK for php. Independently versioned package **0.1.0**,
 intended registry: Packagist. Names/ownership must be confirmed before publication.
 
 VCP means portable verification semantics; Provider Contract means the portable
@@ -65,3 +65,5 @@ Tag only this language: `sdk/php/vX.Y.Z` after updating only its package.
 The protected release environment is `sdk-php`. First publication requires
 owner setup and explicit approval; no package has been published by this change.
 License: MIT (included in the distribution).
+
+Package setup: [VerifyAnything publication guide](https://github.com/openverifyproject/openverify/blob/main/docs/releases/VERIFYANYTHING_SETUP.md).

@@ -447,3 +447,7 @@ verification, security review, exact PowerShell upload instructions and required
 GitHub/registry settings. A first source push does not publish packages.
 Golden test passes are bounded evidence; full Golden certification and the
 complete v0.1 semantic release gate remain unproved.
+
+## VerifyAnything SDKs and OpenVerify harness
+
+[VerifyAnything](docs/releases/VERIFYANYTHING_SETUP.md) packages the supported portable VCP/Provider SDK subset in eight languages. [OpenVerify](docs/releases/OPENVERIFY_SETUP.md) remains the Python Relay harness and CLI. One monorepo, independently versioned packages.

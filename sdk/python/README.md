@@ -1,6 +1,6 @@
-# openverify-wire
+# verifyanything
 
-OpenVerify DRAFT wire SDK for python. Independently versioned package **0.1.0**,
+VerifyAnything DRAFT wire SDK for python. Independently versioned package **0.1.0**,
 intended registry: PyPI. Names/ownership must be confirmed before publication.
 
 VCP means portable verification semantics; Provider Contract means the portable
@@ -12,7 +12,7 @@ Provider Contract: exact `0.1`. Both remain DRAFT with no stable 1.0 promise.
 Validation does not fetch schemas, artifact content or URLs.
 
 ```python
-from openverify_sdk import parse, serialize
+from verifyanything import parse, serialize
 value = parse('vcp', 'decision', '{"protocol":"draft","kind":"CONTINUE"}')
 print(serialize(value))
 ```
@@ -59,8 +59,8 @@ twice, compares package file contents and installs into a separate consumer.
 Dependency installation can use the network; actual schema validation is offline.
 The shared corpus is a bounded compatibility test, **not full protocol certification**.
 
-This independently packaged wire-only library uses module `openverify_sdk` and
-project `openverify-wire`. The original `openverify` Python distribution and its
+This independently packaged wire-only library uses module `verifyanything` and
+project `verifyanything`. The original `openverify` Python distribution and its
 Relay API remain unchanged. Both are checked against the common fixtures.
 
 ## Release
@@ -69,3 +69,5 @@ Tag only this language: `sdk/python/vX.Y.Z` after updating only its package.
 The protected release environment is `sdk-python`. First publication requires
 owner setup and explicit approval; no package has been published by this change.
 License: MIT (included in the distribution).
+
+Package setup: [VerifyAnything publication guide](https://github.com/openverifyproject/openverify/blob/main/docs/releases/VERIFYANYTHING_SETUP.md).

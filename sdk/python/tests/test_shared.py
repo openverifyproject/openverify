@@ -2,7 +2,7 @@ import json
 from pathlib import Path
 
 import pytest
-from openverify_sdk import ProtocolError, parse, serialize, validate_data
+from verifyanything import ProtocolError, parse, serialize, validate_data
 
 ROOT = Path(__file__).resolve().parents[3] / "conformance/sdk"
 CASES = [
