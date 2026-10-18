@@ -1,12 +1,42 @@
 """Physical process bounds and descendant cleanup on the running platform."""
 
 import asyncio
+import os
+import subprocess
 import sys
+import venv
 from pathlib import Path
 
 import pytest
 
 from openverify.relay.adapters.process import capture
+
+
+def test_capture_preserves_selected_virtualenv(tmp_path: Path) -> None:
+    environment = tmp_path / "venv"
+    venv.EnvBuilder(with_pip=False, symlinks=os.name != "nt").create(environment)
+    python = environment / ("Scripts/python.exe" if os.name == "nt" else "bin/python")
+    site_packages = subprocess.check_output(
+        [str(python), "-I", "-c", "import sysconfig; print(sysconfig.get_path('purelib'))"],
+        text=True,
+    ).strip()
+    (Path(site_packages) / "openverify_venv_probe.py").write_text(
+        "VALUE = 'venv-only'\n", encoding="utf-8"
+    )
+    result = asyncio.run(
+        capture(
+            [
+                str(python),
+                "-I",
+                "-c",
+                "import sys, openverify_venv_probe; "
+                "print(sys.prefix); print(openverify_venv_probe.VALUE)",
+            ],
+            str(tmp_path),
+        )
+    )
+    assert result.returncode == 0, result.stderr
+    assert result.stdout.splitlines() == [str(environment), "venv-only"]
 
 
 def test_capture_bounds_and_environment(tmp_path: Path) -> None:

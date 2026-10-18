@@ -47,6 +47,11 @@
       "old_sha256": "ab5f94c4691230b88e0ecec0d35c82137e56770ad24aca1714eed146bb408eeb",
       "new_sha256": "e7759fae125ab4c47ad99be8cf98b42e57211f78ad470e8ec3b7d0772edbd892",
       "reason": "Append only the SDK/handoff navigation section; existing normative source sections remain unchanged."
+    },
+    "src/openverify/relay/adapters/process.py": {
+      "old_sha256": "0f43102c2dd6c43fd12068a70bb8d789b75c55c6b8ac71fa3c7090f6a61c6214",
+      "new_sha256": "d949fc7e0c0e5d02e344ef7b322a3bc1d85e85de3f3b160334a00a13fb786912",
+      "reason": "Preserve the selected executable symlink so POSIX virtualenv subprocesses retain their Python prefix and dependencies; reproduced by the two Ubuntu CI failures and a real virtualenv-only module regression. No normative or frozen expectation change."
     }
   },
   "expectation_corrections_sha256": "d19de5458770ee379dc3af5d022f39ed310cf6f3edac0d58ac21400b51977917",

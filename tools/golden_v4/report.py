@@ -39,7 +39,8 @@ def verify_freeze():
                 approved=bool(entry and path in {"README.md","spec/draft/dataflow.md","spec/draft/aggregation.md","spec/draft/open-questions.md",
                               "src/openverify/dataflow.py","src/openverify/provider/stdio.py","src/openverify/relay/adapters/server.py",
                               "src/openverify/provider/validation.py","src/openverify/standard/text.py",
-                              "src/openverify/standard/common.py","src/openverify/relay/application/execution.py"}
+                              "src/openverify/standard/common.py","src/openverify/relay/application/execution.py",
+                              "src/openverify/relay/adapters/process.py"}
                               and entry["old_sha256"]==expected and entry["new_sha256"]==actual
                               and revision["frozen_manifest_sha256"]==digest((OUT/"FROZEN_EXPECTATIONS/MANIFEST.json").read_bytes()))
             if not approved:issues.append({"path":path,"error":"Production/source drift","actual":actual,"expected":expected})
