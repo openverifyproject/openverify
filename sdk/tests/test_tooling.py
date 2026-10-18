@@ -108,6 +108,40 @@ def test_release_metadata_mismatch_never_queries_registry():
             sdk_release.preflight("node", "sdk/node/v99.0.0")
 
 
+@pytest.mark.parametrize("code", [1, 128])
+def test_release_rejects_unmerged_or_unknown_main(code):
+    with (
+        patch.object(subprocess, "check_output", return_value="https://github.com/openverifyproject/openverify.git\n"),
+        patch.object(subprocess, "run", return_value=subprocess.CompletedProcess([], code)),
+    ):
+        with pytest.raises(RuntimeError, match="merged into origin/main"):
+            sdk_release.require_merged_source("a" * 40)
+
+
+def test_release_rejects_different_repository():
+    with patch.object(subprocess, "check_output", return_value="https://github.com/unrelated/openverify.git"):
+        with pytest.raises(RuntimeError, match="openverifyproject/openverify"):
+            sdk_release.require_merged_source("a" * 40)
+
+
+def test_exact_package_identities_and_preserved_language_apis():
+    import tomllib
+
+    assert json.loads((ROOT / "sdk/node/package.json").read_text())["name"] == "openverify"
+    rust = tomllib.loads((ROOT / "sdk/rust/Cargo.toml").read_text())
+    assert rust["package"]["name"] == "openverify"
+    assert rust["lib"]["name"] == "openverify_sdk"
+    dotnet = ROOT / "sdk/dotnet/OpenVerify.Sdk/OpenVerify.Sdk.csproj"
+    assert "<PackageId>OpenVerify</PackageId>" in dotnet.read_text()
+    assert '<artifactId>openverify</artifactId>' in (ROOT / "sdk/jvm/pom.xml").read_text()
+    assert "s.name = 'openverify'" in (ROOT / "sdk/ruby/openverify.gemspec").read_text()
+    php = json.loads((ROOT / "sdk/php/composer.json").read_text())
+    assert php["name"] == "openverify/openverify"
+    python = tomllib.loads((ROOT / "sdk/python/pyproject.toml").read_text())
+    assert python["project"]["name"] == "openverify-wire"
+    assert sdk_release.NAME_URLS["node"] == "https://registry.npmjs.org/openverify"
+
+
 def test_registry_failures_are_not_name_availability():
     with patch.object(sdk_release, "fetch", side_effect=OSError("offline")):
         assert all(
@@ -172,7 +206,7 @@ def test_mirror_refuses_nonempty_unexpected_repository(monkeypatch):
 def test_mirror_refuses_unrelated_history(monkeypatch):
     monkeypatch.setenv("GITHUB_REF_NAME", "sdk/php/v0.1.0")
     monkeypatch.setenv("SDK_PHP_MIRROR", "openverifyproject/sdk-php")
-    answers = ["a" * 40, "b" * 40 + "\trefs/heads/main", "", '{"name":"openverify/sdk"}']
+    answers = ["a" * 40, "b" * 40 + "\trefs/heads/main", "", '{"name":"openverify/openverify"}']
     calls = []
 
     def run(command, **kwargs):

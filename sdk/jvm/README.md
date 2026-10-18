@@ -1,4 +1,4 @@
-# io.github.openverifyproject:openverify-sdk
+# io.github.openverifyproject:openverify
 
 OpenVerify DRAFT wire SDK for jvm. Independently versioned package **0.1.0**,
 intended registry: Maven Central. Names/ownership must be confirmed before publication.

@@ -1,5 +1,7 @@
 # SDK implementation verification
 
+Historical pre-rename results. Current package identities and rerun evidence are documented in [FIRST_PUBLICATION.md](../FIRST_PUBLICATION.md).
+
 Implementation is isolated on `feat/language-sdks`, based on production
 `5f17f402a270882f244a54dde25eda92a085eb39`. The complete support boundary is in
 [README.md](README.md). This is a bounded DRAFT wire SDK release candidate, not

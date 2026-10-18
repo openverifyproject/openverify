@@ -1,0 +1,94 @@
+{
+  "checked_at": "2026-10-18T05:57:50.267790+00:00",
+  "queries": [
+    {
+      "registry": "npm",
+      "url": "https://registry.npmjs.org/openverify",
+      "http_status": 404,
+      "classification": "AVAILABLE",
+      "ownership": "UNKNOWN",
+      "qualification": "404 is not name reservation or proof registry will accept first registration",
+      "availability_basis": "UNLISTED only; actual registration and reserved-name restrictions unverified"
+    },
+    {
+      "registry": "pypi",
+      "url": "https://pypi.org/pypi/openverify/json",
+      "http_status": 404,
+      "classification": "AVAILABLE",
+      "ownership": "UNKNOWN",
+      "qualification": "404 is not name reservation or proof registry will accept first registration",
+      "availability_basis": "UNLISTED only; actual registration and reserved-name restrictions unverified"
+    },
+    {
+      "registry": "crates",
+      "url": "https://crates.io/api/v1/crates/openverify",
+      "http_status": 404,
+      "classification": "AVAILABLE",
+      "ownership": "UNKNOWN",
+      "qualification": "404 is not name reservation or proof registry will accept first registration",
+      "availability_basis": "UNLISTED only; actual registration and reserved-name restrictions unverified"
+    },
+    {
+      "registry": "ruby",
+      "url": "https://rubygems.org/api/v1/gems/openverify.json",
+      "http_status": 404,
+      "classification": "AVAILABLE",
+      "ownership": "UNKNOWN",
+      "qualification": "404 is not name reservation or proof registry will accept first registration",
+      "availability_basis": "UNLISTED only; actual registration and reserved-name restrictions unverified"
+    },
+    {
+      "registry": "nuget",
+      "url": "https://api.nuget.org/v3-flatcontainer/openverify/index.json",
+      "http_status": 404,
+      "classification": "AVAILABLE",
+      "ownership": "UNKNOWN",
+      "qualification": "404 is not name reservation or proof registry will accept first registration",
+      "availability_basis": "UNLISTED only; actual registration and reserved-name restrictions unverified"
+    },
+    {
+      "registry": "maven",
+      "url": "https://repo.maven.apache.org/maven2/io/github/openverifyproject/openverify/maven-metadata.xml",
+      "http_status": 404,
+      "classification": "AVAILABLE",
+      "ownership": "UNKNOWN",
+      "qualification": "404 is not name reservation or proof registry will accept first registration",
+      "availability_basis": "UNLISTED only; actual registration and reserved-name restrictions unverified"
+    },
+    {
+      "registry": "php",
+      "url": "https://repo.packagist.org/p2/openverify/openverify.json",
+      "http_status": 404,
+      "classification": "AVAILABLE",
+      "ownership": "UNKNOWN",
+      "qualification": "404 is not name reservation or proof registry will accept first registration",
+      "availability_basis": "UNLISTED only; actual registration and reserved-name restrictions unverified"
+    },
+    {
+      "registry": "github",
+      "url": "https://api.github.com/repos/openverifyproject/openverify",
+      "http_status": 200,
+      "classification": "OWNED_BY_US",
+      "public_metadata": {
+        "full_name": "openverifyproject/openverify",
+        "html_url": "https://github.com/openverifyproject/openverify",
+        "visibility": "public",
+        "private": false,
+        "default_branch": "main",
+        "archived": false,
+        "owner": "openverifyproject"
+      },
+      "ownership": "OWNED_BY_US (user-confirmed organization); authenticated write permission not yet verified"
+    },
+    {
+      "registry": "go",
+      "url": "https://proxy.golang.org/github.com/openverifyproject/openverify/sdk/go/@v/list",
+      "http_status": 404,
+      "classification": "AVAILABLE",
+      "ownership": "OWNED_BY_US (user-confirmed organization); authenticated write permission not yet verified",
+      "qualification": "404 is not name reservation or proof registry will accept first registration",
+      "availability_basis": "UNLISTED only; actual registration and reserved-name restrictions unverified"
+    }
+  ],
+  "gh_cli": false
+}

@@ -1,5 +1,5 @@
 Gem::Specification.new do |s|
-  s.name = 'openverify-sdk'
+  s.name = 'openverify'
   s.version = '0.1.0'
   s.summary = 'OpenVerify DRAFT VCP and Provider Contract wire SDK'
   s.authors = ['OpenVerify contributors']

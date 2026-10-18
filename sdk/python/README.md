@@ -13,8 +13,7 @@ Validation does not fetch schemas, artifact content or URLs.
 
 ```python
 from openverify_sdk import parse, serialize
-
-value = parse("vcp", "decision", '{"protocol":"draft","kind":"CONTINUE"}')
+value = parse('vcp', 'decision', '{"protocol":"draft","kind":"CONTINUE"}')
 print(serialize(value))
 ```
 

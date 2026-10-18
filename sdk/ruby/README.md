@@ -1,4 +1,4 @@
-# openverify-sdk
+# openverify
 
 OpenVerify DRAFT wire SDK for ruby. Independently versioned package **0.1.0**,
 intended registry: RubyGems. Names/ownership must be confirmed before publication.

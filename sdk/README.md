@@ -1,5 +1,7 @@
 # OpenVerify language SDKs
 
+Current exact-name publication preparation: [FIRST_PUBLICATION.md](../FIRST_PUBLICATION.md). Prior verification artifacts retain their original package identities and hashes.
+
 OpenVerify is the universal verification ecosystem. VCP supplies portable
 verification semantics, Provider Contract supplies the portable verifier interface,
 and Relay is the separate Python reference execution engine.
@@ -17,13 +19,13 @@ been used as implementation or certification sources.
 
 | SDK | Proposed package | Registry | Native validator |
 | --- | --- | --- | --- |
-| Node/TypeScript | `@openverify/sdk` | npm | Ajv 8, Draft 2020-12 |
-| Rust | `openverify-sdk` | crates.io | jsonschema, Draft 2020-12 |
+| Node/TypeScript | `openverify` | npm | Ajv 8, Draft 2020-12 |
+| Rust | `openverify` | crates.io | jsonschema, Draft 2020-12 |
 | Go | `github.com/openverifyproject/openverify/sdk/go` | Git/Go modules | santhosh-tekuri/jsonschema v6, ECMAScript regex adapter |
-| JVM | `io.github.openverifyproject:openverify-sdk` | Maven Central | NetworkNT, Draft 2020-12 |
-| .NET | `OpenVerify.Sdk` | NuGet | JsonSchema.Net, Draft 2020-12 |
-| Ruby | `openverify-sdk` | RubyGems | json_schemer, Draft 2020-12 |
-| PHP | `openverify/sdk` | Packagist | Opis JSON Schema, Draft 2020-12 |
+| JVM | `io.github.openverifyproject:openverify` | Maven Central | NetworkNT, Draft 2020-12 |
+| .NET | `OpenVerify` | NuGet | JsonSchema.Net, Draft 2020-12 |
+| Ruby | `openverify` | RubyGems | json_schemer, Draft 2020-12 |
+| PHP | `openverify/openverify` | Packagist | Opis JSON Schema, Draft 2020-12 |
 | Python wire library | `openverify-wire` (`openverify_sdk`) | PyPI | jsonschema, Draft 2020-12 |
 
 All begin at package version 0.1.0; these versions are independent. The original

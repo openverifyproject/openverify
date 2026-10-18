@@ -150,7 +150,7 @@ PUBLISH = {
         run: |
           mkdir -p .sdk-release/crate
           tar -xzf dist/sdk/rust/*.crate -C .sdk-release/crate
-          cd .sdk-release/crate/openverify-sdk-*
+          cd .sdk-release/crate/openverify-[0-9]*
           cargo publish --locked
 """,
     "go": """      - name: Verify public nested-module resolution from the pushed tag

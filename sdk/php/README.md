@@ -1,4 +1,4 @@
-# openverify/sdk
+# openverify/openverify
 
 OpenVerify DRAFT wire SDK for php. Independently versioned package **0.1.0**,
 intended registry: Packagist. Names/ownership must be confirmed before publication.
