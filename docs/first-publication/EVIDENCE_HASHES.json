@@ -1,0 +1,21 @@
+{
+  "docs/first-publication/evidence/actionlint.log.gz": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+  "docs/first-publication/evidence/freeze.log.gz": "5e5151e06eff8707d2be81018253a8db2b376b99e3584cd59e0684aecc4a70f0",
+  "docs/first-publication/evidence/php-lock-update-workspace-cache.log.gz": "cb8bc2de9508361cf97e5554683c02d0b3da7ab4455e0b70c3366c997409d0d2",
+  "docs/first-publication/evidence/php-lock-update.log.gz": "ea18258ebf67a8ce5438a18849317ef322039bd6ece0c3710699aac09c096af5",
+  "docs/first-publication/evidence/python-coexist-check.log.gz": "6fec4ff18ea081bf28b67eb2cfab1d577e3fddcd962a3b8a01aa532c3f170adb",
+  "docs/first-publication/evidence/python-coexist-install.log.gz": "68af5c3308d402815ad140e4cd73ad01099747dc002cf20ec7d440f0bcb50943",
+  "docs/first-publication/evidence/python-coexist-shell-quoting.log.gz": "acdac081d7cf4e11188fa6b310f0e3f780813827c95511e98954ecfc16679ad1",
+  "docs/first-publication/evidence/sdk-dotnet.log.gz": "11d665e93ec032ff6c0e6167561e33a7523ca5220e59b4b58926d8ef0f39e7f3",
+  "docs/first-publication/evidence/sdk-go.log.gz": "0edbbbfa3c7b90c7b8592f2066f6ef46a0f6ce7f52f17a9b97b5e0f2995c3f3a",
+  "docs/first-publication/evidence/sdk-jvm.log.gz": "6c177c79a11474f244370f441cc863bff1ae98b85379843d6eb3c5ae3f229904",
+  "docs/first-publication/evidence/sdk-node.log.gz": "8ee58a1cc74a77c28daa0f2b26ab7e54833a03921a9b20de1788a421dfd3c217",
+  "docs/first-publication/evidence/sdk-php.log.gz": "6cd0358d04e9b0905d9bd68eeea9a3b654fe090afc1fae3cd13179f59ba55edd",
+  "docs/first-publication/evidence/sdk-python.log.gz": "f7741da5093d01f4ab7f8b9f7b9d25ca5fc0b6556df6931668005e7960371d10",
+  "docs/first-publication/evidence/sdk-ruby.log.gz": "16d2ace55175413607db13507175c2d68e4588c969ef58a1f57ed4ad14c61552",
+  "docs/first-publication/evidence/sdk-rust.log.gz": "abd9b7fb343c154b9401c0883286b126dfe99eae47dbef2f39cfca9f172ef927",
+  "docs/first-publication/evidence/secret-scan.json.gz": "abc129be8d26e8d4afe9ce45f9d5a73c8ed9aa62810ca24ee789fe4581dc4a80",
+  "docs/first-publication/evidence/secret-scan.log.gz": "1407d0a7455a26fff3dcb390815eeb06d344722ac0cddf8336c4ca86ecc30513",
+  "docs/first-publication/evidence/tooling-final.log.gz": "2e0670daf7b0ac67b4b8841bd274038109c17a94b4c29a2c5b5c2f82ba9c8916",
+  "docs/first-publication/evidence/tooling-final.xml.gz": "d867df4e797b4d982b4f11598dbbab7ce9a81cb69ce2655b11646e1836960159"
+}

@@ -57,7 +57,7 @@ def names():
             state = (
                 "listed; ownership unverified"
                 if status == 200
-                else "not listed; availability and ownership unreserved"
+                else "unlisted; registration acceptance and reserved-name restrictions unverified"
             )
         except Exception as error:
             status, state = None, "query failed: " + str(error)
@@ -68,6 +68,8 @@ def names():
                 "url": url,
                 "http_status": status,
                 "status": state,
+                "classification": "AVAILABLE" if status == 404 else "UNKNOWN",
+                "ownership": "UNKNOWN; no authenticated registry ownership checked",
             }
         )
     return {"checked_at": datetime.datetime.now(datetime.UTC).isoformat(), "packages": rows}
@@ -105,9 +107,9 @@ def require_merged_source(head):
     remote = subprocess.check_output(
         ["git", "remote", "get-url", "origin"], cwd=ROOT, text=True
     ).strip()
-    if remote not in (
-        "https://github.com/openverifyproject/openverify.git",
-        "git@github.com:openverifyproject/openverify.git",
+    if remote.removesuffix(".git") not in (
+        "https://github.com/openverifyproject/openverify",
+        "git@github.com:openverifyproject/openverify",
     ):
         raise RuntimeError("Release source must use openverifyproject/openverify origin")
     result = subprocess.run(

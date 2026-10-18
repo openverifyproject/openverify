@@ -1,0 +1,207 @@
+{
+  "packages": [
+    {
+      "language": "node",
+      "version": "0.1.0",
+      "commit": "37a9e414f151075ce637bb6a0712ee73ad8c06fa",
+      "dirty_worktree": false,
+      "tests_run": true,
+      "vcp_total": 52,
+      "provider_total": 45,
+      "consumer": "passed",
+      "repeated_package_contents": "identical",
+      "artifact": "openverify-0.1.0.tgz",
+      "sha256": "10a21b4e0896283847761bf35c4dac90c170ad5ca0644e903fae8edbbe784ac9",
+      "contents_sha256": "7b0cbc41119106175065b411794322011f088cabc1ac2c0fb1076397939629c4",
+      "package": "openverify",
+      "execution": {
+        "language": "node",
+        "exit_code": 0,
+        "duration_seconds": 27.869537400023546
+      },
+      "publication": "NOT ATTEMPTED; requires explicit owner approval and registry authentication"
+    },
+    {
+      "language": "python",
+      "version": "0.1.0",
+      "commit": "37a9e414f151075ce637bb6a0712ee73ad8c06fa",
+      "dirty_worktree": false,
+      "tests_run": true,
+      "vcp_total": 52,
+      "provider_total": 45,
+      "consumer": "passed",
+      "repeated_package_contents": "identical",
+      "artifact": "openverify_wire-0.1.0-py3-none-any.whl",
+      "sha256": "fdb54e0806026a1d40f0cee84d923fd7519fd904427c8578c533617cd62bfe9f",
+      "contents_sha256": "f66974cf8e2e03ef3c67537f010e6b7cef85f873573b84fb5c184b2c4d458701",
+      "package": "openverify-wire",
+      "execution": {
+        "language": "python",
+        "exit_code": 0,
+        "duration_seconds": 128.40522970003076
+      },
+      "publication": "NOT ATTEMPTED; requires explicit owner approval and registry authentication"
+    },
+    {
+      "language": "rust",
+      "version": "0.1.0",
+      "commit": "37a9e414f151075ce637bb6a0712ee73ad8c06fa",
+      "dirty_worktree": false,
+      "tests_run": true,
+      "vcp_total": 52,
+      "provider_total": 45,
+      "consumer": "passed",
+      "repeated_package_contents": "identical",
+      "artifact": "openverify-0.1.0.crate",
+      "sha256": "a455ee2f29c5c4c6fbbc2d67ebf2879ac9ada87cbaf138ba36b75809fcedc70d",
+      "contents_sha256": "435b58ea534a150d851c4e19c666f61ca70d8222f57f566edae2c05e6de52f23",
+      "package": "openverify",
+      "execution": {
+        "language": "rust",
+        "exit_code": 0,
+        "duration_seconds": 108.27317990001757
+      },
+      "publication": "NOT ATTEMPTED; requires explicit owner approval and registry authentication"
+    },
+    {
+      "language": "go",
+      "version": "0.1.0",
+      "commit": "37a9e414f151075ce637bb6a0712ee73ad8c06fa",
+      "dirty_worktree": false,
+      "tests_run": true,
+      "vcp_total": 52,
+      "provider_total": 45,
+      "consumer": "passed",
+      "repeated_package_contents": "identical",
+      "artifact": "openverify-go.zip",
+      "sha256": "c9373e604fd9b173f578c16620b2a8a596485b43d71d95c6508fd81721518240",
+      "contents_sha256": "03445cd43e0f7a7151f21a8c7b0a0c35946f8c06c4d7077004d9cbe758b2b3e4",
+      "package": "github.com/openverifyproject/openverify/sdk/go",
+      "execution": {
+        "language": "go",
+        "exit_code": 0,
+        "duration_seconds": 26.970984100014903
+      },
+      "publication": "NOT ATTEMPTED; requires explicit owner approval and registry authentication"
+    },
+    {
+      "language": "jvm",
+      "version": "0.1.0",
+      "commit": "37a9e414f151075ce637bb6a0712ee73ad8c06fa",
+      "dirty_worktree": false,
+      "tests_run": true,
+      "vcp_total": 52,
+      "provider_total": 45,
+      "consumer": "passed",
+      "repeated_package_contents": "identical",
+      "artifact": "openverify-0.1.0.jar",
+      "sha256": "005e0be19b9b04f680fbaa32e94479229d5d7ac3b1ad131523a9c9978cd00849",
+      "contents_sha256": "7b875b7ffc389a389d49515ed3f6dd7c262ce612dc2aefc0181a792154808587",
+      "package": "io.github.openverifyproject:openverify",
+      "execution": {
+        "language": "jvm",
+        "exit_code": 0,
+        "duration_seconds": 47.31656889995793
+      },
+      "publication": "NOT ATTEMPTED; requires explicit owner approval and registry authentication"
+    },
+    {
+      "language": "dotnet",
+      "version": "0.1.0",
+      "commit": "37a9e414f151075ce637bb6a0712ee73ad8c06fa",
+      "dirty_worktree": false,
+      "tests_run": true,
+      "vcp_total": 52,
+      "provider_total": 45,
+      "consumer": "passed",
+      "repeated_package_contents": "identical",
+      "artifact": "OpenVerify.0.1.0.nupkg",
+      "sha256": "861523f3962cc533bb3e9b0aef6687a2890660dc4a6f22994ec2b19b6dfeb8c7",
+      "contents_sha256": "e11c16b48c976d56058a8a8a9039a942330f8f93a4654ce0e8aed366c3fa1111",
+      "package": "OpenVerify",
+      "execution": {
+        "language": "dotnet",
+        "exit_code": 0,
+        "duration_seconds": 48.602926999970805
+      },
+      "publication": "NOT ATTEMPTED; requires explicit owner approval and registry authentication"
+    },
+    {
+      "language": "ruby",
+      "version": "0.1.0",
+      "commit": "37a9e414f151075ce637bb6a0712ee73ad8c06fa",
+      "dirty_worktree": false,
+      "tests_run": true,
+      "vcp_total": 52,
+      "provider_total": 45,
+      "consumer": "passed",
+      "repeated_package_contents": "identical",
+      "artifact": "openverify.gem",
+      "sha256": "2111d0407fb5bd043e6ed789c844a0f90c49cdaa2fe266d44a6531dfa29cc7bb",
+      "contents_sha256": "8edd02776958130619ea0d394c9430c216e4c77fdfdfad3adeab913d8722b602",
+      "package": "openverify",
+      "execution": {
+        "language": "ruby",
+        "exit_code": 0,
+        "duration_seconds": 63.72918589995243
+      },
+      "publication": "NOT ATTEMPTED; requires explicit owner approval and registry authentication"
+    },
+    {
+      "language": "php",
+      "version": "0.1.0",
+      "commit": "37a9e414f151075ce637bb6a0712ee73ad8c06fa",
+      "dirty_worktree": false,
+      "tests_run": true,
+      "vcp_total": 52,
+      "provider_total": 45,
+      "consumer": "passed",
+      "repeated_package_contents": "identical",
+      "artifact": "openverify.zip",
+      "sha256": "0011a6322de96291b55a8624aeea0d87698012273a84ca6daad4fbafa15789a1",
+      "contents_sha256": "b58eea764668534f4ab0f950e25a9cc1637543ec878acb7768cc9374257dc1a9",
+      "package": "openverify/openverify",
+      "execution": {
+        "language": "php",
+        "exit_code": 0,
+        "duration_seconds": 34.3681166000315
+      },
+      "publication": "NOT ATTEMPTED; requires explicit owner approval and registry authentication"
+    }
+  ],
+  "shared_corpus_per_sdk": {
+    "vcp": 52,
+    "provider": 45
+  },
+  "scope": "DRAFT wire SDK native, repeat-content builds and clean local package consumers; not universal conformance or live publication",
+  "auth": "Existing registry accounts confirmed by user; no authenticated OpenVerify ownership inspected or token requested",
+  "preserved_previous_artifacts": "dist/sdk-before-exact-names-e19c37a (ignored local outputs); historical tracked evidence unchanged",
+  "reviewed_code_commit": "37a9e414f151075ce637bb6a0712ee73ad8c06fa",
+  "remote_main_at_preflight": "4bcf13a53ec2743d2f49e68a1a235fbb0a7c4257",
+  "maintenance_guards": {
+    "passed": 44,
+    "failed": 0
+  },
+  "workflow_lint": {
+    "workflows": 11,
+    "tool": "actionlint 1.7.7",
+    "exit_code": 0,
+    "shellcheck": false,
+    "pyflakes": false
+  },
+  "ruff": "PASS on changed SDK tooling and maintenance tests",
+  "freeze_verification": {
+    "verified": true,
+    "issues": []
+  },
+  "python_distribution_coexistence": "PASS: installed core and wire distributions expose both imports and functional wire parse/serialize",
+  "resolved_preparation_invocations": [
+    "Composer lock refresh initially used an unwritable sandbox cache; workspace cache rerun passed",
+    "Extra Python coexistence probe initially had shell JSON quoting error; file-based independently authored probe passed; failed log retained"
+  ],
+  "sensitive_data_scan": {
+    "tool": "gitleaks 8.30.1",
+    "changed_and_new_files": "zero candidates; redacted logs retained",
+    "history": "Previously reviewed integrated history unchanged except requested package preparation commits"
+  }
+}

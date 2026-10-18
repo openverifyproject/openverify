@@ -45,7 +45,8 @@ independent; no workflow changes another package's version or tags.
 | Ruby | Create a RubyGems.org account. Create a pending trusted publisher for gem `openverify`, owner `openverifyproject`, repository `openverify`, workflow `sdk-release-ruby.yml`, environment `sdk-ruby`. No long-lived key is used; the pinned RubyGems credential action exchanges OIDC for a short-lived publish credential. [new-gem trusted publishing](https://guides.rubygems.org/trusted-publishing/). |
 | PHP | Authorize/create a dedicated, initially empty public GitHub package repository, for example `openverifyproject/sdk-php`, **without** a generated README, license or unrelated initial commit. Set `SDK_PHP_MIRROR=openverifyproject/sdk-php` in `sdk-php`. Store a fine-grained GitHub token, restricted to **that mirror repository** with Contents read/write, as `SDK_PHP_MIRROR_TOKEN`. Register the mirror repository URL on Packagist under the authorized account and configure its GitHub webhook/VCS synchronization. The mirror has `composer.json` at its root; no package files are copied by hand. [Packagist submission](https://packagist.org/about#how-to-update-packages). |
 
-Name observations are in [registry-check.json](registry-check.json), including
+Current exact-name observations are in [NAME_CHECKS.json](../docs/first-publication/NAME_CHECKS.json).
+Historical pre-rename observations remain in [registry-check.json](registry-check.json), including
 timestamp, endpoint and HTTP result. A 404 means unlisted at the observation time,
 not a reservation, registry policy approval, namespace ownership or guarantee
 that publication will succeed. Repeat `python tools/sdk_release.py names` before
