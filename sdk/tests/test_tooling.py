@@ -124,6 +124,19 @@ def test_release_rejects_different_repository():
             sdk_release.require_merged_source("a" * 40)
 
 
+@pytest.mark.parametrize("remote", [
+    "https://github.com/openverifyproject/openverify",
+    "https://github.com/openverifyproject/openverify.git",
+    "git@github.com:openverifyproject/openverify.git",
+])
+def test_release_accepts_merged_source_and_checkout_origin_forms(remote):
+    with (
+        patch.object(subprocess, "check_output", return_value=remote),
+        patch.object(subprocess, "run", return_value=subprocess.CompletedProcess([], 0)),
+    ):
+        sdk_release.require_merged_source("a" * 40)
+
+
 def test_exact_package_identities_and_preserved_language_apis():
     import tomllib
 
@@ -146,6 +159,7 @@ def test_registry_failures_are_not_name_availability():
     with patch.object(sdk_release, "fetch", side_effect=OSError("offline")):
         assert all(
             p["http_status"] is None and "query failed" in p["status"]
+            and p["classification"] == "UNKNOWN"
             for p in sdk_release.names()["packages"]
         )
 

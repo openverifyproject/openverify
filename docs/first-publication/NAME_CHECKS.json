@@ -90,5 +90,76 @@
       "availability_basis": "UNLISTED only; actual registration and reserved-name restrictions unverified"
     }
   ],
-  "gh_cli": false
+  "gh_cli": false,
+  "final_recheck_at": "2026-10-18T06:09:15.560274+00:00",
+  "final_recheck": [
+    {
+      "registry": "npm",
+      "http_status": 404,
+      "classification": "AVAILABLE",
+      "basis": "Public listing only; authenticated registry ownership and registration acceptance remain unverified"
+    },
+    {
+      "registry": "pypi",
+      "http_status": 404,
+      "classification": "AVAILABLE",
+      "basis": "Public listing only; authenticated registry ownership and registration acceptance remain unverified"
+    },
+    {
+      "registry": "crates",
+      "http_status": 404,
+      "classification": "AVAILABLE",
+      "basis": "Public listing only; authenticated registry ownership and registration acceptance remain unverified"
+    },
+    {
+      "registry": "ruby",
+      "http_status": 404,
+      "classification": "AVAILABLE",
+      "basis": "Public listing only; authenticated registry ownership and registration acceptance remain unverified"
+    },
+    {
+      "registry": "nuget",
+      "http_status": 404,
+      "classification": "AVAILABLE",
+      "basis": "Public listing only; authenticated registry ownership and registration acceptance remain unverified"
+    },
+    {
+      "registry": "maven",
+      "http_status": 404,
+      "classification": "AVAILABLE",
+      "basis": "Public listing only; authenticated registry ownership and registration acceptance remain unverified"
+    },
+    {
+      "registry": "php",
+      "http_status": 404,
+      "classification": "AVAILABLE",
+      "basis": "Public listing only; authenticated registry ownership and registration acceptance remain unverified"
+    },
+    {
+      "registry": "github",
+      "http_status": 200,
+      "classification": "OWNED_BY_US",
+      "basis": "Public listing only; authenticated registry ownership and registration acceptance remain unverified"
+    },
+    {
+      "registry": "go",
+      "http_status": 404,
+      "classification": "AVAILABLE",
+      "basis": "Public listing only; authenticated registry ownership and registration acceptance remain unverified"
+    }
+  ],
+  "account_confirmation": {
+    "source": "user",
+    "existing_accounts": [
+      "npm",
+      "PyPI",
+      "crates.io",
+      "RubyGems",
+      "NuGet",
+      "Maven Central",
+      "Packagist"
+    ],
+    "OpenVerify_names_registered_reserved_or_published_by_user": false,
+    "authenticated_registry_ownership": "NOT VERIFIED"
+  }
 }

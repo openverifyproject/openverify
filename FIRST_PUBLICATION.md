@@ -13,6 +13,9 @@ The live read-only registry queries are retained in
 were unlisted (HTTP 404). That means **AVAILABLE in the public listing**, not
 reserved, owned by us or guaranteed acceptable at registration. No authenticated
 registry account was inspected. Ownership is **UNKNOWN** for every registry.
+The owner confirms existing npm, PyPI, crates.io, RubyGems, NuGet, Central and
+Packagist accounts previously used for OpenExit, and no OpenVerify names
+registered/reserved/published. Reuse those accounts; no new account is required.
 No queried name was confirmed TAKEN or RESERVED. The Go source organization is
 user-confirmed owned; authenticated repository write access remains unverified.
 The public GitHub API confirms repository owner `openverifyproject`, public
@@ -183,14 +186,55 @@ Keep the complete required setup for other languages independent.
 
 | Language | Exact owner action before its tag |
 |---|---|
-| python | PyPI account → Publishing → add pending GitHub publisher, project `openverify-wire`, owner `openverifyproject`, repo `openverify`, workflow `sdk-release-python.yml`, environment `sdk-python`. No token. Exact core name remains intentionally unpublished. |
+| python | Existing PyPI account → Publishing → add pending GitHub publisher, project `openverify-wire`, owner `openverifyproject`, repo `openverify`, workflow `sdk-release-python.yml`, environment `sdk-python`. No token. Exact core name remains intentionally unpublished. |
 | go | Confirm repository write permission and successful merged-source SDK checks. No registry account/token. Pushing its tag is publication. |
-| dotnet | NuGet account → API Keys → create expiring push key authorized for new package `OpenVerify`; run `gh secret set NUGET_API_KEY --repo openverifyproject/openverify --env sdk-dotnet`. |
+| dotnet | Existing NuGet account → API Keys → create expiring push key authorized for new package `OpenVerify`; run `gh secret set NUGET_API_KEY --repo openverifyproject/openverify --env sdk-dotnet`. |
 | jvm | Central Portal → verify namespace `io.github.openverifyproject` using its GitHub ownership verification. Generate Portal token and a signing key accepted by Central; configure `CENTRAL_USERNAME`, `CENTRAL_PASSWORD`, `MAVEN_GPG_PRIVATE_KEY` (armored secret key), `MAVEN_GPG_PASSPHRASE` in `sdk-jvm` using interactive `gh secret set`. Account/namespace/signing are not inferred from GitHub ownership. See `sdk/RELEASE.md`. |
 | php | Authorize an empty distribution-only mirror `openverifyproject/sdk-php` (no initial commit), register its URL as `openverify/openverify` at Packagist. Configure mirror webhook/sync. Set `SDK_PHP_MIRROR=openverifyproject/sdk-php` and `SDK_PHP_MIRROR_TOKEN` restricted to that mirror in environment `sdk-php`. Source remains this monorepo. |
 | node | Configure npm trusted publisher for existing package `openverify`, exact owner/repo, `sdk-release-node.yml`, environment `sdk-node`. Bootstrap manually first if npm requires an existing package. |
 | ruby | Pending trusted publisher for gem `openverify`, exact owner/repo, `sdk-release-ruby.yml`, environment `sdk-ruby`. |
 | rust | Authorized crates.io publish token as `CARGO_REGISTRY_TOKEN` in `sdk-rust`. |
+
+### Exact websites and namespace actions
+
+- **npm:** sign into the existing account at <https://www.npmjs.com/login>, then
+  use `npm.cmd login --auth-type=web` and `npm.cmd whoami` before the manual
+  command above. `openverify` is unscoped; no npm organization is needed.
+- **PyPI:** open <https://pypi.org/manage/account/publishing/> in the existing
+  account. Fill the pending-publisher fields exactly as listed above. The first
+  successful upload creates the project; a pending entry does not reserve it.
+- **crates.io:** sign in at <https://crates.io/> with the existing account. Use
+  Account Settings → API Tokens for an authorized new-crate publishing token,
+  then interactive `cargo login`; never pass that token as a command argument.
+- **RubyGems:** sign in at <https://rubygems.org/sign_in>; use `gem.cmd signin`
+  for manual publication, or follow the pending trusted-publisher account steps
+  in <https://guides.rubygems.org/trusted-publishing/> for gem `openverify`.
+- **NuGet:** open <https://www.nuget.org/account/apikeys> in the existing account.
+  Create an expiring key permitting creation/push of `OpenVerify` (an appropriate
+  glob for the new ID). Enter it through the interactive `gh secret set` command
+  above. Registry acceptance is still required; a 404 does not rule out
+  protected/reserved IDs or prefixes.
+- **Maven:** sign in at <https://central.sonatype.com/> → profile menu → View
+  Namespaces → Add Namespace → `io.github.openverifyproject`. Follow the Portal's
+  verification instructions. If it provides a code-host verification key, create
+  the requested public verification repository **under openverifyproject** using
+  the exact generated name, then verify. Do not invent a key or substitute a
+  personal namespace. Organization namespaces are **not automatically
+  registered** by personal GitHub login. If organization proof is unavailable or
+  rejected, contact Central support with this organization/repository and request
+  namespace verification; only JVM waits. Once verified, use the Portal user
+  token and the existing signing-key setup for its environment.
+  [Official namespace instructions](https://central.sonatype.org/register/namespace/).
+- **Packagist:** sign into <https://packagist.org/login>. First authorize/create
+  the empty `openverifyproject/sdk-php` distribution mirror and configure its
+  restricted token as above. After the first mirror tag exists, open
+  <https://packagist.org/packages/submit> with
+  `https://github.com/openverifyproject/sdk-php`. Confirm detected name
+  `openverify/openverify`, submit and connect GitHub synchronization. If the first
+  post-publication job reports absence before registration, register and run
+  `tools/sdk_verify.py php --registry-only`; do not repush an existing tag. An
+  empty repository cannot yet be registered as a working package. No other SDK
+  waits for this mirror/registration sequence.
 
 Go/PHP require qualified paths; GitHub ownership does not grant the Packagist
 vendor, PyPI name, npm name or Central namespace. Registry rejections must be
@@ -220,6 +264,23 @@ verification can pass. If a post-publication consumer fails, inspect the registr
 before retrying; an upload may already have succeeded. Never overwrite a release.
 
 ## Verification status
+
+All eight native/test/package/consumer profiles passed at clean code commit
+`37a9e414f151075ce637bb6a0712ee73ad8c06fa`. Every SDK consumed 52 VCP and 45
+Provider shared cases. Native reporting: Node 105; Python 197; JVM 98; .NET 98;
+Ruby 99 runs/154 assertions; PHP 3 tests/194 assertions; Rust 2 integration
+functions and Go 3 top-level functions with the shared cases inside them.
+Counts are not added across these different native granularities or treated as
+semantic completeness. Each package's two main builds had identical canonical
+contents; all eight clean consumers executed an authored Decision parse/serialize.
+Both installed Python distributions were additionally checked together.
+
+The final 44 maintenance guards, Ruff, all 11 workflow lint checks and frozen-integrity check are
+recorded with those results. Original artifacts remain locally under ignored
+`dist/sdk-before-exact-names-e19c37a`; historical tracked evidence is unchanged.
+Current ready-to-publish local archives are under `dist/sdk/LANGUAGE/`. Because
+this commit is not yet merged remotely, rebuild/verify on the merged source as
+shown above before using them for publication.
 
 Exact-name package reruns and archive hashes are recorded separately under
 `docs/first-publication/`; historical frozen files and pre-rename evidence remain
