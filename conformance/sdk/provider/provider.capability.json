@@ -1,0 +1,44 @@
+{
+  "id": "provider.capability",
+  "contract": "provider",
+  "version": "0.1",
+  "type": "capability",
+  "operation": "parse",
+  "input": {
+    "capability_id": "com.example.echo",
+    "capability_version": "1",
+    "input_schema": {
+      "type": "string"
+    },
+    "config_schema": true,
+    "output_schema": true,
+    "lifecycle_features": {
+      "streaming": false,
+      "cancellation": false,
+      "deadlines": false,
+      "resource_reporting": false
+    }
+  },
+  "expected": {
+    "accepted": true,
+    "normalized": {
+      "capability_id": "com.example.echo",
+      "capability_version": "1",
+      "input_schema": {
+        "type": "string"
+      },
+      "config_schema": true,
+      "output_schema": true,
+      "lifecycle_features": {
+        "streaming": false,
+        "cancellation": false,
+        "deadlines": false,
+        "resource_reporting": false
+      }
+    }
+  },
+  "features": [
+    "standalone",
+    "capability"
+  ]
+}

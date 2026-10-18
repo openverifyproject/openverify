@@ -1,0 +1,19 @@
+{
+  "id": "provider.schema-reject-wrong-draft",
+  "contract": "provider",
+  "version": "0.1",
+  "type": "data",
+  "operation": "data",
+  "input": null,
+  "expected": {
+    "accepted": false,
+    "error": "INVALID_PROVIDER_OUTPUT"
+  },
+  "features": [
+    "standalone",
+    "data"
+  ],
+  "schema": {
+    "$schema": "http://json-schema.org/draft-07/schema#"
+  }
+}

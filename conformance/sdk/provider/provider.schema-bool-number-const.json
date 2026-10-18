@@ -1,0 +1,19 @@
+{
+  "id": "provider.schema-bool-number-const",
+  "contract": "provider",
+  "version": "0.1",
+  "type": "data",
+  "operation": "data",
+  "input": true,
+  "expected": {
+    "accepted": false,
+    "error": "INVALID_INPUT"
+  },
+  "features": [
+    "standalone",
+    "data"
+  ],
+  "schema": {
+    "const": 1
+  }
+}

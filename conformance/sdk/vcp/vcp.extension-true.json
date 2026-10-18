@@ -1,0 +1,23 @@
+{
+  "id": "vcp.extension-true",
+  "contract": "vcp",
+  "version": "draft",
+  "type": "extension",
+  "operation": "parse",
+  "input": {
+    "namespace": "com.example:extra",
+    "version": "1",
+    "required": true,
+    "data": {
+      "x": null
+    }
+  },
+  "expected": {
+    "accepted": false,
+    "error": "EXTENSION_UNSUPPORTED"
+  },
+  "features": [
+    "standalone",
+    "extension"
+  ]
+}

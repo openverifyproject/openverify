@@ -1,0 +1,22 @@
+{
+  "id": "vcp.skipped",
+  "contract": "vcp",
+  "version": "draft",
+  "type": "result",
+  "operation": "parse",
+  "input": {
+    "protocol": "draft",
+    "disposition": "SKIPPED"
+  },
+  "expected": {
+    "accepted": true,
+    "normalized": {
+      "protocol": "draft",
+      "disposition": "SKIPPED"
+    }
+  },
+  "features": [
+    "standalone",
+    "result"
+  ]
+}

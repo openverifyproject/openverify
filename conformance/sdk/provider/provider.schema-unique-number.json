@@ -1,0 +1,22 @@
+{
+  "id": "provider.schema-unique-number",
+  "contract": "provider",
+  "version": "0.1",
+  "type": "data",
+  "operation": "data",
+  "input": [
+    1,
+    1.0
+  ],
+  "expected": {
+    "accepted": false,
+    "error": "INVALID_INPUT"
+  },
+  "features": [
+    "standalone",
+    "data"
+  ],
+  "schema": {
+    "uniqueItems": true
+  }
+}

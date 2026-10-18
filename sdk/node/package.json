@@ -1,0 +1,45 @@
+{
+  "name": "@openverify/sdk",
+  "version": "0.1.0",
+  "description": "OpenVerify DRAFT VCP and Provider Contract wire SDK",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "schemas",
+    "LICENSE",
+    "README.md"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/openverifyproject/openverify.git",
+    "directory": "sdk/node"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "npm run build && node --test test/*.test.mjs",
+    "prepack": "npm run build"
+  },
+  "dependencies": {
+    "ajv": "8.17.1",
+    "lossless-json": "4.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "5.9.3"
+  }
+}

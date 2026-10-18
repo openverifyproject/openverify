@@ -1,0 +1,51 @@
+name: Release ruby SDK
+on:
+  push:
+    tags: ['sdk/ruby/v*']
+permissions:
+  contents: read
+concurrency:
+  group: sdk-ruby-release
+  cancel-in-progress: false
+jobs:
+  verify:
+    uses: ./.github/workflows/sdk-verify.yml
+    with:
+      language: ruby
+  publish:
+    needs: verify
+    runs-on: ubuntu-latest
+    environment: sdk-ruby
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/download-artifact@v4
+        with:
+          name: sdk-ruby-${{ github.sha }}
+          path: dist/sdk/ruby/
+      - name: Check exact tag, test evidence, checksum and unpublished version
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+          REGISTRY_OWNERSHIP_APPROVED: ${{ vars.REGISTRY_OWNERSHIP_APPROVED }}
+        run: |
+          test "$REGISTRY_OWNERSHIP_APPROVED" = true
+          python tools/sdk_release.py preflight --language ruby --tag "$RELEASE_TAG" --evidence dist/sdk/ruby/verification.json
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.4'
+      - name: Exchange GitHub OIDC for short-lived RubyGems credential
+        uses: rubygems/configure-rubygems-credentials@f5a32efa94076b80b28556b2d3b04cb3707b6df1
+      - name: Publish verified gem
+        run: gem push dist/sdk/ruby/*.gem
+      - name: Verify registry availability and a fresh external installation
+        env:
+          SDK_LANGUAGE: ruby
+        run: python tools/sdk_verify.py "$SDK_LANGUAGE" --registry-only

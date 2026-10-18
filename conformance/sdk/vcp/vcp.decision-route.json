@@ -1,0 +1,24 @@
+{
+  "id": "vcp.decision-route",
+  "contract": "vcp",
+  "version": "draft",
+  "type": "decision",
+  "operation": "parse",
+  "input": {
+    "protocol": "draft",
+    "kind": "ROUTE",
+    "destination": "review"
+  },
+  "expected": {
+    "accepted": true,
+    "normalized": {
+      "protocol": "draft",
+      "kind": "ROUTE",
+      "destination": "review"
+    }
+  },
+  "features": [
+    "standalone",
+    "decision"
+  ]
+}

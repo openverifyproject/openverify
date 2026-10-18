@@ -1,0 +1,20 @@
+{
+  "id": "vcp.skipped-observations",
+  "contract": "vcp",
+  "version": "draft",
+  "type": "result",
+  "operation": "parse",
+  "input": {
+    "protocol": "draft",
+    "disposition": "SKIPPED",
+    "score": 0
+  },
+  "expected": {
+    "accepted": false,
+    "error": "RESULT_STATE"
+  },
+  "features": [
+    "standalone",
+    "result"
+  ]
+}

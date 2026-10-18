@@ -1,0 +1,18 @@
+{
+  "id": "vcp.null-evidence",
+  "contract": "vcp",
+  "version": "draft",
+  "type": "evidence",
+  "operation": "parse",
+  "input": {
+    "structured_data": null
+  },
+  "expected": {
+    "accepted": false,
+    "error": "EVIDENCE_EMPTY"
+  },
+  "features": [
+    "standalone",
+    "evidence"
+  ]
+}

@@ -1,0 +1,53 @@
+name: Release rust SDK
+on:
+  push:
+    tags: ['sdk/rust/v*']
+permissions:
+  contents: read
+concurrency:
+  group: sdk-rust-release
+  cancel-in-progress: false
+jobs:
+  verify:
+    uses: ./.github/workflows/sdk-verify.yml
+    with:
+      language: rust
+  publish:
+    needs: verify
+    runs-on: ubuntu-latest
+    environment: sdk-rust
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/download-artifact@v4
+        with:
+          name: sdk-rust-${{ github.sha }}
+          path: dist/sdk/rust/
+      - name: Check exact tag, test evidence, checksum and unpublished version
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+          REGISTRY_OWNERSHIP_APPROVED: ${{ vars.REGISTRY_OWNERSHIP_APPROVED }}
+        run: |
+          test "$REGISTRY_OWNERSHIP_APPROVED" = true
+          python tools/sdk_release.py preflight --language rust --tag "$RELEASE_TAG" --evidence dist/sdk/rust/verification.json
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Publish the verified crate contents
+        env:
+          CARGO_REGISTRY_TOKEN: ${{ secrets.CARGO_REGISTRY_TOKEN }}
+        run: |
+          mkdir -p .sdk-release/crate
+          tar -xzf dist/sdk/rust/*.crate -C .sdk-release/crate
+          cd .sdk-release/crate/openverify-sdk-*
+          cargo publish --locked
+      - name: Verify registry availability and a fresh external installation
+        env:
+          SDK_LANGUAGE: rust
+        run: python tools/sdk_verify.py "$SDK_LANGUAGE" --registry-only

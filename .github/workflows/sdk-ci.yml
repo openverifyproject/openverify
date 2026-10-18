@@ -1,0 +1,19 @@
+name: SDK CI
+on:
+  pull_request:
+    paths: ['sdk/**', 'conformance/sdk/**', 'tools/sdk_*.py', '.github/workflows/sdk-*.yml']
+  push:
+    branches: ['main', 'feat/language-sdks']
+    paths: ['sdk/**', 'conformance/sdk/**', 'tools/sdk_*.py', '.github/workflows/sdk-*.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  sdk:
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [node, python, rust, go, jvm, dotnet, ruby, php]
+    uses: ./.github/workflows/sdk-verify.yml
+    with:
+      language: ${{ matrix.language }}
