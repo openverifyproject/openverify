@@ -1,0 +1,165 @@
+{
+  "scope": "DRAFT wire SDKs; same 52 VCP + 45 Provider fixtures in each language, not full VCP execution or Provider session conformance",
+  "packages": [
+    {
+      "language": "node",
+      "version": "0.1.0",
+      "commit": "4d8f128f7085e2dc4cb60a0465c3b5b9c61b8026",
+      "dirty_worktree": false,
+      "tests_run": true,
+      "vcp_total": 52,
+      "provider_total": 45,
+      "consumer": "passed",
+      "repeated_package_contents": "identical",
+      "artifact": "openverify-sdk-0.1.0.tgz",
+      "sha256": "4baca1ed60f794f6f973b6b191c3960aed2d49b422a8941018cc277036706699",
+      "contents_sha256": "752d1f04df85ec6cd26e2c14fef611d3f11c66cf987ff6cfd41774c1a5d6e6ac",
+      "execution": {
+        "language": "node",
+        "exit_code": 0,
+        "duration_seconds": 21.128869399952237
+      },
+      "log": "docs/github-release/evidence/sdk-node.log.gz"
+    },
+    {
+      "language": "python",
+      "version": "0.1.0",
+      "commit": "b992b926c24fc7eef88a9d69c6613c6a79c913be",
+      "dirty_worktree": false,
+      "tests_run": true,
+      "vcp_total": 52,
+      "provider_total": 45,
+      "consumer": "passed",
+      "repeated_package_contents": "identical",
+      "artifact": "openverify_wire-0.1.0-py3-none-any.whl",
+      "sha256": "fde78005ace3745c88a7a1d534348deff84c243b350d7d5311372bbca7b99bbd",
+      "contents_sha256": "050a1f05f1b3400811abcf714269522be5339c7da019f43b361714b0fb832fb0",
+      "execution": {
+        "language": "python",
+        "exit_code": 0,
+        "duration_seconds": 161.58320420002565
+      },
+      "log": "docs/github-release/evidence/sdk-python.log.gz"
+    },
+    {
+      "language": "rust",
+      "version": "0.1.0",
+      "commit": "b992b926c24fc7eef88a9d69c6613c6a79c913be",
+      "dirty_worktree": false,
+      "tests_run": true,
+      "vcp_total": 52,
+      "provider_total": 45,
+      "consumer": "passed",
+      "repeated_package_contents": "identical",
+      "artifact": "openverify-sdk-0.1.0.crate",
+      "sha256": "af73f9445ef1fc178d5a26c0da175a154143ac747cb8a224fec97dcaad96408e",
+      "contents_sha256": "b0c8780d7d4016677d8109dd25860c55d6c0309aa4b8440e0fcb6a8fc903ff4c",
+      "execution": {
+        "language": "rust",
+        "exit_code": 0,
+        "duration_seconds": 202.9503335999907
+      },
+      "log": "docs/github-release/evidence/sdk-rust.log.gz"
+    },
+    {
+      "language": "go",
+      "version": "0.1.0",
+      "commit": "b992b926c24fc7eef88a9d69c6613c6a79c913be",
+      "dirty_worktree": false,
+      "tests_run": true,
+      "vcp_total": 52,
+      "provider_total": 45,
+      "consumer": "passed",
+      "repeated_package_contents": "identical",
+      "artifact": "openverify-go.zip",
+      "sha256": "c9373e604fd9b173f578c16620b2a8a596485b43d71d95c6508fd81721518240",
+      "contents_sha256": "03445cd43e0f7a7151f21a8c7b0a0c35946f8c06c4d7077004d9cbe758b2b3e4",
+      "execution": {
+        "language": "go",
+        "exit_code": 0,
+        "duration_seconds": 62.35907790000783
+      },
+      "log": "docs/github-release/evidence/sdk-go.log.gz"
+    },
+    {
+      "language": "jvm",
+      "version": "0.1.0",
+      "commit": "b992b926c24fc7eef88a9d69c6613c6a79c913be",
+      "dirty_worktree": false,
+      "tests_run": true,
+      "vcp_total": 52,
+      "provider_total": 45,
+      "consumer": "passed",
+      "repeated_package_contents": "identical",
+      "artifact": "openverify-sdk-0.1.0.jar",
+      "sha256": "e95ab644a593dea40f408eb338cbd20d631cf0d1f2ec3112325f17297667ffd8",
+      "contents_sha256": "e956fd55501acfd2966266ee08207da906bafa39d1b0127763b8f3ec9cd71722",
+      "execution": {
+        "language": "jvm",
+        "exit_code": 0,
+        "duration_seconds": 49.40825010003755
+      },
+      "log": "docs/github-release/evidence/sdk-jvm.log.gz"
+    },
+    {
+      "language": "dotnet",
+      "version": "0.1.0",
+      "commit": "b992b926c24fc7eef88a9d69c6613c6a79c913be",
+      "dirty_worktree": false,
+      "tests_run": true,
+      "vcp_total": 52,
+      "provider_total": 45,
+      "consumer": "passed",
+      "repeated_package_contents": "identical",
+      "artifact": "OpenVerify.Sdk.0.1.0.nupkg",
+      "sha256": "a1badab9cc56c7f13c2f224d04e8f77400bcc1f5197df16982696fdfa77a894d",
+      "contents_sha256": "38108a9affff6e09f5da4de0f45ca5e9a51ccf2bc683fd89dbea30dd912ac970",
+      "execution": {
+        "language": "dotnet",
+        "exit_code": 0,
+        "duration_seconds": 57.20818639994832
+      },
+      "log": "docs/github-release/evidence/sdk-dotnet.log.gz"
+    },
+    {
+      "language": "ruby",
+      "version": "0.1.0",
+      "commit": "b992b926c24fc7eef88a9d69c6613c6a79c913be",
+      "dirty_worktree": false,
+      "tests_run": true,
+      "vcp_total": 52,
+      "provider_total": 45,
+      "consumer": "passed",
+      "repeated_package_contents": "identical",
+      "artifact": "openverify-sdk.gem",
+      "sha256": "c53f2bb4897748be1b86ae9655466d6d97268e708f6a11a0b7630c5c4c3e7f99",
+      "contents_sha256": "a5e1b1241e99a2d80b19ea2449d4e4aea5626d9cc48c2198da9e0b07c79dab97",
+      "execution": {
+        "language": "ruby",
+        "exit_code": 0,
+        "duration_seconds": 157.1684994000243
+      },
+      "log": "docs/github-release/evidence/sdk-ruby.log.gz"
+    },
+    {
+      "language": "php",
+      "version": "0.1.0",
+      "commit": "b992b926c24fc7eef88a9d69c6613c6a79c913be",
+      "dirty_worktree": false,
+      "tests_run": true,
+      "vcp_total": 52,
+      "provider_total": 45,
+      "consumer": "passed",
+      "repeated_package_contents": "identical",
+      "artifact": "openverify-sdk.zip",
+      "sha256": "2eabaacf23797f7b5d4abc45151204ff1745a5f32d7783d47ee7b2014a8d6382",
+      "contents_sha256": "4aad87fb51f40f586d0c1f2aa90410e2d30c40189faab6f20d70a407f3533d93",
+      "execution": {
+        "language": "php",
+        "exit_code": 0,
+        "duration_seconds": 65.95499110000674
+      },
+      "log": "docs/github-release/evidence/sdk-php.log.gz"
+    }
+  ]
+}

@@ -1,0 +1,182 @@
+{
+  "docs/github-release/evidence/actionlint.log.gz": {
+    "bytes": 20,
+    "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+  },
+  "docs/github-release/evidence/blob-secrets.json.gz": {
+    "bytes": 613,
+    "sha256": "2373091bb9ae5eef04150a2fafdf5384d9cb3e186616517b96a99d73c9fc1646"
+  },
+  "docs/github-release/evidence/blob-secrets.log.gz": {
+    "bytes": 366,
+    "sha256": "4cfcf4ed61560579abecf885bc0c4890353282c4c2fedb57c1df9300962fee3b"
+  },
+  "docs/github-release/evidence/core-build.log.gz": {
+    "bytes": 18551,
+    "sha256": "d1554ae032fcaae79c85177a774330625e755bf481962bc65721c8751b05332a"
+  },
+  "docs/github-release/evidence/core-consumer.json.gz": {
+    "bytes": 2657,
+    "sha256": "e523dbf92cd52465759c667a0933c899d2c2d1c52311f7171b4b4642c1347715"
+  },
+  "docs/github-release/evidence/core-ensurepip.log.gz": {
+    "bytes": 276,
+    "sha256": "8883965130e0f5773192c1a116bba88f18fb3bdb48c980e46f4aab51ec2730a1"
+  },
+  "docs/github-release/evidence/core-install.log.gz": {
+    "bytes": 1187,
+    "sha256": "814ae52bcc96d7133d06db4318dcd6b0526df7ac9f64b7066cb6ac76f708bd55"
+  },
+  "docs/github-release/evidence/core-pip-check.log.gz": {
+    "bytes": 70,
+    "sha256": "849124586feefb87325d743fe2a96129d0937c176678c881735295f881ba42af"
+  },
+  "docs/github-release/evidence/final-scan-input-index.json.gz": {
+    "bytes": 616,
+    "sha256": "d25a93209a3f845119b4bfeeef0915f0a7cce5f9fd80a45d2e609421a8b9ead3"
+  },
+  "docs/github-release/evidence/final-tree-secrets.json.gz": {
+    "bytes": 23,
+    "sha256": "abc129be8d26e8d4afe9ce45f9d5a73c8ed9aa62810ca24ee789fe4581dc4a80"
+  },
+  "docs/github-release/evidence/final-tree-secrets.log.gz": {
+    "bytes": 345,
+    "sha256": "7fceb85a5abc79bf4d510d8978eb09e83092a8a717c1bfd2a701a07fc671e1a7"
+  },
+  "docs/github-release/evidence/freeze-final.log.gz": {
+    "bytes": 76,
+    "sha256": "5e5151e06eff8707d2be81018253a8db2b376b99e3584cd59e0684aecc4a70f0"
+  },
+  "docs/github-release/evidence/gitleaks-checksums.txt.gz": {
+    "bytes": 496,
+    "sha256": "e9570b7cd50a4e324d73e277777323ebe643bab393110ddee8fe497c3f1c479c"
+  },
+  "docs/github-release/evidence/golden-execution.json.gz": {
+    "bytes": 533,
+    "sha256": "cd3b4e282cd371c18ddcbba87888706300ba0615b9a4660e7118f7c30a25eb9b"
+  },
+  "docs/github-release/evidence/golden-results.jsonl.gz": {
+    "bytes": 985256,
+    "sha256": "75ab12216e9a6df6dea6a8de0b970733a30b4689a5c890d6561ca30f25a72a31"
+  },
+  "docs/github-release/evidence/golden.log.gz": {
+    "bytes": 496,
+    "sha256": "523d5afb1d63c3692e3dcf091523d60f6f7368c20290e27d204a5e34807e3537"
+  },
+  "docs/github-release/evidence/golden.xml.gz": {
+    "bytes": 55180,
+    "sha256": "379583c97e5f2e97733c417d82186e5080cb7120101152b65e2050563d830134"
+  },
+  "docs/github-release/evidence/history-blob-index.json.gz": {
+    "bytes": 64601,
+    "sha256": "28788699096c2877438d8b92c6ef139a6a509f98f8d86e7f9c263d543d941c0c"
+  },
+  "docs/github-release/evidence/history-secrets.json.gz": {
+    "bytes": 1108,
+    "sha256": "c9c25129d0612ee520ddac71452b71bd2334a9e0ab41d33c75147c9b3179acae"
+  },
+  "docs/github-release/evidence/history-secrets.log.gz": {
+    "bytes": 375,
+    "sha256": "03a6d98d23bebe863417662a93764b737b5d9acafd7775ffd90de65e1cccd515"
+  },
+  "docs/github-release/evidence/incremental-history-secrets.json.gz": {
+    "bytes": 23,
+    "sha256": "abc129be8d26e8d4afe9ce45f9d5a73c8ed9aa62810ca24ee789fe4581dc4a80"
+  },
+  "docs/github-release/evidence/incremental-history-secrets.log.gz": {
+    "bytes": 363,
+    "sha256": "1075fde8ee0ec5a51d1769187b1daac721acff85266f99ac4ed0610298fdf720"
+  },
+  "docs/github-release/evidence/node-audit-final.json.gz": {
+    "bytes": 234,
+    "sha256": "fd0f96877810959b8d8d5944e5990113212ee6d4446d32ac01c0e2643fb406e7"
+  },
+  "docs/github-release/evidence/node-audit-initial.json.gz": {
+    "bytes": 661,
+    "sha256": "67c7281496f2ba74a4ec6064da82d50a428912a166bf3fc398e15a832b66ff08"
+  },
+  "docs/github-release/evidence/production.log.gz": {
+    "bytes": 310,
+    "sha256": "b5a1b63898645c42470ef96e6d67e42365956f48787df75839e031b6f4789249"
+  },
+  "docs/github-release/evidence/production.xml.gz": {
+    "bytes": 17046,
+    "sha256": "f7082758300058c21a8562b24bbc54fc27dbd1dda549f1e8f7f524f278c665e7"
+  },
+  "docs/github-release/evidence/python-maintenance-final.log.gz": {
+    "bytes": 99,
+    "sha256": "447d0e797f4ee77922b5ce79e800023ce04c21d6ecd56c201ec496c775fac35f"
+  },
+  "docs/github-release/evidence/python-maintenance-final.xml.gz": {
+    "bytes": 2139,
+    "sha256": "2e4e18eef89f58db9d08c2f5a91a0f3237af1b2ecc412c201c5fc0d66694695c"
+  },
+  "docs/github-release/evidence/python-maintenance-missing-path.log.gz": {
+    "bytes": 645,
+    "sha256": "37c4ff43a1774b42db1c07b4f43f26534cff3c2b892b00ea59c0e280694a1bc4"
+  },
+  "docs/github-release/evidence/python-maintenance-missing-path.xml.gz": {
+    "bytes": 598,
+    "sha256": "5636bdcf679696f1e510044d5d5d0e4317334c32dc647d01ee941801227c327e"
+  },
+  "docs/github-release/evidence/regression-REGRESSION_EXECUTION.json.gz": {
+    "bytes": 387,
+    "sha256": "9aff589fdaa7123ee3aada409c266fd96bf199694c9e1485a8d3f7aec98116ff"
+  },
+  "docs/github-release/evidence/regression-REGRESSION_RESULTS.jsonl.gz": {
+    "bytes": 24855,
+    "sha256": "25287e61b4af6680d2913f1dee74fd8249d246a15911dc1a4fa089083d5553af"
+  },
+  "docs/github-release/evidence/regressions.log.gz": {
+    "bytes": 112,
+    "sha256": "59b3c513c6f920ea4373dd6edcba6ca9153c47ab993f91ae8f80893373fff5fb"
+  },
+  "docs/github-release/evidence/regressions.xml.gz": {
+    "bytes": 3732,
+    "sha256": "62d4ecf64d9e6a986795512a2f8e6be5e66cfc712525e2097ae87085e51c0748"
+  },
+  "docs/github-release/evidence/repository-shape.json.gz": {
+    "bytes": 463,
+    "sha256": "3a4944586dff119040a2c1ba91858a88b5579ef5518f235775f02a39add52292"
+  },
+  "docs/github-release/evidence/sdk-dotnet.log.gz": {
+    "bytes": 1191,
+    "sha256": "8a6d233965db017d24dbe0bf1d4fb3b120b4925782e12bb4625863bc2a5b93bf"
+  },
+  "docs/github-release/evidence/sdk-go.log.gz": {
+    "bytes": 465,
+    "sha256": "39af517dc56a2d7cd176c1a11c59bb544ebcaf7ab9fcdfdb0b20f5a2505db9e5"
+  },
+  "docs/github-release/evidence/sdk-jvm-sandbox.log.gz": {
+    "bytes": 9312,
+    "sha256": "1adf3f6aed604971a75e3e2226d4a5f80ecc94752b8edfb812bc764eeaddb047"
+  },
+  "docs/github-release/evidence/sdk-jvm.log.gz": {
+    "bytes": 2799,
+    "sha256": "22fee7f502db23630e1168667a6d464d12aa190221f1adcbf6ebd0759f929cbe"
+  },
+  "docs/github-release/evidence/sdk-node.log.gz": {
+    "bytes": 3006,
+    "sha256": "39e8bc4e7dd68f18d897f602397864452c36f2e88e987d462a28d87a1c366836"
+  },
+  "docs/github-release/evidence/sdk-php.log.gz": {
+    "bytes": 1764,
+    "sha256": "47840b0531797a81a62a0b861b4b093a5dda138ccb67608f817afabcc6b87547"
+  },
+  "docs/github-release/evidence/sdk-python.log.gz": {
+    "bytes": 2001,
+    "sha256": "2e60cdf2af5fd4a964d701198b42b16afbd4448f88a57f77cd37c08edeeebc11"
+  },
+  "docs/github-release/evidence/sdk-ruby-sandbox.log.gz": {
+    "bytes": 493,
+    "sha256": "14597037a54b2fddd7152a4c73090d8e3f7428cf8e927096af958deeaf6bd35d"
+  },
+  "docs/github-release/evidence/sdk-ruby.log.gz": {
+    "bytes": 1495,
+    "sha256": "feec4e04c0d09596ab8cd78ef5d15f9d3771afdc5988946358a0f8a60daeb482"
+  },
+  "docs/github-release/evidence/sdk-rust.log.gz": {
+    "bytes": 1966,
+    "sha256": "5fa4b9dc7f64b46d75729a345fb726ad987856ff0f3cd7807d3aef262ef0f7d9"
+  }
+}

@@ -54,3 +54,14 @@ from the initial run. No fixture expectation or validator option was weakened.
 
 This is a measured npm audit result, not a dependency-vulnerability certificate
 for all eight ecosystems. Owner-side dependency alerts should remain enabled.
+
+## Final incremental checks
+
+After the full history/blob checks, Gitleaks scanned the two subsequent code
+commits through `4d8f128f7085e2dc4cb60a0465c3b5b9c61b8026` and a separate export
+of 63 changed/new handoff files, including compressed evidence (archive and
+decode depth two). Both scans exited zero with zero candidates. The exact
+export index and redacted JSON/logs are retained in `evidence/` and sealed by
+`EVIDENCE_HASHES.json`. This extends the earlier scan to the prepared code and
+handoff artifacts without traversing ignored local dependency caches. No
+scanner rule was disabled to achieve this result.
