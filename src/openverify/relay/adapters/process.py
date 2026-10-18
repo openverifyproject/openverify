@@ -29,7 +29,8 @@ async def spawn(
     executable = shutil.which(argv[0], path=search_path)
     if executable is None:
         raise FileNotFoundError(f"Configured executable is unavailable: {argv[0]}")
-    argv = (str(Path(executable).resolve()), *argv[1:])
+    # Resolving a virtualenv's Python symlink selects the base interpreter instead.
+    argv = (str(Path(executable).absolute()), *argv[1:])
     if os.name == "nt":
         # Supervisor establishes a job before spawning the requested executable.
         # Run the stdlib-only supervisor by installed file path. Importing the
