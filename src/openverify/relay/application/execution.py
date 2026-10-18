@@ -174,6 +174,10 @@ async def execute_node(
         reason = exc.code
     usage = dict(observed.usage) if observed is not None else {}
     timing_key = "relay_wall_time" if "wall_time" in usage else "wall_time"
+    suffix = 2
+    while timing_key in usage:
+        timing_key = f"relay_wall_time_{suffix}"
+        suffix += 1
     usage[timing_key] = Measurement(unit="s", kind="EXACT", value=time.monotonic() - clock)
     return NodeRecord.model_validate(
         {

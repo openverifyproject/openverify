@@ -33,7 +33,9 @@ def judge(findings: list[JsonValue], *, observations: JsonValue = None) -> Resul
         determination="KNOWN",
         verdict="FAIL" if findings else "PASS",
         output={"findings": findings, "observations": observations},
-        evidence=[Evidence(structured_data=f) for f in findings],
+        evidence=[
+            Evidence(structured_data=f if f is not None else {"finding": None}) for f in findings
+        ],
     )
 
 

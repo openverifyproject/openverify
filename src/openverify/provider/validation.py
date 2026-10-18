@@ -184,6 +184,8 @@ def parse_provider_object(name: str, data: str | bytes | JsonValue) -> ProviderV
         if value.contract_version not in value.manifest.supported_contract_versions:
             fail(code, "Selected version not supported by manifest")
     elif isinstance(value, Invocation):
+        if value.vcp_version is not None and value.vcp_version != "draft":
+            fail(code, "Unsupported VCP interchange version")
         if value.resource_budget is not None:
             _vector(value.resource_budget, code)
             if value.vcp_version != "draft" or any(

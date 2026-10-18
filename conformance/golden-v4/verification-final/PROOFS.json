@@ -1,0 +1,88 @@
+{
+  "projections": [
+    {
+      "proof_id": "P.FINAL.RESULT.WIRE",
+      "formula": "4*4^4",
+      "candidate_count": 1024,
+      "valid": 66,
+      "invalid": 958,
+      "partition": "3*2^4 + 2^3 + 2^2 + 2 + 4",
+      "test": "test_result_complete_product_and_classification[WIRE_AXIS]",
+      "status": "PROVED_STATED_PROJECTION",
+      "test_file": "tests/golden_v4_reconciliation/test_domain_integrity.py"
+    },
+    {
+      "proof_id": "P.FINAL.RESULT.SEMANTIC",
+      "formula": "4*3^4",
+      "candidate_count": 324,
+      "valid": 9,
+      "invalid": 315,
+      "test": "test_result_complete_product_and_classification[SEMANTIC_AXIS]",
+      "status": "PROVED_STATED_PROJECTION",
+      "test_file": "tests/golden_v4_reconciliation/test_domain_integrity.py"
+    },
+    {
+      "proof_id": "P.FINAL.RESULT.OBSERVATIONS",
+      "formula": "9*2^8",
+      "candidate_count": 2304,
+      "valid": 960,
+      "invalid": 1344,
+      "assumptions": "The eight actual observation names; valid payloads; judgment_schema=true. Arbitrary JSON is not enumerated.",
+      "test": "test_observation_actual_names_and_complete_masks",
+      "status": "PROVED_STATED_PROJECTION",
+      "test_file": "tests/golden_v4_reconciliation/test_domain_integrity.py"
+    },
+    {
+      "proof_id": "P.FINAL.GRAPH.TOPOLOGY",
+      "formula": "sum(2^(n*(n-1)),n=0..4)",
+      "candidate_count": 4166,
+      "valid": 573,
+      "invalid": 3593,
+      "assumptions": "Labelled loop-free topology only; other graph constraints are separate.",
+      "test": "test_small_graph_domain_and_cycles",
+      "status": "PROVED_STATED_PROJECTION",
+      "test_file": "tests/golden_v4_reconciliation/test_domain_integrity.py"
+    },
+    {
+      "proof_id": "P.FINAL.HANDLING.MAPS",
+      "formula": "8*2^7",
+      "candidate_count": 1024,
+      "assumptions": "Configuration choices only. Exceptional behavior requires separate 112 laws.",
+      "test": "test_reducer_configuration_product",
+      "status": "PROVED_STATED_PROJECTION",
+      "test_file": "tests/golden_v4_reconciliation/test_domain_integrity.py"
+    },
+    {
+      "proof_id": "P.FINAL.PRESENCE.RUN_RECORD",
+      "formula": "2^18",
+      "candidate_count": 262144,
+      "valid": 16,
+      "invalid": 262128,
+      "executed_representatives": 30,
+      "saved_invalid_executions": 262114,
+      "assumptions": "Fixed valid field payloads; root object/required/properties/additionalProperties only; no root cross-key applicators. Every valid optional mask plus each single required-field deletion executed. Structural presence only, not record lineage.",
+      "test": "test_record_presence_reduction_premises[RUN_RECORD]",
+      "status": "PROVED_STATED_PROJECTION",
+      "test_file": "tests/golden_v4_reconciliation/test_domain_integrity.py"
+    },
+    {
+      "proof_id": "P.FINAL.PRESENCE.NODE_RECORD",
+      "formula": "2^20",
+      "candidate_count": 1048576,
+      "valid": 256,
+      "invalid": 1048320,
+      "executed_representatives": 268,
+      "saved_invalid_executions": 1048308,
+      "assumptions": "Fixed valid field payloads; root object/required/properties/additionalProperties only; no root cross-key applicators. Every valid optional mask plus each single required-field deletion executed. Structural presence only, not record lineage.",
+      "test": "test_record_presence_reduction_premises[NODE_RECORD]",
+      "status": "PROVED_STATED_PROJECTION",
+      "test_file": "tests/golden_v4_reconciliation/test_domain_integrity.py"
+    }
+  ],
+  "no_grand_candidate_total": true,
+  "not_proved": [
+    "Arbitrary-size DAG implementation correctness and global shared-state scheduler induction.",
+    "Arbitrary JSON/schema/trace values, every public contract partition, and every platform.",
+    "Unreviewed original reduction-ledger assumptions."
+  ]
+}

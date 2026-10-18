@@ -138,7 +138,8 @@ class StdioSessionValidator:
             or not identity
             or identity in self._used_ids
             or not isinstance(params, dict)
-            or method not in ("initialize", "invoke", "cancel")
+            or not isinstance(method, str)
+            or not method
         ):
             fail("PROTOCOL_VIOLATION", "Invalid/reused request ID, params, or method")
         assert isinstance(identity, str) and isinstance(method, str) and isinstance(params, dict)
@@ -150,14 +151,14 @@ class StdioSessionValidator:
             self._initialize = cast(
                 InitializeRequest, parse_provider_object("initialize-request", params)
             )
-        else:
+        elif method in ("invoke", "cancel"):
             if self._lifecycle is None:
                 fail("PROTOCOL_VIOLATION", "Request before initialization success")
             assert self._lifecycle is not None
             try:
                 if method == "invoke":
                     self._lifecycle.accept(params, now=now)
-                else:
+                elif method == "cancel":
                     self._lifecycle.cancel(params)
             except ProviderContractError as exc:
                 pending.rejection = exc.code
@@ -187,6 +188,19 @@ class StdioSessionValidator:
             fail("PROTOCOL_VIOLATION", "Unsolicited/malformed RPC response")
         assert isinstance(identity, str)
         pending = self._pending[identity]
+        if pending.method not in ("initialize", "invoke", "cancel"):
+            error = data.get("error")
+            if (
+                set(data) != {"jsonrpc", "id", "error"}
+                or not isinstance(error, dict)
+                or not {"code", "message"} <= set(error) <= {"code", "message", "data"}
+                or type(error["code"]) is not int
+                or error["code"] != -32601
+                or not isinstance(error["message"], str)
+            ):
+                fail("PROTOCOL_VIOLATION", "Unknown method requires method-not-found response")
+            del self._pending[identity]
+            return
         if "error" in data:
             error = data["error"]
             if (

@@ -1,0 +1,19 @@
+{
+  "exitstatus": 0,
+  "executed": 366,
+  "counts": {
+    "PASS": 366,
+    "FAIL": 0
+  },
+  "relay_api_calls": 12,
+  "relay_awaited_seconds": 0.7429876000387594,
+  "wall_seconds": 7.302740100014489,
+  "argv": [
+    "C:\\Users\\siddh\\OneDrive\\Desktop\\openverify\\.venv\\Lib\\site-packages\\pytest\\__main__.py",
+    "-q",
+    "tests/golden_v4_reconciliation",
+    "--basetemp=.pytest_cache/verification-revision-tmp",
+    "--junitxml=.pytest_cache/verification-revision.xml"
+  ],
+  "python": "3.13.5 (main, Jun 12 2025, 12:42:35) [MSC v.1943 64 bit (AMD64)]"
+}

@@ -38,7 +38,7 @@ def validate_port(port: InputPort) -> None:
     if (
         (port.required and port.on_unavailable != "BLOCK")
         or (not port.required and port.on_unavailable == "BLOCK")
-        or (port.on_unavailable == "DEFAULT") != (port.default is not None)
+        or (port.on_unavailable == "DEFAULT" and port.default is None)
     ):
         fail("Required ports BLOCK; optional ports explicitly OMIT or DEFAULT")
     if port.default is not None:
@@ -190,7 +190,7 @@ def validate_graph(graph: Graph, run_ports: list[InputPort] | None = None) -> No
                     )
                     if output.role == "RESULT":
                         result_bindings.add(name)
-            if not members or len(set(members)) != len(members) or set(members) != result_bindings:
+            if len(set(members)) != len(members) or set(members) != result_bindings:
                 fail("Aggregate membership must exactly name RESULT bindings", "AGGREGATE_CONFIG")
             if any(
                 not p.required or p.on_unavailable != "BLOCK"
@@ -199,6 +199,8 @@ def validate_graph(graph: Graph, run_ports: list[InputPort] | None = None) -> No
             ):
                 fail("Aggregate members must be required BLOCK ports", "AGGREGATE_CONFIG")
             if node.operation.capability_id == "openverify.aggregate":
+                if not members:
+                    fail("Standard reducers require nonempty membership", "AGGREGATE_CONFIG")
                 if node.operation.capability_version != "1":
                     fail("Unsupported standard reducer version", "GRAPH_UNSUPPORTED")
                 config = dict(node.config)
@@ -369,7 +371,7 @@ def resolve_source(
             source=source, status="AVAILABLE", value=deepcopy(record.information[source.output])
         )
     status = "OUTPUT_MISSING"
-    if record.state in ("NONEXECUTED", "CANCELLED"):
+    if record.state == "NONEXECUTED":
         status = "PRODUCER_NOT_EXECUTED"
     elif record.state == "ERROR":
         if record.reason is None:

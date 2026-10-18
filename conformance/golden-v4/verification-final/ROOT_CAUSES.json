@@ -1,0 +1,2798 @@
+{
+  "baseline_commit": "ad7fad6986eb79e55094687022d15a7bc70ede30",
+  "baseline_failures": 66,
+  "counts": {
+    "HISTORICAL_AUDIT_CERTIFICATION": 2,
+    "RPC_UNKNOWN_METHOD": 1,
+    "CUSTOM_EMPTY_MEMBERSHIP": 10,
+    "HISTORICAL_WEIGHT_CATEGORY": 6,
+    "HISTORICAL_ANNOTATION": 1,
+    "CANCELLED_AVAILABILITY": 46
+  },
+  "distinct_baseline_production_bugs": 3,
+  "historical_expectation_corrections": 9,
+  "cases": [
+    {
+      "case_id": "V4.AUDIT.INVENTORY.INVENTORY",
+      "profile": "existing-v4",
+      "category": "incorrect frozen expectation",
+      "rationale": "Frozen assertion demands certification/PROVED for an inventory with admitted missing/unproved obligations. A fail-closed audit must return false; test green cannot establish completeness.",
+      "source": "tools/golden_v4/report.py:inventory; REDUCTION_LEDGER entries remain unproved; canonical full test mapping incomplete",
+      "source_reference": {
+        "path": "spec/draft/dataflow.md",
+        "line": 96
+      },
+      "expected": {
+        "accepted": true
+      },
+      "actual": {
+        "accepted": false
+      },
+      "current_expected": {
+        "accepted": false
+      },
+      "repro": "python -m tools.golden_v4.report --case-id \"V4.AUDIT.INVENTORY.INVENTORY\"",
+      "root_cause": "HISTORICAL_AUDIT_CERTIFICATION",
+      "final_status": "PASS",
+      "final_expected": {
+        "accepted": false
+      },
+      "final_actual": {
+        "accepted": false
+      },
+      "expectation_revised": true
+    },
+    {
+      "case_id": "V4.AUDIT.INVENTORY.PROOFS",
+      "profile": "existing-v4",
+      "category": "incorrect frozen expectation",
+      "rationale": "Frozen assertion demands certification/PROVED for an inventory with admitted missing/unproved obligations. A fail-closed audit must return false; test green cannot establish completeness.",
+      "source": "tools/golden_v4/report.py:inventory; REDUCTION_LEDGER entries remain unproved; canonical full test mapping incomplete",
+      "source_reference": {
+        "path": "spec/draft/dataflow.md",
+        "line": 96
+      },
+      "expected": {
+        "accepted": true
+      },
+      "actual": {
+        "accepted": false
+      },
+      "current_expected": {
+        "accepted": false
+      },
+      "repro": "python -m tools.golden_v4.report --case-id \"V4.AUDIT.INVENTORY.PROOFS\"",
+      "root_cause": "HISTORICAL_AUDIT_CERTIFICATION",
+      "final_status": "PASS",
+      "final_expected": {
+        "accepted": false
+      },
+      "final_actual": {
+        "accepted": false
+      },
+      "expectation_revised": true
+    },
+    {
+      "case_id": "V4.PROVIDER.TRANSPORT.METHOD.UNKNOWN_METHOD",
+      "profile": "existing-v4",
+      "category": "production defect",
+      "rationale": "Valid unknown JSON-RPC method requires -32601. Session validation closes before the server returns that error; observed EOF. Production not modified.",
+      "source": "provider-contract/spec/draft/transports.md unknown-method rule; src/openverify/relay/adapters/server.py session.runner_message before handler try",
+      "source_reference": {
+        "path": "provider-contract/spec/draft/transports.md",
+        "line": 55
+      },
+      "expected": {
+        "accepted": true
+      },
+      "actual": {
+        "exception": "0 bytes read on a total of undefined expected bytes"
+      },
+      "current_expected": {
+        "accepted": true
+      },
+      "repro": "python -m tools.golden_v4.report --case-id \"V4.PROVIDER.TRANSPORT.METHOD.UNKNOWN_METHOD\"",
+      "root_cause": "RPC_UNKNOWN_METHOD",
+      "final_status": "PASS",
+      "final_expected": {
+        "accepted": true
+      },
+      "final_actual": {
+        "accepted": true
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.VCP.AGG.MEMBER_ROLE.AGGREGATE-RESULT",
+      "profile": "existing-v4",
+      "category": "production defect",
+      "rationale": "Valid custom empty membership is rejected by unchanged validate_graph nonempty check. Current approved semantics permit that declaration; historical expected acceptance is retained.",
+      "source": "spec/draft/dataflow.md custom empty membership; src/openverify/dataflow.py nonempty membership check",
+      "source_reference": {
+        "path": "spec/draft/dataflow.md",
+        "line": 203
+      },
+      "expected": {
+        "accepted": true
+      },
+      "actual": {
+        "accepted": false
+      },
+      "current_expected": {
+        "accepted": true
+      },
+      "repro": "python -m tools.golden_v4.report --case-id \"V4.VCP.AGG.MEMBER_ROLE.AGGREGATE-RESULT\"",
+      "root_cause": "CUSTOM_EMPTY_MEMBERSHIP",
+      "final_status": "PASS",
+      "final_expected": {
+        "accepted": true
+      },
+      "final_actual": {
+        "accepted": true
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.VCP.AGG.SEMANTIC.AGGREGATE-SUBJECT-MATCH1",
+      "profile": "existing-v4",
+      "category": "production defect",
+      "rationale": "Valid custom empty membership is rejected by unchanged validate_graph nonempty check. Current approved semantics permit that declaration; historical expected acceptance is retained.",
+      "source": "spec/draft/dataflow.md custom empty membership; src/openverify/dataflow.py nonempty membership check",
+      "source_reference": {
+        "path": "spec/draft/dataflow.md",
+        "line": 203
+      },
+      "expected": {
+        "accepted": true
+      },
+      "actual": {
+        "accepted": false
+      },
+      "current_expected": {
+        "accepted": true
+      },
+      "repro": "python -m tools.golden_v4.report --case-id \"V4.VCP.AGG.SEMANTIC.AGGREGATE-SUBJECT-MATCH1\"",
+      "root_cause": "CUSTOM_EMPTY_MEMBERSHIP",
+      "final_status": "PASS",
+      "final_expected": {
+        "accepted": true
+      },
+      "final_actual": {
+        "accepted": true
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.VCP.AGG.SEMANTIC.AGGREGATE-CRITERION-MATCH1",
+      "profile": "existing-v4",
+      "category": "production defect",
+      "rationale": "Valid custom empty membership is rejected by unchanged validate_graph nonempty check. Current approved semantics permit that declaration; historical expected acceptance is retained.",
+      "source": "spec/draft/dataflow.md custom empty membership; src/openverify/dataflow.py nonempty membership check",
+      "source_reference": {
+        "path": "spec/draft/dataflow.md",
+        "line": 203
+      },
+      "expected": {
+        "accepted": true
+      },
+      "actual": {
+        "accepted": false
+      },
+      "current_expected": {
+        "accepted": true
+      },
+      "repro": "python -m tools.golden_v4.report --case-id \"V4.VCP.AGG.SEMANTIC.AGGREGATE-CRITERION-MATCH1\"",
+      "root_cause": "CUSTOM_EMPTY_MEMBERSHIP",
+      "final_status": "PASS",
+      "final_expected": {
+        "accepted": true
+      },
+      "final_actual": {
+        "accepted": true
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.VCP.AGG.SEMANTIC.AGGREGATE-MEMBERS-MATCH1",
+      "profile": "existing-v4",
+      "category": "production defect",
+      "rationale": "Valid custom empty membership is rejected by unchanged validate_graph nonempty check. Current approved semantics permit that declaration; historical expected acceptance is retained.",
+      "source": "spec/draft/dataflow.md custom empty membership; src/openverify/dataflow.py nonempty membership check",
+      "source_reference": {
+        "path": "spec/draft/dataflow.md",
+        "line": 203
+      },
+      "expected": {
+        "accepted": true
+      },
+      "actual": {
+        "accepted": false
+      },
+      "current_expected": {
+        "accepted": true
+      },
+      "repro": "python -m tools.golden_v4.report --case-id \"V4.VCP.AGG.SEMANTIC.AGGREGATE-MEMBERS-MATCH1\"",
+      "root_cause": "CUSTOM_EMPTY_MEMBERSHIP",
+      "final_status": "PASS",
+      "final_expected": {
+        "accepted": true
+      },
+      "final_actual": {
+        "accepted": true
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.VCP.AGG.WEIGHT_SIGN_2.-1--1",
+      "profile": "existing-v4",
+      "category": "incorrect frozen expectation",
+      "rationale": "Invalid original weight configuration is AGGREGATE_CONFIG; AGGREGATE_INPUT belongs to reduction/member/retained-total failure. Separate revised cases verify the six corrections.",
+      "source": "spec/draft/aggregation.md; spec/draft/conformance.md; original-weight configuration versus retained-total semantics",
+      "source_reference": {
+        "path": "spec/draft/aggregation.md",
+        "line": 29
+      },
+      "expected": {
+        "error": "AGGREGATE_INPUT"
+      },
+      "actual": {
+        "error": "AGGREGATE_CONFIG"
+      },
+      "current_expected": {
+        "error": "AGGREGATE_CONFIG"
+      },
+      "repro": "python -m tools.golden_v4.report --case-id \"V4.VCP.AGG.WEIGHT_SIGN_2.-1--1\"",
+      "root_cause": "HISTORICAL_WEIGHT_CATEGORY",
+      "final_status": "PASS",
+      "final_expected": {
+        "error": "AGGREGATE_CONFIG"
+      },
+      "final_actual": {
+        "error": "AGGREGATE_CONFIG"
+      },
+      "expectation_revised": true
+    },
+    {
+      "case_id": "V4.VCP.AGG.WEIGHT_SIGN_2.-1-0",
+      "profile": "existing-v4",
+      "category": "incorrect frozen expectation",
+      "rationale": "Invalid original weight configuration is AGGREGATE_CONFIG; AGGREGATE_INPUT belongs to reduction/member/retained-total failure. Separate revised cases verify the six corrections.",
+      "source": "spec/draft/aggregation.md; spec/draft/conformance.md; original-weight configuration versus retained-total semantics",
+      "source_reference": {
+        "path": "spec/draft/aggregation.md",
+        "line": 29
+      },
+      "expected": {
+        "error": "AGGREGATE_INPUT"
+      },
+      "actual": {
+        "error": "AGGREGATE_CONFIG"
+      },
+      "current_expected": {
+        "error": "AGGREGATE_CONFIG"
+      },
+      "repro": "python -m tools.golden_v4.report --case-id \"V4.VCP.AGG.WEIGHT_SIGN_2.-1-0\"",
+      "root_cause": "HISTORICAL_WEIGHT_CATEGORY",
+      "final_status": "PASS",
+      "final_expected": {
+        "error": "AGGREGATE_CONFIG"
+      },
+      "final_actual": {
+        "error": "AGGREGATE_CONFIG"
+      },
+      "expectation_revised": true
+    },
+    {
+      "case_id": "V4.VCP.AGG.WEIGHT_SIGN_2.-1-2",
+      "profile": "existing-v4",
+      "category": "incorrect frozen expectation",
+      "rationale": "Invalid original weight configuration is AGGREGATE_CONFIG; AGGREGATE_INPUT belongs to reduction/member/retained-total failure. Separate revised cases verify the six corrections.",
+      "source": "spec/draft/aggregation.md; spec/draft/conformance.md; original-weight configuration versus retained-total semantics",
+      "source_reference": {
+        "path": "spec/draft/aggregation.md",
+        "line": 29
+      },
+      "expected": {
+        "error": "AGGREGATE_INPUT"
+      },
+      "actual": {
+        "error": "AGGREGATE_CONFIG"
+      },
+      "current_expected": {
+        "error": "AGGREGATE_CONFIG"
+      },
+      "repro": "python -m tools.golden_v4.report --case-id \"V4.VCP.AGG.WEIGHT_SIGN_2.-1-2\"",
+      "root_cause": "HISTORICAL_WEIGHT_CATEGORY",
+      "final_status": "PASS",
+      "final_expected": {
+        "error": "AGGREGATE_CONFIG"
+      },
+      "final_actual": {
+        "error": "AGGREGATE_CONFIG"
+      },
+      "expectation_revised": true
+    },
+    {
+      "case_id": "V4.VCP.AGG.WEIGHT_SIGN_2.0--1",
+      "profile": "existing-v4",
+      "category": "incorrect frozen expectation",
+      "rationale": "Invalid original weight configuration is AGGREGATE_CONFIG; AGGREGATE_INPUT belongs to reduction/member/retained-total failure. Separate revised cases verify the six corrections.",
+      "source": "spec/draft/aggregation.md; spec/draft/conformance.md; original-weight configuration versus retained-total semantics",
+      "source_reference": {
+        "path": "spec/draft/aggregation.md",
+        "line": 29
+      },
+      "expected": {
+        "error": "AGGREGATE_INPUT"
+      },
+      "actual": {
+        "error": "AGGREGATE_CONFIG"
+      },
+      "current_expected": {
+        "error": "AGGREGATE_CONFIG"
+      },
+      "repro": "python -m tools.golden_v4.report --case-id \"V4.VCP.AGG.WEIGHT_SIGN_2.0--1\"",
+      "root_cause": "HISTORICAL_WEIGHT_CATEGORY",
+      "final_status": "PASS",
+      "final_expected": {
+        "error": "AGGREGATE_CONFIG"
+      },
+      "final_actual": {
+        "error": "AGGREGATE_CONFIG"
+      },
+      "expectation_revised": true
+    },
+    {
+      "case_id": "V4.VCP.AGG.WEIGHT_SIGN_2.0-0",
+      "profile": "existing-v4",
+      "category": "incorrect frozen expectation",
+      "rationale": "Invalid original weight configuration is AGGREGATE_CONFIG; AGGREGATE_INPUT belongs to reduction/member/retained-total failure. Separate revised cases verify the six corrections.",
+      "source": "spec/draft/aggregation.md; spec/draft/conformance.md; original-weight configuration versus retained-total semantics",
+      "source_reference": {
+        "path": "spec/draft/aggregation.md",
+        "line": 29
+      },
+      "expected": {
+        "error": "AGGREGATE_INPUT"
+      },
+      "actual": {
+        "error": "AGGREGATE_CONFIG"
+      },
+      "current_expected": {
+        "error": "AGGREGATE_CONFIG"
+      },
+      "repro": "python -m tools.golden_v4.report --case-id \"V4.VCP.AGG.WEIGHT_SIGN_2.0-0\"",
+      "root_cause": "HISTORICAL_WEIGHT_CATEGORY",
+      "final_status": "PASS",
+      "final_expected": {
+        "error": "AGGREGATE_CONFIG"
+      },
+      "final_actual": {
+        "error": "AGGREGATE_CONFIG"
+      },
+      "expectation_revised": true
+    },
+    {
+      "case_id": "V4.VCP.AGG.WEIGHT_SIGN_2.2--1",
+      "profile": "existing-v4",
+      "category": "incorrect frozen expectation",
+      "rationale": "Invalid original weight configuration is AGGREGATE_CONFIG; AGGREGATE_INPUT belongs to reduction/member/retained-total failure. Separate revised cases verify the six corrections.",
+      "source": "spec/draft/aggregation.md; spec/draft/conformance.md; original-weight configuration versus retained-total semantics",
+      "source_reference": {
+        "path": "spec/draft/aggregation.md",
+        "line": 29
+      },
+      "expected": {
+        "error": "AGGREGATE_INPUT"
+      },
+      "actual": {
+        "error": "AGGREGATE_CONFIG"
+      },
+      "current_expected": {
+        "error": "AGGREGATE_CONFIG"
+      },
+      "repro": "python -m tools.golden_v4.report --case-id \"V4.VCP.AGG.WEIGHT_SIGN_2.2--1\"",
+      "root_cause": "HISTORICAL_WEIGHT_CATEGORY",
+      "final_status": "PASS",
+      "final_expected": {
+        "error": "AGGREGATE_CONFIG"
+      },
+      "final_actual": {
+        "error": "AGGREGATE_CONFIG"
+      },
+      "expectation_revised": true
+    },
+    {
+      "case_id": "V4.VCP.NODE.PRIMARY.AGGREGATE-VALID",
+      "profile": "existing-v4",
+      "category": "production defect",
+      "rationale": "Valid custom empty membership is rejected by unchanged validate_graph nonempty check. Current approved semantics permit that declaration; historical expected acceptance is retained.",
+      "source": "spec/draft/dataflow.md custom empty membership; src/openverify/dataflow.py nonempty membership check",
+      "source_reference": {
+        "path": "spec/draft/dataflow.md",
+        "line": 203
+      },
+      "expected": {
+        "accepted": true
+      },
+      "actual": {
+        "accepted": false
+      },
+      "current_expected": {
+        "accepted": true
+      },
+      "repro": "python -m tools.golden_v4.report --case-id \"V4.VCP.NODE.PRIMARY.AGGREGATE-VALID\"",
+      "root_cause": "CUSTOM_EMPTY_MEMBERSHIP",
+      "final_status": "PASS",
+      "final_expected": {
+        "accepted": true
+      },
+      "final_actual": {
+        "accepted": true
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.VCP.NODE.ROLE.AGGREGATE-INFORMATION",
+      "profile": "existing-v4",
+      "category": "production defect",
+      "rationale": "Valid custom empty membership is rejected by unchanged validate_graph nonempty check. Current approved semantics permit that declaration; historical expected acceptance is retained.",
+      "source": "spec/draft/dataflow.md custom empty membership; src/openverify/dataflow.py nonempty membership check",
+      "source_reference": {
+        "path": "spec/draft/dataflow.md",
+        "line": 203
+      },
+      "expected": {
+        "accepted": true
+      },
+      "actual": {
+        "accepted": false
+      },
+      "current_expected": {
+        "accepted": true
+      },
+      "repro": "python -m tools.golden_v4.report --case-id \"V4.VCP.NODE.ROLE.AGGREGATE-INFORMATION\"",
+      "root_cause": "CUSTOM_EMPTY_MEMBERSHIP",
+      "final_status": "PASS",
+      "final_expected": {
+        "accepted": true
+      },
+      "final_actual": {
+        "accepted": true
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.VCP.NODE.ROLE.AGGREGATE-RESULT",
+      "profile": "existing-v4",
+      "category": "production defect",
+      "rationale": "Valid custom empty membership is rejected by unchanged validate_graph nonempty check. Current approved semantics permit that declaration; historical expected acceptance is retained.",
+      "source": "spec/draft/dataflow.md custom empty membership; src/openverify/dataflow.py nonempty membership check",
+      "source_reference": {
+        "path": "spec/draft/dataflow.md",
+        "line": 203
+      },
+      "expected": {
+        "accepted": true
+      },
+      "actual": {
+        "accepted": false
+      },
+      "current_expected": {
+        "accepted": true
+      },
+      "repro": "python -m tools.golden_v4.report --case-id \"V4.VCP.NODE.ROLE.AGGREGATE-RESULT\"",
+      "root_cause": "CUSTOM_EMPTY_MEMBERSHIP",
+      "final_status": "PASS",
+      "final_expected": {
+        "accepted": true
+      },
+      "final_actual": {
+        "accepted": true
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.VCP.SCHEMA.FULL.ANNOTATION",
+      "profile": "existing-v4",
+      "category": "incorrect frozen expectation",
+      "rationale": "description must be a string under the Draft metaschema. An object containing $ref there is invalid schema, independently of annotation traversal. The separate corrected default-payload case is valid.",
+      "source": "Draft2020-12 validation section9.1; spec/draft/dataflow.md valid Draft requirement",
+      "source_reference": {
+        "path": "spec/draft/dataflow.md",
+        "line": 96
+      },
+      "expected": {
+        "accepted": true
+      },
+      "actual": {
+        "accepted": false
+      },
+      "current_expected": {
+        "accepted": false
+      },
+      "repro": "python -m tools.golden_v4.report --case-id \"V4.VCP.SCHEMA.FULL.ANNOTATION\"",
+      "root_cause": "HISTORICAL_ANNOTATION",
+      "final_status": "PASS",
+      "final_expected": {
+        "accepted": false
+      },
+      "final_actual": {
+        "accepted": false
+      },
+      "expectation_revised": true
+    },
+    {
+      "case_id": "V4.REVISION.AVAILABILITY.DERIVE.INFORMATION.CANCELLED.ABSENT.BLOCK",
+      "profile": "revision-v2",
+      "category": "production defect",
+      "rationale": "CANCELLED unavailable information/Decision classified PRODUCER_NOT_EXECUTED instead of snapshot-required OUTPUT_MISSING",
+      "source": "spec/draft/dataflow.md snapshot classifier and custom membership; unchanged src/openverify/dataflow.py",
+      "expected": {
+        "handler": "BLOCK",
+        "invocation_permitted_by_input": false,
+        "required": true,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "actual": {
+        "status": "PRODUCER_NOT_EXECUTED",
+        "required": true,
+        "handler": "BLOCK",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": false
+      },
+      "repro": "python -m pytest -q tests/golden_v4_reconciliation/test_snapshot.py::test_snapshot_relation[V4.REVISION.AVAILABILITY.DERIVE.INFORMATION.CANCELLED.ABSENT.BLOCK]",
+      "root_cause": "CANCELLED_AVAILABILITY",
+      "final_status": "PASS",
+      "final_expected": {
+        "handler": "BLOCK",
+        "invocation_permitted_by_input": false,
+        "required": true,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "final_actual": {
+        "status": "OUTPUT_MISSING",
+        "required": true,
+        "handler": "BLOCK",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": false
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.REVISION.AVAILABILITY.DERIVE.INFORMATION.CANCELLED.ABSENT.OMIT",
+      "profile": "revision-v2",
+      "category": "production defect",
+      "rationale": "CANCELLED unavailable information/Decision classified PRODUCER_NOT_EXECUTED instead of snapshot-required OUTPUT_MISSING",
+      "source": "spec/draft/dataflow.md snapshot classifier and custom membership; unchanged src/openverify/dataflow.py",
+      "expected": {
+        "handler": "OMIT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "actual": {
+        "status": "PRODUCER_NOT_EXECUTED",
+        "required": false,
+        "handler": "OMIT",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": true
+      },
+      "repro": "python -m pytest -q tests/golden_v4_reconciliation/test_snapshot.py::test_snapshot_relation[V4.REVISION.AVAILABILITY.DERIVE.INFORMATION.CANCELLED.ABSENT.OMIT]",
+      "root_cause": "CANCELLED_AVAILABILITY",
+      "final_status": "PASS",
+      "final_expected": {
+        "handler": "OMIT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "final_actual": {
+        "status": "OUTPUT_MISSING",
+        "required": false,
+        "handler": "OMIT",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": true
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.REVISION.AVAILABILITY.DERIVE.INFORMATION.CANCELLED.ABSENT.DEFAULT",
+      "profile": "revision-v2",
+      "category": "production defect",
+      "rationale": "CANCELLED unavailable information/Decision classified PRODUCER_NOT_EXECUTED instead of snapshot-required OUTPUT_MISSING",
+      "source": "spec/draft/dataflow.md snapshot classifier and custom membership; unchanged src/openverify/dataflow.py",
+      "expected": {
+        "handler": "DEFAULT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": true,
+        "value_present": true
+      },
+      "actual": {
+        "status": "PRODUCER_NOT_EXECUTED",
+        "required": false,
+        "handler": "DEFAULT",
+        "used_default": true,
+        "value_present": true,
+        "invocation_permitted_by_input": true
+      },
+      "repro": "python -m pytest -q tests/golden_v4_reconciliation/test_snapshot.py::test_snapshot_relation[V4.REVISION.AVAILABILITY.DERIVE.INFORMATION.CANCELLED.ABSENT.DEFAULT]",
+      "root_cause": "CANCELLED_AVAILABILITY",
+      "final_status": "PASS",
+      "final_expected": {
+        "handler": "DEFAULT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": true,
+        "value_present": true
+      },
+      "final_actual": {
+        "status": "OUTPUT_MISSING",
+        "required": false,
+        "handler": "DEFAULT",
+        "used_default": true,
+        "value_present": true,
+        "invocation_permitted_by_input": true
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.REVISION.AVAILABILITY.DERIVE.INFORMATION.CANCELLED.VALID.BLOCK",
+      "profile": "revision-v2",
+      "category": "production defect",
+      "rationale": "CANCELLED unavailable information/Decision classified PRODUCER_NOT_EXECUTED instead of snapshot-required OUTPUT_MISSING",
+      "source": "spec/draft/dataflow.md snapshot classifier and custom membership; unchanged src/openverify/dataflow.py",
+      "expected": {
+        "handler": "BLOCK",
+        "invocation_permitted_by_input": false,
+        "required": true,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "actual": {
+        "status": "PRODUCER_NOT_EXECUTED",
+        "required": true,
+        "handler": "BLOCK",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": false
+      },
+      "repro": "python -m pytest -q tests/golden_v4_reconciliation/test_snapshot.py::test_snapshot_relation[V4.REVISION.AVAILABILITY.DERIVE.INFORMATION.CANCELLED.VALID.BLOCK]",
+      "root_cause": "CANCELLED_AVAILABILITY",
+      "final_status": "PASS",
+      "final_expected": {
+        "handler": "BLOCK",
+        "invocation_permitted_by_input": false,
+        "required": true,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "final_actual": {
+        "status": "OUTPUT_MISSING",
+        "required": true,
+        "handler": "BLOCK",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": false
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.REVISION.AVAILABILITY.DERIVE.INFORMATION.CANCELLED.VALID.OMIT",
+      "profile": "revision-v2",
+      "category": "production defect",
+      "rationale": "CANCELLED unavailable information/Decision classified PRODUCER_NOT_EXECUTED instead of snapshot-required OUTPUT_MISSING",
+      "source": "spec/draft/dataflow.md snapshot classifier and custom membership; unchanged src/openverify/dataflow.py",
+      "expected": {
+        "handler": "OMIT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "actual": {
+        "status": "PRODUCER_NOT_EXECUTED",
+        "required": false,
+        "handler": "OMIT",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": true
+      },
+      "repro": "python -m pytest -q tests/golden_v4_reconciliation/test_snapshot.py::test_snapshot_relation[V4.REVISION.AVAILABILITY.DERIVE.INFORMATION.CANCELLED.VALID.OMIT]",
+      "root_cause": "CANCELLED_AVAILABILITY",
+      "final_status": "PASS",
+      "final_expected": {
+        "handler": "OMIT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "final_actual": {
+        "status": "OUTPUT_MISSING",
+        "required": false,
+        "handler": "OMIT",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": true
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.REVISION.AVAILABILITY.DERIVE.INFORMATION.CANCELLED.VALID.DEFAULT",
+      "profile": "revision-v2",
+      "category": "production defect",
+      "rationale": "CANCELLED unavailable information/Decision classified PRODUCER_NOT_EXECUTED instead of snapshot-required OUTPUT_MISSING",
+      "source": "spec/draft/dataflow.md snapshot classifier and custom membership; unchanged src/openverify/dataflow.py",
+      "expected": {
+        "handler": "DEFAULT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": true,
+        "value_present": true
+      },
+      "actual": {
+        "status": "PRODUCER_NOT_EXECUTED",
+        "required": false,
+        "handler": "DEFAULT",
+        "used_default": true,
+        "value_present": true,
+        "invocation_permitted_by_input": true
+      },
+      "repro": "python -m pytest -q tests/golden_v4_reconciliation/test_snapshot.py::test_snapshot_relation[V4.REVISION.AVAILABILITY.DERIVE.INFORMATION.CANCELLED.VALID.DEFAULT]",
+      "root_cause": "CANCELLED_AVAILABILITY",
+      "final_status": "PASS",
+      "final_expected": {
+        "handler": "DEFAULT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": true,
+        "value_present": true
+      },
+      "final_actual": {
+        "status": "OUTPUT_MISSING",
+        "required": false,
+        "handler": "DEFAULT",
+        "used_default": true,
+        "value_present": true,
+        "invocation_permitted_by_input": true
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.REVISION.AVAILABILITY.DERIVE.INFORMATION.CANCELLED.INVALID.BLOCK",
+      "profile": "revision-v2",
+      "category": "production defect",
+      "rationale": "CANCELLED unavailable information/Decision classified PRODUCER_NOT_EXECUTED instead of snapshot-required OUTPUT_MISSING",
+      "source": "spec/draft/dataflow.md snapshot classifier and custom membership; unchanged src/openverify/dataflow.py",
+      "expected": {
+        "handler": "BLOCK",
+        "invocation_permitted_by_input": false,
+        "required": true,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "actual": {
+        "status": "PRODUCER_NOT_EXECUTED",
+        "required": true,
+        "handler": "BLOCK",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": false
+      },
+      "repro": "python -m pytest -q tests/golden_v4_reconciliation/test_snapshot.py::test_snapshot_relation[V4.REVISION.AVAILABILITY.DERIVE.INFORMATION.CANCELLED.INVALID.BLOCK]",
+      "root_cause": "CANCELLED_AVAILABILITY",
+      "final_status": "PASS",
+      "final_expected": {
+        "handler": "BLOCK",
+        "invocation_permitted_by_input": false,
+        "required": true,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "final_actual": {
+        "status": "OUTPUT_MISSING",
+        "required": true,
+        "handler": "BLOCK",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": false
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.REVISION.AVAILABILITY.DERIVE.INFORMATION.CANCELLED.INVALID.OMIT",
+      "profile": "revision-v2",
+      "category": "production defect",
+      "rationale": "CANCELLED unavailable information/Decision classified PRODUCER_NOT_EXECUTED instead of snapshot-required OUTPUT_MISSING",
+      "source": "spec/draft/dataflow.md snapshot classifier and custom membership; unchanged src/openverify/dataflow.py",
+      "expected": {
+        "handler": "OMIT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "actual": {
+        "status": "PRODUCER_NOT_EXECUTED",
+        "required": false,
+        "handler": "OMIT",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": true
+      },
+      "repro": "python -m pytest -q tests/golden_v4_reconciliation/test_snapshot.py::test_snapshot_relation[V4.REVISION.AVAILABILITY.DERIVE.INFORMATION.CANCELLED.INVALID.OMIT]",
+      "root_cause": "CANCELLED_AVAILABILITY",
+      "final_status": "PASS",
+      "final_expected": {
+        "handler": "OMIT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "final_actual": {
+        "status": "OUTPUT_MISSING",
+        "required": false,
+        "handler": "OMIT",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": true
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.REVISION.AVAILABILITY.DERIVE.INFORMATION.CANCELLED.INVALID.DEFAULT",
+      "profile": "revision-v2",
+      "category": "production defect",
+      "rationale": "CANCELLED unavailable information/Decision classified PRODUCER_NOT_EXECUTED instead of snapshot-required OUTPUT_MISSING",
+      "source": "spec/draft/dataflow.md snapshot classifier and custom membership; unchanged src/openverify/dataflow.py",
+      "expected": {
+        "handler": "DEFAULT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": true,
+        "value_present": true
+      },
+      "actual": {
+        "status": "PRODUCER_NOT_EXECUTED",
+        "required": false,
+        "handler": "DEFAULT",
+        "used_default": true,
+        "value_present": true,
+        "invocation_permitted_by_input": true
+      },
+      "repro": "python -m pytest -q tests/golden_v4_reconciliation/test_snapshot.py::test_snapshot_relation[V4.REVISION.AVAILABILITY.DERIVE.INFORMATION.CANCELLED.INVALID.DEFAULT]",
+      "root_cause": "CANCELLED_AVAILABILITY",
+      "final_status": "PASS",
+      "final_expected": {
+        "handler": "DEFAULT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": true,
+        "value_present": true
+      },
+      "final_actual": {
+        "status": "OUTPUT_MISSING",
+        "required": false,
+        "handler": "DEFAULT",
+        "used_default": true,
+        "value_present": true,
+        "invocation_permitted_by_input": true
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.REVISION.AVAILABILITY.EVALUATE.INFORMATION.CANCELLED.ABSENT.BLOCK",
+      "profile": "revision-v2",
+      "category": "production defect",
+      "rationale": "CANCELLED unavailable information/Decision classified PRODUCER_NOT_EXECUTED instead of snapshot-required OUTPUT_MISSING",
+      "source": "spec/draft/dataflow.md snapshot classifier and custom membership; unchanged src/openverify/dataflow.py",
+      "expected": {
+        "handler": "BLOCK",
+        "invocation_permitted_by_input": false,
+        "required": true,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "actual": {
+        "status": "PRODUCER_NOT_EXECUTED",
+        "required": true,
+        "handler": "BLOCK",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": false
+      },
+      "repro": "python -m pytest -q tests/golden_v4_reconciliation/test_snapshot.py::test_snapshot_relation[V4.REVISION.AVAILABILITY.EVALUATE.INFORMATION.CANCELLED.ABSENT.BLOCK]",
+      "root_cause": "CANCELLED_AVAILABILITY",
+      "final_status": "PASS",
+      "final_expected": {
+        "handler": "BLOCK",
+        "invocation_permitted_by_input": false,
+        "required": true,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "final_actual": {
+        "status": "OUTPUT_MISSING",
+        "required": true,
+        "handler": "BLOCK",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": false
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.REVISION.AVAILABILITY.EVALUATE.INFORMATION.CANCELLED.ABSENT.OMIT",
+      "profile": "revision-v2",
+      "category": "production defect",
+      "rationale": "CANCELLED unavailable information/Decision classified PRODUCER_NOT_EXECUTED instead of snapshot-required OUTPUT_MISSING",
+      "source": "spec/draft/dataflow.md snapshot classifier and custom membership; unchanged src/openverify/dataflow.py",
+      "expected": {
+        "handler": "OMIT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "actual": {
+        "status": "PRODUCER_NOT_EXECUTED",
+        "required": false,
+        "handler": "OMIT",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": true
+      },
+      "repro": "python -m pytest -q tests/golden_v4_reconciliation/test_snapshot.py::test_snapshot_relation[V4.REVISION.AVAILABILITY.EVALUATE.INFORMATION.CANCELLED.ABSENT.OMIT]",
+      "root_cause": "CANCELLED_AVAILABILITY",
+      "final_status": "PASS",
+      "final_expected": {
+        "handler": "OMIT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "final_actual": {
+        "status": "OUTPUT_MISSING",
+        "required": false,
+        "handler": "OMIT",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": true
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.REVISION.AVAILABILITY.EVALUATE.INFORMATION.CANCELLED.ABSENT.DEFAULT",
+      "profile": "revision-v2",
+      "category": "production defect",
+      "rationale": "CANCELLED unavailable information/Decision classified PRODUCER_NOT_EXECUTED instead of snapshot-required OUTPUT_MISSING",
+      "source": "spec/draft/dataflow.md snapshot classifier and custom membership; unchanged src/openverify/dataflow.py",
+      "expected": {
+        "handler": "DEFAULT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": true,
+        "value_present": true
+      },
+      "actual": {
+        "status": "PRODUCER_NOT_EXECUTED",
+        "required": false,
+        "handler": "DEFAULT",
+        "used_default": true,
+        "value_present": true,
+        "invocation_permitted_by_input": true
+      },
+      "repro": "python -m pytest -q tests/golden_v4_reconciliation/test_snapshot.py::test_snapshot_relation[V4.REVISION.AVAILABILITY.EVALUATE.INFORMATION.CANCELLED.ABSENT.DEFAULT]",
+      "root_cause": "CANCELLED_AVAILABILITY",
+      "final_status": "PASS",
+      "final_expected": {
+        "handler": "DEFAULT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": true,
+        "value_present": true
+      },
+      "final_actual": {
+        "status": "OUTPUT_MISSING",
+        "required": false,
+        "handler": "DEFAULT",
+        "used_default": true,
+        "value_present": true,
+        "invocation_permitted_by_input": true
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.REVISION.AVAILABILITY.EVALUATE.INFORMATION.CANCELLED.VALID.BLOCK",
+      "profile": "revision-v2",
+      "category": "production defect",
+      "rationale": "CANCELLED unavailable information/Decision classified PRODUCER_NOT_EXECUTED instead of snapshot-required OUTPUT_MISSING",
+      "source": "spec/draft/dataflow.md snapshot classifier and custom membership; unchanged src/openverify/dataflow.py",
+      "expected": {
+        "handler": "BLOCK",
+        "invocation_permitted_by_input": false,
+        "required": true,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "actual": {
+        "status": "PRODUCER_NOT_EXECUTED",
+        "required": true,
+        "handler": "BLOCK",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": false
+      },
+      "repro": "python -m pytest -q tests/golden_v4_reconciliation/test_snapshot.py::test_snapshot_relation[V4.REVISION.AVAILABILITY.EVALUATE.INFORMATION.CANCELLED.VALID.BLOCK]",
+      "root_cause": "CANCELLED_AVAILABILITY",
+      "final_status": "PASS",
+      "final_expected": {
+        "handler": "BLOCK",
+        "invocation_permitted_by_input": false,
+        "required": true,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "final_actual": {
+        "status": "OUTPUT_MISSING",
+        "required": true,
+        "handler": "BLOCK",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": false
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.REVISION.AVAILABILITY.EVALUATE.INFORMATION.CANCELLED.VALID.OMIT",
+      "profile": "revision-v2",
+      "category": "production defect",
+      "rationale": "CANCELLED unavailable information/Decision classified PRODUCER_NOT_EXECUTED instead of snapshot-required OUTPUT_MISSING",
+      "source": "spec/draft/dataflow.md snapshot classifier and custom membership; unchanged src/openverify/dataflow.py",
+      "expected": {
+        "handler": "OMIT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "actual": {
+        "status": "PRODUCER_NOT_EXECUTED",
+        "required": false,
+        "handler": "OMIT",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": true
+      },
+      "repro": "python -m pytest -q tests/golden_v4_reconciliation/test_snapshot.py::test_snapshot_relation[V4.REVISION.AVAILABILITY.EVALUATE.INFORMATION.CANCELLED.VALID.OMIT]",
+      "root_cause": "CANCELLED_AVAILABILITY",
+      "final_status": "PASS",
+      "final_expected": {
+        "handler": "OMIT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "final_actual": {
+        "status": "OUTPUT_MISSING",
+        "required": false,
+        "handler": "OMIT",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": true
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.REVISION.AVAILABILITY.EVALUATE.INFORMATION.CANCELLED.VALID.DEFAULT",
+      "profile": "revision-v2",
+      "category": "production defect",
+      "rationale": "CANCELLED unavailable information/Decision classified PRODUCER_NOT_EXECUTED instead of snapshot-required OUTPUT_MISSING",
+      "source": "spec/draft/dataflow.md snapshot classifier and custom membership; unchanged src/openverify/dataflow.py",
+      "expected": {
+        "handler": "DEFAULT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": true,
+        "value_present": true
+      },
+      "actual": {
+        "status": "PRODUCER_NOT_EXECUTED",
+        "required": false,
+        "handler": "DEFAULT",
+        "used_default": true,
+        "value_present": true,
+        "invocation_permitted_by_input": true
+      },
+      "repro": "python -m pytest -q tests/golden_v4_reconciliation/test_snapshot.py::test_snapshot_relation[V4.REVISION.AVAILABILITY.EVALUATE.INFORMATION.CANCELLED.VALID.DEFAULT]",
+      "root_cause": "CANCELLED_AVAILABILITY",
+      "final_status": "PASS",
+      "final_expected": {
+        "handler": "DEFAULT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": true,
+        "value_present": true
+      },
+      "final_actual": {
+        "status": "OUTPUT_MISSING",
+        "required": false,
+        "handler": "DEFAULT",
+        "used_default": true,
+        "value_present": true,
+        "invocation_permitted_by_input": true
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.REVISION.AVAILABILITY.EVALUATE.INFORMATION.CANCELLED.INVALID.BLOCK",
+      "profile": "revision-v2",
+      "category": "production defect",
+      "rationale": "CANCELLED unavailable information/Decision classified PRODUCER_NOT_EXECUTED instead of snapshot-required OUTPUT_MISSING",
+      "source": "spec/draft/dataflow.md snapshot classifier and custom membership; unchanged src/openverify/dataflow.py",
+      "expected": {
+        "handler": "BLOCK",
+        "invocation_permitted_by_input": false,
+        "required": true,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "actual": {
+        "status": "PRODUCER_NOT_EXECUTED",
+        "required": true,
+        "handler": "BLOCK",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": false
+      },
+      "repro": "python -m pytest -q tests/golden_v4_reconciliation/test_snapshot.py::test_snapshot_relation[V4.REVISION.AVAILABILITY.EVALUATE.INFORMATION.CANCELLED.INVALID.BLOCK]",
+      "root_cause": "CANCELLED_AVAILABILITY",
+      "final_status": "PASS",
+      "final_expected": {
+        "handler": "BLOCK",
+        "invocation_permitted_by_input": false,
+        "required": true,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "final_actual": {
+        "status": "OUTPUT_MISSING",
+        "required": true,
+        "handler": "BLOCK",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": false
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.REVISION.AVAILABILITY.EVALUATE.INFORMATION.CANCELLED.INVALID.OMIT",
+      "profile": "revision-v2",
+      "category": "production defect",
+      "rationale": "CANCELLED unavailable information/Decision classified PRODUCER_NOT_EXECUTED instead of snapshot-required OUTPUT_MISSING",
+      "source": "spec/draft/dataflow.md snapshot classifier and custom membership; unchanged src/openverify/dataflow.py",
+      "expected": {
+        "handler": "OMIT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "actual": {
+        "status": "PRODUCER_NOT_EXECUTED",
+        "required": false,
+        "handler": "OMIT",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": true
+      },
+      "repro": "python -m pytest -q tests/golden_v4_reconciliation/test_snapshot.py::test_snapshot_relation[V4.REVISION.AVAILABILITY.EVALUATE.INFORMATION.CANCELLED.INVALID.OMIT]",
+      "root_cause": "CANCELLED_AVAILABILITY",
+      "final_status": "PASS",
+      "final_expected": {
+        "handler": "OMIT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "final_actual": {
+        "status": "OUTPUT_MISSING",
+        "required": false,
+        "handler": "OMIT",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": true
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.REVISION.AVAILABILITY.EVALUATE.INFORMATION.CANCELLED.INVALID.DEFAULT",
+      "profile": "revision-v2",
+      "category": "production defect",
+      "rationale": "CANCELLED unavailable information/Decision classified PRODUCER_NOT_EXECUTED instead of snapshot-required OUTPUT_MISSING",
+      "source": "spec/draft/dataflow.md snapshot classifier and custom membership; unchanged src/openverify/dataflow.py",
+      "expected": {
+        "handler": "DEFAULT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": true,
+        "value_present": true
+      },
+      "actual": {
+        "status": "PRODUCER_NOT_EXECUTED",
+        "required": false,
+        "handler": "DEFAULT",
+        "used_default": true,
+        "value_present": true,
+        "invocation_permitted_by_input": true
+      },
+      "repro": "python -m pytest -q tests/golden_v4_reconciliation/test_snapshot.py::test_snapshot_relation[V4.REVISION.AVAILABILITY.EVALUATE.INFORMATION.CANCELLED.INVALID.DEFAULT]",
+      "root_cause": "CANCELLED_AVAILABILITY",
+      "final_status": "PASS",
+      "final_expected": {
+        "handler": "DEFAULT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": true,
+        "value_present": true
+      },
+      "final_actual": {
+        "status": "OUTPUT_MISSING",
+        "required": false,
+        "handler": "DEFAULT",
+        "used_default": true,
+        "value_present": true,
+        "invocation_permitted_by_input": true
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.REVISION.AVAILABILITY.AGGREGATE.INFORMATION.CANCELLED.ABSENT.BLOCK",
+      "profile": "revision-v2",
+      "category": "production defect",
+      "rationale": "CANCELLED unavailable information/Decision classified PRODUCER_NOT_EXECUTED instead of snapshot-required OUTPUT_MISSING",
+      "source": "spec/draft/dataflow.md snapshot classifier and custom membership; unchanged src/openverify/dataflow.py",
+      "expected": {
+        "handler": "BLOCK",
+        "invocation_permitted_by_input": false,
+        "required": true,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "actual": {
+        "status": "PRODUCER_NOT_EXECUTED",
+        "required": true,
+        "handler": "BLOCK",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": false
+      },
+      "repro": "python -m pytest -q tests/golden_v4_reconciliation/test_snapshot.py::test_snapshot_relation[V4.REVISION.AVAILABILITY.AGGREGATE.INFORMATION.CANCELLED.ABSENT.BLOCK]",
+      "root_cause": "CANCELLED_AVAILABILITY",
+      "final_status": "PASS",
+      "final_expected": {
+        "handler": "BLOCK",
+        "invocation_permitted_by_input": false,
+        "required": true,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "final_actual": {
+        "status": "OUTPUT_MISSING",
+        "required": true,
+        "handler": "BLOCK",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": false
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.REVISION.AVAILABILITY.AGGREGATE.INFORMATION.CANCELLED.ABSENT.OMIT",
+      "profile": "revision-v2",
+      "category": "production defect",
+      "rationale": "CANCELLED unavailable information/Decision classified PRODUCER_NOT_EXECUTED instead of snapshot-required OUTPUT_MISSING",
+      "source": "spec/draft/dataflow.md snapshot classifier and custom membership; unchanged src/openverify/dataflow.py",
+      "expected": {
+        "handler": "OMIT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "actual": {
+        "status": "PRODUCER_NOT_EXECUTED",
+        "required": false,
+        "handler": "OMIT",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": true
+      },
+      "repro": "python -m pytest -q tests/golden_v4_reconciliation/test_snapshot.py::test_snapshot_relation[V4.REVISION.AVAILABILITY.AGGREGATE.INFORMATION.CANCELLED.ABSENT.OMIT]",
+      "root_cause": "CANCELLED_AVAILABILITY",
+      "final_status": "PASS",
+      "final_expected": {
+        "handler": "OMIT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "final_actual": {
+        "status": "OUTPUT_MISSING",
+        "required": false,
+        "handler": "OMIT",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": true
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.REVISION.AVAILABILITY.AGGREGATE.INFORMATION.CANCELLED.ABSENT.DEFAULT",
+      "profile": "revision-v2",
+      "category": "production defect",
+      "rationale": "CANCELLED unavailable information/Decision classified PRODUCER_NOT_EXECUTED instead of snapshot-required OUTPUT_MISSING",
+      "source": "spec/draft/dataflow.md snapshot classifier and custom membership; unchanged src/openverify/dataflow.py",
+      "expected": {
+        "handler": "DEFAULT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": true,
+        "value_present": true
+      },
+      "actual": {
+        "status": "PRODUCER_NOT_EXECUTED",
+        "required": false,
+        "handler": "DEFAULT",
+        "used_default": true,
+        "value_present": true,
+        "invocation_permitted_by_input": true
+      },
+      "repro": "python -m pytest -q tests/golden_v4_reconciliation/test_snapshot.py::test_snapshot_relation[V4.REVISION.AVAILABILITY.AGGREGATE.INFORMATION.CANCELLED.ABSENT.DEFAULT]",
+      "root_cause": "CANCELLED_AVAILABILITY",
+      "final_status": "PASS",
+      "final_expected": {
+        "handler": "DEFAULT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": true,
+        "value_present": true
+      },
+      "final_actual": {
+        "status": "OUTPUT_MISSING",
+        "required": false,
+        "handler": "DEFAULT",
+        "used_default": true,
+        "value_present": true,
+        "invocation_permitted_by_input": true
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.REVISION.AVAILABILITY.AGGREGATE.INFORMATION.CANCELLED.VALID.BLOCK",
+      "profile": "revision-v2",
+      "category": "production defect",
+      "rationale": "CANCELLED unavailable information/Decision classified PRODUCER_NOT_EXECUTED instead of snapshot-required OUTPUT_MISSING",
+      "source": "spec/draft/dataflow.md snapshot classifier and custom membership; unchanged src/openverify/dataflow.py",
+      "expected": {
+        "handler": "BLOCK",
+        "invocation_permitted_by_input": false,
+        "required": true,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "actual": {
+        "status": "PRODUCER_NOT_EXECUTED",
+        "required": true,
+        "handler": "BLOCK",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": false
+      },
+      "repro": "python -m pytest -q tests/golden_v4_reconciliation/test_snapshot.py::test_snapshot_relation[V4.REVISION.AVAILABILITY.AGGREGATE.INFORMATION.CANCELLED.VALID.BLOCK]",
+      "root_cause": "CANCELLED_AVAILABILITY",
+      "final_status": "PASS",
+      "final_expected": {
+        "handler": "BLOCK",
+        "invocation_permitted_by_input": false,
+        "required": true,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "final_actual": {
+        "status": "OUTPUT_MISSING",
+        "required": true,
+        "handler": "BLOCK",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": false
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.REVISION.AVAILABILITY.AGGREGATE.INFORMATION.CANCELLED.VALID.OMIT",
+      "profile": "revision-v2",
+      "category": "production defect",
+      "rationale": "CANCELLED unavailable information/Decision classified PRODUCER_NOT_EXECUTED instead of snapshot-required OUTPUT_MISSING",
+      "source": "spec/draft/dataflow.md snapshot classifier and custom membership; unchanged src/openverify/dataflow.py",
+      "expected": {
+        "handler": "OMIT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "actual": {
+        "status": "PRODUCER_NOT_EXECUTED",
+        "required": false,
+        "handler": "OMIT",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": true
+      },
+      "repro": "python -m pytest -q tests/golden_v4_reconciliation/test_snapshot.py::test_snapshot_relation[V4.REVISION.AVAILABILITY.AGGREGATE.INFORMATION.CANCELLED.VALID.OMIT]",
+      "root_cause": "CANCELLED_AVAILABILITY",
+      "final_status": "PASS",
+      "final_expected": {
+        "handler": "OMIT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "final_actual": {
+        "status": "OUTPUT_MISSING",
+        "required": false,
+        "handler": "OMIT",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": true
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.REVISION.AVAILABILITY.AGGREGATE.INFORMATION.CANCELLED.VALID.DEFAULT",
+      "profile": "revision-v2",
+      "category": "production defect",
+      "rationale": "CANCELLED unavailable information/Decision classified PRODUCER_NOT_EXECUTED instead of snapshot-required OUTPUT_MISSING",
+      "source": "spec/draft/dataflow.md snapshot classifier and custom membership; unchanged src/openverify/dataflow.py",
+      "expected": {
+        "handler": "DEFAULT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": true,
+        "value_present": true
+      },
+      "actual": {
+        "status": "PRODUCER_NOT_EXECUTED",
+        "required": false,
+        "handler": "DEFAULT",
+        "used_default": true,
+        "value_present": true,
+        "invocation_permitted_by_input": true
+      },
+      "repro": "python -m pytest -q tests/golden_v4_reconciliation/test_snapshot.py::test_snapshot_relation[V4.REVISION.AVAILABILITY.AGGREGATE.INFORMATION.CANCELLED.VALID.DEFAULT]",
+      "root_cause": "CANCELLED_AVAILABILITY",
+      "final_status": "PASS",
+      "final_expected": {
+        "handler": "DEFAULT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": true,
+        "value_present": true
+      },
+      "final_actual": {
+        "status": "OUTPUT_MISSING",
+        "required": false,
+        "handler": "DEFAULT",
+        "used_default": true,
+        "value_present": true,
+        "invocation_permitted_by_input": true
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.REVISION.AVAILABILITY.AGGREGATE.INFORMATION.CANCELLED.INVALID.BLOCK",
+      "profile": "revision-v2",
+      "category": "production defect",
+      "rationale": "CANCELLED unavailable information/Decision classified PRODUCER_NOT_EXECUTED instead of snapshot-required OUTPUT_MISSING",
+      "source": "spec/draft/dataflow.md snapshot classifier and custom membership; unchanged src/openverify/dataflow.py",
+      "expected": {
+        "handler": "BLOCK",
+        "invocation_permitted_by_input": false,
+        "required": true,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "actual": {
+        "status": "PRODUCER_NOT_EXECUTED",
+        "required": true,
+        "handler": "BLOCK",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": false
+      },
+      "repro": "python -m pytest -q tests/golden_v4_reconciliation/test_snapshot.py::test_snapshot_relation[V4.REVISION.AVAILABILITY.AGGREGATE.INFORMATION.CANCELLED.INVALID.BLOCK]",
+      "root_cause": "CANCELLED_AVAILABILITY",
+      "final_status": "PASS",
+      "final_expected": {
+        "handler": "BLOCK",
+        "invocation_permitted_by_input": false,
+        "required": true,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "final_actual": {
+        "status": "OUTPUT_MISSING",
+        "required": true,
+        "handler": "BLOCK",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": false
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.REVISION.AVAILABILITY.AGGREGATE.INFORMATION.CANCELLED.INVALID.OMIT",
+      "profile": "revision-v2",
+      "category": "production defect",
+      "rationale": "CANCELLED unavailable information/Decision classified PRODUCER_NOT_EXECUTED instead of snapshot-required OUTPUT_MISSING",
+      "source": "spec/draft/dataflow.md snapshot classifier and custom membership; unchanged src/openverify/dataflow.py",
+      "expected": {
+        "handler": "OMIT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "actual": {
+        "status": "PRODUCER_NOT_EXECUTED",
+        "required": false,
+        "handler": "OMIT",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": true
+      },
+      "repro": "python -m pytest -q tests/golden_v4_reconciliation/test_snapshot.py::test_snapshot_relation[V4.REVISION.AVAILABILITY.AGGREGATE.INFORMATION.CANCELLED.INVALID.OMIT]",
+      "root_cause": "CANCELLED_AVAILABILITY",
+      "final_status": "PASS",
+      "final_expected": {
+        "handler": "OMIT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "final_actual": {
+        "status": "OUTPUT_MISSING",
+        "required": false,
+        "handler": "OMIT",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": true
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.REVISION.AVAILABILITY.AGGREGATE.INFORMATION.CANCELLED.INVALID.DEFAULT",
+      "profile": "revision-v2",
+      "category": "production defect",
+      "rationale": "CANCELLED unavailable information/Decision classified PRODUCER_NOT_EXECUTED instead of snapshot-required OUTPUT_MISSING",
+      "source": "spec/draft/dataflow.md snapshot classifier and custom membership; unchanged src/openverify/dataflow.py",
+      "expected": {
+        "handler": "DEFAULT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": true,
+        "value_present": true
+      },
+      "actual": {
+        "status": "PRODUCER_NOT_EXECUTED",
+        "required": false,
+        "handler": "DEFAULT",
+        "used_default": true,
+        "value_present": true,
+        "invocation_permitted_by_input": true
+      },
+      "repro": "python -m pytest -q tests/golden_v4_reconciliation/test_snapshot.py::test_snapshot_relation[V4.REVISION.AVAILABILITY.AGGREGATE.INFORMATION.CANCELLED.INVALID.DEFAULT]",
+      "root_cause": "CANCELLED_AVAILABILITY",
+      "final_status": "PASS",
+      "final_expected": {
+        "handler": "DEFAULT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": true,
+        "value_present": true
+      },
+      "final_actual": {
+        "status": "OUTPUT_MISSING",
+        "required": false,
+        "handler": "DEFAULT",
+        "used_default": true,
+        "value_present": true,
+        "invocation_permitted_by_input": true
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.REVISION.AVAILABILITY.CONTROL.INFORMATION.CANCELLED.ABSENT.BLOCK",
+      "profile": "revision-v2",
+      "category": "production defect",
+      "rationale": "CANCELLED unavailable information/Decision classified PRODUCER_NOT_EXECUTED instead of snapshot-required OUTPUT_MISSING",
+      "source": "spec/draft/dataflow.md snapshot classifier and custom membership; unchanged src/openverify/dataflow.py",
+      "expected": {
+        "handler": "BLOCK",
+        "invocation_permitted_by_input": false,
+        "required": true,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "actual": {
+        "status": "PRODUCER_NOT_EXECUTED",
+        "required": true,
+        "handler": "BLOCK",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": false
+      },
+      "repro": "python -m pytest -q tests/golden_v4_reconciliation/test_snapshot.py::test_snapshot_relation[V4.REVISION.AVAILABILITY.CONTROL.INFORMATION.CANCELLED.ABSENT.BLOCK]",
+      "root_cause": "CANCELLED_AVAILABILITY",
+      "final_status": "PASS",
+      "final_expected": {
+        "handler": "BLOCK",
+        "invocation_permitted_by_input": false,
+        "required": true,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "final_actual": {
+        "status": "OUTPUT_MISSING",
+        "required": true,
+        "handler": "BLOCK",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": false
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.REVISION.AVAILABILITY.CONTROL.INFORMATION.CANCELLED.ABSENT.OMIT",
+      "profile": "revision-v2",
+      "category": "production defect",
+      "rationale": "CANCELLED unavailable information/Decision classified PRODUCER_NOT_EXECUTED instead of snapshot-required OUTPUT_MISSING",
+      "source": "spec/draft/dataflow.md snapshot classifier and custom membership; unchanged src/openverify/dataflow.py",
+      "expected": {
+        "handler": "OMIT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "actual": {
+        "status": "PRODUCER_NOT_EXECUTED",
+        "required": false,
+        "handler": "OMIT",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": true
+      },
+      "repro": "python -m pytest -q tests/golden_v4_reconciliation/test_snapshot.py::test_snapshot_relation[V4.REVISION.AVAILABILITY.CONTROL.INFORMATION.CANCELLED.ABSENT.OMIT]",
+      "root_cause": "CANCELLED_AVAILABILITY",
+      "final_status": "PASS",
+      "final_expected": {
+        "handler": "OMIT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "final_actual": {
+        "status": "OUTPUT_MISSING",
+        "required": false,
+        "handler": "OMIT",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": true
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.REVISION.AVAILABILITY.CONTROL.INFORMATION.CANCELLED.ABSENT.DEFAULT",
+      "profile": "revision-v2",
+      "category": "production defect",
+      "rationale": "CANCELLED unavailable information/Decision classified PRODUCER_NOT_EXECUTED instead of snapshot-required OUTPUT_MISSING",
+      "source": "spec/draft/dataflow.md snapshot classifier and custom membership; unchanged src/openverify/dataflow.py",
+      "expected": {
+        "handler": "DEFAULT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": true,
+        "value_present": true
+      },
+      "actual": {
+        "status": "PRODUCER_NOT_EXECUTED",
+        "required": false,
+        "handler": "DEFAULT",
+        "used_default": true,
+        "value_present": true,
+        "invocation_permitted_by_input": true
+      },
+      "repro": "python -m pytest -q tests/golden_v4_reconciliation/test_snapshot.py::test_snapshot_relation[V4.REVISION.AVAILABILITY.CONTROL.INFORMATION.CANCELLED.ABSENT.DEFAULT]",
+      "root_cause": "CANCELLED_AVAILABILITY",
+      "final_status": "PASS",
+      "final_expected": {
+        "handler": "DEFAULT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": true,
+        "value_present": true
+      },
+      "final_actual": {
+        "status": "OUTPUT_MISSING",
+        "required": false,
+        "handler": "DEFAULT",
+        "used_default": true,
+        "value_present": true,
+        "invocation_permitted_by_input": true
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.REVISION.AVAILABILITY.CONTROL.INFORMATION.CANCELLED.VALID.BLOCK",
+      "profile": "revision-v2",
+      "category": "production defect",
+      "rationale": "CANCELLED unavailable information/Decision classified PRODUCER_NOT_EXECUTED instead of snapshot-required OUTPUT_MISSING",
+      "source": "spec/draft/dataflow.md snapshot classifier and custom membership; unchanged src/openverify/dataflow.py",
+      "expected": {
+        "handler": "BLOCK",
+        "invocation_permitted_by_input": false,
+        "required": true,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "actual": {
+        "status": "PRODUCER_NOT_EXECUTED",
+        "required": true,
+        "handler": "BLOCK",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": false
+      },
+      "repro": "python -m pytest -q tests/golden_v4_reconciliation/test_snapshot.py::test_snapshot_relation[V4.REVISION.AVAILABILITY.CONTROL.INFORMATION.CANCELLED.VALID.BLOCK]",
+      "root_cause": "CANCELLED_AVAILABILITY",
+      "final_status": "PASS",
+      "final_expected": {
+        "handler": "BLOCK",
+        "invocation_permitted_by_input": false,
+        "required": true,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "final_actual": {
+        "status": "OUTPUT_MISSING",
+        "required": true,
+        "handler": "BLOCK",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": false
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.REVISION.AVAILABILITY.CONTROL.INFORMATION.CANCELLED.VALID.OMIT",
+      "profile": "revision-v2",
+      "category": "production defect",
+      "rationale": "CANCELLED unavailable information/Decision classified PRODUCER_NOT_EXECUTED instead of snapshot-required OUTPUT_MISSING",
+      "source": "spec/draft/dataflow.md snapshot classifier and custom membership; unchanged src/openverify/dataflow.py",
+      "expected": {
+        "handler": "OMIT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "actual": {
+        "status": "PRODUCER_NOT_EXECUTED",
+        "required": false,
+        "handler": "OMIT",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": true
+      },
+      "repro": "python -m pytest -q tests/golden_v4_reconciliation/test_snapshot.py::test_snapshot_relation[V4.REVISION.AVAILABILITY.CONTROL.INFORMATION.CANCELLED.VALID.OMIT]",
+      "root_cause": "CANCELLED_AVAILABILITY",
+      "final_status": "PASS",
+      "final_expected": {
+        "handler": "OMIT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "final_actual": {
+        "status": "OUTPUT_MISSING",
+        "required": false,
+        "handler": "OMIT",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": true
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.REVISION.AVAILABILITY.CONTROL.INFORMATION.CANCELLED.VALID.DEFAULT",
+      "profile": "revision-v2",
+      "category": "production defect",
+      "rationale": "CANCELLED unavailable information/Decision classified PRODUCER_NOT_EXECUTED instead of snapshot-required OUTPUT_MISSING",
+      "source": "spec/draft/dataflow.md snapshot classifier and custom membership; unchanged src/openverify/dataflow.py",
+      "expected": {
+        "handler": "DEFAULT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": true,
+        "value_present": true
+      },
+      "actual": {
+        "status": "PRODUCER_NOT_EXECUTED",
+        "required": false,
+        "handler": "DEFAULT",
+        "used_default": true,
+        "value_present": true,
+        "invocation_permitted_by_input": true
+      },
+      "repro": "python -m pytest -q tests/golden_v4_reconciliation/test_snapshot.py::test_snapshot_relation[V4.REVISION.AVAILABILITY.CONTROL.INFORMATION.CANCELLED.VALID.DEFAULT]",
+      "root_cause": "CANCELLED_AVAILABILITY",
+      "final_status": "PASS",
+      "final_expected": {
+        "handler": "DEFAULT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": true,
+        "value_present": true
+      },
+      "final_actual": {
+        "status": "OUTPUT_MISSING",
+        "required": false,
+        "handler": "DEFAULT",
+        "used_default": true,
+        "value_present": true,
+        "invocation_permitted_by_input": true
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.REVISION.AVAILABILITY.CONTROL.INFORMATION.CANCELLED.INVALID.BLOCK",
+      "profile": "revision-v2",
+      "category": "production defect",
+      "rationale": "CANCELLED unavailable information/Decision classified PRODUCER_NOT_EXECUTED instead of snapshot-required OUTPUT_MISSING",
+      "source": "spec/draft/dataflow.md snapshot classifier and custom membership; unchanged src/openverify/dataflow.py",
+      "expected": {
+        "handler": "BLOCK",
+        "invocation_permitted_by_input": false,
+        "required": true,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "actual": {
+        "status": "PRODUCER_NOT_EXECUTED",
+        "required": true,
+        "handler": "BLOCK",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": false
+      },
+      "repro": "python -m pytest -q tests/golden_v4_reconciliation/test_snapshot.py::test_snapshot_relation[V4.REVISION.AVAILABILITY.CONTROL.INFORMATION.CANCELLED.INVALID.BLOCK]",
+      "root_cause": "CANCELLED_AVAILABILITY",
+      "final_status": "PASS",
+      "final_expected": {
+        "handler": "BLOCK",
+        "invocation_permitted_by_input": false,
+        "required": true,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "final_actual": {
+        "status": "OUTPUT_MISSING",
+        "required": true,
+        "handler": "BLOCK",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": false
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.REVISION.AVAILABILITY.CONTROL.INFORMATION.CANCELLED.INVALID.OMIT",
+      "profile": "revision-v2",
+      "category": "production defect",
+      "rationale": "CANCELLED unavailable information/Decision classified PRODUCER_NOT_EXECUTED instead of snapshot-required OUTPUT_MISSING",
+      "source": "spec/draft/dataflow.md snapshot classifier and custom membership; unchanged src/openverify/dataflow.py",
+      "expected": {
+        "handler": "OMIT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "actual": {
+        "status": "PRODUCER_NOT_EXECUTED",
+        "required": false,
+        "handler": "OMIT",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": true
+      },
+      "repro": "python -m pytest -q tests/golden_v4_reconciliation/test_snapshot.py::test_snapshot_relation[V4.REVISION.AVAILABILITY.CONTROL.INFORMATION.CANCELLED.INVALID.OMIT]",
+      "root_cause": "CANCELLED_AVAILABILITY",
+      "final_status": "PASS",
+      "final_expected": {
+        "handler": "OMIT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "final_actual": {
+        "status": "OUTPUT_MISSING",
+        "required": false,
+        "handler": "OMIT",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": true
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.REVISION.AVAILABILITY.CONTROL.INFORMATION.CANCELLED.INVALID.DEFAULT",
+      "profile": "revision-v2",
+      "category": "production defect",
+      "rationale": "CANCELLED unavailable information/Decision classified PRODUCER_NOT_EXECUTED instead of snapshot-required OUTPUT_MISSING",
+      "source": "spec/draft/dataflow.md snapshot classifier and custom membership; unchanged src/openverify/dataflow.py",
+      "expected": {
+        "handler": "DEFAULT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": true,
+        "value_present": true
+      },
+      "actual": {
+        "status": "PRODUCER_NOT_EXECUTED",
+        "required": false,
+        "handler": "DEFAULT",
+        "used_default": true,
+        "value_present": true,
+        "invocation_permitted_by_input": true
+      },
+      "repro": "python -m pytest -q tests/golden_v4_reconciliation/test_snapshot.py::test_snapshot_relation[V4.REVISION.AVAILABILITY.CONTROL.INFORMATION.CANCELLED.INVALID.DEFAULT]",
+      "root_cause": "CANCELLED_AVAILABILITY",
+      "final_status": "PASS",
+      "final_expected": {
+        "handler": "DEFAULT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": true,
+        "value_present": true
+      },
+      "final_actual": {
+        "status": "OUTPUT_MISSING",
+        "required": false,
+        "handler": "DEFAULT",
+        "used_default": true,
+        "value_present": true,
+        "invocation_permitted_by_input": true
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.REVISION.AVAILABILITY.CONTROL.DECISION.CANCELLED.ABSENT.BLOCK",
+      "profile": "revision-v2",
+      "category": "production defect",
+      "rationale": "CANCELLED unavailable information/Decision classified PRODUCER_NOT_EXECUTED instead of snapshot-required OUTPUT_MISSING",
+      "source": "spec/draft/dataflow.md snapshot classifier and custom membership; unchanged src/openverify/dataflow.py",
+      "expected": {
+        "handler": "BLOCK",
+        "invocation_permitted_by_input": false,
+        "required": true,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "actual": {
+        "status": "PRODUCER_NOT_EXECUTED",
+        "required": true,
+        "handler": "BLOCK",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": false
+      },
+      "repro": "python -m pytest -q tests/golden_v4_reconciliation/test_snapshot.py::test_snapshot_relation[V4.REVISION.AVAILABILITY.CONTROL.DECISION.CANCELLED.ABSENT.BLOCK]",
+      "root_cause": "CANCELLED_AVAILABILITY",
+      "final_status": "PASS",
+      "final_expected": {
+        "handler": "BLOCK",
+        "invocation_permitted_by_input": false,
+        "required": true,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "final_actual": {
+        "status": "OUTPUT_MISSING",
+        "required": true,
+        "handler": "BLOCK",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": false
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.REVISION.AVAILABILITY.CONTROL.DECISION.CANCELLED.ABSENT.OMIT",
+      "profile": "revision-v2",
+      "category": "production defect",
+      "rationale": "CANCELLED unavailable information/Decision classified PRODUCER_NOT_EXECUTED instead of snapshot-required OUTPUT_MISSING",
+      "source": "spec/draft/dataflow.md snapshot classifier and custom membership; unchanged src/openverify/dataflow.py",
+      "expected": {
+        "handler": "OMIT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "actual": {
+        "status": "PRODUCER_NOT_EXECUTED",
+        "required": false,
+        "handler": "OMIT",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": true
+      },
+      "repro": "python -m pytest -q tests/golden_v4_reconciliation/test_snapshot.py::test_snapshot_relation[V4.REVISION.AVAILABILITY.CONTROL.DECISION.CANCELLED.ABSENT.OMIT]",
+      "root_cause": "CANCELLED_AVAILABILITY",
+      "final_status": "PASS",
+      "final_expected": {
+        "handler": "OMIT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "final_actual": {
+        "status": "OUTPUT_MISSING",
+        "required": false,
+        "handler": "OMIT",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": true
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.REVISION.AVAILABILITY.CONTROL.DECISION.CANCELLED.ABSENT.DEFAULT",
+      "profile": "revision-v2",
+      "category": "production defect",
+      "rationale": "CANCELLED unavailable information/Decision classified PRODUCER_NOT_EXECUTED instead of snapshot-required OUTPUT_MISSING",
+      "source": "spec/draft/dataflow.md snapshot classifier and custom membership; unchanged src/openverify/dataflow.py",
+      "expected": {
+        "handler": "DEFAULT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": true,
+        "value_present": true
+      },
+      "actual": {
+        "status": "PRODUCER_NOT_EXECUTED",
+        "required": false,
+        "handler": "DEFAULT",
+        "used_default": true,
+        "value_present": true,
+        "invocation_permitted_by_input": true
+      },
+      "repro": "python -m pytest -q tests/golden_v4_reconciliation/test_snapshot.py::test_snapshot_relation[V4.REVISION.AVAILABILITY.CONTROL.DECISION.CANCELLED.ABSENT.DEFAULT]",
+      "root_cause": "CANCELLED_AVAILABILITY",
+      "final_status": "PASS",
+      "final_expected": {
+        "handler": "DEFAULT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": true,
+        "value_present": true
+      },
+      "final_actual": {
+        "status": "OUTPUT_MISSING",
+        "required": false,
+        "handler": "DEFAULT",
+        "used_default": true,
+        "value_present": true,
+        "invocation_permitted_by_input": true
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.REVISION.AVAILABILITY.CONTROL.DECISION.CANCELLED.VALID.BLOCK",
+      "profile": "revision-v2",
+      "category": "production defect",
+      "rationale": "CANCELLED unavailable information/Decision classified PRODUCER_NOT_EXECUTED instead of snapshot-required OUTPUT_MISSING",
+      "source": "spec/draft/dataflow.md snapshot classifier and custom membership; unchanged src/openverify/dataflow.py",
+      "expected": {
+        "handler": "BLOCK",
+        "invocation_permitted_by_input": false,
+        "required": true,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "actual": {
+        "status": "PRODUCER_NOT_EXECUTED",
+        "required": true,
+        "handler": "BLOCK",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": false
+      },
+      "repro": "python -m pytest -q tests/golden_v4_reconciliation/test_snapshot.py::test_snapshot_relation[V4.REVISION.AVAILABILITY.CONTROL.DECISION.CANCELLED.VALID.BLOCK]",
+      "root_cause": "CANCELLED_AVAILABILITY",
+      "final_status": "PASS",
+      "final_expected": {
+        "handler": "BLOCK",
+        "invocation_permitted_by_input": false,
+        "required": true,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "final_actual": {
+        "status": "OUTPUT_MISSING",
+        "required": true,
+        "handler": "BLOCK",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": false
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.REVISION.AVAILABILITY.CONTROL.DECISION.CANCELLED.VALID.OMIT",
+      "profile": "revision-v2",
+      "category": "production defect",
+      "rationale": "CANCELLED unavailable information/Decision classified PRODUCER_NOT_EXECUTED instead of snapshot-required OUTPUT_MISSING",
+      "source": "spec/draft/dataflow.md snapshot classifier and custom membership; unchanged src/openverify/dataflow.py",
+      "expected": {
+        "handler": "OMIT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "actual": {
+        "status": "PRODUCER_NOT_EXECUTED",
+        "required": false,
+        "handler": "OMIT",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": true
+      },
+      "repro": "python -m pytest -q tests/golden_v4_reconciliation/test_snapshot.py::test_snapshot_relation[V4.REVISION.AVAILABILITY.CONTROL.DECISION.CANCELLED.VALID.OMIT]",
+      "root_cause": "CANCELLED_AVAILABILITY",
+      "final_status": "PASS",
+      "final_expected": {
+        "handler": "OMIT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "final_actual": {
+        "status": "OUTPUT_MISSING",
+        "required": false,
+        "handler": "OMIT",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": true
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.REVISION.AVAILABILITY.CONTROL.DECISION.CANCELLED.VALID.DEFAULT",
+      "profile": "revision-v2",
+      "category": "production defect",
+      "rationale": "CANCELLED unavailable information/Decision classified PRODUCER_NOT_EXECUTED instead of snapshot-required OUTPUT_MISSING",
+      "source": "spec/draft/dataflow.md snapshot classifier and custom membership; unchanged src/openverify/dataflow.py",
+      "expected": {
+        "handler": "DEFAULT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": true,
+        "value_present": true
+      },
+      "actual": {
+        "status": "PRODUCER_NOT_EXECUTED",
+        "required": false,
+        "handler": "DEFAULT",
+        "used_default": true,
+        "value_present": true,
+        "invocation_permitted_by_input": true
+      },
+      "repro": "python -m pytest -q tests/golden_v4_reconciliation/test_snapshot.py::test_snapshot_relation[V4.REVISION.AVAILABILITY.CONTROL.DECISION.CANCELLED.VALID.DEFAULT]",
+      "root_cause": "CANCELLED_AVAILABILITY",
+      "final_status": "PASS",
+      "final_expected": {
+        "handler": "DEFAULT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": true,
+        "value_present": true
+      },
+      "final_actual": {
+        "status": "OUTPUT_MISSING",
+        "required": false,
+        "handler": "DEFAULT",
+        "used_default": true,
+        "value_present": true,
+        "invocation_permitted_by_input": true
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.REVISION.AVAILABILITY.CONTROL.DECISION.CANCELLED.INVALID.BLOCK",
+      "profile": "revision-v2",
+      "category": "production defect",
+      "rationale": "CANCELLED unavailable information/Decision classified PRODUCER_NOT_EXECUTED instead of snapshot-required OUTPUT_MISSING",
+      "source": "spec/draft/dataflow.md snapshot classifier and custom membership; unchanged src/openverify/dataflow.py",
+      "expected": {
+        "handler": "BLOCK",
+        "invocation_permitted_by_input": false,
+        "required": true,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "actual": {
+        "status": "PRODUCER_NOT_EXECUTED",
+        "required": true,
+        "handler": "BLOCK",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": false
+      },
+      "repro": "python -m pytest -q tests/golden_v4_reconciliation/test_snapshot.py::test_snapshot_relation[V4.REVISION.AVAILABILITY.CONTROL.DECISION.CANCELLED.INVALID.BLOCK]",
+      "root_cause": "CANCELLED_AVAILABILITY",
+      "final_status": "PASS",
+      "final_expected": {
+        "handler": "BLOCK",
+        "invocation_permitted_by_input": false,
+        "required": true,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "final_actual": {
+        "status": "OUTPUT_MISSING",
+        "required": true,
+        "handler": "BLOCK",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": false
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.REVISION.AVAILABILITY.CONTROL.DECISION.CANCELLED.INVALID.OMIT",
+      "profile": "revision-v2",
+      "category": "production defect",
+      "rationale": "CANCELLED unavailable information/Decision classified PRODUCER_NOT_EXECUTED instead of snapshot-required OUTPUT_MISSING",
+      "source": "spec/draft/dataflow.md snapshot classifier and custom membership; unchanged src/openverify/dataflow.py",
+      "expected": {
+        "handler": "OMIT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "actual": {
+        "status": "PRODUCER_NOT_EXECUTED",
+        "required": false,
+        "handler": "OMIT",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": true
+      },
+      "repro": "python -m pytest -q tests/golden_v4_reconciliation/test_snapshot.py::test_snapshot_relation[V4.REVISION.AVAILABILITY.CONTROL.DECISION.CANCELLED.INVALID.OMIT]",
+      "root_cause": "CANCELLED_AVAILABILITY",
+      "final_status": "PASS",
+      "final_expected": {
+        "handler": "OMIT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": false,
+        "value_present": false
+      },
+      "final_actual": {
+        "status": "OUTPUT_MISSING",
+        "required": false,
+        "handler": "OMIT",
+        "used_default": false,
+        "value_present": false,
+        "invocation_permitted_by_input": true
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.REVISION.AVAILABILITY.CONTROL.DECISION.CANCELLED.INVALID.DEFAULT",
+      "profile": "revision-v2",
+      "category": "production defect",
+      "rationale": "CANCELLED unavailable information/Decision classified PRODUCER_NOT_EXECUTED instead of snapshot-required OUTPUT_MISSING",
+      "source": "spec/draft/dataflow.md snapshot classifier and custom membership; unchanged src/openverify/dataflow.py",
+      "expected": {
+        "handler": "DEFAULT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": true,
+        "value_present": true
+      },
+      "actual": {
+        "status": "PRODUCER_NOT_EXECUTED",
+        "required": false,
+        "handler": "DEFAULT",
+        "used_default": true,
+        "value_present": true,
+        "invocation_permitted_by_input": true
+      },
+      "repro": "python -m pytest -q tests/golden_v4_reconciliation/test_snapshot.py::test_snapshot_relation[V4.REVISION.AVAILABILITY.CONTROL.DECISION.CANCELLED.INVALID.DEFAULT]",
+      "root_cause": "CANCELLED_AVAILABILITY",
+      "final_status": "PASS",
+      "final_expected": {
+        "handler": "DEFAULT",
+        "invocation_permitted_by_input": true,
+        "required": false,
+        "status": "OUTPUT_MISSING",
+        "used_default": true,
+        "value_present": true
+      },
+      "final_actual": {
+        "status": "OUTPUT_MISSING",
+        "required": false,
+        "handler": "DEFAULT",
+        "used_default": true,
+        "value_present": true,
+        "invocation_permitted_by_input": true
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.REVISION.CUSTOM.EMPTY.PASS",
+      "profile": "revision-v2",
+      "category": "production defect",
+      "rationale": "Custom empty graph rejected",
+      "source": "spec/draft/dataflow.md snapshot classifier and custom membership; unchanged src/openverify/dataflow.py",
+      "expected": {
+        "calls": [
+          {
+            "subject": {
+              "id": "revision-subject",
+              "type": "application/json",
+              "locator": {
+                "snapshot": 17
+              }
+            },
+            "criterion": {
+              "id": "revision-criterion",
+              "description": "The custom capability owns this judgment"
+            },
+            "members": []
+          }
+        ],
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS",
+          "evidence": [],
+          "usage": {}
+        }
+      },
+      "actual": {
+        "rejection": "AGGREGATE_CONFIG",
+        "calls": []
+      },
+      "repro": "python -m pytest -q tests/golden_v4_reconciliation/test_snapshot.py::test_custom_empty_invocation[V4.REVISION.CUSTOM.EMPTY.PASS]",
+      "root_cause": "CUSTOM_EMPTY_MEMBERSHIP",
+      "final_status": "PASS",
+      "final_expected": {
+        "calls": [
+          {
+            "subject": {
+              "id": "revision-subject",
+              "type": "application/json",
+              "locator": {
+                "snapshot": 17
+              }
+            },
+            "criterion": {
+              "id": "revision-criterion",
+              "description": "The custom capability owns this judgment"
+            },
+            "members": []
+          }
+        ],
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS",
+          "evidence": [],
+          "usage": {}
+        }
+      },
+      "final_actual": {
+        "calls": [
+          {
+            "subject": {
+              "id": "revision-subject",
+              "locator": {
+                "snapshot": 17
+              },
+              "type": "application/json"
+            },
+            "criterion": {
+              "description": "The custom capability owns this judgment",
+              "id": "revision-criterion"
+            },
+            "members": []
+          }
+        ],
+        "result": {
+          "metadata": {},
+          "extensions": [],
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS",
+          "evidence": [],
+          "usage": {}
+        }
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.REVISION.CUSTOM.EMPTY.FAIL",
+      "profile": "revision-v2",
+      "category": "production defect",
+      "rationale": "Custom empty graph rejected",
+      "source": "spec/draft/dataflow.md snapshot classifier and custom membership; unchanged src/openverify/dataflow.py",
+      "expected": {
+        "calls": [
+          {
+            "subject": {
+              "id": "revision-subject",
+              "type": "application/json",
+              "locator": {
+                "snapshot": 17
+              }
+            },
+            "criterion": {
+              "id": "revision-criterion",
+              "description": "The custom capability owns this judgment"
+            },
+            "members": []
+          }
+        ],
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "FAIL",
+          "evidence": [],
+          "usage": {}
+        }
+      },
+      "actual": {
+        "rejection": "AGGREGATE_CONFIG",
+        "calls": []
+      },
+      "repro": "python -m pytest -q tests/golden_v4_reconciliation/test_snapshot.py::test_custom_empty_invocation[V4.REVISION.CUSTOM.EMPTY.FAIL]",
+      "root_cause": "CUSTOM_EMPTY_MEMBERSHIP",
+      "final_status": "PASS",
+      "final_expected": {
+        "calls": [
+          {
+            "subject": {
+              "id": "revision-subject",
+              "type": "application/json",
+              "locator": {
+                "snapshot": 17
+              }
+            },
+            "criterion": {
+              "id": "revision-criterion",
+              "description": "The custom capability owns this judgment"
+            },
+            "members": []
+          }
+        ],
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "FAIL",
+          "evidence": [],
+          "usage": {}
+        }
+      },
+      "final_actual": {
+        "calls": [
+          {
+            "subject": {
+              "id": "revision-subject",
+              "locator": {
+                "snapshot": 17
+              },
+              "type": "application/json"
+            },
+            "criterion": {
+              "description": "The custom capability owns this judgment",
+              "id": "revision-criterion"
+            },
+            "members": []
+          }
+        ],
+        "result": {
+          "metadata": {},
+          "extensions": [],
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "FAIL",
+          "evidence": [],
+          "usage": {}
+        }
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.REVISION.CUSTOM.EMPTY.ERROR",
+      "profile": "revision-v2",
+      "category": "production defect",
+      "rationale": "Custom empty graph rejected",
+      "source": "spec/draft/dataflow.md snapshot classifier and custom membership; unchanged src/openverify/dataflow.py",
+      "expected": {
+        "calls": [
+          {
+            "subject": {
+              "id": "revision-subject",
+              "type": "application/json",
+              "locator": {
+                "snapshot": 17
+              }
+            },
+            "criterion": {
+              "id": "revision-criterion",
+              "description": "The custom capability owns this judgment"
+            },
+            "members": []
+          }
+        ],
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR",
+          "evidence": [],
+          "usage": {}
+        }
+      },
+      "actual": {
+        "rejection": "AGGREGATE_CONFIG",
+        "calls": []
+      },
+      "repro": "python -m pytest -q tests/golden_v4_reconciliation/test_snapshot.py::test_custom_empty_invocation[V4.REVISION.CUSTOM.EMPTY.ERROR]",
+      "root_cause": "CUSTOM_EMPTY_MEMBERSHIP",
+      "final_status": "PASS",
+      "final_expected": {
+        "calls": [
+          {
+            "subject": {
+              "id": "revision-subject",
+              "type": "application/json",
+              "locator": {
+                "snapshot": 17
+              }
+            },
+            "criterion": {
+              "id": "revision-criterion",
+              "description": "The custom capability owns this judgment"
+            },
+            "members": []
+          }
+        ],
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR",
+          "evidence": [],
+          "usage": {}
+        }
+      },
+      "final_actual": {
+        "calls": [
+          {
+            "subject": {
+              "id": "revision-subject",
+              "locator": {
+                "snapshot": 17
+              },
+              "type": "application/json"
+            },
+            "criterion": {
+              "description": "The custom capability owns this judgment",
+              "id": "revision-criterion"
+            },
+            "members": []
+          }
+        ],
+        "result": {
+          "metadata": {},
+          "extensions": [],
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR",
+          "evidence": [],
+          "usage": {}
+        }
+      },
+      "expectation_revised": false
+    },
+    {
+      "case_id": "V4.REVISION.TEST_LIVE_CANCELLATION_SNAPSHOT",
+      "profile": "revision-v2",
+      "category": "production defect",
+      "rationale": "CANCELLED unavailable information/Decision classified PRODUCER_NOT_EXECUTED instead of snapshot-required OUTPUT_MISSING",
+      "source": "spec/draft/dataflow.md snapshot classifier and custom membership; unchanged src/openverify/dataflow.py",
+      "expected": {
+        "producer_state": "CANCELLED",
+        "consumer_reason": "CANCELLATION",
+        "status": "OUTPUT_MISSING",
+        "calls": [
+          "producer"
+        ]
+      },
+      "actual": {
+        "producer_state": "CANCELLED",
+        "consumer_reason": "CANCELLATION",
+        "status": "PRODUCER_NOT_EXECUTED",
+        "calls": [
+          "producer"
+        ]
+      },
+      "repro": "python -m pytest -q tests/golden_v4_reconciliation/test_snapshot.py::test_live_cancellation_snapshot",
+      "root_cause": "CANCELLED_AVAILABILITY",
+      "final_status": "PASS",
+      "final_expected": {
+        "producer_state": "CANCELLED",
+        "consumer_reason": "CANCELLATION",
+        "status": "OUTPUT_MISSING",
+        "calls": [
+          "producer"
+        ]
+      },
+      "final_actual": {
+        "producer_state": "CANCELLED",
+        "consumer_reason": "CANCELLATION",
+        "status": "OUTPUT_MISSING",
+        "calls": [
+          "producer"
+        ]
+      },
+      "expectation_revised": false
+    }
+  ]
+}

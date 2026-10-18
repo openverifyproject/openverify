@@ -65,6 +65,8 @@ async def check_text(inputs: Context, config: Context) -> Result:
         matches = []
     for pattern, matched in zip(patterns, matches, strict=True):
         if not matched:
+            if len(findings) >= 10000:
+                raise ValueError("Text findings exceed the 10000 observation limit")
             findings.append({"code": "pattern_missing", "pattern": pattern})
     return judge(findings)
 

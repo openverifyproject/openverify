@@ -1,0 +1,184 @@
+{
+  "frozen_probes": [
+    {
+      "case_id": "V4.AUDIT.MUTATION.RESULT_STATE",
+      "status": "PASS",
+      "evidence": {
+        "mutant": "RESULT_STATE",
+        "real_case_id": "V4.VCP.RESULT.WIRE_AXIS.EXECUTED-ABSENT-ABSENT-ABSENT-ABSENT",
+        "baseline": {
+          "accepted": false
+        },
+        "mutated_actual": {
+          "accepted": true
+        },
+        "detected": true
+      }
+    },
+    {
+      "case_id": "V4.AUDIT.MUTATION.OPTIONAL_OBSERVATION",
+      "status": "PASS",
+      "evidence": {
+        "mutant": "OPTIONAL_OBSERVATION",
+        "real_case_id": "V4.VCP.RESULT.OBS_MASK.EXECUTED-SUCCESS-APPLICABLE-UNKNOWN-ABSENT.BITS_00000001",
+        "baseline": {
+          "accepted": false
+        },
+        "mutated_actual": {
+          "accepted": true
+        },
+        "detected": true
+      }
+    },
+    {
+      "case_id": "V4.AUDIT.MUTATION.DECISION",
+      "status": "PASS",
+      "evidence": {
+        "mutant": "DECISION",
+        "real_case_id": "V4.VCP.DECISION.DEST.CONTINUE-NONEMPTY",
+        "baseline": {
+          "accepted": false
+        },
+        "mutated_actual": {
+          "accepted": true
+        },
+        "detected": true
+      }
+    },
+    {
+      "case_id": "V4.AUDIT.MUTATION.AVAILABILITY",
+      "status": "PASS",
+      "evidence": {
+        "mutant": "AVAILABILITY",
+        "real_case_id": "V4.VCP.RESOLVE.CONSUMER.DERIVE-ABSENT-BLOCK",
+        "baseline": {
+          "status": "ABSENT",
+          "invoked": false,
+          "used_default": false
+        },
+        "mutated_actual": {
+          "status": "AVAILABLE",
+          "invoked": true,
+          "used_default": false
+        },
+        "detected": true
+      }
+    },
+    {
+      "case_id": "V4.AUDIT.MUTATION.WEIGHT_IDENTITY",
+      "status": "PASS",
+      "evidence": {
+        "mutant": "WEIGHT_IDENTITY",
+        "real_case_id": "V4.VCP.AGG.WEIGHT_IDENTITY.UNEQUAL",
+        "baseline": {
+          "score": 0.625
+        },
+        "mutated_actual": {
+          "score": 0.375
+        },
+        "detected": true
+      }
+    },
+    {
+      "case_id": "V4.AUDIT.MUTATION.POLICY_NONINVOCATION",
+      "status": "PASS",
+      "evidence": {
+        "mutant": "POLICY_NONINVOCATION",
+        "real_case_id": "V4.VCP.POLICY.PATH.SKIP",
+        "baseline": {
+          "admission": "SKIP",
+          "invoked": false
+        },
+        "mutated_actual": {
+          "assertion": ""
+        },
+        "detected": true
+      }
+    },
+    {
+      "case_id": "V4.AUDIT.MUTATION.PROVIDER_ORDER",
+      "status": "PASS",
+      "evidence": {
+        "mutant": "PROVIDER_ORDER",
+        "real_case_id": "V4.PROVIDER.ATTEMPT.TRANSITION.TERMINAL-EVENT",
+        "baseline": {
+          "accepted": false
+        },
+        "mutated_actual": {
+          "accepted": true
+        },
+        "detected": true
+      }
+    },
+    {
+      "case_id": "V4.AUDIT.MUTATION.RECORD_LINEAGE",
+      "status": "PASS",
+      "evidence": {
+        "mutant": "RECORD_LINEAGE",
+        "real_case_id": "V4.VCP.RECORD.LINEAGE.INPUT_VALUE",
+        "baseline": {
+          "accepted": false
+        },
+        "mutated_actual": {
+          "accepted": true
+        },
+        "detected": true
+      }
+    },
+    {
+      "case_id": "V4.AUDIT.MUTATION.CANCELLATION",
+      "status": "PASS",
+      "evidence": {
+        "mutant": "CANCELLATION",
+        "real_case_id": "V4.RELAY.SCHEDULER.STOP_CANCEL",
+        "baseline": {
+          "assertions": "authored snapshots, readiness, invocation and record isolation"
+        },
+        "mutated_actual": {
+          "assertion": ""
+        },
+        "detected": true
+      }
+    }
+  ],
+  "revision_probes": [
+    {
+      "case_id": "V4.REVISION.TEST_CANCELLED_AVAILABILITY_MUTATION",
+      "status": "PASS",
+      "expected": {
+        "baseline": "PASS",
+        "detected": true
+      },
+      "actual": {
+        "baseline": "PASS",
+        "detected": true
+      }
+    },
+    {
+      "case_id": "V4.REVISION.TEST_CUSTOM_EMPTY_MEMBERSHIP_MUTATION",
+      "status": "PASS",
+      "expected": {
+        "baseline": "PASS",
+        "detected": true
+      },
+      "actual": {
+        "baseline": "PASS",
+        "detected": true
+      }
+    },
+    {
+      "case_id": "V4.REVISION.TEST_USAGE_COLLISION_MUTATION",
+      "status": "PASS",
+      "expected": {
+        "baseline": "PASS",
+        "detected": true
+      },
+      "actual": {
+        "baseline": "PASS",
+        "detected": true
+      }
+    }
+  ],
+  "detected": 12,
+  "limitation": "These probes establish assertion sensitivity to these actual semantic corruptions; not exhaustive mutation coverage."
+}

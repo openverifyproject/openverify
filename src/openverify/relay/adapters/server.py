@@ -99,13 +99,21 @@ async def serve_stdio(provider: Provider) -> None:
                                 }
                             )
                         send({"jsonrpc": "2.0", "id": id, "result": None})
+                    else:
+                        send(
+                            {
+                                "jsonrpc": "2.0",
+                                "id": id,
+                                "error": {"code": -32601, "message": "Method not found"},
+                            }
+                        )
                 except ProviderContractError as exc:
                     send(
                         {
                             "jsonrpc": "2.0",
                             "id": id,
                             "error": {
-                                "code": -32000,
+                                "code": -32602 if exc.code == "INVALID_INVOCATION" else -32000,
                                 "message": exc.message,
                                 "data": exc.as_dict(),
                             },
