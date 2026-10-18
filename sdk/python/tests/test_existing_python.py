@@ -1,4 +1,4 @@
-"""Compatibility audit of the unchanged Python SDK; not an implementation oracle."""
+"""Compatibility audit of the integrated Python SDK; not an implementation oracle."""
 
 import json
 from pathlib import Path
@@ -42,10 +42,6 @@ def test_existing(case):
         if case["expected"]["error"] != "*":
             assert error.code == case["expected"]["error"]
     else:
-        if case["id"] == "provider.vcp-version":
-            pytest.xfail(
-                "Existing standalone parser accepts unknown vcp_version; source unchanged."
-            )
         assert case["expected"]["accepted"]
         # The existing SDK deliberately normalizes defaults/optional null fields.
         # Test its own public roundtrip rather than require byte identity.

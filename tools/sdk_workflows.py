@@ -21,6 +21,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          persist-credentials: false
       - uses: actions/setup-python@v5
         with:
           python-version: '3.13'
@@ -175,10 +176,8 @@ def main():
     ci = """name: SDK CI
 on:
   pull_request:
-    paths: ['sdk/**', 'conformance/sdk/**', 'tools/sdk_*.py', '.github/workflows/sdk-*.yml']
   push:
-    branches: ['main', 'feat/language-sdks']
-    paths: ['sdk/**', 'conformance/sdk/**', 'tools/sdk_*.py', '.github/workflows/sdk-*.yml']
+    branches: ['main', 'release/openverify-v0.1']
   workflow_dispatch:
 permissions:
   contents: read
@@ -194,6 +193,7 @@ jobs:
 """
     (directory / "sdk-ci.yml").write_text(ci, encoding="utf-8", newline="\n")
     for language in LANGUAGES:
+        oidc = "      id-token: write\n" if language in ("node", "python", "ruby") else ""
         template = f"""name: Release {language} SDK
 on:
   push:
@@ -214,7 +214,7 @@ jobs:
     environment: sdk-{language}
     permissions:
       contents: read
-      id-token: write
+{oidc.rstrip()}
     steps:
       - uses: actions/checkout@v4
         with:

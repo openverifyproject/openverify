@@ -433,3 +433,17 @@ Cancellation tokens. This is a breaking DRAFT provenance revision.
 Relay and trusted provider discovery are implemented; cycles, iteration and
 dynamic expansion remain unsupported. See the Relay docs for its API and
 conservative control/cancellation scheduling boundaries.
+
+## Language SDKs and first public handoff
+
+This monorepo also contains eight independently versioned DRAFT wire SDKs:
+Node/TypeScript, Python, Rust, Go, JVM, .NET, Ruby and PHP. See
+[sdk/README.md](sdk/README.md) for supported operations and explicit semantic
+limits, and [sdk/RELEASE.md](sdk/RELEASE.md) for separate package releases.
+The Python Relay package and the Python wire library are different distributions.
+
+[GITHUB_HANDOFF.md](GITHUB_HANDOFF.md) records the integrated source history,
+verification, security review, exact PowerShell upload instructions and required
+GitHub/registry settings. A first source push does not publish packages.
+Golden test passes are bounded evidence; full Golden certification and the
+complete v0.1 semantic release gate remain unproved.

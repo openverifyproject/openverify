@@ -1,0 +1,67 @@
+name: OpenVerify CI
+on:
+  pull_request:
+  push:
+    branches: ['main', 'release/openverify-v0.1']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: project-ci-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  production:
+    name: Python and Golden (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    env:
+      PYTHONPATH: src
+      OPENVERIFY_GOLDEN_SOURCE_REVISION: docs/github-release/SOURCE_REVISION.json
+      OPENVERIFY_GOLDEN_EXPECTATION_REVISION: conformance/golden-v4/verification-final/EXPECTATION_CORRECTIONS.json
+      OPENVERIFY_RECONCILIATION_OUTPUT: .pytest_cache/github/regressions
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: python -m pip install uv
+      - run: uv sync --frozen
+      - name: Production, property, conformance and Relay tests
+        run: uv run --frozen python -B -m pytest -q tests/unit tests/integration tests/property tests/conformance tests/relay tests/test_error_contract_hardening.py --junitxml=.pytest_cache/github/production.xml
+      - name: Golden V4 bounded evidence (not universal certification)
+        run: uv run --frozen python -B -m pytest -q -c tests/golden_v4/pytest.ini tests/golden_v4 --junitxml=.pytest_cache/github/golden.xml
+      - name: All revision regressions and mutation probes
+        run: uv run --frozen python -B -m pytest -q tests/golden_v4_reconciliation --junitxml=.pytest_cache/github/regressions.xml
+      - name: Frozen artifact integrity
+        run: uv run --frozen python -m tools.golden_v4.report --verify-freeze
+      - name: Build Python source archive and wheel
+        run: uv build --out-dir dist/python
+      - name: Install wheel into a fresh consumer and exercise shipped API/CLI
+        shell: python
+        run: |
+          import os, pathlib, subprocess, venv
+          root = pathlib.Path.cwd()
+          destination = root / '.pytest_cache/github/consumer'
+          venv.EnvBuilder(with_pip=True).create(destination)
+          python = destination / ('Scripts/python.exe' if os.name == 'nt' else 'bin/python')
+          wheel = next((root / 'dist/python').glob('*.whl'))
+          subprocess.run([str(python), '-m', 'pip', 'install', str(wheel)], check=True)
+          subprocess.run([str(python), '-m', 'pip', 'check'], check=True)
+          subprocess.run([str(python), '-I', 'conformance/golden-v4/release-review-v0.1/consumer_check.py'], check=True)
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: project-ci-${{ matrix.os }}
+          path: |
+            .pytest_cache/github/*.xml
+            .pytest_cache/github/regressions/*.json*
+            .pytest_cache/golden-v4/**/results.jsonl
+            .pytest_cache/golden-v4/**/execution.json
+          include-hidden-files: true
+          if-no-files-found: warn
