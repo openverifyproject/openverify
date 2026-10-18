@@ -71,6 +71,24 @@ def test_sdk_ci_runs_for_every_pull_request():
     assert "release/openverify-v0.1" in text
 
 
+def test_all_remote_actions_are_pinned():
+    import re
+
+    for path in (ROOT / ".github/workflows").glob("*.yml"):
+        for reference in re.findall(r"uses:\s+([^\s#]+)", path.read_text()):
+            if not reference.startswith("./"):
+                assert re.fullmatch(r"[^@]+@[a-f0-9]{40}", reference), (path, reference)
+
+
+def test_source_push_cannot_trigger_sdk_publication():
+    for path in (ROOT / ".github/workflows").glob("sdk-release-*.yml"):
+        trigger = path.read_text().split("permissions:", 1)[0]
+        assert "tags:" in trigger
+        assert "branches:" not in trigger
+        assert "workflow_dispatch:" not in trigger
+        assert "pull_request:" not in trigger
+
+
 @pytest.mark.parametrize("language", sdk_workflows.LANGUAGES)
 def test_independent_runtime_versions(language):
     import re
@@ -136,3 +154,33 @@ def test_mirror_refuses_conflicting_tag(monkeypatch):
     ):
         with pytest.raises(RuntimeError, match="different content"):
             sdk_mirror.main()
+
+
+def test_mirror_refuses_nonempty_unexpected_repository(monkeypatch):
+    monkeypatch.setenv("GITHUB_REF_NAME", "sdk/php/v0.1.0")
+    monkeypatch.setenv("SDK_PHP_MIRROR", "openverifyproject/sdk-php")
+    with (
+        patch.object(
+            sdk_mirror, "git", side_effect=["a" * 40, "", "b" * 40 + "\trefs/heads/other"]
+        ),
+        patch.object(subprocess, "run", side_effect=AssertionError("must not push")),
+    ):
+        with pytest.raises(RuntimeError, match="Nonempty mirror"):
+            sdk_mirror.main()
+
+
+def test_mirror_refuses_unrelated_history(monkeypatch):
+    monkeypatch.setenv("GITHUB_REF_NAME", "sdk/php/v0.1.0")
+    monkeypatch.setenv("SDK_PHP_MIRROR", "openverifyproject/sdk-php")
+    answers = ["a" * 40, "b" * 40 + "\trefs/heads/main", "", '{"name":"openverify/sdk"}']
+    calls = []
+
+    def run(command, **kwargs):
+        assert command[:2] == ["git", "merge-base"], "must not push"
+        calls.append(command)
+        return subprocess.CompletedProcess(command, 1)
+
+    with patch.object(sdk_mirror, "git", side_effect=answers), patch.object(subprocess, "run", run):
+        with pytest.raises(RuntimeError, match="Unrelated or rewritten"):
+            sdk_mirror.main()
+    assert len(calls) == 2

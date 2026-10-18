@@ -5,6 +5,33 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 LANGUAGES = ["node", "python", "rust", "go", "jvm", "dotnet", "ruby", "php"]
+# Resolved from the upstream refs on 2026-10-18 UTC. Review updates explicitly.
+ACTION_REVISIONS = {
+    "actions/checkout@v4": "11d5960a326750d5838078e36cf38b85af677262",
+    "actions/setup-python@v5": "a26af69be951a213d495a4c3e4e4022e16d87065",
+    "actions/setup-node@v4": "49933ea5288caeca8642d1e84afbd3f7d6820020",
+    "dtolnay/rust-toolchain@stable": "b725eda525362e7cf34af9a7243cac1e3f01a7ec",
+    "actions/setup-go@v5": "40f1582b2485089dde7abd97c1529aa768e1baff",
+    "actions/setup-java@v4": "cf277c60eb25467037889841efdb72551f06f6c3",
+    "actions/setup-dotnet@v4": "67a3573c9a986a3f9c594539f4ab511d57bb3ce9",
+    "ruby/setup-ruby@v1": "651ff0d62c5c79bed6d53ec518387aae20e72c1a",
+    "shivammathur/setup-php@v2": "eb7c497e18156a6bbabfef1d3a82760b9eda3962",
+    "actions/upload-artifact@v4": "ea165f8d65b6e75b540449e92b4886f43607fa02",
+    "actions/download-artifact@v4": "d3f86a106a0bac45b974a628896c90dbdf5c8093",
+    "pypa/gh-action-pypi-publish@release/v1": "dc37677b2e1c63e2034f94d8a5b11f265b73ba33",
+}
+
+
+def pin_actions(text):
+    for reference, revision in ACTION_REVISIONS.items():
+        repository = reference.split("@")[0]
+        text = text.replace(
+            "uses: " + reference + "\n",
+            "uses: " + repository + "@" + revision + " # " + reference + "\n",
+        )
+    return text
+
+
 VERIFY = """name: SDK verification
 on:
   workflow_call:
@@ -172,7 +199,7 @@ PUBLISH = {
 def main():
     directory = ROOT / ".github/workflows"
     directory.mkdir(parents=True, exist_ok=True)
-    (directory / "sdk-verify.yml").write_text(VERIFY, encoding="utf-8", newline="\n")
+    (directory / "sdk-verify.yml").write_text(pin_actions(VERIFY), encoding="utf-8", newline="\n")
     ci = """name: SDK CI
 on:
   pull_request:
@@ -183,6 +210,7 @@ permissions:
   contents: read
 jobs:
   sdk:
+    name: SDK (${{ matrix.language }})
     strategy:
       fail-fast: false
       matrix:
@@ -191,7 +219,7 @@ jobs:
     with:
       language: ${{ matrix.language }}
 """
-    (directory / "sdk-ci.yml").write_text(ci, encoding="utf-8", newline="\n")
+    (directory / "sdk-ci.yml").write_text(pin_actions(ci), encoding="utf-8", newline="\n")
     for language in LANGUAGES:
         oidc = "      id-token: write\n" if language in ("node", "python", "ruby") else ""
         template = f"""name: Release {language} SDK
@@ -240,7 +268,7 @@ jobs:
         run: python tools/sdk_verify.py "$SDK_LANGUAGE" --registry-only
 """
         (directory / f"sdk-release-{language}.yml").write_text(
-            template, encoding="utf-8", newline="\n"
+            pin_actions(template), encoding="utf-8", newline="\n"
         )
 
 
