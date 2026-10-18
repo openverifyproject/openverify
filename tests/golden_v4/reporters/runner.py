@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import copy
 import json
+import os
 from functools import lru_cache
 from pathlib import Path
 
@@ -50,6 +51,15 @@ def compare(expected,actual):
 
 def run_case(case,request):
     from ..sut import execute
+    case=copy.deepcopy(case)
+    revision=os.environ.get("OPENVERIFY_GOLDEN_EXPECTATION_REVISION")
+    if revision:
+        corrections=json.loads(Path(revision).read_text(encoding="utf-8"))
+        correction=next((r for r in corrections if r["case_id"]==case["case_id"]),None)
+        if correction:
+            assert compare(case["expected"],correction["historical_expected"]), "Correction does not match frozen expectation"
+            request.node.v4_expected=correction["revised_expected"]
+            case["expected"]=correction["revised_expected"]
     actual=json.loads(json.dumps(execute(copy.deepcopy(case),request.node),ensure_ascii=False,allow_nan=False))
     request.node.v4_actual=actual
     if not compare(case["expected"],actual):

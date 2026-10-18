@@ -62,17 +62,6 @@ async def run(relay,d,node,inputs=None,**kw):
     node.v4_relay_calls=getattr(node,"v4_relay_calls",0)+1
     start=time.monotonic()
     d=copy.deepcopy(d)
-    # Runtime family coordinates hold unrelated prerequisites valid. Supply a
-    # named authored Result member for each custom Aggregate under test.
-    for n in list(d["graph"]["nodes"]):
-        if n["kind"]=="AGGREGATE" and not n.get("aggregate_inputs"):
-            seed="v4_seed_"+n["id"]
-            d["graph"]["nodes"].append(m.node(seed,"EVALUATE"))
-            d["graph"]["edges"].append({"from_node":seed,"to_node":n["id"]})
-            n["aggregate_inputs"]=["authored_member"]
-            n["inputs"].append(m.port("authored_member"))
-            n["bindings"]["authored_member"]={"kind":"UPSTREAM_OUTPUT","node_id":seed,"output":"result"}
-            n["bindings"]["members"]=m.constant(["authored_member"])
     try:return await relay.run(configured(d),inputs=inputs or {},opportunity_id="v4-authored-opportunity",**kw)
     finally:node.v4_relay_seconds=getattr(node,"v4_relay_seconds",0)+time.monotonic()-start
 

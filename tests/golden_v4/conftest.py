@@ -78,12 +78,14 @@ def pytest_runtest_makereport(item,call):
              "status":"PASS" if report.passed else "FAIL","duration":report.duration,
              "relay_api_calls":getattr(item,"v4_relay_calls",0),"relay_awaited_seconds":getattr(item,"v4_relay_seconds",0),
              "rerun":f'python -m tools.golden_v4.report --case-id "{c["case_id"]}"',"pytest_selector":item.nodeid}
+        row["historical_expected"]=c["expected"]
+        row["expected"]=getattr(item,"v4_expected",c["expected"])
         if hasattr(item,"v4_rejection"):row["rejection_detail"]=item.v4_rejection
         if hasattr(item,"v4_mutation_evidence"):row["mutation_evidence"]=item.v4_mutation_evidence
         report.user_properties.extend([(key,str(row[key])) for key in ("case_id","family","classification","execution_mode","rerun")])
         if report.failed:
             sources=";".join(f'{r["path"]}:{r["line_start"]}-{r["line_end"]}' for r in row["normative_sources"])
-            report.longrepr=str(report.longrepr)+f'\n{c["case_id"]} | {c["family"]} | {sources} | EXPECTED {json.dumps(c["expected"])} | OBSERVED {json.dumps(row["actual"],default=str)} | REPRO {row["rerun"]}'
+            report.longrepr=str(report.longrepr)+f'\n{c["case_id"]} | {c["family"]} | {sources} | EXPECTED {json.dumps(row["expected"])} | OBSERVED {json.dumps(row["actual"],default=str)} | REPRO {row["rerun"]}'
         runner.STREAM.write(json.dumps(row,ensure_ascii=False,default=str)+"\n");runner.STREAM.flush()
         runner.RESULTS.append({k:v for k,v in row.items() if k not in {"stimulus","normative_clauses"}})
 

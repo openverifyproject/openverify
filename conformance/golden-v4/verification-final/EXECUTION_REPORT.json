@@ -1,0 +1,192 @@
+{
+  "base_commit": "ad7fad6986eb79e55094687022d15a7bc70ede30",
+  "branch": "fix/golden-v4-verification",
+  "worktree": "C:\\Users\\siddh\\OneDrive\\Desktop\\openverify\\.worktrees\\vcp-final-semantics",
+  "production_hashes": {
+    "src/openverify/__init__.py": "4be5cfedb030a728985d7da72a9cc5da7035deac2df00eb90e5d8ab0bddec675",
+    "src/openverify/adapters/__init__.py": "94b9522b39696d4d23348044f15722d402ea74cff09be23ee76f3381c8ed7ccf",
+    "src/openverify/adapters/demo.py": "75cabbfdf562cdde28633830b7fdcb555ed15206ca713d9e017cb52f16a39593",
+    "src/openverify/authoring/__init__.py": "8c0697f377d9856e7efcbaf67b6cb43e94ff173f9e31e06dcc22e40485c8f1ce",
+    "src/openverify/authoring/graph.py": "772423a33c75833b5d840898934e03d9c1d45cfb67bff7ef23427cfbb9d2f70e",
+    "src/openverify/authoring/references.py": "97385c774624753bfde2a0802cefdb98259522ed630c8d98fd767f10e244dd67",
+    "src/openverify/cli.py": "e1d38334f878c2d825db591e7acb5fb7bfca0b52d3878ae0f8bccbb4dfb0e61b",
+    "src/openverify/conformance/__init__.py": "f99b26c5f9884d0a87b6d024c55762129265edaef42f7879a07a715fe769b5d9",
+    "src/openverify/dataflow.py": "7ee7c169633c18db91bd84f67f4d2851af0c1994619b380fdffeebe83228f58f",
+    "src/openverify/engine/__init__.py": "41a028ae475dafdcd992ef5c9f482117f9dc3b9fd542a3feca00e584ce9c19e8",
+    "src/openverify/engine/admission.py": "bdef93be2d243f82c20a887405718b3c8da81127f5ee965b67ee8f142c7acbcb",
+    "src/openverify/engine/aggregation.py": "f2c0824988a07573eec033485969298bf4cf5790bf4627044b2343d62a92833f",
+    "src/openverify/engine/binding.py": "817805b3f60908e7d66af96953c941f9ac5d292de8ba4000f413dd5b846fd145",
+    "src/openverify/engine/policy.py": "e8c7a9226a71eef17a35b5049320a66303252a265a71ec50d4e11cd19785221f",
+    "src/openverify/error_codes.py": "11b802c51c53b094e6aa694c5f0962270e399c6a3b356de788b20abac8373d8b",
+    "src/openverify/errors.py": "2dce7a2f896b8ced248c1b7be8f4ee9ff5bd2dedc96bbb118612c660ecde930a",
+    "src/openverify/fingerprint/__init__.py": "f5ced653c2ba3ea6aa54dda046b3b6c8d1c13e290c0e97ab2fa4385dd6895d34",
+    "src/openverify/inspection.py": "24da3a1930d931e2307906a12b8bb60ced0e2635023801365595215af4824c8d",
+    "src/openverify/json_schema.py": "81a0fde00129168a7452ca09d5429246611602528b59d963045eb4895b44bab6",
+    "src/openverify/lifecycle.py": "4d32fcb3bb4cbad17ceae9e05f9a81ccdc1952a350112844808aeeef8430ffba",
+    "src/openverify/model/__init__.py": "9b694cb0a131c2f5da2ca88be436f7f439bfb770fffa3fd331f0164fd8b6fef3",
+    "src/openverify/policy.py": "c0ba6941268eec65049b4728a771b84dcf558a4c998bab6a228b05d9413def79",
+    "src/openverify/provenance/__init__.py": "d70976288aaa16e48ae0cc462c0d18b521148b2e6f8a90b5f73b1dab9dd720fa",
+    "src/openverify/provider/__init__.py": "65fb1f6e8f1ad95404077dc11a16b78d6392fa31298b361db4409558e8d27af9",
+    "src/openverify/provider/conformance.py": "678bc1b2d1b4b4365d826dc12ac9d88616023b9d0c70f0298c3baaf36932db9f",
+    "src/openverify/provider/lifecycle.py": "f8456c8f8988a9e9af16a6bf92b435ada182fdc3dc00799b3c119288d82ba4d4",
+    "src/openverify/provider/model.py": "3ac0e970a0eb77358a7f1c775fe17f2c0442ad46fa68e4abcd74c5ef29dc5f36",
+    "src/openverify/provider/stdio.py": "44936f7b5ccabdb22c52f4d75413a3875b191db169ad59d6b0cb88516ed81596",
+    "src/openverify/provider/validation.py": "51777632235cbf39761299690e5547710d9ea9c60b45a875c1b3bc76fd2c6868",
+    "src/openverify/provider_codes.py": "8c920dcfbb0c00e1eeb7d776be4719128ddeeb8021ca3e0c1b2e489d12dc23ec",
+    "src/openverify/relay/__init__.py": "6398c2f15fe1dcf5d3faca87b488aadab374a95876deb7ee0f18893a17662d4a",
+    "src/openverify/relay/adapters/__init__.py": "a851473aac79e9bc3c846d4a06937e253ad7c08d01857043fb5b0a4904913b29",
+    "src/openverify/relay/adapters/binder.py": "3e7b6726db45b2c1f0b0ba5ca041ce42de050c09e331f7ec8448cf408cef5590",
+    "src/openverify/relay/adapters/catalog.py": "d97767e1d275b1930050f7462c0b5412b959059c4243fe89e5880eb8c8e42c58",
+    "src/openverify/relay/adapters/inprocess.py": "5d5bbe5f9de841cb4ac3a152614164f45390858fd9119dd4839da4d8dafe456d",
+    "src/openverify/relay/adapters/jsonl.py": "a1c424fac3cafc8067dfa6a2a1b29322f5f04eee849f932f7aa70d80ca5f8f58",
+    "src/openverify/relay/adapters/local.py": "614ace847fd560405d3b89d44115ef90efc28b979935218f44079b98af3f6fbf",
+    "src/openverify/relay/adapters/logging.py": "962df25c768f6ac9c006e0b3006bb9c8e30b26064ffc7adaa0349b27a1eb75db",
+    "src/openverify/relay/adapters/memory.py": "61972d7f49bc9c0421a81a7259ffd16a71fcca4bacba46b5e23ddd8d441652ad",
+    "src/openverify/relay/adapters/process.py": "0f43102c2dd6c43fd12068a70bb8d789b75c55c6b8ac71fa3c7090f6a61c6214",
+    "src/openverify/relay/adapters/server.py": "aeb8d3475b900d3796ddbf7fe3d31275c08b014a2366474aa37b277750876123",
+    "src/openverify/relay/adapters/stdio.py": "a1bd23c4f597626cd3adf4d323f67e479345fa5ce740c505e0173ac3a3792968",
+    "src/openverify/relay/adapters/windows_job.py": "8d19c67b06e7a4ec1bbe5b70523a3a61a66cbb723845dfd61856fefbafa811b7",
+    "src/openverify/relay/api.py": "2fa41c0c270a762d2f2973470ec065279032b1f337fc283a5332d20ea77bb80d",
+    "src/openverify/relay/application/__init__.py": "a39172ecc2173839ea51bfefe8f749e50d275d4118788541c60a8d67ae26e7e5",
+    "src/openverify/relay/application/binding.py": "0be39eaa0aa1c4ca84ec64b75098d6d9b470b7158cbdc568ccd5d0b691f3cfb3",
+    "src/openverify/relay/application/contract.py": "4385a847188853cf05010b9e588bc001ddbde8b3679ce3df02af080ec0af7f34",
+    "src/openverify/relay/application/execution.py": "64aaeb3fea6ec20cf2a9c8b492b21a5fbeadbbf18d29f9956d786de85d498adf",
+    "src/openverify/relay/application/policies.py": "fee622397d05f8f3cc4630a86ea91262f11a9d6c1a13447f7946bfe0d81c68aa",
+    "src/openverify/relay/application/preparation.py": "6234f7c08f723a629fbdc8e345f12d5dbe2bef698dc9f7f47d6687dcbb042429",
+    "src/openverify/relay/application/run.py": "a958f472edd9ce6644ca3f2f2b08e082ef04e07b6c4c8d3baacb1652cf92f249",
+    "src/openverify/relay/config.py": "d67c30bf4f161ea6b946a9190012281cf308ac61d945280b44e9538155c3f215",
+    "src/openverify/relay/core/__init__.py": "c6130bc3323b8549815977495758720c28f27e7fc277558f4b5e26a49390e9a3",
+    "src/openverify/relay/core/aggregation.py": "1cfa76d89c54d40d477a6be4b280cf23c18a01559bd6cc8036dc1ca6e1b27da6",
+    "src/openverify/relay/core/readiness.py": "7975b54522437f833d43f0b33dc37346988459c9da9f4acd36c4b6e26d87c08b",
+    "src/openverify/relay/core/state.py": "72ad68ca5db6862b4c2abe9eb3a51ea7a72d03f1668fb9d0da4ad732d6c3df07",
+    "src/openverify/relay/entrypoints/__init__.py": "f6df74eb909aaa95457f7b89ad94eefe57d6e9e3360d8144d8a710c9f771718e",
+    "src/openverify/relay/entrypoints/cli.py": "ce61e293fb4f12bc2f9bed02bf89a81b9cb8084ac8085e8e41b48c5e375a6d47",
+    "src/openverify/relay/entrypoints/http.py": "abb2644b25d8bfefe10fdb0f1869e36103325217223af108f8bcb88415e669d2",
+    "src/openverify/relay/entrypoints/mcp.py": "8bdfc3736cad5bb0c8674a368c43e6eb6a9cd48326aa99e6ce56957385370ef8",
+    "src/openverify/relay/entrypoints/service.py": "0accc0770270fe8ea7c5229244da2cf9074218caf085f133d4b4b3527f04700d",
+    "src/openverify/relay/error_codes.py": "d12a354eaa8cb5f769af97acba6e3cd46d06a76436de78e14bab4e12e15c98fc",
+    "src/openverify/relay/errors.py": "a1564afe96238e3ba22dd89c17bbe22f8c14df80655c02e7ad185fc82ad82c2e",
+    "src/openverify/relay/ports/__init__.py": "b85ce606454f8b7ca006c0a4805536cf80810f34e886a3ce7ca90c29a84699e8",
+    "src/openverify/relay/ports/binding.py": "335d3c7ba4040fbc944d7e8a51ec33858fcb6033c47f6bd322abd83d2953e404",
+    "src/openverify/relay/providers.py": "3ece1fa3484f32ba79ec93f04baff83af270c953a74c113b74eafefc4ab99a50",
+    "src/openverify/relay/templates.py": "b7f12cb3e289dd582ced7ee3aa7b9d319f9453b5c256c44641fab475af953c74",
+    "src/openverify/serialization/__init__.py": "7a2f46c623f94a81925d12d8e92f446db440f2415508f0db4ae6e06e542a7110",
+    "src/openverify/standard/__init__.py": "7ce338ec6ba3e1faa8164b446fd29aadfcd69a6a4b9b23f18753c216b5c87331",
+    "src/openverify/standard/astgrep.py": "ae28d7f38f65a96580fa41c86518321086ddc8be0d86fde4fcfcdd1321e7b2e6",
+    "src/openverify/standard/command.py": "0dba4c1ddd61543d46c9de30f7b5ebe4118c8ef1bfee968067cd98195b39a761",
+    "src/openverify/standard/common.py": "67c8c43270cc57d393925ee60b9ea78bdf945279cc0abf7142034107bb3b6166",
+    "src/openverify/standard/control.py": "5ae8c4250ac674ffd11a81f5049633468b788b103a0749106b1d1eda4a67a8ab",
+    "src/openverify/standard/filesystem.py": "cb8a29d31cc960ed48f314a6e4600782aa4273532f79ce1a14c77d07589b3783",
+    "src/openverify/standard/git.py": "d80eca64f9bd7ee632653d079e15bba8b6ae51afd2e1f93b92f467d96c73f664",
+    "src/openverify/standard/paths.py": "4f450710e1ff08464ca8e6e27a3f96926169a96111241071fa3e6c6b67d711d2",
+    "src/openverify/standard/pattern_worker.py": "4b7085e919688799c00b894bd9ae22d981188abe9f4e7504bca84d27b66085d2",
+    "src/openverify/standard/pytest.py": "02c72d766e52522d03298523e34587be44d0243d4c93002de8e5d96af6d1295a",
+    "src/openverify/standard/ruff.py": "f1ba8ae9c316f96e0d56a4fe1a66a490db8e354617633af36f68bce7a27c4c52",
+    "src/openverify/standard/scope.py": "935b8b2996a0f6416c4292f2155a5e4220295fe49728c944b51bf59699482ab6",
+    "src/openverify/standard/structured.py": "17906027cb4181d6d28d7ce3bded74d05d2b265423ecfd5de87f44bd2f8d08c0",
+    "src/openverify/standard/text.py": "48d516529dd37442ba0f05a78faf8f9642e4bd2260fb61a1ca8bd88a64cf71b2",
+    "src/openverify/standard/tools.py": "1bb17b2d63da52a43ae3d4ff51ec93d07b3414b4f69bacbf5c320cf65bbc46b5",
+    "src/openverify/validation/__init__.py": "022d65bdc0b4c7553c4ca4c0b3bccdf37c16cdfa76f5d8bc714f63ceba87dec8"
+  },
+  "canonical_hashes": {
+    "CANONICAL_AUDIT.md": "09de5e9c2bade8a3f9bdf1e0c43c91948d1a9be29649a40303459848d3b28d67",
+    "CANONICAL_MATH.md": "256cb00184cd973cb8937994ea9d1b3490cc0a0ffab9c4d7e9a0106129fafc34",
+    "CANONICAL_MODEL.md": "4f5794ac3bbf5226955ee7f59d2fd78af4a3bdb51d613c2e105d401afba8f5b3",
+    "CANONICAL_REQUIREMENTS.jsonl": "f8cd72c8ad4145b0a8ac3160bca6097ce48c26320a1cdb083fb6d1cc78376443",
+    "REVIEW_SUMMARY.md": "8a3b2bc4f06bea3d6e4fc139116c339d2cdc0729e7244e11b070ba17ff548828",
+    "SOURCE_CROSSWALK.jsonl": "92d3f9173d198b2944f1d59b0ce2d2db205c32408ba22460262e0fefdeebe318"
+  },
+  "golden": {
+    "python": "3.13.5 (main, Jun 12 2025, 12:42:35) [MSC v.1943 64 bit (AMD64)]",
+    "executable": "C:\\Users\\siddh\\OneDrive\\Desktop\\openverify\\.venv\\Scripts\\python.exe",
+    "import_path": "C:\\Users\\siddh\\OneDrive\\Desktop\\openverify\\.worktrees\\vcp-final-semantics\\src\\openverify\\__init__.py",
+    "argv": [
+      "C:\\Users\\siddh\\OneDrive\\Desktop\\openverify\\.venv\\Lib\\site-packages\\pytest\\__main__.py",
+      "-q",
+      "-c",
+      "tests/golden_v4/pytest.ini",
+      "tests/golden_v4",
+      "--junitxml=.pytest_cache/verification-golden.xml"
+    ],
+    "start_monotonic": 312611.4387404,
+    "dependencies": {
+      "pytest": "9.1.1",
+      "pydantic": "2.14.1",
+      "jsonschema": "4.26.0",
+      "mcp": "1.30.0",
+      "starlette": "1.8.0",
+      "httpx": "0.28.1"
+    },
+    "exitstatus": 0,
+    "duration_seconds": 87.28605579998111,
+    "collected": 15236,
+    "executed": 15236,
+    "counts": {
+      "PASS": 15236
+    },
+    "relay_api_calls": 185,
+    "relay_awaited_seconds": 13.648728200176265
+  },
+  "golden_profiles": {
+    "cheap": {
+      "executed": 15010,
+      "counts": {
+        "PASS": 15010
+      },
+      "case_duration_sum_seconds": 31.0988915010239,
+      "note": "Partition of one complete run; duration sum is not separately measured profile wall time."
+    },
+    "runtime": {
+      "executed": 205,
+      "counts": {
+        "PASS": 205
+      },
+      "case_duration_sum_seconds": 14.506613600126002,
+      "note": "Partition of one complete run; duration sum is not separately measured profile wall time."
+    },
+    "integration": {
+      "executed": 21,
+      "counts": {
+        "PASS": 21
+      },
+      "case_duration_sum_seconds": 13.63448629976483,
+      "note": "Partition of one complete run; duration sum is not separately measured profile wall time."
+    }
+  },
+  "ordinary": {
+    "tests": 1038.0,
+    "failures": 0.0,
+    "errors": 0.0,
+    "skipped": 1.0,
+    "time": 287.308
+  },
+  "revision": {
+    "exitstatus": 0,
+    "executed": 366,
+    "counts": {
+      "PASS": 366,
+      "FAIL": 0
+    },
+    "relay_api_calls": 12,
+    "relay_awaited_seconds": 0.7429876000387594,
+    "wall_seconds": 7.302740100014489,
+    "argv": [
+      "C:\\Users\\siddh\\OneDrive\\Desktop\\openverify\\.venv\\Lib\\site-packages\\pytest\\__main__.py",
+      "-q",
+      "tests/golden_v4_reconciliation",
+      "--basetemp=.pytest_cache/verification-revision-tmp",
+      "--junitxml=.pytest_cache/verification-revision.xml"
+    ],
+    "python": "3.13.5 (main, Jun 12 2025, 12:42:35) [MSC v.1943 64 bit (AMD64)]"
+  },
+  "revision_junit": {
+    "tests": 366.0,
+    "failures": 0.0,
+    "errors": 0.0,
+    "skipped": 0.0,
+    "time": 7.138
+  },
+  "mutation_probes": 12,
+  "failing_case_ids": [],
+  "certification": "NOT CERTIFIED; consult COVERAGE_REPORT.json, not passing test counts."
+}
