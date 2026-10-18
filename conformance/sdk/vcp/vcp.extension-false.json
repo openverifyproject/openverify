@@ -1,0 +1,30 @@
+{
+  "id": "vcp.extension-false",
+  "contract": "vcp",
+  "version": "draft",
+  "type": "extension",
+  "operation": "parse",
+  "input": {
+    "namespace": "com.example:extra",
+    "version": "1",
+    "required": false,
+    "data": {
+      "x": null
+    }
+  },
+  "expected": {
+    "accepted": true,
+    "normalized": {
+      "namespace": "com.example:extra",
+      "version": "1",
+      "required": false,
+      "data": {
+        "x": null
+      }
+    }
+  },
+  "features": [
+    "standalone",
+    "extension"
+  ]
+}

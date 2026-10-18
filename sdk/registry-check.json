@@ -1,0 +1,61 @@
+{
+  "checked_at": "2026-10-17T22:11:19.994169+00:00",
+  "packages": [
+    {
+      "language": "node",
+      "package": "@openverify/sdk",
+      "url": "https://registry.npmjs.org/@openverify%2fsdk",
+      "http_status": 404,
+      "status": "not listed; availability and ownership unreserved"
+    },
+    {
+      "language": "python",
+      "package": "openverify-wire",
+      "url": "https://pypi.org/pypi/openverify-wire/json",
+      "http_status": 404,
+      "status": "not listed; availability and ownership unreserved"
+    },
+    {
+      "language": "rust",
+      "package": "openverify-sdk",
+      "url": "https://crates.io/api/v1/crates/openverify-sdk",
+      "http_status": 404,
+      "status": "not listed; availability and ownership unreserved"
+    },
+    {
+      "language": "go",
+      "package": "github.com/openverifyproject/openverify/sdk/go",
+      "url": "https://proxy.golang.org/github.com/openverifyproject/openverify/sdk/go/@v/list",
+      "http_status": 404,
+      "status": "not listed; availability and ownership unreserved"
+    },
+    {
+      "language": "jvm",
+      "package": "io.github.openverifyproject:openverify-sdk",
+      "url": "https://repo.maven.apache.org/maven2/io/github/openverifyproject/openverify-sdk/maven-metadata.xml",
+      "http_status": 404,
+      "status": "not listed; availability and ownership unreserved"
+    },
+    {
+      "language": "dotnet",
+      "package": "OpenVerify.Sdk",
+      "url": "https://api.nuget.org/v3-flatcontainer/openverify.sdk/index.json",
+      "http_status": 404,
+      "status": "not listed; availability and ownership unreserved"
+    },
+    {
+      "language": "ruby",
+      "package": "openverify-sdk",
+      "url": "https://rubygems.org/api/v1/gems/openverify-sdk.json",
+      "http_status": 404,
+      "status": "not listed; availability and ownership unreserved"
+    },
+    {
+      "language": "php",
+      "package": "openverify/sdk",
+      "url": "https://repo.packagist.org/p2/openverify/sdk.json",
+      "http_status": 404,
+      "status": "not listed; availability and ownership unreserved"
+    }
+  ]
+}

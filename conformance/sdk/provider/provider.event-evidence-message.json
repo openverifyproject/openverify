@@ -1,0 +1,30 @@
+{
+  "id": "provider.event-evidence-message",
+  "contract": "provider",
+  "version": "0.1",
+  "type": "provider-event",
+  "operation": "parse",
+  "input": {
+    "invocation_id": "i",
+    "sequence": 1,
+    "kind": "evidence",
+    "payload": {
+      "message": "checked"
+    }
+  },
+  "expected": {
+    "accepted": true,
+    "normalized": {
+      "invocation_id": "i",
+      "sequence": 1,
+      "kind": "evidence",
+      "payload": {
+        "message": "checked"
+      }
+    }
+  },
+  "features": [
+    "standalone",
+    "provider-event"
+  ]
+}

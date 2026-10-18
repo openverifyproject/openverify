@@ -1,0 +1,28 @@
+{
+  "id": "provider.event-resource-range",
+  "contract": "provider",
+  "version": "0.1",
+  "type": "provider-event",
+  "operation": "parse",
+  "input": {
+    "invocation_id": "i",
+    "sequence": 1,
+    "kind": "resource_usage",
+    "payload": {
+      "time": {
+        "unit": "s",
+        "kind": "RANGE",
+        "minimum": 2,
+        "maximum": 1
+      }
+    }
+  },
+  "expected": {
+    "accepted": false,
+    "error": "INVALID_PROVIDER_OUTPUT"
+  },
+  "features": [
+    "standalone",
+    "provider-event"
+  ]
+}

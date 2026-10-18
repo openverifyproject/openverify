@@ -1,0 +1,23 @@
+{
+  "id": "vcp.version",
+  "contract": "vcp",
+  "version": "draft",
+  "type": "result",
+  "operation": "parse",
+  "input": {
+    "protocol": "1.0",
+    "disposition": "EXECUTED",
+    "execution_outcome": "SUCCESS",
+    "applicability": "APPLICABLE",
+    "determination": "KNOWN",
+    "verdict": "PASS"
+  },
+  "expected": {
+    "accepted": false,
+    "error": "PROTOCOL_VERSION"
+  },
+  "features": [
+    "standalone",
+    "result"
+  ]
+}

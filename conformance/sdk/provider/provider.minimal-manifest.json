@@ -1,0 +1,32 @@
+{
+  "id": "provider.minimal-manifest",
+  "contract": "provider",
+  "version": "0.1",
+  "type": "provider-manifest",
+  "operation": "parse",
+  "input": {
+    "provider_id": "com.example.provider",
+    "provider_version": "1",
+    "supported_contract_versions": [
+      "0.1"
+    ],
+    "supported_vcp_versions": [],
+    "capabilities": []
+  },
+  "expected": {
+    "accepted": true,
+    "normalized": {
+      "provider_id": "com.example.provider",
+      "provider_version": "1",
+      "supported_contract_versions": [
+        "0.1"
+      ],
+      "supported_vcp_versions": [],
+      "capabilities": []
+    }
+  },
+  "features": [
+    "standalone",
+    "provider-manifest"
+  ]
+}

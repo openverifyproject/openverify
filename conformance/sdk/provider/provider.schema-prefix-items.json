@@ -1,0 +1,27 @@
+{
+  "id": "provider.schema-prefix-items",
+  "contract": "provider",
+  "version": "0.1",
+  "type": "data",
+  "operation": "data",
+  "input": [
+    "x",
+    1
+  ],
+  "expected": {
+    "accepted": false,
+    "error": "INVALID_INPUT"
+  },
+  "features": [
+    "standalone",
+    "data"
+  ],
+  "schema": {
+    "prefixItems": [
+      {
+        "type": "string"
+      }
+    ],
+    "items": false
+  }
+}

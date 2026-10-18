@@ -1,0 +1,30 @@
+{
+  "id": "provider.schema-unevaluated",
+  "contract": "provider",
+  "version": "0.1",
+  "type": "data",
+  "operation": "data",
+  "input": {
+    "x": 1
+  },
+  "expected": {
+    "accepted": true,
+    "normalized": {
+      "x": 1
+    }
+  },
+  "features": [
+    "standalone",
+    "data"
+  ],
+  "schema": {
+    "allOf": [
+      {
+        "properties": {
+          "x": true
+        }
+      }
+    ],
+    "unevaluatedProperties": false
+  }
+}

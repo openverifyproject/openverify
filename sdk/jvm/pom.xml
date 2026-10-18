@@ -1,0 +1,23 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+ <modelVersion>4.0.0</modelVersion><groupId>io.github.openverifyproject</groupId><artifactId>openverify-sdk</artifactId><version>0.1.0</version>
+ <name>OpenVerify SDK</name><description>OpenVerify DRAFT VCP and Provider Contract wire SDK</description><url>https://github.com/openverifyproject/openverify</url>
+ <licenses><license><name>MIT</name><url>https://opensource.org/license/mit</url></license></licenses>
+ <developers><developer><id>openverifyproject</id><name>OpenVerify contributors</name><url>https://github.com/openverifyproject</url></developer></developers>
+ <scm><url>https://github.com/openverifyproject/openverify</url><connection>scm:git:https://github.com/openverifyproject/openverify.git</connection><developerConnection>scm:git:ssh://git@github.com/openverifyproject/openverify.git</developerConnection><tag>HEAD</tag></scm>
+ <properties><maven.compiler.release>17</maven.compiler.release><project.build.sourceEncoding>UTF-8</project.build.sourceEncoding><project.build.outputTimestamp>2026-10-17T00:00:00Z</project.build.outputTimestamp></properties>
+ <dependencies>
+  <dependency><groupId>com.networknt</groupId><artifactId>json-schema-validator</artifactId><version>1.5.9</version></dependency>
+  <dependency><groupId>org.junit.jupiter</groupId><artifactId>junit-jupiter</artifactId><version>5.11.4</version><scope>test</scope></dependency>
+ </dependencies>
+ <build><plugins>
+  <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-compiler-plugin</artifactId><version>3.14.0</version></plugin>
+  <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-surefire-plugin</artifactId><version>3.5.3</version></plugin>
+  <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-jar-plugin</artifactId><version>3.4.2</version><configuration><archive><manifestEntries><Automatic-Module-Name>org.openverify.sdk</Automatic-Module-Name></manifestEntries></archive></configuration></plugin>
+  <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-source-plugin</artifactId><version>3.3.1</version><executions><execution><goals><goal>jar-no-fork</goal></goals></execution></executions></plugin>
+  <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-javadoc-plugin</artifactId><version>3.11.2</version><executions><execution><goals><goal>jar</goal></goals></execution></executions></plugin>
+ </plugins><resources><resource><directory>src/main/resources</directory></resource><resource><directory>.</directory><includes><include>LICENSE</include></includes><targetPath>META-INF</targetPath></resource></resources></build>
+ <profiles><profile><id>release</id><build><plugins>
+  <plugin><groupId>org.sonatype.central</groupId><artifactId>central-publishing-maven-plugin</artifactId><version>0.11.0</version><extensions>true</extensions><configuration><publishingServerId>central</publishingServerId><autoPublish>true</autoPublish></configuration></plugin>
+  <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-gpg-plugin</artifactId><version>3.2.8</version><executions><execution><phase>verify</phase><goals><goal>sign</goal></goals></execution></executions><configuration><gpgArguments><arg>--pinentry-mode</arg><arg>loopback</arg></gpgArguments></configuration></plugin>
+ </plugins></build></profile></profiles>
+</project>

@@ -1,0 +1,19 @@
+{
+  "id": "vcp.exact-missing",
+  "contract": "vcp",
+  "version": "draft",
+  "type": "resource",
+  "operation": "parse",
+  "input": {
+    "unit": "x",
+    "kind": "EXACT"
+  },
+  "expected": {
+    "accepted": false,
+    "error": "RESOURCE_MEASUREMENT"
+  },
+  "features": [
+    "standalone",
+    "resource"
+  ]
+}

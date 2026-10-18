@@ -1,0 +1,26 @@
+{
+  "id": "vcp.nested-empty-evidence",
+  "contract": "vcp",
+  "version": "draft",
+  "type": "result",
+  "operation": "parse",
+  "input": {
+    "protocol": "draft",
+    "disposition": "EXECUTED",
+    "execution_outcome": "SUCCESS",
+    "applicability": "APPLICABLE",
+    "determination": "KNOWN",
+    "verdict": "PASS",
+    "evidence": [
+      {}
+    ]
+  },
+  "expected": {
+    "accepted": false,
+    "error": "EVIDENCE_EMPTY"
+  },
+  "features": [
+    "standalone",
+    "result"
+  ]
+}
