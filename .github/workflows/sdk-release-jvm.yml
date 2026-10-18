@@ -1,0 +1,60 @@
+name: Release jvm SDK
+on:
+  push:
+    tags: ['sdk/jvm/v*']
+permissions:
+  contents: read
+concurrency:
+  group: sdk-jvm-release
+  cancel-in-progress: false
+jobs:
+  verify:
+    uses: ./.github/workflows/sdk-verify.yml
+    with:
+      language: jvm
+  publish:
+    needs: verify
+    runs-on: ubuntu-latest
+    environment: sdk-jvm
+    permissions:
+      contents: read
+
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # actions/download-artifact@v4
+        with:
+          name: sdk-jvm-${{ github.sha }}
+          path: dist/sdk/jvm/
+      - name: Check exact tag, test evidence, checksum and unpublished version
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+          REGISTRY_OWNERSHIP_APPROVED: ${{ vars.REGISTRY_OWNERSHIP_APPROVED }}
+        run: |
+          test "$REGISTRY_OWNERSHIP_APPROVED" = true
+          python tools/sdk_release.py preflight --language jvm --tag "$RELEASE_TAG" --evidence dist/sdk/jvm/verification.json
+      - uses: actions/setup-java@cf277c60eb25467037889841efdb72551f06f6c3 # actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          server-id: central
+          server-username: CENTRAL_USERNAME
+          server-password: CENTRAL_PASSWORD
+          gpg-private-key: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
+          gpg-passphrase: MAVEN_GPG_PASSPHRASE
+      - name: Sign and publish through current Central Portal
+        env:
+          CENTRAL_USERNAME: ${{ secrets.CENTRAL_USERNAME }}
+          CENTRAL_PASSWORD: ${{ secrets.CENTRAL_PASSWORD }}
+          MAVEN_GPG_PASSPHRASE: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
+        run: |
+          mvn -B -f sdk/jvm/pom.xml -Prelease -Dgpg.passphrase="$MAVEN_GPG_PASSPHRASE" deploy
+      - name: Verify registry availability and a fresh external installation
+        env:
+          SDK_LANGUAGE: jvm
+        run: python tools/sdk_verify.py "$SDK_LANGUAGE" --registry-only

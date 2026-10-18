@@ -1,0 +1,5 @@
+{
+  "v02.standard.read_text.utf8_crlf": {
+    "byte_contract": "UTF-8 retains CRLF exactly; size and SHA256 over bytes"
+  }
+}

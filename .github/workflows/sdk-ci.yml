@@ -1,0 +1,18 @@
+name: SDK CI
+on:
+  pull_request:
+  push:
+    branches: ['main', 'release/openverify-v0.1']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  sdk:
+    name: SDK (${{ matrix.language }})
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [node, python, rust, go, jvm, dotnet, ruby, php]
+    uses: ./.github/workflows/sdk-verify.yml
+    with:
+      language: ${{ matrix.language }}

@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:verification:draft:output-port",
+  "description": "Typed explicit executable dataflow; see spec/draft/dataflow.md.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "schema": {
+      "type": [
+        "object",
+        "boolean"
+      ]
+    },
+    "role": {
+      "type": "string",
+      "enum": [
+        "INFORMATION",
+        "RESULT",
+        "DECISION"
+      ]
+    }
+  },
+  "required": [
+    "name",
+    "schema",
+    "role"
+  ],
+  "additionalProperties": false
+}

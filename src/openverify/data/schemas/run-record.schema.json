@@ -25,31 +25,34 @@
     "initial_context": {
       "type": "object"
     },
+    "run_inputs": {
+      "type": "object"
+    },
     "opportunity_id": {
       "type": "string",
       "minLength": 1
     },
     "admission": {
+      "$ref": "urn:verification:draft:admission"
+    },
+    "policy_evaluations": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:verification:draft:policy-evaluation"
+      }
+    },
+    "cancellation": {
+      "$ref": "urn:verification:draft:cancellation-event"
+    },
+    "provider_bindings": {
       "type": "object",
-      "properties": {
-        "outcome": {
-          "type": "string",
-          "enum": [
-            "RUN",
-            "SKIP",
-            "DEFER"
-          ]
-        },
-        "reason": {
-          "type": "string",
-          "minLength": 1
-        }
+      "propertyNames": {
+        "type": "string",
+        "minLength": 1
       },
-      "required": [
-        "outcome",
-        "reason"
-      ],
-      "additionalProperties": false
+      "additionalProperties": {
+        "$ref": "urn:verification:draft:provider-binding"
+      }
     },
     "started_at": {
       "type": "string",
@@ -70,9 +73,28 @@
             "type": "string",
             "minLength": 1
           },
-          "executor_ref": {
+          "kind": {
             "type": "string",
-            "minLength": 1
+            "enum": [
+              "DERIVE",
+              "EVALUATE",
+              "CONTROL",
+              "AGGREGATE"
+            ]
+          },
+          "operation": {
+            "$ref": "urn:verification:draft:operation-requirement"
+          },
+          "executor_ref": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "executor_version": {
             "anyOf": [
@@ -85,6 +107,26 @@
               }
             ]
           },
+          "provider_binding": {
+            "$ref": "urn:verification:draft:provider-binding"
+          },
+          "provider_output_error": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "const": "INVALID_PROVIDER_OUTPUT"
+              },
+              "message": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "code",
+              "message"
+            ],
+            "additionalProperties": false
+          },
           "upstream_node_ids": {
             "type": "array",
             "items": {
@@ -92,13 +134,19 @@
               "minLength": 1
             }
           },
-          "input_context": {
-            "type": "object"
-          },
           "upstream_results": {
             "type": "object",
             "additionalProperties": {
               "$ref": "urn:verification:draft:result"
+            }
+          },
+          "input_values": {
+            "type": "object"
+          },
+          "input_resolutions": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "urn:verification:draft:input-resolution"
             }
           },
           "started_at": {
@@ -121,6 +169,32 @@
               "$ref": "urn:verification:draft:resource"
             }
           },
+          "state": {
+            "type": "string",
+            "enum": [
+              "SUCCESS",
+              "ERROR",
+              "NONEXECUTED",
+              "CANCELLED"
+            ]
+          },
+          "reason": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "observation": {
+            "$ref": "urn:verification:draft:execution-observation"
+          },
+          "information": {
+            "type": "object"
+          },
           "result": {
             "anyOf": [
               {
@@ -140,27 +214,21 @@
                 "type": "null"
               }
             ]
-          },
-          "derived": {
-            "anyOf": [
-              {
-                "type": "object"
-              },
-              {
-                "type": "null"
-              }
-            ]
           }
         },
         "required": [
           "node_id",
-          "executor_ref",
+          "kind",
+          "operation",
           "upstream_node_ids",
-          "input_context",
           "upstream_results",
+          "input_values",
+          "input_resolutions",
           "started_at",
           "finished_at",
-          "usage"
+          "usage",
+          "state",
+          "information"
         ],
         "additionalProperties": false
       }
@@ -188,8 +256,10 @@
     "definition_fingerprint",
     "subject",
     "initial_context",
+    "run_inputs",
     "opportunity_id",
     "admission",
+    "policy_evaluations",
     "started_at",
     "finished_at",
     "nodes",

@@ -1,0 +1,19 @@
+{
+  "subjects": [
+    {
+      "id": "article-1",
+      "type": "text/plain",
+      "locator": {
+        "host_key": "text"
+      }
+    },
+    {
+      "id": "article-1",
+      "type": "text/plain",
+      "locator": {
+        "host_key": "text"
+      }
+    }
+  ],
+  "reason": "duplicate"
+}

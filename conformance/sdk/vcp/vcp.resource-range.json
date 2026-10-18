@@ -1,0 +1,26 @@
+{
+  "id": "vcp.resource-range",
+  "contract": "vcp",
+  "version": "draft",
+  "type": "resource",
+  "operation": "parse",
+  "input": {
+    "unit": "seconds",
+    "kind": "RANGE",
+    "minimum": 0,
+    "maximum": 2
+  },
+  "expected": {
+    "accepted": true,
+    "normalized": {
+      "unit": "seconds",
+      "kind": "RANGE",
+      "minimum": 0,
+      "maximum": 2
+    }
+  },
+  "features": [
+    "standalone",
+    "resource"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "definition": "examples/first-run/definition.json",
+  "provider_bindings": {
+    "required": {"provider_id":"openverify.standard.text","provider_version":"1","capability_id":"openverify.text","capability_version":"1"},
+    "prohibited": {"provider_id":"openverify.standard.text","provider_version":"1","capability_id":"openverify.text","capability_version":"1"},
+    "all": {"provider_id":"openverify.standard.aggregate","provider_version":"1","capability_id":"openverify.aggregate","capability_version":"1"}
+  },
+  "cases": [
+    {"inputs":{"text":"Migration Rollback"},"verdicts":{"required":"PASS","prohibited":"PASS","all":"PASS"},"states":["SUCCESS","SUCCESS","SUCCESS"]},
+    {"inputs":{"text":"Migration TODO"},"verdicts":{"required":"FAIL","prohibited":"FAIL","all":"FAIL"},"states":["SUCCESS","SUCCESS","SUCCESS"]}
+  ]
+}

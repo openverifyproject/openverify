@@ -1,0 +1,626 @@
+# Finite release blockers
+
+**BLOCKED.** These are existing canonical requirements, not newly invented obligations or a proposed giant test batch.
+
+1. Assertion sufficiency remains unresolved for 614 records below. 218 have no reviewed link at all. A missing link is not proof a test is missing. The remainder have bounded examples, not complete scoped discharge. Review existing assertions before authorizing any additional tests.
+2. The published finite-DAG/schema/API scope is broader than the proved/tested projections. No justified reduction closes every applicable residual. An explicit narrower release scope, or completion of these specific evidence links, is needed before READY. This report does not make that normative scope decision.
+3. One full ordinary run observed a 2-second regex child startup TimeoutError under concurrent verification load. The isolated rerun passed; final sequential outcome is recorded separately. Raising/removing safety deadlines without a contract decision would hide the tradeoff. Decide whether this documented fail-closed resource limit is acceptable for v0.1.
+
+No new normative decision is requested for the two corrected RPC cases. -32603 and other untested transport failure branches are not claimed discharged merely because -32700/-32600 now pass. No external implementation honesty, domain ownership or cryptographic attestation is inferred.
+
+Exact unresolved record list (predicate/domain/source and linked cases are in REQUIREMENT_COVERAGE.jsonl):
+
+- `CM.PROVIDER.INIT.SELECT` — PARTIALLY VERIFIED: Select first runner contract version supported by provider; this draft selects only 0.1
+- `CM.PROVIDER.INIT.VERIFY` — RELEASE BLOCKER: Recompute first common selection against returned manifest
+- `CM.PROVIDER.COMPAT.REVISION` — RELEASE BLOCKER: Use the same specification/schema revision and capability specification
+- `CM.PROVIDER.COMPAT.VCP_FIELDS` — PARTIALLY VERIFIED: Invocation declares available draft VCP interchange
+- `CM.PROVIDER.CANCEL.CAUSE` — PARTIALLY VERIFIED: A runner cancel request caused termination
+- `CM.PROVIDER.CANCEL.TERMINAL` — PARTIALLY VERIFIED: Acknowledge as no-op even without running-cancel support
+- `CM.PROVIDER.CANCEL.UNKNOWN` — PARTIALLY VERIFIED: Reject without inventing a running attempt
+- `CM.PROVIDER.DEADLINE.IRREVERSIBLE` — PARTIALLY VERIFIED: Attempt remains ended despite clock rollback
+- `CM.PROVIDER.FEATURE.CANCEL` — PARTIALLY VERIFIED: Reject running cancellation without ending invocation
+- `CM.PROVIDER.FEATURE.DEADLINE` — PARTIALLY VERIFIED: Capability supports and can enforce deadline semantics
+- `CM.PROVIDER.NAMESPACE.OWNERSHIP` — RELEASE BLOCKER: Third-party publisher controls the reversed-domain prefix of at least two segments used by its identifier; syntax cannot establish this ownership.
+- `CM.PROVIDER.NAMESPACE.SYNTAX` — RELEASE BLOCKER: Lowercase ASCII dot segments; third parties have at least three segments; openverify namespace reserved
+- `CM.PROVIDER.MANIFEST.CAPABILITY_IDENTITY` — RELEASE BLOCKER: Each capability ID/version pair is unique; multiple exact versions of one ID are allowed
+- `CM.PROVIDER.MANIFEST.SNAPSHOT` — PARTIALLY VERIFIED: Keep manifest fixed throughout that initialized session
+- `CM.PROVIDER.ERROR.CLASSIFY` — PARTIALLY VERIFIED: Programmatic classification uses stable code; provider failures use namespaced codes outside reserved set
+- `CM.PROVIDER.ERROR.NO_REWRITE` — RELEASE BLOCKER: Report peer validation failure separately
+- `CM.PROVIDER.ERROR.CAPABILITY_UNAVAILABLE` — PARTIALLY VERIFIED: Use CAPABILITY_UNAVAILABLE for this declared category; retain diagnostic message/details without classifying from them.
+- `CM.PROVIDER.ERROR.CAPABILITY_VERSION_UNSUPPORTED` — PARTIALLY VERIFIED: Use CAPABILITY_VERSION_UNSUPPORTED for this declared category; retain diagnostic message/details without classifying from them.
+- `CM.PROVIDER.ERROR.CONTRACT_VERSION_UNSUPPORTED` — PARTIALLY VERIFIED: Use CONTRACT_VERSION_UNSUPPORTED for this declared category; retain diagnostic message/details without classifying from them.
+- `CM.PROVIDER.ERROR.INVALID_CONFIG` — PARTIALLY VERIFIED: Use INVALID_CONFIG for this declared category; retain diagnostic message/details without classifying from them.
+- `CM.PROVIDER.ERROR.INVALID_INPUT` — PARTIALLY VERIFIED: Use INVALID_INPUT for this declared category; retain diagnostic message/details without classifying from them.
+- `CM.PROVIDER.ERROR.INVALID_INVOCATION` — PARTIALLY VERIFIED: Use INVALID_INVOCATION for this declared category; retain diagnostic message/details without classifying from them.
+- `CM.PROVIDER.ERROR.INVALID_PROVIDER_OUTPUT` — PARTIALLY VERIFIED: Use INVALID_PROVIDER_OUTPUT for this declared category; retain diagnostic message/details without classifying from them.
+- `CM.PROVIDER.ERROR.PROTOCOL_VIOLATION` — PARTIALLY VERIFIED: Use PROTOCOL_VIOLATION for this declared category; retain diagnostic message/details without classifying from them.
+- `CM.PROVIDER.EXT.MANDATORY` — RELEASE BLOCKER: Reject operation as PROTOCOL_VIOLATION
+- `CM.PROVIDER.LIFE.OUTPUT` — RELEASE BLOCKER: Validate output against advertised output_schema
+- `CM.PROVIDER.INIT.ONCE.FAIL_CLOSE` — PARTIALLY VERIFIED: Close session and begin no work.
+- `CM.PROVIDER.INIT.ONCE.ONCE` — PARTIALLY VERIFIED: No second initialization succeeds; repeated initialization is PROTOCOL_VIOLATION.
+- `CM.PROVIDER.INIT.ONCE.PREWORK` — PARTIALLY VERIFIED: No capability work begins.
+- `CM.PROVIDER.SEMANTIC_BOUNDARY` — RELEASE BLOCKER: Provider completion/error controls operation lifecycle only; VCP owns Subject/Criterion/judgment/control/provenance
+- `CM.PROVIDER.BUDGET.EXACT` — PARTIALLY VERIFIED: Every dimension is an EXACT upper consumption limit in its explicit unit
+- `CM.PROVIDER.FEATURE.RESOURCE` — PARTIALLY VERIFIED: No resource_usage event or final usage
+- `CM.PROVIDER.SCHEMA.VALIDITY` — RELEASE BLOCKER: Each is a valid self-contained Draft 2020-12 object/boolean schema
+- `CM.PROVIDER.LIFE.INTERLEAVING` — PARTIALLY VERIFIED: Per-attempt event order holds while different attempts may interleave
+- `CM.PROVIDER.LIFE.CORRELATION.AFTER_TERMINAL` — PARTIALLY VERIFIED: Reject event after terminal.
+- `CM.PROVIDER.LIFE.CORRELATION.DUPLICATE_OUTCOME` — PARTIALLY VERIFIED: Reject duplicate Outcome.
+- `CM.PROVIDER.LIFE.CORRELATION.UNKNOWN` — PARTIALLY VERIFIED: Reject correlation.
+- `CM.PROVIDER.FEATURE.STREAM` — PARTIALLY VERIFIED: No events may be emitted
+- `CM.PROVIDER.LIFE.SEQUENCE.DUPLICATE` — PARTIALLY VERIFIED: Reject duplicate sequence.
+- `CM.PROVIDER.LIFE.SEQUENCE.FIRST` — PARTIALLY VERIFIED: sequence equals 1.
+- `CM.PROVIDER.LIFE.SEQUENCE.GAPS` — PARTIALLY VERIFIED: Accept the sequence gap as legal.
+- `CM.PROVIDER.LIFE.SEQUENCE.INCREASE` — PARTIALLY VERIFIED: sequence q is strictly greater than p.
+- `CM.PROVIDER.LIFE.SEQUENCE.REORDER` — PARTIALLY VERIFIED: Reject reordered event.
+- `CM.PROVIDER.EVENT.PAYLOAD` — PARTIALLY VERIFIED: progress/diagnostic arbitrary JSON; evidence VCP Evidence; artifact VCP ArtifactRef; resource_usage VCP ResourceVector; extension namespaced namespace plus data
+- `CM.PROVIDER.STDIO.CHANNELS` — RELEASE BLOCKER: stdout contains frames only; logs use stderr
+- `CM.PROVIDER.RPC.ERROR_CHANNEL` — PARTIALLY VERIFIED: Before acceptance use JSON-RPC error; after acceptance execution failures are Outcome in successful result
+- `CM.PROVIDER.STDIO.FRAME` — RELEASE BLOCKER: ASCII Content-Length: N CRLF CRLF then exactly N positive UTF-8 JSON-object bytes
+- `CM.PROVIDER.LOSS.SEPARATE` — RELEASE BLOCKER: Report transport failure separately
+- `CM.PROVIDER.WIRE.NUMBERS` — RELEASE BLOCKER: Integral numeric notation counts as integer; preserve faithful JSON mathematical value
+- `CM.PROVIDER.WIRE.NULL` — RELEASE BLOCKER: Optional typed core fields are absent rather than null, except arbitrary JSON value payloads where null is data
+- `CM.PROVIDER.ROOT.CANCEL_REQUEST` — PARTIALLY VERIFIED: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+- `CM.PROVIDER.ROOT.CAPABILITY` — PARTIALLY VERIFIED: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+- `CM.PROVIDER.ROOT.INITIALIZE_REQUEST` — PARTIALLY VERIFIED: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+- `CM.PROVIDER.ROOT.INITIALIZE_RESULT` — PARTIALLY VERIFIED: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+- `CM.PROVIDER.ROOT.INVOCATION` — PARTIALLY VERIFIED: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+- `CM.PROVIDER.ROOT.OUTCOME` — PARTIALLY VERIFIED: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+- `CM.PROVIDER.ROOT.PROVIDER_ERROR` — PARTIALLY VERIFIED: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+- `CM.PROVIDER.ROOT.PROVIDER_EVENT` — PARTIALLY VERIFIED: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+- `CM.PROVIDER.ROOT.PROVIDER_MANIFEST` — PARTIALLY VERIFIED: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+- `CM.RELAY.BIND.SELECT` — PARTIALLY VERIFIED: Unique compatible provider or exact explicit identity
+- `CM.RELAY.BIND.CHECK` — RELEASE BLOCKER: Independently check trusted catalog and exact manifest/capability identities
+- `CM.RELAY.CANCEL.TOKEN` — PARTIALLY VERIFIED: Serialize occurrence to fit one-interrupted-attempt provenance
+- `CM.RELAY.CANCEL.TASK` — RELEASE BLOCKER: Clean up processes; raise CancelledError
+- `CM.RELAY.CATALOG.ENTRYPOINTS` — RELEASE BLOCKER: Only host-approved names execute factories
+- `CM.RELAY.CLI.JSON` — PARTIALLY VERIFIED: stdout only RunRecord; diagnostics stderr; output option stores record
+- `CM.RELAY.CLI.STDIN` — PARTIALLY VERIFIED: Exactly one stdin consumer; --run-inputs aliases --inputs
+- `CM.RELAY.SERVICE.ALLOWLIST` — PARTIALLY VERIFIED: Host-authorized names only; defaults text/guardrail
+- `CM.RELAY.SERVICE.CONCURRENCY` — PARTIALLY VERIFIED: Bound active service runs, default eight, separately from per-run waves
+- `CM.RELAY.HTTP.AUTH` — PARTIALLY VERIFIED: Require matching Bearer token before execution
+- `CM.RELAY.HTTP.BOUND` — PARTIALLY VERIFIED: HTTP 413, default 1 MiB
+- `CM.RELAY.HTTP.HEALTH` — PARTIALLY VERIFIED: Report health; supplied server binds localhost
+- `CM.RELAY.MCP.TOOLS` — PARTIALLY VERIFIED: list_graphs, describe_graph, run_graph, inspect_result expose structured records
+- `CM.RELAY.DRIVER.CHECK` — RELEASE BLOCKER: Recheck Provider lifecycle/correlation/output and VCP acceptance
+- `CM.RELAY.DRIVER.BOUNDS` — RELEASE BLOCKER: Configured count/byte bounds, default 10000 events and 16 MiB
+- `CM.RELAY.DRIVER.TIMEOUT` — PARTIALLY VERIFIED: Independent host timeout, default 30 seconds
+- `CM.RELAY.PORT.EventObserver.observe` — PARTIALLY VERIFIED: Receive occurrence/node/provider notification and return None; Relay isolates callback exceptions and annotates diagnostics.
+- `CM.RELAY.PORT.EventSink.emit` — PARTIALLY VERIFIED: For this invocation, synchronously report validated correlated events to the runner callback.
+- `CM.RELAY.PORT.ExecutionDriver.execute` — PARTIALLY VERIFIED: Given provider, manifest/invocation request, host timeout and sink, return InvocationReport retaining legal events and terminal outcome or separate execution/transport error. Application revalidates report.
+- `CM.RELAY.PORT.ProviderBinder.bind` — PARTIALLY VERIFIED: Given validated requirement/providers and optional explicit binding, return the exact compatible trusted choice or declared binding/unavailable/ambiguity failure.
+- `CM.RELAY.PORT.ProviderCatalog.providers` — PARTIALLY VERIFIED: Returns the trusted AvailableProvider sequence with valid manifest snapshots; registration/discovery is host-owned.
+- `CM.RELAY.PORT.ProviderTransport.invoke` — PARTIALLY VERIFIED: Given one validated invocation request and sink, deliver permitted ProviderEvents and return terminal Outcome under the supported transport.
+- `CM.RELAY.PORT.RecordStore.get` — PARTIALLY VERIFIED: Return retained RunRecord snapshot or None when unavailable.
+- `CM.RELAY.PORT.RecordStore.put` — PARTIALLY VERIFIED: Given a valid completed record, persist a snapshot or propagate storage failure.
+- `CM.RELAY.OBSERVER.ERROR` — PARTIALLY VERIFIED: Isolate and annotate diagnostic
+- `CM.RELAY.POLICY.NO_RECORD` — RELEASE BLOCKER: Raise NO_OCCURRENCE with no RunRecord
+- `CM.RELAY.POLICY.IDENTITY` — RELEASE BLOCKER: Generate fresh UUID; explicit identity supports local repeatability
+- `CM.RELAY.PROVIDER.SHARING` — RELEASE BLOCKER: Serialize unless explicit concurrency_safe=True
+- `CM.RELAY.API.RUN` — PARTIALLY VERIFIED: Accept Graph/Definition/serialized VCP through same validation path; return Run(record)
+- `CM.SDK.FUNCTION_PROVIDER.ASYNC` — PARTIALLY VERIFIED: Reject non-coroutine functions with TypeError.
+- `CM.SDK.FUNCTION_PROVIDER.BUDGET` — PARTIALLY VERIFIED: Reject before computation because wrapper cannot enforce budgets.
+- `CM.SDK.FUNCTION_PROVIDER.DECISION` — PARTIALLY VERIFIED: Normalize to decision port mapping.
+- `CM.SDK.FUNCTION_PROVIDER.EXCEPTION` — PARTIALLY VERIFIED: Yield ERROR with openverify.computation_error.
+- `CM.SDK.FUNCTION_PROVIDER.MANIFEST` — PARTIALLY VERIFIED: Validate and publish the exact supplied identity/schemas with Contract 0.1, VCP draft and streaming/cancellation/resource reporting enabled, deadlines disabled.
+- `CM.SDK.FUNCTION_PROVIDER.OBSERVATION` — PARTIALLY VERIFIED: Emit observation evidence and nonempty usage before terminal; preserve usage on explicit execution error.
+- `CM.SDK.FUNCTION_PROVIDER.POLICY` — PARTIALLY VERIFIED: Return outcome as the direct output object.
+- `CM.SDK.FUNCTION_PROVIDER.RESULT` — PARTIALLY VERIFIED: Normalize to result port mapping; retain Result usage as observation usage.
+- `CM.SDK.FUNCTION_PROVIDER.TASK_CANCEL` — PARTIALLY VERIFIED: Propagate CancelledError.
+- `CM.SDK.AUTHORING.GRAPH.ADD_NODE` — RELEASE BLOCKER: Add a deep copy of an explicitly supplied SDK graph node.
+- `CM.SDK.AUTHORING.GRAPH.BUILD` — PARTIALLY VERIFIED: Construct, serialize and parse a validated portable VerificationDefinition snapshot.
+- `CM.SDK.AUTHORING.GRAPH.EDGE` — RELEASE BLOCKER: Append dependency edge; replacing the same source/destination pair updates its guard.
+- `CM.SDK.AUTHORING.GRAPH.INSPECT` — PARTIALLY VERIFIED: Build and call inspect_definition on the validated snapshot.
+- `CM.SDK.AUTHORING.GRAPH.TO_JSON` — PARTIALLY VERIFIED: Serialize the built validated definition.
+- `CM.SDK.AUTHORING.GRAPH.VALIDATE` — RELEASE BLOCKER: Build and validate; return None if successful.
+- `CM.SDK.SERVICE.GRAPHSERVICE.DEFINITION` — PARTIALLY VERIFIED: Return a newly parsed stored graph snapshot; unauthorized name raises GRAPH_UNAVAILABLE.
+- `CM.SDK.SERVICE.GRAPHSERVICE.DESCRIBE_GRAPH` — PARTIALLY VERIFIED: Inspect authorized definition without invocation.
+- `CM.SDK.SERVICE.GRAPHSERVICE.INSPECT_RESULT` — PARTIALLY VERIFIED: Read service store; absent record raises RUN_UNAVAILABLE, otherwise return record data.
+- `CM.SDK.SERVICE.GRAPHSERVICE.LIST_GRAPHS` — PARTIALLY VERIFIED: Return sorted authorized graph names.
+- `CM.SDK.NODE.OUTPUT` — PARTIALLY VERIFIED: Return the declared output Ref; undeclared name raises KeyError.
+- `CM.SDK.RELAY.RUN_SYNC` — PARTIALLY VERIFIED: Execute Relay.run through asyncio.run and return Run.
+- `CM.SDK.RELAY.CONFIG` — PARTIALLY VERIFIED: Require exact positive integer max_concurrency and finite positive timeout; reject invalid settings with ValueError.
+- `CM.SDK.REFERENCE.CONSTANT` — PARTIALLY VERIFIED: Return Ref carrying a CONSTANT ValueSource and the supplied schema.
+- `CM.SDK.REFERENCE.EXTERNAL` — PARTIALLY VERIFIED: Return Ref carrying an EXTERNAL_REFERENCE source and object schema.
+- `CM.RELAY.STORE.VALIDATE` — RELEASE BLOCKER: Parse RunRecord before storage and return
+- `CM.RELAY.ANNOTATION.SCOPE` — RELEASE BLOCKER: Optional unauthenticated annotation supplements normative ProviderBinding
+- `CM.RELAY.STORE.COPY` — PARTIALLY VERIFIED: Snapshot both directions
+- `CM.RELAY.STORE.ERROR` — RELEASE BLOCKER: Propagate to host
+- `CM.RELAY.STORE.SCOPE` — PARTIALLY VERIFIED: Memory volatile; JSONL single-process nontransactional append/reload
+- `CM.RELAY.SCHED.ORDER` — PARTIALLY VERIFIED: Accept records in definition order within wave
+- `CM.RELAY.SCHED.CONTROL` — PARTIALLY VERIFIED: Serial barrier without concurrently affected wave peers
+- `CM.RELAY.SCHED.ISOLATION` — PARTIALLY VERIFIED: Keep states/inputs/records/cancellation occurrence-local
+- `CM.RELAY.ACTION.PREFIX` — PARTIALLY VERIFIED: Only descendants of valid relative prefixes pass; tmp and tmp/ equivalent; prefix itself, siblings, absolute/traversal/ambiguous paths fail
+- `CM.RELAY.SCOPE.RANGES` — PARTIALLY VERIFIED: Half-open end coordinates; zero-length ranges intersect nothing; return original finding file strings/coordinates
+- `CM.RELAY.SECURITY.FILES` — PARTIALLY VERIFIED: Authorize resolved roots/cwd, reject escaping symlinks and enforce read/selection bounds
+- `CM.RELAY.SECURITY.FRESHNESS` — RELEASE BLOCKER: Compare observed worktree/HEAD/content identities later
+- `CM.RELAY.GIT.CHANGES` — PARTIALLY VERIFIED: Untracked gets whole-file new ranges; renames retain old/new identities; deletions reported separately/excluded from executable file scope
+- `CM.RELAY.GIT.MODES` — PARTIALLY VERIFIED: WORKTREE compares base to tracked worktree; STAGED base to index; UNSTAGED index to worktree with empty base; include_untracked explicit
+- `CM.RELAY.SCOPE.INVALID` — RELEASE BLOCKER: Empty file list selects nothing; empty directory, NUL, traversal, ambiguous Windows paths/reserved paths reject; dot explicitly selects cwd
+- `CM.RELAY.SCOPE.PATH` — PARTIALLY VERIFIED: Platform-native component/case rules; relative paths use cwd; trailing separator preserves directory membership; POSIX backslash literal
+- `CM.RELAY.SECURITY.TEXT` — RELEASE BLOCKER: Bounded regex worker and capped findings
+- `CM.RELAY.TOOL.AST` — RELEASE BLOCKER: Actual installed ast-grep patterns/authorized rule files; whole-file findings and half-open range intersection
+- `CM.RELAY.TOOL.PYTEST` — RELEASE BLOCKER: Run actual configured tests/plugins with process privileges; default full scope; exit 1 FAIL and exits 2-5 ERROR
+- `CM.RELAY.TOOL.RUFF` — RELEASE BLOCKER: Use actual isolated tool and explicit diagnostic codes; lint exit 1 means FAIL
+- `CM.RELAY.STANDARD.ACTION_POLICY` — PARTIALLY VERIFIED: Only delete with a nonempty relative target strictly below a valid relative directory prefix passes. Invalid supplied prefix, traversal, absolute/ambiguous path or a prefix itself fails closed.
+- `CM.RELAY.STANDARD.AGGREGATE` — PARTIALLY VERIFIED: Use explicit ordered members and the declared standard VCP reducer laws. Member values remain tied to names when filtering/weighting.
+- `CM.RELAY.STANDARD.ASTGREP` — PARTIALLY VERIFIED: Run actual ast-grep pattern or authorized rule file on selected whole files; normalize zero-based tool coordinates to one-based half-open findings. Invalid option combination/tool failure is ERROR.
+- `CM.RELAY.STANDARD.CANDIDATE_UNCHANGED` — RELEASE BLOCKER: Recheck supplied worktree identity, file content identities, HEAD, compared diff and untracked scope. Changed checked state yields stale_candidate; mismatched cwd yields candidate_worktree_mismatch.
+- `CM.RELAY.STANDARD.COMMAND` — RELEASE BLOCKER: Run only the host-authored command, bounded by timeout/output limits, and return its observation without deriving a verification verdict.
+- `CM.RELAY.STANDARD.COMMAND_CHECK` — PARTIALLY VERIFIED: Compare exact return code and optional required substrings. Produce unexpected_exit/output_missing findings for mismatches, preserving the checked observation.
+- `CM.RELAY.STANDARD.GATE.INVALID` — PARTIALLY VERIFIED: Reject operation input; do not produce an ordinary denial Decision.
+- `CM.RELAY.STANDARD.GIT.DELETE` — PARTIALLY VERIFIED: Keep deletion identities separate; zero-count hunk contains no new-file lines.
+- `CM.RELAY.STANDARD.GIT.FRESHNESS` — PARTIALLY VERIFIED: Reject the detected inconsistent capture.
+- `CM.RELAY.STANDARD.GIT_SCOPE` — PARTIALLY VERIFIED: WORKTREE compares base to worktree, STAGED base to index, UNSTAGED index to worktree with empty base. Preserve rename identities, separate deletions, include explicit untracked policy and reject detected changes during capture.
+- `CM.RELAY.STANDARD.JSON_PARSE` — PARTIALLY VERIFIED: Parse strict JSON, rejecting duplicate keys, malformed text and nonfinite tokens. Preserve parsed JSON type/value.
+- `CM.RELAY.STANDARD.NO_FINDINGS` — RELEASE BLOCKER: PASS iff the supplied findings list is empty; otherwise FAIL retaining structured finding evidence.
+- `CM.RELAY.STANDARD.PYTEST` — PARTIALLY VERIFIED: Run real pytest with supplied selectors; no selectors means full scope. Exit 0 passes, 1 fails, 2 through 5 are execution ERROR; Python/plugins execute with host privileges.
+- `CM.RELAY.STANDARD.FILES.IDENTITY` — PARTIALLY VERIFIED: sha256 and size describe precisely the same byte snapshot returned through base64.
+- `CM.RELAY.STANDARD.READ_FILE` — PARTIALLY VERIFIED: Read bounded authorized bytes; base64 encodes those bytes, sha256 and size describe the same bytes.
+- `CM.RELAY.STANDARD.READ_TEXT` — PARTIALLY VERIFIED: Read bounded authorized bytes, reject NUL/binary and invalid UTF-8, return decoded text and identity over the exact read bytes.
+- `CM.RELAY.STANDARD.RUFF` — PARTIALLY VERIFIED: Run installed Ruff isolated with explicit select codes on authorized Python files; report normalized actual diagnostics. Empty scope passes without process invocation; tool failures are ERROR.
+- `CM.RELAY.STANDARD.SCHEMA` — PARTIALLY VERIFIED: Validate the configured self-contained schema, then check supplied value offline. A valid-schema instance mismatch is a schema_mismatch finding, not an execution failure.
+- `CM.RELAY.STANDARD.SCOPE` — RELEASE BLOCKER: Filter supplied findings in their original order using normalized local file identity or half-open ranges. Preserve original finding strings and coordinates.
+- `CM.RELAY.STANDARD.SCOPE.EMPTY` — PARTIALLY VERIFIED: Return no selected findings.
+- `CM.RELAY.STANDARD.SCOPE.LEXICAL` — RELEASE BLOCKER: Compare lexical platform-normalized components without reading files or resolving symlinks.
+- `CM.RELAY.STANDARD.SCOPE.ORDER` — PARTIALLY VERIFIED: Return selected values in original input order with original file strings and coordinates.
+- `CM.RELAY.STANDARD.SELECT_FILES` — PARTIALLY VERIFIED: Authorize selected files within host roots; choose explicit files, supplied/default glob or recursive directory traversal; return sorted paths bounded by file limit.
+- `CM.RELAY.STANDARD.TEXT` — PARTIALLY VERIFIED: Combine bound and configured terms. Missing required literals, present prohibited literals and unmatched required regex produce structured findings; PASS iff no findings.
+- `CM.SHARED.JSON_EQUALITY` — PARTIALLY VERIFIED: JSON booleans and numbers are distinct; numbers compare by JSON numeric value; arrays are ordered; object member ordering does not alter object value. This same equality is used for reconstructed provenance snapshots.
+- `CM.SHARED.SCHEMA_APPLICATORS` — RELEASE BLOCKER: Evaluate allOf conjunctively, anyOf existentially, oneOf with exactly one successful child, not by negation, and if solely as a branch selector; apply child properties/items/propertyNames only at their actual locations.
+- `CM.SDK.ERROR.ASDICT` — PARTIALLY VERIFIED: Return code,message,path,details preserving string code and diagnostic fields.
+- `CM.SDK.PROVIDER.ERROR.ASDICT` — PARTIALLY VERIFIED: Return code,message,details without a VCP path field.
+- `CM.SDK.FINGERPRINT` — PARTIALLY VERIFIED: Return local-sha256: followed by SHA256 hex of the SDK serialized UTF-8 bytes.
+- `CM.SDK.FLATTEN` — RELEASE BLOCKER: Validate Result, then use the partial standard projection; undefined states raise SDK RESULT_PROJECTION.
+- `CM.SDK.INSPECT` — RELEASE BLOCKER: Validate definition, then expose id/version/subject/criterion, topological node order, policy/run-input/port/binding data and declared upstream consumers including guards.
+- `CM.SDK.JSON.EQUALITY` — PARTIALLY VERIFIED: Compare numbers numerically, Boolean separately; lists positionally; object key order immaterial.
+- `CM.SDK.PROVIDER.SCHEMA.LOAD` — PARTIALLY VERIFIED: Return one of the nine packaged Provider schemas; unknown root raises PROTOCOL_VIOLATION.
+- `CM.SDK.SCHEMA.LOAD` — PARTIALLY VERIFIED: Return packaged named schema, including value-source; unknown root raises PROTOCOL_STRUCTURE.
+- `CM.SDK.PROVIDER.PARSE_CANCEL_REQUEST` — PARTIALLY VERIFIED: Delegate to parse_provider_object for cancel-request; return its typed value after structure and local semantic validation.
+- `CM.SDK.PARSE.DEFINITION` — PARTIALLY VERIFIED: Decode strict JSON, validate the named shipped root and its prose semantics, return the typed verification-definition value.
+- `CM.SDK.PROVIDER.PARSE_INVOCATION` — PARTIALLY VERIFIED: Delegate to parse_provider_object for invocation; return its typed value after structure and local semantic validation.
+- `CM.SDK.PROVIDER.PARSE_OUTCOME` — PARTIALLY VERIFIED: Delegate to parse_provider_object for outcome; return its typed value after structure and local semantic validation.
+- `CM.SDK.PROVIDER.PARSE_PROVIDER_EVENT` — PARTIALLY VERIFIED: Delegate to parse_provider_object for provider-event; return its typed value after structure and local semantic validation.
+- `CM.SDK.PROVIDER.PARSE_PROVIDER_MANIFEST` — PARTIALLY VERIFIED: Delegate to parse_provider_object for provider-manifest; return its typed value after structure and local semantic validation.
+- `CM.SDK.PARSE.RESULT` — PARTIALLY VERIFIED: Decode strict JSON, validate the named shipped root and its prose semantics, return the typed result value.
+- `CM.SDK.PARSE.RECORD` — PARTIALLY VERIFIED: Decode strict JSON, validate the named shipped root and its prose semantics, return the typed run-record value.
+- `CM.SDK.PROVIDER.SERIALIZE` — PARTIALLY VERIFIED: Return compact ensure_ascii JSON of wire_data with nonfinite values prohibited.
+- `CM.SDK.SERIALIZE.BYTES` — PARTIALLY VERIFIED: Return compact sorted-key ensure_ascii JSON with nonfinite output prohibited.
+- `CM.SDK.SERIALIZE.DATA` — PARTIALLY VERIFIED: Recursively materialize wire fields; omit unsupplied empty metadata/extensions and optional null controls; retain explicitly set Result judgment/output and InputResolution value, including null.
+- `CM.SDK.VALIDATE.DEFINITION` — PARTIALLY VERIFIED: Validate by serializing to wire data and applying parse_definition; return None on success.
+- `CM.SDK.PROVIDER.VALIDATE_INVOCATION` — PARTIALLY VERIFIED: Reparse wire_data through the corresponding object parser and return None on success.
+- `CM.SDK.PROVIDER.VALIDATE_OUTCOME` — PARTIALLY VERIFIED: Reparse wire_data through the corresponding object parser and return None on success.
+- `CM.SDK.PROVIDER.VALIDATE_PROVIDER_EVENT` — PARTIALLY VERIFIED: Reparse wire_data through the corresponding object parser and return None on success.
+- `CM.SDK.PROVIDER.VALIDATE_PROVIDER_MANIFEST` — PARTIALLY VERIFIED: Reparse wire_data through the corresponding object parser and return None on success.
+- `CM.SDK.VALIDATE.RESULT` — PARTIALLY VERIFIED: Validate by serializing to wire data and applying parse_result; return None on success.
+- `CM.SDK.PROVIDER.WIRE_DATA` — PARTIALLY VERIFIED: Use JSON model dump with exclude_unset=True, preserving explicitly supplied null and extension values.
+- `CM.VCP.AGG.EVIDENCE_ORDER` — RELEASE BLOCKER: Concatenate retained evidence in authored membership order
+- `CM.VCP.AGG.IGNORE` — PARTIALLY VERIFIED: Exclude that member only; retain order and identities of others
+- `CM.VCP.AGG.MISSING` — PARTIALLY VERIFIED: Use MISSING handling
+- `CM.VCP.AGG.REJECT` — PARTIALLY VERIFIED: Reject reduction with AGGREGATE_INPUT and record ERROR
+- `CM.VCP.AGG.ALL` — PARTIALLY VERIFIED: PASS iff every retained verdict is PASS
+- `CM.VCP.AGG.ANY` — PARTIALLY VERIFIED: PASS iff at least one retained verdict is PASS
+- `CM.VCP.AGG.MAJORITY.FAIL` — PARTIALLY VERIFIED: Return FAIL.
+- `CM.VCP.AGG.MAJORITY.PASS` — PARTIALLY VERIFIED: Return PASS.
+- `CM.VCP.AGG.MAJORITY.TIE` — PARTIALLY VERIFIED: Reject reduction.
+- `CM.VCP.AGG.MEMBERS.COMPLETE` — PARTIALLY VERIFIED: Include that binding in aggregate_inputs.
+- `CM.VCP.AGG.MEMBERS.ORDER` — PARTIALLY VERIFIED: aggregate_inputs is an authored ordered list.
+- `CM.VCP.AGG.MEMBERS.REQUIREDNESS` — RELEASE BLOCKER: Input is required BLOCK.
+- `CM.VCP.AGG.MEMBERS.SOURCE_ROLE` — PARTIALLY VERIFIED: Member binds existing upstream RESULT-role output.
+- `CM.VCP.AGG.MEMBERS.UNIQUE` — RELEASE BLOCKER: Member input names are unique.
+- `CM.VCP.AGG.MEMBERS_INPUT.CONSTANT` — PARTIALLY VERIFIED: Required members input is CONSTANT equal to aggregate_inputs.
+- `CM.VCP.AGG.MEMBERS_INPUT.RESERVED` — RELEASE BLOCKER: subject, criterion and members are not member names.
+- `CM.VCP.AGG.MEMBER_STATES` — PARTIALLY VERIFIED: Keep it in membership and apply handling; unavailable values block
+- `CM.VCP.AGG.MAX` — PARTIALLY VERIFIED: Output score is mathematical maximum
+- `CM.VCP.AGG.MEAN` — PARTIALLY VERIFIED: Output score is arithmetic mean sum(x_i)/n
+- `CM.VCP.AGG.MIN` — PARTIALLY VERIFIED: Output score is mathematical minimum
+- `CM.VCP.AGG.SEVERITY_RESULT` — PARTIALLY VERIFIED: Output label has greatest rank in explicit domain
+- `CM.VCP.AGG.CONFIG` — PARTIALLY VERIFIED: Provide reducer and handling with every exceptional category explicitly REJECT or IGNORE
+- `CM.VCP.AGG.NONEMPTY` — PARTIALLY VERIFIED: Reject empty reduction
+- `CM.VCP.GRAPH.NO_DATA` — PARTIALLY VERIFIED: The edge only imposes dependency/eligibility
+- `CM.VCP.GRAPH.READINESS` — PARTIALLY VERIFIED: Every incoming predecessor has reached a terminal occurrence state
+- `CM.VCP.GRAPH.UNSUPPORTED` — PARTIALLY VERIFIED: Reject unsupported executable features
+- `CM.VCP.GUARD.ABSENT` — PARTIALLY VERIFIED: Guard evaluates false
+- `CM.VCP.GUARD.EQUALITY` — PARTIALLY VERIFIED: Compare its explicit source at JSON Pointer with authored JSON literal; empty pointer selects entire value
+- `CM.VCP.GUARD.VALIDITY` — RELEASE BLOCKER: Validate source ancestry, pointer and known operand types before execution
+- `CM.VCP.GRAPH.ORDER` — PARTIALLY VERIFIED: Any topologically valid order is portable
+- `CM.VCP.GRAPH.NO_VERDICT` — RELEASE BLOCKER: Retain per-node Results without synthesizing an overall verdict
+- `CM.VCP.GRAPH.IDENTITY.EDGE_ID` — PARTIALLY VERIFIED: Directed execution edges are unique.
+- `CM.VCP.GRAPH.IDENTITY.ENDPOINT` — PARTIALLY VERIFIED: Every edge endpoint names an existing node.
+- `CM.VCP.GRAPH.IDENTITY.NODE_ID` — PARTIALLY VERIFIED: Node IDs are unique.
+- `CM.VCP.DATA.ATOMIC_OUTPUT.ATOMIC` — PARTIALLY VERIFIED: Publish no partial accepted INFORMATION mapping.
+- `CM.VCP.DATA.ATOMIC_OUTPUT.EXTRA` — RELEASE BLOCKER: Reject semantic output acceptance.
+- `CM.VCP.DATA.ATOMIC_OUTPUT.MISSING` — PARTIALLY VERIFIED: Reject semantic output acceptance.
+- `CM.VCP.DATA.JUDGMENT` — PARTIALLY VERIFIED: Validate that value against the definition judgment_schema
+- `CM.VCP.RESULT.INVOKED` — PARTIALLY VERIFIED: Only EXECUTED SUCCESS or ERROR may be returned
+- `CM.VCP.DATA.DERIVE_ROLE` — PARTIALLY VERIFIED: Every declared output role is INFORMATION
+- `CM.VCP.DATA.PRIMARY_VALIDITY` — RELEASE BLOCKER: Value validates against VCP semantics and its port schema
+- `CM.VCP.CONFORMANCE.STAGES` — RELEASE BLOCKER: Check shipped structural schema and semantic invariants; unsupported execution rejects distinctly
+- `CM.VCP.CONFORMANCE.FIXTURE_PROTOCOL` — RELEASE BLOCKER: Valid manifest entries pass structure and semantics; invalid entries fail declared stage/code
+- `CM.VCP.DATA.BOOKKEEPING` — PARTIALLY VERIFIED: Its declared Result port exposes the recorded Result only if that port schema accepts it
+- `CM.VCP.DATA.BIND_TARGET` — PARTIALLY VERIFIED: Every required input has exactly one binding; binding targets name declared inputs
+- `CM.VCP.DATA.PORT_HANDLING` — PARTIALLY VERIFIED: Required ports use BLOCK; optional ports use OMIT or DEFAULT
+- `CM.VCP.DATA.OPERATION` — RELEASE BLOCKER: Use exact capability_id/version pair with no provider identity in the requirement
+- `CM.VCP.DATA.RESOLVE_ALL` — PARTIALLY VERIFIED: Retain a resolution for every declared input
+- `CM.VCP.DATA.RESOLVE_BLOCK.DOWNSTREAM` — PARTIALLY VERIFIED: Execution edges themselves do not disable descendants; explicit bindings/guards determine downstream eligibility.
+- `CM.VCP.DATA.RESOLVE_BLOCK.NONINVOCATION` — PARTIALLY VERIFIED: Do not invoke the graph provider.
+- `CM.VCP.DATA.RESOLVE_BLOCK.PROVENANCE` — PARTIALLY VERIFIED: No executor identity, observation, Decision or accepted information/executor usage.
+- `CM.VCP.DATA.RESOLVE_BLOCK.REASON` — PARTIALLY VERIFIED: NodeRecord.reason and diagnostic Result.output.reason equal INPUT_UNAVAILABLE.
+- `CM.VCP.DATA.RESOLVE_BLOCK.RESOLUTION` — PARTIALLY VERIFIED: Preserve source and original availability, used_default=false, no usable input value.
+- `CM.VCP.DATA.RESOLVE_BLOCK.RESULT` — PARTIALLY VERIFIED: Synthesized Result disposition is SKIPPED.
+- `CM.VCP.DATA.RESOLVE_BLOCK.STATE` — PARTIALLY VERIFIED: NodeRecord.state is NONEXECUTED.
+- `CM.VCP.DATA.RUN_ACCEPT.MISSING_REQUIRED` — PARTIALLY VERIFIED: Reject occurrence inputs before policy/node invocation.
+- `CM.VCP.DATA.RUN_ACCEPT.UNKNOWN_NAME` — PARTIALLY VERIFIED: Reject occurrence inputs before policy/node invocation.
+- `CM.VCP.DATA.RUN_ACCEPT.VALUE_SCHEMA` — PARTIALLY VERIFIED: Reject occurrence inputs before policy/node invocation.
+- `CM.VCP.DATA.RUN_NAMES` — PARTIALLY VERIFIED: Run input names are unique
+- `CM.VCP.DATA.ANCESTOR.OUTPUT_EXISTS` — RELEASE BLOCKER: Named declared output exists.
+- `CM.VCP.DATA.ANCESTOR.PRODUCER_EXISTS` — RELEASE BLOCKER: Producer node exists.
+- `CM.VCP.DATA.ANCESTOR.STRICT_ANCESTRY` — RELEASE BLOCKER: Producer is strict execution ancestor of consumer.
+- `CM.VCP.DATA.RUN_SOURCE` — RELEASE BLOCKER: Name refers to a declared run input
+- `CM.VCP.DECISION.DESTINATION` — PARTIALLY VERIFIED: ROUTE has a nonempty destination; every other kind has no non-null destination
+- `CM.VCP.EXT.PRESERVE` — RELEASE BLOCKER: Preserve data without interpreting unknown semantics
+- `CM.VCP.EXT.REQUIRED` — RELEASE BLOCKER: Report EXTENSION_UNSUPPORTED
+- `CM.VCP.KNOWLEDGE.REFERENCE` — PARTIALLY VERIFIED: Pass its exact reference snapshot as information; locator is opaque
+- `CM.VCP.KNOWLEDGE.EVIDENCE` — PARTIALLY VERIFIED: At least one of message, artifact_ref, locator, structured_data is non-null; message is nonempty; empty containers count
+- `CM.VCP.KNOWLEDGE.NEUTRAL` — RELEASE BLOCKER: Core property vocabulary remains domain-neutral; code-specific coordinates belong in opaque locator/structured data
+- `CM.VCP.LIFECYCLE.CANCEL_ADMISSION` — PARTIALLY VERIFIED: Admission must be RUN
+- `CM.VCP.LIFECYCLE.CANCEL_ORIGIN` — RELEASE BLOCKER: Only explicit host cancellation establishes occurrence cancellation
+- `CM.VCP.LIFECYCLE.CANCEL_RUNNING.LATER` — PARTIALLY VERIFIED: Later unstarted nodes are NONEXECUTED with CANCELLED Results.
+- `CM.VCP.LIFECYCLE.CANCEL_RUNNING.OBSERVATION` — PARTIALLY VERIFIED: Retain valid unaccepted observations and incurred usage separately.
+- `CM.VCP.LIFECYCLE.CANCEL_RUNNING.RESULT` — PARTIALLY VERIFIED: Affected Result disposition is CANCELLED with no accepted evaluation fields.
+- `CM.VCP.LIFECYCLE.CANCEL_RUNNING.STATE` — PARTIALLY VERIFIED: Affected NodeRecord.state is CANCELLED.
+- `CM.VCP.LIFECYCLE.NONEXEC_CAUSE` — PARTIALLY VERIFIED: Result.output.reason repeats NodeRecord.reason using the cause table
+- `CM.VCP.LIFECYCLE.CONTINUE` — RELEASE BLOCKER: Leave other eligibility unchanged
+- `CM.VCP.LIFECYCLE.DEFER` — PARTIALLY VERIFIED: Prevent further work in this occurrence with DEFERRED/CONTROL_DEFER
+- `CM.VCP.LIFECYCLE.RETRY` — PARTIALLY VERIFIED: End local pass, retain Decision and mark remaining work SKIPPED/RETRY_REQUESTED
+- `CM.VCP.LIFECYCLE.STOP` — PARTIALLY VERIFIED: End further work as specified with SKIPPED/CONTROL_STOP
+- `CM.VCP.LIFECYCLE.PRECEDENCE` — RELEASE BLOCKER: Select admission non-RUN, observed cancellation, terminating control, route exclusion, false guard, blocked input in that order
+- `CM.VCP.LIFECYCLE.GUARD_JOIN` — RELEASE BLOCKER: Every incoming guard must hold
+- `CM.VCP.LIFECYCLE.ROUTE_TARGET` — PARTIALLY VERIFIED: Destination is a direct outgoing execution successor
+- `CM.VCP.DATA.HONEST_EVALUATION` — RELEASE BLOCKER: Evaluate the subject/criterion actually supplied in semantic ports
+- `CM.VCP.DATA.SEMANTIC_SUBJECT.CRITERION` — PARTIALLY VERIFIED: Required criterion input is CONSTANT-bound to the exact definition criterion snapshot.
+- `CM.VCP.DATA.SEMANTIC_SUBJECT.SUBJECT` — PARTIALLY VERIFIED: Required subject input is CONSTANT-bound to the exact definition subject snapshot.
+- `CM.VCP.MEANING.SELECTION_DISTINCT` — RELEASE BLOCKER: Selection chooses subject inclusion; Criterion identifies property to establish
+- `CM.VCP.POLICY.ALWAYS` — PARTIALLY VERIFIED: Return RUN
+- `CM.VCP.POLICY.EXPLICIT` — RELEASE BLOCKER: Select the exact definition subject snapshot
+- `CM.VCP.POLICY.MANUAL` — RELEASE BLOCKER: Return ACTIVATE
+- `CM.VCP.POLICY.DECLARATION.BUILTIN_INPUTS` — RELEASE BLOCKER: No ports, bindings or config are attached.
+- `CM.VCP.POLICY.DECLARATION.DISCRIMINATOR` — RELEASE BLOCKER: Exactly one custom operation or built-in discriminator.
+- `CM.VCP.POLICY.DECLARATION.PROBABILITY_FIELD` — RELEASE BLOCKER: No probability field is used.
+- `CM.VCP.POLICY.FAILURE` — RELEASE BLOCKER: Abort policy evaluation without decision or occurrence
+- `CM.VCP.POLICY.OPPORTUNITY` — RELEASE BLOCKER: Supply nonempty opportunity_id
+- `CM.VCP.POLICY.SOURCES` — PARTIALLY VERIFIED: Only CONSTANT, RUN_INPUT and EXTERNAL_REFERENCE bindings are legal
+- `CM.VCP.POLICY.ADMISSION` — PARTIALLY VERIFIED: Create occurrence for RUN, SKIP or DEFER
+- `CM.VCP.POLICY.DEFER` — PARTIALLY VERIFIED: Every node terminal DEFERRED with ADMISSION_DEFER without invocation
+- `CM.VCP.POLICY.INACTIVE` — PARTIALLY VERIFIED: Stop before selection with no occurrence
+- `CM.VCP.POLICY.SKIP` — PARTIALLY VERIFIED: Every node terminal SKIPPED with ADMISSION_SKIP without invocation
+- `CM.VCP.POLICY.UNSELECTED` — PARTIALLY VERIFIED: Stop before admission with no occurrence
+- `CM.VCP.POLICY.OUTCOME_ACTIVATION` — PARTIALLY VERIFIED: Return Activation with ACTIVATE or DO_NOT_ACTIVATE and nonempty reason
+- `CM.VCP.POLICY.OUTCOME_ADMISSION` — PARTIALLY VERIFIED: Return Admission RUN, SKIP or DEFER with nonempty reason
+- `CM.VCP.POLICY.OUTCOME_SELECTION` — PARTIALLY VERIFIED: Return Selection with reason and an identity-unique subject set that is empty or exact definition subject
+- `CM.VCP.POLICY.ORDER` — PARTIALLY VERIFIED: Evaluate activation, then selection, then admission before graph work
+- `CM.VCP.POLICY.PREFLIGHT` — RELEASE BLOCKER: Validate complete definition, schemas, constants and bindings first
+- `CM.VCP.PROFILE.STANDARD_SEVERITY` — RELEASE BLOCKER: Use ordered INFO=10, WARNING=20, ERROR=30, BLOCKER=40 under domain id standard-draft.
+- `CM.VCP.OBS.EVIDENCE` — RELEASE BLOCKER: Invalidate acceptance and retain observed snapshot plus valid usage
+- `CM.VCP.PROV.UNBOUND` — RELEASE BLOCKER: Reject unbound consumed values and membership drift
+- `CM.VCP.PROV.UNSTARTED.EXECUTOR` — RELEASE BLOCKER: Executor identity/version are absent.
+- `CM.VCP.PROV.UNSTARTED.INFORMATION` — PARTIALLY VERIFIED: Accepted information and Decision are absent.
+- `CM.VCP.PROV.UNSTARTED.OBSERVATION` — PARTIALLY VERIFIED: No executor observation is retained.
+- `CM.VCP.PROV.UNSTARTED.USAGE` — RELEASE BLOCKER: Executor usage is absent; runner wall time is separate bookkeeping.
+- `CM.VCP.PROV.NODE_SET.EXACT` — PARTIALLY VERIFIED: Exactly one NodeRecord for every definition node.
+- `CM.VCP.PROV.NODE_SET.ORDER` — PARTIALLY VERIFIED: Records follow dependency order.
+- `CM.VCP.PROV.TIMING.DEPENDENCY` — PARTIALLY VERIFIED: Every predecessor finishes before consumer starts.
+- `CM.VCP.PROV.TIMING.INTERVAL` — RELEASE BLOCKER: Node start/finish lie within the run interval with nonnegative duration.
+- `CM.VCP.PROV.TRUST_LIMIT` — RELEASE BLOCKER: Claim consistency detection only, without replay/authentication
+- `CM.VCP.OBS.AUTHORITY.NO_SUM` — RELEASE BLOCKER: Do not add repeated usage as additional charge.
+- `CM.VCP.OBS.AUTHORITY.OVERLAP` — PARTIALLY VERIFIED: Repeated dimensions agree exactly with authoritative observation.
+- `CM.VCP.BIND.INPUT` — PARTIALLY VERIFIED: Exact port input and node config validate against capability schemas before invocation
+- `CM.VCP.BIND.OUTPUT` — RELEASE BLOCKER: Validate exact output object against capability schema before VCP port/Result/Decision/judgment acceptance
+- `CM.VCP.RES.UNITS` — RELEASE BLOCKER: Preserve explicit units and separate runner duration from executor usage
+- `CM.VCP.RES.KINDS` — PARTIALLY VERIFIED: EXACT/ESTIMATED have nonnegative finite value only; RANGE has nonnegative finite minimum/maximum only; UNKNOWN has neither
+- `CM.VCP.RES.ORDER` — PARTIALLY VERIFIED: minimum <= maximum
+- `CM.VCP.RESULT.NONEXEC_EVIDENCE` — PARTIALLY VERIFIED: Evidence may explain nonexecution
+- `CM.VCP.RESULT.INDEPENDENCE` — PARTIALLY VERIFIED: Judgment, verdict, score and severity are independently optional observations
+- `CM.VCP.RESULT.FLATTEN` — PARTIALLY VERIFIED: KNOWN with verdict maps to verdict; UNKNOWN to UNKNOWN; executed ERROR to ERROR; SKIPPED to SKIP
+- `CM.VCP.RESULT.SEVERITY` — RELEASE BLOCKER: Preserve domain/label as opaque identifiers
+- `CM.VCP.SEVERITY.VERSION` — RELEASE BLOCKER: Domain identifier identifies the versioned semantic domain
+- `CM.VCP.RESULT.DETERMINATION` — PARTIALLY VERIFIED: determination is KNOWN or UNKNOWN
+- `CM.VCP.RESULT.ERROR.APPLICABILITY` — PARTIALLY VERIFIED: applicability is absent or explicitly null under VCP nullable-control semantics.
+- `CM.VCP.RESULT.ERROR.DETERMINATION` — PARTIALLY VERIFIED: determination is absent or explicitly null under VCP nullable-control semantics.
+- `CM.VCP.RESULT.ERROR.JUDGMENT` — PARTIALLY VERIFIED: The judgment key is absent.
+- `CM.VCP.RESULT.ERROR.SCORE` — PARTIALLY VERIFIED: score is absent or explicitly null under VCP nullable-control semantics.
+- `CM.VCP.RESULT.ERROR.SEVERITY` — PARTIALLY VERIFIED: severity is absent or explicitly null under VCP nullable-control semantics.
+- `CM.VCP.RESULT.ERROR.VERDICT` — PARTIALLY VERIFIED: verdict is absent or explicitly null under VCP nullable-control semantics.
+- `CM.VCP.RESULT.NONEXECUTION.APPLICABILITY` — PARTIALLY VERIFIED: applicability is absent or explicitly null under VCP nullable-control semantics.
+- `CM.VCP.RESULT.NONEXECUTION.DETERMINATION` — PARTIALLY VERIFIED: determination is absent or explicitly null under VCP nullable-control semantics.
+- `CM.VCP.RESULT.NONEXECUTION.EXECUTION_OUTCOME` — PARTIALLY VERIFIED: execution_outcome is absent or explicitly null under VCP nullable-control semantics.
+- `CM.VCP.RESULT.NONEXECUTION.JUDGMENT` — PARTIALLY VERIFIED: The judgment key is absent.
+- `CM.VCP.RESULT.NONEXECUTION.SCORE` — PARTIALLY VERIFIED: score is absent or explicitly null under VCP nullable-control semantics.
+- `CM.VCP.RESULT.NONEXECUTION.SEVERITY` — PARTIALLY VERIFIED: severity is absent or explicitly null under VCP nullable-control semantics.
+- `CM.VCP.RESULT.NONEXECUTION.VERDICT` — PARTIALLY VERIFIED: verdict is absent or explicitly null under VCP nullable-control semantics.
+- `CM.VCP.RESULT.NOT_APPLICABLE.DETERMINATION` — PARTIALLY VERIFIED: determination is absent or explicitly null under VCP nullable-control semantics.
+- `CM.VCP.RESULT.NOT_APPLICABLE.JUDGMENT` — PARTIALLY VERIFIED: The judgment key is absent.
+- `CM.VCP.RESULT.NOT_APPLICABLE.SCORE` — PARTIALLY VERIFIED: score is absent or explicitly null under VCP nullable-control semantics.
+- `CM.VCP.RESULT.NOT_APPLICABLE.SEVERITY` — PARTIALLY VERIFIED: severity is absent or explicitly null under VCP nullable-control semantics.
+- `CM.VCP.RESULT.NOT_APPLICABLE.VERDICT` — PARTIALLY VERIFIED: verdict is absent or explicitly null under VCP nullable-control semantics.
+- `CM.VCP.RESULT.OUTCOME` — PARTIALLY VERIFIED: execution_outcome is SUCCESS or ERROR
+- `CM.VCP.RESULT.SUCCESS` — PARTIALLY VERIFIED: applicability is APPLICABLE or NOT_APPLICABLE
+- `CM.VCP.RESULT.UNKNOWN.JUDGMENT` — PARTIALLY VERIFIED: The judgment key is absent.
+- `CM.VCP.RESULT.UNKNOWN.SCORE` — PARTIALLY VERIFIED: score is absent or explicitly null under VCP nullable-control semantics.
+- `CM.VCP.RESULT.UNKNOWN.SEVERITY` — PARTIALLY VERIFIED: severity is absent or explicitly null under VCP nullable-control semantics.
+- `CM.VCP.RESULT.UNKNOWN.VERDICT` — PARTIALLY VERIFIED: verdict is absent or explicitly null under VCP nullable-control semantics.
+- `CM.VCP.SCHEMA.STATIC` — PARTIALLY VERIFIED: Validate authored constants/defaults/references; reject source/target bindings with false schemas, disjoint explicit primitive-type sets or incompatible finite const/enum values. Integer overlaps number. Other implication is deferred to runtime.
+- `CM.VCP.SCHEMA.SUBSET` — PARTIALLY VERIFIED: Valid Draft 2020-12 object/boolean; only resolvable local JSON Pointer references; no nested IDs, anchors/dynamic refs or external resolution
+- `CM.VCP.SCHEMA.RUNTIME` — RELEASE BLOCKER: Validate actual values against all applicable schemas
+- `CM.VCP.ROOT.ACTIVATION` — PARTIALLY VERIFIED: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+- `CM.VCP.ROOT.ADMISSION` — PARTIALLY VERIFIED: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+- `CM.VCP.ROOT.ARTIFACT_REF` — PARTIALLY VERIFIED: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+- `CM.VCP.ROOT.CANCELLATION_EVENT` — PARTIALLY VERIFIED: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+- `CM.VCP.ROOT.DECISION` — PARTIALLY VERIFIED: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+- `CM.VCP.ROOT.EVIDENCE` — PARTIALLY VERIFIED: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+- `CM.VCP.ROOT.EXECUTION_OBSERVATION` — PARTIALLY VERIFIED: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+- `CM.VCP.ROOT.EXTENSION` — PARTIALLY VERIFIED: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+- `CM.VCP.ROOT.GRAPH` — PARTIALLY VERIFIED: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+- `CM.VCP.ROOT.INPUT_PORT` — PARTIALLY VERIFIED: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+- `CM.VCP.ROOT.INPUT_RESOLUTION` — PARTIALLY VERIFIED: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+- `CM.VCP.ROOT.OPERATION_REQUIREMENT` — PARTIALLY VERIFIED: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+- `CM.VCP.ROOT.OUTPUT_PORT` — PARTIALLY VERIFIED: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+- `CM.VCP.ROOT.POLICY_EVALUATION` — PARTIALLY VERIFIED: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+- `CM.VCP.ROOT.PROFILE` — PARTIALLY VERIFIED: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+- `CM.VCP.ROOT.PROVIDER_BINDING` — PARTIALLY VERIFIED: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+- `CM.VCP.ROOT.RESOURCE` — PARTIALLY VERIFIED: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+- `CM.VCP.ROOT.RESOURCE_DIMENSION` — PARTIALLY VERIFIED: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+- `CM.VCP.ROOT.RESULT` — PARTIALLY VERIFIED: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+- `CM.VCP.ROOT.RUN_RECORD` — PARTIALLY VERIFIED: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+- `CM.VCP.ROOT.SELECTION` — PARTIALLY VERIFIED: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+- `CM.VCP.ROOT.SEVERITY_DOMAIN` — PARTIALLY VERIFIED: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+- `CM.VCP.ROOT.VALUE_SOURCE` — PARTIALLY VERIFIED: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+- `CM.VCP.ROOT.VERIFICATION_DEFINITION` — PARTIALLY VERIFIED: Accept precisely P_root(x), with all references resolved offline; apply additional prose semantics separately.
+- `CM.VCP.WIRE.OFFLINE` — RELEASE BLOCKER: Resolve from supplied local schemas
+- `CM.VCP.WIRE.VERSION` — RELEASE BLOCKER: Require the published draft marker
+- `CM.VCP.BOUNDARY.NO_ACTION` — RELEASE BLOCKER: Control Decisions affect verification eligibility only; the host owns arbitrary external business actions.
+- `CM.VCP.LIFECYCLE.PHASES` — RELEASE BLOCKER: Pending awaits all predecessors; Ready additionally satisfies eligibility; starting the attempt is Running; completion/nonexecution is Terminal. Pending/Ready may terminate without invocation; terminal records are SUCCESS/ERROR/NONEXECUTED/CANCELLED.
+- `CM.PROVIDER.CAPABILITY.PUBLISHED_SPEC` — RELEASE BLOCKER: Publish that capability specification with its adapter; its schemas and specification define actual input/config/output meaning, not its identifier alone.
+- `CM.RELAY.ARCH.DEPENDENCIES` — PARTIALLY VERIFIED: Core depends on SDK rules; application depends on core/ports/SDK without infrastructure or standard providers; adapters implement ports; entrypoints/facade compose; authoring depends on VCP SDK.
+- `CM.RELAY.PROCESS.ARGV_ENV` — PARTIALLY VERIFIED: Use argv and explicit absolute cwd without shell=True; inherit host environment unless complete env supplied, supplement only required Windows SystemRoot.
+- `CM.RELAY.PROCESS.WINDOWS_PRESTART` — PARTIALLY VERIFIED: Establish kill-on-close Job Object before tool code starts; descendants remain in job after parent exit.
+- `CM.RELAY.STANDARD.TOOLS_DISCOVERY` — PARTIALLY VERIFIED: Find tools in active Python scripts directory then PATH unless host Tools specifies executable paths; Git separately installed; missing tool is actionable execution ERROR.
+- `CM.RELAY.PROVIDER_CONFIG.TRUST` — RELEASE BLOCKER: Read stdio manifest/argv/cwd and optional entry-point allowlist and exact four-field bindings as trusted host configuration, independent of graph JSON.
+- `CM.SDK.JSON.NORMALIZE` — PARTIALLY VERIFIED: Accept exact JSON primitive/container types; normalize StrEnum values and string-subclass mapping keys using their underlying string rather than overridden display/equality. Reject other non-JSON value subclasses. Reuse unchanged containers, copy only changed containers and leave caller data untouched.
+- `CM.RELAY.CATALOG.FAILURE_CLASS` — RELEASE BLOCKER: Preserve structured protocol errors; classify invalid returned type/entry as CATALOG_INVALID, unexpected discovery/iteration failure as CATALOG_FAILURE with chained type/message cause, duplicate provider identity as PROVIDER_CONFLICT.
+- `CM.RELAY.BINDER.FAILURE_CLASS` — RELEASE BLOCKER: Guard choice/trust/compatibility validation; preserve structured errors; unexpected failures become BINDER_FAILURE retaining cause; candidates carry independent manifests without replacing trusted catalog snapshot.
+- `CM.SDK.MODEL.INTEGRAL_NORMALIZATION` — PARTIALLY VERIFIED: Normalize integral float notation to SDK int while retaining strict rejection of Boolean/string by typed model; fractional values remain noninteger and fail.
+- `CM.SDK.RUN_INPUTS` — RELEASE BLOCKER: Reject unknown names/missing required/schema-invalid supplied values as RUN_INPUT; return a deep snapshot with declared explicit optional Constant defaults inserted, omitted optional ports absent.
+- `CM.SDK.PARSE.OBJECT` — RELEASE BLOCKER: Decode strict JSON, validate named root, construct appropriate typed SDK object and apply prose semantic checks; value-source dispatches exact kind; unknown names PROTOCOL_STRUCTURE.
+- `CM.SDK.VALIDATE.WIRE` — RELEASE BLOCKER: Check strict JSON; wrong present protocol marker PROTOCOL_VERSION before root validation; schema failure PROTOCOL_STRUCTURE with escaped JSON Pointer path. Return None if structural check passes.
+- `CM.SDK.SCHEMA.CHECK` — RELEASE BLOCKER: Require Draft2020-12-valid Boolean/object schema and supported local schema-position references; unsupported dialect/nestedIDs/anchors/dynamic/external/invalid pointers reject SCHEMA_UNSUPPORTED; root ID allowed.
+- `CM.SDK.SCHEMA.VALUE` — RELEASE BLOCKER: Offline Draft2020-12 evaluation returns None on acceptance; validation/evaluation exception raises ProtocolError using caller code, default local DATAFLOW_VALUE, retaining cause/details.
+- `CM.SDK.SCHEMA.INCOMPATIBLE` — PARTIALLY VERIFIED: Return true for a false schema, disjoint explicit primitive types with integer/number overlap, or finite source const/enum with no target-accepted candidate; otherwise false means no established contradiction.
+- `CM.SDK.CANCELLATION.TOKEN` — PARTIALLY VERIFIED: Token starts without reason; cancel requires exact nonempty string and retains the first reason; repeated valid cancel does not replace it.
+- `CM.SDK.ENGINE.RUN` — RELEASE BLOCKER: Engine.run returns its occurrence record; None from attempt becomes NO_OCCURRENCE.
+- `CM.SDK.LEGACY_STORE` — RELEASE BLOCKER: append validates and serializes snapshot; records returns newly parsed independent records in append order. JsonlStore uses UTF8 newline records; blank lines ignored on retrieval; I/O/validation errors propagate.
+- `CM.SDK.PROVIDER.PARSE_OBJECT` — RELEASE BLOCKER: Validate strict JSON/root/model/standalone semantics offline; unknown root PROTOCOL_VIOLATION, present wrong contract version CONTRACT_VERSION_UNSUPPORTED; malformed invocation INVALID_INVOCATION, malformed cancel/initialize request PROTOCOL_VIOLATION, other peer objects INVALID_PROVIDER_OUTPUT.
+- `CM.SDK.PROVIDER.PAYLOAD` — RELEASE BLOCKER: Validate offline Draft2020-12 instance; return None or ProviderContractError using caller code and cause/details.
+- `CM.SDK.PROVIDER.TRACE` — RELEASE BLOCKER: Require exactly manifest/initialize/steps/finish with typed action payload/optional clock, run observed validation steps, call finish only when true; return None for accepted complete trace or permitted unfinished prefix.
+- `CM.SDK.PROVIDER.NEGOTIATE` — RELEASE BLOCKER: SDK selects first list element present in provider list, then requires that element equal 0.1 or raises CONTRACT_VERSION_UNSUPPORTED.
+- `CM.SDK.PROVIDER.SESSION` — RELEASE BLOCKER: Track unique RPC and attempt identities, one initialize/version verification, provisional invoke accept/reject, event-before-terminal and contract cancellation acknowledgement; finish requires no pending RPC or accepted attempts; malformed/correlation/closed-session errors reject.
+- `CM.SDK.AUTHORING.CONSTRUCTOR` — RELEASE BLOCKER: Default exact version1, declared-input subject {id,type,locator.graph}, Criterion tied to id, judgment schema true and MANUAL/EXPLICIT/ALWAYS policy are materialized; explicit supplied objects replace corresponding defaults.
+- `CM.SDK.CONFORMANCE.HARNESS` — RELEASE BLOCKER: VCP check_manifest parses each documented object case and compares actual structured code with declared expected code, returning mismatched case IDs; Provider additionally dispatches documented lifecycle/session/framing forms, including EOF completion.
+- `CM.RELAY.STANDARD.CATALOG` — RELEASE BLOCKER: Create 17 standard providers: text; json_parse/schema; read_text/read_file/select_files; scope/no_findings; git_scope/candidate_unchanged; action_policy/gate; command_check; ruff; pytest; astgrep; aggregate. Register concurrency_safe=True; roots default construction cwd, supplied Tools.access takes precedence.
+- `CM.RELAY.STORE.DUPLICATE` — PARTIALLY VERIFIED: Reject duplicate identity with ValueError and preserve existing snapshot. JsonlStore loads every existing line at construction and propagates malformed/duplicate/I/O errors; get returns new parsed snapshot or None.
+- `CM.RELAY.CLI.OPERATIONS` — PARTIALLY VERIFIED: Expose validate/inspect/run, providers list/inspect, examples/templates alias, mcp and http. Validation named type defaults Definition; inspect returns validated summary; provider commands return standard manifests or unknown-id error; examples return named authored summaries; run uses exact trusted config/roots/bindings and documented stdout/exit map.
+- `CM.RELAY.TEMPLATES` — PARTIALLY VERIFIED: Return ordinary authored Graph. text requires Migration/Rollback and prohibits TODO/TBD with ALL; document adds read_text. guardrail action_policy->ALL->gate. code WORKTREE/untracked captures scope, Ruff F and Python print AST, AST changed-line filtering, post-tool freshness and ALL; code_spans also filters Ruff.
+- `CM.SDK.SERVE_STDIO` — PARTIALLY VERIFIED: Read and emit published framed requests/events/results with observed session/lifecycle validation; accept/reject controls in receive order, active invokes are tasks; cancel delegates and emits requested CANCELLED when helper interrupts; EOF awaits/validates completion, finally cancels remaining tasks.
+- `CM.VCP.WIRE.JSON.UTF8` — RELEASE BLOCKER: Decode only well-formed UTF-8 JSON text.
+- `CM.VCP.WIRE.JSON.DUPLICATE_KEYS` — PARTIALLY VERIFIED: Reject duplicate keys rather than selecting an occurrence.
+- `CM.VCP.WIRE.JSON.FINITE` — PARTIALLY VERIFIED: Reject NaN/Infinity/nonfinite values.
+- `CM.VCP.WIRE.JSON.JSON_TYPES` — PARTIALLY VERIFIED: Accept only finite JSON null,Boolean,number,string,array,object with string keys.
+- `CM.VCP.WIRE.NULL.CONTROLS` — RELEASE BLOCKER: Treat explicit null as absent for that nullable control.
+- `CM.VCP.WIRE.NULL.PAYLOADS` — PARTIALLY VERIFIED: Retain the emitted null value and its presence.
+- `CM.VCP.WIRE.NULL.NO_DEFAULT_INSERTION` — RELEASE BLOCKER: Do not insert instance fields from that annotation.
+- `CM.VCP.DATA.PORT_NAMES.INPUT` — RELEASE BLOCKER: Input names are unique within that sequence.
+- `CM.VCP.DATA.PORT_NAMES.OUTPUT` — RELEASE BLOCKER: Output names are unique within that sequence.
+- `CM.VCP.DATA.CONFIG.SEPARATE` — PARTIALLY VERIFIED: Pass definition config separately without overriding any bound value.
+- `CM.VCP.DATA.CONFIG.SCHEMA` — RELEASE BLOCKER: Validate config under that valid supported schema before invocation.
+- `CM.VCP.DATA.PRIMARY_RESULT.CARDINALITY` — PARTIALLY VERIFIED: Exactly one RESULT-role output exists.
+- `CM.VCP.DATA.PRIMARY_RESULT.NAME` — PARTIALLY VERIFIED: That primary output name is result.
+- `CM.VCP.DATA.PRIMARY_RESULT.ROLES` — PARTIALLY VERIFIED: Every other output role is INFORMATION.
+- `CM.VCP.DATA.PRIMARY_DECISION.CARDINALITY` — PARTIALLY VERIFIED: Exactly one DECISION-role output exists.
+- `CM.VCP.DATA.PRIMARY_DECISION.NAME` — PARTIALLY VERIFIED: That primary output name is decision.
+- `CM.VCP.DATA.PRIMARY_DECISION.ROLES` — PARTIALLY VERIFIED: Every other output role is INFORMATION.
+- `CM.VCP.DATA.DEFAULT.CONSTANT` — PARTIALLY VERIFIED: An explicit Constant default must be supplied, including possible JSON null.
+- `CM.VCP.DATA.DEFAULT.VALUE_SCHEMA` — RELEASE BLOCKER: Its exact value validates against the port schema before invocation.
+- `CM.VCP.OBS.RETENTION.USAGE` — PARTIALLY VERIFIED: Retain that incurred usage independently of semantic rejection.
+- `CM.VCP.OBS.RETENTION.SNAPSHOT` — PARTIALLY VERIFIED: Retain observed snapshot separately from accepted semantic outputs.
+- `CM.VCP.PROV.ADMISSION_EQUALITY.ACTIVATION` — RELEASE BLOCKER: Recorded Activation outcome is ACTIVATE.
+- `CM.VCP.PROV.ADMISSION_EQUALITY.SELECTION` — RELEASE BLOCKER: Recorded selection contains exact definition subject snapshot.
+- `CM.VCP.PROV.ADMISSION_EQUALITY.ADMISSION` — RELEASE BLOCKER: Policy admission object equals RunRecord.admission under JSON typed equality.
+- `CM.VCP.PROV.RECONSTRUCT.RESOLUTIONS` — PARTIALLY VERIFIED: Reconstruct each resolution from definition, normalized run inputs and recorded predecessor/source values.
+- `CM.VCP.PROV.RECONSTRUCT.VALUES` — PARTIALLY VERIFIED: Exact assembled input_values equals the usable/defaulted resolved port values, with omissions absent.
+- `CM.VCP.PROV.RECONSTRUCT.NO_RERUN` — RELEASE BLOCKER: Do not execute provider/custom policy logic to validate stored lineage.
+- `CM.VCP.BIND.PROVENANCE.OCCURRENCE_MAP` — PARTIALLY VERIFIED: Occurrence provider_bindings[node_id] equals exact actual four-part binding.
+- `CM.VCP.BIND.PROVENANCE.NODE_COPY` — PARTIALLY VERIFIED: NodeRecord.provider_binding equals actual occurrence invocation binding and operation pair.
+- `CM.VCP.BIND.PROVENANCE.EXECUTOR` — PARTIALLY VERIFIED: executor_ref/provider_id and executor_version/provider_version are equal.
+- `CM.VCP.BIND.PROVENANCE.ONLY_INVOKED` — PARTIALLY VERIFIED: No concrete invocation binding is fabricated.
+- `CM.VCP.AGG.WEIGHTED.ORIGINAL_WEIGHTS` — PARTIALLY VERIFIED: Exactly n finite nonnegative weights aligned with original positions.
+- `CM.VCP.AGG.WEIGHTED.RETAINED_TOTAL` — PARTIALLY VERIFIED: sum(w_i,i in K)>0.
+- `CM.VCP.AGG.WEIGHTED.SCORE` — PARTIALLY VERIFIED: score=sum(w_i*s_i,i in K)/sum(w_i,i in K).
+- `CM.VCP.AGG.WEIGHT_KEYS.EXACT_KEYS` — RELEASE BLOCKER: Weight mapping key set equals ordered aggregate_inputs member identity set.
+- `CM.VCP.AGG.WEIGHT_KEYS.IDENTITY` — PARTIALLY VERIFIED: Retained member keeps its originally authored named weight.
+- `CM.VCP.AGG.SEVERITY_DOMAIN.EXPLICIT` — RELEASE BLOCKER: Explicit severity_domain id/levels supplied and structurally valid.
+- `CM.VCP.AGG.SEVERITY_DOMAIN.LABEL_UNIQUE` — RELEASE BLOCKER: Labels are nonempty and unique.
+- `CM.VCP.AGG.SEVERITY_DOMAIN.RANK_UNIQUE` — PARTIALLY VERIFIED: Ranks satisfy JSON integer semantics and are pairwise distinct; higher is worse.
+- `CM.VCP.AGG.SEVERITY_DOMAIN.MEMBER_DOMAIN` — PARTIALLY VERIFIED: Member.domain equals explicit domain.id.
+- `CM.VCP.AGG.SEVERITY_DOMAIN.MEMBER_LABEL` — PARTIALLY VERIFIED: Member.label belongs to explicit domain levels.
+- `CM.PROVIDER.DEADLINE.ACCEPT.ACCEPT` — PARTIALLY VERIFIED: Accept the attempt rather than reject solely for expiry.
+- `CM.PROVIDER.DEADLINE.ACCEPT.NO_WORK` — RELEASE BLOCKER: Start no capability work.
+- `CM.PROVIDER.DEADLINE.ACCEPT.TERMINAL` — PARTIALLY VERIFIED: Commit DEADLINE_EXCEEDED.
+- `CM.PROVIDER.DEADLINE.ACTIVE.MONITOR` — RELEASE BLOCKER: Monitor provider local UTC deadline expiry.
+- `CM.PROVIDER.DEADLINE.ACTIVE.STOP_WORK` — RELEASE BLOCKER: Stop capability work at expiry.
+- `CM.PROVIDER.DEADLINE.ACTIVE.COMMIT` — RELEASE BLOCKER: Commit DEADLINE_EXCEEDED.
+- `CM.PROVIDER.DEADLINE.ACTIVE.NO_LATE_COMPLETE` — PARTIALLY VERIFIED: Do not commit COMPLETED.
+- `CM.PROVIDER.BUDGET.ENFORCE.PREACCEPT` — PARTIALLY VERIFIED: Reject before accepting work.
+- `CM.PROVIDER.BUDGET.ENFORCE.TERMINAL` — RELEASE BLOCKER: End with ERROR and provider-namespaced error.
+- `CM.PROVIDER.BUDGET.ENFORCE.UNITS` — RELEASE BLOCKER: Honor exact declared dimensions and explicit units without implicit conversion.
+- `CM.PROVIDER.INVOKE.VALIDATE.INPUT` — PARTIALLY VERIFIED: Validate exact input under matched input_schema before work/events.
+- `CM.PROVIDER.INVOKE.VALIDATE.CONFIG` — PARTIALLY VERIFIED: Validate exact config under required matched config_schema before work/events.
+- `CM.PROVIDER.COMPAT.CAPABILITY_VCP.ADVERTISEMENT` — PARTIALLY VERIFIED: That exact version belongs to manifest.supported_vcp_versions.
+- `CM.PROVIDER.COMPAT.CAPABILITY_VCP.DECLARATION` — RELEASE BLOCKER: Declare applicable vcp_version in capability specification/manifest.
+- `CM.PROVIDER.COMPAT.VCP_INTERSECTION.INTERSECTION` — RELEASE BLOCKER: It belongs to both initialized peers supported VCP lists.
+- `CM.PROVIDER.COMPAT.VCP_INTERSECTION.CAPABILITY` — RELEASE BLOCKER: Invocation.vcp_version equals that exact declaration.
+- `CM.PROVIDER.CANCEL.RUNNING.REQUEST` — RELEASE BLOCKER: Request cooperative termination, remain running until Outcome.
+- `CM.PROVIDER.CANCEL.RUNNING.REPEAT` — RELEASE BLOCKER: Permit repeated request.
+- `CM.PROVIDER.CANCEL.RUNNING.NO_BOUND` — RELEASE BLOCKER: No fixed portable stop-time guarantee; prompt stopping is SHOULD.
+- `CM.PROVIDER.LIFE.TERMINAL.EXACTLY_ONCE` — PARTIALLY VERIFIED: Emit exactly one terminal Outcome for that accepted attempt.
+- `CM.PROVIDER.LIFE.TERMINAL.ZERO_EVENTS` — RELEASE BLOCKER: Zero intermediate events are permitted.
+- `CM.PROVIDER.STDIO.RECEIVE.HEADER` — RELEASE BLOCKER: Accept ASCII case-insensitive Content-Length with one space and CRLF separator, one header only.
+- `CM.PROVIDER.STDIO.RECEIVE.PARTIAL` — PARTIALLY VERIFIED: Buffer valid prefix until complete frame or EOF; EOF truncation violates.
+- `CM.PROVIDER.STDIO.RECEIVE.COALESCED` — PARTIALLY VERIFIED: Decode all complete frames in wire order and retain any partial suffix.
+- `CM.PROVIDER.STDIO.RECEIVE.CLOSE` — PARTIALLY VERIFIED: Close as PROTOCOL_VIOLATION without resynchronization.
+- `CM.PROVIDER.RPC.METHODS.OPERATIONS` — RELEASE BLOCKER: initialize/invoke/cancel are runner requests with their declared results; event is provider notification with no response.
+- `CM.PROVIDER.RPC.METHODS.IDS` — RELEASE BLOCKER: Use nonempty string RPC id unique for entire session and distinct correlation role from invocation_id.
+- `CM.PROVIDER.RPC.METHODS.PARAMS` — RELEASE BLOCKER: Use one object-params message, no batches.
+- `CM.PROVIDER.RPC.CANCEL_ACK.NULL` — PARTIALLY VERIFIED: Return JSON null acknowledgement.
+- `CM.PROVIDER.RPC.CANCEL_ACK.RACE` — PARTIALLY VERIFIED: Either acknowledgement order relative to terminal is permitted.
+- `CM.PROVIDER.COMPAT.CAPABILITY.CONTRACT_VERSION` — RELEASE BLOCKER: Invocation contract_version equals selected session contract version.
+- `CM.PROVIDER.COMPAT.CAPABILITY.IDENTITY` — RELEASE BLOCKER: Use the exact advertised capability identity pair.
+- `CM.PROVIDER.DEADLINE.PRECISION.FRACTION` — PARTIALLY VERIFIED: Compare instants preserving all supplied decimal fractional digits.
+- `CM.PROVIDER.DEADLINE.PRECISION.CALENDAR` — RELEASE BLOCKER: Supported dates have years 0001 through 9999 and seconds 00 through 59.
+- `CM.PROVIDER.WIRE.ATTEMPT_ID.SESSION_UNIQUENESS` — PARTIALLY VERIFIED: Use a nonempty case-sensitive identity not used by an earlier attempt in that session.
+- `CM.PROVIDER.WIRE.ATTEMPT_ID.RETRY` — RELEASE BLOCKER: A retry is a new attempt with a new invocation identity.
+- `CM.PROVIDER.EXT.ROUNDTRIP.PRESERVE` — PARTIALLY VERIFIED: Preserve its JSON types and values.
+- `CM.PROVIDER.EXT.ROUNDTRIP.ANNOTATION_ONLY` — RELEASE BLOCKER: Extension entries are optional annotations and do not alter core meaning.
+- `CM.PROVIDER.RPC.RESERVED_ERRORS.NUMERIC_CODES` — PARTIALLY VERIFIED: Use -32700 parse, -32600 invalid request, -32601 unknown method, -32602 invalid params, -32603 internal RPC failure.
+- `CM.PROVIDER.RPC.RESERVED_ERRORS.CONTRACT_REJECTION` — PARTIALLY VERIFIED: Use application numeric code -32000, ProviderError message, and ProviderError in data.
+- `CM.PROVIDER.RPC.RESERVED_ERRORS.INVALID_INVOKE_PARAMS` — PARTIALLY VERIFIED: Use -32602, with INVALID_INVOCATION data when available.
+- `CM.PROVIDER.RPC.RESERVED_ERRORS.INVALID_NOTIFICATION` — RELEASE BLOCKER: Send no response, record violation and close session.
+- `CM.PROVIDER.RPC.ACCEPT_ORDER.RECEIVE_ORDER` — RELEASE BLOCKER: Validate and accept or reject invoke in receive order before processing later cancel.
+- `CM.PROVIDER.RPC.ACCEPT_ORDER.CONTROL_PROGRESS` — RELEASE BLOCKER: Continue reading control requests while invokes are pending.
+- `CM.PROVIDER.RPC.EVENT_BEFORE_RESULT.EVENT_ORDER` — RELEASE BLOCKER: Write every event for that invocation before its terminal invoke response.
+- `CM.PROVIDER.RPC.EVENT_BEFORE_RESULT.DUAL_CORRELATION` — PARTIALLY VERIFIED: Correlate response RPC ID and invocation_id with established requests/attempts.
+- `CM.PROVIDER.SCHEMA.REFERENCES.LOCAL` — RELEASE BLOCKER: Only # or #/... JSON Pointer references resolving within its own root are supported.
+- `CM.PROVIDER.SCHEMA.REFERENCES.SCHEMA_TARGET` — RELEASE BLOCKER: Resolved object reference targets must occupy schema positions under standard Draft 2020-12 keywords or $defs; arbitrary annotation objects are not schema targets.
+- `CM.PROVIDER.SCHEMA.REFERENCES.RESOURCE_SCOPE` — RELEASE BLOCKER: Root $id is allowed; nested resource $id, dynamic references and anchors are unsupported.
+- `CM.PROVIDER.USAGE.FINAL.AUTHORITY` — RELEASE BLOCKER: Final usage is authoritative for that attempt.
+- `CM.PROVIDER.USAGE.FINAL.SNAPSHOTS` — RELEASE BLOCKER: Each vector is a possibly partial observation snapshot, not an additive delta.
+- `CM.VCP.DATA.CAPABILITY_SHAPE.INPUT` — PARTIALLY VERIFIED: Capability input is exactly the resolved port-name object.
+- `CM.VCP.DATA.CAPABILITY_SHAPE.CONFIG` — PARTIALLY VERIFIED: Capability config is exactly node config, separate from bound inputs.
+- `CM.VCP.DATA.CAPABILITY_SHAPE.OUTPUT` — RELEASE BLOCKER: Capability output is the output-port-name object.
+- `CM.VCP.DATA.CONTEXT.ISOLATION` — PARTIALLY VERIFIED: Pass a fresh exact resolved input object and separate config.
+- `CM.VCP.DATA.CONTEXT.AMBIENT` — PARTIALLY VERIFIED: Retain Context only as nonsemantic host metadata.
+- `CM.VCP.DATA.RESOLVE_DEFAULT.SUBSTITUTE` — PARTIALLY VERIFIED: Use the authored validated Constant as the consumed value.
+- `CM.VCP.DATA.RESOLVE_DEFAULT.PROVENANCE` — PARTIALLY VERIFIED: Retain original source and availability with used_default=true and explicit consumed value.
+- `CM.VCP.DATA.RESOLVE_OMIT.INPUT` — PARTIALLY VERIFIED: Exclude that key from invocation input object.
+- `CM.VCP.DATA.RESOLVE_OMIT.PROVENANCE` — PARTIALLY VERIFIED: Retain original availability and source in resolution with no usable value and used_default=false.
+- `CM.VCP.DATA.RESOLVE_AVAILABLE.VALIDATION` — RELEASE BLOCKER: Validate the value against target port schema before use.
+- `CM.VCP.DATA.RESOLVE_AVAILABLE.PROVENANCE` — PARTIALLY VERIFIED: Record exact source identity, AVAILABLE status, exact value and used_default=false.
+- `CM.VCP.LIFECYCLE.CANCEL_BEFORE.NODE` — RELEASE BLOCKER: Affected and subsequent unstarted nodes are NONEXECUTED with CANCELLED Result and CANCELLATION reason.
+- `CM.VCP.LIFECYCLE.CANCEL_BEFORE.EVENT` — RELEASE BLOCKER: Record first affected node, BEFORE_START phase and explicit host reason.
+- `CM.VCP.LIFECYCLE.TERMINAL.CARDINALITY` — PARTIALLY VERIFIED: Exactly one terminal NodeRecord for every definition node, including noninvoked nodes.
+- `CM.VCP.LIFECYCLE.TERMINAL.IMMUTABILITY` — PARTIALLY VERIFIED: Terminal record never changes retroactively.
+- `CM.VCP.LIFECYCLE.ROUTE_EXCLUSION.BRANCHES` — PARTIALLY VERIFIED: Exclude other successors and descendants except nodes also reachable from selected successor.
+- `CM.VCP.LIFECYCLE.ROUTE_EXCLUSION.ACCUMULATE` — RELEASE BLOCKER: Accumulate exclusions; later routing cannot undo prior exclusion.
+- `CM.VCP.LIFECYCLE.ROUTE_EXCLUSION.DEPENDENCIES` — PARTIALLY VERIFIED: Still require ordinary prerequisites and all incoming guards.
+- `CM.VCP.POLICY.PROBABILITY.DOMAIN` — PARTIALLY VERIFIED: Probability is a finite JSON number p in [0,1].
+- `CM.VCP.POLICY.PROBABILITY.BOUNDARIES` — PARTIALLY VERIFIED: p=0 returns SKIP; p=1 returns RUN.
+- `CM.VCP.POLICY.PROBABILITY.INTERIOR` — PARTIALLY VERIFIED: Return RUN or SKIP using explicit structural sampler inputs.
+- `CM.VCP.PROV.POLICY_ORDER.STAGES` — PARTIALLY VERIFIED: Exactly ACTIVATION, SELECTION, ADMISSION policy evaluations in order.
+- `CM.VCP.PROV.POLICY_ORDER.INPUTS` — RELEASE BLOCKER: Reconstruct exact policy resolutions/values from definition and supplied run inputs.
+- `CM.VCP.PROV.POLICY_ORDER.ELIGIBILITY` — RELEASE BLOCKER: Activation is ACTIVATE; selection is exact definition subject; admission equals RunRecord.admission.
+- `CM.VCP.PROV.POLICY_ORDER.BUILTINS` — RELEASE BLOCKER: Check built-in semantic outcomes including probability endpoints, but not portable interior bucket identity.
+- `CM.VCP.PROV.RECORD_ANCHOR.SNAPSHOTS` — PARTIALLY VERIFIED: Definition, subject, initial supplied run_inputs and initial_context are immutable authored occurrence snapshots.
+- `CM.VCP.PROV.RECORD_ANCHOR.FINGERPRINT` — RELEASE BLOCKER: Treat fingerprint as opaque reference identity, not portable integrity signature.
+- `CM.VCP.BIND.PRECHECK.STRUCTURE` — RELEASE BLOCKER: Validate binding and complete bound manifest structural and semantic validity before invocation, including capability schemas.
+- `CM.VCP.BIND.PRECHECK.IDENTITY` — RELEASE BLOCKER: Binding provider identity/version equals manifest; capability pair equals node requirement and advertised exact pair.
+- `CM.VCP.BIND.PRECHECK.COMPATIBILITY` — RELEASE BLOCKER: Enforce Provider Contract version/interchange compatibility.
+- `CM.VCP.BIND.OUTPUT_REJECTION.RETAIN` — PARTIALLY VERIFIED: Retain exact binding, raw observation and valid incurred usage.
+- `CM.VCP.BIND.OUTPUT_REJECTION.DIAGNOSIS` — PARTIALLY VERIFIED: Record provider_output_error with INVALID_PROVIDER_OUTPUT and diagnostic message; requires provider binding.
+- `CM.VCP.BIND.OUTPUT_REJECTION.ACCEPTANCE` — PARTIALLY VERIFIED: No accepted information or Decision; terminal ERROR with corresponding bookkeeping Result, or interrupted CANCELLED.
+- `CM.VCP.RES.WALL_TIME.SEPARATE` — RELEASE BLOCKER: Retain adapter usage and record engine duration separately.
+- `CM.VCP.RES.WALL_TIME.MEASUREMENT` — RELEASE BLOCKER: Record EXACT seconds using monotonic elapsed clock.
+- `CM.RELAY.SCHED.WAVE.MEMBERSHIP` — RELEASE BLOCKER: Select a ready wave bounded by configured max_concurrency.
+- `CM.RELAY.SCHED.WAVE.BARRIER` — PARTIALLY VERIFIED: Wait for every wave member before starting successors.
+- `CM.RELAY.PREP.SNAPSHOT.SNAPSHOT` — RELEASE BLOCKER: Snapshot and validate definition and supplied JSON inputs.
+- `CM.RELAY.PREP.SNAPSHOT.BIND_BEFORE_POLICIES` — RELEASE BLOCKER: Resolve graph and policy operation bindings before invoking policies.
+- `CM.RELAY.API.VIEWS.RESULTS` — PARTIALLY VERIFIED: results returns complete final_results mapping including bookkeeping states.
+- `CM.RELAY.API.VIEWS.DECISIONS` — PARTIALLY VERIFIED: decisions returns exactly NodeRecord decisions that are present, keyed by node_id.
+- `CM.RELAY.API.VIEWS.EVIDENCE` — PARTIALLY VERIFIED: evidence returns each node observation evidence followed by its Result evidence.
+- `CM.RELAY.API.VIEWS.USAGE` — PARTIALLY VERIFIED: usage returns per-node node usage preserving dimensions/units.
+- `CM.RELAY.API.VIEWS.SERIALIZATION` — PARTIALLY VERIFIED: to_json serializes complete SDK RunRecord.
+- `CM.RELAY.API.GATE.POLICY` — RELEASE BLOCKER: Require nonempty Results and every Result EXECUTED SUCCESS APPLICABLE KNOWN PASS.
+- `CM.RELAY.API.GATE.WAIT` — PARTIALLY VERIFIED: Await verification and gate before invoking action.
+- `CM.RELAY.API.GATE.ACTION` — PARTIALLY VERIFIED: Invoke and await provided action once and return its result.
+- `CM.RELAY.CLI.EXIT.ERROR` — RELEASE BLOCKER: Return exit 2 if any recorded Result is execution ERROR.
+- `CM.RELAY.CLI.EXIT.FAIL` — PARTIALLY VERIFIED: Return exit 1 if any selected terminal Result has verdict FAIL, after checking execution ERROR anywhere. Terminal selection excludes Results with a strict descendant represented in final_results.
+- `CM.RELAY.CLI.EXIT.PASS` — PARTIALLY VERIFIED: Return exit 0 iff every selected Result has verdict PASS; selected Results have no strict graph descendant represented in final_results.
+- `CM.RELAY.CLI.EXIT.OTHER` — RELEASE BLOCKER: Return exit 3 after no execution ERROR anywhere, no selected terminal FAIL, and selected set empty or not all selected verdicts PASS.
+- `CM.RELAY.HTTP.SHAPE.REQUEST` — RELEASE BLOCKER: Accept exactly graph string and inputs JSON object naming host-authorized graph.
+- `CM.RELAY.HTTP.SHAPE.SEMANTIC_FAILURE` — RELEASE BLOCKER: Return HTTP 200 with full RunRecord.
+- `CM.RELAY.HTTP.SHAPE.INVALID_INPUT` — PARTIALLY VERIFIED: Return exception as_dict with HTTP 400.
+- `CM.RELAY.CATALOG.TRUST.HOST` — RELEASE BLOCKER: Only explicit trusted host registration/configuration authorizes execution.
+- `CM.RELAY.CATALOG.TRUST.DUPLICATE` — PARTIALLY VERIFIED: Reject duplicate identity pair.
+- `CM.RELAY.STDIO.SESSION.FRESH` — RELEASE BLOCKER: Create a fresh initialized isolated session for that invocation.
+- `CM.RELAY.STDIO.SESSION.MANIFEST` — RELEASE BLOCKER: Require manifest equality with trusted catalog snapshot.
+- `CM.RELAY.PROCESS.CLEANUP.LAUNCH` — RELEASE BLOCKER: Use argv array and absolute cwd, without shell.
+- `CM.RELAY.PROCESS.CLEANUP.TEARDOWN` — PARTIALLY VERIFIED: Clean up process tree using supported platform lifecycle mechanism.
+- `CM.RELAY.TEXT.COORDINATES.TERMS` — RELEASE BLOCKER: Concatenate declared bound terms and configured terms in their respective order.
+- `CM.RELAY.TEXT.COORDINATES.OFFSETS` — PARTIALLY VERIFIED: Offsets are zero-based Unicode character indexes with exclusive end.
+- `CM.RELAY.TEXT.COORDINATES.LINECOL` — PARTIALLY VERIFIED: Lines and columns are one-based.
+- `CM.SDK.PROVIDER.LIFECYCLE.MANIFEST` — PARTIALLY VERIFIED: Snapshot and validate manifest for observed session.
+- `CM.SDK.PROVIDER.LIFECYCLE.INITIALIZE` — RELEASE BLOCKER: Validate offered lists, negotiate exact supported version and latch one successful initialization; failure closes session.
+- `CM.SDK.PROVIDER.LIFECYCLE.ACCEPT` — RELEASE BLOCKER: Validate exact capability/version/input/config/constraints before running; reserve attempt identity including rejected attempt.
+- `CM.SDK.PROVIDER.LIFECYCLE.EVENT` — RELEASE BLOCKER: Validate correlation, feature eligibility, payload and increasing per-attempt sequence.
+- `CM.SDK.PROVIDER.LIFECYCLE.CANCEL` — RELEASE BLOCKER: Running supported request records cancellation; terminal request succeeds without mutation.
+- `CM.SDK.PROVIDER.LIFECYCLE.OUTCOME` — RELEASE BLOCKER: Check correlation, cancellation cause, clock/deadline, output and usage; latch terminal once.
+- `CM.SDK.PROVIDER.LIFECYCLE.FINISH` — RELEASE BLOCKER: Reject uninitialized session or unfinished accepted attempts.
+- `CM.SDK.PROVIDER.FRAME.ENCODE` — PARTIALLY VERIFIED: Encode UTF8 body and exact ASCII Content-Length header measured in bytes.
+- `CM.SDK.PROVIDER.FRAME.DECODE` — PARTIALLY VERIFIED: Buffer partial frames and emit all complete coalesced JSON-object messages in order.
+- `CM.SDK.PROVIDER.FRAME.LIMITS` — RELEASE BLOCKER: Require positive message/header limits; defaults 16MiB and8192 bytes.
+- `CM.SDK.PROVIDER.FRAME.FAILURE` — PARTIALLY VERIFIED: Failure poisons decoder; finish rejects failed or partial state.
+- `CM.SDK.MODEL.CONSTRUCTION.TYPES` — RELEASE BLOCKER: Apply declared strict model field types and reject nonfinite model numbers.
+- `CM.SDK.MODEL.CONSTRUCTION.EXTRA` — RELEASE BLOCKER: Forbid extra attributes.
+- `CM.SDK.MODEL.CONSTRUCTION.FROZEN` — PARTIALLY VERIFIED: Forbid field reassignment; nested mutable containers remain mutable.
+- `CM.SDK.MODEL.CONSTRUCTION.SEMANTIC_BOUNDARY` — PARTIALLY VERIFIED: Explicit parse/validate boundary still enforces root schemas and prose invariants.
+- `CM.SDK.FILEACCESS.ROOTS` — PARTIALLY VERIFIED: Resolve symlinks and require containment in a resolved authorized root.
+- `CM.SDK.FILEACCESS.RELATIVE` — PARTIALLY VERIFIED: Require explicit base or exactly one configured root.
+- `CM.SDK.FILEACCESS.BOUNDS` — PARTIALLY VERIFIED: Default max_bytes2MiB and max_files10000; enforce configured bounds.
+- `CM.SDK.FILEACCESS.SNAPSHOT` — PARTIALLY VERIFIED: Return exact bounded bytes and identity path,sha256,size from the same read bytes.
+- `CM.SDK.TOOLS.EXECUTABLE` — RELEASE BLOCKER: Select configured named Ruff/pytest/astgrep executable or raise actionable FileNotFoundError.
+- `CM.SDK.TOOLS.FILES` — RELEASE BLOCKER: Authorize cwd and each target inside cwd, keep existing files in authored input order and skip absent/nonfile candidates.
+- `CM.SDK.TOOLS.DISCOVERY` — RELEASE BLOCKER: Resolve active Python scripts directory then PATH; explicit host paths remain authoritative.
+- `CM.SDK.REGISTRY.REGISTER.IDENTITY` — RELEASE BLOCKER: Store adapter under exact capability_id/capability_version pair; replace existing same pair.
+- `CM.SDK.REGISTRY.REGISTER.ROLE_ALIASES` — RELEASE BLOCKER: Delegate to exact pair registration with default version1.
+- `CM.SDK.ENGINE.ATTEMPT.SNAPSHOTS` — RELEASE BLOCKER: Snapshot definition, run inputs, ambient metadata and supplied bindings.
+- `CM.SDK.ENGINE.ATTEMPT.POLICIES` — RELEASE BLOCKER: Run ordered policies; return None on inactive/unselected, otherwise create occurrence after valid admission.
+- `CM.SDK.ENGINE.ATTEMPT.SCHEDULER` — RELEASE BLOCKER: Execute sequentially in topological order, using definition order among ready nodes.
+- `CM.SDK.ENGINE.ATTEMPT.FINALIZE` — RELEASE BLOCKER: Apply cooperative cancellation and validate complete RunRecord before return.
+- `CM.VCP.RESULT.SCORE_MEANING` — PARTIALLY VERIFIED: Score is a JSON number in[0,1], with1 meaning stronger satisfaction and0 stronger violation; it does not imply verdict.
+- `CM.VCP.MEANING.CRITERION_DATA` — RELEASE BLOCKER: Criterion id/description/metadata identify and describe the property; they are not executable expressions. Evaluate implementation executes declared criterion.
+- `CM.VCP.MEANING.SATISFACTION_MAPPING` — RELEASE BLOCKER: It describes mapping identity/configuration; execution is adapter-owned and core derives no verdict automatically.
+- `CM.PROVIDER.INVOKE.CONTEXT_OPAQUE` — RELEASE BLOCKER: Context is arbitrary JSON reference/context data and contains no implicit resolution instruction.
+- `CM.PROVIDER.EVENT.TIMESTAMP` — RELEASE BLOCKER: Timestamp follows the same UTC RFC3339 syntax as deadline; it does not define event ordering.
+- `CM.VCP.PROV.UPSTREAM_SNAPSHOTS` — PARTIALLY VERIFIED: Record direct upstream identities and Result snapshots consistent with actual execution prerequisites and earlier node records.
+- `CM.SDK.EXTENSIONS.NONE` — RELEASE BLOCKER: No required extension capability implementations exist, so reject required extensions as EXTENSION_UNSUPPORTED.
+- `CM.SDK.AUTHORING.GRAPH.NODE.OPERATION` — PARTIALLY VERIFIED: Materialize exact capability_id/version and selected node kind.
+- `CM.SDK.AUTHORING.GRAPH.NODE.BINDINGS` — RELEASE BLOCKER: Deepcopy source constructors into bindings; synthesize required BLOCK ports from Ref schema unless explicit input_port with that name supplied.
+- `CM.SDK.AUTHORING.GRAPH.NODE.SEMANTIC_INPUTS` — PARTIALLY VERIFIED: Bind exact definition subject and criterion Constants as explicit semantic ports; reject caller overriding either reserved binding.
+- `CM.SDK.AUTHORING.GRAPH.NODE.OUTPUTS` — PARTIALLY VERIFIED: Declare INFORMATION outputs plus result RESULT for EVAL/AGG or decision DECISION forCONTROL.
+- `CM.SDK.AUTHORING.GRAPH.NODE.DEPENDENCIES` — RELEASE BLOCKER: Add prerequisite edges to authored predecessor identities, once per distinct predecessor in this call.
+- `CM.SDK.AUTHORING.GRAPH.NODE.CONFIG_SNAPSHOT` — PARTIALLY VERIFIED: Deepcopy config, optional config_schema and estimate into authored node.
+- `CM.SDK.AUTHORING.GRAPH.AGGREGATE.ORDER` — RELEASE BLOCKER: Declare aggregate_inputs in authored map order and members Constant equal to that name list.
+- `CM.SDK.AUTHORING.GRAPH.AGGREGATE.RESERVED` — RELEASE BLOCKER: Reject subject, criterion or members as member names.
+- `CM.SDK.AUTHORING.GRAPH.AGGREGATE.CONFIG` — RELEASE BLOCKER: For openverify.aggregate write explicit reducer and handling; missing or empty supplied handling convenience authors REJECT for every exceptional class. Custom capability retains supplied config.
+- `CM.SDK.AUTHORING.GRAPH.INPUT.PORT` — PARTIALLY VERIFIED: Append port with copied schema; required uses BLOCK; optional with explicit Constant uses DEFAULT, otherwise OMIT.
+- `CM.SDK.AUTHORING.GRAPH.INPUT.REF` — PARTIALLY VERIFIED: Return RUN_INPUT Ref naming declared input with copied schema.
+- `CM.SDK.SERVICE.GRAPHSERVICE.RUN_GRAPH.AUTHORIZATION` — PARTIALLY VERIFIED: Resolve only host-authorized named graph.
+- `CM.SDK.SERVICE.GRAPHSERVICE.RUN_GRAPH.LIMIT` — PARTIALLY VERIFIED: Hold service semaphore during awaited Relay.run.
+- `CM.SDK.SERVICE.GRAPHSERVICE.RUN_GRAPH.RESULT` — PARTIALLY VERIFIED: Return full RunRecord wire data.
+- `CM.RELAY.INVOCATION.CONSTRAINT_SCOPE` — RELEASE BLOCKER: Generated invocation contains exact input/config, selected pair, contract0.1 and VCPdraft; it supplies no Provider deadline or resource_budget. Runtime host timeout remains separate and node resource_estimate is not converted to budget.
+- `CM.SDK.WIRE.TIME_FORMAT` — RELEASE BLOCKER: Apply SDK registered date-time checker using explicit syntax and Python calendar validation, alongside root UTC suffix pattern. Embedded capability/port format remains annotation-only.
+- `CM.SDK.PROVIDER.INTERFACE.MANIFEST` — PARTIALLY VERIFIED: manifest() returns ProviderManifest describing its advertised identities/schemas/features.
+- `CM.SDK.PROVIDER.INTERFACE.INVOKE` — PARTIALLY VERIFIED: invoke(invocation) asynchronously yields zero or more events followed by exactly one Outcome; before-acceptance exceptions reject, accepted failures yield ERROR.
+- `CM.SDK.PROVIDER.INTERFACE.CANCEL` — RELEASE BLOCKER: cancel(invocation_id,reason) is an async None-returning control method, with Provider Contract state/feature/cause semantics.
+- `CM.PROVIDER.ERROR.PRECEDENCE.RECOMMENDED` — RELEASE BLOCKER: SHOULD report first in JSON/structure/version, manifest, compatibility, capability matching, input, config, constraints, lifecycle, output order unless documented reason.
+- `CM.PROVIDER.ERROR.PRECEDENCE.CORRELATION_SCOPE` — RELEASE BLOCKER: Correlation/lifecycle is checked before body decoding in the stated correlation cases.
+- `CM.SDK.AGGREGATE.CONFIGURATION` — RELEASE BLOCKER: Require exact config keys reducer/handling, plus weights only for WEIGHTED_AVERAGE or severity_domain only for WORST_SEVERITY. Handling keys exactly7 with REJECT/IGNORE. Ordered weights nonempty/nonnegative/positive and match provided count; severity domain parsed.
+- `CM.SHARED.SCHEMA.EVALUATION.NONLOOPING` — RELEASE BLOCKER: Schema evaluation must not run into an infinite loop against an instance.

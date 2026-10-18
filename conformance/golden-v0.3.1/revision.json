@@ -1,0 +1,16 @@
+{
+  "golden_version": "0.3.1",
+  "core_cells": 360,
+  "core_applicable": 128,
+  "core_inapplicable": 232,
+  "role_cells": 144,
+  "role_applicable": 80,
+  "role_inapplicable": 64,
+  "pure_cases": 7350,
+  "preserved_runtime_scenarios": 55,
+  "new_port_scenarios": 60,
+  "runtime_scenarios": 323,
+  "initial_freeze_commit": "c1dd9b7",
+  "overlay": "expectation-errata.json",
+  "remaining_questions": "questions.json"
+}

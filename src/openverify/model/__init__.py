@@ -1,6 +1,6 @@
 """Typed SDK values implementing the draft; these do not define protocol meaning."""
 
-from typing import Literal
+from typing import Annotated, Literal
 
 from pydantic import BaseModel, ConfigDict, Field, JsonValue, field_validator
 
@@ -99,18 +99,58 @@ class Decision(AnnotatedValue):
     reason: str | None = None
 
 
-class Guard(Value):
+type JsonSchema = dict[str, JsonValue] | bool
+
+
+class Constant(Value):
+    kind: Literal["CONSTANT"] = "CONSTANT"
+    value: JsonValue
+
+
+class RunInput(Value):
+    kind: Literal["RUN_INPUT"] = "RUN_INPUT"
+    name: str
+
+
+class ExternalReference(Value):
+    kind: Literal["EXTERNAL_REFERENCE"] = "EXTERNAL_REFERENCE"
+    reference: ArtifactRef
+
+
+class UpstreamOutput(Value):
+    kind: Literal["UPSTREAM_OUTPUT"] = "UPSTREAM_OUTPUT"
     node_id: str
-    field: Literal[
-        "disposition",
-        "execution_outcome",
-        "applicability",
-        "determination",
-        "verdict",
-        "decision_kind",
-        "decision_destination",
-    ]
-    value: str
+    output: str
+
+
+type ValueSource = Annotated[
+    Constant | RunInput | ExternalReference | UpstreamOutput, Field(discriminator="kind")
+]
+
+
+class InputPort(Value):
+    name: str
+    value_schema: JsonSchema = Field(alias="schema")
+    required: bool
+    on_unavailable: Literal["BLOCK", "OMIT", "DEFAULT"]
+    default: Constant | None = None
+
+
+class OutputPort(Value):
+    name: str
+    value_schema: JsonSchema = Field(alias="schema")
+    role: Literal["INFORMATION", "RESULT", "DECISION"]
+
+
+class OperationRequirement(Value):
+    capability_id: str
+    capability_version: str
+
+
+class Guard(Value):
+    source: ValueSource
+    pointer: str
+    value: JsonValue
 
 
 class Edge(Value):
@@ -122,8 +162,13 @@ class Edge(Value):
 class Node(AnnotatedValue):
     id: str
     kind: Literal["DERIVE", "EVALUATE", "CONTROL", "AGGREGATE"]
-    executor_ref: str
+    operation: OperationRequirement
+    inputs: list[InputPort] = Field(default_factory=lambda: list[InputPort]())
+    outputs: list[OutputPort] = Field(default_factory=lambda: list[OutputPort]())
+    bindings: dict[str, ValueSource] = Field(default_factory=dict)
+    aggregate_inputs: list[str] = Field(default_factory=list)
     config: Context = Field(default_factory=dict)
+    config_schema: JsonSchema | None = None
     resource_estimate: ResourceVector = Field(default_factory=dict)
 
 
@@ -140,13 +185,20 @@ class Criterion(AnnotatedValue):
     description: str
 
 
-class Capability(Value):
-    executor_ref: str
+class PolicyOperation(Value):
+    operation: OperationRequirement | None = None
     config: Context = Field(default_factory=dict)
+    config_schema: JsonSchema | None = None
+    inputs: list[InputPort] = Field(default_factory=lambda: list[InputPort]())
+    bindings: dict[str, ValueSource] = Field(default_factory=dict)
 
 
-class AdmissionPolicy(Value):
-    strategy: str
+class Capability(PolicyOperation):
+    executor_ref: str | None = None
+
+
+class AdmissionPolicy(PolicyOperation):
+    strategy: str | None = None
     probability: float | None = None
 
 
@@ -162,7 +214,8 @@ class VerificationDefinition(AnnotatedValue):
     version: str
     subject: ArtifactRef
     criterion: Criterion
-    judgment_schema: Context
+    judgment_schema: JsonSchema
+    run_inputs: list[InputPort] = Field(default_factory=lambda: list[InputPort]())
     satisfaction_mapping: Context | None = None
     graph: Graph
     execution_policy: ExecutionPolicy
@@ -173,19 +226,87 @@ class Admission(Value):
     reason: str
 
 
+class Activation(Value):
+    outcome: Literal["ACTIVATE", "DO_NOT_ACTIVATE"]
+    reason: str
+
+
+class Selection(Value):
+    subjects: list[ArtifactRef]
+    reason: str
+
+
+class ExecutionError(Value):
+    code: str
+    message: str
+
+
+class ExecutionObservation(Value):
+    outputs: Context = Field(default_factory=dict)
+    usage: ResourceVector = Field(default_factory=dict)
+    evidence: list[Evidence] = Field(default_factory=lambda: list[Evidence]())
+    error: ExecutionError | None = None
+
+
+class InputResolution(Value):
+    source: ValueSource | None = None
+    status: Literal[
+        "AVAILABLE",
+        "ABSENT",
+        "PRODUCER_NOT_EXECUTED",
+        "PRODUCER_ERROR",
+        "OUTPUT_MISSING",
+        "INVALID",
+    ]
+    used_default: bool = False
+    value: JsonValue = None
+
+
+class PolicyEvaluation(Value):
+    role: Literal["ACTIVATION", "SELECTION", "ADMISSION"]
+    input_values: Context
+    input_resolutions: dict[str, InputResolution]
+    outcome: Activation | Selection | Admission
+    executor_ref: str | None = None
+    executor_version: str | None = None
+
+
+class CancellationEvent(Value):
+    node_id: str
+    phase: Literal["BEFORE_START", "RUNNING"]
+    reason: str
+
+
+class ProviderBinding(Value):
+    """Concrete occurrence identity; never a definition-time selection policy."""
+
+    provider_id: str
+    provider_version: str
+    capability_id: str
+    capability_version: str
+
+
 class NodeRecord(Value):
     node_id: str
-    executor_ref: str
+    kind: Literal["DERIVE", "EVALUATE", "CONTROL", "AGGREGATE"]
+    operation: OperationRequirement
+    executor_ref: str | None = None
     executor_version: str | None = None
+    provider_binding: ProviderBinding | None = None
+    provider_output_error: ExecutionError | None = None
     upstream_node_ids: list[str]
-    input_context: Context
+    input_values: Context
+    input_resolutions: dict[str, InputResolution]
     upstream_results: dict[str, Result]
     started_at: str
     finished_at: str
     usage: ResourceVector
+    state: Literal["SUCCESS", "ERROR", "NONEXECUTED", "CANCELLED"]
+    reason: str | None = None
+    observation: ExecutionObservation | None = None
+    information: Context = Field(default_factory=dict)
     result: Result | None = None
     decision: Decision | None = None
-    derived: Context | None = None
 
 
 class RunRecord(AnnotatedValue):
@@ -195,11 +316,15 @@ class RunRecord(AnnotatedValue):
     definition_fingerprint: str
     subject: ArtifactRef
     initial_context: Context
+    run_inputs: Context
     opportunity_id: str
     admission: Admission
+    policy_evaluations: list[PolicyEvaluation]
+    cancellation: CancellationEvent | None = None
     started_at: str
     finished_at: str
     nodes: list[NodeRecord]
+    provider_bindings: dict[str, ProviderBinding] = Field(default_factory=dict)
     final_results: dict[str, Result]
 
 

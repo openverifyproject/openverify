@@ -1,0 +1,14 @@
+{
+  "runtime.security.untrusted_command": {
+    "invariant": "graph cannot authorize executable"
+  },
+  "runtime.security.outside_root": {
+    "invariant": "unauthorized path rejected"
+  },
+  "runtime.security.symlink_escape": {
+    "invariant": "resolved path outside root rejected"
+  },
+  "runtime.security.argv_no_shell": {
+    "invariant": "metacharacters remain literal argv"
+  }
+}

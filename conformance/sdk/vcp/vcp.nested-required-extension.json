@@ -1,0 +1,31 @@
+{
+  "id": "vcp.nested-required-extension",
+  "contract": "vcp",
+  "version": "draft",
+  "type": "result",
+  "operation": "parse",
+  "input": {
+    "protocol": "draft",
+    "disposition": "EXECUTED",
+    "execution_outcome": "SUCCESS",
+    "applicability": "APPLICABLE",
+    "determination": "KNOWN",
+    "verdict": "PASS",
+    "extensions": [
+      {
+        "namespace": "com.example:extra",
+        "version": "1",
+        "required": true,
+        "data": {}
+      }
+    ]
+  },
+  "expected": {
+    "accepted": false,
+    "error": "EXTENSION_UNSUPPORTED"
+  },
+  "features": [
+    "standalone",
+    "result"
+  ]
+}

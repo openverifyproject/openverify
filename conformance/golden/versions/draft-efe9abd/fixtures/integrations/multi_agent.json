@@ -1,0 +1,10 @@
+{
+  "integration.multi_agent.two_graphs": {
+    "entrypoint": "multi_agent",
+    "variant": "two_graphs"
+  },
+  "integration.multi_agent.worktrees": {
+    "entrypoint": "multi_agent",
+    "variant": "worktrees"
+  }
+}

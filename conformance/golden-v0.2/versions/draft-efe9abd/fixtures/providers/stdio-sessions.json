@@ -1,0 +1,29 @@
+{
+  "v02.provider.stdio.valid": {
+    "mode": "valid"
+  },
+  "v02.provider.stdio.stderr": {
+    "mode": "stderr"
+  },
+  "v02.provider.stdio.failing": {
+    "mode": "failing"
+  },
+  "v02.provider.stdio.crash": {
+    "mode": "crash"
+  },
+  "v02.provider.stdio.malformed": {
+    "mode": "malformed"
+  },
+  "v02.provider.stdio.wrong_correlation": {
+    "mode": "wrong_correlation"
+  },
+  "v02.provider.stdio.missing_terminal": {
+    "mode": "missing_terminal"
+  },
+  "v02.provider.stdio.duplicate": {
+    "mode": "duplicate"
+  },
+  "v02.provider.stdio.event_after_terminal": {
+    "mode": "event_after_terminal"
+  }
+}

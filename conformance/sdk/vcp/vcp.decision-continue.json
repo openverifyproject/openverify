@@ -1,0 +1,22 @@
+{
+  "id": "vcp.decision-continue",
+  "contract": "vcp",
+  "version": "draft",
+  "type": "decision",
+  "operation": "parse",
+  "input": {
+    "protocol": "draft",
+    "kind": "CONTINUE"
+  },
+  "expected": {
+    "accepted": true,
+    "normalized": {
+      "protocol": "draft",
+      "kind": "CONTINUE"
+    }
+  },
+  "features": [
+    "standalone",
+    "decision"
+  ]
+}

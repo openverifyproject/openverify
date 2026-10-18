@@ -1,4 +1,9 @@
 .venv/
+.worktrees/
+/venv/
+/env/
+.tox/
+.nox/
 __pycache__/
 *.py[cod]
 .pytest_cache/
@@ -20,4 +25,24 @@ Thumbs.db
 .vscode/
 .uv-cache/
 .uv-python/
+.sdk-cache/
+.pytest_cache-sdk-*.log
+sdk/**/.sdk-cache/
+sdk/ruby/.bundle/
+
+# Local credentials and signing material belong in host/registry secret stores.
+.env
+.env.*
+!.env.example
+.pypirc
+.npmrc
+.netrc
+auth.json
+.aws/
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa
+id_ed25519
 

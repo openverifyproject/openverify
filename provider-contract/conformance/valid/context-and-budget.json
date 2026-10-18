@@ -1,0 +1,19 @@
+{
+  "invocation_id": "attempt-1",
+  "contract_version": "0.1",
+  "capability_id": "com.example.execution.echo",
+  "capability_version": "1",
+  "input": "hello",
+  "config": {},
+  "vcp_version": "draft",
+  "context": {
+    "reference": "opaque"
+  },
+  "resource_budget": {
+    "custom.calls": {
+      "unit": "call",
+      "kind": "EXACT",
+      "value": 1
+    }
+  }
+}

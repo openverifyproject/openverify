@@ -21,7 +21,14 @@ admission ADMISSION_POLICY, extension EXTENSION_UNSUPPORTED, aggregate config
 AGGREGATE_CONFIG, profile PROFILE_DOMAIN, provenance PROVENANCE_LINEAGE.
 Runtime failures use EXECUTOR_ERROR, EXECUTOR_UNSUPPORTED, AGGREGATE_INPUT,
 POLICY_UNSUPPORTED; these do not redefine structural conformance.
-Malformed JSON uses PROTOCOL_JSON.
+Malformed JSON uses PROTOCOL_JSON. Typed graph failures use DATAFLOW_BINDING,
+DATAFLOW_SCHEMA, DATAFLOW_CONFIG, SEMANTIC_BINDING and SCHEMA_UNSUPPORTED.
+RUN_INPUT rejects occurrence inputs before invocation. OUTPUT_MISSING/OUTPUT_INVALID
+and JUDGMENT_INVALID classify semantic output rejection. INPUT_UNAVAILABLE is a
+nonexecution reason, not verification FAIL. See [dataflow](dataflow.md).
+Concrete provider binding and contract-enforcement execution codes are specified
+in [provider binding](provider-binding.md). Contradictory occurrence provider
+identities remain PROVENANCE_LINEAGE, independently of diagnostic messages.
 Paths use JSON Pointer where known. Library errors are supplementary, not the
 only public contract.
 

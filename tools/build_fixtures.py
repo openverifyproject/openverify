@@ -4,6 +4,8 @@ import copy
 import json
 from pathlib import Path
 
+from dataflow_examples import upgrade_definition
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -70,6 +72,10 @@ cases = []
 
 
 def case(id, kind, value, code=None, section="wire-format", stage="semantic"):
+    if kind == "verification-definition":
+        value = upgrade_definition(value)
+    elif kind == "graph" and value.get("nodes"):
+        value = upgrade_definition({**definition, "graph": value})["graph"]
     folder = "invalid" if code else "valid"
     path = f"conformance/{folder}/{id}.json"
     write(path, value)
@@ -317,101 +323,6 @@ case(
     "RESULT_STATE",
     "result",
 )
-timestamp = "2026-01-01T00:00:00Z"
-node_records = []
-final_results = {node["id"]: copy.deepcopy(result) for node in definition["graph"]["nodes"]}
-for node in definition["graph"]["nodes"]:
-    upstream = [
-        edge["from_node"] for edge in definition["graph"]["edges"] if edge["to_node"] == node["id"]
-    ]
-    node_records.append(
-        {
-            "node_id": node["id"],
-            "executor_ref": node["executor_ref"],
-            "upstream_node_ids": upstream,
-            "input_context": {"text": "Clear prose.", "length": 12},
-            "upstream_results": {id: final_results[id] for id in upstream},
-            "started_at": timestamp,
-            "finished_at": timestamp,
-            "usage": {"wall_time": {"unit": "s", "kind": "EXACT", "value": 0}},
-            "result": final_results[node["id"]],
-        }
-    )
-run = {
-    "protocol": "draft",
-    "run_id": "fixture-run",
-    "definition": definition,
-    "definition_fingerprint": "local-sha256:" + "a" * 64,
-    "subject": definition["subject"],
-    "initial_context": {"text": "Clear prose.", "length": 12},
-    "opportunity_id": "fixture-opportunity",
-    "admission": {"outcome": "RUN", "reason": "ALWAYS"},
-    "started_at": timestamp,
-    "finished_at": timestamp,
-    "nodes": node_records,
-    "final_results": final_results,
-}
-case("complete-run-record", "run-record", run, section="provenance")
-bad_run = copy.deepcopy(run)
-bad_run["nodes"][-1]["upstream_results"] = {}
-case("invalid-upstream-lineage", "run-record", bad_run, "PROVENANCE_LINEAGE", "provenance")
-
-
-def refresh_results(record):
-    """Keep portable snapshots coherent before introducing one targeted defect."""
-    record["final_results"] = {
-        node["node_id"]: copy.deepcopy(node["result"]) for node in record["nodes"]
-    }
-    for node in record["nodes"]:
-        node["upstream_results"] = {
-            id: copy.deepcopy(record["final_results"][id]) for id in node["upstream_node_ids"]
-        }
-
-
-skip_run = copy.deepcopy(run)
-skip_run["definition"]["execution_policy"]["admission"] = {
-    "strategy": "PROBABILITY",
-    "probability": 0,
-}
-skip_run["admission"] = {"outcome": "SKIP", "reason": "PROBABILITY p=0"}
-for node in skip_run["nodes"]:
-    node["result"] = {"protocol": "draft", "disposition": "SKIPPED"}
-refresh_results(skip_run)
-case("admission-skip-run", "run-record", skip_run, section="provenance")
-for disposition in ["DEFERRED", "CANCELLED"]:
-    bad = copy.deepcopy(skip_run)
-    bad["nodes"][1]["result"]["disposition"] = disposition
-    refresh_results(bad)
-    case(
-        f"admission-skip-{disposition.lower()}-node",
-        "run-record",
-        bad,
-        "PROVENANCE_LINEAGE",
-        "provenance",
-    )
-bad = copy.deepcopy(skip_run)
-bad["final_results"]["length"]["disposition"] = "DEFERRED"
-case("admission-skip-final-mismatch", "run-record", bad, "PROVENANCE_LINEAGE", "provenance")
-
-snapshot_run = copy.deepcopy(run)
-for node in snapshot_run["nodes"]:
-    node["result"]["output"] = {"v": 1, "nested": [None, False, {}, []]}
-refresh_results(snapshot_run)
-bad = copy.deepcopy(snapshot_run)
-bad["nodes"][-1]["upstream_results"]["phrase"]["output"]["v"] = True
-case("upstream-number-boolean-mismatch", "run-record", bad, "PROVENANCE_LINEAGE", "provenance")
-bad = copy.deepcopy(snapshot_run)
-for node in bad["nodes"]:
-    node["result"]["output"]["v"] = 0
-refresh_results(bad)
-bad["final_results"]["length"]["output"]["v"] = False
-case("final-number-boolean-mismatch", "run-record", bad, "PROVENANCE_LINEAGE", "provenance")
-bad = copy.deepcopy(run)
-bad["subject"] = copy.deepcopy(bad["subject"])
-bad["definition"]["subject"]["locator"] = 1
-bad["subject"]["locator"] = True
-case("subject-number-boolean-mismatch", "run-record", bad, "PROVENANCE_LINEAGE", "provenance")
-
 for id, rank, code in [
     ("integral-severity-rank", 1.0, None),
     ("boolean-severity-rank", True, "PROTOCOL_STRUCTURE"),
@@ -427,35 +338,4 @@ for id, rank, code in [
         "schema",
     )
 
-for id, time, code in [
-    ("utc-offset-run-record", "2026-01-01T00:00:00+00:00", None),
-    ("utc-fractional-run-record", "2026-01-01T00:00:00.1234567+00:00", None),
-    ("utc-lowercase-run-record", "2026-01-01t00:00:00z", None),
-    ("non-utc-positive-run-record", "2026-01-01T00:00:00+01:00", "PROTOCOL_STRUCTURE"),
-    ("non-utc-negative-run-record", "2026-01-01T00:00:00-05:00", "PROTOCOL_STRUCTURE"),
-    ("timezone-missing-run-record", "2026-01-01T00:00:00", "PROTOCOL_STRUCTURE"),
-    ("malformed-timestamp-run-record", "2026-13-01T00:00:00Z", "PROTOCOL_STRUCTURE"),
-]:
-    record = copy.deepcopy(run)
-    for item in [record, *record["nodes"]]:
-        item["started_at"] = item["finished_at"] = time
-    case(id, "run-record", record, code, "provenance", "schema")
-
-for id, derive in [
-    ("weighted-graph-unsupported", False),
-    ("weighted-mixed-graph-unsupported", True),
-]:
-    d = copy.deepcopy(definition)
-    if derive:
-        d["graph"]["nodes"][0]["kind"] = "DERIVE"
-        d["graph"]["nodes"][0]["executor_ref"] = "local.derive"
-    d["graph"]["nodes"][-1]["config"] = {
-        "reducer": "WEIGHTED_AVERAGE",
-        "handling": dict.fromkeys(handling, "IGNORE"),
-        "weights": [1] if derive else [1, 3],
-    }
-    case(id, "verification-definition", d, "GRAPH_UNSUPPORTED", "aggregation")
-
 write("conformance/manifest.json", {"protocol": "draft", "cases": cases})
-write("examples/prose/definition.json", definition)
-write("examples/prose/context.json", {"text": "Careful claims help readers.", "length": 26})

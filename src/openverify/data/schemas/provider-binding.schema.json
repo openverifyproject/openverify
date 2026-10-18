@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:verification:draft:provider-binding",
+  "description": "Concrete provider/capability identity used in an occurrence; see spec/draft/provider-binding.md.",
+  "type": "object",
+  "properties": {
+    "provider_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|(?!openverify\\.)[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*)$"
+    },
+    "provider_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "capability_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|(?!openverify\\.)[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*)$"
+    },
+    "capability_version": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "provider_id",
+    "provider_version",
+    "capability_id",
+    "capability_version"
+  ],
+  "additionalProperties": false
+}

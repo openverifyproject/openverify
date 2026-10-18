@@ -1,0 +1,23 @@
+{
+  "id": "provider.schema-default-is-annotation",
+  "contract": "provider",
+  "version": "0.1",
+  "type": "data",
+  "operation": "data",
+  "input": {},
+  "expected": {
+    "accepted": true,
+    "normalized": {}
+  },
+  "features": [
+    "standalone",
+    "data"
+  ],
+  "schema": {
+    "properties": {
+      "x": {
+        "default": 1
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "conformance/golden-v0.3.1/expectation-errata.json": "20344733726e667d6f888086b42a6cced8ce5e08005a7fcae7b479ec2cf9c185",
+  "conformance/golden-v0.3.1/revision.json": "b09fe419156c1a77f38d1c3efed223022fb52825b88fd82bad64a95ad615be25",
+  "tools/golden_v031/freeze_errata.py": "ae5face4c67c2564ff69a0a142999cdeee8ccfed245d1727a51c9e3670752b37"
+}

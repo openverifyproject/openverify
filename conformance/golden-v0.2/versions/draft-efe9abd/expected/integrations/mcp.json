@@ -1,0 +1,30 @@
+{
+  "integration.mcp.tools": {
+    "contract_reference": "docs/relay/integration.md",
+    "same_vcp_semantics": true
+  },
+  "integration.mcp.list": {
+    "contract_reference": "docs/relay/integration.md",
+    "same_vcp_semantics": true
+  },
+  "integration.mcp.describe": {
+    "contract_reference": "docs/relay/integration.md",
+    "same_vcp_semantics": true
+  },
+  "integration.mcp.run_pass": {
+    "contract_reference": "docs/relay/integration.md",
+    "same_vcp_semantics": true
+  },
+  "integration.mcp.run_fail": {
+    "contract_reference": "docs/relay/integration.md",
+    "same_vcp_semantics": true
+  },
+  "integration.mcp.inspect": {
+    "contract_reference": "docs/relay/integration.md",
+    "same_vcp_semantics": true
+  },
+  "integration.mcp.unauthorized": {
+    "contract_reference": "docs/relay/integration.md",
+    "same_vcp_semantics": true
+  }
+}

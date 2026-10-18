@@ -46,7 +46,16 @@
       "additionalProperties": false
     },
     "judgment_schema": {
-      "type": "object"
+      "type": [
+        "object",
+        "boolean"
+      ]
+    },
+    "run_inputs": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:verification:draft:input-port"
+      }
     },
     "satisfaction_mapping": {
       "anyOf": [
@@ -67,38 +76,112 @@
         "activation": {
           "type": "object",
           "properties": {
-            "executor_ref": {
-              "type": "string",
-              "minLength": 1
+            "operation": {
+              "$ref": "urn:verification:draft:operation-requirement"
             },
             "config": {
               "type": "object"
+            },
+            "config_schema": {
+              "type": [
+                "object",
+                "boolean"
+              ]
+            },
+            "inputs": {
+              "type": "array",
+              "items": {
+                "$ref": "urn:verification:draft:input-port"
+              }
+            },
+            "bindings": {
+              "type": "object",
+              "propertyNames": {
+                "type": "string",
+                "minLength": 1
+              },
+              "additionalProperties": {
+                "$ref": "urn:verification:draft:value-source"
+              }
+            },
+            "executor_ref": {
+              "type": "string",
+              "minLength": 1
             }
           },
-          "required": [
-            "executor_ref"
-          ],
+          "required": [],
           "additionalProperties": false
         },
         "selection": {
           "type": "object",
           "properties": {
-            "executor_ref": {
-              "type": "string",
-              "minLength": 1
+            "operation": {
+              "$ref": "urn:verification:draft:operation-requirement"
             },
             "config": {
               "type": "object"
+            },
+            "config_schema": {
+              "type": [
+                "object",
+                "boolean"
+              ]
+            },
+            "inputs": {
+              "type": "array",
+              "items": {
+                "$ref": "urn:verification:draft:input-port"
+              }
+            },
+            "bindings": {
+              "type": "object",
+              "propertyNames": {
+                "type": "string",
+                "minLength": 1
+              },
+              "additionalProperties": {
+                "$ref": "urn:verification:draft:value-source"
+              }
+            },
+            "executor_ref": {
+              "type": "string",
+              "minLength": 1
             }
           },
-          "required": [
-            "executor_ref"
-          ],
+          "required": [],
           "additionalProperties": false
         },
         "admission": {
           "type": "object",
           "properties": {
+            "operation": {
+              "$ref": "urn:verification:draft:operation-requirement"
+            },
+            "config": {
+              "type": "object"
+            },
+            "config_schema": {
+              "type": [
+                "object",
+                "boolean"
+              ]
+            },
+            "inputs": {
+              "type": "array",
+              "items": {
+                "$ref": "urn:verification:draft:input-port"
+              }
+            },
+            "bindings": {
+              "type": "object",
+              "propertyNames": {
+                "type": "string",
+                "minLength": 1
+              },
+              "additionalProperties": {
+                "$ref": "urn:verification:draft:value-source"
+              }
+            },
             "strategy": {
               "type": "string",
               "minLength": 1
@@ -116,9 +199,7 @@
               ]
             }
           },
-          "required": [
-            "strategy"
-          ],
+          "required": [],
           "additionalProperties": false
         }
       },
@@ -146,6 +227,7 @@
     "subject",
     "criterion",
     "judgment_schema",
+    "run_inputs",
     "graph",
     "execution_policy"
   ],

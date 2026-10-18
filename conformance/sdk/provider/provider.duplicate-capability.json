@@ -1,0 +1,55 @@
+{
+  "id": "provider.duplicate-capability",
+  "contract": "provider",
+  "version": "0.1",
+  "type": "provider-manifest",
+  "operation": "parse",
+  "input": {
+    "provider_id": "com.example.provider",
+    "provider_version": "1",
+    "supported_contract_versions": [
+      "0.1"
+    ],
+    "supported_vcp_versions": [],
+    "capabilities": [
+      {
+        "capability_id": "com.example.echo",
+        "capability_version": "1",
+        "input_schema": {
+          "type": "string"
+        },
+        "config_schema": true,
+        "output_schema": true,
+        "lifecycle_features": {
+          "streaming": false,
+          "cancellation": false,
+          "deadlines": false,
+          "resource_reporting": false
+        }
+      },
+      {
+        "capability_id": "com.example.echo",
+        "capability_version": "1",
+        "input_schema": {
+          "type": "string"
+        },
+        "config_schema": true,
+        "output_schema": true,
+        "lifecycle_features": {
+          "streaming": false,
+          "cancellation": false,
+          "deadlines": false,
+          "resource_reporting": false
+        }
+      }
+    ]
+  },
+  "expected": {
+    "accepted": false,
+    "error": "INVALID_PROVIDER_OUTPUT"
+  },
+  "features": [
+    "standalone",
+    "provider-manifest"
+  ]
+}

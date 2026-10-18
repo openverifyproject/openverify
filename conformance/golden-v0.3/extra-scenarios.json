@@ -1,0 +1,96 @@
+[
+  {
+    "id": "master.timeout",
+    "category": "timeout"
+  },
+  {
+    "id": "master.cancellation_isolation",
+    "category": "cancellation"
+  },
+  {
+    "id": "master.running_cancellation",
+    "category": "cancellation"
+  },
+  {
+    "id": "master.port.catalog_failure",
+    "category": "ports",
+    "error_code": "CATALOG_FAILURE"
+  },
+  {
+    "id": "master.port.catalog_invalid",
+    "category": "ports",
+    "error_code": "CATALOG_INVALID"
+  },
+  {
+    "id": "master.port.binder_failure",
+    "category": "ports",
+    "error_code": "BINDER_FAILURE"
+  },
+  {
+    "id": "master.port.binder_invalid",
+    "category": "ports",
+    "error_code": "PROVIDER_BINDING_MISMATCH"
+  },
+  {
+    "id": "master.port.binder_replace",
+    "category": "ports"
+  },
+  {
+    "id": "master.port.driver_replace",
+    "category": "ports"
+  },
+  {
+    "id": "master.port.store_failure",
+    "category": "ports"
+  },
+  {
+    "id": "master.port.store_replace",
+    "category": "ports"
+  },
+  {
+    "id": "master.port.observer_failure",
+    "category": "ports"
+  },
+  {
+    "id": "master.policy_fault.ACTIVATION.exception",
+    "category": "policy_fault",
+    "role": "ACTIVATION",
+    "fault": "exception",
+    "error_code": "POLICY_OUTPUT"
+  },
+  {
+    "id": "master.policy_fault.ACTIVATION.provider_error",
+    "category": "policy_fault",
+    "role": "ACTIVATION",
+    "fault": "provider_error",
+    "error_code": "POLICY_OUTPUT"
+  },
+  {
+    "id": "master.policy_fault.SELECTION.exception",
+    "category": "policy_fault",
+    "role": "SELECTION",
+    "fault": "exception",
+    "error_code": "POLICY_OUTPUT"
+  },
+  {
+    "id": "master.policy_fault.SELECTION.provider_error",
+    "category": "policy_fault",
+    "role": "SELECTION",
+    "fault": "provider_error",
+    "error_code": "POLICY_OUTPUT"
+  },
+  {
+    "id": "master.policy_fault.ADMISSION.exception",
+    "category": "policy_fault",
+    "role": "ADMISSION",
+    "fault": "exception",
+    "error_code": "POLICY_OUTPUT"
+  },
+  {
+    "id": "master.policy_fault.ADMISSION.provider_error",
+    "category": "policy_fault",
+    "role": "ADMISSION",
+    "fault": "provider_error",
+    "error_code": "POLICY_OUTPUT"
+  }
+]

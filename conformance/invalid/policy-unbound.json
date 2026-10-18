@@ -1,0 +1,61 @@
+{
+  "protocol": "draft",
+  "id": "prose-criterion",
+  "version": "1",
+  "subject": {
+    "id": "article-1",
+    "type": "text/plain",
+    "locator": {
+      "host_key": "text"
+    }
+  },
+  "criterion": {
+    "id": "readable-prose",
+    "description": "Contains no banned phrase and is nonempty."
+  },
+  "judgment_schema": {},
+  "run_inputs": [
+    {
+      "name": "x",
+      "schema": {
+        "type": "number"
+      },
+      "required": true,
+      "on_unavailable": "BLOCK"
+    }
+  ],
+  "execution_policy": {
+    "activation": {
+      "executor_ref": "MANUAL"
+    },
+    "selection": {
+      "executor_ref": "EXPLICIT"
+    },
+    "admission": {
+      "operation": {
+        "capability_id": "com.example.policy",
+        "capability_version": "1"
+      },
+      "inputs": [
+        {
+          "name": "value",
+          "schema": {
+            "type": "number"
+          },
+          "required": true,
+          "on_unavailable": "BLOCK"
+        }
+      ],
+      "bindings": {},
+      "config": {},
+      "config_schema": {
+        "type": "object",
+        "additionalProperties": false
+      }
+    }
+  },
+  "graph": {
+    "nodes": [],
+    "edges": []
+  }
+}

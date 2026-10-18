@@ -130,7 +130,15 @@ def test_arbitrary_dag_order(size: int, pairs: set[tuple[int, int]]) -> None:
         {"from_node": f"n{a}", "to_node": f"n{b}"} for a, b in sorted(pairs) if a < b < size
     ]
     nodes: list[JsonValue] = [
-        {"id": f"n{i}", "kind": "EVALUATE", "executor_ref": "local"} for i in reversed(range(size))
+        {
+            "id": f"n{i}",
+            "kind": "DERIVE",
+            "operation": {"capability_id": "com.example.local", "capability_version": "1"},
+            "inputs": [],
+            "outputs": [],
+            "bindings": {},
+        }
+        for i in reversed(range(size))
     ]
     graph = cast(Graph, parse_object("graph", {"nodes": nodes, "edges": edges}))
     order = ordered_nodes(graph)

@@ -1,0 +1,26 @@
+{
+  "integration.http.health": {
+    "contract_reference": "docs/relay/integration.md",
+    "same_vcp_semantics": true
+  },
+  "integration.http.pass": {
+    "contract_reference": "docs/relay/integration.md",
+    "same_vcp_semantics": true
+  },
+  "integration.http.fail": {
+    "contract_reference": "docs/relay/integration.md",
+    "same_vcp_semantics": true
+  },
+  "integration.http.bad_token": {
+    "contract_reference": "docs/relay/integration.md",
+    "same_vcp_semantics": true
+  },
+  "integration.http.oversized": {
+    "contract_reference": "docs/relay/integration.md",
+    "same_vcp_semantics": true
+  },
+  "integration.http.unknown_graph": {
+    "contract_reference": "docs/relay/integration.md",
+    "same_vcp_semantics": true
+  }
+}

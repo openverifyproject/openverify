@@ -1,0 +1,5505 @@
+{
+  "bundle_format": 1,
+  "vcp_version": "draft",
+  "provider_version": "0.1",
+  "revision": "5f17f402a270882f244a54dde25eda92a085eb39",
+  "schemas": {
+    "urn:verification:draft:activation": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "urn:verification:draft:activation",
+      "description": "Typed explicit executable dataflow; see spec/draft/dataflow.md.",
+      "type": "object",
+      "properties": {
+        "outcome": {
+          "type": "string",
+          "enum": [
+            "ACTIVATE",
+            "DO_NOT_ACTIVATE"
+          ]
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "outcome",
+        "reason"
+      ],
+      "additionalProperties": false
+    },
+    "urn:verification:draft:admission": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "urn:verification:draft:admission",
+      "description": "Typed explicit executable dataflow; see spec/draft/dataflow.md.",
+      "type": "object",
+      "properties": {
+        "outcome": {
+          "type": "string",
+          "enum": [
+            "RUN",
+            "SKIP",
+            "DEFER"
+          ]
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "outcome",
+        "reason"
+      ],
+      "additionalProperties": false
+    },
+    "urn:verification:draft:artifact-ref": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "urn:verification:draft:artifact-ref",
+      "description": "External artifact identity; opaque locator does not authorize fetching.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "locator": {},
+        "schema_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "metadata": {
+          "type": "object"
+        },
+        "extensions": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:verification:draft:extension"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "type",
+        "locator"
+      ],
+      "additionalProperties": false
+    },
+    "urn:verification:draft:cancellation-event": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "urn:verification:draft:cancellation-event",
+      "description": "Typed explicit executable dataflow; see spec/draft/dataflow.md.",
+      "type": "object",
+      "properties": {
+        "node_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "phase": {
+          "type": "string",
+          "enum": [
+            "BEFORE_START",
+            "RUNNING"
+          ]
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "node_id",
+        "phase",
+        "reason"
+      ],
+      "additionalProperties": false
+    },
+    "urn:verification:draft:decision": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "urn:verification:draft:decision",
+      "description": "Verification control decision, distinct from judgment; ROUTE needs destination.",
+      "type": "object",
+      "properties": {
+        "protocol": {
+          "const": "draft"
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "CONTINUE",
+            "STOP_SUCCESS",
+            "STOP_FAILURE",
+            "ROUTE",
+            "RETRY",
+            "DEFER"
+          ]
+        },
+        "destination": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "reason": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "metadata": {
+          "type": "object"
+        },
+        "extensions": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:verification:draft:extension"
+          }
+        }
+      },
+      "required": [
+        "protocol",
+        "kind"
+      ],
+      "additionalProperties": false
+    },
+    "urn:verification:draft:evidence": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "urn:verification:draft:evidence",
+      "description": "Supporting observations; prose requires at least one meaningful component.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "message": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "artifact_ref": {
+          "anyOf": [
+            {
+              "$ref": "urn:verification:draft:artifact-ref"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "locator": {},
+        "structured_data": {},
+        "metadata": {
+          "type": "object"
+        },
+        "extensions": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:verification:draft:extension"
+          }
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "urn:verification:draft:execution-observation": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "urn:verification:draft:execution-observation",
+      "description": "Typed explicit executable dataflow; see spec/draft/dataflow.md.",
+      "type": "object",
+      "properties": {
+        "outputs": {
+          "type": "object"
+        },
+        "usage": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "minLength": 1
+          },
+          "additionalProperties": {
+            "$ref": "urn:verification:draft:resource"
+          }
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:verification:draft:evidence"
+          }
+        },
+        "error": {
+          "type": "object",
+          "properties": {
+            "code": {
+              "type": "string",
+              "minLength": 1
+            },
+            "message": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "code",
+            "message"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "outputs",
+        "usage",
+        "evidence"
+      ],
+      "additionalProperties": false
+    },
+    "urn:verification:draft:extension": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "urn:verification:draft:extension",
+      "description": "Namespaced data; preserve optional, reject unsupported required meaning.",
+      "type": "object",
+      "properties": {
+        "namespace": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": ":"
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "required": {
+          "type": "boolean"
+        },
+        "data": {}
+      },
+      "required": [
+        "namespace",
+        "version",
+        "required",
+        "data"
+      ],
+      "additionalProperties": false
+    },
+    "urn:verification:draft:graph": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "urn:verification:draft:graph",
+      "description": "Typed DAG with explicit input bindings, operation requirements and aggregate membership.",
+      "type": "object",
+      "properties": {
+        "nodes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "DERIVE",
+                  "EVALUATE",
+                  "CONTROL",
+                  "AGGREGATE"
+                ]
+              },
+              "operation": {
+                "$ref": "urn:verification:draft:operation-requirement"
+              },
+              "inputs": {
+                "type": "array",
+                "items": {
+                  "$ref": "urn:verification:draft:input-port"
+                }
+              },
+              "outputs": {
+                "type": "array",
+                "items": {
+                  "$ref": "urn:verification:draft:output-port"
+                }
+              },
+              "bindings": {
+                "type": "object",
+                "propertyNames": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "additionalProperties": {
+                  "$ref": "urn:verification:draft:value-source"
+                }
+              },
+              "aggregate_inputs": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "config": {
+                "type": "object"
+              },
+              "config_schema": {
+                "type": [
+                  "object",
+                  "boolean"
+                ]
+              },
+              "resource_estimate": {
+                "type": "object",
+                "propertyNames": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "additionalProperties": {
+                  "$ref": "urn:verification:draft:resource"
+                }
+              },
+              "metadata": {
+                "type": "object"
+              },
+              "extensions": {
+                "type": "array",
+                "items": {
+                  "$ref": "urn:verification:draft:extension"
+                }
+              }
+            },
+            "required": [
+              "id",
+              "kind",
+              "operation",
+              "inputs",
+              "outputs",
+              "bindings"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "edges": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "from_node": {
+                "type": "string",
+                "minLength": 1
+              },
+              "to_node": {
+                "type": "string",
+                "minLength": 1
+              },
+              "guard": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "source": {
+                        "$ref": "urn:verification:draft:value-source"
+                      },
+                      "pointer": {
+                        "type": "string"
+                      },
+                      "value": {}
+                    },
+                    "required": [
+                      "source",
+                      "pointer",
+                      "value"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "from_node",
+              "to_node"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "features": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "CYCLES",
+              "DYNAMIC_EXPANSION"
+            ]
+          }
+        }
+      },
+      "required": [
+        "nodes"
+      ],
+      "additionalProperties": false
+    },
+    "urn:verification:draft:input-port": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "urn:verification:draft:input-port",
+      "description": "Typed explicit executable dataflow; see spec/draft/dataflow.md.",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "schema": {
+          "type": [
+            "object",
+            "boolean"
+          ]
+        },
+        "required": {
+          "type": "boolean"
+        },
+        "on_unavailable": {
+          "type": "string",
+          "enum": [
+            "BLOCK",
+            "OMIT",
+            "DEFAULT"
+          ]
+        },
+        "default": {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "CONSTANT"
+            },
+            "value": {}
+          },
+          "required": [
+            "kind",
+            "value"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "name",
+        "schema",
+        "required",
+        "on_unavailable"
+      ],
+      "additionalProperties": false
+    },
+    "urn:verification:draft:input-resolution": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "urn:verification:draft:input-resolution",
+      "description": "Typed explicit executable dataflow; see spec/draft/dataflow.md.",
+      "type": "object",
+      "properties": {
+        "source": {
+          "$ref": "urn:verification:draft:value-source"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "AVAILABLE",
+            "ABSENT",
+            "PRODUCER_NOT_EXECUTED",
+            "PRODUCER_ERROR",
+            "OUTPUT_MISSING",
+            "INVALID"
+          ]
+        },
+        "used_default": {
+          "type": "boolean"
+        },
+        "value": {}
+      },
+      "required": [
+        "status",
+        "used_default"
+      ],
+      "additionalProperties": false
+    },
+    "urn:verification:draft:operation-requirement": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "urn:verification:draft:operation-requirement",
+      "description": "Typed explicit executable dataflow; see spec/draft/dataflow.md.",
+      "type": "object",
+      "properties": {
+        "capability_id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*){2,})$"
+        },
+        "capability_version": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "capability_id",
+        "capability_version"
+      ],
+      "additionalProperties": false
+    },
+    "urn:verification:draft:output-port": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "urn:verification:draft:output-port",
+      "description": "Typed explicit executable dataflow; see spec/draft/dataflow.md.",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "schema": {
+          "type": [
+            "object",
+            "boolean"
+          ]
+        },
+        "role": {
+          "type": "string",
+          "enum": [
+            "INFORMATION",
+            "RESULT",
+            "DECISION"
+          ]
+        }
+      },
+      "required": [
+        "name",
+        "schema",
+        "role"
+      ],
+      "additionalProperties": false
+    },
+    "urn:verification:draft:policy-evaluation": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "urn:verification:draft:policy-evaluation",
+      "description": "Typed explicit executable dataflow; see spec/draft/dataflow.md.",
+      "type": "object",
+      "properties": {
+        "role": {
+          "type": "string",
+          "enum": [
+            "ACTIVATION",
+            "SELECTION",
+            "ADMISSION"
+          ]
+        },
+        "input_values": {
+          "type": "object"
+        },
+        "input_resolutions": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "urn:verification:draft:input-resolution"
+          }
+        },
+        "outcome": {
+          "oneOf": [
+            {
+              "$ref": "urn:verification:draft:activation"
+            },
+            {
+              "$ref": "urn:verification:draft:selection"
+            },
+            {
+              "$ref": "urn:verification:draft:admission"
+            }
+          ]
+        },
+        "executor_ref": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "executor_version": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "role",
+        "input_values",
+        "input_resolutions",
+        "outcome"
+      ],
+      "additionalProperties": false
+    },
+    "urn:verification:draft:profile": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "urn:verification:draft:profile",
+      "description": "Named common choices organized by concept; this is not the core ontology.",
+      "type": "object",
+      "properties": {
+        "protocol": {
+          "const": "draft"
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "flattened_statuses": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "severity_domain": {
+          "$ref": "urn:verification:draft:severity-domain"
+        },
+        "aggregators": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "admission_policies": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "decisions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "resource_dimensions": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:verification:draft:resource-dimension"
+          }
+        },
+        "metadata": {
+          "type": "object"
+        },
+        "extensions": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:verification:draft:extension"
+          }
+        }
+      },
+      "required": [
+        "protocol",
+        "id",
+        "version",
+        "flattened_statuses",
+        "severity_domain",
+        "aggregators",
+        "admission_policies",
+        "decisions",
+        "resource_dimensions"
+      ],
+      "additionalProperties": false
+    },
+    "urn:verification:draft:provider-binding": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "urn:verification:draft:provider-binding",
+      "description": "Concrete provider/capability identity used in an occurrence; see spec/draft/provider-binding.md.",
+      "type": "object",
+      "properties": {
+        "provider_id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|(?!openverify\\.)[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*)$"
+        },
+        "provider_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "capability_id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|(?!openverify\\.)[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*)$"
+        },
+        "capability_version": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "provider_id",
+        "provider_version",
+        "capability_id",
+        "capability_version"
+      ],
+      "additionalProperties": false
+    },
+    "urn:verification:draft:resource-dimension": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "urn:verification:draft:resource-dimension",
+      "description": "Open resource dimension with explicit unit and semantic description.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "unit": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "metadata": {
+          "type": "object"
+        },
+        "extensions": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:verification:draft:extension"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "unit",
+        "description"
+      ],
+      "additionalProperties": false
+    },
+    "urn:verification:draft:resource": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "urn:verification:draft:resource",
+      "description": "Unit-bearing measurement with kind-dependent value or range fields.",
+      "type": "object",
+      "properties": {
+        "unit": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "EXACT",
+            "ESTIMATED",
+            "RANGE",
+            "UNKNOWN"
+          ]
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "minimum": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "maximum": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "unit",
+        "kind"
+      ],
+      "additionalProperties": false
+    },
+    "urn:verification:draft:result": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "urn:verification:draft:result",
+      "description": "Independent result axes and observations; prose restricts state combinations.",
+      "type": "object",
+      "properties": {
+        "protocol": {
+          "const": "draft"
+        },
+        "disposition": {
+          "type": "string",
+          "enum": [
+            "EXECUTED",
+            "SKIPPED",
+            "DEFERRED",
+            "CANCELLED"
+          ]
+        },
+        "execution_outcome": {
+          "anyOf": [
+            {
+              "type": "string",
+              "enum": [
+                "SUCCESS",
+                "ERROR"
+              ]
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "applicability": {
+          "anyOf": [
+            {
+              "type": "string",
+              "enum": [
+                "APPLICABLE",
+                "NOT_APPLICABLE"
+              ]
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "determination": {
+          "anyOf": [
+            {
+              "type": "string",
+              "enum": [
+                "KNOWN",
+                "UNKNOWN"
+              ]
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "judgment": {},
+        "verdict": {
+          "anyOf": [
+            {
+              "type": "string",
+              "enum": [
+                "PASS",
+                "FAIL"
+              ]
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "score": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "severity": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "domain": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "label": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "domain",
+                "label"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:verification:draft:evidence"
+          }
+        },
+        "output": {},
+        "usage": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "minLength": 1
+          },
+          "additionalProperties": {
+            "$ref": "urn:verification:draft:resource"
+          }
+        },
+        "metadata": {
+          "type": "object"
+        },
+        "extensions": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:verification:draft:extension"
+          }
+        }
+      },
+      "required": [
+        "protocol",
+        "disposition"
+      ],
+      "additionalProperties": false
+    },
+    "urn:verification:draft:run-record": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "urn:verification:draft:run-record",
+      "description": "Snapshots retaining identity, admission, lineage, outputs, usage and UTC timing.",
+      "type": "object",
+      "properties": {
+        "protocol": {
+          "const": "draft"
+        },
+        "run_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "definition": {
+          "$ref": "urn:verification:draft:verification-definition"
+        },
+        "definition_fingerprint": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^local-sha256:[0-9a-f]{64}$"
+        },
+        "subject": {
+          "$ref": "urn:verification:draft:artifact-ref"
+        },
+        "initial_context": {
+          "type": "object"
+        },
+        "run_inputs": {
+          "type": "object"
+        },
+        "opportunity_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "admission": {
+          "$ref": "urn:verification:draft:admission"
+        },
+        "policy_evaluations": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:verification:draft:policy-evaluation"
+          }
+        },
+        "cancellation": {
+          "$ref": "urn:verification:draft:cancellation-event"
+        },
+        "provider_bindings": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "minLength": 1
+          },
+          "additionalProperties": {
+            "$ref": "urn:verification:draft:provider-binding"
+          }
+        },
+        "started_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "(?:[Zz]|\\+00:00)$"
+        },
+        "finished_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "(?:[Zz]|\\+00:00)$"
+        },
+        "nodes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "node_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "DERIVE",
+                  "EVALUATE",
+                  "CONTROL",
+                  "AGGREGATE"
+                ]
+              },
+              "operation": {
+                "$ref": "urn:verification:draft:operation-requirement"
+              },
+              "executor_ref": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "executor_version": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "provider_binding": {
+                "$ref": "urn:verification:draft:provider-binding"
+              },
+              "provider_output_error": {
+                "type": "object",
+                "properties": {
+                  "code": {
+                    "const": "INVALID_PROVIDER_OUTPUT"
+                  },
+                  "message": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "code",
+                  "message"
+                ],
+                "additionalProperties": false
+              },
+              "upstream_node_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "upstream_results": {
+                "type": "object",
+                "additionalProperties": {
+                  "$ref": "urn:verification:draft:result"
+                }
+              },
+              "input_values": {
+                "type": "object"
+              },
+              "input_resolutions": {
+                "type": "object",
+                "additionalProperties": {
+                  "$ref": "urn:verification:draft:input-resolution"
+                }
+              },
+              "started_at": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "(?:[Zz]|\\+00:00)$"
+              },
+              "finished_at": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "(?:[Zz]|\\+00:00)$"
+              },
+              "usage": {
+                "type": "object",
+                "propertyNames": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "additionalProperties": {
+                  "$ref": "urn:verification:draft:resource"
+                }
+              },
+              "state": {
+                "type": "string",
+                "enum": [
+                  "SUCCESS",
+                  "ERROR",
+                  "NONEXECUTED",
+                  "CANCELLED"
+                ]
+              },
+              "reason": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "observation": {
+                "$ref": "urn:verification:draft:execution-observation"
+              },
+              "information": {
+                "type": "object"
+              },
+              "result": {
+                "anyOf": [
+                  {
+                    "$ref": "urn:verification:draft:result"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "decision": {
+                "anyOf": [
+                  {
+                    "$ref": "urn:verification:draft:decision"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "node_id",
+              "kind",
+              "operation",
+              "upstream_node_ids",
+              "upstream_results",
+              "input_values",
+              "input_resolutions",
+              "started_at",
+              "finished_at",
+              "usage",
+              "state",
+              "information"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "final_results": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "urn:verification:draft:result"
+          }
+        },
+        "metadata": {
+          "type": "object"
+        },
+        "extensions": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:verification:draft:extension"
+          }
+        }
+      },
+      "required": [
+        "protocol",
+        "run_id",
+        "definition",
+        "definition_fingerprint",
+        "subject",
+        "initial_context",
+        "run_inputs",
+        "opportunity_id",
+        "admission",
+        "policy_evaluations",
+        "started_at",
+        "finished_at",
+        "nodes",
+        "final_results"
+      ],
+      "additionalProperties": false
+    },
+    "urn:verification:draft:selection": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "urn:verification:draft:selection",
+      "description": "Typed explicit executable dataflow; see spec/draft/dataflow.md.",
+      "type": "object",
+      "properties": {
+        "subjects": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:verification:draft:artifact-ref"
+          }
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "subjects",
+        "reason"
+      ],
+      "additionalProperties": false
+    },
+    "urn:verification:draft:severity-domain": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "urn:verification:draft:severity-domain",
+      "description": "Ordered severity labels; prose requires unique labels and distinct ranks.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "levels": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string",
+                "minLength": 1
+              },
+              "rank": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "label",
+              "rank"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "id",
+        "levels"
+      ],
+      "additionalProperties": false
+    },
+    "urn:verification:draft:value-source": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "urn:verification:draft:value-source",
+      "description": "Typed explicit executable dataflow; see spec/draft/dataflow.md.",
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "CONSTANT"
+            },
+            "value": {}
+          },
+          "required": [
+            "kind",
+            "value"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "RUN_INPUT"
+            },
+            "name": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "kind",
+            "name"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "EXTERNAL_REFERENCE"
+            },
+            "reference": {
+              "$ref": "urn:verification:draft:artifact-ref"
+            }
+          },
+          "required": [
+            "kind",
+            "reference"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "UPSTREAM_OUTPUT"
+            },
+            "node_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "output": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "kind",
+            "node_id",
+            "output"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "urn:verification:draft:verification-definition": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "urn:verification:draft:verification-definition",
+      "description": "Versioned subject/criterion, judgment schema, graph and policy.",
+      "type": "object",
+      "properties": {
+        "protocol": {
+          "const": "draft"
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "subject": {
+          "$ref": "urn:verification:draft:artifact-ref"
+        },
+        "criterion": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "description": {
+              "type": "string",
+              "minLength": 1
+            },
+            "metadata": {
+              "type": "object"
+            },
+            "extensions": {
+              "type": "array",
+              "items": {
+                "$ref": "urn:verification:draft:extension"
+              }
+            }
+          },
+          "required": [
+            "id",
+            "description"
+          ],
+          "additionalProperties": false
+        },
+        "judgment_schema": {
+          "type": [
+            "object",
+            "boolean"
+          ]
+        },
+        "run_inputs": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:verification:draft:input-port"
+          }
+        },
+        "satisfaction_mapping": {
+          "anyOf": [
+            {
+              "type": "object"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "graph": {
+          "$ref": "urn:verification:draft:graph"
+        },
+        "execution_policy": {
+          "type": "object",
+          "properties": {
+            "activation": {
+              "type": "object",
+              "properties": {
+                "operation": {
+                  "$ref": "urn:verification:draft:operation-requirement"
+                },
+                "config": {
+                  "type": "object"
+                },
+                "config_schema": {
+                  "type": [
+                    "object",
+                    "boolean"
+                  ]
+                },
+                "inputs": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "urn:verification:draft:input-port"
+                  }
+                },
+                "bindings": {
+                  "type": "object",
+                  "propertyNames": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "additionalProperties": {
+                    "$ref": "urn:verification:draft:value-source"
+                  }
+                },
+                "executor_ref": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [],
+              "additionalProperties": false
+            },
+            "selection": {
+              "type": "object",
+              "properties": {
+                "operation": {
+                  "$ref": "urn:verification:draft:operation-requirement"
+                },
+                "config": {
+                  "type": "object"
+                },
+                "config_schema": {
+                  "type": [
+                    "object",
+                    "boolean"
+                  ]
+                },
+                "inputs": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "urn:verification:draft:input-port"
+                  }
+                },
+                "bindings": {
+                  "type": "object",
+                  "propertyNames": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "additionalProperties": {
+                    "$ref": "urn:verification:draft:value-source"
+                  }
+                },
+                "executor_ref": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [],
+              "additionalProperties": false
+            },
+            "admission": {
+              "type": "object",
+              "properties": {
+                "operation": {
+                  "$ref": "urn:verification:draft:operation-requirement"
+                },
+                "config": {
+                  "type": "object"
+                },
+                "config_schema": {
+                  "type": [
+                    "object",
+                    "boolean"
+                  ]
+                },
+                "inputs": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "urn:verification:draft:input-port"
+                  }
+                },
+                "bindings": {
+                  "type": "object",
+                  "propertyNames": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "additionalProperties": {
+                    "$ref": "urn:verification:draft:value-source"
+                  }
+                },
+                "strategy": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "probability": {
+                  "anyOf": [
+                    {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "required": [],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "activation",
+            "selection",
+            "admission"
+          ],
+          "additionalProperties": false
+        },
+        "metadata": {
+          "type": "object"
+        },
+        "extensions": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:verification:draft:extension"
+          }
+        }
+      },
+      "required": [
+        "protocol",
+        "id",
+        "version",
+        "subject",
+        "criterion",
+        "judgment_schema",
+        "run_inputs",
+        "graph",
+        "execution_policy"
+      ],
+      "additionalProperties": false
+    },
+    "urn:openverify:provider:0.1:cancel-request": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "urn:openverify:provider:0.1:cancel-request",
+      "type": "object",
+      "properties": {
+        "invocation_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "extensions": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|(?!openverify\\.)[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*)$"
+          },
+          "additionalProperties": {}
+        }
+      },
+      "required": [
+        "invocation_id"
+      ],
+      "additionalProperties": false
+    },
+    "urn:openverify:provider:0.1:capability": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "urn:openverify:provider:0.1:capability",
+      "type": "object",
+      "properties": {
+        "capability_id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|(?!openverify\\.)[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*)$"
+        },
+        "capability_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "input_schema": {
+          "type": [
+            "object",
+            "boolean"
+          ]
+        },
+        "output_schema": {
+          "type": [
+            "object",
+            "boolean"
+          ]
+        },
+        "config_schema": {
+          "type": [
+            "object",
+            "boolean"
+          ]
+        },
+        "lifecycle_features": {
+          "type": "object",
+          "properties": {
+            "streaming": {
+              "type": "boolean"
+            },
+            "cancellation": {
+              "type": "boolean"
+            },
+            "deadlines": {
+              "type": "boolean"
+            },
+            "resource_reporting": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "streaming",
+            "cancellation",
+            "deadlines",
+            "resource_reporting"
+          ],
+          "additionalProperties": false
+        },
+        "vcp_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "extensions": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|(?!openverify\\.)[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*)$"
+          },
+          "additionalProperties": {}
+        }
+      },
+      "required": [
+        "capability_id",
+        "capability_version",
+        "input_schema",
+        "output_schema",
+        "config_schema",
+        "lifecycle_features"
+      ],
+      "additionalProperties": false
+    },
+    "urn:openverify:provider:0.1:initialize-request": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "urn:openverify:provider:0.1:initialize-request",
+      "type": "object",
+      "properties": {
+        "supported_contract_versions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true,
+          "minItems": 1
+        },
+        "supported_vcp_versions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "extensions": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|(?!openverify\\.)[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*)$"
+          },
+          "additionalProperties": {}
+        }
+      },
+      "required": [
+        "supported_contract_versions",
+        "supported_vcp_versions"
+      ],
+      "additionalProperties": false
+    },
+    "urn:openverify:provider:0.1:initialize-result": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "urn:openverify:provider:0.1:initialize-result",
+      "type": "object",
+      "properties": {
+        "contract_version": {
+          "const": "0.1"
+        },
+        "manifest": {
+          "$ref": "urn:openverify:provider:0.1:provider-manifest"
+        },
+        "extensions": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|(?!openverify\\.)[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*)$"
+          },
+          "additionalProperties": {}
+        }
+      },
+      "required": [
+        "contract_version",
+        "manifest"
+      ],
+      "additionalProperties": false
+    },
+    "urn:openverify:provider:0.1:invocation": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "urn:openverify:provider:0.1:invocation",
+      "type": "object",
+      "properties": {
+        "invocation_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "contract_version": {
+          "const": "0.1"
+        },
+        "capability_id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|(?!openverify\\.)[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*)$"
+        },
+        "capability_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "input": {},
+        "config": {},
+        "context": {},
+        "vcp_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "deadline": {
+          "type": "string",
+          "minLength": 1,
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}[Tt]\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?(?:[Zz]|\\+00:00)$"
+        },
+        "resource_budget": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "urn:verification:draft:resource"
+          }
+        },
+        "extensions": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|(?!openverify\\.)[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*)$"
+          },
+          "additionalProperties": {}
+        }
+      },
+      "required": [
+        "invocation_id",
+        "contract_version",
+        "capability_id",
+        "capability_version",
+        "input",
+        "config"
+      ],
+      "additionalProperties": false
+    },
+    "urn:openverify:provider:0.1:outcome": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "urn:openverify:provider:0.1:outcome",
+      "type": "object",
+      "properties": {
+        "invocation_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "state": {
+          "enum": [
+            "COMPLETED",
+            "ERROR",
+            "CANCELLED",
+            "DEADLINE_EXCEEDED"
+          ]
+        },
+        "output": {},
+        "error": {
+          "$ref": "urn:openverify:provider:0.1:provider-error"
+        },
+        "resource_usage": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "urn:verification:draft:resource"
+          }
+        },
+        "extensions": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|(?!openverify\\.)[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*)$"
+          },
+          "additionalProperties": {}
+        }
+      },
+      "required": [
+        "invocation_id",
+        "state"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "state": {
+                "const": "COMPLETED"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "output"
+            ],
+            "not": {
+              "required": [
+                "error"
+              ]
+            }
+          },
+          "else": {
+            "not": {
+              "required": [
+                "output"
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "state": {
+                "const": "ERROR"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "error"
+            ]
+          },
+          "else": {
+            "not": {
+              "required": [
+                "error"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "urn:openverify:provider:0.1:provider-error": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "urn:openverify:provider:0.1:provider-error",
+      "type": "object",
+      "properties": {
+        "code": {
+          "anyOf": [
+            {
+              "enum": [
+                "CONTRACT_VERSION_UNSUPPORTED",
+                "CAPABILITY_UNAVAILABLE",
+                "CAPABILITY_VERSION_UNSUPPORTED",
+                "INVALID_INVOCATION",
+                "INVALID_CONFIG",
+                "INVALID_INPUT",
+                "INVALID_PROVIDER_OUTPUT",
+                "PROTOCOL_VIOLATION"
+              ]
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|(?!openverify\\.)[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*)$"
+            }
+          ]
+        },
+        "message": {
+          "type": "string",
+          "minLength": 1
+        },
+        "details": {}
+      },
+      "required": [
+        "code",
+        "message"
+      ],
+      "additionalProperties": false
+    },
+    "urn:openverify:provider:0.1:provider-event": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "urn:openverify:provider:0.1:provider-event",
+      "type": "object",
+      "properties": {
+        "invocation_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sequence": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        },
+        "kind": {
+          "enum": [
+            "progress",
+            "evidence",
+            "artifact",
+            "resource_usage",
+            "diagnostic",
+            "extension"
+          ]
+        },
+        "payload": {},
+        "timestamp": {
+          "type": "string",
+          "minLength": 1,
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}[Tt]\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?(?:[Zz]|\\+00:00)$"
+        },
+        "extensions": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|(?!openverify\\.)[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*)$"
+          },
+          "additionalProperties": {}
+        }
+      },
+      "required": [
+        "invocation_id",
+        "sequence",
+        "kind",
+        "payload"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "evidence"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "payload": {
+                "$ref": "urn:verification:draft:evidence"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "artifact"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "payload": {
+                "$ref": "urn:verification:draft:artifact-ref"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "resource_usage"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "payload": {
+                "type": "object",
+                "additionalProperties": {
+                  "$ref": "urn:verification:draft:resource"
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "extension"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "payload": {
+                "type": "object",
+                "properties": {
+                  "namespace": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|(?!openverify\\.)[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*)$"
+                  },
+                  "data": {}
+                },
+                "required": [
+                  "namespace",
+                  "data"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    "urn:openverify:provider:0.1:provider-manifest": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "urn:openverify:provider:0.1:provider-manifest",
+      "type": "object",
+      "properties": {
+        "provider_id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|(?!openverify\\.)[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*)$"
+        },
+        "provider_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "supported_contract_versions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true,
+          "minItems": 1
+        },
+        "supported_vcp_versions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "capabilities": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:openverify:provider:0.1:capability"
+          }
+        },
+        "extensions": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|(?!openverify\\.)[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*)$"
+          },
+          "additionalProperties": {}
+        }
+      },
+      "required": [
+        "provider_id",
+        "provider_version",
+        "supported_contract_versions",
+        "supported_vcp_versions",
+        "capabilities"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "rules": {
+    "result": [
+      {
+        "code": "RESULT_STATE",
+        "schema": {
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "if": {
+            "required": [
+              "disposition"
+            ],
+            "properties": {
+              "disposition": {
+                "const": "SKIPPED"
+              }
+            }
+          },
+          "then": {
+            "allOf": [
+              {
+                "properties": {
+                  "execution_outcome": {
+                    "type": "null"
+                  },
+                  "applicability": {
+                    "type": "null"
+                  },
+                  "determination": {
+                    "type": "null"
+                  },
+                  "judgment": {
+                    "type": "null"
+                  },
+                  "verdict": {
+                    "type": "null"
+                  },
+                  "score": {
+                    "type": "null"
+                  },
+                  "severity": {
+                    "type": "null"
+                  }
+                }
+              },
+              {
+                "not": {
+                  "required": [
+                    "judgment"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        "source": "spec/draft/result.md"
+      },
+      {
+        "code": "RESULT_STATE",
+        "schema": {
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "if": {
+            "required": [
+              "disposition"
+            ],
+            "properties": {
+              "disposition": {
+                "const": "DEFERRED"
+              }
+            }
+          },
+          "then": {
+            "allOf": [
+              {
+                "properties": {
+                  "execution_outcome": {
+                    "type": "null"
+                  },
+                  "applicability": {
+                    "type": "null"
+                  },
+                  "determination": {
+                    "type": "null"
+                  },
+                  "judgment": {
+                    "type": "null"
+                  },
+                  "verdict": {
+                    "type": "null"
+                  },
+                  "score": {
+                    "type": "null"
+                  },
+                  "severity": {
+                    "type": "null"
+                  }
+                }
+              },
+              {
+                "not": {
+                  "required": [
+                    "judgment"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        "source": "spec/draft/result.md"
+      },
+      {
+        "code": "RESULT_STATE",
+        "schema": {
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "if": {
+            "required": [
+              "disposition"
+            ],
+            "properties": {
+              "disposition": {
+                "const": "CANCELLED"
+              }
+            }
+          },
+          "then": {
+            "allOf": [
+              {
+                "properties": {
+                  "execution_outcome": {
+                    "type": "null"
+                  },
+                  "applicability": {
+                    "type": "null"
+                  },
+                  "determination": {
+                    "type": "null"
+                  },
+                  "judgment": {
+                    "type": "null"
+                  },
+                  "verdict": {
+                    "type": "null"
+                  },
+                  "score": {
+                    "type": "null"
+                  },
+                  "severity": {
+                    "type": "null"
+                  }
+                }
+              },
+              {
+                "not": {
+                  "required": [
+                    "judgment"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        "source": "spec/draft/result.md"
+      },
+      {
+        "code": "RESULT_STATE",
+        "schema": {
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "if": {
+            "required": [
+              "disposition"
+            ],
+            "properties": {
+              "disposition": {
+                "const": "EXECUTED"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "execution_outcome"
+            ],
+            "properties": {
+              "execution_outcome": {
+                "not": {
+                  "type": "null"
+                }
+              }
+            }
+          }
+        },
+        "source": "spec/draft/result.md"
+      },
+      {
+        "code": "RESULT_STATE",
+        "schema": {
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "if": {
+            "required": [
+              "execution_outcome"
+            ],
+            "properties": {
+              "execution_outcome": {
+                "const": "ERROR"
+              }
+            }
+          },
+          "then": {
+            "allOf": [
+              {
+                "properties": {
+                  "applicability": {
+                    "type": "null"
+                  },
+                  "determination": {
+                    "type": "null"
+                  },
+                  "judgment": {
+                    "type": "null"
+                  },
+                  "verdict": {
+                    "type": "null"
+                  },
+                  "score": {
+                    "type": "null"
+                  },
+                  "severity": {
+                    "type": "null"
+                  }
+                }
+              },
+              {
+                "not": {
+                  "required": [
+                    "judgment"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        "source": "spec/draft/result.md"
+      },
+      {
+        "code": "RESULT_STATE",
+        "schema": {
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "if": {
+            "required": [
+              "execution_outcome"
+            ],
+            "properties": {
+              "execution_outcome": {
+                "const": "SUCCESS"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "applicability"
+            ],
+            "properties": {
+              "applicability": {
+                "not": {
+                  "type": "null"
+                }
+              }
+            }
+          }
+        },
+        "source": "spec/draft/result.md"
+      },
+      {
+        "code": "RESULT_STATE",
+        "schema": {
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "if": {
+            "required": [
+              "applicability"
+            ],
+            "properties": {
+              "applicability": {
+                "const": "NOT_APPLICABLE"
+              }
+            }
+          },
+          "then": {
+            "allOf": [
+              {
+                "properties": {
+                  "determination": {
+                    "type": "null"
+                  },
+                  "judgment": {
+                    "type": "null"
+                  },
+                  "verdict": {
+                    "type": "null"
+                  },
+                  "score": {
+                    "type": "null"
+                  },
+                  "severity": {
+                    "type": "null"
+                  }
+                }
+              },
+              {
+                "not": {
+                  "required": [
+                    "judgment"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        "source": "spec/draft/result.md"
+      },
+      {
+        "code": "RESULT_STATE",
+        "schema": {
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "if": {
+            "required": [
+              "applicability"
+            ],
+            "properties": {
+              "applicability": {
+                "const": "APPLICABLE"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "determination"
+            ],
+            "properties": {
+              "determination": {
+                "not": {
+                  "type": "null"
+                }
+              }
+            }
+          }
+        },
+        "source": "spec/draft/result.md"
+      },
+      {
+        "code": "RESULT_STATE",
+        "schema": {
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "if": {
+            "required": [
+              "determination"
+            ],
+            "properties": {
+              "determination": {
+                "const": "UNKNOWN"
+              }
+            }
+          },
+          "then": {
+            "allOf": [
+              {
+                "properties": {
+                  "judgment": {
+                    "type": "null"
+                  },
+                  "verdict": {
+                    "type": "null"
+                  },
+                  "score": {
+                    "type": "null"
+                  },
+                  "severity": {
+                    "type": "null"
+                  }
+                }
+              },
+              {
+                "not": {
+                  "required": [
+                    "judgment"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        "source": "spec/draft/result.md"
+      }
+    ],
+    "decision": [
+      {
+        "code": "PROTOCOL_STRUCTURE",
+        "schema": {
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "if": {
+            "required": [
+              "kind"
+            ],
+            "properties": {
+              "kind": {
+                "const": "ROUTE"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "destination"
+            ],
+            "properties": {
+              "destination": {
+                "not": {
+                  "type": "null"
+                }
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "destination": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        "source": "spec/draft/result.md"
+      }
+    ],
+    "evidence": [
+      {
+        "code": "EVIDENCE_EMPTY",
+        "schema": {
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "anyOf": [
+            {
+              "required": [
+                "message"
+              ],
+              "properties": {
+                "message": {
+                  "not": {
+                    "type": "null"
+                  }
+                }
+              }
+            },
+            {
+              "required": [
+                "artifact_ref"
+              ],
+              "properties": {
+                "artifact_ref": {
+                  "not": {
+                    "type": "null"
+                  }
+                }
+              }
+            },
+            {
+              "required": [
+                "locator"
+              ],
+              "properties": {
+                "locator": {
+                  "not": {
+                    "type": "null"
+                  }
+                }
+              }
+            },
+            {
+              "required": [
+                "structured_data"
+              ],
+              "properties": {
+                "structured_data": {
+                  "not": {
+                    "type": "null"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "source": "spec/draft/knowledge.md"
+      }
+    ],
+    "extension": [
+      {
+        "code": "EXTENSION_UNSUPPORTED",
+        "schema": {
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "properties": {
+            "required": {
+              "const": false
+            }
+          }
+        },
+        "source": "spec/draft/extensions.md"
+      }
+    ],
+    "resource": [
+      {
+        "code": "RESOURCE_MEASUREMENT",
+        "schema": {
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "oneOf": [
+            {
+              "allOf": [
+                {
+                  "properties": {
+                    "kind": {
+                      "enum": [
+                        "EXACT",
+                        "ESTIMATED"
+                      ]
+                    }
+                  }
+                },
+                {
+                  "required": [
+                    "value"
+                  ],
+                  "properties": {
+                    "value": {
+                      "not": {
+                        "type": "null"
+                      }
+                    }
+                  }
+                },
+                {
+                  "properties": {
+                    "minimum": {
+                      "type": "null"
+                    },
+                    "maximum": {
+                      "type": "null"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "allOf": [
+                {
+                  "required": [
+                    "kind"
+                  ],
+                  "properties": {
+                    "kind": {
+                      "const": "RANGE"
+                    }
+                  }
+                },
+                {
+                  "required": [
+                    "minimum"
+                  ],
+                  "properties": {
+                    "minimum": {
+                      "not": {
+                        "type": "null"
+                      }
+                    }
+                  }
+                },
+                {
+                  "required": [
+                    "maximum"
+                  ],
+                  "properties": {
+                    "maximum": {
+                      "not": {
+                        "type": "null"
+                      }
+                    }
+                  }
+                },
+                {
+                  "properties": {
+                    "value": {
+                      "type": "null"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "allOf": [
+                {
+                  "required": [
+                    "kind"
+                  ],
+                  "properties": {
+                    "kind": {
+                      "const": "UNKNOWN"
+                    }
+                  }
+                },
+                {
+                  "properties": {
+                    "value": {
+                      "type": "null"
+                    },
+                    "minimum": {
+                      "type": "null"
+                    },
+                    "maximum": {
+                      "type": "null"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "source": "spec/draft/resources.md"
+      }
+    ]
+  },
+  "compound": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$defs": {
+      "urn:verification:draft:activation": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "description": "Typed explicit executable dataflow; see spec/draft/dataflow.md.",
+        "type": "object",
+        "properties": {
+          "outcome": {
+            "type": "string",
+            "enum": [
+              "ACTIVATE",
+              "DO_NOT_ACTIVATE"
+            ]
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "outcome",
+          "reason"
+        ],
+        "additionalProperties": false
+      },
+      "urn:verification:draft:admission": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "description": "Typed explicit executable dataflow; see spec/draft/dataflow.md.",
+        "type": "object",
+        "properties": {
+          "outcome": {
+            "type": "string",
+            "enum": [
+              "RUN",
+              "SKIP",
+              "DEFER"
+            ]
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "outcome",
+          "reason"
+        ],
+        "additionalProperties": false
+      },
+      "urn:verification:draft:artifact-ref": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "description": "External artifact identity; opaque locator does not authorize fetching.",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "type": {
+            "type": "string",
+            "minLength": 1
+          },
+          "locator": {},
+          "schema_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "metadata": {
+            "type": "object"
+          },
+          "extensions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/urn:verification:draft:extension"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "type",
+          "locator"
+        ],
+        "additionalProperties": false
+      },
+      "urn:verification:draft:cancellation-event": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "description": "Typed explicit executable dataflow; see spec/draft/dataflow.md.",
+        "type": "object",
+        "properties": {
+          "node_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "phase": {
+            "type": "string",
+            "enum": [
+              "BEFORE_START",
+              "RUNNING"
+            ]
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "node_id",
+          "phase",
+          "reason"
+        ],
+        "additionalProperties": false
+      },
+      "urn:verification:draft:decision": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "description": "Verification control decision, distinct from judgment; ROUTE needs destination.",
+        "type": "object",
+        "properties": {
+          "protocol": {
+            "const": "draft"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "CONTINUE",
+              "STOP_SUCCESS",
+              "STOP_FAILURE",
+              "ROUTE",
+              "RETRY",
+              "DEFER"
+            ]
+          },
+          "destination": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "reason": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "metadata": {
+            "type": "object"
+          },
+          "extensions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/urn:verification:draft:extension"
+            }
+          }
+        },
+        "required": [
+          "protocol",
+          "kind"
+        ],
+        "additionalProperties": false
+      },
+      "urn:verification:draft:evidence": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "description": "Supporting observations; prose requires at least one meaningful component.",
+        "type": "object",
+        "properties": {
+          "id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "message": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "artifact_ref": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/urn:verification:draft:artifact-ref"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "locator": {},
+          "structured_data": {},
+          "metadata": {
+            "type": "object"
+          },
+          "extensions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/urn:verification:draft:extension"
+            }
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "urn:verification:draft:execution-observation": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "description": "Typed explicit executable dataflow; see spec/draft/dataflow.md.",
+        "type": "object",
+        "properties": {
+          "outputs": {
+            "type": "object"
+          },
+          "usage": {
+            "type": "object",
+            "propertyNames": {
+              "type": "string",
+              "minLength": 1
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/urn:verification:draft:resource"
+            }
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/urn:verification:draft:evidence"
+            }
+          },
+          "error": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string",
+                "minLength": 1
+              },
+              "message": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "code",
+              "message"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "outputs",
+          "usage",
+          "evidence"
+        ],
+        "additionalProperties": false
+      },
+      "urn:verification:draft:extension": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "description": "Namespaced data; preserve optional, reject unsupported required meaning.",
+        "type": "object",
+        "properties": {
+          "namespace": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": ":"
+          },
+          "version": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required": {
+            "type": "boolean"
+          },
+          "data": {}
+        },
+        "required": [
+          "namespace",
+          "version",
+          "required",
+          "data"
+        ],
+        "additionalProperties": false
+      },
+      "urn:verification:draft:graph": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "description": "Typed DAG with explicit input bindings, operation requirements and aggregate membership.",
+        "type": "object",
+        "properties": {
+          "nodes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "kind": {
+                  "type": "string",
+                  "enum": [
+                    "DERIVE",
+                    "EVALUATE",
+                    "CONTROL",
+                    "AGGREGATE"
+                  ]
+                },
+                "operation": {
+                  "$ref": "#/$defs/urn:verification:draft:operation-requirement"
+                },
+                "inputs": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/urn:verification:draft:input-port"
+                  }
+                },
+                "outputs": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/urn:verification:draft:output-port"
+                  }
+                },
+                "bindings": {
+                  "type": "object",
+                  "propertyNames": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "additionalProperties": {
+                    "$ref": "#/$defs/urn:verification:draft:value-source"
+                  }
+                },
+                "aggregate_inputs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "config": {
+                  "type": "object"
+                },
+                "config_schema": {
+                  "type": [
+                    "object",
+                    "boolean"
+                  ]
+                },
+                "resource_estimate": {
+                  "type": "object",
+                  "propertyNames": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "additionalProperties": {
+                    "$ref": "#/$defs/urn:verification:draft:resource"
+                  }
+                },
+                "metadata": {
+                  "type": "object"
+                },
+                "extensions": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/urn:verification:draft:extension"
+                  }
+                }
+              },
+              "required": [
+                "id",
+                "kind",
+                "operation",
+                "inputs",
+                "outputs",
+                "bindings"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "edges": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "from_node": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "to_node": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "guard": {
+                  "anyOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "source": {
+                          "$ref": "#/$defs/urn:verification:draft:value-source"
+                        },
+                        "pointer": {
+                          "type": "string"
+                        },
+                        "value": {}
+                      },
+                      "required": [
+                        "source",
+                        "pointer",
+                        "value"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "from_node",
+                "to_node"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "features": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "CYCLES",
+                "DYNAMIC_EXPANSION"
+              ]
+            }
+          }
+        },
+        "required": [
+          "nodes"
+        ],
+        "additionalProperties": false
+      },
+      "urn:verification:draft:input-port": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "description": "Typed explicit executable dataflow; see spec/draft/dataflow.md.",
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "schema": {
+            "type": [
+              "object",
+              "boolean"
+            ]
+          },
+          "required": {
+            "type": "boolean"
+          },
+          "on_unavailable": {
+            "type": "string",
+            "enum": [
+              "BLOCK",
+              "OMIT",
+              "DEFAULT"
+            ]
+          },
+          "default": {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "const": "CONSTANT"
+              },
+              "value": {}
+            },
+            "required": [
+              "kind",
+              "value"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "name",
+          "schema",
+          "required",
+          "on_unavailable"
+        ],
+        "additionalProperties": false
+      },
+      "urn:verification:draft:input-resolution": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "description": "Typed explicit executable dataflow; see spec/draft/dataflow.md.",
+        "type": "object",
+        "properties": {
+          "source": {
+            "$ref": "#/$defs/urn:verification:draft:value-source"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "AVAILABLE",
+              "ABSENT",
+              "PRODUCER_NOT_EXECUTED",
+              "PRODUCER_ERROR",
+              "OUTPUT_MISSING",
+              "INVALID"
+            ]
+          },
+          "used_default": {
+            "type": "boolean"
+          },
+          "value": {}
+        },
+        "required": [
+          "status",
+          "used_default"
+        ],
+        "additionalProperties": false
+      },
+      "urn:verification:draft:operation-requirement": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "description": "Typed explicit executable dataflow; see spec/draft/dataflow.md.",
+        "type": "object",
+        "properties": {
+          "capability_id": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*){2,})$"
+          },
+          "capability_version": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "capability_id",
+          "capability_version"
+        ],
+        "additionalProperties": false
+      },
+      "urn:verification:draft:output-port": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "description": "Typed explicit executable dataflow; see spec/draft/dataflow.md.",
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "schema": {
+            "type": [
+              "object",
+              "boolean"
+            ]
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "INFORMATION",
+              "RESULT",
+              "DECISION"
+            ]
+          }
+        },
+        "required": [
+          "name",
+          "schema",
+          "role"
+        ],
+        "additionalProperties": false
+      },
+      "urn:verification:draft:policy-evaluation": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "description": "Typed explicit executable dataflow; see spec/draft/dataflow.md.",
+        "type": "object",
+        "properties": {
+          "role": {
+            "type": "string",
+            "enum": [
+              "ACTIVATION",
+              "SELECTION",
+              "ADMISSION"
+            ]
+          },
+          "input_values": {
+            "type": "object"
+          },
+          "input_resolutions": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/$defs/urn:verification:draft:input-resolution"
+            }
+          },
+          "outcome": {
+            "oneOf": [
+              {
+                "$ref": "#/$defs/urn:verification:draft:activation"
+              },
+              {
+                "$ref": "#/$defs/urn:verification:draft:selection"
+              },
+              {
+                "$ref": "#/$defs/urn:verification:draft:admission"
+              }
+            ]
+          },
+          "executor_ref": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "executor_version": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "role",
+          "input_values",
+          "input_resolutions",
+          "outcome"
+        ],
+        "additionalProperties": false
+      },
+      "urn:verification:draft:profile": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "description": "Named common choices organized by concept; this is not the core ontology.",
+        "type": "object",
+        "properties": {
+          "protocol": {
+            "const": "draft"
+          },
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "version": {
+            "type": "string",
+            "minLength": 1
+          },
+          "flattened_statuses": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "severity_domain": {
+            "$ref": "#/$defs/urn:verification:draft:severity-domain"
+          },
+          "aggregators": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "admission_policies": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "decisions": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "resource_dimensions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/urn:verification:draft:resource-dimension"
+            }
+          },
+          "metadata": {
+            "type": "object"
+          },
+          "extensions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/urn:verification:draft:extension"
+            }
+          }
+        },
+        "required": [
+          "protocol",
+          "id",
+          "version",
+          "flattened_statuses",
+          "severity_domain",
+          "aggregators",
+          "admission_policies",
+          "decisions",
+          "resource_dimensions"
+        ],
+        "additionalProperties": false
+      },
+      "urn:verification:draft:provider-binding": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "description": "Concrete provider/capability identity used in an occurrence; see spec/draft/provider-binding.md.",
+        "type": "object",
+        "properties": {
+          "provider_id": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|(?!openverify\\.)[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*)$"
+          },
+          "provider_version": {
+            "type": "string",
+            "minLength": 1
+          },
+          "capability_id": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|(?!openverify\\.)[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*)$"
+          },
+          "capability_version": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "provider_id",
+          "provider_version",
+          "capability_id",
+          "capability_version"
+        ],
+        "additionalProperties": false
+      },
+      "urn:verification:draft:resource-dimension": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "description": "Open resource dimension with explicit unit and semantic description.",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "unit": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "metadata": {
+            "type": "object"
+          },
+          "extensions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/urn:verification:draft:extension"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "unit",
+          "description"
+        ],
+        "additionalProperties": false
+      },
+      "urn:verification:draft:resource": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "description": "Unit-bearing measurement with kind-dependent value or range fields.",
+        "type": "object",
+        "properties": {
+          "unit": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "EXACT",
+              "ESTIMATED",
+              "RANGE",
+              "UNKNOWN"
+            ]
+          },
+          "value": {
+            "anyOf": [
+              {
+                "type": "number",
+                "minimum": 0
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "minimum": {
+            "anyOf": [
+              {
+                "type": "number",
+                "minimum": 0
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "maximum": {
+            "anyOf": [
+              {
+                "type": "number",
+                "minimum": 0
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "unit",
+          "kind"
+        ],
+        "additionalProperties": false
+      },
+      "urn:verification:draft:result": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "description": "Independent result axes and observations; prose restricts state combinations.",
+        "type": "object",
+        "properties": {
+          "protocol": {
+            "const": "draft"
+          },
+          "disposition": {
+            "type": "string",
+            "enum": [
+              "EXECUTED",
+              "SKIPPED",
+              "DEFERRED",
+              "CANCELLED"
+            ]
+          },
+          "execution_outcome": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "SUCCESS",
+                  "ERROR"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "applicability": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "APPLICABLE",
+                  "NOT_APPLICABLE"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "determination": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "KNOWN",
+                  "UNKNOWN"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "judgment": {},
+          "verdict": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "PASS",
+                  "FAIL"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "score": {
+            "anyOf": [
+              {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "severity": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "domain": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "label": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "domain",
+                  "label"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/urn:verification:draft:evidence"
+            }
+          },
+          "output": {},
+          "usage": {
+            "type": "object",
+            "propertyNames": {
+              "type": "string",
+              "minLength": 1
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/urn:verification:draft:resource"
+            }
+          },
+          "metadata": {
+            "type": "object"
+          },
+          "extensions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/urn:verification:draft:extension"
+            }
+          }
+        },
+        "required": [
+          "protocol",
+          "disposition"
+        ],
+        "additionalProperties": false
+      },
+      "urn:verification:draft:run-record": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "description": "Snapshots retaining identity, admission, lineage, outputs, usage and UTC timing.",
+        "type": "object",
+        "properties": {
+          "protocol": {
+            "const": "draft"
+          },
+          "run_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "definition": {
+            "$ref": "#/$defs/urn:verification:draft:verification-definition"
+          },
+          "definition_fingerprint": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^local-sha256:[0-9a-f]{64}$"
+          },
+          "subject": {
+            "$ref": "#/$defs/urn:verification:draft:artifact-ref"
+          },
+          "initial_context": {
+            "type": "object"
+          },
+          "run_inputs": {
+            "type": "object"
+          },
+          "opportunity_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "admission": {
+            "$ref": "#/$defs/urn:verification:draft:admission"
+          },
+          "policy_evaluations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/urn:verification:draft:policy-evaluation"
+            }
+          },
+          "cancellation": {
+            "$ref": "#/$defs/urn:verification:draft:cancellation-event"
+          },
+          "provider_bindings": {
+            "type": "object",
+            "propertyNames": {
+              "type": "string",
+              "minLength": 1
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/urn:verification:draft:provider-binding"
+            }
+          },
+          "started_at": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "(?:[Zz]|\\+00:00)$"
+          },
+          "finished_at": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "(?:[Zz]|\\+00:00)$"
+          },
+          "nodes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "node_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "kind": {
+                  "type": "string",
+                  "enum": [
+                    "DERIVE",
+                    "EVALUATE",
+                    "CONTROL",
+                    "AGGREGATE"
+                  ]
+                },
+                "operation": {
+                  "$ref": "#/$defs/urn:verification:draft:operation-requirement"
+                },
+                "executor_ref": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "executor_version": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "provider_binding": {
+                  "$ref": "#/$defs/urn:verification:draft:provider-binding"
+                },
+                "provider_output_error": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "const": "INVALID_PROVIDER_OUTPUT"
+                    },
+                    "message": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "message"
+                  ],
+                  "additionalProperties": false
+                },
+                "upstream_node_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "upstream_results": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "$ref": "#/$defs/urn:verification:draft:result"
+                  }
+                },
+                "input_values": {
+                  "type": "object"
+                },
+                "input_resolutions": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "$ref": "#/$defs/urn:verification:draft:input-resolution"
+                  }
+                },
+                "started_at": {
+                  "type": "string",
+                  "format": "date-time",
+                  "pattern": "(?:[Zz]|\\+00:00)$"
+                },
+                "finished_at": {
+                  "type": "string",
+                  "format": "date-time",
+                  "pattern": "(?:[Zz]|\\+00:00)$"
+                },
+                "usage": {
+                  "type": "object",
+                  "propertyNames": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "additionalProperties": {
+                    "$ref": "#/$defs/urn:verification:draft:resource"
+                  }
+                },
+                "state": {
+                  "type": "string",
+                  "enum": [
+                    "SUCCESS",
+                    "ERROR",
+                    "NONEXECUTED",
+                    "CANCELLED"
+                  ]
+                },
+                "reason": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "observation": {
+                  "$ref": "#/$defs/urn:verification:draft:execution-observation"
+                },
+                "information": {
+                  "type": "object"
+                },
+                "result": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/$defs/urn:verification:draft:result"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "decision": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/$defs/urn:verification:draft:decision"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "node_id",
+                "kind",
+                "operation",
+                "upstream_node_ids",
+                "upstream_results",
+                "input_values",
+                "input_resolutions",
+                "started_at",
+                "finished_at",
+                "usage",
+                "state",
+                "information"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "final_results": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/$defs/urn:verification:draft:result"
+            }
+          },
+          "metadata": {
+            "type": "object"
+          },
+          "extensions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/urn:verification:draft:extension"
+            }
+          }
+        },
+        "required": [
+          "protocol",
+          "run_id",
+          "definition",
+          "definition_fingerprint",
+          "subject",
+          "initial_context",
+          "run_inputs",
+          "opportunity_id",
+          "admission",
+          "policy_evaluations",
+          "started_at",
+          "finished_at",
+          "nodes",
+          "final_results"
+        ],
+        "additionalProperties": false
+      },
+      "urn:verification:draft:selection": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "description": "Typed explicit executable dataflow; see spec/draft/dataflow.md.",
+        "type": "object",
+        "properties": {
+          "subjects": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/urn:verification:draft:artifact-ref"
+            }
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "subjects",
+          "reason"
+        ],
+        "additionalProperties": false
+      },
+      "urn:verification:draft:severity-domain": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "description": "Ordered severity labels; prose requires unique labels and distinct ranks.",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "levels": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "rank": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "label",
+                "rank"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "id",
+          "levels"
+        ],
+        "additionalProperties": false
+      },
+      "urn:verification:draft:value-source": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "description": "Typed explicit executable dataflow; see spec/draft/dataflow.md.",
+        "oneOf": [
+          {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "const": "CONSTANT"
+              },
+              "value": {}
+            },
+            "required": [
+              "kind",
+              "value"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "const": "RUN_INPUT"
+              },
+              "name": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "kind",
+              "name"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "const": "EXTERNAL_REFERENCE"
+              },
+              "reference": {
+                "$ref": "#/$defs/urn:verification:draft:artifact-ref"
+              }
+            },
+            "required": [
+              "kind",
+              "reference"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "const": "UPSTREAM_OUTPUT"
+              },
+              "node_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "output": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "kind",
+              "node_id",
+              "output"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      },
+      "urn:verification:draft:verification-definition": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "description": "Versioned subject/criterion, judgment schema, graph and policy.",
+        "type": "object",
+        "properties": {
+          "protocol": {
+            "const": "draft"
+          },
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "version": {
+            "type": "string",
+            "minLength": 1
+          },
+          "subject": {
+            "$ref": "#/$defs/urn:verification:draft:artifact-ref"
+          },
+          "criterion": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "description": {
+                "type": "string",
+                "minLength": 1
+              },
+              "metadata": {
+                "type": "object"
+              },
+              "extensions": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/urn:verification:draft:extension"
+                }
+              }
+            },
+            "required": [
+              "id",
+              "description"
+            ],
+            "additionalProperties": false
+          },
+          "judgment_schema": {
+            "type": [
+              "object",
+              "boolean"
+            ]
+          },
+          "run_inputs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/urn:verification:draft:input-port"
+            }
+          },
+          "satisfaction_mapping": {
+            "anyOf": [
+              {
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "graph": {
+            "$ref": "#/$defs/urn:verification:draft:graph"
+          },
+          "execution_policy": {
+            "type": "object",
+            "properties": {
+              "activation": {
+                "type": "object",
+                "properties": {
+                  "operation": {
+                    "$ref": "#/$defs/urn:verification:draft:operation-requirement"
+                  },
+                  "config": {
+                    "type": "object"
+                  },
+                  "config_schema": {
+                    "type": [
+                      "object",
+                      "boolean"
+                    ]
+                  },
+                  "inputs": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/$defs/urn:verification:draft:input-port"
+                    }
+                  },
+                  "bindings": {
+                    "type": "object",
+                    "propertyNames": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "additionalProperties": {
+                      "$ref": "#/$defs/urn:verification:draft:value-source"
+                    }
+                  },
+                  "executor_ref": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [],
+                "additionalProperties": false
+              },
+              "selection": {
+                "type": "object",
+                "properties": {
+                  "operation": {
+                    "$ref": "#/$defs/urn:verification:draft:operation-requirement"
+                  },
+                  "config": {
+                    "type": "object"
+                  },
+                  "config_schema": {
+                    "type": [
+                      "object",
+                      "boolean"
+                    ]
+                  },
+                  "inputs": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/$defs/urn:verification:draft:input-port"
+                    }
+                  },
+                  "bindings": {
+                    "type": "object",
+                    "propertyNames": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "additionalProperties": {
+                      "$ref": "#/$defs/urn:verification:draft:value-source"
+                    }
+                  },
+                  "executor_ref": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [],
+                "additionalProperties": false
+              },
+              "admission": {
+                "type": "object",
+                "properties": {
+                  "operation": {
+                    "$ref": "#/$defs/urn:verification:draft:operation-requirement"
+                  },
+                  "config": {
+                    "type": "object"
+                  },
+                  "config_schema": {
+                    "type": [
+                      "object",
+                      "boolean"
+                    ]
+                  },
+                  "inputs": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/$defs/urn:verification:draft:input-port"
+                    }
+                  },
+                  "bindings": {
+                    "type": "object",
+                    "propertyNames": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "additionalProperties": {
+                      "$ref": "#/$defs/urn:verification:draft:value-source"
+                    }
+                  },
+                  "strategy": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "probability": {
+                    "anyOf": [
+                      {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 1
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                },
+                "required": [],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "activation",
+              "selection",
+              "admission"
+            ],
+            "additionalProperties": false
+          },
+          "metadata": {
+            "type": "object"
+          },
+          "extensions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/urn:verification:draft:extension"
+            }
+          }
+        },
+        "required": [
+          "protocol",
+          "id",
+          "version",
+          "subject",
+          "criterion",
+          "judgment_schema",
+          "run_inputs",
+          "graph",
+          "execution_policy"
+        ],
+        "additionalProperties": false
+      },
+      "urn:openverify:provider:0.1:cancel-request": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "invocation_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          },
+          "extensions": {
+            "type": "object",
+            "propertyNames": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|(?!openverify\\.)[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*)$"
+            },
+            "additionalProperties": {}
+          }
+        },
+        "required": [
+          "invocation_id"
+        ],
+        "additionalProperties": false
+      },
+      "urn:openverify:provider:0.1:capability": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "capability_id": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|(?!openverify\\.)[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*)$"
+          },
+          "capability_version": {
+            "type": "string",
+            "minLength": 1
+          },
+          "input_schema": {
+            "type": [
+              "object",
+              "boolean"
+            ]
+          },
+          "output_schema": {
+            "type": [
+              "object",
+              "boolean"
+            ]
+          },
+          "config_schema": {
+            "type": [
+              "object",
+              "boolean"
+            ]
+          },
+          "lifecycle_features": {
+            "type": "object",
+            "properties": {
+              "streaming": {
+                "type": "boolean"
+              },
+              "cancellation": {
+                "type": "boolean"
+              },
+              "deadlines": {
+                "type": "boolean"
+              },
+              "resource_reporting": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "streaming",
+              "cancellation",
+              "deadlines",
+              "resource_reporting"
+            ],
+            "additionalProperties": false
+          },
+          "vcp_version": {
+            "type": "string",
+            "minLength": 1
+          },
+          "extensions": {
+            "type": "object",
+            "propertyNames": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|(?!openverify\\.)[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*)$"
+            },
+            "additionalProperties": {}
+          }
+        },
+        "required": [
+          "capability_id",
+          "capability_version",
+          "input_schema",
+          "output_schema",
+          "config_schema",
+          "lifecycle_features"
+        ],
+        "additionalProperties": false
+      },
+      "urn:openverify:provider:0.1:initialize-request": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "supported_contract_versions": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true,
+            "minItems": 1
+          },
+          "supported_vcp_versions": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "extensions": {
+            "type": "object",
+            "propertyNames": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|(?!openverify\\.)[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*)$"
+            },
+            "additionalProperties": {}
+          }
+        },
+        "required": [
+          "supported_contract_versions",
+          "supported_vcp_versions"
+        ],
+        "additionalProperties": false
+      },
+      "urn:openverify:provider:0.1:initialize-result": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "contract_version": {
+            "const": "0.1"
+          },
+          "manifest": {
+            "$ref": "#/$defs/urn:openverify:provider:0.1:provider-manifest"
+          },
+          "extensions": {
+            "type": "object",
+            "propertyNames": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|(?!openverify\\.)[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*)$"
+            },
+            "additionalProperties": {}
+          }
+        },
+        "required": [
+          "contract_version",
+          "manifest"
+        ],
+        "additionalProperties": false
+      },
+      "urn:openverify:provider:0.1:invocation": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "invocation_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "contract_version": {
+            "const": "0.1"
+          },
+          "capability_id": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|(?!openverify\\.)[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*)$"
+          },
+          "capability_version": {
+            "type": "string",
+            "minLength": 1
+          },
+          "input": {},
+          "config": {},
+          "context": {},
+          "vcp_version": {
+            "type": "string",
+            "minLength": 1
+          },
+          "deadline": {
+            "type": "string",
+            "minLength": 1,
+            "format": "date-time",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}[Tt]\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?(?:[Zz]|\\+00:00)$"
+          },
+          "resource_budget": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/$defs/urn:verification:draft:resource"
+            }
+          },
+          "extensions": {
+            "type": "object",
+            "propertyNames": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|(?!openverify\\.)[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*)$"
+            },
+            "additionalProperties": {}
+          }
+        },
+        "required": [
+          "invocation_id",
+          "contract_version",
+          "capability_id",
+          "capability_version",
+          "input",
+          "config"
+        ],
+        "additionalProperties": false
+      },
+      "urn:openverify:provider:0.1:outcome": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "invocation_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "state": {
+            "enum": [
+              "COMPLETED",
+              "ERROR",
+              "CANCELLED",
+              "DEADLINE_EXCEEDED"
+            ]
+          },
+          "output": {},
+          "error": {
+            "$ref": "#/$defs/urn:openverify:provider:0.1:provider-error"
+          },
+          "resource_usage": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/$defs/urn:verification:draft:resource"
+            }
+          },
+          "extensions": {
+            "type": "object",
+            "propertyNames": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|(?!openverify\\.)[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*)$"
+            },
+            "additionalProperties": {}
+          }
+        },
+        "required": [
+          "invocation_id",
+          "state"
+        ],
+        "additionalProperties": false,
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "state": {
+                  "const": "COMPLETED"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "output"
+              ],
+              "not": {
+                "required": [
+                  "error"
+                ]
+              }
+            },
+            "else": {
+              "not": {
+                "required": [
+                  "output"
+                ]
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "state": {
+                  "const": "ERROR"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "error"
+              ]
+            },
+            "else": {
+              "not": {
+                "required": [
+                  "error"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "urn:openverify:provider:0.1:provider-error": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "code": {
+            "anyOf": [
+              {
+                "enum": [
+                  "CONTRACT_VERSION_UNSUPPORTED",
+                  "CAPABILITY_UNAVAILABLE",
+                  "CAPABILITY_VERSION_UNSUPPORTED",
+                  "INVALID_INVOCATION",
+                  "INVALID_CONFIG",
+                  "INVALID_INPUT",
+                  "INVALID_PROVIDER_OUTPUT",
+                  "PROTOCOL_VIOLATION"
+                ]
+              },
+              {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|(?!openverify\\.)[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*)$"
+              }
+            ]
+          },
+          "message": {
+            "type": "string",
+            "minLength": 1
+          },
+          "details": {}
+        },
+        "required": [
+          "code",
+          "message"
+        ],
+        "additionalProperties": false
+      },
+      "urn:openverify:provider:0.1:provider-event": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "invocation_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sequence": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 9007199254740991
+          },
+          "kind": {
+            "enum": [
+              "progress",
+              "evidence",
+              "artifact",
+              "resource_usage",
+              "diagnostic",
+              "extension"
+            ]
+          },
+          "payload": {},
+          "timestamp": {
+            "type": "string",
+            "minLength": 1,
+            "format": "date-time",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}[Tt]\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?(?:[Zz]|\\+00:00)$"
+          },
+          "extensions": {
+            "type": "object",
+            "propertyNames": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|(?!openverify\\.)[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*)$"
+            },
+            "additionalProperties": {}
+          }
+        },
+        "required": [
+          "invocation_id",
+          "sequence",
+          "kind",
+          "payload"
+        ],
+        "additionalProperties": false,
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "kind": {
+                  "const": "evidence"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "payload": {
+                  "$ref": "#/$defs/urn:verification:draft:evidence"
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "kind": {
+                  "const": "artifact"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "payload": {
+                  "$ref": "#/$defs/urn:verification:draft:artifact-ref"
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "kind": {
+                  "const": "resource_usage"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "payload": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "$ref": "#/$defs/urn:verification:draft:resource"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "kind": {
+                  "const": "extension"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "payload": {
+                  "type": "object",
+                  "properties": {
+                    "namespace": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|(?!openverify\\.)[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*)$"
+                    },
+                    "data": {}
+                  },
+                  "required": [
+                    "namespace",
+                    "data"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            }
+          }
+        ]
+      },
+      "urn:openverify:provider:0.1:provider-manifest": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "provider_id": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|(?!openverify\\.)[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*)$"
+          },
+          "provider_version": {
+            "type": "string",
+            "minLength": 1
+          },
+          "supported_contract_versions": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true,
+            "minItems": 1
+          },
+          "supported_vcp_versions": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "capabilities": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/urn:openverify:provider:0.1:capability"
+            }
+          },
+          "extensions": {
+            "type": "object",
+            "propertyNames": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|(?!openverify\\.)[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*)$"
+            },
+            "additionalProperties": {}
+          }
+        },
+        "required": [
+          "provider_id",
+          "provider_version",
+          "supported_contract_versions",
+          "supported_vcp_versions",
+          "capabilities"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "meta": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$ref": "#/$defs/https:~1~1json-schema.org~1draft~12020-12~1schema",
+    "$defs": {
+      "https://json-schema.org/draft/2020-12/meta/validation": {
+        "$vocabulary": {
+          "https://json-schema.org/draft/2020-12/vocab/validation": true
+        },
+        "title": "Validation vocabulary meta-schema",
+        "type": [
+          "object",
+          "boolean"
+        ],
+        "properties": {
+          "type": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/https:~1~1json-schema.org~1draft~12020-12~1meta~1validation/$defs/simpleTypes"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/https:~1~1json-schema.org~1draft~12020-12~1meta~1validation/$defs/simpleTypes"
+                },
+                "minItems": 1,
+                "uniqueItems": true
+              }
+            ]
+          },
+          "const": true,
+          "enum": {
+            "type": "array",
+            "items": true
+          },
+          "multipleOf": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "maximum": {
+            "type": "number"
+          },
+          "exclusiveMaximum": {
+            "type": "number"
+          },
+          "minimum": {
+            "type": "number"
+          },
+          "exclusiveMinimum": {
+            "type": "number"
+          },
+          "maxLength": {
+            "$ref": "#/$defs/https:~1~1json-schema.org~1draft~12020-12~1meta~1validation/$defs/nonNegativeInteger"
+          },
+          "minLength": {
+            "$ref": "#/$defs/https:~1~1json-schema.org~1draft~12020-12~1meta~1validation/$defs/nonNegativeIntegerDefault0"
+          },
+          "pattern": {
+            "type": "string",
+            "format": "regex"
+          },
+          "maxItems": {
+            "$ref": "#/$defs/https:~1~1json-schema.org~1draft~12020-12~1meta~1validation/$defs/nonNegativeInteger"
+          },
+          "minItems": {
+            "$ref": "#/$defs/https:~1~1json-schema.org~1draft~12020-12~1meta~1validation/$defs/nonNegativeIntegerDefault0"
+          },
+          "uniqueItems": {
+            "type": "boolean",
+            "default": false
+          },
+          "maxContains": {
+            "$ref": "#/$defs/https:~1~1json-schema.org~1draft~12020-12~1meta~1validation/$defs/nonNegativeInteger"
+          },
+          "minContains": {
+            "$ref": "#/$defs/https:~1~1json-schema.org~1draft~12020-12~1meta~1validation/$defs/nonNegativeInteger",
+            "default": 1
+          },
+          "maxProperties": {
+            "$ref": "#/$defs/https:~1~1json-schema.org~1draft~12020-12~1meta~1validation/$defs/nonNegativeInteger"
+          },
+          "minProperties": {
+            "$ref": "#/$defs/https:~1~1json-schema.org~1draft~12020-12~1meta~1validation/$defs/nonNegativeIntegerDefault0"
+          },
+          "required": {
+            "$ref": "#/$defs/https:~1~1json-schema.org~1draft~12020-12~1meta~1validation/$defs/stringArray"
+          },
+          "dependentRequired": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/$defs/https:~1~1json-schema.org~1draft~12020-12~1meta~1validation/$defs/stringArray"
+            }
+          }
+        },
+        "$defs": {
+          "nonNegativeInteger": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "nonNegativeIntegerDefault0": {
+            "$ref": "#/$defs/https:~1~1json-schema.org~1draft~12020-12~1meta~1validation/$defs/nonNegativeInteger",
+            "default": 0
+          },
+          "simpleTypes": {
+            "enum": [
+              "array",
+              "boolean",
+              "integer",
+              "null",
+              "number",
+              "object",
+              "string"
+            ]
+          },
+          "stringArray": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true,
+            "default": []
+          }
+        }
+      },
+      "https://json-schema.org/draft/2020-12/meta/format-assertion": {
+        "$vocabulary": {
+          "https://json-schema.org/draft/2020-12/vocab/format-assertion": true
+        },
+        "title": "Format vocabulary meta-schema for assertion results",
+        "type": [
+          "object",
+          "boolean"
+        ],
+        "properties": {
+          "format": {
+            "type": "string"
+          }
+        }
+      },
+      "https://json-schema.org/draft/2020-12/schema": {
+        "$vocabulary": {
+          "https://json-schema.org/draft/2020-12/vocab/core": true,
+          "https://json-schema.org/draft/2020-12/vocab/applicator": true,
+          "https://json-schema.org/draft/2020-12/vocab/unevaluated": true,
+          "https://json-schema.org/draft/2020-12/vocab/validation": true,
+          "https://json-schema.org/draft/2020-12/vocab/meta-data": true,
+          "https://json-schema.org/draft/2020-12/vocab/format-annotation": true,
+          "https://json-schema.org/draft/2020-12/vocab/content": true
+        },
+        "title": "Core and Validation specifications meta-schema",
+        "allOf": [
+          {
+            "$ref": "#/$defs/https:~1~1json-schema.org~1draft~12020-12~1meta~1core"
+          },
+          {
+            "$ref": "#/$defs/https:~1~1json-schema.org~1draft~12020-12~1meta~1applicator"
+          },
+          {
+            "$ref": "#/$defs/https:~1~1json-schema.org~1draft~12020-12~1meta~1unevaluated"
+          },
+          {
+            "$ref": "#/$defs/https:~1~1json-schema.org~1draft~12020-12~1meta~1validation"
+          },
+          {
+            "$ref": "#/$defs/https:~1~1json-schema.org~1draft~12020-12~1meta~1meta-data"
+          },
+          {
+            "$ref": "#/$defs/https:~1~1json-schema.org~1draft~12020-12~1meta~1format-annotation"
+          },
+          {
+            "$ref": "#/$defs/https:~1~1json-schema.org~1draft~12020-12~1meta~1content"
+          }
+        ],
+        "type": [
+          "object",
+          "boolean"
+        ],
+        "$comment": "This meta-schema also defines keywords that have appeared in previous drafts in order to prevent incompatible extensions as they remain in common use.",
+        "properties": {
+          "definitions": {
+            "$comment": "\"definitions\" has been replaced by \"$defs\".",
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/$defs/https:~1~1json-schema.org~1draft~12020-12~1schema"
+            },
+            "deprecated": true,
+            "default": {}
+          },
+          "dependencies": {
+            "$comment": "\"dependencies\" has been split and replaced by \"dependentSchemas\" and \"dependentRequired\" in order to serve their differing semantics.",
+            "type": "object",
+            "additionalProperties": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/https:~1~1json-schema.org~1draft~12020-12~1schema"
+                },
+                {
+                  "$ref": "#/$defs/https:~1~1json-schema.org~1draft~12020-12~1meta~1validation/$defs/stringArray"
+                }
+              ]
+            },
+            "deprecated": true,
+            "default": {}
+          },
+          "$recursiveAnchor": {
+            "$comment": "\"$recursiveAnchor\" has been replaced by \"$dynamicAnchor\".",
+            "$ref": "#/$defs/https:~1~1json-schema.org~1draft~12020-12~1meta~1core/$defs/anchorString",
+            "deprecated": true
+          },
+          "$recursiveRef": {
+            "$comment": "\"$recursiveRef\" has been replaced by \"$dynamicRef\".",
+            "$ref": "#/$defs/https:~1~1json-schema.org~1draft~12020-12~1meta~1core/$defs/uriReferenceString",
+            "deprecated": true
+          }
+        }
+      },
+      "https://json-schema.org/draft/2020-12/meta/core": {
+        "$vocabulary": {
+          "https://json-schema.org/draft/2020-12/vocab/core": true
+        },
+        "title": "Core vocabulary meta-schema",
+        "type": [
+          "object",
+          "boolean"
+        ],
+        "properties": {
+          "$ref": {
+            "$ref": "#/$defs/https:~1~1json-schema.org~1draft~12020-12~1meta~1core/$defs/uriReferenceString"
+          },
+          "$anchor": {
+            "$ref": "#/$defs/https:~1~1json-schema.org~1draft~12020-12~1meta~1core/$defs/anchorString"
+          },
+          "$dynamicRef": {
+            "$ref": "#/$defs/https:~1~1json-schema.org~1draft~12020-12~1meta~1core/$defs/uriReferenceString"
+          },
+          "$vocabulary": {
+            "type": "object",
+            "propertyNames": {
+              "$ref": "#/$defs/https:~1~1json-schema.org~1draft~12020-12~1meta~1core/$defs/uriString"
+            },
+            "additionalProperties": {
+              "type": "boolean"
+            }
+          },
+          "$comment": {
+            "type": "string"
+          },
+          "$defs": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/$defs/https:~1~1json-schema.org~1draft~12020-12~1schema"
+            }
+          }
+        },
+        "$defs": {
+          "anchorString": {
+            "type": "string",
+            "pattern": "^[A-Za-z_][-A-Za-z0-9._]*$"
+          },
+          "uriString": {
+            "type": "string",
+            "format": "uri"
+          },
+          "uriReferenceString": {
+            "type": "string",
+            "format": "uri-reference"
+          }
+        }
+      },
+      "https://json-schema.org/draft/2020-12/meta/format-annotation": {
+        "$vocabulary": {
+          "https://json-schema.org/draft/2020-12/vocab/format-annotation": true
+        },
+        "title": "Format vocabulary meta-schema for annotation results",
+        "type": [
+          "object",
+          "boolean"
+        ],
+        "properties": {
+          "format": {
+            "type": "string"
+          }
+        }
+      },
+      "https://json-schema.org/draft/2020-12/meta/content": {
+        "$vocabulary": {
+          "https://json-schema.org/draft/2020-12/vocab/content": true
+        },
+        "title": "Content vocabulary meta-schema",
+        "type": [
+          "object",
+          "boolean"
+        ],
+        "properties": {
+          "contentEncoding": {
+            "type": "string"
+          },
+          "contentMediaType": {
+            "type": "string"
+          },
+          "contentSchema": {
+            "$ref": "#/$defs/https:~1~1json-schema.org~1draft~12020-12~1schema"
+          }
+        }
+      },
+      "https://json-schema.org/draft/2020-12/meta/applicator": {
+        "$vocabulary": {
+          "https://json-schema.org/draft/2020-12/vocab/applicator": true
+        },
+        "title": "Applicator vocabulary meta-schema",
+        "type": [
+          "object",
+          "boolean"
+        ],
+        "properties": {
+          "prefixItems": {
+            "$ref": "#/$defs/https:~1~1json-schema.org~1draft~12020-12~1meta~1applicator/$defs/schemaArray"
+          },
+          "items": {
+            "$ref": "#/$defs/https:~1~1json-schema.org~1draft~12020-12~1schema"
+          },
+          "contains": {
+            "$ref": "#/$defs/https:~1~1json-schema.org~1draft~12020-12~1schema"
+          },
+          "additionalProperties": {
+            "$ref": "#/$defs/https:~1~1json-schema.org~1draft~12020-12~1schema"
+          },
+          "properties": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/$defs/https:~1~1json-schema.org~1draft~12020-12~1schema"
+            },
+            "default": {}
+          },
+          "patternProperties": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/$defs/https:~1~1json-schema.org~1draft~12020-12~1schema"
+            },
+            "propertyNames": {
+              "format": "regex"
+            },
+            "default": {}
+          },
+          "dependentSchemas": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/$defs/https:~1~1json-schema.org~1draft~12020-12~1schema"
+            },
+            "default": {}
+          },
+          "propertyNames": {
+            "$ref": "#/$defs/https:~1~1json-schema.org~1draft~12020-12~1schema"
+          },
+          "if": {
+            "$ref": "#/$defs/https:~1~1json-schema.org~1draft~12020-12~1schema"
+          },
+          "then": {
+            "$ref": "#/$defs/https:~1~1json-schema.org~1draft~12020-12~1schema"
+          },
+          "else": {
+            "$ref": "#/$defs/https:~1~1json-schema.org~1draft~12020-12~1schema"
+          },
+          "allOf": {
+            "$ref": "#/$defs/https:~1~1json-schema.org~1draft~12020-12~1meta~1applicator/$defs/schemaArray"
+          },
+          "anyOf": {
+            "$ref": "#/$defs/https:~1~1json-schema.org~1draft~12020-12~1meta~1applicator/$defs/schemaArray"
+          },
+          "oneOf": {
+            "$ref": "#/$defs/https:~1~1json-schema.org~1draft~12020-12~1meta~1applicator/$defs/schemaArray"
+          },
+          "not": {
+            "$ref": "#/$defs/https:~1~1json-schema.org~1draft~12020-12~1schema"
+          }
+        },
+        "$defs": {
+          "schemaArray": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "$ref": "#/$defs/https:~1~1json-schema.org~1draft~12020-12~1schema"
+            }
+          }
+        }
+      },
+      "https://json-schema.org/draft/2020-12/meta/meta-data": {
+        "$vocabulary": {
+          "https://json-schema.org/draft/2020-12/vocab/meta-data": true
+        },
+        "title": "Meta-data vocabulary meta-schema",
+        "type": [
+          "object",
+          "boolean"
+        ],
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "default": true,
+          "deprecated": {
+            "type": "boolean",
+            "default": false
+          },
+          "readOnly": {
+            "type": "boolean",
+            "default": false
+          },
+          "writeOnly": {
+            "type": "boolean",
+            "default": false
+          },
+          "examples": {
+            "type": "array",
+            "items": true
+          }
+        }
+      },
+      "https://json-schema.org/draft/2020-12/meta/unevaluated": {
+        "$vocabulary": {
+          "https://json-schema.org/draft/2020-12/vocab/unevaluated": true
+        },
+        "title": "Unevaluated applicator vocabulary meta-schema",
+        "type": [
+          "object",
+          "boolean"
+        ],
+        "properties": {
+          "unevaluatedItems": {
+            "$ref": "#/$defs/https:~1~1json-schema.org~1draft~12020-12~1schema"
+          },
+          "unevaluatedProperties": {
+            "$ref": "#/$defs/https:~1~1json-schema.org~1draft~12020-12~1schema"
+          }
+        }
+      }
+    }
+  },
+  "semantic_vcp_types": [
+    "result",
+    "decision",
+    "resource",
+    "evidence",
+    "artifact-ref",
+    "extension",
+    "resource-dimension"
+  ],
+  "source_sha256": {
+    "schemas/draft/activation.schema.json": "6e37ab4712eb1e96d5a5ff866f2b27bde808ec51a81dca8b47dfd9e2655b0dc9",
+    "schemas/draft/admission.schema.json": "bcbcee1094ba855888dc566a48004a0f1ee5d9625e5f94a7138ae293b676953f",
+    "schemas/draft/artifact-ref.schema.json": "7bf26b3364910fc080867c4cef15e4cb7fd3c416f4fee6b7f2650d01373e1f2d",
+    "schemas/draft/cancellation-event.schema.json": "9cbac956328c63c971092e1d07c1a9cc49d63b692893ffd4c1ce0fecccf4f641",
+    "schemas/draft/decision.schema.json": "47ebf3ea5ab3fd1f4cd434ec2d18981d5593f7f66dd3cdeb9a2f6b15160723ee",
+    "schemas/draft/evidence.schema.json": "e5fe25b8d81739697c6139d5d6e7b541ad6910f58c543a6a90b5f1e9e44a688f",
+    "schemas/draft/execution-observation.schema.json": "3925c1e9077ecfb9eaa47094325aa4c6c4a22871aadede4f977b06d0fd8115b4",
+    "schemas/draft/extension.schema.json": "d311028d33dc5062da712c553eb75d61a1f6d9038ec35b6e7a15b6fafaa12abc",
+    "schemas/draft/graph.schema.json": "d363f055c63cf2692a566885b71030da8f8ac9ab2d024798f652c2c3f119d86c",
+    "schemas/draft/input-port.schema.json": "06bf28b97b7d3c4cb92d058ff2866cc334120c00c5279cba8fda8425c7f9d3c9",
+    "schemas/draft/input-resolution.schema.json": "b648c5a0866f5c56bbc62e20fa8a93b9ef9c389be522126bb322023a3e35349f",
+    "schemas/draft/operation-requirement.schema.json": "93f38eb5c2c21f7afcfebc46e05fe36143b7cdcede959ffae69a0e9eee919af0",
+    "schemas/draft/output-port.schema.json": "6c4160672d752a4b12340290b6069f305eebaf9d2e7ea4fbb2d61ef1cc25f2bf",
+    "schemas/draft/policy-evaluation.schema.json": "cd4cb6210e17891149edbe908dc1a1daab8abb8f8471e6c14fdaaed45e132806",
+    "schemas/draft/profile.schema.json": "1c46b09ba4bb431f5781f8663b30774895fa719fe3ba08753960f3df8478aedd",
+    "schemas/draft/provider-binding.schema.json": "b3230a926aac92122ba09889966dbcbce0985f2b6f37773874c9d5331af4933d",
+    "schemas/draft/resource-dimension.schema.json": "fa4e4bcdc4d442c5db8e19c7e9cfeee041c1f843355454eccbfc0d0132f1bb29",
+    "schemas/draft/resource.schema.json": "da075a12e91b40d9110f7e5f07ef4aad6a3d4dfcf0edc499219098b7c4cb2145",
+    "schemas/draft/result.schema.json": "41625c8616ebb6cbe5da97a88bb8d7e747b40d40db35b82eb0ea4a534a4c2173",
+    "schemas/draft/run-record.schema.json": "f0d812b54bd748d282e39016885d3776207a7865763969365002e052aca02773",
+    "schemas/draft/selection.schema.json": "d6c0f5e13bf50425e9b934254188a95a968465dc27774f61187caec77f5000b9",
+    "schemas/draft/severity-domain.schema.json": "5451af1a9db01672b874f8d38811ea265f9635fb9f8b9892cfe0f07a693540fd",
+    "schemas/draft/value-source.schema.json": "d2b60c21b86c717dfd76aa10573bd85750aebcf653f93d04b57535e1ae73e3d5",
+    "schemas/draft/verification-definition.schema.json": "4830194f7bfc1c33ba1d6f9d977ac402231f9bcc59e2990ab076ba0e7b545294",
+    "provider-contract/schemas/draft/cancel-request.schema.json": "b17be231743fe9044906e1c2aecf9b73da3dffeb5d4c39324608b3539532ad22",
+    "provider-contract/schemas/draft/capability.schema.json": "67ad1c93bb83909e09bdcf3fb80fdef16e449937c72b3091e3d722490470d025",
+    "provider-contract/schemas/draft/initialize-request.schema.json": "5c446cc8404f26a8dfc23a210e93f66b686c2f4d0e25f668119517e9af310f97",
+    "provider-contract/schemas/draft/initialize-result.schema.json": "b482448bc85f808515f3fbc023b9fb0aa5211aed14f9f8790869fe6c19cde4f9",
+    "provider-contract/schemas/draft/invocation.schema.json": "14992170f80ea57a1171147a022af2a5bb83a38e5e8a49fbbaf32dbd801fc40f",
+    "provider-contract/schemas/draft/outcome.schema.json": "6c6a9b4bc62fe5a61096f7b50d1ceffce5edff0e6ffbaa797cd0cd685eccc0db",
+    "provider-contract/schemas/draft/provider-error.schema.json": "2c77abc25cd022473bc593457ba88f4a4b5e38a17b6262e0ee083726482bef62",
+    "provider-contract/schemas/draft/provider-event.schema.json": "515f84003aa3c11a69bcd8ab3b6b4aa3a553f829277d31f413d4dcc1315e8d9a",
+    "provider-contract/schemas/draft/provider-manifest.schema.json": "dd2509a8096a9290642d1d0b8e7870a4fa54ff9ace27840bfa5c57545360a783"
+  }
+}

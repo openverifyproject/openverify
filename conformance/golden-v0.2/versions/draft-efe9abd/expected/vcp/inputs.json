@@ -1,0 +1,1853 @@
+{
+  "binding.DERIVE.CONSTANT.0": {
+    "nodes": {
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {
+          "value": null
+        }
+      }
+    }
+  },
+  "binding.DERIVE.CONSTANT.1": {
+    "nodes": {
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {
+          "value": false
+        }
+      }
+    }
+  },
+  "binding.DERIVE.CONSTANT.2": {
+    "nodes": {
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {
+          "value": 0
+        }
+      }
+    }
+  },
+  "binding.DERIVE.CONSTANT.3": {
+    "nodes": {
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {
+          "value": "é"
+        }
+      }
+    }
+  },
+  "binding.DERIVE.CONSTANT.4": {
+    "nodes": {
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {
+          "value": []
+        }
+      }
+    }
+  },
+  "binding.DERIVE.CONSTANT.5": {
+    "nodes": {
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {
+          "value": {
+            "nested": [
+              true,
+              1
+            ]
+          }
+        }
+      }
+    }
+  },
+  "binding.DERIVE.RUN_INPUT.0": {
+    "nodes": {
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {
+          "value": null
+        }
+      }
+    }
+  },
+  "binding.DERIVE.RUN_INPUT.1": {
+    "nodes": {
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {
+          "value": false
+        }
+      }
+    }
+  },
+  "binding.DERIVE.RUN_INPUT.2": {
+    "nodes": {
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {
+          "value": 0
+        }
+      }
+    }
+  },
+  "binding.DERIVE.RUN_INPUT.3": {
+    "nodes": {
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {
+          "value": "é"
+        }
+      }
+    }
+  },
+  "binding.DERIVE.RUN_INPUT.4": {
+    "nodes": {
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {
+          "value": []
+        }
+      }
+    }
+  },
+  "binding.DERIVE.RUN_INPUT.5": {
+    "nodes": {
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {
+          "value": {
+            "nested": [
+              true,
+              1
+            ]
+          }
+        }
+      }
+    }
+  },
+  "binding.DERIVE.EXTERNAL_REFERENCE.0": {
+    "nodes": {
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {
+          "value": {
+            "id": "external.reference",
+            "type": "application/json",
+            "locator": {
+              "uri": "https://invalid.example/no-fetch"
+            }
+          }
+        }
+      }
+    }
+  },
+  "binding.DERIVE.EXTERNAL_REFERENCE.1": {
+    "nodes": {
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {
+          "value": {
+            "id": "external.reference",
+            "type": "application/json",
+            "locator": {
+              "uri": "https://invalid.example/no-fetch"
+            }
+          }
+        }
+      }
+    }
+  },
+  "binding.DERIVE.EXTERNAL_REFERENCE.2": {
+    "nodes": {
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {
+          "value": {
+            "id": "external.reference",
+            "type": "application/json",
+            "locator": {
+              "uri": "https://invalid.example/no-fetch"
+            }
+          }
+        }
+      }
+    }
+  },
+  "binding.DERIVE.EXTERNAL_REFERENCE.3": {
+    "nodes": {
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {
+          "value": {
+            "id": "external.reference",
+            "type": "application/json",
+            "locator": {
+              "uri": "https://invalid.example/no-fetch"
+            }
+          }
+        }
+      }
+    }
+  },
+  "binding.DERIVE.EXTERNAL_REFERENCE.4": {
+    "nodes": {
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {
+          "value": {
+            "id": "external.reference",
+            "type": "application/json",
+            "locator": {
+              "uri": "https://invalid.example/no-fetch"
+            }
+          }
+        }
+      }
+    }
+  },
+  "binding.DERIVE.EXTERNAL_REFERENCE.5": {
+    "nodes": {
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {
+          "value": {
+            "id": "external.reference",
+            "type": "application/json",
+            "locator": {
+              "uri": "https://invalid.example/no-fetch"
+            }
+          }
+        }
+      }
+    }
+  },
+  "binding.DERIVE.UPSTREAM_OUTPUT.0": {
+    "nodes": {
+      "producer": {
+        "state": "SUCCESS",
+        "information": {
+          "value": null
+        }
+      },
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {
+          "value": null
+        }
+      }
+    }
+  },
+  "binding.DERIVE.UPSTREAM_OUTPUT.1": {
+    "nodes": {
+      "producer": {
+        "state": "SUCCESS",
+        "information": {
+          "value": false
+        }
+      },
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {
+          "value": false
+        }
+      }
+    }
+  },
+  "binding.DERIVE.UPSTREAM_OUTPUT.2": {
+    "nodes": {
+      "producer": {
+        "state": "SUCCESS",
+        "information": {
+          "value": 0
+        }
+      },
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {
+          "value": 0
+        }
+      }
+    }
+  },
+  "binding.DERIVE.UPSTREAM_OUTPUT.3": {
+    "nodes": {
+      "producer": {
+        "state": "SUCCESS",
+        "information": {
+          "value": "é"
+        }
+      },
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {
+          "value": "é"
+        }
+      }
+    }
+  },
+  "binding.DERIVE.UPSTREAM_OUTPUT.4": {
+    "nodes": {
+      "producer": {
+        "state": "SUCCESS",
+        "information": {
+          "value": []
+        }
+      },
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {
+          "value": []
+        }
+      }
+    }
+  },
+  "binding.DERIVE.UPSTREAM_OUTPUT.5": {
+    "nodes": {
+      "producer": {
+        "state": "SUCCESS",
+        "information": {
+          "value": {
+            "nested": [
+              true,
+              1
+            ]
+          }
+        }
+      },
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {
+          "value": {
+            "nested": [
+              true,
+              1
+            ]
+          }
+        }
+      }
+    }
+  },
+  "binding.EVALUATE.CONSTANT.0": {
+    "nodes": {
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "binding.EVALUATE.CONSTANT.1": {
+    "nodes": {
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "binding.EVALUATE.CONSTANT.2": {
+    "nodes": {
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "binding.EVALUATE.CONSTANT.3": {
+    "nodes": {
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "binding.EVALUATE.CONSTANT.4": {
+    "nodes": {
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "binding.EVALUATE.CONSTANT.5": {
+    "nodes": {
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "binding.EVALUATE.RUN_INPUT.0": {
+    "nodes": {
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "binding.EVALUATE.RUN_INPUT.1": {
+    "nodes": {
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "binding.EVALUATE.RUN_INPUT.2": {
+    "nodes": {
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "binding.EVALUATE.RUN_INPUT.3": {
+    "nodes": {
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "binding.EVALUATE.RUN_INPUT.4": {
+    "nodes": {
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "binding.EVALUATE.RUN_INPUT.5": {
+    "nodes": {
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "binding.EVALUATE.EXTERNAL_REFERENCE.0": {
+    "nodes": {
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "binding.EVALUATE.EXTERNAL_REFERENCE.1": {
+    "nodes": {
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "binding.EVALUATE.EXTERNAL_REFERENCE.2": {
+    "nodes": {
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "binding.EVALUATE.EXTERNAL_REFERENCE.3": {
+    "nodes": {
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "binding.EVALUATE.EXTERNAL_REFERENCE.4": {
+    "nodes": {
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "binding.EVALUATE.EXTERNAL_REFERENCE.5": {
+    "nodes": {
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "binding.EVALUATE.UPSTREAM_OUTPUT.0": {
+    "nodes": {
+      "producer": {
+        "state": "SUCCESS",
+        "information": {
+          "value": null
+        }
+      },
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "binding.EVALUATE.UPSTREAM_OUTPUT.1": {
+    "nodes": {
+      "producer": {
+        "state": "SUCCESS",
+        "information": {
+          "value": false
+        }
+      },
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "binding.EVALUATE.UPSTREAM_OUTPUT.2": {
+    "nodes": {
+      "producer": {
+        "state": "SUCCESS",
+        "information": {
+          "value": 0
+        }
+      },
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "binding.EVALUATE.UPSTREAM_OUTPUT.3": {
+    "nodes": {
+      "producer": {
+        "state": "SUCCESS",
+        "information": {
+          "value": "é"
+        }
+      },
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "binding.EVALUATE.UPSTREAM_OUTPUT.4": {
+    "nodes": {
+      "producer": {
+        "state": "SUCCESS",
+        "information": {
+          "value": []
+        }
+      },
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "binding.EVALUATE.UPSTREAM_OUTPUT.5": {
+    "nodes": {
+      "producer": {
+        "state": "SUCCESS",
+        "information": {
+          "value": {
+            "nested": [
+              true,
+              1
+            ]
+          }
+        }
+      },
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "binding.AGGREGATE.CONSTANT.0": {
+    "nodes": {
+      "member": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "binding.AGGREGATE.CONSTANT.1": {
+    "nodes": {
+      "member": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "binding.AGGREGATE.CONSTANT.2": {
+    "nodes": {
+      "member": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "binding.AGGREGATE.CONSTANT.3": {
+    "nodes": {
+      "member": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "binding.AGGREGATE.CONSTANT.4": {
+    "nodes": {
+      "member": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "binding.AGGREGATE.CONSTANT.5": {
+    "nodes": {
+      "member": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "binding.AGGREGATE.RUN_INPUT.0": {
+    "nodes": {
+      "member": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "binding.AGGREGATE.RUN_INPUT.1": {
+    "nodes": {
+      "member": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "binding.AGGREGATE.RUN_INPUT.2": {
+    "nodes": {
+      "member": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "binding.AGGREGATE.RUN_INPUT.3": {
+    "nodes": {
+      "member": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "binding.AGGREGATE.RUN_INPUT.4": {
+    "nodes": {
+      "member": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "binding.AGGREGATE.RUN_INPUT.5": {
+    "nodes": {
+      "member": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "binding.AGGREGATE.EXTERNAL_REFERENCE.0": {
+    "nodes": {
+      "member": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "binding.AGGREGATE.EXTERNAL_REFERENCE.1": {
+    "nodes": {
+      "member": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "binding.AGGREGATE.EXTERNAL_REFERENCE.2": {
+    "nodes": {
+      "member": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "binding.AGGREGATE.EXTERNAL_REFERENCE.3": {
+    "nodes": {
+      "member": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "binding.AGGREGATE.EXTERNAL_REFERENCE.4": {
+    "nodes": {
+      "member": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "binding.AGGREGATE.EXTERNAL_REFERENCE.5": {
+    "nodes": {
+      "member": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "binding.AGGREGATE.UPSTREAM_OUTPUT.0": {
+    "nodes": {
+      "producer": {
+        "state": "SUCCESS",
+        "information": {
+          "value": null
+        }
+      },
+      "member": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "binding.AGGREGATE.UPSTREAM_OUTPUT.1": {
+    "nodes": {
+      "producer": {
+        "state": "SUCCESS",
+        "information": {
+          "value": false
+        }
+      },
+      "member": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "binding.AGGREGATE.UPSTREAM_OUTPUT.2": {
+    "nodes": {
+      "producer": {
+        "state": "SUCCESS",
+        "information": {
+          "value": 0
+        }
+      },
+      "member": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "binding.AGGREGATE.UPSTREAM_OUTPUT.3": {
+    "nodes": {
+      "producer": {
+        "state": "SUCCESS",
+        "information": {
+          "value": "é"
+        }
+      },
+      "member": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "binding.AGGREGATE.UPSTREAM_OUTPUT.4": {
+    "nodes": {
+      "producer": {
+        "state": "SUCCESS",
+        "information": {
+          "value": []
+        }
+      },
+      "member": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "binding.AGGREGATE.UPSTREAM_OUTPUT.5": {
+    "nodes": {
+      "producer": {
+        "state": "SUCCESS",
+        "information": {
+          "value": {
+            "nested": [
+              true,
+              1
+            ]
+          }
+        }
+      },
+      "member": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "binding.CONTROL.CONSTANT.0": {
+    "nodes": {
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "decision": {
+          "protocol": "draft",
+          "kind": "CONTINUE"
+        }
+      }
+    }
+  },
+  "binding.CONTROL.CONSTANT.1": {
+    "nodes": {
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "decision": {
+          "protocol": "draft",
+          "kind": "CONTINUE"
+        }
+      }
+    }
+  },
+  "binding.CONTROL.CONSTANT.2": {
+    "nodes": {
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "decision": {
+          "protocol": "draft",
+          "kind": "CONTINUE"
+        }
+      }
+    }
+  },
+  "binding.CONTROL.CONSTANT.3": {
+    "nodes": {
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "decision": {
+          "protocol": "draft",
+          "kind": "CONTINUE"
+        }
+      }
+    }
+  },
+  "binding.CONTROL.CONSTANT.4": {
+    "nodes": {
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "decision": {
+          "protocol": "draft",
+          "kind": "CONTINUE"
+        }
+      }
+    }
+  },
+  "binding.CONTROL.CONSTANT.5": {
+    "nodes": {
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "decision": {
+          "protocol": "draft",
+          "kind": "CONTINUE"
+        }
+      }
+    }
+  },
+  "binding.CONTROL.RUN_INPUT.0": {
+    "nodes": {
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "decision": {
+          "protocol": "draft",
+          "kind": "CONTINUE"
+        }
+      }
+    }
+  },
+  "binding.CONTROL.RUN_INPUT.1": {
+    "nodes": {
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "decision": {
+          "protocol": "draft",
+          "kind": "CONTINUE"
+        }
+      }
+    }
+  },
+  "binding.CONTROL.RUN_INPUT.2": {
+    "nodes": {
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "decision": {
+          "protocol": "draft",
+          "kind": "CONTINUE"
+        }
+      }
+    }
+  },
+  "binding.CONTROL.RUN_INPUT.3": {
+    "nodes": {
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "decision": {
+          "protocol": "draft",
+          "kind": "CONTINUE"
+        }
+      }
+    }
+  },
+  "binding.CONTROL.RUN_INPUT.4": {
+    "nodes": {
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "decision": {
+          "protocol": "draft",
+          "kind": "CONTINUE"
+        }
+      }
+    }
+  },
+  "binding.CONTROL.RUN_INPUT.5": {
+    "nodes": {
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "decision": {
+          "protocol": "draft",
+          "kind": "CONTINUE"
+        }
+      }
+    }
+  },
+  "binding.CONTROL.EXTERNAL_REFERENCE.0": {
+    "nodes": {
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "decision": {
+          "protocol": "draft",
+          "kind": "CONTINUE"
+        }
+      }
+    }
+  },
+  "binding.CONTROL.EXTERNAL_REFERENCE.1": {
+    "nodes": {
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "decision": {
+          "protocol": "draft",
+          "kind": "CONTINUE"
+        }
+      }
+    }
+  },
+  "binding.CONTROL.EXTERNAL_REFERENCE.2": {
+    "nodes": {
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "decision": {
+          "protocol": "draft",
+          "kind": "CONTINUE"
+        }
+      }
+    }
+  },
+  "binding.CONTROL.EXTERNAL_REFERENCE.3": {
+    "nodes": {
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "decision": {
+          "protocol": "draft",
+          "kind": "CONTINUE"
+        }
+      }
+    }
+  },
+  "binding.CONTROL.EXTERNAL_REFERENCE.4": {
+    "nodes": {
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "decision": {
+          "protocol": "draft",
+          "kind": "CONTINUE"
+        }
+      }
+    }
+  },
+  "binding.CONTROL.EXTERNAL_REFERENCE.5": {
+    "nodes": {
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "decision": {
+          "protocol": "draft",
+          "kind": "CONTINUE"
+        }
+      }
+    }
+  },
+  "binding.CONTROL.UPSTREAM_OUTPUT.0": {
+    "nodes": {
+      "producer": {
+        "state": "SUCCESS",
+        "information": {
+          "value": null
+        }
+      },
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "decision": {
+          "protocol": "draft",
+          "kind": "CONTINUE"
+        }
+      }
+    }
+  },
+  "binding.CONTROL.UPSTREAM_OUTPUT.1": {
+    "nodes": {
+      "producer": {
+        "state": "SUCCESS",
+        "information": {
+          "value": false
+        }
+      },
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "decision": {
+          "protocol": "draft",
+          "kind": "CONTINUE"
+        }
+      }
+    }
+  },
+  "binding.CONTROL.UPSTREAM_OUTPUT.2": {
+    "nodes": {
+      "producer": {
+        "state": "SUCCESS",
+        "information": {
+          "value": 0
+        }
+      },
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "decision": {
+          "protocol": "draft",
+          "kind": "CONTINUE"
+        }
+      }
+    }
+  },
+  "binding.CONTROL.UPSTREAM_OUTPUT.3": {
+    "nodes": {
+      "producer": {
+        "state": "SUCCESS",
+        "information": {
+          "value": "é"
+        }
+      },
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "decision": {
+          "protocol": "draft",
+          "kind": "CONTINUE"
+        }
+      }
+    }
+  },
+  "binding.CONTROL.UPSTREAM_OUTPUT.4": {
+    "nodes": {
+      "producer": {
+        "state": "SUCCESS",
+        "information": {
+          "value": []
+        }
+      },
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "decision": {
+          "protocol": "draft",
+          "kind": "CONTINUE"
+        }
+      }
+    }
+  },
+  "binding.CONTROL.UPSTREAM_OUTPUT.5": {
+    "nodes": {
+      "producer": {
+        "state": "SUCCESS",
+        "information": {
+          "value": {
+            "nested": [
+              true,
+              1
+            ]
+          }
+        }
+      },
+      "consumer": {
+        "state": "SUCCESS",
+        "information": {},
+        "decision": {
+          "protocol": "draft",
+          "kind": "CONTINUE"
+        }
+      }
+    }
+  },
+  "input.absent.OMIT": {
+    "nodes": {
+      "n": {
+        "state": "SUCCESS",
+        "information": {
+          "value": null
+        }
+      }
+    }
+  },
+  "input.absent.DEFAULT": {
+    "nodes": {
+      "n": {
+        "state": "SUCCESS",
+        "information": {
+          "value": null
+        }
+      }
+    }
+  },
+  "input.absent.BLOCK": {
+    "nodes": {
+      "n": {
+        "state": "NONEXECUTED",
+        "reason": "INPUT_UNAVAILABLE",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "INPUT_UNAVAILABLE"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      }
+    }
+  },
+  "input.reject.missing": {
+    "error_code": "RUN_INPUT"
+  },
+  "input.reject.wrong_type": {
+    "error_code": "RUN_INPUT"
+  },
+  "input.reject.undeclared": {
+    "error_code": "RUN_INPUT"
+  }
+}

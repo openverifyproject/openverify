@@ -1,0 +1,19 @@
+{
+  "id": "provider.schema-numeric-const",
+  "contract": "provider",
+  "version": "0.1",
+  "type": "data",
+  "operation": "data",
+  "input": 1.0,
+  "expected": {
+    "accepted": true,
+    "normalized": 1.0
+  },
+  "features": [
+    "standalone",
+    "data"
+  ],
+  "schema": {
+    "const": 1
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "invocation_id": "attempt-1",
+  "contract_version": "1.0",
+  "capability_id": "com.example.execution.echo",
+  "capability_version": "1",
+  "input": "hello",
+  "config": {},
+  "vcp_version": "draft"
+}

@@ -1,0 +1,15 @@
+{
+  "authority": [
+    "spec/draft/result.md",
+    "spec/draft/wire-format.md",
+    "spec/draft/dataflow.md",
+    "schemas/draft/result.schema.json"
+  ],
+  "wire_distinction": "Absent keys and explicit empty containers are different JSON objects. Both are permitted; no normative universal insertion/deletion equivalence is asserted",
+  "fix": "Author the producer fixture with evidence=[] and usage={} explicitly; compare exact consumed snapshot. Do not normalize away keys, judgment nulls or data values",
+  "original_case_ids": [
+    "availability.UPSTREAM_RESULT.AVAILABLE.BLOCK",
+    "availability.UPSTREAM_RESULT.AVAILABLE.OMIT",
+    "availability.UPSTREAM_RESULT.AVAILABLE.DEFAULT"
+  ]
+}

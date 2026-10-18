@@ -15,25 +15,54 @@ from referencing.jsonschema import Schema
 
 from openverify.errors import ProtocolError
 from openverify.model import (
+    Activation,
+    Admission,
     AdmissionPolicy,
     AnnotatedValue,
     ArtifactRef,
+    CancellationEvent,
+    Capability,
+    Constant,
     Decision,
     Evidence,
+    ExecutionObservation,
     Extension,
+    ExternalReference,
     Graph,
+    InputPort,
+    InputResolution,
     Measurement,
+    NodeRecord,
+    OperationRequirement,
+    OutputPort,
+    PolicyEvaluation,
+    PolicyOperation,
     Profile,
+    ProviderBinding,
     ResourceDimension,
     Result,
+    RunInput,
     RunRecord,
+    Selection,
     SeverityDomain,
+    UpstreamOutput,
     Value,
     VerificationDefinition,
 )
 from openverify.serialization import decode, json_equal, to_data
 
 TYPES: dict[str, type[Value]] = {
+    "activation": Activation,
+    "selection": Selection,
+    "admission": Admission,
+    "policy-evaluation": PolicyEvaluation,
+    "cancellation-event": CancellationEvent,
+    "input-port": InputPort,
+    "output-port": OutputPort,
+    "operation-requirement": OperationRequirement,
+    "provider-binding": ProviderBinding,
+    "execution-observation": ExecutionObservation,
+    "input-resolution": InputResolution,
     "verification-definition": VerificationDefinition,
     "result": Result,
     "decision": Decision,
@@ -50,7 +79,7 @@ TYPES: dict[str, type[Value]] = {
 
 
 def load_schema(name: str) -> dict[str, JsonValue]:
-    if name not in TYPES and name not in ("extension", "resource-dimension"):
+    if name not in TYPES and name != "value-source":
         raise ProtocolError("PROTOCOL_STRUCTURE", "Unknown schema name", details=name)
     return cast(
         dict[str, JsonValue],
@@ -111,6 +140,19 @@ def validate_wire(name: str, data: JsonValue) -> None:
 
 
 def parse_object(name: str, data: str | bytes | JsonValue) -> Value:
+    if name == "value-source":
+        raw = decode(data)
+        validate_wire(name, raw)
+        assert isinstance(raw, dict)
+        cls = {
+            "CONSTANT": Constant,
+            "RUN_INPUT": RunInput,
+            "EXTERNAL_REFERENCE": ExternalReference,
+            "UPSTREAM_OUTPUT": UpstreamOutput,
+        }[cast(str, raw["kind"])]
+        value = cls.model_validate(raw)
+        semantic(value)
+        return value
     if name not in TYPES:
         raise ProtocolError("PROTOCOL_STRUCTURE", "Unknown object type", details=name)
     raw = decode(data)
@@ -154,6 +196,10 @@ def semantic(value: Value) -> None:
     if isinstance(value, Extension) and value.required:
         fail("EXTENSION_UNSUPPORTED", "Required extension is unsupported")
     for field in type(value).model_fields:
+        if isinstance(value, ExecutionObservation) and field == "evidence":
+            # Observations retain structurally valid but semantically rejected
+            # evidence. Acceptance validates it without discarding incurred usage.
+            continue
         item = getattr(value, field)
         if isinstance(item, Value):
             semantic(item)
@@ -209,16 +255,62 @@ def semantic(value: Value) -> None:
             and value.probability is not None
         ):
             fail("ADMISSION_POLICY", "Probability is required only for PROBABILITY")
+        _policy(value, value.strategy)
+    elif isinstance(value, Capability):
+        _policy(value, value.executor_ref)
+    elif isinstance(value, Selection):
+        if len({s.id for s in value.subjects}) != len(value.subjects):
+            fail("POLICY_OUTPUT", "Selection contains duplicate subject identities")
+    elif isinstance(value, PolicyEvaluation):
+        expected = {"ACTIVATION": Activation, "SELECTION": Selection, "ADMISSION": Admission}
+        if type(value.outcome) is not expected[value.role]:
+            fail("POLICY_OUTPUT", "Outcome does not match policy role")
     elif isinstance(value, VerificationDefinition):
-        try:
-            Draft202012Validator.check_schema(value.judgment_schema)
-        except Exception as exc:
-            raise ProtocolError("PROTOCOL_STRUCTURE", "Invalid judgment schema") from exc
+        from openverify.dataflow import validate_executable
+
+        validate_executable(value)
+    elif isinstance(value, InputPort):
+        from openverify.dataflow import validate_port
+
+        validate_port(value)
+    elif isinstance(value, OutputPort):
+        from openverify.json_schema import check_schema
+
+        check_schema(value.value_schema)
+    elif isinstance(value, InputResolution):
+        usable = value.status == "AVAILABLE" or value.used_default
+        if (
+            usable != ("value" in value.model_fields_set)
+            or value.status == "AVAILABLE"
+            and (value.source is None or value.used_default)
+            or value.source is None
+            and value.status != "ABSENT"
+        ):
+            fail("DATAFLOW_BINDING", "Resolution status/source/value contradict")
+    elif isinstance(value, OperationRequirement):
+        if (
+            re.fullmatch(
+                r"(?:openverify\.[a-z][a-z0-9_]*(?:\.[a-z][a-z0-9_]*)*|[a-z][a-z0-9_]*(?:\.[a-z][a-z0-9_]*){2,})",
+                value.capability_id,
+            )
+            is None
+            or not value.capability_version
+        ):
+            fail("DATAFLOW_BINDING", "Malformed capability requirement")
     elif isinstance(value, RunRecord):
         _lineage(value)
     elif isinstance(value, Profile):
         if len({d.id for d in value.resource_dimensions}) != len(value.resource_dimensions):
             fail("PROFILE_DOMAIN", "Resource dimension ids must be unique")
+
+
+def _policy(policy: PolicyOperation, discriminator: str | None) -> None:
+    if (policy.operation is None) == (discriminator is None):
+        fail("DATAFLOW_BINDING", "Policy needs exactly one operation or built-in discriminator")
+    if policy.operation is None and (
+        policy.inputs or policy.bindings or policy.config or policy.config_schema is not None
+    ):
+        fail("DATAFLOW_BINDING", "Built-in policies accept only their structural configuration")
 
 
 def _result(r: Result) -> None:
@@ -243,6 +335,13 @@ def _result(r: Result) -> None:
         valid = False
     if not valid:
         fail("RESULT_STATE", "Impossible Result axis combination")
+    if "judgment" in r.model_fields_set and not (
+        r.disposition == "EXECUTED"
+        and r.execution_outcome == "SUCCESS"
+        and r.applicability == "APPLICABLE"
+        and r.determination == "KNOWN"
+    ):
+        fail("RESULT_STATE", "Only KNOWN applicable Results can emit a judgment, including null")
 
 
 GUARD_VALUES = {
@@ -312,23 +411,12 @@ def _graph(graph: Graph) -> None:
         if (e.from_node, e.to_node) in pairs:
             fail("GRAPH_DUPLICATE", "Duplicate directed edge")
         pairs.add((e.from_node, e.to_node))
-        if e.guard and (
-            e.guard.node_id != e.from_node
-            or e.guard.field in GUARD_VALUES
-            and e.guard.value not in GUARD_VALUES[e.guard.field]
-        ):
-            fail("GRAPH_REFERENCE", "Invalid guard reference or axis value")
     if graph.features:
         fail("GRAPH_UNSUPPORTED", "Declared graph feature is unsupported")
     ordered_nodes(graph)
-    for n in graph.nodes:
-        if n.kind == "AGGREGATE" and n.executor_ref == "standard.aggregate":
-            aggregate_config(n.config)
-            if n.config["reducer"] == "WEIGHTED_AVERAGE":
-                fail(
-                    "GRAPH_UNSUPPORTED",
-                    "Weighted graph input membership/order and weight identity are unspecified",
-                )
+    from openverify.dataflow import validate_graph
+
+    validate_graph(graph)
 
 
 def ordered_nodes(graph: Graph) -> list[str]:
@@ -358,63 +446,199 @@ def _timestamp(value: str) -> datetime:
         raise ProtocolError("PROTOCOL_STRUCTURE", "Invalid RFC3339 timestamp") from exc
 
 
+def validate_executable_definition(value: VerificationDefinition) -> None:
+    """The one definition validator; alias names its executable guarantee."""
+    validate_definition(value)
+
+
 def _lineage(run: RunRecord) -> None:
+    from openverify.dataflow import (
+        accept_outputs,
+        error_result,
+        resolve_inputs,
+        validate_run_inputs,
+    )
+    from openverify.lifecycle import Lifecycle, nonexecution
+    from openverify.policy import check_evaluations
+
     graph = run.definition.graph
     nodes = {n.id: n for n in graph.nodes}
+    if run.provider_bindings.keys() - nodes.keys():
+        fail("PROVENANCE_LINEAGE", "Provider invocation names an unknown node")
+    records: dict[str, NodeRecord] = {}
     seen: dict[str, Result] = {}
-    seen_ids: set[str] = set()
     if not json_equal(to_data(run.subject), to_data(run.definition.subject)) or _timestamp(
         run.finished_at
     ) < _timestamp(run.started_at):
         fail("PROVENANCE_LINEAGE", "Definition identity or run timing mismatch")
+    try:
+        run_values = validate_run_inputs(run.definition, run.run_inputs)
+    except ProtocolError as exc:
+        raise ProtocolError("PROVENANCE_LINEAGE", "Invalid occurrence run inputs") from exc
+    try:
+        check_evaluations(run.definition, run_values, run.policy_evaluations, run.admission)
+    except ProtocolError as exc:
+        raise ProtocolError("PROVENANCE_LINEAGE", "Invalid occurrence policy provenance") from exc
+    lifecycle = Lifecycle(run.admission)
+    cancellation_seen = False
+    if run.cancellation is not None and (
+        run.admission.outcome != "RUN" or run.cancellation.node_id not in nodes
+    ):
+        fail("PROVENANCE_LINEAGE", "Cancellation must affect a node in a RUN occurrence")
     for record in run.nodes:
         node = nodes.get(record.node_id)
         expected = {e.from_node for e in graph.edges if e.to_node == record.node_id}
         if (
             node is None
-            or record.node_id in seen_ids
-            or record.executor_ref != node.executor_ref
+            or record.node_id in records
+            or not expected <= records.keys()
             or set(record.upstream_node_ids) != expected
             or len(record.upstream_node_ids) != len(expected)
-            or not expected <= seen_ids
-            or not json_equal(
-                {id: to_data(result) for id, result in record.upstream_results.items()},
-                {id: to_data(seen[id]) for id in expected if id in seen},
-            )
-            or _timestamp(record.finished_at) < _timestamp(record.started_at)
         ):
             fail("PROVENANCE_LINEAGE", "Node dependency lineage mismatch")
-        outputs = sum(x is not None for x in (record.result, record.decision, record.derived))
         assert node is not None
-        if _timestamp(record.started_at) < _timestamp(run.started_at) or _timestamp(
-            record.finished_at
-        ) > _timestamp(run.finished_at):
-            fail("PROVENANCE_LINEAGE", "Node timing is outside run interval")
-        if run.admission.outcome == "SKIP" and (
-            record.result is None or record.result.disposition != "SKIPPED"
+        binding = record.provider_binding
+        if binding != run.provider_bindings.get(node.id):
+            fail("PROVENANCE_LINEAGE", "Node provider differs from occurrence invocation binding")
+        if binding is not None and (
+            binding.capability_id != node.operation.capability_id
+            or binding.capability_version != node.operation.capability_version
+            or record.executor_ref != binding.provider_id
+            or record.executor_version != binding.provider_version
+            or record.state == "NONEXECUTED"
         ):
-            fail("PROVENANCE_LINEAGE", "Admission SKIP requires every node to be SKIPPED")
-        if run.admission.outcome != "RUN" and (
-            record.result is None or record.result.disposition == "EXECUTED"
+            fail(
+                "PROVENANCE_LINEAGE",
+                "Provider binding contradicts requirement or executor identity",
+            )
+        if record.provider_output_error is not None and (
+            binding is None
+            or record.observation is None
+            or record.observation.error is not None
+            or record.provider_output_error.code != "INVALID_PROVIDER_OUTPUT"
         ):
-            fail("PROVENANCE_LINEAGE", "Unadmitted run cannot contain executed nodes")
+            fail("PROVENANCE_LINEAGE", "Invalid host provider-output rejection")
         if (
-            outputs != 1
-            or record.decision is not None
-            and node.kind != "CONTROL"
-            or record.derived is not None
-            and node.kind != "DERIVE"
-            or record.result is not None
-            and node.kind in ("CONTROL", "DERIVE")
-            and record.result.execution_outcome != "ERROR"
-            and record.result.disposition == "EXECUTED"
+            record.kind != node.kind
+            or record.operation != node.operation
+            or not json_equal(
+                {k: to_data(v) for k, v in record.upstream_results.items()},
+                {k: to_data(seen[k]) for k in expected if k in seen},
+            )
         ):
-            fail("PROVENANCE_LINEAGE", "Node output does not match semantic kind")
-        seen_ids.add(record.node_id)
-        if record.result:
+            fail("PROVENANCE_LINEAGE", "Node dependency lineage mismatch")
+        if (
+            _timestamp(record.finished_at) < _timestamp(record.started_at)
+            or _timestamp(record.started_at) < _timestamp(run.started_at)
+            or _timestamp(record.finished_at) > _timestamp(run.finished_at)
+            or any(
+                _timestamp(records[k].finished_at) > _timestamp(record.started_at) for k in expected
+            )
+        ):
+            fail("PROVENANCE_LINEAGE", "Node timing is outside dependency/run interval")
+        values, resolutions, blocked = resolve_inputs(node, run_values, records, graph)
+        if not json_equal(values, record.input_values) or not json_equal(
+            {k: to_data(v) for k, v in resolutions.items()},
+            {k: to_data(v) for k, v in record.input_resolutions.items()},
+        ):
+            fail("PROVENANCE_LINEAGE", "Input snapshots contradict declared bindings")
+        event = run.cancellation
+        affected = event is not None and event.node_id == node.id
+        if affected and event is not None and event.phase == "BEFORE_START":
+            lifecycle.cancelled = True
+            cancellation_seen = True
+        cause = lifecycle.cause(node.id, graph, run_values, records, blocked)
+        interrupted = affected and event is not None and event.phase == "RUNNING"
+        if interrupted:
+            if cause is not None:
+                fail("PROVENANCE_LINEAGE", "Ineligible node cannot have a running cancellation")
+            lifecycle.cancelled = True
+            cancellation_seen = True
+            if (
+                record.state != "CANCELLED"
+                or record.reason != "CANCELLATION"
+                or record.information
+                or record.decision is not None
+                or not json_equal(
+                    to_data(record.result) if record.result is not None else None,
+                    to_data(nonexecution(("CANCELLED", "CANCELLATION"))),
+                )
+            ):
+                fail("PROVENANCE_LINEAGE", "Interrupted node has contradictory accepted output")
+        elif cause is not None:
+            reason = cause[1]
+            expected_result = nonexecution(cause)
+            if (
+                record.state != "NONEXECUTED"
+                or record.reason != reason
+                or record.observation is not None
+                or record.executor_ref is not None
+                or record.executor_version is not None
+                or set(record.usage) - {"wall_time"}
+                or record.information
+                or record.decision is not None
+                or not json_equal(
+                    to_data(record.result) if record.result is not None else None,
+                    to_data(expected_result),
+                )
+            ):
+                fail("PROVENANCE_LINEAGE", "Nonexecuted node has contradictory observations")
+        else:
+            if record.state in ("NONEXECUTED", "CANCELLED"):
+                fail("PROVENANCE_LINEAGE", "Ready node cannot silently omit execution")
+            if record.observation is None:
+                # Local exceptions have no fabricated provider observation.
+                if (
+                    record.state != "ERROR"
+                    or record.information
+                    or record.decision is not None
+                    or record.result is None
+                    or record.result.execution_outcome != "ERROR"
+                ):
+                    fail("PROVENANCE_LINEAGE", "Invalid executor failure record")
+            else:
+                try:
+                    if record.provider_output_error is not None:
+                        raise ProtocolError(
+                            record.provider_output_error.code, record.provider_output_error.message
+                        )
+                    information, result, decision = accept_outputs(
+                        node, record.observation, run.definition
+                    )
+                    state = (
+                        "ERROR"
+                        if result is not None and result.execution_outcome == "ERROR"
+                        else "SUCCESS"
+                    )
+                    reason = None
+                except ProtocolError as exc:
+                    information, result, decision = {}, error_result(exc), None
+                    state, reason = "ERROR", exc.code
+                if (
+                    record.state != state
+                    or record.reason != reason
+                    or not json_equal(information, record.information)
+                    or not json_equal(
+                        to_data(result) if result is not None else None,
+                        to_data(record.result) if record.result is not None else None,
+                    )
+                    or not json_equal(
+                        to_data(decision) if decision is not None else None,
+                        to_data(record.decision) if record.decision is not None else None,
+                    )
+                ):
+                    fail("PROVENANCE_LINEAGE", "Observed and accepted outputs contradict")
+        if record.decision is not None:
+            lifecycle.control(node.id, record.decision, graph)
+        records[record.node_id] = record
+        if record.result is not None:
             seen[record.node_id] = record.result
-    if seen_ids != set(nodes) or not json_equal(
-        {id: to_data(result) for id, result in run.final_results.items()},
-        {id: to_data(result) for id, result in seen.items()},
+    if (
+        (run.cancellation is not None and not cancellation_seen)
+        or records.keys() != nodes.keys()
+        or not json_equal(
+            {k: to_data(v) for k, v in run.final_results.items()},
+            {k: to_data(v) for k, v in seen.items()},
+        )
     ):
         fail("PROVENANCE_LINEAGE", "Incomplete node or final-result lineage")

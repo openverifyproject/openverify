@@ -1,0 +1,11 @@
+{
+  "v02.provider.schema.negative_minLength": {
+    "error_code": "INVALID_PROVIDER_OUTPUT"
+  },
+  "v02.provider.schema.nested_id": {
+    "error_code": "INVALID_PROVIDER_OUTPUT"
+  },
+  "v02.provider.schema.annotation_id": {
+    "accept": true
+  }
+}

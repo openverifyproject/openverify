@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework><Nullable>enable</Nullable><ImplicitUsings>enable</ImplicitUsings>
+    <Version>0.1.0</Version><PackageId>OpenVerify</PackageId><Authors>OpenVerify contributors</Authors>
+    <Description>OpenVerify DRAFT VCP and Provider Contract wire SDK</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression><PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/openverifyproject/openverify</RepositoryUrl><RepositoryType>git</RepositoryType>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile><Deterministic>true</Deterministic>
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="JsonSchema.Net" Version="7.3.4" />
+    <EmbeddedResource Include="../bundle.json" LogicalName="OpenVerify.bundle.json" />
+    <None Include="../LICENSE" Pack="true" PackagePath="" /><None Include="../README.md" Pack="true" PackagePath="" />
+  </ItemGroup>
+</Project>

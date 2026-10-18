@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:openverify:provider:0.1:capability",
+  "type": "object",
+  "properties": {
+    "capability_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|(?!openverify\\.)[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*)$"
+    },
+    "capability_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "input_schema": {
+      "type": [
+        "object",
+        "boolean"
+      ]
+    },
+    "output_schema": {
+      "type": [
+        "object",
+        "boolean"
+      ]
+    },
+    "config_schema": {
+      "type": [
+        "object",
+        "boolean"
+      ]
+    },
+    "lifecycle_features": {
+      "type": "object",
+      "properties": {
+        "streaming": {
+          "type": "boolean"
+        },
+        "cancellation": {
+          "type": "boolean"
+        },
+        "deadlines": {
+          "type": "boolean"
+        },
+        "resource_reporting": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "streaming",
+        "cancellation",
+        "deadlines",
+        "resource_reporting"
+      ],
+      "additionalProperties": false
+    },
+    "vcp_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "extensions": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|(?!openverify\\.)[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*)$"
+      },
+      "additionalProperties": {}
+    }
+  },
+  "required": [
+    "capability_id",
+    "capability_version",
+    "input_schema",
+    "output_schema",
+    "config_schema",
+    "lifecycle_features"
+  ],
+  "additionalProperties": false
+}

@@ -1,37 +1,28 @@
-"""Trusted host adapter contracts; executor names never trigger dynamic imports."""
+"""Trusted local implementations bound to exact capability ID/version requirements."""
 
 from typing import Protocol
 
-from openverify.model import Context, Decision, Result
+from openverify.model import Context, Decision, ExecutionObservation, Result
 
 
-class DeriveAdapter(Protocol):
-    def execute(self, context: Context, config: Context) -> Context: ...
-
-
-class EvaluateAdapter(Protocol):
+class Adapter(Protocol):
     def execute(
-        self, context: Context, prior_results: dict[str, Result], config: Context
-    ) -> Result: ...
-
-
-class ControlAdapter(Protocol):
-    def execute(
-        self, context: Context, results: dict[str, Result], config: Context
-    ) -> Decision: ...
+        self, inputs: Context, config: Context, /
+    ) -> ExecutionObservation | Context | Result | Decision: ...
 
 
 class Registry:
     def __init__(self) -> None:
-        self.derivers: dict[str, DeriveAdapter] = {}
-        self.evaluators: dict[str, EvaluateAdapter] = {}
-        self.controllers: dict[str, ControlAdapter] = {}
+        self.operations: dict[tuple[str, str], Adapter] = {}
 
-    def register_derive(self, name: str, adapter: DeriveAdapter) -> None:
-        self.derivers[name] = adapter
+    def register(self, capability_id: str, capability_version: str, adapter: Adapter) -> None:
+        self.operations[(capability_id, capability_version)] = adapter
 
-    def register_evaluate(self, name: str, adapter: EvaluateAdapter) -> None:
-        self.evaluators[name] = adapter
+    def register_derive(self, name: str, adapter: Adapter, *, version: str = "1") -> None:
+        self.register(name, version, adapter)
 
-    def register_control(self, name: str, adapter: ControlAdapter) -> None:
-        self.controllers[name] = adapter
+    def register_evaluate(self, name: str, adapter: Adapter, *, version: str = "1") -> None:
+        self.register(name, version, adapter)
+
+    def register_control(self, name: str, adapter: Adapter, *, version: str = "1") -> None:
+        self.register(name, version, adapter)

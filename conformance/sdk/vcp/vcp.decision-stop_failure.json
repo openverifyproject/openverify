@@ -1,0 +1,22 @@
+{
+  "id": "vcp.decision-stop_failure",
+  "contract": "vcp",
+  "version": "draft",
+  "type": "decision",
+  "operation": "parse",
+  "input": {
+    "protocol": "draft",
+    "kind": "STOP_FAILURE"
+  },
+  "expected": {
+    "accepted": true,
+    "normalized": {
+      "protocol": "draft",
+      "kind": "STOP_FAILURE"
+    }
+  },
+  "features": [
+    "standalone",
+    "decision"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "conformance/golden-v4/BLUEPRINT.md": true,
+  "conformance/golden-v4/CASES.jsonl": true,
+  "conformance/golden-v4/OBLIGATIONS.jsonl": true,
+  "conformance/golden-v4/WITNESSES.jsonl": true,
+  "conformance/golden-v4/NORMATIVE_CLAUSES.jsonl": true,
+  "conformance/golden-v4/NORMATIVE_SOURCE_HASHES.json": true,
+  "conformance/golden-v4/ERROR_INVENTORY.json": true,
+  "conformance/golden-v4/PROJECTIONS.json": true,
+  "conformance/golden-v4/REDUCTION_LEDGER.jsonl": true,
+  "conformance/golden-v4/CONTRACT_INVENTORY.md": true,
+  "conformance/golden-v4/COUNT_PROOFS.md": true,
+  "conformance/golden-v4/COMPOSITION_PROOFS.md": true,
+  "conformance/golden-v4/DOMAIN_LIMITS.md": true,
+  "conformance/golden-v4/FROZEN_EXPECTATIONS/cases.jsonl": true,
+  "tests/golden_v4/oracle/model.py": true,
+  "tests/golden_v4/oracle/__init__.py": true,
+  "tools/golden_v4/discover.py": true,
+  "tools/golden_v4/freeze.py": true,
+  "tools/golden_v4/witness_authoring.py": true,
+  "tools/golden_v4/proofs.py": true,
+  "tools/golden_v4/seal.py": true
+}

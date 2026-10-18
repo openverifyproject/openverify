@@ -31,27 +31,150 @@
       {
         "id": "phrase",
         "kind": "EVALUATE",
-        "executor_ref": "demo.regex",
         "config": {
           "key": "text",
           "pattern": "guaranteed cure",
           "must_match": false
-        }
+        },
+        "operation": {
+          "capability_id": "com.example.demo.regex",
+          "capability_version": "1"
+        },
+        "inputs": [
+          {
+            "name": "subject",
+            "schema": {
+              "type": "object"
+            },
+            "required": true,
+            "on_unavailable": "BLOCK"
+          },
+          {
+            "name": "criterion",
+            "schema": {
+              "type": "object"
+            },
+            "required": true,
+            "on_unavailable": "BLOCK"
+          },
+          {
+            "name": "text",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "on_unavailable": "BLOCK"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "result",
+            "schema": {
+              "type": "object"
+            },
+            "role": "RESULT"
+          }
+        ],
+        "bindings": {
+          "subject": {
+            "kind": "CONSTANT",
+            "value": {
+              "id": "article-1",
+              "type": "text/plain",
+              "locator": {
+                "host_key": "text"
+              }
+            }
+          },
+          "criterion": {
+            "kind": "CONSTANT",
+            "value": {
+              "id": "readable-prose",
+              "description": "Contains no banned phrase and is nonempty."
+            }
+          },
+          "text": {
+            "kind": "RUN_INPUT",
+            "name": "text"
+          }
+        },
+        "aggregate_inputs": []
       },
       {
         "id": "length",
         "kind": "EVALUATE",
-        "executor_ref": "demo.range",
         "config": {
           "key": "length",
           "minimum": 1,
           "maximum": 10000
-        }
+        },
+        "operation": {
+          "capability_id": "com.example.demo.range",
+          "capability_version": "1"
+        },
+        "inputs": [
+          {
+            "name": "subject",
+            "schema": {
+              "type": "object"
+            },
+            "required": true,
+            "on_unavailable": "BLOCK"
+          },
+          {
+            "name": "criterion",
+            "schema": {
+              "type": "object"
+            },
+            "required": true,
+            "on_unavailable": "BLOCK"
+          },
+          {
+            "name": "length",
+            "schema": {
+              "type": "number"
+            },
+            "required": true,
+            "on_unavailable": "BLOCK"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "result",
+            "schema": {
+              "type": "object"
+            },
+            "role": "RESULT"
+          }
+        ],
+        "bindings": {
+          "subject": {
+            "kind": "CONSTANT",
+            "value": {
+              "id": "article-1",
+              "type": "text/plain",
+              "locator": {
+                "host_key": "text"
+              }
+            }
+          },
+          "criterion": {
+            "kind": "CONSTANT",
+            "value": {
+              "id": "readable-prose",
+              "description": "Contains no banned phrase and is nonempty."
+            }
+          },
+          "length": {
+            "kind": "RUN_INPUT",
+            "name": "length"
+          }
+        },
+        "aggregate_inputs": []
       },
       {
         "id": "all",
         "kind": "AGGREGATE",
-        "executor_ref": "standard.aggregate",
         "config": {
           "reducer": "ALL",
           "handling": {
@@ -63,7 +186,105 @@
             "NOT_APPLICABLE": "REJECT",
             "MISSING": "REJECT"
           }
-        }
+        },
+        "operation": {
+          "capability_id": "openverify.aggregate",
+          "capability_version": "1"
+        },
+        "inputs": [
+          {
+            "name": "subject",
+            "schema": {
+              "type": "object"
+            },
+            "required": true,
+            "on_unavailable": "BLOCK"
+          },
+          {
+            "name": "criterion",
+            "schema": {
+              "type": "object"
+            },
+            "required": true,
+            "on_unavailable": "BLOCK"
+          },
+          {
+            "name": "phrase",
+            "schema": {
+              "type": "object"
+            },
+            "required": true,
+            "on_unavailable": "BLOCK"
+          },
+          {
+            "name": "length",
+            "schema": {
+              "type": "object"
+            },
+            "required": true,
+            "on_unavailable": "BLOCK"
+          },
+          {
+            "name": "members",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "required": true,
+            "on_unavailable": "BLOCK"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "result",
+            "schema": {
+              "type": "object"
+            },
+            "role": "RESULT"
+          }
+        ],
+        "bindings": {
+          "subject": {
+            "kind": "CONSTANT",
+            "value": {
+              "id": "article-1",
+              "type": "text/plain",
+              "locator": {
+                "host_key": "text"
+              }
+            }
+          },
+          "criterion": {
+            "kind": "CONSTANT",
+            "value": {
+              "id": "readable-prose",
+              "description": "Contains no banned phrase and is nonempty."
+            }
+          },
+          "phrase": {
+            "kind": "UPSTREAM_OUTPUT",
+            "node_id": "phrase",
+            "output": "result"
+          },
+          "length": {
+            "kind": "UPSTREAM_OUTPUT",
+            "node_id": "length",
+            "output": "result"
+          },
+          "members": {
+            "kind": "CONSTANT",
+            "value": [
+              "phrase",
+              "length"
+            ]
+          }
+        },
+        "aggregate_inputs": [
+          "phrase",
+          "length"
+        ]
       }
     ],
     "edges": [
@@ -76,5 +297,23 @@
         "to_node": "all"
       }
     ]
-  }
+  },
+  "run_inputs": [
+    {
+      "name": "text",
+      "schema": {
+        "type": "string"
+      },
+      "required": true,
+      "on_unavailable": "BLOCK"
+    },
+    {
+      "name": "length",
+      "schema": {
+        "type": "number"
+      },
+      "required": true,
+      "on_unavailable": "BLOCK"
+    }
+  ]
 }

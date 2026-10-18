@@ -1,0 +1,62 @@
+{
+  "v02.policy.invalid.ACTIVATION.0": {
+    "error_code": "POLICY_OUTPUT",
+    "occurrence": false
+  },
+  "v02.policy.invalid.ACTIVATION.1": {
+    "error_code": "POLICY_OUTPUT",
+    "occurrence": false
+  },
+  "v02.policy.invalid.ACTIVATION.2": {
+    "error_code": "POLICY_OUTPUT",
+    "occurrence": false
+  },
+  "v02.policy.invalid.ACTIVATION.3": {
+    "error_code": "POLICY_OUTPUT",
+    "occurrence": false
+  },
+  "v02.policy.failure.ACTIVATION": {
+    "error_code": "POLICY_OUTPUT",
+    "occurrence": false
+  },
+  "v02.policy.invalid.SELECTION.5": {
+    "error_code": "POLICY_OUTPUT",
+    "occurrence": false
+  },
+  "v02.policy.invalid.SELECTION.6": {
+    "error_code": "POLICY_OUTPUT",
+    "occurrence": false
+  },
+  "v02.policy.invalid.SELECTION.7": {
+    "error_code": "POLICY_OUTPUT",
+    "occurrence": false
+  },
+  "v02.policy.invalid.SELECTION.8": {
+    "error_code": "POLICY_OUTPUT",
+    "occurrence": false
+  },
+  "v02.policy.failure.SELECTION": {
+    "error_code": "POLICY_OUTPUT",
+    "occurrence": false
+  },
+  "v02.policy.invalid.ADMISSION.10": {
+    "error_code": "POLICY_OUTPUT",
+    "occurrence": false
+  },
+  "v02.policy.invalid.ADMISSION.11": {
+    "error_code": "POLICY_OUTPUT",
+    "occurrence": false
+  },
+  "v02.policy.invalid.ADMISSION.12": {
+    "error_code": "POLICY_OUTPUT",
+    "occurrence": false
+  },
+  "v02.policy.invalid.ADMISSION.13": {
+    "error_code": "POLICY_OUTPUT",
+    "occurrence": false
+  },
+  "v02.policy.failure.ADMISSION": {
+    "error_code": "POLICY_OUTPUT",
+    "occurrence": false
+  }
+}

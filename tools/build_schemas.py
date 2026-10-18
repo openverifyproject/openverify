@@ -114,6 +114,74 @@ schemas["decision"] = marked(
     },
     ("kind",),
 )
+schema_value = {"type": ["object", "boolean"]}
+schemas["operation-requirement"] = obj(
+    {
+        "capability_id": {
+            **STR,
+            "pattern": (
+                r"^(?:openverify\.[a-z][a-z0-9_]*(?:\.[a-z][a-z0-9_]*)*|"
+                r"[a-z][a-z0-9_]*(?:\.[a-z][a-z0-9_]*){2,})$"
+            ),
+        },
+        "capability_version": STR,
+    },
+    ("capability_id", "capability_version"),
+    False,
+)
+provider_identifiers = json.loads(
+    (ROOT / "provider-contract/schemas/draft/provider-manifest.schema.json").read_text(
+        encoding="utf-8"
+    )
+)["properties"]
+capability_identifiers = json.loads(
+    (ROOT / "provider-contract/schemas/draft/capability.schema.json").read_text(encoding="utf-8")
+)["properties"]
+schemas["provider-binding"] = obj(
+    {
+        "provider_id": provider_identifiers["provider_id"],
+        "provider_version": provider_identifiers["provider_version"],
+        "capability_id": capability_identifiers["capability_id"],
+        "capability_version": capability_identifiers["capability_version"],
+    },
+    ("provider_id", "provider_version", "capability_id", "capability_version"),
+    False,
+)
+schemas["value-source"] = {
+    "oneOf": [
+        obj({"kind": {"const": "CONSTANT"}, "value": JSON}, ("kind", "value"), False),
+        obj({"kind": {"const": "RUN_INPUT"}, "name": STR}, ("kind", "name"), False),
+        obj(
+            {"kind": {"const": "EXTERNAL_REFERENCE"}, "reference": ref("artifact-ref")},
+            ("kind", "reference"),
+            False,
+        ),
+        obj(
+            {"kind": {"const": "UPSTREAM_OUTPUT"}, "node_id": STR, "output": STR},
+            ("kind", "node_id", "output"),
+            False,
+        ),
+    ]
+}
+constant = obj({"kind": {"const": "CONSTANT"}, "value": JSON}, ("kind", "value"), False)
+schemas["input-port"] = obj(
+    {
+        "name": STR,
+        "schema": schema_value,
+        "required": {"type": "boolean"},
+        "on_unavailable": enum("BLOCK", "OMIT", "DEFAULT"),
+        "default": constant,
+    },
+    ("name", "schema", "required", "on_unavailable"),
+    False,
+)
+schemas["output-port"] = obj(
+    {"name": STR, "schema": schema_value, "role": enum("INFORMATION", "RESULT", "DECISION")},
+    ("name", "schema", "role"),
+    False,
+)
+bindings = {"type": "object", "propertyNames": STR, "additionalProperties": ref("value-source")}
+ports = array(ref("input-port"))
 schemas["graph"] = obj(
     {
         "nodes": array(
@@ -121,11 +189,16 @@ schemas["graph"] = obj(
                 {
                     "id": STR,
                     "kind": enum("DERIVE", "EVALUATE", "CONTROL", "AGGREGATE"),
-                    "executor_ref": STR,
+                    "operation": ref("operation-requirement"),
+                    "inputs": ports,
+                    "outputs": array(ref("output-port")),
+                    "bindings": bindings,
+                    "aggregate_inputs": array(STR),
                     "config": {"type": "object"},
+                    "config_schema": schema_value,
                     "resource_estimate": vector,
                 },
-                ("id", "kind", "executor_ref"),
+                ("id", "kind", "operation", "inputs", "outputs", "bindings"),
             )
         ),
         "edges": array(
@@ -136,19 +209,11 @@ schemas["graph"] = obj(
                     "guard": nullable(
                         obj(
                             {
-                                "node_id": STR,
-                                "field": enum(
-                                    "disposition",
-                                    "execution_outcome",
-                                    "applicability",
-                                    "determination",
-                                    "verdict",
-                                    "decision_kind",
-                                    "decision_destination",
-                                ),
-                                "value": STR,
+                                "source": ref("value-source"),
+                                "pointer": {"type": "string"},
+                                "value": JSON,
                             },
-                            ("node_id", "field", "value"),
+                            ("source", "pointer", "value"),
                             False,
                         )
                     ),
@@ -162,37 +227,103 @@ schemas["graph"] = obj(
     ("nodes",),
     False,
 )
+policy_fields = {
+    "operation": ref("operation-requirement"),
+    "config": {"type": "object"},
+    "config_schema": schema_value,
+    "inputs": ports,
+    "bindings": bindings,
+}
+capability = obj({**policy_fields, "executor_ref": STR}, (), False)
+admission_policy = obj(
+    {**policy_fields, "strategy": STR, "probability": nullable({**NUM, "maximum": 1})}, (), False
+)
+schemas["activation"] = obj(
+    {"outcome": enum("ACTIVATE", "DO_NOT_ACTIVATE"), "reason": STR}, ("outcome", "reason"), False
+)
+schemas["selection"] = obj(
+    {"subjects": array(ref("artifact-ref")), "reason": STR}, ("subjects", "reason"), False
+)
+schemas["admission"] = obj(
+    {"outcome": enum("RUN", "SKIP", "DEFER"), "reason": STR}, ("outcome", "reason"), False
+)
 schemas["verification-definition"] = marked(
     {
         "id": STR,
         "version": STR,
         "subject": ref("artifact-ref"),
         "criterion": obj({"id": STR, "description": STR}, ("id", "description")),
-        "judgment_schema": {"type": "object"},
+        "judgment_schema": schema_value,
+        "run_inputs": ports,
         "satisfaction_mapping": nullable({"type": "object"}),
         "graph": ref("graph"),
         "execution_policy": obj(
             {
-                "activation": obj(
-                    {"executor_ref": STR, "config": {"type": "object"}}, ("executor_ref",), False
-                ),
-                "selection": obj(
-                    {"executor_ref": STR, "config": {"type": "object"}}, ("executor_ref",), False
-                ),
-                "admission": obj(
-                    {"strategy": STR, "probability": nullable({**NUM, "maximum": 1})},
-                    ("strategy",),
-                    False,
-                ),
+                "activation": capability,
+                "selection": capability,
+                "admission": admission_policy,
             },
             ("activation", "selection", "admission"),
             False,
         ),
     },
-    ("id", "version", "subject", "criterion", "judgment_schema", "graph", "execution_policy"),
+    (
+        "id",
+        "version",
+        "subject",
+        "criterion",
+        "judgment_schema",
+        "run_inputs",
+        "graph",
+        "execution_policy",
+    ),
 )
 timestamp = {"type": "string", "format": "date-time", "pattern": r"(?:[Zz]|\+00:00)$"}
 results = {"type": "object", "additionalProperties": ref("result")}
+schemas["execution-observation"] = obj(
+    {
+        "outputs": {"type": "object"},
+        "usage": vector,
+        "evidence": array(ref("evidence")),
+        "error": obj({"code": STR, "message": STR}, ("code", "message"), False),
+    },
+    ("outputs", "usage", "evidence"),
+    False,
+)
+schemas["input-resolution"] = obj(
+    {
+        "source": ref("value-source"),
+        "status": enum(
+            "AVAILABLE",
+            "ABSENT",
+            "PRODUCER_NOT_EXECUTED",
+            "PRODUCER_ERROR",
+            "OUTPUT_MISSING",
+            "INVALID",
+        ),
+        "used_default": {"type": "boolean"},
+        "value": JSON,
+    },
+    ("status", "used_default"),
+    False,
+)
+schemas["policy-evaluation"] = obj(
+    {
+        "role": enum("ACTIVATION", "SELECTION", "ADMISSION"),
+        "input_values": {"type": "object"},
+        "input_resolutions": {"type": "object", "additionalProperties": ref("input-resolution")},
+        "outcome": {"oneOf": [ref("activation"), ref("selection"), ref("admission")]},
+        "executor_ref": nullable(STR),
+        "executor_version": nullable(STR),
+    },
+    ("role", "input_values", "input_resolutions", "outcome"),
+    False,
+)
+schemas["cancellation-event"] = obj(
+    {"node_id": STR, "phase": enum("BEFORE_START", "RUNNING"), "reason": STR},
+    ("node_id", "phase", "reason"),
+    False,
+)
 schemas["run-record"] = marked(
     {
         "run_id": STR,
@@ -200,37 +331,62 @@ schemas["run-record"] = marked(
         "definition_fingerprint": {**STR, "pattern": "^local-sha256:[0-9a-f]{64}$"},
         "subject": ref("artifact-ref"),
         "initial_context": {"type": "object"},
+        "run_inputs": {"type": "object"},
         "opportunity_id": STR,
-        "admission": obj(
-            {"outcome": enum("RUN", "SKIP", "DEFER"), "reason": STR}, ("outcome", "reason"), False
-        ),
+        "admission": ref("admission"),
+        "policy_evaluations": array(ref("policy-evaluation")),
+        "cancellation": ref("cancellation-event"),
+        "provider_bindings": {
+            "type": "object",
+            "propertyNames": STR,
+            "additionalProperties": ref("provider-binding"),
+        },
         "started_at": timestamp,
         "finished_at": timestamp,
         "nodes": array(
             obj(
                 {
                     "node_id": STR,
-                    "executor_ref": STR,
+                    "kind": enum("DERIVE", "EVALUATE", "CONTROL", "AGGREGATE"),
+                    "operation": ref("operation-requirement"),
+                    "executor_ref": nullable(STR),
                     "executor_version": nullable(STR),
+                    "provider_binding": ref("provider-binding"),
+                    "provider_output_error": obj(
+                        {"code": {"const": "INVALID_PROVIDER_OUTPUT"}, "message": STR},
+                        ("code", "message"),
+                        False,
+                    ),
                     "upstream_node_ids": array(STR),
-                    "input_context": {"type": "object"},
                     "upstream_results": results,
+                    "input_values": {"type": "object"},
+                    "input_resolutions": {
+                        "type": "object",
+                        "additionalProperties": ref("input-resolution"),
+                    },
                     "started_at": timestamp,
                     "finished_at": timestamp,
                     "usage": vector,
+                    "state": enum("SUCCESS", "ERROR", "NONEXECUTED", "CANCELLED"),
+                    "reason": nullable(STR),
+                    "observation": ref("execution-observation"),
+                    "information": {"type": "object"},
                     "result": nullable(ref("result")),
                     "decision": nullable(ref("decision")),
-                    "derived": nullable({"type": "object"}),
                 },
                 (
                     "node_id",
-                    "executor_ref",
+                    "kind",
+                    "operation",
                     "upstream_node_ids",
-                    "input_context",
                     "upstream_results",
+                    "input_values",
+                    "input_resolutions",
                     "started_at",
                     "finished_at",
                     "usage",
+                    "state",
+                    "information",
                 ),
                 False,
             )
@@ -243,8 +399,10 @@ schemas["run-record"] = marked(
         "definition_fingerprint",
         "subject",
         "initial_context",
+        "run_inputs",
         "opportunity_id",
         "admission",
+        "policy_evaluations",
         "started_at",
         "finished_at",
         "nodes",
@@ -280,12 +438,15 @@ descriptions = {
     "resource": "Unit-bearing measurement with kind-dependent value or range fields.",
     "decision": "Verification control decision, distinct from judgment; ROUTE needs destination.",
     "graph": (
-        "Directed graph subset with source equality guards; semantic validation rejects "
-        "unsupported standard weighted graph aggregation."
+        "Typed DAG with explicit input bindings, operation requirements and aggregate membership."
     ),
     "verification-definition": "Versioned subject/criterion, judgment schema, graph and policy.",
     "run-record": (
         "Snapshots retaining identity, admission, lineage, outputs, usage and UTC timing."
+    ),
+    "provider-binding": (
+        "Concrete provider/capability identity used in an occurrence; "
+        "see spec/draft/provider-binding.md."
     ),
     "extension": "Namespaced data; preserve optional, reject unsupported required meaning.",
     "resource-dimension": "Open resource dimension with explicit unit and semantic description.",
@@ -296,7 +457,9 @@ for name, schema in schemas.items():
     schema = {
         "$schema": "https://json-schema.org/draft/2020-12/schema",
         "$id": BASE + name,
-        "description": descriptions[name],
+        "description": descriptions.get(
+            name, "Typed explicit executable dataflow; see spec/draft/dataflow.md."
+        ),
         **schema,
     }
     for folder in (ROOT / "schemas/draft", ROOT / "src/openverify/data/schemas"):

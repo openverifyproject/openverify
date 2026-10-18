@@ -1,0 +1,218 @@
+{
+  "v02.provider.error_code.CONTRACT_VERSION_UNSUPPORTED": {
+    "object_type": "outcome",
+    "value": {
+      "invocation_id": "attempt-1",
+      "state": "ERROR",
+      "error": {
+        "code": "CONTRACT_VERSION_UNSUPPORTED",
+        "message": "informative",
+        "details": {
+          "identity": [
+            false,
+            0,
+            null
+          ]
+        }
+      }
+    }
+  },
+  "v02.provider.error_code.CAPABILITY_UNAVAILABLE": {
+    "object_type": "outcome",
+    "value": {
+      "invocation_id": "attempt-1",
+      "state": "ERROR",
+      "error": {
+        "code": "CAPABILITY_UNAVAILABLE",
+        "message": "informative",
+        "details": {
+          "identity": [
+            false,
+            0,
+            null
+          ]
+        }
+      }
+    }
+  },
+  "v02.provider.error_code.CAPABILITY_VERSION_UNSUPPORTED": {
+    "object_type": "outcome",
+    "value": {
+      "invocation_id": "attempt-1",
+      "state": "ERROR",
+      "error": {
+        "code": "CAPABILITY_VERSION_UNSUPPORTED",
+        "message": "informative",
+        "details": {
+          "identity": [
+            false,
+            0,
+            null
+          ]
+        }
+      }
+    }
+  },
+  "v02.provider.error_code.INVALID_INVOCATION": {
+    "object_type": "outcome",
+    "value": {
+      "invocation_id": "attempt-1",
+      "state": "ERROR",
+      "error": {
+        "code": "INVALID_INVOCATION",
+        "message": "informative",
+        "details": {
+          "identity": [
+            false,
+            0,
+            null
+          ]
+        }
+      }
+    }
+  },
+  "v02.provider.error_code.INVALID_CONFIG": {
+    "object_type": "outcome",
+    "value": {
+      "invocation_id": "attempt-1",
+      "state": "ERROR",
+      "error": {
+        "code": "INVALID_CONFIG",
+        "message": "informative",
+        "details": {
+          "identity": [
+            false,
+            0,
+            null
+          ]
+        }
+      }
+    }
+  },
+  "v02.provider.error_code.INVALID_INPUT": {
+    "object_type": "outcome",
+    "value": {
+      "invocation_id": "attempt-1",
+      "state": "ERROR",
+      "error": {
+        "code": "INVALID_INPUT",
+        "message": "informative",
+        "details": {
+          "identity": [
+            false,
+            0,
+            null
+          ]
+        }
+      }
+    }
+  },
+  "v02.provider.error_code.INVALID_PROVIDER_OUTPUT": {
+    "object_type": "outcome",
+    "value": {
+      "invocation_id": "attempt-1",
+      "state": "ERROR",
+      "error": {
+        "code": "INVALID_PROVIDER_OUTPUT",
+        "message": "informative",
+        "details": {
+          "identity": [
+            false,
+            0,
+            null
+          ]
+        }
+      }
+    }
+  },
+  "v02.provider.error_code.PROTOCOL_VIOLATION": {
+    "object_type": "outcome",
+    "value": {
+      "invocation_id": "attempt-1",
+      "state": "ERROR",
+      "error": {
+        "code": "PROTOCOL_VIOLATION",
+        "message": "informative",
+        "details": {
+          "identity": [
+            false,
+            0,
+            null
+          ]
+        }
+      }
+    }
+  },
+  "v02.provider.error_code.com.example.failed": {
+    "object_type": "outcome",
+    "value": {
+      "invocation_id": "attempt-1",
+      "state": "ERROR",
+      "error": {
+        "code": "com.example.failed",
+        "message": "informative",
+        "details": {
+          "identity": [
+            false,
+            0,
+            null
+          ]
+        }
+      }
+    }
+  },
+  "v02.provider.error_code.AGGREGATE_INPUT": {
+    "object_type": "outcome",
+    "value": {
+      "invocation_id": "attempt-1",
+      "state": "ERROR",
+      "error": {
+        "code": "AGGREGATE_INPUT",
+        "message": "informative",
+        "details": {
+          "identity": [
+            false,
+            0,
+            null
+          ]
+        }
+      }
+    }
+  },
+  "v02.provider.error_code.ERROR": {
+    "object_type": "outcome",
+    "value": {
+      "invocation_id": "attempt-1",
+      "state": "ERROR",
+      "error": {
+        "code": "ERROR",
+        "message": "informative",
+        "details": {
+          "identity": [
+            false,
+            0,
+            null
+          ]
+        }
+      }
+    }
+  },
+  "v02.provider.error_code.foo.failed": {
+    "object_type": "outcome",
+    "value": {
+      "invocation_id": "attempt-1",
+      "state": "ERROR",
+      "error": {
+        "code": "foo.failed",
+        "message": "informative",
+        "details": {
+          "identity": [
+            false,
+            0,
+            null
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "integration.python.json": {
+    "entrypoint": "python",
+    "variant": "json"
+  },
+  "integration.python.model": {
+    "entrypoint": "python",
+    "variant": "model"
+  },
+  "integration.python.sync": {
+    "entrypoint": "python",
+    "variant": "sync"
+  },
+  "integration.python.builder": {
+    "entrypoint": "python",
+    "variant": "builder"
+  }
+}

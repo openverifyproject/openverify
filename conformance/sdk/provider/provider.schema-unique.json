@@ -1,0 +1,25 @@
+{
+  "id": "provider.schema-unique",
+  "contract": "provider",
+  "version": "0.1",
+  "type": "data",
+  "operation": "data",
+  "input": [
+    1,
+    true
+  ],
+  "expected": {
+    "accepted": true,
+    "normalized": [
+      1,
+      true
+    ]
+  },
+  "features": [
+    "standalone",
+    "data"
+  ],
+  "schema": {
+    "uniqueItems": true
+  }
+}

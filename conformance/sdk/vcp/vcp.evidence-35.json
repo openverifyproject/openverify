@@ -1,0 +1,20 @@
+{
+  "id": "vcp.evidence-35",
+  "contract": "vcp",
+  "version": "draft",
+  "type": "evidence",
+  "operation": "parse",
+  "input": {
+    "structured_data": {}
+  },
+  "expected": {
+    "accepted": true,
+    "normalized": {
+      "structured_data": {}
+    }
+  },
+  "features": [
+    "standalone",
+    "evidence"
+  ]
+}

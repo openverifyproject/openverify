@@ -1,0 +1,110 @@
+{
+  "v02.provider.deadline.0001.20.before.COMPLETED": {
+    "accept": true
+  },
+  "v02.provider.deadline.0001.20.before.DEADLINE_EXCEEDED": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "v02.provider.deadline.0001.20.equal.COMPLETED": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "v02.provider.deadline.0001.20.equal.DEADLINE_EXCEEDED": {
+    "accept": true
+  },
+  "v02.provider.deadline.0001.20.after.COMPLETED": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "v02.provider.deadline.0001.20.after.DEADLINE_EXCEEDED": {
+    "accept": true
+  },
+  "v02.provider.deadline.0001.80.before.COMPLETED": {
+    "accept": true
+  },
+  "v02.provider.deadline.0001.80.before.DEADLINE_EXCEEDED": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "v02.provider.deadline.0001.80.equal.COMPLETED": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "v02.provider.deadline.0001.80.equal.DEADLINE_EXCEEDED": {
+    "accept": true
+  },
+  "v02.provider.deadline.0001.80.after.COMPLETED": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "v02.provider.deadline.0001.80.after.DEADLINE_EXCEEDED": {
+    "accept": true
+  },
+  "v02.provider.deadline.2026.20.before.COMPLETED": {
+    "accept": true
+  },
+  "v02.provider.deadline.2026.20.before.DEADLINE_EXCEEDED": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "v02.provider.deadline.2026.20.equal.COMPLETED": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "v02.provider.deadline.2026.20.equal.DEADLINE_EXCEEDED": {
+    "accept": true
+  },
+  "v02.provider.deadline.2026.20.after.COMPLETED": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "v02.provider.deadline.2026.20.after.DEADLINE_EXCEEDED": {
+    "accept": true
+  },
+  "v02.provider.deadline.2026.80.before.COMPLETED": {
+    "accept": true
+  },
+  "v02.provider.deadline.2026.80.before.DEADLINE_EXCEEDED": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "v02.provider.deadline.2026.80.equal.COMPLETED": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "v02.provider.deadline.2026.80.equal.DEADLINE_EXCEEDED": {
+    "accept": true
+  },
+  "v02.provider.deadline.2026.80.after.COMPLETED": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "v02.provider.deadline.2026.80.after.DEADLINE_EXCEEDED": {
+    "accept": true
+  },
+  "v02.provider.deadline.9999.20.before.COMPLETED": {
+    "accept": true
+  },
+  "v02.provider.deadline.9999.20.before.DEADLINE_EXCEEDED": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "v02.provider.deadline.9999.20.equal.COMPLETED": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "v02.provider.deadline.9999.20.equal.DEADLINE_EXCEEDED": {
+    "accept": true
+  },
+  "v02.provider.deadline.9999.20.after.COMPLETED": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "v02.provider.deadline.9999.20.after.DEADLINE_EXCEEDED": {
+    "accept": true
+  },
+  "v02.provider.deadline.9999.80.before.COMPLETED": {
+    "accept": true
+  },
+  "v02.provider.deadline.9999.80.before.DEADLINE_EXCEEDED": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "v02.provider.deadline.9999.80.equal.COMPLETED": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "v02.provider.deadline.9999.80.equal.DEADLINE_EXCEEDED": {
+    "accept": true
+  },
+  "v02.provider.deadline.9999.80.after.COMPLETED": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "v02.provider.deadline.9999.80.after.DEADLINE_EXCEEDED": {
+    "accept": true
+  }
+}

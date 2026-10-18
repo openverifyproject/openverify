@@ -1,0 +1,17 @@
+{
+  "runtime.cancellation.before_dispatch": {
+    "invariant": "CANCELLED without provider invocation"
+  },
+  "runtime.cancellation.during_invocation": {
+    "invariant": "CANCELLED with no accepted output"
+  },
+  "runtime.cancellation.near_completion": {
+    "invariant": "cancellation observed before acceptance discards output"
+  },
+  "runtime.cancellation.after_terminal": {
+    "invariant": "terminal record remains unchanged"
+  },
+  "runtime.cancellation.task_cancel": {
+    "invariant": "CancelledError and no fabricated record"
+  }
+}

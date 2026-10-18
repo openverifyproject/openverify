@@ -1,0 +1,20 @@
+{
+  "id": "vcp.continue-destination",
+  "contract": "vcp",
+  "version": "draft",
+  "type": "decision",
+  "operation": "parse",
+  "input": {
+    "protocol": "draft",
+    "kind": "CONTINUE",
+    "destination": "x"
+  },
+  "expected": {
+    "accepted": false,
+    "error": "*"
+  },
+  "features": [
+    "standalone",
+    "decision"
+  ]
+}

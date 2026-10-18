@@ -1,0 +1,30 @@
+{
+  "python": "3.13.5 (main, Jun 12 2025, 12:42:35) [MSC v.1943 64 bit (AMD64)]",
+  "executable": "C:\\Users\\siddh\\OneDrive\\Desktop\\openverify\\.venv\\Scripts\\python.exe",
+  "import_path": "C:\\Users\\siddh\\OneDrive\\Desktop\\openverify\\.worktrees\\golden-v4\\src\\openverify\\__init__.py",
+  "argv": [
+    "C:\\Users\\siddh\\OneDrive\\Desktop\\openverify\\.venv\\Lib\\site-packages\\pytest\\__main__.py",
+    "-q",
+    "tests/golden_v4/",
+    "--junitxml=.pytest_cache/golden-v4/full-final/junit.xml"
+  ],
+  "start_monotonic": 250956.2856323,
+  "dependencies": {
+    "pytest": "9.1.1",
+    "pydantic": "2.14.1",
+    "jsonschema": "4.26.0",
+    "mcp": "1.30.0",
+    "starlette": "1.8.0",
+    "httpx": "0.28.1"
+  },
+  "exitstatus": 1,
+  "duration_seconds": 48.65024529999937,
+  "collected": 15236,
+  "executed": 15236,
+  "counts": {
+    "PASS": 15219,
+    "FAIL": 17
+  },
+  "relay_api_calls": 185,
+  "relay_awaited_seconds": 7.962131899839733
+}

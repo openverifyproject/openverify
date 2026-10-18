@@ -1,0 +1,398 @@
+{
+  "provider.completed": {
+    "accept": true
+  },
+  "provider.outcome.ERROR": {
+    "accept": true
+  },
+  "provider.outcome.CANCELLED": {
+    "accept": true
+  },
+  "provider.outcome.DEADLINE_EXCEEDED": {
+    "accept": true
+  },
+  "provider.event.0000.progress": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.event.0000.diagnostic": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.event.0000.evidence": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.event.0000.artifact": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.event.0000.resource_usage": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.event.0000.extension": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.event.0001.progress": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.event.0001.diagnostic": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.event.0001.evidence": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.event.0001.artifact": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.event.0001.resource_usage": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.event.0001.extension": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.event.0010.progress": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.event.0010.diagnostic": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.event.0010.evidence": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.event.0010.artifact": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.event.0010.resource_usage": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.event.0010.extension": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.event.0011.progress": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.event.0011.diagnostic": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.event.0011.evidence": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.event.0011.artifact": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.event.0011.resource_usage": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.event.0011.extension": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.event.0100.progress": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.event.0100.diagnostic": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.event.0100.evidence": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.event.0100.artifact": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.event.0100.resource_usage": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.event.0100.extension": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.event.0101.progress": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.event.0101.diagnostic": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.event.0101.evidence": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.event.0101.artifact": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.event.0101.resource_usage": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.event.0101.extension": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.event.0110.progress": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.event.0110.diagnostic": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.event.0110.evidence": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.event.0110.artifact": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.event.0110.resource_usage": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.event.0110.extension": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.event.0111.progress": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.event.0111.diagnostic": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.event.0111.evidence": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.event.0111.artifact": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.event.0111.resource_usage": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.event.0111.extension": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.event.1000.progress": {
+    "accept": true
+  },
+  "provider.event.1000.diagnostic": {
+    "accept": true
+  },
+  "provider.event.1000.evidence": {
+    "accept": true
+  },
+  "provider.event.1000.artifact": {
+    "accept": true
+  },
+  "provider.event.1000.resource_usage": {
+    "error_code": "INVALID_PROVIDER_OUTPUT"
+  },
+  "provider.event.1000.extension": {
+    "accept": true
+  },
+  "provider.event.1001.progress": {
+    "accept": true
+  },
+  "provider.event.1001.diagnostic": {
+    "accept": true
+  },
+  "provider.event.1001.evidence": {
+    "accept": true
+  },
+  "provider.event.1001.artifact": {
+    "accept": true
+  },
+  "provider.event.1001.resource_usage": {
+    "accept": true
+  },
+  "provider.event.1001.extension": {
+    "accept": true
+  },
+  "provider.event.1010.progress": {
+    "accept": true
+  },
+  "provider.event.1010.diagnostic": {
+    "accept": true
+  },
+  "provider.event.1010.evidence": {
+    "accept": true
+  },
+  "provider.event.1010.artifact": {
+    "accept": true
+  },
+  "provider.event.1010.resource_usage": {
+    "error_code": "INVALID_PROVIDER_OUTPUT"
+  },
+  "provider.event.1010.extension": {
+    "accept": true
+  },
+  "provider.event.1011.progress": {
+    "accept": true
+  },
+  "provider.event.1011.diagnostic": {
+    "accept": true
+  },
+  "provider.event.1011.evidence": {
+    "accept": true
+  },
+  "provider.event.1011.artifact": {
+    "accept": true
+  },
+  "provider.event.1011.resource_usage": {
+    "accept": true
+  },
+  "provider.event.1011.extension": {
+    "accept": true
+  },
+  "provider.event.1100.progress": {
+    "accept": true
+  },
+  "provider.event.1100.diagnostic": {
+    "accept": true
+  },
+  "provider.event.1100.evidence": {
+    "accept": true
+  },
+  "provider.event.1100.artifact": {
+    "accept": true
+  },
+  "provider.event.1100.resource_usage": {
+    "error_code": "INVALID_PROVIDER_OUTPUT"
+  },
+  "provider.event.1100.extension": {
+    "accept": true
+  },
+  "provider.event.1101.progress": {
+    "accept": true
+  },
+  "provider.event.1101.diagnostic": {
+    "accept": true
+  },
+  "provider.event.1101.evidence": {
+    "accept": true
+  },
+  "provider.event.1101.artifact": {
+    "accept": true
+  },
+  "provider.event.1101.resource_usage": {
+    "accept": true
+  },
+  "provider.event.1101.extension": {
+    "accept": true
+  },
+  "provider.event.1110.progress": {
+    "accept": true
+  },
+  "provider.event.1110.diagnostic": {
+    "accept": true
+  },
+  "provider.event.1110.evidence": {
+    "accept": true
+  },
+  "provider.event.1110.artifact": {
+    "accept": true
+  },
+  "provider.event.1110.resource_usage": {
+    "error_code": "INVALID_PROVIDER_OUTPUT"
+  },
+  "provider.event.1110.extension": {
+    "accept": true
+  },
+  "provider.event.1111.progress": {
+    "accept": true
+  },
+  "provider.event.1111.diagnostic": {
+    "accept": true
+  },
+  "provider.event.1111.evidence": {
+    "accept": true
+  },
+  "provider.event.1111.artifact": {
+    "accept": true
+  },
+  "provider.event.1111.resource_usage": {
+    "accept": true
+  },
+  "provider.event.1111.extension": {
+    "accept": true
+  },
+  "provider.sequence.100": {
+    "accept": true
+  },
+  "provider.sequence.101": {
+    "accept": true
+  },
+  "provider.sequence.102": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.sequence.103": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.sequence.104": {
+    "error_code": "INVALID_PROVIDER_OUTPUT"
+  },
+  "provider.sequence.105": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.sequence.106": {
+    "error_code": "INVALID_PROVIDER_OUTPUT"
+  },
+  "provider.sequence.107": {
+    "error_code": "INVALID_PROVIDER_OUTPUT"
+  },
+  "provider.sequence.108": {
+    "accept": true
+  },
+  "provider.duplicate_outcome": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.missing_outcome": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.running_prefix": {
+    "accept": true
+  },
+  "provider.duplicate_invocation": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.wrong_correlation": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.missing_capability": {
+    "error_code": "CAPABILITY_UNAVAILABLE"
+  },
+  "provider.wrong_version": {
+    "error_code": "CAPABILITY_VERSION_UNSUPPORTED"
+  },
+  "provider.wrong_contract": {
+    "error_code": "CONTRACT_VERSION_UNSUPPORTED"
+  },
+  "provider.duplicate_capability": {
+    "error_code": "INVALID_PROVIDER_OUTPUT"
+  },
+  "provider.unknown_cancel": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.cancel_after_terminal": {
+    "accept": true
+  },
+  "provider.unsolicited_cancelled": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.invalid_input": {
+    "error_code": "INVALID_INPUT"
+  },
+  "provider.invalid_config": {
+    "error_code": "INVALID_CONFIG"
+  },
+  "provider.invalid_output": {
+    "error_code": "INVALID_PROVIDER_OUTPUT"
+  },
+  "provider.deadline.124": {
+    "accept": true
+  },
+  "provider.deadline.125": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.deadline.126": {
+    "accept": true
+  },
+  "provider.deadline.127": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.deadline.128": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.deadline.129": {
+    "accept": true
+  },
+  "provider.deadline.130": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.deadline.131": {
+    "accept": true
+  }
+}

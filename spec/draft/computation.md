@@ -2,31 +2,18 @@
 
 ## NORMATIVE SEMANTICS
 
-Inside the boundary, an operation produces information, judgment, or a control
-decision. Accordingly Derive: Information* -> Information*;
-Evaluate: Context × prior Results -> Result;
-Control: Context × Results -> Decision.
-This output-type argument makes the three categories exhaustive within the
-declared boundary; an operation with multiple kinds of output can be decomposed.
+Derive produces INFORMATION, Evaluate produces a Result, and Control produces a
+Decision. Aggregate is specialized Evaluate. Every kind has explicit typed inputs,
+outputs, bindings and an exact provider-neutral operation requirement as specified
+in [typed dataflow](dataflow.md). Information outputs may accompany Results or
+Decisions; execution observations and usage remain separate from semantic outputs.
 
-Aggregate: Result* × configuration -> Result is specialized Evaluate, exposed as
-a convenient first-class graph node. It is not a fourth fundamental output type.
-Regex, scripts, tools, model judges, humans, APIs, theorem provers, sensors, and
-statistical tests are adapter implementations, not core semantic kinds.
-
-Nodes contain id, kind (DERIVE/EVALUATE/CONTROL/AGGREGATE), executor_ref, config,
-optional resource_estimate, metadata, and extensions. executor_ref identifies
-a capability; it MUST NOT authorize dynamic imports or arbitrary expression
-execution. Hosts explicitly register trusted implementations.
-
-## NON-NORMATIVE EXAMPLES
-
-Executor characteristics can be described in metadata: deterministic/probabilistic,
-local/remote, human/machine, reproducible, trusted. They do not change node meaning.
+The exact input object contains only resolved declared ports. There is no injected
+Context or predecessor-Results argument. Trusted local implementations are explicitly
+registered; operation requirements never authorize imports or expressions.
 
 ## OPEN QUESTIONS
 
-The reference Derive contract returns a Context update. Merge/order behavior
-is engine-local: sequential updates replace named values. No portable conflict
-resolution between parallel derives is specified.
-
+Provider discovery and selection are implementation responsibilities outside VCP
+meaning. Relay v0.1 implements a trusted catalog and exact deterministic binding;
+see [Relay architecture](../../docs/relay/architecture.md) for the non-normative runtime boundary.

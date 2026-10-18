@@ -2,63 +2,59 @@
 
 ## NORMATIVE SEMANTICS
 
-A RunRecord MUST contain protocol marker, run_id, definition snapshot,
-definition_fingerprint, subject, initial_context, opportunity_id, admission
-outcome/reason, started_at, finished_at, node records, and final_results.
-definition snapshot establishes id/version/criterion/graph/input artifact identity.
-The fingerprint MUST be identified as reference-only, not a portable digest.
-Consumers retain that labeled identifier as opaque provenance. Recomputing a
-reference-local digest is not a portable conformance requirement or integrity proof.
-Timestamps are UTC RFC3339 strings, accepting the UTC marker Z (also lowercase z
-as permitted by RFC3339) or an explicit +00:00 offset. Non-UTC offsets are invalid.
-Fractional seconds are permitted; no canonical fractional formatting is prescribed.
-Timestamps establish recorded timing, not clock trust.
+[Typed dataflow](dataflow.md) defines the complete node input/output lineage contract.
+RunRecord contains definition snapshot, opaque reference-only definition_fingerprint,
+subject, initial supplied run_inputs, ambient nonsemantic initial_context, admission,
+opportunity identity, complete node records and all final Results. It does not invent
+an overall verdict. Every node has exactly one terminal record in dependency order.
 
-Each node record MUST identify node_id, executor_ref, upstream_node_ids,
-input_context, upstream_results, started_at, finished_at, and actual usage.
-executor_version MAY be present when known. Result, Decision, or derived update
-records the operation output; skipped/error node records retain their Result.
-Evidence and adapter resource usage remain in Result; engine duration remains
-in node usage. Upstream Results are snapshots keyed by predecessor identity.
-final_results is a mapping of emitted Result node IDs, including intermediates,
-not an invented overall judgment. No overall verdict exists without aggregation.
+Node records retain operation requirements, kind, executor identity/version when known,
+exact input resolutions and values, direct upstream Result snapshots, execution
+observations, accepted information and Result/Decision, resource usage and timing.
+A validator reconstructs each resolution from recorded source values and checks
+semantic output acceptance, availability and guard/control/admission eligibility.
+No provider is rerun. Contradictions are PROVENANCE_LINEAGE errors. Usage on executor
+observations remains distinct from engine wall-time usage and semantic Results.
+For concrete bound providers, [provider binding](provider-binding.md) requires the
+exact four-part invocation binding, matching node provenance and executor identity.
+Host provider-output schema rejections preserve observations and incurred usage.
 
-Consumers MUST preserve definition snapshots and lineage if they claim
-reconstructable run provenance. RunRecord validation MUST check duplicate/missing
-node identities, graph relationships, output-kind consistency, and final Results.
-Persistence mechanism is replaceable; no particular backend is required.
-The run subject MUST match the definition subject, upstream Result snapshots MUST
-match the corresponding predecessor records, and final_results MUST match all
-emitted node Results. Snapshot comparisons distinguish JSON types: booleans are
-never numbers, arrays preserve element order, and object member order is irrelevant.
-Optional nullable fields retain the absence/null equivalence in wire-format.md.
-This does not define canonical hashing or new cross-engine numeric precision.
+Input/output comparisons distinguish JSON booleans from numbers and preserve array
+order. Admission SKIP requires all node Results SKIPPED/ADMISSION_SKIP; admission DEFER
+requires DEFERRED/ADMISSION_DEFER. Disabled/blocked nodes
+contain no executor observations. Every record is within its run interval and each
+predecessor finishes before its consumer starts. Timestamps are UTC RFC3339 with
+Z/z or +00:00. Timing establishes recorded ordering, not clock trust.
 
-In the supported complete local-record subset, every graph node has exactly one
-record, including nonexecuted nodes. Each record has exactly one Result, Decision,
-or derived update. Nonexecuted/failure bookkeeping Results are allowed for every
-node kind. Successful executed Results belong only to Evaluate/Aggregate nodes.
-An admission SKIP records every node as SKIPPED; no adapter is invoked.
-DEFERRED and CANCELLED node dispositions MUST NOT substitute for SKIPPED in that
-case. final_results retains those same SKIPPED node Results.
-The reference implementation supplies an executor version when the registered
-adapter exposes one. Adapter errors retain code/message in Result output; a failed
-operation does not synthesize a Decision or derived update.
-
-Continual learning is definition evolution, not a LEARN node:
-mistake -> reusable knowledge -> changed definition -> new version/fingerprint ->
-history identifies subjects not evaluated with that definition -> selection and
-admission choose backfill -> ordinary execution. Core does not invent tests.
-History permits coverage, auditing, incremental work, reproducibility, staleness,
-backfill, resource accounting, and caching, but does not prescribe cache decisions.
-
-## NON-NORMATIVE EXAMPLES
-
-The reference engine returns a record and can write UTF-8 JSON. A JSONL store
-appends snapshots; storage is local convenience with no durability guarantees.
+Memory and local JSONL stores are replaceable convenience implementations. The
+local-sha256 fingerprint is nonportable and is not an integrity signature. Consistent
+coordinated record rewriting and forged implementation behavior cannot be detected
+without external trust. Edge contradictions can be detected without replay.
 
 ## OPEN QUESTIONS
 
-Portable digest identity, external artifact integrity, history coverage rules,
-and cache reuse equivalence are unresolved. Full replay is not implemented.
+Portable canonical identity/signing, clock trust, history coverage, cache equivalence,
+external artifact integrity and complete replay remain open. No registry or backend
+is required.
 
+## Policy and lifecycle provenance
+
+RunRecord.policy_evaluations contains exactly ACTIVATION, SELECTION, ADMISSION
+in that order. Each PolicyEvaluation stores exact declared input values and
+InputResolution snapshots, the role-constrained outcome, and optional actual
+executor_ref/executor_version. Its operation requirement remains in the definition.
+Activation MUST be ACTIVATE and selection MUST contain the exact definition subject;
+otherwise no occurrence and no RunRecord exists. The admission outcome MUST equal
+RunRecord.admission. Built-in outcomes are checked against their definition;
+custom policy logic is not rerun. PROBABILITY records enforce p=0/p=1 boundaries
+and RUN/SKIP outcomes, but do not enforce a reference-only bucket identity.
+Invalid policy provenance is PROVENANCE_LINEAGE.
+
+NodeRecord.reason is the stable machine-readable lifecycle cause for nonexecution;
+its Result repeats it in diagnostic output. [Lifecycle](lifecycle.md) defines
+precedence and exact mappings. Nonexecuted records have no executor identity,
+observations, accepted information, Decision or executor usage. Engine wall time
+is separate bookkeeping. Interrupted cancellation is state CANCELLED and may retain
+unaccepted observations/usage; RunRecord.cancellation records the first affected
+node, BEFORE_START/RUNNING phase and explicit host reason. Validators reconstruct
+all eligibility effects, and reject contradictory lifecycle/Result combinations.

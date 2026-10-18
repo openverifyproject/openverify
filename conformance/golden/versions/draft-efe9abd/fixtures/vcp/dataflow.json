@@ -1,0 +1,1284 @@
+{
+  "producer.failure.ERROR": {
+    "definition": {
+      "protocol": "draft",
+      "id": "golden.definition",
+      "version": "1",
+      "subject": {
+        "id": "golden.subject",
+        "type": "application/json",
+        "locator": {
+          "host_supplied": true
+        }
+      },
+      "criterion": {
+        "id": "golden.criterion",
+        "description": "The explicitly supplied deterministic criterion holds"
+      },
+      "judgment_schema": true,
+      "run_inputs": [],
+      "graph": {
+        "nodes": [
+          {
+            "id": "p",
+            "kind": "DERIVE",
+            "operation": {
+              "capability_id": "com.example.golden.derive",
+              "capability_version": "1"
+            },
+            "inputs": [],
+            "bindings": {},
+            "outputs": [
+              {
+                "name": "value",
+                "schema": true,
+                "role": "INFORMATION"
+              }
+            ],
+            "config": {}
+          },
+          {
+            "id": "c",
+            "kind": "DERIVE",
+            "operation": {
+              "capability_id": "com.example.golden.derive",
+              "capability_version": "1"
+            },
+            "inputs": [
+              {
+                "name": "data",
+                "schema": true,
+                "required": true,
+                "on_unavailable": "BLOCK"
+              }
+            ],
+            "bindings": {
+              "data": {
+                "kind": "UPSTREAM_OUTPUT",
+                "node_id": "p",
+                "output": "value"
+              }
+            },
+            "outputs": [
+              {
+                "name": "value",
+                "schema": true,
+                "role": "INFORMATION"
+              }
+            ],
+            "config": {}
+          }
+        ],
+        "edges": [
+          {
+            "from_node": "p",
+            "to_node": "c"
+          }
+        ]
+      },
+      "execution_policy": {
+        "activation": {
+          "executor_ref": "MANUAL"
+        },
+        "selection": {
+          "executor_ref": "EXPLICIT"
+        },
+        "admission": {
+          "strategy": "ALWAYS"
+        }
+      }
+    },
+    "inputs": {},
+    "behaviors": {
+      "p": {
+        "outputs": {},
+        "error": {
+          "code": "com.example.failed",
+          "message": "deliberate"
+        },
+        "usage": {
+          "com.example.calls": {
+            "kind": "EXACT",
+            "unit": "call",
+            "value": 2
+          }
+        }
+      },
+      "c": {
+        "outputs": {
+          "value": "stale"
+        }
+      }
+    },
+    "nodes": {
+      "p": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      },
+      "c": {
+        "state": "NONEXECUTED",
+        "reason": "INPUT_UNAVAILABLE",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "INPUT_UNAVAILABLE"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      }
+    }
+  },
+  "producer.failure.SKIP": {
+    "definition": {
+      "protocol": "draft",
+      "id": "golden.definition",
+      "version": "1",
+      "subject": {
+        "id": "golden.subject",
+        "type": "application/json",
+        "locator": {
+          "host_supplied": true
+        }
+      },
+      "criterion": {
+        "id": "golden.criterion",
+        "description": "The explicitly supplied deterministic criterion holds"
+      },
+      "judgment_schema": true,
+      "run_inputs": [],
+      "graph": {
+        "nodes": [
+          {
+            "id": "p",
+            "kind": "EVALUATE",
+            "operation": {
+              "capability_id": "com.example.golden.evaluate",
+              "capability_version": "1"
+            },
+            "inputs": [
+              {
+                "name": "subject",
+                "schema": {
+                  "type": "object"
+                },
+                "required": true,
+                "on_unavailable": "BLOCK"
+              },
+              {
+                "name": "criterion",
+                "schema": {
+                  "type": "object"
+                },
+                "required": true,
+                "on_unavailable": "BLOCK"
+              }
+            ],
+            "bindings": {
+              "subject": {
+                "kind": "CONSTANT",
+                "value": {
+                  "id": "golden.subject",
+                  "type": "application/json",
+                  "locator": {
+                    "host_supplied": true
+                  }
+                }
+              },
+              "criterion": {
+                "kind": "CONSTANT",
+                "value": {
+                  "id": "golden.criterion",
+                  "description": "The explicitly supplied deterministic criterion holds"
+                }
+              }
+            },
+            "outputs": [
+              {
+                "name": "result",
+                "schema": true,
+                "role": "RESULT"
+              },
+              {
+                "name": "value",
+                "schema": true,
+                "role": "INFORMATION"
+              }
+            ],
+            "config": {}
+          },
+          {
+            "id": "c",
+            "kind": "DERIVE",
+            "operation": {
+              "capability_id": "com.example.golden.derive",
+              "capability_version": "1"
+            },
+            "inputs": [
+              {
+                "name": "data",
+                "schema": true,
+                "required": true,
+                "on_unavailable": "BLOCK"
+              }
+            ],
+            "bindings": {
+              "data": {
+                "kind": "UPSTREAM_OUTPUT",
+                "node_id": "p",
+                "output": "value"
+              }
+            },
+            "outputs": [
+              {
+                "name": "value",
+                "schema": true,
+                "role": "INFORMATION"
+              }
+            ],
+            "config": {}
+          }
+        ],
+        "edges": [
+          {
+            "from_node": "p",
+            "to_node": "c"
+          }
+        ]
+      },
+      "execution_policy": {
+        "activation": {
+          "executor_ref": "MANUAL"
+        },
+        "selection": {
+          "executor_ref": "EXPLICIT"
+        },
+        "admission": {
+          "strategy": "ALWAYS"
+        }
+      }
+    },
+    "inputs": {},
+    "behaviors": {
+      "p": {
+        "outputs": {
+          "result": {
+            "protocol": "draft",
+            "disposition": "SKIPPED"
+          },
+          "value": "must-not-leak"
+        }
+      },
+      "c": {
+        "outputs": {
+          "value": "stale"
+        }
+      }
+    },
+    "nodes": {
+      "p": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      },
+      "c": {
+        "state": "NONEXECUTED",
+        "reason": "INPUT_UNAVAILABLE",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "INPUT_UNAVAILABLE"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      }
+    }
+  },
+  "producer.failure.DEFERRED": {
+    "definition": {
+      "protocol": "draft",
+      "id": "golden.definition",
+      "version": "1",
+      "subject": {
+        "id": "golden.subject",
+        "type": "application/json",
+        "locator": {
+          "host_supplied": true
+        }
+      },
+      "criterion": {
+        "id": "golden.criterion",
+        "description": "The explicitly supplied deterministic criterion holds"
+      },
+      "judgment_schema": true,
+      "run_inputs": [],
+      "graph": {
+        "nodes": [
+          {
+            "id": "p",
+            "kind": "EVALUATE",
+            "operation": {
+              "capability_id": "com.example.golden.evaluate",
+              "capability_version": "1"
+            },
+            "inputs": [
+              {
+                "name": "subject",
+                "schema": {
+                  "type": "object"
+                },
+                "required": true,
+                "on_unavailable": "BLOCK"
+              },
+              {
+                "name": "criterion",
+                "schema": {
+                  "type": "object"
+                },
+                "required": true,
+                "on_unavailable": "BLOCK"
+              }
+            ],
+            "bindings": {
+              "subject": {
+                "kind": "CONSTANT",
+                "value": {
+                  "id": "golden.subject",
+                  "type": "application/json",
+                  "locator": {
+                    "host_supplied": true
+                  }
+                }
+              },
+              "criterion": {
+                "kind": "CONSTANT",
+                "value": {
+                  "id": "golden.criterion",
+                  "description": "The explicitly supplied deterministic criterion holds"
+                }
+              }
+            },
+            "outputs": [
+              {
+                "name": "result",
+                "schema": true,
+                "role": "RESULT"
+              },
+              {
+                "name": "value",
+                "schema": true,
+                "role": "INFORMATION"
+              }
+            ],
+            "config": {}
+          },
+          {
+            "id": "c",
+            "kind": "DERIVE",
+            "operation": {
+              "capability_id": "com.example.golden.derive",
+              "capability_version": "1"
+            },
+            "inputs": [
+              {
+                "name": "data",
+                "schema": true,
+                "required": true,
+                "on_unavailable": "BLOCK"
+              }
+            ],
+            "bindings": {
+              "data": {
+                "kind": "UPSTREAM_OUTPUT",
+                "node_id": "p",
+                "output": "value"
+              }
+            },
+            "outputs": [
+              {
+                "name": "value",
+                "schema": true,
+                "role": "INFORMATION"
+              }
+            ],
+            "config": {}
+          }
+        ],
+        "edges": [
+          {
+            "from_node": "p",
+            "to_node": "c"
+          }
+        ]
+      },
+      "execution_policy": {
+        "activation": {
+          "executor_ref": "MANUAL"
+        },
+        "selection": {
+          "executor_ref": "EXPLICIT"
+        },
+        "admission": {
+          "strategy": "ALWAYS"
+        }
+      }
+    },
+    "inputs": {},
+    "behaviors": {
+      "p": {
+        "outputs": {
+          "result": {
+            "protocol": "draft",
+            "disposition": "DEFERRED"
+          },
+          "value": "must-not-leak"
+        }
+      },
+      "c": {
+        "outputs": {
+          "value": "stale"
+        }
+      }
+    },
+    "nodes": {
+      "p": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      },
+      "c": {
+        "state": "NONEXECUTED",
+        "reason": "INPUT_UNAVAILABLE",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "INPUT_UNAVAILABLE"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      }
+    }
+  },
+  "producer.failure.CANCELLED": {
+    "definition": {
+      "protocol": "draft",
+      "id": "golden.definition",
+      "version": "1",
+      "subject": {
+        "id": "golden.subject",
+        "type": "application/json",
+        "locator": {
+          "host_supplied": true
+        }
+      },
+      "criterion": {
+        "id": "golden.criterion",
+        "description": "The explicitly supplied deterministic criterion holds"
+      },
+      "judgment_schema": true,
+      "run_inputs": [],
+      "graph": {
+        "nodes": [
+          {
+            "id": "p",
+            "kind": "EVALUATE",
+            "operation": {
+              "capability_id": "com.example.golden.evaluate",
+              "capability_version": "1"
+            },
+            "inputs": [
+              {
+                "name": "subject",
+                "schema": {
+                  "type": "object"
+                },
+                "required": true,
+                "on_unavailable": "BLOCK"
+              },
+              {
+                "name": "criterion",
+                "schema": {
+                  "type": "object"
+                },
+                "required": true,
+                "on_unavailable": "BLOCK"
+              }
+            ],
+            "bindings": {
+              "subject": {
+                "kind": "CONSTANT",
+                "value": {
+                  "id": "golden.subject",
+                  "type": "application/json",
+                  "locator": {
+                    "host_supplied": true
+                  }
+                }
+              },
+              "criterion": {
+                "kind": "CONSTANT",
+                "value": {
+                  "id": "golden.criterion",
+                  "description": "The explicitly supplied deterministic criterion holds"
+                }
+              }
+            },
+            "outputs": [
+              {
+                "name": "result",
+                "schema": true,
+                "role": "RESULT"
+              },
+              {
+                "name": "value",
+                "schema": true,
+                "role": "INFORMATION"
+              }
+            ],
+            "config": {}
+          },
+          {
+            "id": "c",
+            "kind": "DERIVE",
+            "operation": {
+              "capability_id": "com.example.golden.derive",
+              "capability_version": "1"
+            },
+            "inputs": [
+              {
+                "name": "data",
+                "schema": true,
+                "required": true,
+                "on_unavailable": "BLOCK"
+              }
+            ],
+            "bindings": {
+              "data": {
+                "kind": "UPSTREAM_OUTPUT",
+                "node_id": "p",
+                "output": "value"
+              }
+            },
+            "outputs": [
+              {
+                "name": "value",
+                "schema": true,
+                "role": "INFORMATION"
+              }
+            ],
+            "config": {}
+          }
+        ],
+        "edges": [
+          {
+            "from_node": "p",
+            "to_node": "c"
+          }
+        ]
+      },
+      "execution_policy": {
+        "activation": {
+          "executor_ref": "MANUAL"
+        },
+        "selection": {
+          "executor_ref": "EXPLICIT"
+        },
+        "admission": {
+          "strategy": "ALWAYS"
+        }
+      }
+    },
+    "inputs": {},
+    "behaviors": {
+      "p": {
+        "outputs": {
+          "result": {
+            "protocol": "draft",
+            "disposition": "CANCELLED"
+          },
+          "value": "must-not-leak"
+        }
+      },
+      "c": {
+        "outputs": {
+          "value": "stale"
+        }
+      }
+    },
+    "nodes": {
+      "p": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      },
+      "c": {
+        "state": "NONEXECUTED",
+        "reason": "INPUT_UNAVAILABLE",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "INPUT_UNAVAILABLE"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      }
+    }
+  },
+  "producer.failure.OUTPUT_MISSING": {
+    "definition": {
+      "protocol": "draft",
+      "id": "golden.definition",
+      "version": "1",
+      "subject": {
+        "id": "golden.subject",
+        "type": "application/json",
+        "locator": {
+          "host_supplied": true
+        }
+      },
+      "criterion": {
+        "id": "golden.criterion",
+        "description": "The explicitly supplied deterministic criterion holds"
+      },
+      "judgment_schema": true,
+      "run_inputs": [],
+      "graph": {
+        "nodes": [
+          {
+            "id": "p",
+            "kind": "DERIVE",
+            "operation": {
+              "capability_id": "com.example.golden.derive",
+              "capability_version": "1"
+            },
+            "inputs": [],
+            "bindings": {},
+            "outputs": [
+              {
+                "name": "value",
+                "schema": true,
+                "role": "INFORMATION"
+              }
+            ],
+            "config": {}
+          },
+          {
+            "id": "c",
+            "kind": "DERIVE",
+            "operation": {
+              "capability_id": "com.example.golden.derive",
+              "capability_version": "1"
+            },
+            "inputs": [
+              {
+                "name": "data",
+                "schema": true,
+                "required": true,
+                "on_unavailable": "BLOCK"
+              }
+            ],
+            "bindings": {
+              "data": {
+                "kind": "UPSTREAM_OUTPUT",
+                "node_id": "p",
+                "output": "value"
+              }
+            },
+            "outputs": [
+              {
+                "name": "value",
+                "schema": true,
+                "role": "INFORMATION"
+              }
+            ],
+            "config": {}
+          }
+        ],
+        "edges": [
+          {
+            "from_node": "p",
+            "to_node": "c"
+          }
+        ]
+      },
+      "execution_policy": {
+        "activation": {
+          "executor_ref": "MANUAL"
+        },
+        "selection": {
+          "executor_ref": "EXPLICIT"
+        },
+        "admission": {
+          "strategy": "ALWAYS"
+        }
+      }
+    },
+    "inputs": {},
+    "behaviors": {
+      "p": {
+        "outputs": {}
+      },
+      "c": {
+        "outputs": {
+          "value": "stale"
+        }
+      }
+    },
+    "nodes": {
+      "p": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      },
+      "c": {
+        "state": "NONEXECUTED",
+        "reason": "INPUT_UNAVAILABLE",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "INPUT_UNAVAILABLE"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      }
+    }
+  },
+  "producer.failure.INVALID": {
+    "definition": {
+      "protocol": "draft",
+      "id": "golden.definition",
+      "version": "1",
+      "subject": {
+        "id": "golden.subject",
+        "type": "application/json",
+        "locator": {
+          "host_supplied": true
+        }
+      },
+      "criterion": {
+        "id": "golden.criterion",
+        "description": "The explicitly supplied deterministic criterion holds"
+      },
+      "judgment_schema": true,
+      "run_inputs": [],
+      "graph": {
+        "nodes": [
+          {
+            "id": "p",
+            "kind": "DERIVE",
+            "operation": {
+              "capability_id": "com.example.golden.derive",
+              "capability_version": "1"
+            },
+            "inputs": [],
+            "bindings": {},
+            "outputs": [
+              {
+                "name": "value",
+                "schema": {
+                  "type": "string"
+                },
+                "role": "INFORMATION"
+              }
+            ],
+            "config": {}
+          },
+          {
+            "id": "c",
+            "kind": "DERIVE",
+            "operation": {
+              "capability_id": "com.example.golden.derive",
+              "capability_version": "1"
+            },
+            "inputs": [
+              {
+                "name": "data",
+                "schema": true,
+                "required": true,
+                "on_unavailable": "BLOCK"
+              }
+            ],
+            "bindings": {
+              "data": {
+                "kind": "UPSTREAM_OUTPUT",
+                "node_id": "p",
+                "output": "value"
+              }
+            },
+            "outputs": [
+              {
+                "name": "value",
+                "schema": true,
+                "role": "INFORMATION"
+              }
+            ],
+            "config": {}
+          }
+        ],
+        "edges": [
+          {
+            "from_node": "p",
+            "to_node": "c"
+          }
+        ]
+      },
+      "execution_policy": {
+        "activation": {
+          "executor_ref": "MANUAL"
+        },
+        "selection": {
+          "executor_ref": "EXPLICIT"
+        },
+        "admission": {
+          "strategy": "ALWAYS"
+        }
+      }
+    },
+    "inputs": {},
+    "behaviors": {
+      "p": {
+        "outputs": {
+          "value": false
+        }
+      },
+      "c": {
+        "outputs": {
+          "value": "stale"
+        }
+      }
+    },
+    "nodes": {
+      "p": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      },
+      "c": {
+        "state": "NONEXECUTED",
+        "reason": "INPUT_UNAVAILABLE",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "INPUT_UNAVAILABLE"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      }
+    }
+  },
+  "availability.producer_not_executed": {
+    "definition": {
+      "protocol": "draft",
+      "id": "golden.definition",
+      "version": "1",
+      "subject": {
+        "id": "golden.subject",
+        "type": "application/json",
+        "locator": {
+          "host_supplied": true
+        }
+      },
+      "criterion": {
+        "id": "golden.criterion",
+        "description": "The explicitly supplied deterministic criterion holds"
+      },
+      "judgment_schema": true,
+      "run_inputs": [],
+      "graph": {
+        "nodes": [
+          {
+            "id": "root",
+            "kind": "DERIVE",
+            "operation": {
+              "capability_id": "com.example.golden.derive",
+              "capability_version": "1"
+            },
+            "inputs": [],
+            "bindings": {},
+            "outputs": [
+              {
+                "name": "value",
+                "schema": true,
+                "role": "INFORMATION"
+              }
+            ],
+            "config": {}
+          },
+          {
+            "id": "p",
+            "kind": "DERIVE",
+            "operation": {
+              "capability_id": "com.example.golden.derive",
+              "capability_version": "1"
+            },
+            "inputs": [],
+            "bindings": {},
+            "outputs": [
+              {
+                "name": "value",
+                "schema": true,
+                "role": "INFORMATION"
+              }
+            ],
+            "config": {}
+          },
+          {
+            "id": "c",
+            "kind": "DERIVE",
+            "operation": {
+              "capability_id": "com.example.golden.derive",
+              "capability_version": "1"
+            },
+            "inputs": [
+              {
+                "name": "data",
+                "schema": true,
+                "required": true,
+                "on_unavailable": "BLOCK"
+              }
+            ],
+            "bindings": {
+              "data": {
+                "kind": "UPSTREAM_OUTPUT",
+                "node_id": "p",
+                "output": "value"
+              }
+            },
+            "outputs": [
+              {
+                "name": "value",
+                "schema": true,
+                "role": "INFORMATION"
+              }
+            ],
+            "config": {}
+          }
+        ],
+        "edges": [
+          {
+            "from_node": "root",
+            "to_node": "p",
+            "guard": {
+              "source": {
+                "kind": "CONSTANT",
+                "value": false
+              },
+              "pointer": "",
+              "value": true
+            }
+          },
+          {
+            "from_node": "p",
+            "to_node": "c"
+          }
+        ]
+      },
+      "execution_policy": {
+        "activation": {
+          "executor_ref": "MANUAL"
+        },
+        "selection": {
+          "executor_ref": "EXPLICIT"
+        },
+        "admission": {
+          "strategy": "ALWAYS"
+        }
+      }
+    },
+    "inputs": {},
+    "behaviors": {
+      "root": {
+        "outputs": {
+          "value": 1
+        }
+      },
+      "p": {
+        "outputs": {
+          "value": "stale"
+        }
+      },
+      "c": {
+        "outputs": {
+          "value": "stale"
+        }
+      }
+    },
+    "nodes": {
+      "root": {
+        "state": "SUCCESS",
+        "information": {
+          "value": 1
+        }
+      },
+      "p": {
+        "state": "NONEXECUTED",
+        "reason": "GUARD_FALSE",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "GUARD_FALSE"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      },
+      "c": {
+        "state": "NONEXECUTED",
+        "reason": "INPUT_UNAVAILABLE",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "INPUT_UNAVAILABLE"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      }
+    }
+  },
+  "availability.error_result_available": {
+    "definition": {
+      "protocol": "draft",
+      "id": "golden.definition",
+      "version": "1",
+      "subject": {
+        "id": "golden.subject",
+        "type": "application/json",
+        "locator": {
+          "host_supplied": true
+        }
+      },
+      "criterion": {
+        "id": "golden.criterion",
+        "description": "The explicitly supplied deterministic criterion holds"
+      },
+      "judgment_schema": true,
+      "run_inputs": [],
+      "graph": {
+        "nodes": [
+          {
+            "id": "p",
+            "kind": "EVALUATE",
+            "operation": {
+              "capability_id": "com.example.golden.evaluate",
+              "capability_version": "1"
+            },
+            "inputs": [
+              {
+                "name": "subject",
+                "schema": {
+                  "type": "object"
+                },
+                "required": true,
+                "on_unavailable": "BLOCK"
+              },
+              {
+                "name": "criterion",
+                "schema": {
+                  "type": "object"
+                },
+                "required": true,
+                "on_unavailable": "BLOCK"
+              }
+            ],
+            "bindings": {
+              "subject": {
+                "kind": "CONSTANT",
+                "value": {
+                  "id": "golden.subject",
+                  "type": "application/json",
+                  "locator": {
+                    "host_supplied": true
+                  }
+                }
+              },
+              "criterion": {
+                "kind": "CONSTANT",
+                "value": {
+                  "id": "golden.criterion",
+                  "description": "The explicitly supplied deterministic criterion holds"
+                }
+              }
+            },
+            "outputs": [
+              {
+                "name": "result",
+                "schema": true,
+                "role": "RESULT"
+              }
+            ],
+            "config": {}
+          },
+          {
+            "id": "c",
+            "kind": "DERIVE",
+            "operation": {
+              "capability_id": "com.example.golden.derive",
+              "capability_version": "1"
+            },
+            "inputs": [
+              {
+                "name": "checked",
+                "schema": true,
+                "required": true,
+                "on_unavailable": "BLOCK"
+              }
+            ],
+            "bindings": {
+              "checked": {
+                "kind": "UPSTREAM_OUTPUT",
+                "node_id": "p",
+                "output": "result"
+              }
+            },
+            "outputs": [
+              {
+                "name": "value",
+                "schema": true,
+                "role": "INFORMATION"
+              }
+            ],
+            "config": {}
+          }
+        ],
+        "edges": [
+          {
+            "from_node": "p",
+            "to_node": "c"
+          }
+        ]
+      },
+      "execution_policy": {
+        "activation": {
+          "executor_ref": "MANUAL"
+        },
+        "selection": {
+          "executor_ref": "EXPLICIT"
+        },
+        "admission": {
+          "strategy": "ALWAYS"
+        }
+      }
+    },
+    "inputs": {},
+    "behaviors": {
+      "p": {
+        "outputs": {
+          "result": {
+            "protocol": "draft",
+            "disposition": "EXECUTED",
+            "execution_outcome": "ERROR"
+          }
+        }
+      },
+      "c": {
+        "outputs": {
+          "value": "inspected error"
+        }
+      }
+    },
+    "nodes": {
+      "p": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      },
+      "c": {
+        "state": "SUCCESS",
+        "information": {
+          "value": "inspected error"
+        }
+      }
+    }
+  }
+}

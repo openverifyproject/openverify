@@ -1,0 +1,19 @@
+{
+  "id": "provider.schema-format-annotation",
+  "contract": "provider",
+  "version": "0.1",
+  "type": "data",
+  "operation": "data",
+  "input": "not-a-date",
+  "expected": {
+    "accepted": true,
+    "normalized": "not-a-date"
+  },
+  "features": [
+    "standalone",
+    "data"
+  ],
+  "schema": {
+    "format": "date-time"
+  }
+}

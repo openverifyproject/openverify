@@ -1,0 +1,443 @@
+{
+  "verdict": "NOT CERTIFIED",
+  "canonical_records": 615,
+  "semantic_requirements": 582,
+  "schema_predicates": 33,
+  "partial_assertion_links": 380,
+  "unreconciled": 235,
+  "fully_discharged": 0,
+  "frozen_files": {
+    "conformance/golden-v4/BLUEPRINT.md": true,
+    "conformance/golden-v4/CASES.jsonl": true,
+    "conformance/golden-v4/OBLIGATIONS.jsonl": true,
+    "conformance/golden-v4/WITNESSES.jsonl": true,
+    "conformance/golden-v4/NORMATIVE_CLAUSES.jsonl": true,
+    "conformance/golden-v4/NORMATIVE_SOURCE_HASHES.json": true,
+    "conformance/golden-v4/ERROR_INVENTORY.json": true,
+    "conformance/golden-v4/PROJECTIONS.json": true,
+    "conformance/golden-v4/REDUCTION_LEDGER.jsonl": true,
+    "conformance/golden-v4/CONTRACT_INVENTORY.md": true,
+    "conformance/golden-v4/COUNT_PROOFS.md": true,
+    "conformance/golden-v4/COMPOSITION_PROOFS.md": true,
+    "conformance/golden-v4/DOMAIN_LIMITS.md": true,
+    "conformance/golden-v4/FROZEN_EXPECTATIONS/cases.jsonl": true,
+    "tests/golden_v4/oracle/model.py": true,
+    "tests/golden_v4/oracle/__init__.py": true,
+    "tools/golden_v4/discover.py": true,
+    "tools/golden_v4/freeze.py": true,
+    "tools/golden_v4/witness_authoring.py": true,
+    "tools/golden_v4/proofs.py": true,
+    "tools/golden_v4/seal.py": true
+  },
+  "golden": {
+    "python": "3.13.5 (main, Jun 12 2025, 12:42:35) [MSC v.1943 64 bit (AMD64)]",
+    "executable": "C:\\Users\\siddh\\OneDrive\\Desktop\\openverify\\.venv\\Scripts\\python.exe",
+    "import_path": "C:\\Users\\siddh\\OneDrive\\Desktop\\openverify\\.worktrees\\vcp-final-semantics\\src\\openverify\\__init__.py",
+    "argv": [
+      "C:\\Users\\siddh\\OneDrive\\Desktop\\openverify\\.venv\\Lib\\site-packages\\pytest\\__main__.py",
+      "-q",
+      "-c",
+      "tests/golden_v4/pytest.ini",
+      "tests/golden_v4",
+      "--junitxml=.pytest_cache/verification-golden.xml"
+    ],
+    "start_monotonic": 312611.4387404,
+    "dependencies": {
+      "pytest": "9.1.1",
+      "pydantic": "2.14.1",
+      "jsonschema": "4.26.0",
+      "mcp": "1.30.0",
+      "starlette": "1.8.0",
+      "httpx": "0.28.1"
+    },
+    "exitstatus": 0,
+    "duration_seconds": 87.28605579998111,
+    "collected": 15236,
+    "executed": 15236,
+    "counts": {
+      "PASS": 15236
+    },
+    "relay_api_calls": 185,
+    "relay_awaited_seconds": 13.648728200176265
+  },
+  "revision": {
+    "exitstatus": 0,
+    "executed": 366,
+    "counts": {
+      "PASS": 366,
+      "FAIL": 0
+    },
+    "relay_api_calls": 12,
+    "relay_awaited_seconds": 0.7429876000387594,
+    "wall_seconds": 7.302740100014489,
+    "argv": [
+      "C:\\Users\\siddh\\OneDrive\\Desktop\\openverify\\.venv\\Lib\\site-packages\\pytest\\__main__.py",
+      "-q",
+      "tests/golden_v4_reconciliation",
+      "--basetemp=.pytest_cache/verification-revision-tmp",
+      "--junitxml=.pytest_cache/verification-revision.xml"
+    ],
+    "python": "3.13.5 (main, Jun 12 2025, 12:42:35) [MSC v.1943 64 bit (AMD64)]"
+  },
+  "failing_case_ids": [],
+  "branches": {
+    "PROVIDER / Capabilities": {
+      "records": 1,
+      "partial": 0,
+      "unreconciled": 1,
+      "status": "INCOMPLETE"
+    },
+    "PROVIDER / Compatibility": {
+      "records": 10,
+      "partial": 3,
+      "unreconciled": 7,
+      "status": "INCOMPLETE"
+    },
+    "PROVIDER / Control": {
+      "records": 18,
+      "partial": 10,
+      "unreconciled": 8,
+      "status": "INCOMPLETE"
+    },
+    "PROVIDER / Discovery": {
+      "records": 4,
+      "partial": 1,
+      "unreconciled": 3,
+      "status": "INCOMPLETE"
+    },
+    "PROVIDER / Errors": {
+      "records": 12,
+      "partial": 9,
+      "unreconciled": 3,
+      "status": "INCOMPLETE"
+    },
+    "PROVIDER / Events": {
+      "records": 1,
+      "partial": 0,
+      "unreconciled": 1,
+      "status": "INCOMPLETE"
+    },
+    "PROVIDER / Extensions": {
+      "records": 3,
+      "partial": 1,
+      "unreconciled": 2,
+      "status": "INCOMPLETE"
+    },
+    "PROVIDER / Invocation": {
+      "records": 6,
+      "partial": 3,
+      "unreconciled": 3,
+      "status": "INCOMPLETE"
+    },
+    "PROVIDER / Lifecycle": {
+      "records": 5,
+      "partial": 4,
+      "unreconciled": 1,
+      "status": "INCOMPLETE"
+    },
+    "PROVIDER / Meaning": {
+      "records": 1,
+      "partial": 0,
+      "unreconciled": 1,
+      "status": "INCOMPLETE"
+    },
+    "PROVIDER / Resources": {
+      "records": 7,
+      "partial": 2,
+      "unreconciled": 5,
+      "status": "INCOMPLETE"
+    },
+    "PROVIDER / Schemas": {
+      "records": 4,
+      "partial": 0,
+      "unreconciled": 4,
+      "status": "INCOMPLETE"
+    },
+    "PROVIDER / Streaming": {
+      "records": 11,
+      "partial": 11,
+      "unreconciled": 0,
+      "status": "INCOMPLETE"
+    },
+    "PROVIDER / Transport": {
+      "records": 21,
+      "partial": 9,
+      "unreconciled": 12,
+      "status": "INCOMPLETE"
+    },
+    "PROVIDER / Wire": {
+      "records": 2,
+      "partial": 0,
+      "unreconciled": 2,
+      "status": "INCOMPLETE"
+    },
+    "PROVIDER / Wire roots": {
+      "records": 9,
+      "partial": 9,
+      "unreconciled": 0,
+      "status": "INCOMPLETE"
+    },
+    "RELAY / Architecture": {
+      "records": 1,
+      "partial": 1,
+      "unreconciled": 0,
+      "status": "INCOMPLETE"
+    },
+    "RELAY / Binding": {
+      "records": 4,
+      "partial": 1,
+      "unreconciled": 3,
+      "status": "INCOMPLETE"
+    },
+    "RELAY / Binding and execution": {
+      "records": 1,
+      "partial": 0,
+      "unreconciled": 1,
+      "status": "INCOMPLETE"
+    },
+    "RELAY / Cancellation": {
+      "records": 2,
+      "partial": 1,
+      "unreconciled": 1,
+      "status": "INCOMPLETE"
+    },
+    "RELAY / Discovery": {
+      "records": 3,
+      "partial": 1,
+      "unreconciled": 2,
+      "status": "INCOMPLETE"
+    },
+    "RELAY / Entrypoints": {
+      "records": 17,
+      "partial": 11,
+      "unreconciled": 6,
+      "status": "INCOMPLETE"
+    },
+    "RELAY / Execution": {
+      "records": 3,
+      "partial": 1,
+      "unreconciled": 2,
+      "status": "INCOMPLETE"
+    },
+    "RELAY / Extension ports": {
+      "records": 7,
+      "partial": 7,
+      "unreconciled": 0,
+      "status": "INCOMPLETE"
+    },
+    "RELAY / Invocation callbacks": {
+      "records": 1,
+      "partial": 1,
+      "unreconciled": 0,
+      "status": "INCOMPLETE"
+    },
+    "RELAY / Observability": {
+      "records": 1,
+      "partial": 1,
+      "unreconciled": 0,
+      "status": "INCOMPLETE"
+    },
+    "RELAY / Policies": {
+      "records": 2,
+      "partial": 0,
+      "unreconciled": 2,
+      "status": "INCOMPLETE"
+    },
+    "RELAY / Preparation": {
+      "records": 2,
+      "partial": 0,
+      "unreconciled": 2,
+      "status": "INCOMPLETE"
+    },
+    "RELAY / Process execution": {
+      "records": 2,
+      "partial": 2,
+      "unreconciled": 0,
+      "status": "INCOMPLETE"
+    },
+    "RELAY / Providers": {
+      "records": 1,
+      "partial": 0,
+      "unreconciled": 1,
+      "status": "INCOMPLETE"
+    },
+    "RELAY / Public API": {
+      "records": 9,
+      "partial": 8,
+      "unreconciled": 1,
+      "status": "INCOMPLETE"
+    },
+    "RELAY / Public SDK": {
+      "records": 48,
+      "partial": 27,
+      "unreconciled": 21,
+      "status": "INCOMPLETE"
+    },
+    "RELAY / Records": {
+      "records": 6,
+      "partial": 2,
+      "unreconciled": 4,
+      "status": "INCOMPLETE"
+    },
+    "RELAY / Scheduler": {
+      "records": 5,
+      "partial": 4,
+      "unreconciled": 1,
+      "status": "INCOMPLETE"
+    },
+    "RELAY / Standard providers": {
+      "records": 42,
+      "partial": 26,
+      "unreconciled": 16,
+      "status": "INCOMPLETE"
+    },
+    "RELAY / Transport": {
+      "records": 4,
+      "partial": 1,
+      "unreconciled": 3,
+      "status": "INCOMPLETE"
+    },
+    "SHARED / JSON value and schema semantics": {
+      "records": 3,
+      "partial": 1,
+      "unreconciled": 2,
+      "status": "INCOMPLETE"
+    },
+    "SHARED / Public SDK": {
+      "records": 70,
+      "partial": 35,
+      "unreconciled": 35,
+      "status": "INCOMPLETE"
+    },
+    "VCP / Aggregation": {
+      "records": 33,
+      "partial": 26,
+      "unreconciled": 7,
+      "status": "INCOMPLETE"
+    },
+    "VCP / Composition": {
+      "records": 12,
+      "partial": 9,
+      "unreconciled": 3,
+      "status": "INCOMPLETE"
+    },
+    "VCP / Computation": {
+      "records": 13,
+      "partial": 11,
+      "unreconciled": 2,
+      "status": "INCOMPLETE"
+    },
+    "VCP / Conformance": {
+      "records": 2,
+      "partial": 0,
+      "unreconciled": 2,
+      "status": "INCOMPLETE"
+    },
+    "VCP / Dataflow": {
+      "records": 37,
+      "partial": 26,
+      "unreconciled": 11,
+      "status": "INCOMPLETE"
+    },
+    "VCP / Decisions": {
+      "records": 1,
+      "partial": 1,
+      "unreconciled": 0,
+      "status": "INCOMPLETE"
+    },
+    "VCP / Extensions": {
+      "records": 2,
+      "partial": 0,
+      "unreconciled": 2,
+      "status": "INCOMPLETE"
+    },
+    "VCP / Knowledge": {
+      "records": 3,
+      "partial": 2,
+      "unreconciled": 1,
+      "status": "INCOMPLETE"
+    },
+    "VCP / Lifecycle": {
+      "records": 22,
+      "partial": 14,
+      "unreconciled": 8,
+      "status": "INCOMPLETE"
+    },
+    "VCP / Meaning": {
+      "records": 6,
+      "partial": 2,
+      "unreconciled": 4,
+      "status": "INCOMPLETE"
+    },
+    "VCP / Policies": {
+      "records": 22,
+      "partial": 14,
+      "unreconciled": 8,
+      "status": "INCOMPLETE"
+    },
+    "VCP / Profiles": {
+      "records": 1,
+      "partial": 0,
+      "unreconciled": 1,
+      "status": "INCOMPLETE"
+    },
+    "VCP / Provenance": {
+      "records": 28,
+      "partial": 13,
+      "unreconciled": 15,
+      "status": "INCOMPLETE"
+    },
+    "VCP / Provider binding": {
+      "records": 12,
+      "partial": 8,
+      "unreconciled": 4,
+      "status": "INCOMPLETE"
+    },
+    "VCP / Resources": {
+      "records": 5,
+      "partial": 2,
+      "unreconciled": 3,
+      "status": "INCOMPLETE"
+    },
+    "VCP / Result": {
+      "records": 1,
+      "partial": 1,
+      "unreconciled": 0,
+      "status": "INCOMPLETE"
+    },
+    "VCP / Results": {
+      "records": 30,
+      "partial": 28,
+      "unreconciled": 2,
+      "status": "INCOMPLETE"
+    },
+    "VCP / Schemas": {
+      "records": 3,
+      "partial": 2,
+      "unreconciled": 1,
+      "status": "INCOMPLETE"
+    },
+    "VCP / Wire roots": {
+      "records": 24,
+      "partial": 24,
+      "unreconciled": 0,
+      "status": "INCOMPLETE"
+    },
+    "VCP / Wire semantics": {
+      "records": 9,
+      "partial": 4,
+      "unreconciled": 5,
+      "status": "INCOMPLETE"
+    }
+  },
+  "scaffold_cases_excluded": 360,
+  "ordinary_execution": {
+    "executed": 1038,
+    "counts": {
+      "PASS": 1037,
+      "SKIP": 1
+    },
+    "junit": "verification-existing.xml",
+    "runtime_values": "Existing suite did not serialize actual values; assertion expressions and JUnit outcomes retained."
+  }
+}

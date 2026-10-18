@@ -1,0 +1,10 @@
+{
+  "invocation_id": "attempt-1",
+  "sequence": 1,
+  "kind": "evidence",
+  "payload": {
+    "structured_data": {
+      "observed": "SAT"
+    }
+  }
+}

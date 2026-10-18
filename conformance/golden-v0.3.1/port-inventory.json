@@ -1,0 +1,165 @@
+{
+  "Catalog": {
+    "methods": {
+      "providers": "() -> Sequence[AvailableProvider]"
+    },
+    "contract": "Trusted provider snapshot; validate manifests, unique identities, sequence shape; no work before successful binding",
+    "reference": [
+      "docs/relay/architecture.md",
+      "src/openverify/relay/ports/__init__.py"
+    ],
+    "case_ids": [
+      "port031.Catalog.valid",
+      "port031.Catalog.invalid_return",
+      "port031.Catalog.bad_manifest",
+      "port031.Catalog.duplicate_identity",
+      "port031.Catalog.exception",
+      "port031.Catalog.iteration_failure",
+      "port031.Catalog.structured_error",
+      "port031.Catalog.generator",
+      "port031.Catalog.cancellation",
+      "port031.Catalog.concurrency_isolation"
+    ],
+    "nonapplicable_categories": {
+      "iteration_streaming": "Only Catalog sequence iteration, Driver report events and Transport emitted events have iteration/streaming contracts; others are single synchronous calls",
+      "return_enforcement": "Void put/observe return values have no semantic channel; invalid returns do not authorize outcomes",
+      "cancellation": "External task cancellation is tested at an async boundary; synchronous callbacks have no interruptible await surface"
+    }
+  },
+  "Binder": {
+    "methods": {
+      "bind": "(requirement, providers, explicit=None) -> AvailableProvider"
+    },
+    "contract": "Return one trusted compatible provider respecting explicit exact identity; do not rewrite trusted snapshots",
+    "reference": [
+      "docs/relay/architecture.md",
+      "src/openverify/relay/ports/__init__.py"
+    ],
+    "case_ids": [
+      "port031.Binder.valid",
+      "port031.Binder.invalid_return",
+      "port031.Binder.bad_manifest",
+      "port031.Binder.wrong_capability",
+      "port031.Binder.wrong_version",
+      "port031.Binder.untrusted_transport",
+      "port031.Binder.rewrite_manifest",
+      "port031.Binder.exception",
+      "port031.Binder.structured_error",
+      "port031.Binder.cancellation",
+      "port031.Binder.concurrency_isolation"
+    ],
+    "nonapplicable_categories": {
+      "iteration_streaming": "Only Catalog sequence iteration, Driver report events and Transport emitted events have iteration/streaming contracts; others are single synchronous calls",
+      "return_enforcement": "Void put/observe return values have no semantic channel; invalid returns do not authorize outcomes",
+      "cancellation": "External task cancellation is tested at an async boundary; synchronous callbacks have no interruptible await surface"
+    }
+  },
+  "Driver": {
+    "methods": {
+      "execute": "async (provider, request, timeout, emit) -> InvocationReport"
+    },
+    "contract": "Report correlated terminal outcome/events or separate transport error; SDK lifecycle revalidation is mandatory",
+    "reference": [
+      "docs/relay/architecture.md",
+      "src/openverify/relay/ports/__init__.py"
+    ],
+    "case_ids": [
+      "port031.Driver.valid",
+      "port031.Driver.invalid_return",
+      "port031.Driver.malformed_events",
+      "port031.Driver.wrong_correlation",
+      "port031.Driver.missing_terminal",
+      "port031.Driver.forged_output_error",
+      "port031.Driver.bad_output",
+      "port031.Driver.exception",
+      "port031.Driver.iteration_failure",
+      "port031.Driver.event_after_terminal",
+      "port031.Driver.cancellation",
+      "port031.Driver.concurrency_isolation"
+    ],
+    "nonapplicable_categories": {
+      "iteration_streaming": "Only Catalog sequence iteration, Driver report events and Transport emitted events have iteration/streaming contracts; others are single synchronous calls",
+      "return_enforcement": "Void put/observe return values have no semantic channel; invalid returns do not authorize outcomes",
+      "cancellation": "External task cancellation is tested at an async boundary; synchronous callbacks have no interruptible await surface"
+    }
+  },
+  "Transport": {
+    "methods": {
+      "invoke": "async (request, emit) -> Outcome"
+    },
+    "contract": "Real Provider lifecycle, exact correlation, ordered events, valid output; failures never become verification FAIL",
+    "reference": [
+      "docs/relay/architecture.md",
+      "src/openverify/relay/ports/__init__.py"
+    ],
+    "case_ids": [
+      "port031.Transport.valid",
+      "port031.Transport.invalid_return",
+      "port031.Transport.wrong_correlation",
+      "port031.Transport.bad_output",
+      "port031.Transport.exception",
+      "port031.Transport.stream_failure",
+      "port031.Transport.duplicate_event",
+      "port031.Transport.wrong_sequence",
+      "port031.Transport.wrong_event_correlation",
+      "port031.Transport.cancellation",
+      "port031.Transport.concurrency_isolation"
+    ],
+    "nonapplicable_categories": {
+      "iteration_streaming": "Only Catalog sequence iteration, Driver report events and Transport emitted events have iteration/streaming contracts; others are single synchronous calls",
+      "return_enforcement": "Void put/observe return values have no semantic channel; invalid returns do not authorize outcomes",
+      "cancellation": "External task cancellation is tested at an async boundary; synchronous callbacks have no interruptible await surface"
+    }
+  },
+  "Store": {
+    "methods": {
+      "put": "(record) -> None",
+      "get": "(run_id) -> RunRecord | None"
+    },
+    "contract": "put receives validated record; failures propagate. Relay.run does not call get; host owns retrieval contract",
+    "reference": [
+      "docs/relay/architecture.md",
+      "src/openverify/relay/ports/__init__.py"
+    ],
+    "case_ids": [
+      "port031.Store.valid",
+      "port031.Store.put_exception",
+      "port031.Store.put_return",
+      "port031.Store.get_valid",
+      "port031.Store.get_absent",
+      "port031.Store.get_exception",
+      "port031.Store.get_invalid",
+      "port031.Store.get_malformed",
+      "port031.Store.cancellation",
+      "port031.Store.concurrency_isolation"
+    ],
+    "nonapplicable_categories": {
+      "iteration_streaming": "Only Catalog sequence iteration, Driver report events and Transport emitted events have iteration/streaming contracts; others are single synchronous calls",
+      "return_enforcement": "Void put/observe return values have no semantic channel; invalid returns do not authorize outcomes",
+      "cancellation": "External task cancellation is tested at an async boundary; synchronous callbacks have no interruptible await surface"
+    }
+  },
+  "Observer": {
+    "methods": {
+      "observe": "(event) -> None"
+    },
+    "contract": "Observation does not decide verification; ordinary exceptions isolated and diagnosed",
+    "reference": [
+      "docs/relay/architecture.md",
+      "src/openverify/relay/ports/__init__.py"
+    ],
+    "case_ids": [
+      "port031.Observer.valid",
+      "port031.Observer.exception",
+      "port031.Observer.invalid_return",
+      "port031.Observer.mutate_event",
+      "port031.Observer.cancellation",
+      "port031.Observer.concurrency_isolation"
+    ],
+    "nonapplicable_categories": {
+      "iteration_streaming": "Only Catalog sequence iteration, Driver report events and Transport emitted events have iteration/streaming contracts; others are single synchronous calls",
+      "return_enforcement": "Void put/observe return values have no semantic channel; invalid returns do not authorize outcomes",
+      "cancellation": "External task cancellation is tested at an async boundary; synchronous callbacks have no interruptible await surface"
+    }
+  }
+}
