@@ -1,7 +1,7 @@
 {
-  "name": "openverify",
+  "name": "verifyanything",
   "version": "0.1.0",
-  "description": "OpenVerify DRAFT VCP and Provider Contract wire SDK",
+  "description": "VerifyAnything DRAFT VCP and Provider Contract wire SDK",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

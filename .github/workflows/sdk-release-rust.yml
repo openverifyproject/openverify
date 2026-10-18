@@ -18,7 +18,7 @@ jobs:
     environment: sdk-rust
     permissions:
       contents: read
-
+      id-token: write
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # actions/checkout@v4
         with:
@@ -39,13 +39,17 @@ jobs:
           test "$REGISTRY_OWNERSHIP_APPROVED" = true
           python tools/sdk_release.py preflight --language rust --tag "$RELEASE_TAG" --evidence dist/sdk/rust/verification.json
       - uses: dtolnay/rust-toolchain@b725eda525362e7cf34af9a7243cac1e3f01a7ec # dtolnay/rust-toolchain@stable
+      - name: Exchange GitHub OIDC for a short-lived crates.io token
+        if: vars.REGISTRY_AUTH_MODE != 'token'
+        uses: rust-lang/crates-io-auth-action@ebc737b6fc418a6ca0073cf116ec8dc156d8b81e # rust-lang/crates-io-auth-action@v1
+        id: rustauth
       - name: Publish the verified crate contents
         env:
-          CARGO_REGISTRY_TOKEN: ${{ secrets.CARGO_REGISTRY_TOKEN }}
+          CARGO_REGISTRY_TOKEN: ${{ steps.rustauth.outputs.token || secrets.CARGO_REGISTRY_TOKEN }}
         run: |
           mkdir -p .sdk-release/crate
           tar -xzf dist/sdk/rust/*.crate -C .sdk-release/crate
-          cd .sdk-release/crate/openverify-[0-9]*
+          cd .sdk-release/crate/verifyanything-[0-9]*
           cargo publish --locked
       - name: Verify registry availability and a fresh external installation
         env:
