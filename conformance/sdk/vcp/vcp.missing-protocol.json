@@ -1,0 +1,22 @@
+{
+  "id": "vcp.missing-protocol",
+  "contract": "vcp",
+  "version": "draft",
+  "type": "result",
+  "operation": "parse",
+  "input": {
+    "disposition": "EXECUTED",
+    "execution_outcome": "SUCCESS",
+    "applicability": "APPLICABLE",
+    "determination": "KNOWN",
+    "verdict": "PASS"
+  },
+  "expected": {
+    "accepted": false,
+    "error": "PROTOCOL_STRUCTURE"
+  },
+  "features": [
+    "standalone",
+    "result"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "role": "ACTIVATION",
+  "input_values": {},
+  "input_resolutions": {},
+  "outcome": {
+    "outcome": "ACTIVATE",
+    "reason": "event"
+  }
+}

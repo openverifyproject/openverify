@@ -1,0 +1,24 @@
+{
+  "id": "vcp.resource-exact",
+  "contract": "vcp",
+  "version": "draft",
+  "type": "resource",
+  "operation": "parse",
+  "input": {
+    "unit": "seconds",
+    "kind": "EXACT",
+    "value": 0
+  },
+  "expected": {
+    "accepted": true,
+    "normalized": {
+      "unit": "seconds",
+      "kind": "EXACT",
+      "value": 0
+    }
+  },
+  "features": [
+    "standalone",
+    "resource"
+  ]
+}

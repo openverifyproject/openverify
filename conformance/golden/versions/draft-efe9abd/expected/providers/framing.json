@@ -1,0 +1,31 @@
+{
+  "provider.frame.0": {
+    "messages": [
+      {
+        "unicode": "é😀"
+      }
+    ]
+  },
+  "provider.frame.1": {
+    "messages": [
+      {
+        "a": 1
+      },
+      {
+        "b": 2
+      }
+    ]
+  },
+  "provider.frame.2": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.frame.3": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.frame.4": {
+    "error_code": "PROTOCOL_VIOLATION"
+  },
+  "provider.frame.5": {
+    "error_code": "PROTOCOL_VIOLATION"
+  }
+}

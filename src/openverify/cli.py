@@ -24,7 +24,7 @@ def main() -> int:
     inspect.add_argument("file", type=Path)
     run = commands.add_parser("run")
     run.add_argument("file", type=Path)
-    run.add_argument("--context", type=Path, required=True)
+    run.add_argument("--run-inputs", type=Path, required=True)
     run.add_argument("--opportunity-id", required=True)
     run.add_argument("--output", type=Path)
     args = parser.parse_args()
@@ -36,11 +36,13 @@ def main() -> int:
         elif args.command == "inspect":
             print(json.dumps(inspect_definition(parse_definition(data)), indent=2))
         else:
-            context = decode(cast(Path, args.context).read_bytes())
-            if not isinstance(context, dict):
-                raise ProtocolError("PROTOCOL_STRUCTURE", "Context must be a mapping")
+            run_inputs = decode(cast(Path, args.run_inputs).read_bytes())
+            if not isinstance(run_inputs, dict):
+                raise ProtocolError("PROTOCOL_STRUCTURE", "Run inputs must be a mapping")
             record = Engine(demo_registry()).run(
-                parse_definition(data), cast(Context, context), opportunity_id=args.opportunity_id
+                parse_definition(data),
+                cast(Context, run_inputs),
+                opportunity_id=args.opportunity_id,
             )
             output = serialize(record)
             if args.output:

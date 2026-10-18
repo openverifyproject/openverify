@@ -12,6 +12,6 @@ Every standard aggregator requires explicit REJECT/IGNORE handling for each
 exceptional category; there are no implicit scores or global reducer defaults.
 ALWAYS and PROBABILITY are implemented. MAX_STALENESS and PERIODIC are OPEN.
 Decision names are portable values; retry/defer scheduling is not implemented.
-WEIGHTED_AVERAGE accepts explicit ordered Result sequences in the direct reducer
-API. Its graph form is GRAPH_UNSUPPORTED until predecessor input/weight identity
-is specified; the named reducer remains part of this profile.
+WEIGHTED_AVERAGE accepts ordered Result sequences in the direct reducer API.
+Graph reducers declare aggregate_inputs and name-keyed weights; all reducers have
+stable structural membership independent of predecessor states and edge order.

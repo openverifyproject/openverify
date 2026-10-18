@@ -30,17 +30,78 @@
       {
         "id": "form",
         "kind": "EVALUATE",
-        "executor_ref": "demo.regex",
         "config": {
           "key": "answer",
           "pattern": "^Answer:",
           "must_match": true
-        }
+        },
+        "operation": {
+          "capability_id": "com.example.demo.regex",
+          "capability_version": "1"
+        },
+        "inputs": [
+          {
+            "name": "subject",
+            "schema": {
+              "type": "object"
+            },
+            "required": true,
+            "on_unavailable": "BLOCK"
+          },
+          {
+            "name": "criterion",
+            "schema": {
+              "type": "object"
+            },
+            "required": true,
+            "on_unavailable": "BLOCK"
+          },
+          {
+            "name": "answer",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "on_unavailable": "BLOCK"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "result",
+            "schema": {
+              "type": "object"
+            },
+            "role": "RESULT"
+          }
+        ],
+        "bindings": {
+          "subject": {
+            "kind": "CONSTANT",
+            "value": {
+              "id": "answer-1",
+              "type": "text/plain",
+              "locator": {
+                "host_key": "answer"
+              }
+            }
+          },
+          "criterion": {
+            "kind": "CONSTANT",
+            "value": {
+              "id": "answer-acceptability",
+              "description": "The answer has the requested form and receives review."
+            }
+          },
+          "answer": {
+            "kind": "RUN_INPUT",
+            "name": "answer"
+          }
+        },
+        "aggregate_inputs": []
       },
       {
         "id": "mock-judge",
         "kind": "EVALUATE",
-        "executor_ref": "demo.constant",
         "config": {
           "result": {
             "protocol": "draft",
@@ -49,20 +110,113 @@
             "applicability": "APPLICABLE",
             "determination": "UNKNOWN"
           }
-        }
+        },
+        "operation": {
+          "capability_id": "com.example.demo.constant",
+          "capability_version": "1"
+        },
+        "inputs": [
+          {
+            "name": "subject",
+            "schema": {
+              "type": "object"
+            },
+            "required": true,
+            "on_unavailable": "BLOCK"
+          },
+          {
+            "name": "criterion",
+            "schema": {
+              "type": "object"
+            },
+            "required": true,
+            "on_unavailable": "BLOCK"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "result",
+            "schema": {
+              "type": "object"
+            },
+            "role": "RESULT"
+          }
+        ],
+        "bindings": {
+          "subject": {
+            "kind": "CONSTANT",
+            "value": {
+              "id": "answer-1",
+              "type": "text/plain",
+              "locator": {
+                "host_key": "answer"
+              }
+            }
+          },
+          "criterion": {
+            "kind": "CONSTANT",
+            "value": {
+              "id": "answer-acceptability",
+              "description": "The answer has the requested form and receives review."
+            }
+          }
+        },
+        "aggregate_inputs": []
       },
       {
         "id": "escalate",
         "kind": "CONTROL",
-        "executor_ref": "demo.unknown-route",
         "config": {
           "destination": "human-review"
-        }
+        },
+        "operation": {
+          "capability_id": "com.example.demo.unknown_route",
+          "capability_version": "1"
+        },
+        "inputs": [
+          {
+            "name": "form",
+            "schema": {
+              "type": "object"
+            },
+            "required": true,
+            "on_unavailable": "BLOCK"
+          },
+          {
+            "name": "mock-judge",
+            "schema": {
+              "type": "object"
+            },
+            "required": true,
+            "on_unavailable": "BLOCK"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "decision",
+            "schema": {
+              "type": "object"
+            },
+            "role": "DECISION"
+          }
+        ],
+        "bindings": {
+          "form": {
+            "kind": "UPSTREAM_OUTPUT",
+            "node_id": "form",
+            "output": "result"
+          },
+          "mock-judge": {
+            "kind": "UPSTREAM_OUTPUT",
+            "node_id": "mock-judge",
+            "output": "result"
+          }
+        },
+        "aggregate_inputs": []
       },
       {
         "id": "human-review",
         "kind": "EVALUATE",
-        "executor_ref": "demo.constant",
         "config": {
           "result": {
             "protocol": "draft",
@@ -77,7 +231,58 @@
               }
             ]
           }
-        }
+        },
+        "operation": {
+          "capability_id": "com.example.demo.constant",
+          "capability_version": "1"
+        },
+        "inputs": [
+          {
+            "name": "subject",
+            "schema": {
+              "type": "object"
+            },
+            "required": true,
+            "on_unavailable": "BLOCK"
+          },
+          {
+            "name": "criterion",
+            "schema": {
+              "type": "object"
+            },
+            "required": true,
+            "on_unavailable": "BLOCK"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "result",
+            "schema": {
+              "type": "object"
+            },
+            "role": "RESULT"
+          }
+        ],
+        "bindings": {
+          "subject": {
+            "kind": "CONSTANT",
+            "value": {
+              "id": "answer-1",
+              "type": "text/plain",
+              "locator": {
+                "host_key": "answer"
+              }
+            }
+          },
+          "criterion": {
+            "kind": "CONSTANT",
+            "value": {
+              "id": "answer-acceptability",
+              "description": "The answer has the requested form and receives review."
+            }
+          }
+        },
+        "aggregate_inputs": []
       }
     ],
     "edges": [
@@ -93,11 +298,25 @@
         "from_node": "escalate",
         "to_node": "human-review",
         "guard": {
-          "node_id": "escalate",
-          "field": "decision_destination",
+          "source": {
+            "kind": "UPSTREAM_OUTPUT",
+            "node_id": "escalate",
+            "output": "decision"
+          },
+          "pointer": "/destination",
           "value": "human-review"
         }
       }
     ]
-  }
+  },
+  "run_inputs": [
+    {
+      "name": "answer",
+      "schema": {
+        "type": "string"
+      },
+      "required": true,
+      "on_unavailable": "BLOCK"
+    }
+  ]
 }

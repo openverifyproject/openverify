@@ -1,0 +1,22 @@
+{
+  "v02.standard.action_policy.directory_child": {
+    "verdict": "PASS",
+    "prefix": "tmp/",
+    "boundary": "Only directory children; traversal rejected"
+  },
+  "v02.standard.action_policy.sibling": {
+    "verdict": "FAIL",
+    "prefix": "tmp/",
+    "boundary": "Only directory children; traversal rejected"
+  },
+  "v02.standard.action_policy.trailing_traversal": {
+    "verdict": "FAIL",
+    "prefix": "tmp/",
+    "boundary": "Only directory children; traversal rejected"
+  },
+  "v02.standard.action_policy.backslash_traversal": {
+    "verdict": "FAIL",
+    "prefix": "tmp/",
+    "boundary": "Only directory children; traversal rejected"
+  }
+}

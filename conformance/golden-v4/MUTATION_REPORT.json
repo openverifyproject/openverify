@@ -1,0 +1,714 @@
+{
+  "probes": [
+    {
+      "action": "mutation",
+      "case_id": "V4.AUDIT.MUTATION.RESULT_STATE",
+      "classification": "VALID",
+      "execution_mode": "runtime",
+      "expected": {
+        "detected": true
+      },
+      "family": "V4.AUDIT.MUTATION",
+      "module": "test_oracle_mutation_sensitivity",
+      "normative_clauses": [
+        "V4.C.VCP.conformance.L0005.1",
+        "V4.C.VCP.conformance.L0006.1",
+        "V4.C.VCP.conformance.L0007.1",
+        "V4.C.VCP.conformance.L0008.1",
+        "V4.C.VCP.conformance.L0010.1",
+        "V4.C.VCP.conformance.L0011.1",
+        "V4.C.VCP.conformance.L0012.1",
+        "V4.C.VCP.conformance.L0012.2",
+        "V4.C.VCP.conformance.L0013.1",
+        "V4.C.VCP.conformance.L0014.1",
+        "V4.C.VCP.conformance.L0016.1",
+        "V4.C.VCP.conformance.L0017.1",
+        "V4.C.VCP.conformance.L0018.1",
+        "V4.C.VCP.conformance.L0019.1",
+        "V4.C.VCP.conformance.L0020.1",
+        "V4.C.VCP.conformance.L0021.1",
+        "V4.C.VCP.conformance.L0022.1",
+        "V4.C.VCP.conformance.L0023.1",
+        "V4.C.VCP.conformance.L0024.1",
+        "V4.C.VCP.conformance.L0025.1",
+        "V4.C.VCP.conformance.L0026.1",
+        "V4.C.VCP.conformance.L0027.1",
+        "V4.C.VCP.conformance.L0028.1",
+        "V4.C.VCP.conformance.L0029.1",
+        "V4.C.VCP.conformance.L0030.1",
+        "V4.C.VCP.conformance.L0031.1",
+        "V4.C.VCP.conformance.L0032.1",
+        "V4.C.VCP.conformance.L0033.1"
+      ],
+      "obligation_ids": [
+        "V4.O.CASE.AUDIT.MUTATION.RESULT_STATE"
+      ],
+      "status": "PASS",
+      "stimulus": {
+        "family": "RESULT_STATE"
+      },
+      "frozen_execution_mode": "cheap",
+      "normative_sources": [
+        {
+          "path": "spec/draft/conformance.md",
+          "line_start": 5,
+          "line_end": 33,
+          "source_sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24"
+        }
+      ],
+      "actual": {
+        "detected": true
+      },
+      "duration": 0.009750700002769008,
+      "relay_api_calls": 0,
+      "relay_awaited_seconds": 0,
+      "rerun": "python -m tools.golden_v4.report --case-id \"V4.AUDIT.MUTATION.RESULT_STATE\"",
+      "pytest_selector": "test_oracle_mutation_sensitivity.py::test_audit_mutation[V4.AUDIT.MUTATION.RESULT_STATE]",
+      "rejection_detail": {
+        "code": "RESULT_STATE",
+        "message": "RESULT_STATE at /: Impossible Result axis combination"
+      },
+      "mutation_evidence": {
+        "mutant": "RESULT_STATE",
+        "real_case_id": "V4.VCP.RESULT.WIRE_AXIS.EXECUTED-ABSENT-ABSENT-ABSENT-ABSENT",
+        "baseline": {
+          "accepted": false
+        },
+        "mutated_actual": {
+          "accepted": true
+        },
+        "detected": true
+      }
+    },
+    {
+      "action": "mutation",
+      "case_id": "V4.AUDIT.MUTATION.OPTIONAL_OBSERVATION",
+      "classification": "VALID",
+      "execution_mode": "runtime",
+      "expected": {
+        "detected": true
+      },
+      "family": "V4.AUDIT.MUTATION",
+      "module": "test_oracle_mutation_sensitivity",
+      "normative_clauses": [
+        "V4.C.VCP.conformance.L0005.1",
+        "V4.C.VCP.conformance.L0006.1",
+        "V4.C.VCP.conformance.L0007.1",
+        "V4.C.VCP.conformance.L0008.1",
+        "V4.C.VCP.conformance.L0010.1",
+        "V4.C.VCP.conformance.L0011.1",
+        "V4.C.VCP.conformance.L0012.1",
+        "V4.C.VCP.conformance.L0012.2",
+        "V4.C.VCP.conformance.L0013.1",
+        "V4.C.VCP.conformance.L0014.1",
+        "V4.C.VCP.conformance.L0016.1",
+        "V4.C.VCP.conformance.L0017.1",
+        "V4.C.VCP.conformance.L0018.1",
+        "V4.C.VCP.conformance.L0019.1",
+        "V4.C.VCP.conformance.L0020.1",
+        "V4.C.VCP.conformance.L0021.1",
+        "V4.C.VCP.conformance.L0022.1",
+        "V4.C.VCP.conformance.L0023.1",
+        "V4.C.VCP.conformance.L0024.1",
+        "V4.C.VCP.conformance.L0025.1",
+        "V4.C.VCP.conformance.L0026.1",
+        "V4.C.VCP.conformance.L0027.1",
+        "V4.C.VCP.conformance.L0028.1",
+        "V4.C.VCP.conformance.L0029.1",
+        "V4.C.VCP.conformance.L0030.1",
+        "V4.C.VCP.conformance.L0031.1",
+        "V4.C.VCP.conformance.L0032.1",
+        "V4.C.VCP.conformance.L0033.1"
+      ],
+      "obligation_ids": [
+        "V4.O.CASE.AUDIT.MUTATION.OPTIONAL_OBSERVATION"
+      ],
+      "status": "PASS",
+      "stimulus": {
+        "family": "OPTIONAL_OBSERVATION"
+      },
+      "frozen_execution_mode": "cheap",
+      "normative_sources": [
+        {
+          "path": "spec/draft/conformance.md",
+          "line_start": 5,
+          "line_end": 33,
+          "source_sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24"
+        }
+      ],
+      "actual": {
+        "detected": true
+      },
+      "duration": 0.0013719999988097697,
+      "relay_api_calls": 0,
+      "relay_awaited_seconds": 0,
+      "rerun": "python -m tools.golden_v4.report --case-id \"V4.AUDIT.MUTATION.OPTIONAL_OBSERVATION\"",
+      "pytest_selector": "test_oracle_mutation_sensitivity.py::test_audit_mutation[V4.AUDIT.MUTATION.OPTIONAL_OBSERVATION]",
+      "rejection_detail": {
+        "code": "RESULT_STATE",
+        "message": "RESULT_STATE at /: Only KNOWN applicable Results can emit a judgment, including null"
+      },
+      "mutation_evidence": {
+        "mutant": "OPTIONAL_OBSERVATION",
+        "real_case_id": "V4.VCP.RESULT.OBS_MASK.EXECUTED-SUCCESS-APPLICABLE-UNKNOWN-ABSENT.BITS_00000001",
+        "baseline": {
+          "accepted": false
+        },
+        "mutated_actual": {
+          "accepted": true
+        },
+        "detected": true
+      }
+    },
+    {
+      "action": "mutation",
+      "case_id": "V4.AUDIT.MUTATION.DECISION",
+      "classification": "VALID",
+      "execution_mode": "runtime",
+      "expected": {
+        "detected": true
+      },
+      "family": "V4.AUDIT.MUTATION",
+      "module": "test_oracle_mutation_sensitivity",
+      "normative_clauses": [
+        "V4.C.VCP.conformance.L0005.1",
+        "V4.C.VCP.conformance.L0006.1",
+        "V4.C.VCP.conformance.L0007.1",
+        "V4.C.VCP.conformance.L0008.1",
+        "V4.C.VCP.conformance.L0010.1",
+        "V4.C.VCP.conformance.L0011.1",
+        "V4.C.VCP.conformance.L0012.1",
+        "V4.C.VCP.conformance.L0012.2",
+        "V4.C.VCP.conformance.L0013.1",
+        "V4.C.VCP.conformance.L0014.1",
+        "V4.C.VCP.conformance.L0016.1",
+        "V4.C.VCP.conformance.L0017.1",
+        "V4.C.VCP.conformance.L0018.1",
+        "V4.C.VCP.conformance.L0019.1",
+        "V4.C.VCP.conformance.L0020.1",
+        "V4.C.VCP.conformance.L0021.1",
+        "V4.C.VCP.conformance.L0022.1",
+        "V4.C.VCP.conformance.L0023.1",
+        "V4.C.VCP.conformance.L0024.1",
+        "V4.C.VCP.conformance.L0025.1",
+        "V4.C.VCP.conformance.L0026.1",
+        "V4.C.VCP.conformance.L0027.1",
+        "V4.C.VCP.conformance.L0028.1",
+        "V4.C.VCP.conformance.L0029.1",
+        "V4.C.VCP.conformance.L0030.1",
+        "V4.C.VCP.conformance.L0031.1",
+        "V4.C.VCP.conformance.L0032.1",
+        "V4.C.VCP.conformance.L0033.1"
+      ],
+      "obligation_ids": [
+        "V4.O.CASE.AUDIT.MUTATION.DECISION"
+      ],
+      "status": "PASS",
+      "stimulus": {
+        "family": "DECISION"
+      },
+      "frozen_execution_mode": "cheap",
+      "normative_sources": [
+        {
+          "path": "spec/draft/conformance.md",
+          "line_start": 5,
+          "line_end": 33,
+          "source_sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24"
+        }
+      ],
+      "actual": {
+        "detected": true
+      },
+      "duration": 0.006882400019094348,
+      "relay_api_calls": 0,
+      "relay_awaited_seconds": 0,
+      "rerun": "python -m tools.golden_v4.report --case-id \"V4.AUDIT.MUTATION.DECISION\"",
+      "pytest_selector": "test_oracle_mutation_sensitivity.py::test_audit_mutation[V4.AUDIT.MUTATION.DECISION]",
+      "rejection_detail": {
+        "code": "RESULT_STATE",
+        "message": "RESULT_STATE at /: Only ROUTE requires a destination"
+      },
+      "mutation_evidence": {
+        "mutant": "DECISION",
+        "real_case_id": "V4.VCP.DECISION.DEST.CONTINUE-NONEMPTY",
+        "baseline": {
+          "accepted": false
+        },
+        "mutated_actual": {
+          "accepted": true
+        },
+        "detected": true
+      }
+    },
+    {
+      "action": "mutation",
+      "case_id": "V4.AUDIT.MUTATION.AVAILABILITY",
+      "classification": "VALID",
+      "execution_mode": "runtime",
+      "expected": {
+        "detected": true
+      },
+      "family": "V4.AUDIT.MUTATION",
+      "module": "test_oracle_mutation_sensitivity",
+      "normative_clauses": [
+        "V4.C.VCP.conformance.L0005.1",
+        "V4.C.VCP.conformance.L0006.1",
+        "V4.C.VCP.conformance.L0007.1",
+        "V4.C.VCP.conformance.L0008.1",
+        "V4.C.VCP.conformance.L0010.1",
+        "V4.C.VCP.conformance.L0011.1",
+        "V4.C.VCP.conformance.L0012.1",
+        "V4.C.VCP.conformance.L0012.2",
+        "V4.C.VCP.conformance.L0013.1",
+        "V4.C.VCP.conformance.L0014.1",
+        "V4.C.VCP.conformance.L0016.1",
+        "V4.C.VCP.conformance.L0017.1",
+        "V4.C.VCP.conformance.L0018.1",
+        "V4.C.VCP.conformance.L0019.1",
+        "V4.C.VCP.conformance.L0020.1",
+        "V4.C.VCP.conformance.L0021.1",
+        "V4.C.VCP.conformance.L0022.1",
+        "V4.C.VCP.conformance.L0023.1",
+        "V4.C.VCP.conformance.L0024.1",
+        "V4.C.VCP.conformance.L0025.1",
+        "V4.C.VCP.conformance.L0026.1",
+        "V4.C.VCP.conformance.L0027.1",
+        "V4.C.VCP.conformance.L0028.1",
+        "V4.C.VCP.conformance.L0029.1",
+        "V4.C.VCP.conformance.L0030.1",
+        "V4.C.VCP.conformance.L0031.1",
+        "V4.C.VCP.conformance.L0032.1",
+        "V4.C.VCP.conformance.L0033.1"
+      ],
+      "obligation_ids": [
+        "V4.O.CASE.AUDIT.MUTATION.AVAILABILITY"
+      ],
+      "status": "PASS",
+      "stimulus": {
+        "family": "AVAILABILITY"
+      },
+      "frozen_execution_mode": "cheap",
+      "normative_sources": [
+        {
+          "path": "spec/draft/conformance.md",
+          "line_start": 5,
+          "line_end": 33,
+          "source_sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24"
+        }
+      ],
+      "actual": {
+        "detected": true
+      },
+      "duration": 0.07898450002539903,
+      "relay_api_calls": 2,
+      "relay_awaited_seconds": 0.060242800012929365,
+      "rerun": "python -m tools.golden_v4.report --case-id \"V4.AUDIT.MUTATION.AVAILABILITY\"",
+      "pytest_selector": "test_oracle_mutation_sensitivity.py::test_audit_mutation[V4.AUDIT.MUTATION.AVAILABILITY]",
+      "mutation_evidence": {
+        "mutant": "AVAILABILITY",
+        "real_case_id": "V4.VCP.RESOLVE.CONSUMER.DERIVE-ABSENT-BLOCK",
+        "baseline": {
+          "status": "ABSENT",
+          "invoked": false,
+          "used_default": false
+        },
+        "mutated_actual": {
+          "status": "AVAILABLE",
+          "invoked": true,
+          "used_default": false
+        },
+        "detected": true
+      }
+    },
+    {
+      "action": "mutation",
+      "case_id": "V4.AUDIT.MUTATION.WEIGHT_IDENTITY",
+      "classification": "VALID",
+      "execution_mode": "runtime",
+      "expected": {
+        "detected": true
+      },
+      "family": "V4.AUDIT.MUTATION",
+      "module": "test_oracle_mutation_sensitivity",
+      "normative_clauses": [
+        "V4.C.VCP.conformance.L0005.1",
+        "V4.C.VCP.conformance.L0006.1",
+        "V4.C.VCP.conformance.L0007.1",
+        "V4.C.VCP.conformance.L0008.1",
+        "V4.C.VCP.conformance.L0010.1",
+        "V4.C.VCP.conformance.L0011.1",
+        "V4.C.VCP.conformance.L0012.1",
+        "V4.C.VCP.conformance.L0012.2",
+        "V4.C.VCP.conformance.L0013.1",
+        "V4.C.VCP.conformance.L0014.1",
+        "V4.C.VCP.conformance.L0016.1",
+        "V4.C.VCP.conformance.L0017.1",
+        "V4.C.VCP.conformance.L0018.1",
+        "V4.C.VCP.conformance.L0019.1",
+        "V4.C.VCP.conformance.L0020.1",
+        "V4.C.VCP.conformance.L0021.1",
+        "V4.C.VCP.conformance.L0022.1",
+        "V4.C.VCP.conformance.L0023.1",
+        "V4.C.VCP.conformance.L0024.1",
+        "V4.C.VCP.conformance.L0025.1",
+        "V4.C.VCP.conformance.L0026.1",
+        "V4.C.VCP.conformance.L0027.1",
+        "V4.C.VCP.conformance.L0028.1",
+        "V4.C.VCP.conformance.L0029.1",
+        "V4.C.VCP.conformance.L0030.1",
+        "V4.C.VCP.conformance.L0031.1",
+        "V4.C.VCP.conformance.L0032.1",
+        "V4.C.VCP.conformance.L0033.1"
+      ],
+      "obligation_ids": [
+        "V4.O.CASE.AUDIT.MUTATION.WEIGHT_IDENTITY"
+      ],
+      "status": "PASS",
+      "stimulus": {
+        "family": "WEIGHT_IDENTITY"
+      },
+      "frozen_execution_mode": "cheap",
+      "normative_sources": [
+        {
+          "path": "spec/draft/conformance.md",
+          "line_start": 5,
+          "line_end": 33,
+          "source_sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24"
+        }
+      ],
+      "actual": {
+        "detected": true
+      },
+      "duration": 0.004031200020108372,
+      "relay_api_calls": 0,
+      "relay_awaited_seconds": 0,
+      "rerun": "python -m tools.golden_v4.report --case-id \"V4.AUDIT.MUTATION.WEIGHT_IDENTITY\"",
+      "pytest_selector": "test_oracle_mutation_sensitivity.py::test_audit_mutation[V4.AUDIT.MUTATION.WEIGHT_IDENTITY]",
+      "mutation_evidence": {
+        "mutant": "WEIGHT_IDENTITY",
+        "real_case_id": "V4.VCP.AGG.WEIGHT_IDENTITY.UNEQUAL",
+        "baseline": {
+          "score": 0.625
+        },
+        "mutated_actual": {
+          "score": 0.375
+        },
+        "detected": true
+      }
+    },
+    {
+      "action": "mutation",
+      "case_id": "V4.AUDIT.MUTATION.POLICY_NONINVOCATION",
+      "classification": "VALID",
+      "execution_mode": "runtime",
+      "expected": {
+        "detected": true
+      },
+      "family": "V4.AUDIT.MUTATION",
+      "module": "test_oracle_mutation_sensitivity",
+      "normative_clauses": [
+        "V4.C.VCP.conformance.L0005.1",
+        "V4.C.VCP.conformance.L0006.1",
+        "V4.C.VCP.conformance.L0007.1",
+        "V4.C.VCP.conformance.L0008.1",
+        "V4.C.VCP.conformance.L0010.1",
+        "V4.C.VCP.conformance.L0011.1",
+        "V4.C.VCP.conformance.L0012.1",
+        "V4.C.VCP.conformance.L0012.2",
+        "V4.C.VCP.conformance.L0013.1",
+        "V4.C.VCP.conformance.L0014.1",
+        "V4.C.VCP.conformance.L0016.1",
+        "V4.C.VCP.conformance.L0017.1",
+        "V4.C.VCP.conformance.L0018.1",
+        "V4.C.VCP.conformance.L0019.1",
+        "V4.C.VCP.conformance.L0020.1",
+        "V4.C.VCP.conformance.L0021.1",
+        "V4.C.VCP.conformance.L0022.1",
+        "V4.C.VCP.conformance.L0023.1",
+        "V4.C.VCP.conformance.L0024.1",
+        "V4.C.VCP.conformance.L0025.1",
+        "V4.C.VCP.conformance.L0026.1",
+        "V4.C.VCP.conformance.L0027.1",
+        "V4.C.VCP.conformance.L0028.1",
+        "V4.C.VCP.conformance.L0029.1",
+        "V4.C.VCP.conformance.L0030.1",
+        "V4.C.VCP.conformance.L0031.1",
+        "V4.C.VCP.conformance.L0032.1",
+        "V4.C.VCP.conformance.L0033.1"
+      ],
+      "obligation_ids": [
+        "V4.O.CASE.AUDIT.MUTATION.POLICY_NONINVOCATION"
+      ],
+      "status": "PASS",
+      "stimulus": {
+        "family": "POLICY_NONINVOCATION"
+      },
+      "frozen_execution_mode": "cheap",
+      "normative_sources": [
+        {
+          "path": "spec/draft/conformance.md",
+          "line_start": 5,
+          "line_end": 33,
+          "source_sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24"
+        }
+      ],
+      "actual": {
+        "detected": true
+      },
+      "duration": 0.08511029998771846,
+      "relay_api_calls": 2,
+      "relay_awaited_seconds": 0.07097909998265095,
+      "rerun": "python -m tools.golden_v4.report --case-id \"V4.AUDIT.MUTATION.POLICY_NONINVOCATION\"",
+      "pytest_selector": "test_oracle_mutation_sensitivity.py::test_audit_mutation[V4.AUDIT.MUTATION.POLICY_NONINVOCATION]",
+      "mutation_evidence": {
+        "mutant": "POLICY_NONINVOCATION",
+        "real_case_id": "V4.VCP.POLICY.PATH.SKIP",
+        "baseline": {
+          "admission": "SKIP",
+          "invoked": false
+        },
+        "mutated_actual": {
+          "assertion": ""
+        },
+        "detected": true
+      }
+    },
+    {
+      "action": "mutation",
+      "case_id": "V4.AUDIT.MUTATION.PROVIDER_ORDER",
+      "classification": "VALID",
+      "execution_mode": "runtime",
+      "expected": {
+        "detected": true
+      },
+      "family": "V4.AUDIT.MUTATION",
+      "module": "test_oracle_mutation_sensitivity",
+      "normative_clauses": [
+        "V4.C.VCP.conformance.L0005.1",
+        "V4.C.VCP.conformance.L0006.1",
+        "V4.C.VCP.conformance.L0007.1",
+        "V4.C.VCP.conformance.L0008.1",
+        "V4.C.VCP.conformance.L0010.1",
+        "V4.C.VCP.conformance.L0011.1",
+        "V4.C.VCP.conformance.L0012.1",
+        "V4.C.VCP.conformance.L0012.2",
+        "V4.C.VCP.conformance.L0013.1",
+        "V4.C.VCP.conformance.L0014.1",
+        "V4.C.VCP.conformance.L0016.1",
+        "V4.C.VCP.conformance.L0017.1",
+        "V4.C.VCP.conformance.L0018.1",
+        "V4.C.VCP.conformance.L0019.1",
+        "V4.C.VCP.conformance.L0020.1",
+        "V4.C.VCP.conformance.L0021.1",
+        "V4.C.VCP.conformance.L0022.1",
+        "V4.C.VCP.conformance.L0023.1",
+        "V4.C.VCP.conformance.L0024.1",
+        "V4.C.VCP.conformance.L0025.1",
+        "V4.C.VCP.conformance.L0026.1",
+        "V4.C.VCP.conformance.L0027.1",
+        "V4.C.VCP.conformance.L0028.1",
+        "V4.C.VCP.conformance.L0029.1",
+        "V4.C.VCP.conformance.L0030.1",
+        "V4.C.VCP.conformance.L0031.1",
+        "V4.C.VCP.conformance.L0032.1",
+        "V4.C.VCP.conformance.L0033.1"
+      ],
+      "obligation_ids": [
+        "V4.O.CASE.AUDIT.MUTATION.PROVIDER_ORDER"
+      ],
+      "status": "PASS",
+      "stimulus": {
+        "family": "PROVIDER_ORDER"
+      },
+      "frozen_execution_mode": "cheap",
+      "normative_sources": [
+        {
+          "path": "spec/draft/conformance.md",
+          "line_start": 5,
+          "line_end": 33,
+          "source_sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24"
+        }
+      ],
+      "actual": {
+        "detected": true
+      },
+      "duration": 0.014903899980708957,
+      "relay_api_calls": 0,
+      "relay_awaited_seconds": 0,
+      "rerun": "python -m tools.golden_v4.report --case-id \"V4.AUDIT.MUTATION.PROVIDER_ORDER\"",
+      "pytest_selector": "test_oracle_mutation_sensitivity.py::test_audit_mutation[V4.AUDIT.MUTATION.PROVIDER_ORDER]",
+      "rejection_detail": {
+        "code": "PROTOCOL_VIOLATION",
+        "message": "PROTOCOL_VIOLATION: Unknown or terminal invocation"
+      },
+      "mutation_evidence": {
+        "mutant": "PROVIDER_ORDER",
+        "real_case_id": "V4.PROVIDER.ATTEMPT.TRANSITION.TERMINAL-EVENT",
+        "baseline": {
+          "accepted": false
+        },
+        "mutated_actual": {
+          "accepted": true
+        },
+        "detected": true
+      }
+    },
+    {
+      "action": "mutation",
+      "case_id": "V4.AUDIT.MUTATION.RECORD_LINEAGE",
+      "classification": "VALID",
+      "execution_mode": "runtime",
+      "expected": {
+        "detected": true
+      },
+      "family": "V4.AUDIT.MUTATION",
+      "module": "test_oracle_mutation_sensitivity",
+      "normative_clauses": [
+        "V4.C.VCP.conformance.L0005.1",
+        "V4.C.VCP.conformance.L0006.1",
+        "V4.C.VCP.conformance.L0007.1",
+        "V4.C.VCP.conformance.L0008.1",
+        "V4.C.VCP.conformance.L0010.1",
+        "V4.C.VCP.conformance.L0011.1",
+        "V4.C.VCP.conformance.L0012.1",
+        "V4.C.VCP.conformance.L0012.2",
+        "V4.C.VCP.conformance.L0013.1",
+        "V4.C.VCP.conformance.L0014.1",
+        "V4.C.VCP.conformance.L0016.1",
+        "V4.C.VCP.conformance.L0017.1",
+        "V4.C.VCP.conformance.L0018.1",
+        "V4.C.VCP.conformance.L0019.1",
+        "V4.C.VCP.conformance.L0020.1",
+        "V4.C.VCP.conformance.L0021.1",
+        "V4.C.VCP.conformance.L0022.1",
+        "V4.C.VCP.conformance.L0023.1",
+        "V4.C.VCP.conformance.L0024.1",
+        "V4.C.VCP.conformance.L0025.1",
+        "V4.C.VCP.conformance.L0026.1",
+        "V4.C.VCP.conformance.L0027.1",
+        "V4.C.VCP.conformance.L0028.1",
+        "V4.C.VCP.conformance.L0029.1",
+        "V4.C.VCP.conformance.L0030.1",
+        "V4.C.VCP.conformance.L0031.1",
+        "V4.C.VCP.conformance.L0032.1",
+        "V4.C.VCP.conformance.L0033.1"
+      ],
+      "obligation_ids": [
+        "V4.O.CASE.AUDIT.MUTATION.RECORD_LINEAGE"
+      ],
+      "status": "PASS",
+      "stimulus": {
+        "family": "RECORD_LINEAGE"
+      },
+      "frozen_execution_mode": "cheap",
+      "normative_sources": [
+        {
+          "path": "spec/draft/conformance.md",
+          "line_start": 5,
+          "line_end": 33,
+          "source_sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24"
+        }
+      ],
+      "actual": {
+        "detected": true
+      },
+      "duration": 0.10468160000164062,
+      "relay_api_calls": 2,
+      "relay_awaited_seconds": 0.0870610999991186,
+      "rerun": "python -m tools.golden_v4.report --case-id \"V4.AUDIT.MUTATION.RECORD_LINEAGE\"",
+      "pytest_selector": "test_oracle_mutation_sensitivity.py::test_audit_mutation[V4.AUDIT.MUTATION.RECORD_LINEAGE]",
+      "rejection_detail": {
+        "code": "PROVENANCE_LINEAGE",
+        "message": "PROVENANCE_LINEAGE at /: Input snapshots contradict declared bindings"
+      },
+      "mutation_evidence": {
+        "mutant": "RECORD_LINEAGE",
+        "real_case_id": "V4.VCP.RECORD.LINEAGE.INPUT_VALUE",
+        "baseline": {
+          "accepted": false
+        },
+        "mutated_actual": {
+          "accepted": true
+        },
+        "detected": true
+      }
+    },
+    {
+      "action": "mutation",
+      "case_id": "V4.AUDIT.MUTATION.CANCELLATION",
+      "classification": "VALID",
+      "execution_mode": "runtime",
+      "expected": {
+        "detected": true
+      },
+      "family": "V4.AUDIT.MUTATION",
+      "module": "test_oracle_mutation_sensitivity",
+      "normative_clauses": [
+        "V4.C.VCP.conformance.L0005.1",
+        "V4.C.VCP.conformance.L0006.1",
+        "V4.C.VCP.conformance.L0007.1",
+        "V4.C.VCP.conformance.L0008.1",
+        "V4.C.VCP.conformance.L0010.1",
+        "V4.C.VCP.conformance.L0011.1",
+        "V4.C.VCP.conformance.L0012.1",
+        "V4.C.VCP.conformance.L0012.2",
+        "V4.C.VCP.conformance.L0013.1",
+        "V4.C.VCP.conformance.L0014.1",
+        "V4.C.VCP.conformance.L0016.1",
+        "V4.C.VCP.conformance.L0017.1",
+        "V4.C.VCP.conformance.L0018.1",
+        "V4.C.VCP.conformance.L0019.1",
+        "V4.C.VCP.conformance.L0020.1",
+        "V4.C.VCP.conformance.L0021.1",
+        "V4.C.VCP.conformance.L0022.1",
+        "V4.C.VCP.conformance.L0023.1",
+        "V4.C.VCP.conformance.L0024.1",
+        "V4.C.VCP.conformance.L0025.1",
+        "V4.C.VCP.conformance.L0026.1",
+        "V4.C.VCP.conformance.L0027.1",
+        "V4.C.VCP.conformance.L0028.1",
+        "V4.C.VCP.conformance.L0029.1",
+        "V4.C.VCP.conformance.L0030.1",
+        "V4.C.VCP.conformance.L0031.1",
+        "V4.C.VCP.conformance.L0032.1",
+        "V4.C.VCP.conformance.L0033.1"
+      ],
+      "obligation_ids": [
+        "V4.O.CASE.AUDIT.MUTATION.CANCELLATION"
+      ],
+      "status": "PASS",
+      "stimulus": {
+        "family": "CANCELLATION"
+      },
+      "frozen_execution_mode": "cheap",
+      "normative_sources": [
+        {
+          "path": "spec/draft/conformance.md",
+          "line_start": 5,
+          "line_end": 33,
+          "source_sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24"
+        }
+      ],
+      "actual": {
+        "detected": true
+      },
+      "duration": 0.06446290001622401,
+      "relay_api_calls": 2,
+      "relay_awaited_seconds": 0.05523260001791641,
+      "rerun": "python -m tools.golden_v4.report --case-id \"V4.AUDIT.MUTATION.CANCELLATION\"",
+      "pytest_selector": "test_oracle_mutation_sensitivity.py::test_audit_mutation[V4.AUDIT.MUTATION.CANCELLATION]",
+      "mutation_evidence": {
+        "mutant": "CANCELLATION",
+        "real_case_id": "V4.RELAY.SCHEDULER.STOP_CANCEL",
+        "baseline": {
+          "assertions": "authored snapshots, readiness, invocation and record isolation"
+        },
+        "mutated_actual": {
+          "assertion": ""
+        },
+        "detected": true
+      }
+    }
+  ],
+  "all_detected": true
+}

@@ -1,4 +1,4 @@
-"""Small sequential local executor for the documented DAG subset."""
+"""Small sequential reference implementation of typed DAG execution."""
 
 from copy import deepcopy
 from datetime import UTC, datetime
@@ -6,216 +6,290 @@ from time import perf_counter
 from typing import cast
 from uuid import uuid4
 
-from jsonschema import Draft202012Validator
-from pydantic import JsonValue
-from referencing import Registry as SchemaRegistry
-from referencing.jsonschema import Schema
-
 from openverify.adapters import Registry
-from openverify.engine.admission import admit
+from openverify.dataflow import (
+    accept_outputs,
+    error_result,
+    resolve_inputs,
+    validate_run_inputs,
+)
 from openverify.engine.aggregation import aggregate
+from openverify.engine.binding import BoundProvider, check_payload
+from openverify.engine.policy import evaluate
 from openverify.errors import ProtocolError
 from openverify.fingerprint import fingerprint
+from openverify.lifecycle import Cancellation, Lifecycle, nonexecution
 from openverify.model import (
+    Activation,
+    Admission,
+    CancellationEvent,
     Context,
     Decision,
-    Edge,
+    ExecutionError,
+    ExecutionObservation,
     Measurement,
     NodeRecord,
+    PolicyEvaluation,
+    ProviderBinding,
     Result,
     RunRecord,
+    Selection,
     VerificationDefinition,
 )
+from openverify.policy import ROLES, policies
 from openverify.serialization import decode, to_data
-from openverify.validation import (
-    ValidatorPort,
-    ordered_nodes,
-    parse_object,
-    parse_run_record,
-    validate_definition,
-    validate_result,
-)
+from openverify.validation import ordered_nodes, parse_object, parse_run_record, validate_definition
 
 
 def now() -> str:
     return datetime.now(UTC).isoformat().replace("+00:00", "Z")
 
 
-def _context(value: object) -> Context:
-    decode(cast(JsonValue, value))
-    if not isinstance(value, dict):
-        raise ProtocolError("EXECUTOR_ERROR", "Derive output must be a Context mapping")
-    return cast(Context, value)
-
-
-def error_result(exc: Exception) -> Result:
-    code = exc.code if isinstance(exc, ProtocolError) else "EXECUTOR_ERROR"
-    return Result(
-        disposition="EXECUTED",
-        execution_outcome="ERROR",
-        output={"code": code, "message": str(exc)},
-    )
-
-
-def _version(adapter: object) -> str | None:
-    version = getattr(adapter, "version", None)
-    return version if isinstance(version, str) and version else None
-
-
-def _guard(edge: Edge, results: dict[str, Result], decisions: dict[str, Decision]) -> bool:
-    guard = edge.guard
-    if guard is None:
-        return True
-    if guard.field in ("decision_kind", "decision_destination"):
-        decision = decisions.get(guard.node_id)
-        value = getattr(decision, "kind" if guard.field == "decision_kind" else "destination", None)
-    else:
-        value = getattr(results.get(guard.node_id), guard.field, None)
-    return value == guard.value
+def observation(value: ExecutionObservation | Context | Result | Decision) -> ExecutionObservation:
+    # SDK conveniences all normalize into the same portable observation channel.
+    if isinstance(value, Result):
+        return ExecutionObservation(outputs={"result": to_data(value)}, usage=deepcopy(value.usage))
+    if isinstance(value, Decision):
+        return ExecutionObservation(outputs={"decision": to_data(value)})
+    if isinstance(value, ExecutionObservation):
+        return deepcopy(value)
+    return ExecutionObservation(outputs=deepcopy(value))
 
 
 class Engine:
-    def __init__(self, registry: Registry):
+    def __init__(
+        self, registry: Registry, *, provider_bindings: dict[str, BoundProvider] | None = None
+    ):
         self.registry = registry
+        self.provider_bindings = provider_bindings
 
     def run(
-        self, definition: VerificationDefinition, context: Context, *, opportunity_id: str
+        self,
+        definition: VerificationDefinition,
+        run_inputs: Context,
+        *,
+        opportunity_id: str,
+        context: Context | None = None,
+        cancellation: Cancellation | None = None,
     ) -> RunRecord:
-        # Frozen models are shallow: snapshot caller-owned nested containers before execution.
+        record = self.attempt(
+            definition,
+            run_inputs,
+            opportunity_id=opportunity_id,
+            context=context,
+            cancellation=cancellation,
+        )
+        if record is None:
+            raise ProtocolError("NO_OCCURRENCE", "Opportunity was not activated or selected")
+        return record
+
+    def attempt(
+        self,
+        definition: VerificationDefinition,
+        run_inputs: Context,
+        *,
+        opportunity_id: str,
+        context: Context | None = None,
+        cancellation: Cancellation | None = None,
+    ) -> RunRecord | None:
         definition = deepcopy(definition)
+        bindings = (
+            {key: value.snapshot() for key, value in self.provider_bindings.items()}
+            if self.provider_bindings is not None
+            else None
+        )
         validate_definition(definition)
-        decode(context)
-        for capability, supported in (
-            (definition.execution_policy.activation, "MANUAL"),
-            (definition.execution_policy.selection, "EXPLICIT"),
-        ):
-            if capability.executor_ref != supported or capability.config:
-                raise ProtocolError(
-                    "POLICY_UNSUPPORTED", "Only MANUAL/EXPLICIT with empty config are implemented"
-                )
-        admission = admit(definition, opportunity_id)
-        initial = deepcopy(context)
-        working = deepcopy(context)
+        if bindings is not None and bindings.keys() - {n.id for n in definition.graph.nodes}:
+            raise ProtocolError("PROVIDER_BINDING_MISMATCH", "Binding names an unknown node")
+        decode(run_inputs)
+        supplied = deepcopy(run_inputs)
+        values = validate_run_inputs(definition, supplied)
+        ambient = deepcopy(context) if context is not None else {}
+        decode(ambient)
+        if type(opportunity_id) is not str or not opportunity_id:
+            raise ProtocolError("ADMISSION_POLICY", "A nonempty opportunity identity is required")
+        evaluations: list[PolicyEvaluation] = []
+        for role, policy in zip(ROLES, policies(definition), strict=True):
+            evaluation = evaluate(role, policy, definition, values, opportunity_id, self.registry)
+            evaluations.append(evaluation)
+            if isinstance(evaluation.outcome, Activation):
+                if evaluation.outcome.outcome == "DO_NOT_ACTIVATE":
+                    return None
+            elif isinstance(evaluation.outcome, Selection) and not evaluation.outcome.subjects:
+                return None
+        admission = evaluations[-1].outcome
+        assert isinstance(admission, Admission)
         started = now()
         results: dict[str, Result] = {}
-        decisions: dict[str, Decision] = {}
-        records: list[NodeRecord] = []
-        inactive: set[str] = set()
-        stopped = admission.outcome != "RUN"
+        records: dict[str, NodeRecord] = {}
+        invoked_bindings: dict[str, ProviderBinding] = {}
+        lifecycle = Lifecycle(admission)
+        cancellation_event: CancellationEvent | None = None
         node_map = {n.id: n for n in definition.graph.nodes}
-        for id in ordered_nodes(definition.graph):
-            node = node_map[id]
-            edges = [e for e in definition.graph.edges if e.to_node == id]
-            upstream_ids = [e.from_node for e in edges]
-            prior = {id: results[id] for id in upstream_ids if id in results}
-            before = deepcopy(working)
+        for node_id in ordered_nodes(definition.graph):
+            node = node_map[node_id]
+            upstream_ids = [e.from_node for e in definition.graph.edges if e.to_node == node_id]
+            prior = {key: results[key] for key in upstream_ids if key in results}
+            inputs, resolutions, blocked = resolve_inputs(node, values, records, definition.graph)
             node_started = now()
             clock = perf_counter()
             result: Result | None = None
             decision: Decision | None = None
-            derived: Context | None = None
+            information: Context = {}
+            observed: ExecutionObservation | None = None
             executor_version: str | None = None
-            if stopped or any(
-                e.from_node in inactive or not _guard(e, results, decisions) for e in edges
+            executor_ref: str | None = None
+            provider_binding: ProviderBinding | None = None
+            provider_output_error: ExecutionError | None = None
+            capability = None
+            state = "SUCCESS"
+            reason: str | None = None
+            if (
+                admission.outcome == "RUN"
+                and cancellation is not None
+                and cancellation.reason is not None
+                and cancellation_event is None
             ):
-                result = Result(
-                    disposition="SKIPPED",
-                    output={"reason": "admission/control/guard disabled invocation"},
+                cancellation_event = CancellationEvent(
+                    node_id=node_id, phase="BEFORE_START", reason=cancellation.reason
                 )
-                inactive.add(id)
+                lifecycle.cancelled = True
+            cause = lifecycle.cause(node_id, definition.graph, values, records, blocked)
+            if cause is not None:
+                reason = cause[1]
+                state = "NONEXECUTED"
+                result = nonexecution(cause)
             else:
                 try:
-                    adapter: object | None = None
-                    if node.kind == "DERIVE":
-                        adapter = self.registry.derivers.get(node.executor_ref)
-                        if adapter is None:
+                    if bindings is not None:
+                        bound = bindings.get(node_id)
+                        if bound is None:
                             raise ProtocolError(
-                                "EXECUTOR_UNSUPPORTED", "Unregistered Derive adapter"
+                                "PROVIDER_BINDING_REQUIRED", "Host must explicitly bind this node"
                             )
-                        executor_version = _version(adapter)
-                        update = _context(
-                            self.registry.derivers[node.executor_ref].execute(
-                                deepcopy(working), deepcopy(node.config)
-                            )
+                        capability = bound.prepare(node, inputs)
+                        provider_binding = deepcopy(bound.binding)
+                        invoked_bindings[node_id] = deepcopy(provider_binding)
+                        executor_ref = provider_binding.provider_id
+                        executor_version = provider_binding.provider_version
+                        observed = observation(
+                            bound.adapter.execute(deepcopy(inputs), deepcopy(node.config))
                         )
-                        derived = deepcopy(update)
-                        working.update(deepcopy(update))
-                    elif node.kind == "CONTROL":
-                        adapter = self.registry.controllers.get(node.executor_ref)
-                        if adapter is None:
-                            raise ProtocolError(
-                                "EXECUTOR_UNSUPPORTED", "Unregistered Control adapter"
-                            )
-                        executor_version = _version(adapter)
-                        candidate = self.registry.controllers[node.executor_ref].execute(
-                            deepcopy(working), deepcopy(prior), deepcopy(node.config)
-                        )
-                        validated = cast(Decision, parse_object("decision", to_data(candidate)))
-                        if validated.kind == "ROUTE" and validated.destination not in node_map:
-                            raise ProtocolError(
-                                "GRAPH_REFERENCE", "ROUTE destination is absent from graph"
-                            )
-                        decision = validated
-                        decisions[id] = decision
-                        if decision.kind in ("STOP_SUCCESS", "STOP_FAILURE", "RETRY", "DEFER"):
-                            stopped = True
+                    elif (
+                        node.kind == "AGGREGATE"
+                        and node.operation.capability_id == "openverify.aggregate"
+                    ):
+                        executor_ref, executor_version = "openverify.reference.aggregate", "1"
+                        members = [
+                            cast(Result, parse_object("result", inputs[name]))
+                            for name in node.aggregate_inputs
+                        ]
+                        config = deepcopy(node.config)
+                        if config["reducer"] == "WEIGHTED_AVERAGE":
+                            weights = cast(Context, config["weights"])
+                            config["weights"] = [weights[name] for name in node.aggregate_inputs]
+                        observed = observation(aggregate(members, config))
                     else:
-                        if node.kind == "AGGREGATE" and node.executor_ref == "standard.aggregate":
-                            executor_version = "0.1.0"
-                            candidate_result = aggregate(list(prior.values()), node.config)
-                        else:
-                            adapter = self.registry.evaluators.get(node.executor_ref)
-                            if adapter is None:
-                                raise ProtocolError(
-                                    "EXECUTOR_UNSUPPORTED", "Unregistered Evaluate adapter"
-                                )
-                            executor_version = _version(adapter)
-                            candidate_result = self.registry.evaluators[node.executor_ref].execute(
-                                deepcopy(working), deepcopy(prior), deepcopy(node.config)
+                        requirement = node.operation
+                        adapter = self.registry.operations.get(
+                            (requirement.capability_id, requirement.capability_version)
+                        )
+                        if adapter is None:
+                            raise ProtocolError(
+                                "EXECUTOR_UNSUPPORTED", "Unregistered exact operation requirement"
                             )
-                        validate_result(candidate_result)
-                        if candidate_result.judgment is not None:
-                            cast(
-                                ValidatorPort,
-                                Draft202012Validator(
-                                    definition.judgment_schema, registry=SchemaRegistry[Schema]()
-                                ),
-                            ).validate(candidate_result.judgment)
-                        result = deepcopy(candidate_result)
+                        executor_ref = f"{type(adapter).__module__}.{type(adapter).__qualname__}"
+                        version = getattr(adapter, "version", None)
+                        executor_version = version if isinstance(version, str) and version else None
+                        observed = observation(
+                            adapter.execute(deepcopy(inputs), deepcopy(node.config))
+                        )
+                    # Validate observation envelope independently of semantic output acceptance.
+                    observed = cast(
+                        ExecutionObservation,
+                        parse_object("execution-observation", to_data(observed)),
+                    )
+                    if capability is not None and observed.error is None:
+                        try:
+                            check_payload(
+                                capability.output_schema,
+                                observed.outputs,
+                                "INVALID_PROVIDER_OUTPUT",
+                            )
+                        except ProtocolError as exc:
+                            provider_output_error = ExecutionError(
+                                code=exc.code, message=exc.message
+                            )
+                            raise
+                    if cancellation is None or cancellation.reason is None:
+                        information, result, decision = accept_outputs(node, observed, definition)
+                        if result is not None and result.execution_outcome == "ERROR":
+                            state = "ERROR"
                 except Exception as exc:
                     result = error_result(exc)
-                    decision = None
-                    derived = None
+                    state = "ERROR"
+                    reason = exc.code if isinstance(exc, ProtocolError) else "EXECUTOR_ERROR"
+                    information, decision = {}, None
+                if cancellation is not None and cancellation.reason is not None:
+                    cancellation_event = CancellationEvent(
+                        node_id=node_id, phase="RUNNING", reason=cancellation.reason
+                    )
+                    lifecycle.cancelled = True
+                    result = nonexecution(("CANCELLED", "CANCELLATION"))
+                    information, decision = {}, None
+                    state, reason = "CANCELLED", "CANCELLATION"
+                if decision is not None:
+                    lifecycle.control(node_id, decision, definition.graph)
             if result is not None:
-                results[id] = result
+                results[node_id] = result
             duration = max(0.0, perf_counter() - clock)
-            records.append(
-                NodeRecord(
-                    node_id=id,
-                    executor_ref=node.executor_ref,
-                    executor_version=executor_version,
-                    upstream_node_ids=upstream_ids,
-                    upstream_results=deepcopy(prior),
-                    input_context=before,
-                    started_at=node_started,
-                    finished_at=now(),
-                    usage={"wall_time": Measurement(unit="s", kind="EXACT", value=duration)},
-                    result=result,
-                    decision=decision,
-                    derived=derived,
-                )
+            records[node_id] = NodeRecord.model_validate(
+                {
+                    "node_id": node_id,
+                    "kind": node.kind,
+                    "operation": to_data(node.operation),
+                    "executor_ref": executor_ref,
+                    "executor_version": executor_version,
+                    "provider_binding": (
+                        to_data(provider_binding) if provider_binding is not None else None
+                    ),
+                    "provider_output_error": (
+                        to_data(provider_output_error)
+                        if provider_output_error is not None
+                        else None
+                    ),
+                    "upstream_node_ids": upstream_ids,
+                    "upstream_results": {k: to_data(v) for k, v in prior.items()},
+                    "input_values": inputs,
+                    "input_resolutions": {k: to_data(v) for k, v in resolutions.items()},
+                    "started_at": node_started,
+                    "finished_at": now(),
+                    "usage": {
+                        "wall_time": to_data(Measurement(unit="s", kind="EXACT", value=duration))
+                    },
+                    "state": state,
+                    "reason": reason,
+                    "observation": to_data(observed) if observed is not None else None,
+                    "information": information,
+                    "result": to_data(result) if result is not None else None,
+                    "decision": to_data(decision) if decision is not None else None,
+                }
             )
         record = RunRecord(
             run_id=str(uuid4()),
             definition=definition,
             definition_fingerprint=fingerprint(definition),
             subject=definition.subject,
-            initial_context=initial,
+            initial_context=ambient,
+            run_inputs=supplied,
             opportunity_id=opportunity_id,
             admission=admission,
+            policy_evaluations=evaluations,
+            cancellation=cancellation_event,
             started_at=started,
             finished_at=now(),
-            nodes=records,
+            nodes=list(records.values()),
+            provider_bindings=invoked_bindings,
             final_results=results,
         )
         return parse_run_record(to_data(record))

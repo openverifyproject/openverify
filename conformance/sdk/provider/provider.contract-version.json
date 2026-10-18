@@ -1,0 +1,23 @@
+{
+  "id": "provider.contract-version",
+  "contract": "provider",
+  "version": "0.1",
+  "type": "invocation",
+  "operation": "parse",
+  "input": {
+    "invocation_id": "i",
+    "contract_version": "2",
+    "capability_id": "com.example.echo",
+    "capability_version": "1",
+    "input": null,
+    "config": null
+  },
+  "expected": {
+    "accepted": false,
+    "error": "CONTRACT_VERSION_UNSUPPORTED"
+  },
+  "features": [
+    "standalone",
+    "invocation"
+  ]
+}

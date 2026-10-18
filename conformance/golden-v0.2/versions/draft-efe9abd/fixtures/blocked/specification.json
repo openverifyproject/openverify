@@ -1,0 +1,17 @@
+{
+  "blocked.numeric_portability": {
+    "question": "numeric_portability"
+  },
+  "blocked.sampling_identity": {
+    "question": "sampling_identity"
+  },
+  "blocked.parallel_cancellation_provenance": {
+    "question": "parallel_cancellation_provenance"
+  },
+  "blocked.transport_policy_provenance": {
+    "question": "transport_policy_provenance"
+  },
+  "blocked.authenticity": {
+    "question": "authenticity"
+  }
+}

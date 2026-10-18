@@ -1,0 +1,233 @@
+{
+  "protocol": "draft",
+  "run_id": "typed-fixture",
+  "definition": {
+    "protocol": "draft",
+    "id": "prose-criterion",
+    "version": "1",
+    "subject": {
+      "id": "article-1",
+      "type": "text/plain",
+      "locator": {
+        "host_key": "text"
+      }
+    },
+    "criterion": {
+      "id": "readable-prose",
+      "description": "Contains no banned phrase and is nonempty."
+    },
+    "judgment_schema": {},
+    "run_inputs": [
+      {
+        "name": "x",
+        "schema": {
+          "type": "integer"
+        },
+        "required": true,
+        "on_unavailable": "BLOCK"
+      }
+    ],
+    "execution_policy": {
+      "activation": {
+        "executor_ref": "MANUAL"
+      },
+      "selection": {
+        "executor_ref": "EXPLICIT"
+      },
+      "admission": {
+        "strategy": "ALWAYS"
+      }
+    },
+    "graph": {
+      "nodes": [
+        {
+          "id": "derive",
+          "kind": "DERIVE",
+          "operation": {
+            "capability_id": "com.example.execution.mock",
+            "capability_version": "1"
+          },
+          "inputs": [
+            {
+              "name": "x",
+              "schema": {
+                "type": "integer"
+              },
+              "required": true,
+              "on_unavailable": "BLOCK"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "x",
+              "schema": {
+                "type": "integer"
+              },
+              "role": "INFORMATION"
+            }
+          ],
+          "bindings": {
+            "x": {
+              "kind": "RUN_INPUT",
+              "name": "x"
+            }
+          },
+          "config": {},
+          "aggregate_inputs": []
+        }
+      ],
+      "edges": []
+    }
+  },
+  "definition_fingerprint": "local-sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "subject": {
+    "id": "article-1",
+    "type": "text/plain",
+    "locator": {
+      "host_key": "text"
+    }
+  },
+  "initial_context": {},
+  "run_inputs": {
+    "x": 0
+  },
+  "opportunity_id": "fixture",
+  "admission": {
+    "outcome": "RUN",
+    "reason": "ALWAYS"
+  },
+  "policy_evaluations": [
+    {
+      "role": "ACTIVATION",
+      "input_values": {},
+      "input_resolutions": {},
+      "outcome": {
+        "outcome": "ACTIVATE",
+        "reason": "MANUAL"
+      }
+    },
+    {
+      "role": "SELECTION",
+      "input_values": {},
+      "input_resolutions": {},
+      "outcome": {
+        "subjects": [
+          {
+            "id": "article-1",
+            "type": "text/plain",
+            "locator": {
+              "host_key": "text"
+            }
+          }
+        ],
+        "reason": "EXPLICIT"
+      }
+    },
+    {
+      "role": "ADMISSION",
+      "input_values": {},
+      "input_resolutions": {},
+      "outcome": {
+        "outcome": "RUN",
+        "reason": "ALWAYS"
+      }
+    }
+  ],
+  "started_at": "2026-01-01T00:00:00Z",
+  "finished_at": "2026-01-01T00:00:00Z",
+  "nodes": [
+    {
+      "node_id": "derive",
+      "kind": "DERIVE",
+      "operation": {
+        "capability_id": "com.example.execution.mock",
+        "capability_version": "1"
+      },
+      "upstream_node_ids": [],
+      "upstream_results": {},
+      "input_values": {
+        "x": 0
+      },
+      "input_resolutions": {
+        "x": {
+          "status": "AVAILABLE",
+          "used_default": false,
+          "source": {
+            "kind": "RUN_INPUT",
+            "name": "x"
+          },
+          "value": 0
+        }
+      },
+      "started_at": "2026-01-01T00:00:00Z",
+      "finished_at": "2026-01-01T00:00:00Z",
+      "usage": {
+        "wall_time": {
+          "unit": "s",
+          "kind": "EXACT",
+          "value": 0
+        }
+      },
+      "state": "ERROR",
+      "information": {},
+      "observation": {
+        "outputs": {
+          "x": 0
+        },
+        "usage": {
+          "tokens": {
+            "unit": "token",
+            "kind": "EXACT",
+            "value": 4
+          }
+        },
+        "evidence": []
+      },
+      "provider_binding": {
+        "provider_id": "com.example.provider",
+        "provider_version": "release-7",
+        "capability_id": "com.example.execution.mock",
+        "capability_version": "1"
+      },
+      "executor_ref": "com.example.provider",
+      "executor_version": "release-7",
+      "reason": "INVALID_PROVIDER_OUTPUT",
+      "provider_output_error": {
+        "code": "INVALID_PROVIDER_OUTPUT",
+        "message": "Value violates declared capability schema"
+      },
+      "result": {
+        "protocol": "draft",
+        "disposition": "EXECUTED",
+        "execution_outcome": "ERROR",
+        "output": {
+          "code": "INVALID_PROVIDER_OUTPUT",
+          "message": "INVALID_PROVIDER_OUTPUT at /: Value violates declared capability schema"
+        },
+        "usage": {},
+        "evidence": []
+      }
+    }
+  ],
+  "final_results": {
+    "derive": {
+      "protocol": "draft",
+      "disposition": "EXECUTED",
+      "execution_outcome": "ERROR",
+      "output": {
+        "code": "INVALID_PROVIDER_OUTPUT",
+        "message": "INVALID_PROVIDER_OUTPUT at /: Value violates declared capability schema"
+      },
+      "usage": {},
+      "evidence": []
+    }
+  },
+  "provider_bindings": {
+    "derive": {
+      "provider_id": "com.example.provider",
+      "provider_version": "release-7",
+      "capability_id": "com.example.execution.mock",
+      "capability_version": "1"
+    }
+  }
+}

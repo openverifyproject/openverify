@@ -1,0 +1,20 @@
+{
+  "id": "provider.cancelled-output",
+  "contract": "provider",
+  "version": "0.1",
+  "type": "outcome",
+  "operation": "parse",
+  "input": {
+    "invocation_id": "i",
+    "state": "CANCELLED",
+    "output": null
+  },
+  "expected": {
+    "accepted": false,
+    "error": "INVALID_PROVIDER_OUTPUT"
+  },
+  "features": [
+    "standalone",
+    "outcome"
+  ]
+}

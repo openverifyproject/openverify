@@ -17,7 +17,7 @@ mapping among them is implied.
 
 Score MUST be a JSON number in [0,1]; 1 means stronger satisfaction and 0 stronger
 violation. Severity is {domain, label}, referring to an ordered domain defined by
-a profile, never a closed global enum. Evidence is a sequence, output is arbitrary
+a profile, never a closed global enum. Unresolved domain identifiers are intentionally opaque; parsing does not validate label membership. Explicit reducer domain snapshots validate membership. Version-sensitive domains use distinct identifiers; no implicit registry/version lookup occurs. Evidence is a sequence, output is arbitrary
 JSON information, usage is actual ResourceVector, and metadata/extensions are
 available in every disposition. Scores are not required.
 
@@ -42,3 +42,16 @@ rejection is SKIPPED. These are independent meanings, not interchangeable labels
 Flattened status for DEFERRED/CANCELLED/NOT_APPLICABLE and KNOWN without verdict;
 partial judgments on UNKNOWN; and generic retry/defer scheduling remain open.
 
+
+## Graph execution boundary
+
+Standalone Result validity does not authorize an invoked graph evaluator to
+report SKIPPED, DEFERRED or CANCELLED. Such output is rejected as OUTPUT_INVALID
+and becomes EXECUTED/ERROR. Runner-generated lifecycle Results follow
+[lifecycle](lifecycle.md); ERROR is never coerced to FAIL, UNKNOWN to DEFERRED,
+or NOT_APPLICABLE to SKIPPED. CANCELLED can represent an interrupted attempt
+as well as prevented execution, without accepted evaluation observations.
+
+Evidence on standalone nonexecution Results may explain nonexecution; it MUST NOT
+claim a successful evaluation. Graph-generated nonexecution Results carry only
+the diagnostic lifecycle reason, without evaluation evidence.

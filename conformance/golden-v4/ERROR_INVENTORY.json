@@ -1,0 +1,1281 @@
+{
+  "blueprint_correction": "D-001; expressly approved by user: 53 declarations, 33 normative VCP, 8 normative Provider, 2 SDK diagnostics, 10 Relay-specific",
+  "declarations": [
+    {
+      "declaration_id": "V4.ERROR.VCP.ADMISSION_POLICY",
+      "identifier": "ADMISSION_POLICY",
+      "authority": "NORMATIVE_VCP",
+      "sources": [
+        {
+          "path": "src/openverify/error_codes.py",
+          "line_start": 7,
+          "line_end": 7,
+          "source_sha256": "11b802c51c53b094e6aa694c5f0962270e399c6a3b356de788b20abac8373d8b",
+          "text_sha256": "dd824fe3e05e76c9da68f115a29c3a7de6da16e4d7b52955b70b905e4a41dc4b"
+        },
+        {
+          "path": "spec/draft/conformance.md",
+          "line_start": 20,
+          "line_end": 20,
+          "source_sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24",
+          "text_sha256": "32de86079263fc30463d35b4cac303c47821878201952459eae9a09af32b9068"
+        }
+      ],
+      "portable": true,
+      "obligation_ids": [
+        "V4.O.ERROR.VCP.ADMISSION_POLICY"
+      ]
+    },
+    {
+      "declaration_id": "V4.ERROR.VCP.AGGREGATE_CONFIG",
+      "identifier": "AGGREGATE_CONFIG",
+      "authority": "NORMATIVE_VCP",
+      "sources": [
+        {
+          "path": "src/openverify/error_codes.py",
+          "line_start": 8,
+          "line_end": 8,
+          "source_sha256": "11b802c51c53b094e6aa694c5f0962270e399c6a3b356de788b20abac8373d8b",
+          "text_sha256": "8eb83ec322302b7da2266e5d9934fd8b64126353f321ab620894a2b6017a0be5"
+        },
+        {
+          "path": "spec/draft/conformance.md",
+          "line_start": 21,
+          "line_end": 21,
+          "source_sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24",
+          "text_sha256": "eb96774edc1516463968f8cc7c8cf88ddca1ecb67723dbe8cde98b56871b6729"
+        }
+      ],
+      "portable": true,
+      "obligation_ids": [
+        "V4.O.ERROR.VCP.AGGREGATE_CONFIG"
+      ]
+    },
+    {
+      "declaration_id": "V4.ERROR.VCP.AGGREGATE_INPUT",
+      "identifier": "AGGREGATE_INPUT",
+      "authority": "NORMATIVE_VCP",
+      "sources": [
+        {
+          "path": "src/openverify/error_codes.py",
+          "line_start": 9,
+          "line_end": 9,
+          "source_sha256": "11b802c51c53b094e6aa694c5f0962270e399c6a3b356de788b20abac8373d8b",
+          "text_sha256": "7aae250288238292fdbdb447c0119a7bed22532dc6ae07dc8d8e9a8e871a1960"
+        },
+        {
+          "path": "spec/draft/aggregation.md",
+          "line_start": 13,
+          "line_end": 13,
+          "source_sha256": "a627fc3bd6f8509d1f231caf3d919e16d88c33057b6f144e37e30d715165507e",
+          "text_sha256": "8031185e7331e346cd5261fd36c6bd21762ca9240aa64ae498866ce3986ef156"
+        },
+        {
+          "path": "spec/draft/conformance.md",
+          "line_start": 22,
+          "line_end": 22,
+          "source_sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24",
+          "text_sha256": "0f323f66d4bdac30d106090552b37629dc64781be28cd31afbd3bfae772c553f"
+        }
+      ],
+      "portable": true,
+      "obligation_ids": [
+        "V4.O.ERROR.VCP.AGGREGATE_INPUT"
+      ]
+    },
+    {
+      "declaration_id": "V4.ERROR.VCP.DATAFLOW_BINDING",
+      "identifier": "DATAFLOW_BINDING",
+      "authority": "NORMATIVE_VCP",
+      "sources": [
+        {
+          "path": "src/openverify/error_codes.py",
+          "line_start": 10,
+          "line_end": 10,
+          "source_sha256": "11b802c51c53b094e6aa694c5f0962270e399c6a3b356de788b20abac8373d8b",
+          "text_sha256": "46326f3d77a74df687f49b801bfaacefccec526ad722d30f1f97f400ef15b8a2"
+        },
+        {
+          "path": "spec/draft/conformance.md",
+          "line_start": 24,
+          "line_end": 24,
+          "source_sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24",
+          "text_sha256": "994b430cb244e24c7eb752d1cf39db8a5bb43dc14344012b0e46e33621339790"
+        }
+      ],
+      "portable": true,
+      "obligation_ids": [
+        "V4.O.ERROR.VCP.DATAFLOW_BINDING"
+      ]
+    },
+    {
+      "declaration_id": "V4.ERROR.VCP.DATAFLOW_CONFIG",
+      "identifier": "DATAFLOW_CONFIG",
+      "authority": "NORMATIVE_VCP",
+      "sources": [
+        {
+          "path": "src/openverify/error_codes.py",
+          "line_start": 11,
+          "line_end": 11,
+          "source_sha256": "11b802c51c53b094e6aa694c5f0962270e399c6a3b356de788b20abac8373d8b",
+          "text_sha256": "ca7360be009f4dc1a463d7a7d293eaa97becad583c86d2a4107b4e66b89aa783"
+        },
+        {
+          "path": "spec/draft/conformance.md",
+          "line_start": 25,
+          "line_end": 25,
+          "source_sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24",
+          "text_sha256": "dcc6b15d4678e486c1d6ad16b2ab4671ad4c4161980a47a7b64d960ff85382a8"
+        }
+      ],
+      "portable": true,
+      "obligation_ids": [
+        "V4.O.ERROR.VCP.DATAFLOW_CONFIG"
+      ]
+    },
+    {
+      "declaration_id": "V4.ERROR.VCP.DATAFLOW_SCHEMA",
+      "identifier": "DATAFLOW_SCHEMA",
+      "authority": "NORMATIVE_VCP",
+      "sources": [
+        {
+          "path": "src/openverify/error_codes.py",
+          "line_start": 12,
+          "line_end": 12,
+          "source_sha256": "11b802c51c53b094e6aa694c5f0962270e399c6a3b356de788b20abac8373d8b",
+          "text_sha256": "5474b3e43060987eedef9291f95115130b2b33df8a1e867211c1a97c4364610b"
+        },
+        {
+          "path": "spec/draft/conformance.md",
+          "line_start": 25,
+          "line_end": 25,
+          "source_sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24",
+          "text_sha256": "dcc6b15d4678e486c1d6ad16b2ab4671ad4c4161980a47a7b64d960ff85382a8"
+        }
+      ],
+      "portable": true,
+      "obligation_ids": [
+        "V4.O.ERROR.VCP.DATAFLOW_SCHEMA"
+      ]
+    },
+    {
+      "declaration_id": "V4.ERROR.VCP.EVIDENCE_EMPTY",
+      "identifier": "EVIDENCE_EMPTY",
+      "authority": "NORMATIVE_VCP",
+      "sources": [
+        {
+          "path": "src/openverify/error_codes.py",
+          "line_start": 13,
+          "line_end": 13,
+          "source_sha256": "11b802c51c53b094e6aa694c5f0962270e399c6a3b356de788b20abac8373d8b",
+          "text_sha256": "13eec9a91fd5dffd131f22635b3bf5aed9b4010de02f1910ba10d831acf426c7"
+        },
+        {
+          "path": "spec/draft/conformance.md",
+          "line_start": 18,
+          "line_end": 18,
+          "source_sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24",
+          "text_sha256": "8b8110d7f1d2fe1da2df476be3be0f294d5dc7acfd64ef58d4136e7b9052a7fb"
+        }
+      ],
+      "portable": true,
+      "obligation_ids": [
+        "V4.O.ERROR.VCP.EVIDENCE_EMPTY"
+      ]
+    },
+    {
+      "declaration_id": "V4.ERROR.VCP.EXECUTOR_ERROR",
+      "identifier": "EXECUTOR_ERROR",
+      "authority": "NORMATIVE_VCP",
+      "sources": [
+        {
+          "path": "src/openverify/error_codes.py",
+          "line_start": 14,
+          "line_end": 14,
+          "source_sha256": "11b802c51c53b094e6aa694c5f0962270e399c6a3b356de788b20abac8373d8b",
+          "text_sha256": "139f596e176c473252bd36b3b0418fcc3d8b2c962cf5e59a161081fc22bea2a1"
+        },
+        {
+          "path": "spec/draft/conformance.md",
+          "line_start": 22,
+          "line_end": 22,
+          "source_sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24",
+          "text_sha256": "0f323f66d4bdac30d106090552b37629dc64781be28cd31afbd3bfae772c553f"
+        }
+      ],
+      "portable": true,
+      "obligation_ids": [
+        "V4.O.ERROR.VCP.EXECUTOR_ERROR"
+      ]
+    },
+    {
+      "declaration_id": "V4.ERROR.VCP.EXECUTOR_UNSUPPORTED",
+      "identifier": "EXECUTOR_UNSUPPORTED",
+      "authority": "NORMATIVE_VCP",
+      "sources": [
+        {
+          "path": "src/openverify/error_codes.py",
+          "line_start": 15,
+          "line_end": 15,
+          "source_sha256": "11b802c51c53b094e6aa694c5f0962270e399c6a3b356de788b20abac8373d8b",
+          "text_sha256": "f16787a8c0a72937513e77946e57b436a200877f40b116c9d266ee5b0897fa9d"
+        },
+        {
+          "path": "spec/draft/conformance.md",
+          "line_start": 22,
+          "line_end": 22,
+          "source_sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24",
+          "text_sha256": "0f323f66d4bdac30d106090552b37629dc64781be28cd31afbd3bfae772c553f"
+        }
+      ],
+      "portable": true,
+      "obligation_ids": [
+        "V4.O.ERROR.VCP.EXECUTOR_UNSUPPORTED"
+      ]
+    },
+    {
+      "declaration_id": "V4.ERROR.VCP.EXTENSION_UNSUPPORTED",
+      "identifier": "EXTENSION_UNSUPPORTED",
+      "authority": "NORMATIVE_VCP",
+      "sources": [
+        {
+          "path": "src/openverify/error_codes.py",
+          "line_start": 16,
+          "line_end": 16,
+          "source_sha256": "11b802c51c53b094e6aa694c5f0962270e399c6a3b356de788b20abac8373d8b",
+          "text_sha256": "8807ce387c6951409fcc2cb16c05540f939ad27fe6e0fa908eca52ea20562ab6"
+        },
+        {
+          "path": "spec/draft/conformance.md",
+          "line_start": 20,
+          "line_end": 20,
+          "source_sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24",
+          "text_sha256": "32de86079263fc30463d35b4cac303c47821878201952459eae9a09af32b9068"
+        },
+        {
+          "path": "spec/draft/extensions.md",
+          "line_start": 11,
+          "line_end": 11,
+          "source_sha256": "fc57202300c344967487f4d631e7b6bbc99281634a1f4391249ce2a7ec7040d7",
+          "text_sha256": "4bb32e3fd97664e2ad05816562b32c37efd8ce1c832b05280e58a256023cea1e"
+        }
+      ],
+      "portable": true,
+      "obligation_ids": [
+        "V4.O.ERROR.VCP.EXTENSION_UNSUPPORTED"
+      ]
+    },
+    {
+      "declaration_id": "V4.ERROR.VCP.GRAPH_DUPLICATE",
+      "identifier": "GRAPH_DUPLICATE",
+      "authority": "NORMATIVE_VCP",
+      "sources": [
+        {
+          "path": "src/openverify/error_codes.py",
+          "line_start": 17,
+          "line_end": 17,
+          "source_sha256": "11b802c51c53b094e6aa694c5f0962270e399c6a3b356de788b20abac8373d8b",
+          "text_sha256": "b25b16526fcfdcaf70f1a7aa7d064d2676dc80ca86e4cdd04c0549f4ecbc5945"
+        },
+        {
+          "path": "spec/draft/conformance.md",
+          "line_start": 19,
+          "line_end": 19,
+          "source_sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24",
+          "text_sha256": "ed24581fd89983b063de4c8845d73f1946bf5e2c016109bcc8b41955bbd02eb5"
+        }
+      ],
+      "portable": true,
+      "obligation_ids": [
+        "V4.O.ERROR.VCP.GRAPH_DUPLICATE"
+      ]
+    },
+    {
+      "declaration_id": "V4.ERROR.VCP.GRAPH_REFERENCE",
+      "identifier": "GRAPH_REFERENCE",
+      "authority": "NORMATIVE_VCP",
+      "sources": [
+        {
+          "path": "src/openverify/error_codes.py",
+          "line_start": 18,
+          "line_end": 18,
+          "source_sha256": "11b802c51c53b094e6aa694c5f0962270e399c6a3b356de788b20abac8373d8b",
+          "text_sha256": "4fe366f8404f0df8d2ffbca8cba7334e4c0c422c659359a2c587a7a943c78700"
+        },
+        {
+          "path": "spec/draft/conformance.md",
+          "line_start": 18,
+          "line_end": 18,
+          "source_sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24",
+          "text_sha256": "8b8110d7f1d2fe1da2df476be3be0f294d5dc7acfd64ef58d4136e7b9052a7fb"
+        }
+      ],
+      "portable": true,
+      "obligation_ids": [
+        "V4.O.ERROR.VCP.GRAPH_REFERENCE"
+      ]
+    },
+    {
+      "declaration_id": "V4.ERROR.VCP.GRAPH_UNSUPPORTED",
+      "identifier": "GRAPH_UNSUPPORTED",
+      "authority": "NORMATIVE_VCP",
+      "sources": [
+        {
+          "path": "src/openverify/error_codes.py",
+          "line_start": 19,
+          "line_end": 19,
+          "source_sha256": "11b802c51c53b094e6aa694c5f0962270e399c6a3b356de788b20abac8373d8b",
+          "text_sha256": "260a7984ad70cce88e96e72bf9f52167d56d38af4939c3920f9c5340eb9f66a9"
+        },
+        {
+          "path": "spec/draft/composition.md",
+          "line_start": 24,
+          "line_end": 24,
+          "source_sha256": "d5a1ae05299bc11d00d666f10912bef85320357cc5b890e5c6c3332f5cf872e6",
+          "text_sha256": "5e0ce65005b5a4141af90efd055be38d9e8b5fe1ee57b014ba2a8ac5c46f437b"
+        },
+        {
+          "path": "spec/draft/conformance.md",
+          "line_start": 19,
+          "line_end": 19,
+          "source_sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24",
+          "text_sha256": "ed24581fd89983b063de4c8845d73f1946bf5e2c016109bcc8b41955bbd02eb5"
+        }
+      ],
+      "portable": true,
+      "obligation_ids": [
+        "V4.O.ERROR.VCP.GRAPH_UNSUPPORTED"
+      ]
+    },
+    {
+      "declaration_id": "V4.ERROR.VCP.JUDGMENT_INVALID",
+      "identifier": "JUDGMENT_INVALID",
+      "authority": "NORMATIVE_VCP",
+      "sources": [
+        {
+          "path": "src/openverify/error_codes.py",
+          "line_start": 20,
+          "line_end": 20,
+          "source_sha256": "11b802c51c53b094e6aa694c5f0962270e399c6a3b356de788b20abac8373d8b",
+          "text_sha256": "70ae08f5b4ee503eecca2fbe3dd780b913923fb7bb4a109e4cfdf6f039763459"
+        },
+        {
+          "path": "spec/draft/conformance.md",
+          "line_start": 27,
+          "line_end": 27,
+          "source_sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24",
+          "text_sha256": "2d7ca25072a4a108f6180b1122df25ef43ea5bab95ae371bd982106256002893"
+        }
+      ],
+      "portable": true,
+      "obligation_ids": [
+        "V4.O.ERROR.VCP.JUDGMENT_INVALID"
+      ]
+    },
+    {
+      "declaration_id": "V4.ERROR.VCP.NO_OCCURRENCE",
+      "identifier": "NO_OCCURRENCE",
+      "authority": "NORMATIVE_VCP",
+      "sources": [
+        {
+          "path": "src/openverify/error_codes.py",
+          "line_start": 21,
+          "line_end": 21,
+          "source_sha256": "11b802c51c53b094e6aa694c5f0962270e399c6a3b356de788b20abac8373d8b",
+          "text_sha256": "0a6b35f23f6f088863653d9caaaab66e61b22c679e432bdef6ff165f6bb9c6b0"
+        },
+        {
+          "path": "spec/draft/execution-policy.md",
+          "line_start": 76,
+          "line_end": 76,
+          "source_sha256": "d6c1d6c71da16609c67bcf77ad70723f47d4e53931301ba1e0eefbce2e46268c",
+          "text_sha256": "671bb906fe0e43aa17ad094f9666481314d1e27d2aa859f88604cca2937e31b5"
+        }
+      ],
+      "portable": true,
+      "obligation_ids": [
+        "V4.O.ERROR.VCP.NO_OCCURRENCE"
+      ]
+    },
+    {
+      "declaration_id": "V4.ERROR.VCP.OUTPUT_INVALID",
+      "identifier": "OUTPUT_INVALID",
+      "authority": "NORMATIVE_VCP",
+      "sources": [
+        {
+          "path": "src/openverify/error_codes.py",
+          "line_start": 22,
+          "line_end": 22,
+          "source_sha256": "11b802c51c53b094e6aa694c5f0962270e399c6a3b356de788b20abac8373d8b",
+          "text_sha256": "f812675ca2bfbb14d63c0553d4bdd8bba6a61946690c412cc9f8510e9ab56506"
+        },
+        {
+          "path": "spec/draft/conformance.md",
+          "line_start": 26,
+          "line_end": 26,
+          "source_sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24",
+          "text_sha256": "e47378a2f06329d8d5fae574bd1d85fc8ff6e5844a617d0d8789c585629a28bb"
+        },
+        {
+          "path": "spec/draft/result.md",
+          "line_start": 49,
+          "line_end": 49,
+          "source_sha256": "899c305f508a87ae4bd648bfdc40aa856fc09a2877ef5c3774e2d0a6af6b2a33",
+          "text_sha256": "1fc01e3445b9fa622a8065eb9ba4c785379c45e52bb6359117b0a4db699bab66"
+        }
+      ],
+      "portable": true,
+      "obligation_ids": [
+        "V4.O.ERROR.VCP.OUTPUT_INVALID"
+      ]
+    },
+    {
+      "declaration_id": "V4.ERROR.VCP.OUTPUT_MISSING",
+      "identifier": "OUTPUT_MISSING",
+      "authority": "NORMATIVE_VCP",
+      "sources": [
+        {
+          "path": "src/openverify/error_codes.py",
+          "line_start": 23,
+          "line_end": 23,
+          "source_sha256": "11b802c51c53b094e6aa694c5f0962270e399c6a3b356de788b20abac8373d8b",
+          "text_sha256": "04903ae943d4ee446040de5e035fd58c56e275e567f820f2ed8e7d45a73d9d91"
+        },
+        {
+          "path": "spec/draft/conformance.md",
+          "line_start": 26,
+          "line_end": 26,
+          "source_sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24",
+          "text_sha256": "e47378a2f06329d8d5fae574bd1d85fc8ff6e5844a617d0d8789c585629a28bb"
+        },
+        {
+          "path": "spec/draft/dataflow.md",
+          "line_start": 109,
+          "line_end": 109,
+          "source_sha256": "10399b6c1ad0754d63b50404d060e8fcb6c362246d5d793d05c18e55f68074eb",
+          "text_sha256": "a1fbd93da57417dcf3ad5b711b428a9a08ec8c537c287faaaac5335809425387"
+        }
+      ],
+      "portable": true,
+      "obligation_ids": [
+        "V4.O.ERROR.VCP.OUTPUT_MISSING"
+      ]
+    },
+    {
+      "declaration_id": "V4.ERROR.VCP.POLICY_ERROR",
+      "identifier": "POLICY_ERROR",
+      "authority": "SDK_SPECIFIC",
+      "sources": [
+        {
+          "path": "src/openverify/error_codes.py",
+          "line_start": 24,
+          "line_end": 24,
+          "source_sha256": "11b802c51c53b094e6aa694c5f0962270e399c6a3b356de788b20abac8373d8b",
+          "text_sha256": "c3a3734c1c4305a31ae88f5457776c72e150400532444380843fc766c5edd842"
+        }
+      ],
+      "portable": false,
+      "obligation_ids": [
+        "V4.O.ERROR.VCP.POLICY_ERROR"
+      ]
+    },
+    {
+      "declaration_id": "V4.ERROR.VCP.POLICY_INPUT",
+      "identifier": "POLICY_INPUT",
+      "authority": "NORMATIVE_VCP",
+      "sources": [
+        {
+          "path": "src/openverify/error_codes.py",
+          "line_start": 25,
+          "line_end": 25,
+          "source_sha256": "11b802c51c53b094e6aa694c5f0962270e399c6a3b356de788b20abac8373d8b",
+          "text_sha256": "d5e40ebc2eb4640360149032c650961e72e3b2af4996274b412bbe147e70b566"
+        },
+        {
+          "path": "spec/draft/execution-policy.md",
+          "line_start": 77,
+          "line_end": 77,
+          "source_sha256": "d6c1d6c71da16609c67bcf77ad70723f47d4e53931301ba1e0eefbce2e46268c",
+          "text_sha256": "3009c037f3b5ff664eccc8abc2cbb62d9b5c2cb59d42d64120b36f90088f8a77"
+        }
+      ],
+      "portable": true,
+      "obligation_ids": [
+        "V4.O.ERROR.VCP.POLICY_INPUT"
+      ]
+    },
+    {
+      "declaration_id": "V4.ERROR.VCP.POLICY_OUTPUT",
+      "identifier": "POLICY_OUTPUT",
+      "authority": "NORMATIVE_VCP",
+      "sources": [
+        {
+          "path": "src/openverify/error_codes.py",
+          "line_start": 26,
+          "line_end": 26,
+          "source_sha256": "11b802c51c53b094e6aa694c5f0962270e399c6a3b356de788b20abac8373d8b",
+          "text_sha256": "cd78499950f9936f6ba4849c59daa74d1bdeb3b0724f2feaffa04ef90856d763"
+        },
+        {
+          "path": "spec/draft/execution-policy.md",
+          "line_start": 78,
+          "line_end": 78,
+          "source_sha256": "d6c1d6c71da16609c67bcf77ad70723f47d4e53931301ba1e0eefbce2e46268c",
+          "text_sha256": "2ac87830be2228f847bb833ba518efa9f052d76c251253fe795b217b663e4a09"
+        }
+      ],
+      "portable": true,
+      "obligation_ids": [
+        "V4.O.ERROR.VCP.POLICY_OUTPUT"
+      ]
+    },
+    {
+      "declaration_id": "V4.ERROR.VCP.POLICY_UNSUPPORTED",
+      "identifier": "POLICY_UNSUPPORTED",
+      "authority": "NORMATIVE_VCP",
+      "sources": [
+        {
+          "path": "src/openverify/error_codes.py",
+          "line_start": 27,
+          "line_end": 27,
+          "source_sha256": "11b802c51c53b094e6aa694c5f0962270e399c6a3b356de788b20abac8373d8b",
+          "text_sha256": "f428530b07d4e42766cdc4a243e9f58608c362726cc66b4b2e08051b0d05d24b"
+        },
+        {
+          "path": "spec/draft/conformance.md",
+          "line_start": 23,
+          "line_end": 23,
+          "source_sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24",
+          "text_sha256": "d15688685fa616fe31615e8017ed2b47f07c56e66ea0e68b3dbf365cf899bcdf"
+        }
+      ],
+      "portable": true,
+      "obligation_ids": [
+        "V4.O.ERROR.VCP.POLICY_UNSUPPORTED"
+      ]
+    },
+    {
+      "declaration_id": "V4.ERROR.VCP.PROFILE_DOMAIN",
+      "identifier": "PROFILE_DOMAIN",
+      "authority": "NORMATIVE_VCP",
+      "sources": [
+        {
+          "path": "src/openverify/error_codes.py",
+          "line_start": 28,
+          "line_end": 28,
+          "source_sha256": "11b802c51c53b094e6aa694c5f0962270e399c6a3b356de788b20abac8373d8b",
+          "text_sha256": "c4b2cf5211382de249a3b827dcf0eaeb3c1e1855b97e19351725c2744cf1c1a0"
+        },
+        {
+          "path": "spec/draft/conformance.md",
+          "line_start": 21,
+          "line_end": 21,
+          "source_sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24",
+          "text_sha256": "eb96774edc1516463968f8cc7c8cf88ddca1ecb67723dbe8cde98b56871b6729"
+        }
+      ],
+      "portable": true,
+      "obligation_ids": [
+        "V4.O.ERROR.VCP.PROFILE_DOMAIN"
+      ]
+    },
+    {
+      "declaration_id": "V4.ERROR.VCP.PROTOCOL_JSON",
+      "identifier": "PROTOCOL_JSON",
+      "authority": "NORMATIVE_VCP",
+      "sources": [
+        {
+          "path": "src/openverify/error_codes.py",
+          "line_start": 29,
+          "line_end": 29,
+          "source_sha256": "11b802c51c53b094e6aa694c5f0962270e399c6a3b356de788b20abac8373d8b",
+          "text_sha256": "98ab71d53386db073f3b97ef27b5a07f7da50ec31590fe55927120d7571b6609"
+        },
+        {
+          "path": "spec/draft/conformance.md",
+          "line_start": 24,
+          "line_end": 24,
+          "source_sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24",
+          "text_sha256": "994b430cb244e24c7eb752d1cf39db8a5bb43dc14344012b0e46e33621339790"
+        }
+      ],
+      "portable": true,
+      "obligation_ids": [
+        "V4.O.ERROR.VCP.PROTOCOL_JSON"
+      ]
+    },
+    {
+      "declaration_id": "V4.ERROR.VCP.PROTOCOL_STRUCTURE",
+      "identifier": "PROTOCOL_STRUCTURE",
+      "authority": "NORMATIVE_VCP",
+      "sources": [
+        {
+          "path": "src/openverify/error_codes.py",
+          "line_start": 30,
+          "line_end": 30,
+          "source_sha256": "11b802c51c53b094e6aa694c5f0962270e399c6a3b356de788b20abac8373d8b",
+          "text_sha256": "43eef75c03099f9e13f7d38c0af47a0586757b25281c145012a69882d274190c"
+        },
+        {
+          "path": "spec/draft/conformance.md",
+          "line_start": 17,
+          "line_end": 17,
+          "source_sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24",
+          "text_sha256": "18adfaf303779ae7c731203cad2a5a05afcc39e2f867c50a8d4fddc41838e68d"
+        }
+      ],
+      "portable": true,
+      "obligation_ids": [
+        "V4.O.ERROR.VCP.PROTOCOL_STRUCTURE"
+      ]
+    },
+    {
+      "declaration_id": "V4.ERROR.VCP.PROTOCOL_VERSION",
+      "identifier": "PROTOCOL_VERSION",
+      "authority": "NORMATIVE_VCP",
+      "sources": [
+        {
+          "path": "src/openverify/error_codes.py",
+          "line_start": 31,
+          "line_end": 31,
+          "source_sha256": "11b802c51c53b094e6aa694c5f0962270e399c6a3b356de788b20abac8373d8b",
+          "text_sha256": "1b3f62846f42d606118124917ddd578bf825899a19e0a08d9247e20f31231748"
+        },
+        {
+          "path": "spec/draft/conformance.md",
+          "line_start": 17,
+          "line_end": 17,
+          "source_sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24",
+          "text_sha256": "18adfaf303779ae7c731203cad2a5a05afcc39e2f867c50a8d4fddc41838e68d"
+        },
+        {
+          "path": "spec/draft/wire-format.md",
+          "line_start": 8,
+          "line_end": 8,
+          "source_sha256": "b6935e2ebf193fffe59851efa5f69a00606652cf3f664bb78aaf12b020d28ef4",
+          "text_sha256": "fef0cf0d27e9587de5a69fa37fe0946b446951eb5cc5e07360c210656a9da378"
+        }
+      ],
+      "portable": true,
+      "obligation_ids": [
+        "V4.O.ERROR.VCP.PROTOCOL_VERSION"
+      ]
+    },
+    {
+      "declaration_id": "V4.ERROR.VCP.PROVENANCE_LINEAGE",
+      "identifier": "PROVENANCE_LINEAGE",
+      "authority": "NORMATIVE_VCP",
+      "sources": [
+        {
+          "path": "src/openverify/error_codes.py",
+          "line_start": 32,
+          "line_end": 32,
+          "source_sha256": "11b802c51c53b094e6aa694c5f0962270e399c6a3b356de788b20abac8373d8b",
+          "text_sha256": "ade910af5ffc1b4d7397dd9c423124498cdd87311b660b9110a3ea2ba6615348"
+        },
+        {
+          "path": "spec/draft/conformance.md",
+          "line_start": 21,
+          "line_end": 21,
+          "source_sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24",
+          "text_sha256": "eb96774edc1516463968f8cc7c8cf88ddca1ecb67723dbe8cde98b56871b6729"
+        },
+        {
+          "path": "spec/draft/conformance.md",
+          "line_start": 31,
+          "line_end": 31,
+          "source_sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24",
+          "text_sha256": "4fe3f2c346c3ec8ede29f19fb9dba146df09f3f7e7497160c0940ea35571efac"
+        },
+        {
+          "path": "spec/draft/provenance.md",
+          "line_start": 16,
+          "line_end": 16,
+          "source_sha256": "f5e39f64216f88a8ba3b2e0d9dbcc2e1bdf61f6f747abf0c17af4b988624f713",
+          "text_sha256": "e85e958e345862020babe083c51d1a10ebdc2aa2c9e3ab91d40c4dc8b114957f"
+        },
+        {
+          "path": "spec/draft/provenance.md",
+          "line_start": 51,
+          "line_end": 51,
+          "source_sha256": "f5e39f64216f88a8ba3b2e0d9dbcc2e1bdf61f6f747abf0c17af4b988624f713",
+          "text_sha256": "159b753fff96d4c1c53eb048b7b1def5d16add1d252ff0c9938250f1fa2aca46"
+        },
+        {
+          "path": "spec/draft/provider-binding.md",
+          "line_start": 53,
+          "line_end": 53,
+          "source_sha256": "e9182644aa142b737291815f343c6eae5982f4e7b65195af035ccaf201bc4570",
+          "text_sha256": "922c36653e7df3ba71d09925766a909a5a1e67a8619eb82c4c85fb28b879374b"
+        }
+      ],
+      "portable": true,
+      "obligation_ids": [
+        "V4.O.ERROR.VCP.PROVENANCE_LINEAGE"
+      ]
+    },
+    {
+      "declaration_id": "V4.ERROR.VCP.PROVIDER_BINDING_MISMATCH",
+      "identifier": "PROVIDER_BINDING_MISMATCH",
+      "authority": "NORMATIVE_VCP",
+      "sources": [
+        {
+          "path": "src/openverify/error_codes.py",
+          "line_start": 33,
+          "line_end": 33,
+          "source_sha256": "11b802c51c53b094e6aa694c5f0962270e399c6a3b356de788b20abac8373d8b",
+          "text_sha256": "3a328dadb3f5b8f4b5b85e4583ec3194b350699c14fbdd035fbddac6f01afb72"
+        },
+        {
+          "path": "spec/draft/provider-binding.md",
+          "line_start": 71,
+          "line_end": 71,
+          "source_sha256": "e9182644aa142b737291815f343c6eae5982f4e7b65195af035ccaf201bc4570",
+          "text_sha256": "2e354b03edffa2c58badfbd03580cb0192259024a7ab68f594ed1af9e7818325"
+        }
+      ],
+      "portable": true,
+      "obligation_ids": [
+        "V4.O.ERROR.VCP.PROVIDER_BINDING_MISMATCH"
+      ]
+    },
+    {
+      "declaration_id": "V4.ERROR.VCP.PROVIDER_BINDING_REQUIRED",
+      "identifier": "PROVIDER_BINDING_REQUIRED",
+      "authority": "NORMATIVE_VCP",
+      "sources": [
+        {
+          "path": "src/openverify/error_codes.py",
+          "line_start": 34,
+          "line_end": 34,
+          "source_sha256": "11b802c51c53b094e6aa694c5f0962270e399c6a3b356de788b20abac8373d8b",
+          "text_sha256": "5e6c4e546f38c12228e297f4c2420aa264c13202e184d8b1d3d8fb434e5ad52c"
+        },
+        {
+          "path": "spec/draft/provider-binding.md",
+          "line_start": 64,
+          "line_end": 64,
+          "source_sha256": "e9182644aa142b737291815f343c6eae5982f4e7b65195af035ccaf201bc4570",
+          "text_sha256": "b8e47185217636ee409cdf9303a19e18e29d4f249889c9b67d5c25ab2f40511e"
+        }
+      ],
+      "portable": true,
+      "obligation_ids": [
+        "V4.O.ERROR.VCP.PROVIDER_BINDING_REQUIRED"
+      ]
+    },
+    {
+      "declaration_id": "V4.ERROR.VCP.PROVIDER_MANIFEST_INVALID",
+      "identifier": "PROVIDER_MANIFEST_INVALID",
+      "authority": "NORMATIVE_VCP",
+      "sources": [
+        {
+          "path": "src/openverify/error_codes.py",
+          "line_start": 35,
+          "line_end": 35,
+          "source_sha256": "11b802c51c53b094e6aa694c5f0962270e399c6a3b356de788b20abac8373d8b",
+          "text_sha256": "0d3323601f90aaf5c9a81328e507dab4e65d8adfaa623cfce842b02c50c8ca3e"
+        },
+        {
+          "path": "spec/draft/provider-binding.md",
+          "line_start": 72,
+          "line_end": 72,
+          "source_sha256": "e9182644aa142b737291815f343c6eae5982f4e7b65195af035ccaf201bc4570",
+          "text_sha256": "5f56b8cd9244733089a68b8bd2a511fc2a2eec63cd2370941c3c9c73a42eac43"
+        }
+      ],
+      "portable": true,
+      "obligation_ids": [
+        "V4.O.ERROR.VCP.PROVIDER_MANIFEST_INVALID"
+      ]
+    },
+    {
+      "declaration_id": "V4.ERROR.VCP.RESOURCE_MEASUREMENT",
+      "identifier": "RESOURCE_MEASUREMENT",
+      "authority": "NORMATIVE_VCP",
+      "sources": [
+        {
+          "path": "src/openverify/error_codes.py",
+          "line_start": 36,
+          "line_end": 36,
+          "source_sha256": "11b802c51c53b094e6aa694c5f0962270e399c6a3b356de788b20abac8373d8b",
+          "text_sha256": "7d1ddfb817d1c532f4c4b0318de667b335d4712bf470d58ca3ab157a8a67674c"
+        },
+        {
+          "path": "spec/draft/conformance.md",
+          "line_start": 19,
+          "line_end": 19,
+          "source_sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24",
+          "text_sha256": "ed24581fd89983b063de4c8845d73f1946bf5e2c016109bcc8b41955bbd02eb5"
+        }
+      ],
+      "portable": true,
+      "obligation_ids": [
+        "V4.O.ERROR.VCP.RESOURCE_MEASUREMENT"
+      ]
+    },
+    {
+      "declaration_id": "V4.ERROR.VCP.RESULT_PROJECTION",
+      "identifier": "RESULT_PROJECTION",
+      "authority": "SDK_SPECIFIC",
+      "sources": [
+        {
+          "path": "src/openverify/error_codes.py",
+          "line_start": 37,
+          "line_end": 37,
+          "source_sha256": "11b802c51c53b094e6aa694c5f0962270e399c6a3b356de788b20abac8373d8b",
+          "text_sha256": "cabad9e1902bef0deccc7a30c0ceca343060b7d8cfacb4b2ea6b4c474649827e"
+        }
+      ],
+      "portable": false,
+      "obligation_ids": [
+        "V4.O.ERROR.VCP.RESULT_PROJECTION"
+      ]
+    },
+    {
+      "declaration_id": "V4.ERROR.VCP.RESULT_STATE",
+      "identifier": "RESULT_STATE",
+      "authority": "NORMATIVE_VCP",
+      "sources": [
+        {
+          "path": "src/openverify/error_codes.py",
+          "line_start": 38,
+          "line_end": 38,
+          "source_sha256": "11b802c51c53b094e6aa694c5f0962270e399c6a3b356de788b20abac8373d8b",
+          "text_sha256": "09009fa94aa026ad5d5365c646b016e6ab66da5cb0c9690744b2499079e3fe76"
+        },
+        {
+          "path": "spec/draft/conformance.md",
+          "line_start": 18,
+          "line_end": 18,
+          "source_sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24",
+          "text_sha256": "8b8110d7f1d2fe1da2df476be3be0f294d5dc7acfd64ef58d4136e7b9052a7fb"
+        }
+      ],
+      "portable": true,
+      "obligation_ids": [
+        "V4.O.ERROR.VCP.RESULT_STATE"
+      ]
+    },
+    {
+      "declaration_id": "V4.ERROR.VCP.RUN_INPUT",
+      "identifier": "RUN_INPUT",
+      "authority": "NORMATIVE_VCP",
+      "sources": [
+        {
+          "path": "src/openverify/error_codes.py",
+          "line_start": 39,
+          "line_end": 39,
+          "source_sha256": "11b802c51c53b094e6aa694c5f0962270e399c6a3b356de788b20abac8373d8b",
+          "text_sha256": "3404b82e8b135575d0ca82b2b74f4b60b0a50a053f9cf3d7a519e4162e31e186"
+        },
+        {
+          "path": "spec/draft/conformance.md",
+          "line_start": 26,
+          "line_end": 26,
+          "source_sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24",
+          "text_sha256": "e47378a2f06329d8d5fae574bd1d85fc8ff6e5844a617d0d8789c585629a28bb"
+        },
+        {
+          "path": "spec/draft/dataflow.md",
+          "line_start": 38,
+          "line_end": 38,
+          "source_sha256": "10399b6c1ad0754d63b50404d060e8fcb6c362246d5d793d05c18e55f68074eb",
+          "text_sha256": "9fce63e1b2d2b2c4786e9ec6bca4a15293e8261719bfd89f36e19b7fa015a28b"
+        },
+        {
+          "path": "spec/draft/execution-policy.md",
+          "line_start": 11,
+          "line_end": 11,
+          "source_sha256": "d6c1d6c71da16609c67bcf77ad70723f47d4e53931301ba1e0eefbce2e46268c",
+          "text_sha256": "cfb63eb656ab1a7c9c92b16dfcdfc61ed46b993491036b832257afe9b89cc5ad"
+        }
+      ],
+      "portable": true,
+      "obligation_ids": [
+        "V4.O.ERROR.VCP.RUN_INPUT"
+      ]
+    },
+    {
+      "declaration_id": "V4.ERROR.VCP.SCHEMA_UNSUPPORTED",
+      "identifier": "SCHEMA_UNSUPPORTED",
+      "authority": "NORMATIVE_VCP",
+      "sources": [
+        {
+          "path": "src/openverify/error_codes.py",
+          "line_start": 40,
+          "line_end": 40,
+          "source_sha256": "11b802c51c53b094e6aa694c5f0962270e399c6a3b356de788b20abac8373d8b",
+          "text_sha256": "7cb3040e16c330efef52f06a924788b924370dd3375f140ac926e515ab51011b"
+        },
+        {
+          "path": "spec/draft/conformance.md",
+          "line_start": 25,
+          "line_end": 25,
+          "source_sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24",
+          "text_sha256": "dcc6b15d4678e486c1d6ad16b2ab4671ad4c4161980a47a7b64d960ff85382a8"
+        },
+        {
+          "path": "spec/draft/dataflow.md",
+          "line_start": 99,
+          "line_end": 99,
+          "source_sha256": "10399b6c1ad0754d63b50404d060e8fcb6c362246d5d793d05c18e55f68074eb",
+          "text_sha256": "19b70381438cd6821d362238f04cd687d133b1bae8577c33bf7bd4653f3d01a5"
+        }
+      ],
+      "portable": true,
+      "obligation_ids": [
+        "V4.O.ERROR.VCP.SCHEMA_UNSUPPORTED"
+      ]
+    },
+    {
+      "declaration_id": "V4.ERROR.VCP.SEMANTIC_BINDING",
+      "identifier": "SEMANTIC_BINDING",
+      "authority": "NORMATIVE_VCP",
+      "sources": [
+        {
+          "path": "src/openverify/error_codes.py",
+          "line_start": 41,
+          "line_end": 41,
+          "source_sha256": "11b802c51c53b094e6aa694c5f0962270e399c6a3b356de788b20abac8373d8b",
+          "text_sha256": "52908f29847063fc6d0ca44c00b510dc8449c6dd4c6a0fdaec7890a206912880"
+        },
+        {
+          "path": "spec/draft/conformance.md",
+          "line_start": 25,
+          "line_end": 25,
+          "source_sha256": "efd0e61e215a96d94ef3891c9f83bd821dbed045901f089cbf0c5bf3e0132f24",
+          "text_sha256": "dcc6b15d4678e486c1d6ad16b2ab4671ad4c4161980a47a7b64d960ff85382a8"
+        }
+      ],
+      "portable": true,
+      "obligation_ids": [
+        "V4.O.ERROR.VCP.SEMANTIC_BINDING"
+      ]
+    },
+    {
+      "declaration_id": "V4.ERROR.RELAY.BINDER_FAILURE",
+      "identifier": "BINDER_FAILURE",
+      "authority": "RELAY_SPECIFIC",
+      "sources": [
+        {
+          "path": "src/openverify/relay/error_codes.py",
+          "line_start": 7,
+          "line_end": 7,
+          "source_sha256": "d12a354eaa8cb5f769af97acba6e3cd46d06a76436de78e14bab4e12e15c98fc",
+          "text_sha256": "958a62020c8e318902a1e1fc830d30406772deb05260108bc52ea19873ebd879"
+        }
+      ],
+      "portable": false,
+      "obligation_ids": [
+        "V4.O.ERROR.RELAY.BINDER_FAILURE"
+      ]
+    },
+    {
+      "declaration_id": "V4.ERROR.RELAY.CATALOG_FAILURE",
+      "identifier": "CATALOG_FAILURE",
+      "authority": "RELAY_SPECIFIC",
+      "sources": [
+        {
+          "path": "src/openverify/relay/error_codes.py",
+          "line_start": 8,
+          "line_end": 8,
+          "source_sha256": "d12a354eaa8cb5f769af97acba6e3cd46d06a76436de78e14bab4e12e15c98fc",
+          "text_sha256": "c6ab97be8460001495ccc30cdd809a14cc19f0055d1c9d79a56ea9f764912e4b"
+        }
+      ],
+      "portable": false,
+      "obligation_ids": [
+        "V4.O.ERROR.RELAY.CATALOG_FAILURE"
+      ]
+    },
+    {
+      "declaration_id": "V4.ERROR.RELAY.CATALOG_INVALID",
+      "identifier": "CATALOG_INVALID",
+      "authority": "RELAY_SPECIFIC",
+      "sources": [
+        {
+          "path": "src/openverify/relay/error_codes.py",
+          "line_start": 9,
+          "line_end": 9,
+          "source_sha256": "d12a354eaa8cb5f769af97acba6e3cd46d06a76436de78e14bab4e12e15c98fc",
+          "text_sha256": "6e93e5ff03442aa54ee57e388148b736410135df8736d28add6dabb5ed22f78e"
+        }
+      ],
+      "portable": false,
+      "obligation_ids": [
+        "V4.O.ERROR.RELAY.CATALOG_INVALID"
+      ]
+    },
+    {
+      "declaration_id": "V4.ERROR.RELAY.GATE_REJECTED",
+      "identifier": "GATE_REJECTED",
+      "authority": "RELAY_SPECIFIC",
+      "sources": [
+        {
+          "path": "src/openverify/relay/error_codes.py",
+          "line_start": 10,
+          "line_end": 10,
+          "source_sha256": "d12a354eaa8cb5f769af97acba6e3cd46d06a76436de78e14bab4e12e15c98fc",
+          "text_sha256": "bfe0c9d8ffd26fcd575246c60178c3939e967926a3c24494cbd38a53a3b628bd"
+        }
+      ],
+      "portable": false,
+      "obligation_ids": [
+        "V4.O.ERROR.RELAY.GATE_REJECTED"
+      ]
+    },
+    {
+      "declaration_id": "V4.ERROR.RELAY.GRAPH_UNAVAILABLE",
+      "identifier": "GRAPH_UNAVAILABLE",
+      "authority": "RELAY_SPECIFIC",
+      "sources": [
+        {
+          "path": "src/openverify/relay/error_codes.py",
+          "line_start": 11,
+          "line_end": 11,
+          "source_sha256": "d12a354eaa8cb5f769af97acba6e3cd46d06a76436de78e14bab4e12e15c98fc",
+          "text_sha256": "119d7b89926d9f215c781410ddbbbdbed748e9bbe2357ee5254cb686798bcaf0"
+        }
+      ],
+      "portable": false,
+      "obligation_ids": [
+        "V4.O.ERROR.RELAY.GRAPH_UNAVAILABLE"
+      ]
+    },
+    {
+      "declaration_id": "V4.ERROR.RELAY.OPPORTUNITY_ID",
+      "identifier": "OPPORTUNITY_ID",
+      "authority": "RELAY_SPECIFIC",
+      "sources": [
+        {
+          "path": "src/openverify/relay/error_codes.py",
+          "line_start": 12,
+          "line_end": 12,
+          "source_sha256": "d12a354eaa8cb5f769af97acba6e3cd46d06a76436de78e14bab4e12e15c98fc",
+          "text_sha256": "c1c3ccbf36e29a2d4676b33083a724950dd53ddce0b5b252c84a38eb033f9599"
+        }
+      ],
+      "portable": false,
+      "obligation_ids": [
+        "V4.O.ERROR.RELAY.OPPORTUNITY_ID"
+      ]
+    },
+    {
+      "declaration_id": "V4.ERROR.RELAY.PROVIDER_AMBIGUOUS",
+      "identifier": "PROVIDER_AMBIGUOUS",
+      "authority": "RELAY_SPECIFIC",
+      "sources": [
+        {
+          "path": "src/openverify/relay/error_codes.py",
+          "line_start": 13,
+          "line_end": 13,
+          "source_sha256": "d12a354eaa8cb5f769af97acba6e3cd46d06a76436de78e14bab4e12e15c98fc",
+          "text_sha256": "4645fde0f75023771adab7296d19106bd4109971e29862364f064f16c46a3145"
+        }
+      ],
+      "portable": false,
+      "obligation_ids": [
+        "V4.O.ERROR.RELAY.PROVIDER_AMBIGUOUS"
+      ]
+    },
+    {
+      "declaration_id": "V4.ERROR.RELAY.PROVIDER_CONFLICT",
+      "identifier": "PROVIDER_CONFLICT",
+      "authority": "RELAY_SPECIFIC",
+      "sources": [
+        {
+          "path": "src/openverify/relay/error_codes.py",
+          "line_start": 14,
+          "line_end": 14,
+          "source_sha256": "d12a354eaa8cb5f769af97acba6e3cd46d06a76436de78e14bab4e12e15c98fc",
+          "text_sha256": "ec7bee9f7fa2031254ef909a64911a169f5a360065003ef2d124eba9332eeefc"
+        }
+      ],
+      "portable": false,
+      "obligation_ids": [
+        "V4.O.ERROR.RELAY.PROVIDER_CONFLICT"
+      ]
+    },
+    {
+      "declaration_id": "V4.ERROR.RELAY.PROVIDER_UNTRUSTED",
+      "identifier": "PROVIDER_UNTRUSTED",
+      "authority": "RELAY_SPECIFIC",
+      "sources": [
+        {
+          "path": "src/openverify/relay/error_codes.py",
+          "line_start": 15,
+          "line_end": 15,
+          "source_sha256": "d12a354eaa8cb5f769af97acba6e3cd46d06a76436de78e14bab4e12e15c98fc",
+          "text_sha256": "582d48636eeb0aa7f799cbd3889980c266b6d5bc55193424408a1259b82e4996"
+        }
+      ],
+      "portable": false,
+      "obligation_ids": [
+        "V4.O.ERROR.RELAY.PROVIDER_UNTRUSTED"
+      ]
+    },
+    {
+      "declaration_id": "V4.ERROR.RELAY.RUN_UNAVAILABLE",
+      "identifier": "RUN_UNAVAILABLE",
+      "authority": "RELAY_SPECIFIC",
+      "sources": [
+        {
+          "path": "src/openverify/relay/error_codes.py",
+          "line_start": 16,
+          "line_end": 16,
+          "source_sha256": "d12a354eaa8cb5f769af97acba6e3cd46d06a76436de78e14bab4e12e15c98fc",
+          "text_sha256": "d3878e1662a587e03f0b69024cdc0ea7aceb80ba1fb2dfbcab12770c441d0396"
+        }
+      ],
+      "portable": false,
+      "obligation_ids": [
+        "V4.O.ERROR.RELAY.RUN_UNAVAILABLE"
+      ]
+    },
+    {
+      "declaration_id": "V4.ERROR.PROVIDER.CONTRACT_VERSION_UNSUPPORTED",
+      "identifier": "CONTRACT_VERSION_UNSUPPORTED",
+      "authority": "NORMATIVE_PROVIDER_CONTRACT",
+      "sources": [
+        {
+          "path": "provider-contract/spec/draft/errors.md",
+          "line_start": 8,
+          "line_end": 8,
+          "source_sha256": "421ba6acd25ce220f3cd986f14819bd07034873b4b23cef891149d9657d6d3e4",
+          "text_sha256": "c29f0a3346384c4d25dd674b2c56da25286b16e3d9a5e87a9d9ca7f5388975b9"
+        }
+      ],
+      "portable": true,
+      "obligation_ids": [
+        "V4.O.ERROR.PROVIDER.CONTRACT_VERSION_UNSUPPORTED"
+      ]
+    },
+    {
+      "declaration_id": "V4.ERROR.PROVIDER.CAPABILITY_UNAVAILABLE",
+      "identifier": "CAPABILITY_UNAVAILABLE",
+      "authority": "NORMATIVE_PROVIDER_CONTRACT",
+      "sources": [
+        {
+          "path": "provider-contract/spec/draft/errors.md",
+          "line_start": 9,
+          "line_end": 9,
+          "source_sha256": "421ba6acd25ce220f3cd986f14819bd07034873b4b23cef891149d9657d6d3e4",
+          "text_sha256": "85ba853acb75c258b21a7c8f8f3be034a7c42e0f2d5991db57ca7c73f41eeceb"
+        }
+      ],
+      "portable": true,
+      "obligation_ids": [
+        "V4.O.ERROR.PROVIDER.CAPABILITY_UNAVAILABLE"
+      ]
+    },
+    {
+      "declaration_id": "V4.ERROR.PROVIDER.CAPABILITY_VERSION_UNSUPPORTED",
+      "identifier": "CAPABILITY_VERSION_UNSUPPORTED",
+      "authority": "NORMATIVE_PROVIDER_CONTRACT",
+      "sources": [
+        {
+          "path": "provider-contract/spec/draft/errors.md",
+          "line_start": 10,
+          "line_end": 10,
+          "source_sha256": "421ba6acd25ce220f3cd986f14819bd07034873b4b23cef891149d9657d6d3e4",
+          "text_sha256": "2c3c36adc0b0b0087e7539b8839f804ae881527a20413deb8a774f50e15f5d90"
+        }
+      ],
+      "portable": true,
+      "obligation_ids": [
+        "V4.O.ERROR.PROVIDER.CAPABILITY_VERSION_UNSUPPORTED"
+      ]
+    },
+    {
+      "declaration_id": "V4.ERROR.PROVIDER.INVALID_INVOCATION",
+      "identifier": "INVALID_INVOCATION",
+      "authority": "NORMATIVE_PROVIDER_CONTRACT",
+      "sources": [
+        {
+          "path": "provider-contract/spec/draft/errors.md",
+          "line_start": 11,
+          "line_end": 11,
+          "source_sha256": "421ba6acd25ce220f3cd986f14819bd07034873b4b23cef891149d9657d6d3e4",
+          "text_sha256": "836699c11f2bbf2743a3e7ccc7e35e225466541cd1f2cab541b8f34bfed2e96c"
+        }
+      ],
+      "portable": true,
+      "obligation_ids": [
+        "V4.O.ERROR.PROVIDER.INVALID_INVOCATION"
+      ]
+    },
+    {
+      "declaration_id": "V4.ERROR.PROVIDER.INVALID_CONFIG",
+      "identifier": "INVALID_CONFIG",
+      "authority": "NORMATIVE_PROVIDER_CONTRACT",
+      "sources": [
+        {
+          "path": "provider-contract/spec/draft/errors.md",
+          "line_start": 12,
+          "line_end": 12,
+          "source_sha256": "421ba6acd25ce220f3cd986f14819bd07034873b4b23cef891149d9657d6d3e4",
+          "text_sha256": "ce5f503727989965937c1c024582110d62984ead34305e03fa541066c2e6f526"
+        }
+      ],
+      "portable": true,
+      "obligation_ids": [
+        "V4.O.ERROR.PROVIDER.INVALID_CONFIG"
+      ]
+    },
+    {
+      "declaration_id": "V4.ERROR.PROVIDER.INVALID_INPUT",
+      "identifier": "INVALID_INPUT",
+      "authority": "NORMATIVE_PROVIDER_CONTRACT",
+      "sources": [
+        {
+          "path": "provider-contract/spec/draft/errors.md",
+          "line_start": 13,
+          "line_end": 13,
+          "source_sha256": "421ba6acd25ce220f3cd986f14819bd07034873b4b23cef891149d9657d6d3e4",
+          "text_sha256": "8e58d541d4a4d8eb9920e2f880ce9ab5d35f3ec32be1afbd35f69859df082b63"
+        }
+      ],
+      "portable": true,
+      "obligation_ids": [
+        "V4.O.ERROR.PROVIDER.INVALID_INPUT"
+      ]
+    },
+    {
+      "declaration_id": "V4.ERROR.PROVIDER.INVALID_PROVIDER_OUTPUT",
+      "identifier": "INVALID_PROVIDER_OUTPUT",
+      "authority": "NORMATIVE_PROVIDER_CONTRACT",
+      "sources": [
+        {
+          "path": "provider-contract/spec/draft/errors.md",
+          "line_start": 14,
+          "line_end": 14,
+          "source_sha256": "421ba6acd25ce220f3cd986f14819bd07034873b4b23cef891149d9657d6d3e4",
+          "text_sha256": "690e3b40c8536a7307c9b8c9356a467d36b1153d64672fd8a7ead8dad8aab7f9"
+        }
+      ],
+      "portable": true,
+      "obligation_ids": [
+        "V4.O.ERROR.PROVIDER.INVALID_PROVIDER_OUTPUT"
+      ]
+    },
+    {
+      "declaration_id": "V4.ERROR.PROVIDER.PROTOCOL_VIOLATION",
+      "identifier": "PROTOCOL_VIOLATION",
+      "authority": "NORMATIVE_PROVIDER_CONTRACT",
+      "sources": [
+        {
+          "path": "provider-contract/spec/draft/errors.md",
+          "line_start": 15,
+          "line_end": 15,
+          "source_sha256": "421ba6acd25ce220f3cd986f14819bd07034873b4b23cef891149d9657d6d3e4",
+          "text_sha256": "a6748136abe7c9c7b4e9f3e9aaa171e4194ab4ff0f3dde2b0078e88b757edc0c"
+        }
+      ],
+      "portable": true,
+      "obligation_ids": [
+        "V4.O.ERROR.PROVIDER.PROTOCOL_VIOLATION"
+      ]
+    }
+  ]
+}

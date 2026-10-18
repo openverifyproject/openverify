@@ -1,6 +1,6 @@
 {
   "protocol": "draft",
-  "run_id": "fixture-run",
+  "run_id": "typed-fixture",
   "definition": {
     "protocol": "draft",
     "id": "prose-criterion",
@@ -17,6 +17,16 @@
       "description": "Contains no banned phrase and is nonempty."
     },
     "judgment_schema": {},
+    "run_inputs": [
+      {
+        "name": "x",
+        "schema": {
+          "type": "integer"
+        },
+        "required": true,
+        "on_unavailable": "BLOCK"
+      }
+    ],
     "execution_policy": {
       "activation": {
         "executor_ref": "MANUAL"
@@ -31,51 +41,194 @@
     "graph": {
       "nodes": [
         {
-          "id": "phrase",
-          "kind": "EVALUATE",
-          "executor_ref": "demo.regex",
-          "config": {
-            "key": "text",
-            "pattern": "guaranteed cure",
-            "must_match": false
-          }
-        },
-        {
-          "id": "length",
-          "kind": "EVALUATE",
-          "executor_ref": "demo.range",
-          "config": {
-            "key": "length",
-            "minimum": 1,
-            "maximum": 10000
-          }
-        },
-        {
-          "id": "all",
-          "kind": "AGGREGATE",
-          "executor_ref": "standard.aggregate",
-          "config": {
-            "reducer": "ALL",
-            "handling": {
-              "UNKNOWN": "REJECT",
-              "ERROR": "REJECT",
-              "SKIP": "REJECT",
-              "DEFERRED": "REJECT",
-              "CANCELLED": "REJECT",
-              "NOT_APPLICABLE": "REJECT",
-              "MISSING": "REJECT"
+          "id": "derive",
+          "kind": "DERIVE",
+          "operation": {
+            "capability_id": "com.example.execution.mock",
+            "capability_version": "1"
+          },
+          "inputs": [
+            {
+              "name": "x",
+              "schema": {
+                "type": "integer"
+              },
+              "required": true,
+              "on_unavailable": "BLOCK"
             }
-          }
+          ],
+          "outputs": [
+            {
+              "name": "x",
+              "schema": {
+                "type": "integer"
+              },
+              "role": "INFORMATION"
+            }
+          ],
+          "bindings": {
+            "x": {
+              "kind": "RUN_INPUT",
+              "name": "x"
+            }
+          },
+          "config": {},
+          "aggregate_inputs": []
+        },
+        {
+          "id": "judge",
+          "kind": "EVALUATE",
+          "operation": {
+            "capability_id": "com.example.execution.mock",
+            "capability_version": "1"
+          },
+          "inputs": [
+            {
+              "name": "x",
+              "schema": {
+                "type": "integer"
+              },
+              "required": true,
+              "on_unavailable": "BLOCK"
+            },
+            {
+              "name": "subject",
+              "schema": {
+                "type": "object"
+              },
+              "required": true,
+              "on_unavailable": "BLOCK"
+            },
+            {
+              "name": "criterion",
+              "schema": {
+                "type": "object"
+              },
+              "required": true,
+              "on_unavailable": "BLOCK"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "result",
+              "schema": {
+                "type": "object"
+              },
+              "role": "RESULT"
+            }
+          ],
+          "bindings": {
+            "x": {
+              "kind": "UPSTREAM_OUTPUT",
+              "node_id": "derive",
+              "output": "x"
+            },
+            "subject": {
+              "kind": "CONSTANT",
+              "value": {
+                "id": "article-1",
+                "type": "text/plain",
+                "locator": {
+                  "host_key": "text"
+                }
+              }
+            },
+            "criterion": {
+              "kind": "CONSTANT",
+              "value": {
+                "id": "readable-prose",
+                "description": "Contains no banned phrase and is nonempty."
+              }
+            }
+          },
+          "config": {},
+          "aggregate_inputs": []
+        },
+        {
+          "id": "control",
+          "kind": "CONTROL",
+          "operation": {
+            "capability_id": "com.example.execution.mock",
+            "capability_version": "1"
+          },
+          "inputs": [
+            {
+              "name": "check",
+              "schema": {
+                "type": "object"
+              },
+              "required": true,
+              "on_unavailable": "BLOCK"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "decision",
+              "schema": {
+                "type": "object"
+              },
+              "role": "DECISION"
+            }
+          ],
+          "bindings": {
+            "check": {
+              "kind": "UPSTREAM_OUTPUT",
+              "node_id": "judge",
+              "output": "result"
+            }
+          },
+          "config": {},
+          "aggregate_inputs": []
+        },
+        {
+          "id": "other",
+          "kind": "DERIVE",
+          "operation": {
+            "capability_id": "com.example.execution.mock",
+            "capability_version": "1"
+          },
+          "inputs": [
+            {
+              "name": "x",
+              "schema": {
+                "type": "integer"
+              },
+              "required": true,
+              "on_unavailable": "BLOCK"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "copy",
+              "schema": {
+                "type": "integer"
+              },
+              "role": "INFORMATION"
+            }
+          ],
+          "bindings": {
+            "x": {
+              "kind": "UPSTREAM_OUTPUT",
+              "node_id": "derive",
+              "output": "x"
+            }
+          },
+          "config": {},
+          "aggregate_inputs": []
         }
       ],
       "edges": [
         {
-          "from_node": "phrase",
-          "to_node": "all"
+          "from_node": "derive",
+          "to_node": "judge"
         },
         {
-          "from_node": "length",
-          "to_node": "all"
+          "from_node": "judge",
+          "to_node": "control"
+        },
+        {
+          "from_node": "derive",
+          "to_node": "other"
         }
       ]
     }
@@ -88,27 +241,78 @@
       "host_key": "text"
     }
   },
-  "initial_context": {
-    "text": "Clear prose.",
-    "length": 12
+  "initial_context": {},
+  "run_inputs": {
+    "x": 0
   },
-  "opportunity_id": "fixture-opportunity",
+  "opportunity_id": "fixture",
   "admission": {
     "outcome": "RUN",
     "reason": "ALWAYS"
   },
+  "policy_evaluations": [
+    {
+      "role": "ACTIVATION",
+      "input_values": {},
+      "input_resolutions": {},
+      "outcome": {
+        "outcome": "ACTIVATE",
+        "reason": "MANUAL"
+      }
+    },
+    {
+      "role": "SELECTION",
+      "input_values": {},
+      "input_resolutions": {},
+      "outcome": {
+        "subjects": [
+          {
+            "id": "article-1",
+            "type": "text/plain",
+            "locator": {
+              "host_key": "text"
+            }
+          }
+        ],
+        "reason": "EXPLICIT"
+      }
+    },
+    {
+      "role": "ADMISSION",
+      "input_values": {},
+      "input_resolutions": {},
+      "outcome": {
+        "outcome": "RUN",
+        "reason": "ALWAYS"
+      }
+    }
+  ],
   "started_at": "2026-01-01T00:00:00Z",
   "finished_at": "2026-01-01T00:00:00Z",
   "nodes": [
     {
-      "node_id": "phrase",
-      "executor_ref": "demo.regex",
-      "upstream_node_ids": [],
-      "input_context": {
-        "text": "Clear prose.",
-        "length": 12
+      "node_id": "derive",
+      "kind": "DERIVE",
+      "operation": {
+        "capability_id": "com.example.execution.mock",
+        "capability_version": "1"
       },
+      "upstream_node_ids": [],
       "upstream_results": {},
+      "input_values": {
+        "x": 0
+      },
+      "input_resolutions": {
+        "x": {
+          "status": "AVAILABLE",
+          "used_default": false,
+          "source": {
+            "kind": "RUN_INPUT",
+            "name": "x"
+          },
+          "value": 0
+        }
+      },
       "started_at": "2026-01-01T00:00:00Z",
       "finished_at": "2026-01-01T00:00:00Z",
       "usage": {
@@ -118,104 +322,88 @@
           "value": 0
         }
       },
-      "result": {
-        "protocol": "draft",
-        "disposition": "EXECUTED",
-        "execution_outcome": "SUCCESS",
-        "applicability": "APPLICABLE",
-        "determination": "KNOWN",
-        "verdict": "PASS",
-        "output": {
-          "v": 1,
-          "nested": [
-            null,
-            false,
-            {},
-            []
-          ]
-        }
+      "state": "SUCCESS",
+      "information": {
+        "x": 0
+      },
+      "observation": {
+        "outputs": {
+          "x": 0
+        },
+        "usage": {},
+        "evidence": []
       }
     },
     {
-      "node_id": "length",
-      "executor_ref": "demo.range",
-      "upstream_node_ids": [],
-      "input_context": {
-        "text": "Clear prose.",
-        "length": 12
+      "node_id": "judge",
+      "kind": "EVALUATE",
+      "operation": {
+        "capability_id": "com.example.execution.mock",
+        "capability_version": "1"
       },
-      "upstream_results": {},
-      "started_at": "2026-01-01T00:00:00Z",
-      "finished_at": "2026-01-01T00:00:00Z",
-      "usage": {
-        "wall_time": {
-          "unit": "s",
-          "kind": "EXACT",
-          "value": 0
-        }
-      },
-      "result": {
-        "protocol": "draft",
-        "disposition": "EXECUTED",
-        "execution_outcome": "SUCCESS",
-        "applicability": "APPLICABLE",
-        "determination": "KNOWN",
-        "verdict": "PASS",
-        "output": {
-          "v": 1,
-          "nested": [
-            null,
-            false,
-            {},
-            []
-          ]
-        }
-      }
-    },
-    {
-      "node_id": "all",
-      "executor_ref": "standard.aggregate",
       "upstream_node_ids": [
-        "phrase",
-        "length"
+        "derive"
       ],
-      "input_context": {
-        "text": "Clear prose.",
-        "length": 12
-      },
-      "upstream_results": {
-        "phrase": {
-          "protocol": "draft",
-          "disposition": "EXECUTED",
-          "execution_outcome": "SUCCESS",
-          "applicability": "APPLICABLE",
-          "determination": "KNOWN",
-          "verdict": "PASS",
-          "output": {
-            "v": true,
-            "nested": [
-              null,
-              false,
-              {},
-              []
-            ]
+      "upstream_results": {},
+      "input_values": {
+        "x": 0,
+        "subject": {
+          "id": "article-1",
+          "type": "text/plain",
+          "locator": {
+            "host_key": "text"
           }
         },
-        "length": {
-          "protocol": "draft",
-          "disposition": "EXECUTED",
-          "execution_outcome": "SUCCESS",
-          "applicability": "APPLICABLE",
-          "determination": "KNOWN",
-          "verdict": "PASS",
-          "output": {
-            "v": 1,
-            "nested": [
-              null,
-              false,
-              {},
-              []
-            ]
+        "criterion": {
+          "id": "readable-prose",
+          "description": "Contains no banned phrase and is nonempty."
+        }
+      },
+      "input_resolutions": {
+        "x": {
+          "status": "AVAILABLE",
+          "used_default": false,
+          "source": {
+            "kind": "UPSTREAM_OUTPUT",
+            "node_id": "derive",
+            "output": "x"
+          },
+          "value": 0
+        },
+        "subject": {
+          "status": "AVAILABLE",
+          "used_default": false,
+          "source": {
+            "kind": "CONSTANT",
+            "value": {
+              "id": "article-1",
+              "type": "text/plain",
+              "locator": {
+                "host_key": "text"
+              }
+            }
+          },
+          "value": {
+            "id": "article-1",
+            "type": "text/plain",
+            "locator": {
+              "host_key": "text"
+            }
+          }
+        },
+        "criterion": {
+          "status": "AVAILABLE",
+          "used_default": false,
+          "source": {
+            "kind": "CONSTANT",
+            "value": {
+              "id": "readable-prose",
+              "description": "Contains no banned phrase and is nonempty."
+            }
+          },
+          "value": {
+            "id": "readable-prose",
+            "description": "Contains no banned phrase and is nonempty."
           }
         }
       },
@@ -228,6 +416,27 @@
           "value": 0
         }
       },
+      "state": "SUCCESS",
+      "information": {},
+      "observation": {
+        "outputs": {
+          "result": {
+            "protocol": "draft",
+            "disposition": "EXECUTED",
+            "execution_outcome": "SUCCESS",
+            "applicability": "APPLICABLE",
+            "determination": "KNOWN",
+            "verdict": "PASS",
+            "evidence": [],
+            "usage": {},
+            "output": {
+              "v": 1
+            }
+          }
+        },
+        "usage": {},
+        "evidence": []
+      },
       "result": {
         "protocol": "draft",
         "disposition": "EXECUTED",
@@ -235,68 +444,163 @@
         "applicability": "APPLICABLE",
         "determination": "KNOWN",
         "verdict": "PASS",
+        "evidence": [],
+        "usage": {},
         "output": {
-          "v": 1,
-          "nested": [
-            null,
-            false,
-            {},
-            []
-          ]
+          "v": 1
         }
+      }
+    },
+    {
+      "node_id": "control",
+      "kind": "CONTROL",
+      "operation": {
+        "capability_id": "com.example.execution.mock",
+        "capability_version": "1"
+      },
+      "upstream_node_ids": [
+        "judge"
+      ],
+      "upstream_results": {
+        "judge": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS",
+          "evidence": [],
+          "usage": {},
+          "output": {
+            "v": true
+          }
+        }
+      },
+      "input_values": {
+        "check": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS",
+          "evidence": [],
+          "usage": {},
+          "output": {
+            "v": 1
+          }
+        }
+      },
+      "input_resolutions": {
+        "check": {
+          "status": "AVAILABLE",
+          "used_default": false,
+          "source": {
+            "kind": "UPSTREAM_OUTPUT",
+            "node_id": "judge",
+            "output": "result"
+          },
+          "value": {
+            "protocol": "draft",
+            "disposition": "EXECUTED",
+            "execution_outcome": "SUCCESS",
+            "applicability": "APPLICABLE",
+            "determination": "KNOWN",
+            "verdict": "PASS",
+            "evidence": [],
+            "usage": {},
+            "output": {
+              "v": 1
+            }
+          }
+        }
+      },
+      "started_at": "2026-01-01T00:00:00Z",
+      "finished_at": "2026-01-01T00:00:00Z",
+      "usage": {
+        "wall_time": {
+          "unit": "s",
+          "kind": "EXACT",
+          "value": 0
+        }
+      },
+      "state": "SUCCESS",
+      "information": {},
+      "observation": {
+        "outputs": {
+          "decision": {
+            "protocol": "draft",
+            "kind": "CONTINUE"
+          }
+        },
+        "usage": {},
+        "evidence": []
+      },
+      "decision": {
+        "protocol": "draft",
+        "kind": "CONTINUE"
+      }
+    },
+    {
+      "node_id": "other",
+      "kind": "DERIVE",
+      "operation": {
+        "capability_id": "com.example.execution.mock",
+        "capability_version": "1"
+      },
+      "upstream_node_ids": [
+        "derive"
+      ],
+      "upstream_results": {},
+      "input_values": {
+        "x": 0
+      },
+      "input_resolutions": {
+        "x": {
+          "status": "AVAILABLE",
+          "used_default": false,
+          "source": {
+            "kind": "UPSTREAM_OUTPUT",
+            "node_id": "derive",
+            "output": "x"
+          },
+          "value": 0
+        }
+      },
+      "started_at": "2026-01-01T00:00:00Z",
+      "finished_at": "2026-01-01T00:00:00Z",
+      "usage": {
+        "wall_time": {
+          "unit": "s",
+          "kind": "EXACT",
+          "value": 0
+        }
+      },
+      "state": "SUCCESS",
+      "information": {
+        "copy": 0
+      },
+      "observation": {
+        "outputs": {
+          "copy": 0
+        },
+        "usage": {},
+        "evidence": []
       }
     }
   ],
   "final_results": {
-    "phrase": {
+    "judge": {
       "protocol": "draft",
       "disposition": "EXECUTED",
       "execution_outcome": "SUCCESS",
       "applicability": "APPLICABLE",
       "determination": "KNOWN",
       "verdict": "PASS",
+      "evidence": [],
+      "usage": {},
       "output": {
-        "v": 1,
-        "nested": [
-          null,
-          false,
-          {},
-          []
-        ]
-      }
-    },
-    "length": {
-      "protocol": "draft",
-      "disposition": "EXECUTED",
-      "execution_outcome": "SUCCESS",
-      "applicability": "APPLICABLE",
-      "determination": "KNOWN",
-      "verdict": "PASS",
-      "output": {
-        "v": 1,
-        "nested": [
-          null,
-          false,
-          {},
-          []
-        ]
-      }
-    },
-    "all": {
-      "protocol": "draft",
-      "disposition": "EXECUTED",
-      "execution_outcome": "SUCCESS",
-      "applicability": "APPLICABLE",
-      "determination": "KNOWN",
-      "verdict": "PASS",
-      "output": {
-        "v": 1,
-        "nested": [
-          null,
-          false,
-          {},
-          []
-        ]
+        "v": 1
       }
     }
   }

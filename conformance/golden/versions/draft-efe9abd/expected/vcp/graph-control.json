@@ -1,0 +1,455 @@
+{
+  "control.graph.CONTINUE": {
+    "nodes": {
+      "control": {
+        "state": "SUCCESS",
+        "information": {},
+        "decision": {
+          "protocol": "draft",
+          "kind": "CONTINUE"
+        }
+      },
+      "a": {
+        "state": "SUCCESS",
+        "information": {
+          "value": "a"
+        }
+      },
+      "b": {
+        "state": "SUCCESS",
+        "information": {
+          "value": "b"
+        }
+      },
+      "join": {
+        "state": "SUCCESS",
+        "information": {
+          "value": "join"
+        }
+      }
+    }
+  },
+  "control.graph.ROUTE": {
+    "nodes": {
+      "control": {
+        "state": "SUCCESS",
+        "information": {},
+        "decision": {
+          "protocol": "draft",
+          "kind": "ROUTE",
+          "destination": "a"
+        }
+      },
+      "a": {
+        "state": "SUCCESS",
+        "information": {
+          "value": "a"
+        }
+      },
+      "b": {
+        "state": "NONEXECUTED",
+        "reason": "ROUTE_EXCLUDED",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "ROUTE_EXCLUDED"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      },
+      "join": {
+        "state": "SUCCESS",
+        "information": {
+          "value": "join"
+        }
+      }
+    }
+  },
+  "control.graph.STOP_SUCCESS": {
+    "nodes": {
+      "control": {
+        "state": "SUCCESS",
+        "information": {},
+        "decision": {
+          "protocol": "draft",
+          "kind": "STOP_SUCCESS"
+        }
+      },
+      "a": {
+        "state": "NONEXECUTED",
+        "reason": "CONTROL_STOP",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "CONTROL_STOP"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      },
+      "b": {
+        "state": "NONEXECUTED",
+        "reason": "CONTROL_STOP",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "CONTROL_STOP"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      },
+      "join": {
+        "state": "NONEXECUTED",
+        "reason": "CONTROL_STOP",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "CONTROL_STOP"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      }
+    }
+  },
+  "control.graph.STOP_FAILURE": {
+    "nodes": {
+      "control": {
+        "state": "SUCCESS",
+        "information": {},
+        "decision": {
+          "protocol": "draft",
+          "kind": "STOP_FAILURE"
+        }
+      },
+      "a": {
+        "state": "NONEXECUTED",
+        "reason": "CONTROL_STOP",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "CONTROL_STOP"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      },
+      "b": {
+        "state": "NONEXECUTED",
+        "reason": "CONTROL_STOP",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "CONTROL_STOP"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      },
+      "join": {
+        "state": "NONEXECUTED",
+        "reason": "CONTROL_STOP",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "CONTROL_STOP"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      }
+    }
+  },
+  "control.graph.RETRY": {
+    "nodes": {
+      "control": {
+        "state": "SUCCESS",
+        "information": {},
+        "decision": {
+          "protocol": "draft",
+          "kind": "RETRY"
+        }
+      },
+      "a": {
+        "state": "NONEXECUTED",
+        "reason": "RETRY_REQUESTED",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "RETRY_REQUESTED"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      },
+      "b": {
+        "state": "NONEXECUTED",
+        "reason": "RETRY_REQUESTED",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "RETRY_REQUESTED"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      },
+      "join": {
+        "state": "NONEXECUTED",
+        "reason": "RETRY_REQUESTED",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "RETRY_REQUESTED"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      }
+    }
+  },
+  "control.graph.DEFER": {
+    "nodes": {
+      "control": {
+        "state": "SUCCESS",
+        "information": {},
+        "decision": {
+          "protocol": "draft",
+          "kind": "DEFER"
+        }
+      },
+      "a": {
+        "state": "NONEXECUTED",
+        "reason": "CONTROL_DEFER",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "DEFERRED",
+          "output": {
+            "reason": "CONTROL_DEFER"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      },
+      "b": {
+        "state": "NONEXECUTED",
+        "reason": "CONTROL_DEFER",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "DEFERRED",
+          "output": {
+            "reason": "CONTROL_DEFER"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      },
+      "join": {
+        "state": "NONEXECUTED",
+        "reason": "CONTROL_DEFER",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "DEFERRED",
+          "output": {
+            "reason": "CONTROL_DEFER"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      }
+    }
+  },
+  "guard.literal.True": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {
+          "value": 10
+        }
+      },
+      "c": {
+        "state": "SUCCESS",
+        "information": {
+          "value": 10
+        }
+      }
+    }
+  },
+  "guard.literal.False": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {
+          "value": 10
+        }
+      },
+      "c": {
+        "state": "NONEXECUTED",
+        "reason": "GUARD_FALSE",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "GUARD_FALSE"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      }
+    }
+  },
+  "guard.literal.None": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {
+          "value": 10
+        }
+      },
+      "c": {
+        "state": "NONEXECUTED",
+        "reason": "GUARD_FALSE",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "GUARD_FALSE"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      }
+    }
+  },
+  "guard.absent": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {
+          "value": {}
+        }
+      },
+      "c": {
+        "state": "NONEXECUTED",
+        "reason": "GUARD_FALSE",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "GUARD_FALSE"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      }
+    }
+  }
+}

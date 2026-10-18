@@ -1,0 +1,127 @@
+{
+  "policy.ACTIVATE.True.RUN": {
+    "nodes": {
+      "n": {
+        "state": "SUCCESS",
+        "information": {
+          "value": 1
+        }
+      }
+    }
+  },
+  "policy.ACTIVATE.True.SKIP": {
+    "nodes": {
+      "n": {
+        "state": "NONEXECUTED",
+        "reason": "ADMISSION_SKIP",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "ADMISSION_SKIP"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      }
+    }
+  },
+  "policy.ACTIVATE.True.DEFER": {
+    "nodes": {
+      "n": {
+        "state": "NONEXECUTED",
+        "reason": "ADMISSION_DEFER",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "DEFERRED",
+          "output": {
+            "reason": "ADMISSION_DEFER"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      }
+    }
+  },
+  "policy.ACTIVATE.False.RUN": {
+    "occurrence": false,
+    "error_code": "NO_OCCURRENCE"
+  },
+  "policy.ACTIVATE.False.SKIP": {
+    "occurrence": false,
+    "error_code": "NO_OCCURRENCE"
+  },
+  "policy.ACTIVATE.False.DEFER": {
+    "occurrence": false,
+    "error_code": "NO_OCCURRENCE"
+  },
+  "policy.DO_NOT_ACTIVATE.True.RUN": {
+    "occurrence": false,
+    "error_code": "NO_OCCURRENCE"
+  },
+  "policy.DO_NOT_ACTIVATE.True.SKIP": {
+    "occurrence": false,
+    "error_code": "NO_OCCURRENCE"
+  },
+  "policy.DO_NOT_ACTIVATE.True.DEFER": {
+    "occurrence": false,
+    "error_code": "NO_OCCURRENCE"
+  },
+  "policy.DO_NOT_ACTIVATE.False.RUN": {
+    "occurrence": false,
+    "error_code": "NO_OCCURRENCE"
+  },
+  "policy.DO_NOT_ACTIVATE.False.SKIP": {
+    "occurrence": false,
+    "error_code": "NO_OCCURRENCE"
+  },
+  "policy.DO_NOT_ACTIVATE.False.DEFER": {
+    "occurrence": false,
+    "error_code": "NO_OCCURRENCE"
+  },
+  "policy.probability.0": {
+    "nodes": {
+      "n": {
+        "state": "NONEXECUTED",
+        "reason": "ADMISSION_SKIP",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "ADMISSION_SKIP"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      }
+    }
+  },
+  "policy.probability.1": {
+    "nodes": {
+      "n": {
+        "state": "SUCCESS",
+        "information": {
+          "value": 1
+        }
+      }
+    }
+  }
+}

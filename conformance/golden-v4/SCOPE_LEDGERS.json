@@ -1,0 +1,46 @@
+{
+  "UNSUPPORTED": [
+    "cycles and dynamic expansion",
+    "external/nested/dynamic schema resolution",
+    "automatic retries, durable replay/recovery",
+    "required unknown extension semantics",
+    "portable multi-attempt interrupted cancellation",
+    "network Provider bindings"
+  ],
+  "AMBIGUOUS": [
+    "unmandated exact error precedence",
+    "portable numeric rounding/canonical identity/clock trust",
+    "raw availability coordinate reachability without mandatory extra axes"
+  ],
+  "UNBOUNDED": [
+    "arbitrary JSON/schema/string/number values",
+    "DAGs of arbitrary size",
+    "arbitrary member lists, custom logic and event histories",
+    "unbounded concurrent scheduling histories"
+  ],
+  "SAMPLED": [
+    "logical reducer sequences n=1..5",
+    "severity sequences n=1..4",
+    "authored score boundary vectors",
+    "twelve named Relay motifs and explicit resource/event paths"
+  ],
+  "UNPROVED": [
+    "universal DAG induction noninterference/global-state premises",
+    "unbounded reducer order/identity reduction",
+    "complete normative clause-to-assertion review and canonical obligation deduplication",
+    "complete cross-module pair and required higher-order interaction matrix",
+    "all standard-provider behavioral contracts beyond text and aggregate",
+    "complete supported host/method clause indexing"
+  ],
+  "EXCLUDED": [
+    "Byzantine Provider streams in real Relay",
+    "malicious arbitrary replacement ports",
+    "cryptographic attestation/coordinated coherent forgery"
+  ],
+  "EXECUTION_PLAN_CORRECTIONS": [
+    "Mutation probes and the SDK policy-exception boundary execute in runtime mode, regardless of their frozen initial mode label.",
+    "Invalid invoked nonexecution Results and all policy role/outcome-object combinations execute locally in cheap mode. No deliberately malformed external provider is required.",
+    "The expired-deadline resource witness is a local Provider lifecycle check: the public Relay.run API has no deadline argument. It is not claimed as a live Relay deadline invocation.",
+    "The stdio helper's post-terminal EOF exit status is diagnostic: the binding does not mandate a numeric exit status after all responses settle. Its cancellation shutdown traceback is preserved separately in run artifacts."
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "port.ProviderCatalog.default": {
+    "invariant": "semantic contracts remain enforced"
+  },
+  "port.ProviderCatalog.replacement": {
+    "invariant": "semantic contracts remain enforced"
+  },
+  "port.ProviderCatalog.valid": {
+    "invariant": "semantic contracts remain enforced"
+  },
+  "port.ProviderCatalog.invalid": {
+    "invariant": "semantic contracts remain enforced"
+  },
+  "port.ProviderCatalog.exception": {
+    "invariant": "semantic contracts remain enforced"
+  },
+  "port.ProviderCatalog.isolation": {
+    "invariant": "semantic contracts remain enforced"
+  },
+  "port.ProviderBinder.default": {
+    "invariant": "semantic contracts remain enforced"
+  },
+  "port.ProviderBinder.replacement": {
+    "invariant": "semantic contracts remain enforced"
+  },
+  "port.ProviderBinder.valid": {
+    "invariant": "semantic contracts remain enforced"
+  },
+  "port.ProviderBinder.invalid": {
+    "invariant": "semantic contracts remain enforced"
+  },
+  "port.ProviderBinder.exception": {
+    "invariant": "semantic contracts remain enforced"
+  },
+  "port.ProviderBinder.isolation": {
+    "invariant": "semantic contracts remain enforced"
+  },
+  "port.ExecutionDriver.default": {
+    "invariant": "semantic contracts remain enforced"
+  },
+  "port.ExecutionDriver.replacement": {
+    "invariant": "semantic contracts remain enforced"
+  },
+  "port.ExecutionDriver.valid": {
+    "invariant": "semantic contracts remain enforced"
+  },
+  "port.ExecutionDriver.invalid": {
+    "invariant": "semantic contracts remain enforced"
+  },
+  "port.ExecutionDriver.exception": {
+    "invariant": "semantic contracts remain enforced"
+  },
+  "port.ExecutionDriver.isolation": {
+    "invariant": "semantic contracts remain enforced"
+  },
+  "port.ProviderTransport.default": {
+    "invariant": "semantic contracts remain enforced"
+  },
+  "port.ProviderTransport.replacement": {
+    "invariant": "semantic contracts remain enforced"
+  },
+  "port.ProviderTransport.valid": {
+    "invariant": "semantic contracts remain enforced"
+  },
+  "port.ProviderTransport.invalid": {
+    "invariant": "semantic contracts remain enforced"
+  },
+  "port.ProviderTransport.exception": {
+    "invariant": "semantic contracts remain enforced"
+  },
+  "port.ProviderTransport.isolation": {
+    "invariant": "semantic contracts remain enforced"
+  },
+  "port.RecordStore.default": {
+    "invariant": "semantic contracts remain enforced"
+  },
+  "port.RecordStore.replacement": {
+    "invariant": "semantic contracts remain enforced"
+  },
+  "port.RecordStore.valid": {
+    "invariant": "semantic contracts remain enforced"
+  },
+  "port.RecordStore.invalid": {
+    "invariant": "semantic contracts remain enforced"
+  },
+  "port.RecordStore.exception": {
+    "invariant": "store error propagates to host"
+  },
+  "port.RecordStore.isolation": {
+    "invariant": "semantic contracts remain enforced"
+  },
+  "port.EventObserver.default": {
+    "invariant": "semantic contracts remain enforced"
+  },
+  "port.EventObserver.replacement": {
+    "invariant": "semantic contracts remain enforced"
+  },
+  "port.EventObserver.valid": {
+    "invariant": "semantic contracts remain enforced"
+  },
+  "port.EventObserver.invalid": {
+    "invariant": "semantic contracts remain enforced"
+  },
+  "port.EventObserver.exception": {
+    "invariant": "observer failure recorded; verdict unchanged"
+  },
+  "port.EventObserver.isolation": {
+    "invariant": "semantic contracts remain enforced"
+  }
+}

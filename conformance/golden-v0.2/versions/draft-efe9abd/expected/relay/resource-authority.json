@@ -1,0 +1,124 @@
+{
+  "v02.usage.final_authority.DERIVE": {
+    "nodes": {
+      "n": {
+        "state": "SUCCESS",
+        "information": {
+          "value": 1
+        }
+      }
+    },
+    "authoritative_usage": {
+      "com.example.calls": {
+        "kind": "EXACT",
+        "unit": "call",
+        "value": 7
+      }
+    },
+    "partial_usage": {
+      "com.example.calls": {
+        "kind": "EXACT",
+        "unit": "call",
+        "value": 3
+      }
+    }
+  },
+  "v02.usage.final_authority.EVALUATE": {
+    "nodes": {
+      "n": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    },
+    "authoritative_usage": {
+      "com.example.calls": {
+        "kind": "EXACT",
+        "unit": "call",
+        "value": 7
+      }
+    },
+    "partial_usage": {
+      "com.example.calls": {
+        "kind": "EXACT",
+        "unit": "call",
+        "value": 3
+      }
+    }
+  },
+  "v02.usage.final_authority.AGGREGATE": {
+    "nodes": {
+      "n": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "p": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    },
+    "authoritative_usage": {
+      "com.example.calls": {
+        "kind": "EXACT",
+        "unit": "call",
+        "value": 7
+      }
+    },
+    "partial_usage": {
+      "com.example.calls": {
+        "kind": "EXACT",
+        "unit": "call",
+        "value": 3
+      }
+    }
+  },
+  "v02.usage.final_authority.CONTROL": {
+    "nodes": {
+      "n": {
+        "state": "SUCCESS",
+        "information": {},
+        "decision": {
+          "protocol": "draft",
+          "kind": "CONTINUE"
+        }
+      }
+    },
+    "authoritative_usage": {
+      "com.example.calls": {
+        "kind": "EXACT",
+        "unit": "call",
+        "value": 7
+      }
+    },
+    "partial_usage": {
+      "com.example.calls": {
+        "kind": "EXACT",
+        "unit": "call",
+        "value": 3
+      }
+    }
+  }
+}

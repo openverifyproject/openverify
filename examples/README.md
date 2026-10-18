@@ -3,9 +3,9 @@
 From the repository root:
 
 ```sh
-uv run openverify run examples/prose/definition.json --context examples/prose/context.json --opportunity-id article-draft-1
-uv run openverify run examples/generic/definition.json --context examples/generic/context.json --opportunity-id reading-1
-uv run openverify run examples/ai-output/definition.json --context examples/ai-output/context.json --opportunity-id response-1
+uv run openverify run examples/prose/definition.json --run-inputs examples/prose/context.json --opportunity-id article-draft-1
+uv run openverify run examples/generic/definition.json --run-inputs examples/generic/context.json --opportunity-id reading-1
+uv run openverify run examples/ai-output/definition.json --run-inputs examples/ai-output/context.json --opportunity-id response-1
 ```
 
 Prose derives length, checks a banned phrase and length, then aggregates ALL.
@@ -17,3 +17,7 @@ The examples do not imply an overall verdict without an Aggregate node.
 `--output run.json` saves the complete portable RunRecord. CLI `run` uses the
 explicit local demo registry. Host applications may supply their own registry.
 No adapter names authorize imports or expressions from definitions.
+
+The historical context.json filenames now contain declared run input values. They
+are not ambient Context maps. Definitions declare every input port and its source;
+for example prose length binds derive-length.length, never a shared map key.

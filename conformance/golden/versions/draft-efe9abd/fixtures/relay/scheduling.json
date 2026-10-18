@@ -1,0 +1,348 @@
+{
+  "scheduler.abstract.0000": {
+    "n": 0,
+    "edges": []
+  },
+  "scheduler.abstract.0001": {
+    "n": 1,
+    "edges": []
+  },
+  "scheduler.abstract.0002": {
+    "n": 2,
+    "edges": []
+  },
+  "scheduler.abstract.0003": {
+    "n": 2,
+    "edges": [
+      [
+        1,
+        0
+      ]
+    ]
+  },
+  "scheduler.abstract.0004": {
+    "n": 2,
+    "edges": [
+      [
+        0,
+        1
+      ]
+    ]
+  },
+  "scheduler.abstract.0005": {
+    "n": 3,
+    "edges": []
+  },
+  "scheduler.abstract.0006": {
+    "n": 3,
+    "edges": [
+      [
+        2,
+        1
+      ]
+    ]
+  },
+  "scheduler.abstract.0007": {
+    "n": 3,
+    "edges": [
+      [
+        2,
+        0
+      ]
+    ]
+  },
+  "scheduler.abstract.0008": {
+    "n": 3,
+    "edges": [
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        1
+      ]
+    ]
+  },
+  "scheduler.abstract.0009": {
+    "n": 3,
+    "edges": [
+      [
+        1,
+        2
+      ]
+    ]
+  },
+  "scheduler.abstract.0010": {
+    "n": 3,
+    "edges": [
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        0
+      ]
+    ]
+  },
+  "scheduler.abstract.0011": {
+    "n": 3,
+    "edges": [
+      [
+        1,
+        0
+      ]
+    ]
+  },
+  "scheduler.abstract.0012": {
+    "n": 3,
+    "edges": [
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        1
+      ]
+    ]
+  },
+  "scheduler.abstract.0013": {
+    "n": 3,
+    "edges": [
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        0
+      ]
+    ]
+  },
+  "scheduler.abstract.0014": {
+    "n": 3,
+    "edges": [
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        1
+      ]
+    ]
+  },
+  "scheduler.abstract.0015": {
+    "n": 3,
+    "edges": [
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        2
+      ]
+    ]
+  },
+  "scheduler.abstract.0016": {
+    "n": 3,
+    "edges": [
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        0
+      ]
+    ]
+  },
+  "scheduler.abstract.0017": {
+    "n": 3,
+    "edges": [
+      [
+        0,
+        2
+      ]
+    ]
+  },
+  "scheduler.abstract.0018": {
+    "n": 3,
+    "edges": [
+      [
+        0,
+        2
+      ],
+      [
+        2,
+        1
+      ]
+    ]
+  },
+  "scheduler.abstract.0019": {
+    "n": 3,
+    "edges": [
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        2
+      ]
+    ]
+  },
+  "scheduler.abstract.0020": {
+    "n": 3,
+    "edges": [
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        0
+      ]
+    ]
+  },
+  "scheduler.abstract.0021": {
+    "n": 3,
+    "edges": [
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        2
+      ]
+    ]
+  },
+  "scheduler.abstract.0022": {
+    "n": 3,
+    "edges": [
+      [
+        0,
+        1
+      ]
+    ]
+  },
+  "scheduler.abstract.0023": {
+    "n": 3,
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        1
+      ]
+    ]
+  },
+  "scheduler.abstract.0024": {
+    "n": 3,
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        0
+      ]
+    ]
+  },
+  "scheduler.abstract.0025": {
+    "n": 3,
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        1
+      ]
+    ]
+  },
+  "scheduler.abstract.0026": {
+    "n": 3,
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ]
+    ]
+  },
+  "scheduler.abstract.0027": {
+    "n": 3,
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ]
+  },
+  "scheduler.abstract.0028": {
+    "n": 3,
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        2,
+        1
+      ]
+    ]
+  },
+  "scheduler.abstract.0029": {
+    "n": 3,
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        2
+      ]
+    ]
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "sdk_commit": "bd251eb070f8d8fa7d35696d631fd3cbfc4f9191",
+  "shared_counts": {
+    "vcp": 52,
+    "provider": 45
+  },
+  "shared_case_types": {
+    "('vcp', 'result')": 28,
+    "('vcp', 'decision')": 8,
+    "('vcp', 'evidence')": 7,
+    "('vcp', 'resource')": 7,
+    "('vcp', 'extension')": 2,
+    "('provider', 'provider-manifest')": 8,
+    "('provider', 'capability')": 1,
+    "('provider', 'outcome')": 10,
+    "('provider', 'invocation')": 3,
+    "('provider', 'data')": 19,
+    "('provider', 'provider-event')": 4
+  },
+  "cases_containing_membership_resolution_or_unused_default": [],
+  "conclusion": "Current eight SDKs explicitly exclude definition/graph/dataflow/provenance semantics. No present97 shared fixture expectation changes follow from these decisions; future support must implement new VCP rules. No Provider Contract change. Refresh normative-revision documentation/source digests in a future SDK update; schemas unchanged.",
+  "original_python_compatibility_failure": "provider.vcp-version: standalone parser accepts unsupported vcp_version; existing SDK report xfails this. Not re-executed here.",
+  "unused_default_discrepancy": "Existing production Python validate_port enforces iff; current normative schema/prose do not impose converse. Independent eight wire SDKs do not implement InputPort semantic validation.",
+  "source": "sdk/README.md; sdk/REPORT.md; sdk/python/tests/test_existing_python.py; conformance/sdk/manifest.json",
+  "execution": "READ_ONLY_GIT_OBJECT_INSPECTION; no SDK test/package run, no SDK worktree entered or changed.",
+  "native_source_comparison": [
+    {
+      "path": "sdk/node/src/index.ts",
+      "sha256": "baeca7adef63b8c7b23d0b7419c0a16f5d850b0e8493523bb1a6f30ab3f4d90b",
+      "unsupported_vcp_dispatch_lines": [
+        120
+      ],
+      "scope": "Existing VCP semantic allow-list; no graph/dataflow support claimed."
+    },
+    {
+      "path": "sdk/rust/src/lib.rs",
+      "sha256": "a64062a54f21500461dac19768110971a117fbdab025ac50560ae52e7508e2bf",
+      "unsupported_vcp_dispatch_lines": [
+        202
+      ],
+      "scope": "Existing VCP semantic allow-list; no graph/dataflow support claimed."
+    },
+    {
+      "path": "sdk/go/openverify.go",
+      "sha256": "292d30dddff960066df3a290a988af972e32ee4232c2d0951d971fa7d7e0dcb8",
+      "unsupported_vcp_dispatch_lines": [
+        203
+      ],
+      "scope": "Existing VCP semantic allow-list; no graph/dataflow support claimed."
+    },
+    {
+      "path": "sdk/jvm/src/main/java/org/openverify/sdk/Sdk.java",
+      "sha256": "9d5c08afc2be36f5240e8f6f87767ff97c182ea6feede54b039b66736b639622",
+      "unsupported_vcp_dispatch_lines": [
+        60
+      ],
+      "scope": "Existing VCP semantic allow-list; no graph/dataflow support claimed."
+    },
+    {
+      "path": "sdk/dotnet/OpenVerify.Sdk/Sdk.cs",
+      "sha256": "909eaf9e97f46e7eb1028234d911db2177fd311c1f43cc33ad8c052a68af52d4",
+      "unsupported_vcp_dispatch_lines": [
+        82
+      ],
+      "scope": "Existing VCP semantic allow-list; no graph/dataflow support claimed."
+    },
+    {
+      "path": "sdk/ruby/lib/openverify.rb",
+      "sha256": "231035a2a6df025ae28bbb944b755baef66ee8c6c7578c5addf05066348ff9cd",
+      "unsupported_vcp_dispatch_lines": [
+        86
+      ],
+      "scope": "Existing VCP semantic allow-list; no graph/dataflow support claimed."
+    },
+    {
+      "path": "sdk/php/src/Sdk.php",
+      "sha256": "cbb19a2d29b08fc607fa13be311a6897eeb7f25805c1a61eca6854886d595f6d",
+      "unsupported_vcp_dispatch_lines": [
+        48
+      ],
+      "scope": "Existing VCP semantic allow-list; no graph/dataflow support claimed."
+    },
+    {
+      "path": "sdk/python/src/openverify_sdk/__init__.py",
+      "sha256": "a6359913dafed13593adf126adb4d19e5be12f8d82775ef375d9b744dc437b7c",
+      "unsupported_vcp_dispatch_lines": [
+        146
+      ],
+      "scope": "Existing VCP semantic allow-list; no graph/dataflow support claimed."
+    }
+  ]
+}

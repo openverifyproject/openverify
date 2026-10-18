@@ -1,0 +1,17 @@
+{
+  "id": "provider.schema-boolean-false",
+  "contract": "provider",
+  "version": "0.1",
+  "type": "data",
+  "operation": "data",
+  "input": null,
+  "expected": {
+    "accepted": false,
+    "error": "INVALID_INPUT"
+  },
+  "features": [
+    "standalone",
+    "data"
+  ],
+  "schema": false
+}

@@ -1,0 +1,10 @@
+{
+  "kind": "EXTERNAL_REFERENCE",
+  "reference": {
+    "id": "document",
+    "type": "application/json",
+    "locator": {
+      "opaque": false
+    }
+  }
+}

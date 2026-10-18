@@ -1,0 +1,20 @@
+{
+  "old_revision_expectations_sha256": "a47cd965705da4c689d0e01a735b6e221a104d56ff5ee448f4407dcc106b0565",
+  "case_id": "V4.REVISION.AVAILABILITY.UNBOUND.BLOCK",
+  "old_expected": {
+    "handler": "BLOCK",
+    "invocation_permitted_by_input": false,
+    "required": true,
+    "status": "ABSENT",
+    "used_default": false,
+    "value_present": false
+  },
+  "new_expected": {
+    "required": true,
+    "handler": "BLOCK",
+    "preflight_error": "DATAFLOW_BINDING"
+  },
+  "reason": "Independent domain review found required unbound is a declaration rejection. Do not use a successful resolver call on that invalid declaration as coverage.",
+  "authority": "spec/draft/dataflow.md required binding invariant",
+  "production_output_used": false
+}

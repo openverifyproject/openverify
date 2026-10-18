@@ -4,11 +4,24 @@ import copy
 import json
 from pathlib import Path
 
+from dataflow_examples import upgrade_definition
+
 ROOT = Path(__file__).resolve().parents[1]
-base = json.loads((ROOT / "examples/prose/definition.json").read_text(encoding="utf-8"))
+base = json.loads((ROOT / "conformance/valid/simple-definition.json").read_text(encoding="utf-8"))
+# Reconstruct the small authoring seed; generated files are never generator inputs.
+for n in base["graph"]["nodes"]:
+    n["executor_ref"] = (
+        n["operation"]["capability_id"]
+        .removeprefix("com.example.")
+        .replace("openverify.aggregate", "standard.aggregate")
+    )
+    for key in ("operation", "inputs", "outputs", "bindings", "aggregate_inputs"):
+        n.pop(key, None)
 
 
 def write(path, data):
+    if path.endswith("definition.json"):
+        data = upgrade_definition(data)
     target = ROOT / path
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8", newline="\n")

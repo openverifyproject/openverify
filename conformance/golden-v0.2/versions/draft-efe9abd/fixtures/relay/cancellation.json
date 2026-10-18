@@ -1,0 +1,22 @@
+{
+  "runtime.cancellation.before_dispatch": {
+    "experiment": "cancellation",
+    "variant": "before_dispatch"
+  },
+  "runtime.cancellation.during_invocation": {
+    "experiment": "cancellation",
+    "variant": "during_invocation"
+  },
+  "runtime.cancellation.near_completion": {
+    "experiment": "cancellation",
+    "variant": "near_completion"
+  },
+  "runtime.cancellation.after_terminal": {
+    "experiment": "cancellation",
+    "variant": "after_terminal"
+  },
+  "runtime.cancellation.task_cancel": {
+    "experiment": "cancellation",
+    "variant": "task_cancel"
+  }
+}

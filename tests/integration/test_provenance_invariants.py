@@ -4,9 +4,9 @@ from pydantic import JsonValue
 from openverify import ProtocolError, parse_run_record, serialize
 from openverify.adapters.demo import demo_registry, known
 from openverify.engine import Engine
-from openverify.model import AdmissionPolicy, Edge, Graph, Node, RunRecord
+from openverify.model import AdmissionPolicy, Constant, Edge, Graph, RunRecord
 from openverify.serialization import json_equal, to_data
-from tests.helpers import context, definition
+from tests.helpers import context, definition, node
 
 
 def skipped_run() -> RunRecord:
@@ -42,7 +42,7 @@ def test_admission_skip_rejects_each_node_disposition(index: int, disposition: s
     with pytest.raises(ProtocolError) as error:
         parse_run_record(serialize(bad))
     assert error.value.code == "PROVENANCE_LINEAGE"
-    assert error.value.message == "Admission SKIP requires every node to be SKIPPED"
+    assert error.value.message == "Nonexecuted node has contradictory observations"
 
 
 @pytest.mark.parametrize("index", range(4))
@@ -59,13 +59,13 @@ def test_admission_skip_rejects_each_final_disposition(index: int, disposition: 
 def snapshot_run(value: JsonValue) -> RunRecord:
     graph = Graph(
         nodes=[
-            Node(
+            node(
                 id="source",
                 kind="EVALUATE",
                 executor_ref="demo.constant",
                 config={"result": to_data(known("PASS").model_copy(update={"output": value}))},
             ),
-            Node(
+            node(
                 id="dependent",
                 kind="EVALUATE",
                 executor_ref="demo.constant",
@@ -76,8 +76,14 @@ def snapshot_run(value: JsonValue) -> RunRecord:
     )
     d = definition("generic")
     d = d.model_copy(
-        update={"graph": graph, "subject": d.subject.model_copy(update={"locator": value})}
+        update={
+            "graph": graph,
+            "run_inputs": [],
+            "subject": d.subject.model_copy(update={"locator": value}),
+        }
     )
+    for computation in graph.nodes:
+        computation.bindings["subject"] = Constant(value=to_data(d.subject))
     return Engine(demo_registry()).run(d, {}, opportunity_id="snapshot-regression")
 
 

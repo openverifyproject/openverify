@@ -1,0 +1,22 @@
+{
+  "runtime.concurrency.ready_overlap": {
+    "experiment": "concurrency",
+    "variant": "ready_overlap"
+  },
+  "runtime.concurrency.dependency_barrier": {
+    "experiment": "concurrency",
+    "variant": "dependency_barrier"
+  },
+  "runtime.concurrency.completion_order": {
+    "experiment": "concurrency",
+    "variant": "completion_order"
+  },
+  "runtime.concurrency.control_barrier": {
+    "experiment": "concurrency",
+    "variant": "control_barrier"
+  },
+  "runtime.concurrency.shared_provider_serial": {
+    "experiment": "concurrency",
+    "variant": "shared_provider_serial"
+  }
+}

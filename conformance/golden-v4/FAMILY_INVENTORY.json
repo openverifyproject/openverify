@@ -1,0 +1,626 @@
+[
+  {
+    "family": "V4.WIRE.ROOTS",
+    "domain": "All VCP + Provider schema roots",
+    "blueprint_formula": "24 + 9 = **33 roots** (verify)",
+    "blueprint_partition": "Schema contract list, not JSON object-count",
+    "mode": "P",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.WIRE.JSON",
+    "domain": "UTF-8, duplicate keys, nonfinite, unknown props, version marker, nested JSON",
+    "blueprint_formula": "∞",
+    "blueprint_partition": "Normative semantic partitions",
+    "mode": "P/X",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.DEF.PRESENCE",
+    "domain": "9 required + 3 optional fields",
+    "blueprint_formula": "2^12 = **4,096**",
+    "blueprint_partition": "**8 V / 4,088 I**",
+    "mode": "P",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.CRITERION.PRESENCE",
+    "domain": "2 required + 2 optional",
+    "blueprint_formula": "2^4 = **16**",
+    "blueprint_partition": "**4 V / 12 I**",
+    "mode": "P",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.ARTIFACT.PRESENCE",
+    "domain": "3 required + 3 optional",
+    "blueprint_formula": "2^6 = **64**",
+    "blueprint_partition": "**8 V / 56 I**",
+    "mode": "P",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.EVIDENCE.MEANING",
+    "domain": "4 meaning bits + 3 annotation-presence bits",
+    "blueprint_formula": "2^7 = **128**",
+    "blueprint_partition": "**120 V / 8 I**, with valid contents",
+    "mode": "P",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.RESULT.WIRE_AXIS",
+    "domain": "disposition:4 × four categorical fields each {absent,null,2 enum values}",
+    "blueprint_formula": "4×4^4 = **1,024**",
+    "blueprint_partition": "**66 V / 958 I**",
+    "mode": "P",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.RESULT.SEMANTIC_AXIS",
+    "domain": "same categories with absent/null identified",
+    "blueprint_formula": "4×3^4 = **324**",
+    "blueprint_partition": "**9 V / 315 I**",
+    "mode": "P",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.RESULT.OBS_MASK",
+    "domain": "9 valid semantic Result states × 8 observation-presence bits",
+    "blueprint_formula": "9×2^8 = **2,304**",
+    "blueprint_partition": "**960 V / 1,344 I**; judgment_schema=true for this projection",
+    "mode": "P",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.RESULT.VALUES",
+    "domain": "observed judgment,score,severity,evidence,output,usage,metadata,extensions",
+    "blueprint_formula": "∞",
+    "blueprint_partition": "Type/boundary/null/cross-field partitions",
+    "mode": "P/R",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.RESULT.PROJECTION",
+    "domain": "9 valid semantic Results → flattened presentation",
+    "blueprint_formula": "**9**",
+    "blueprint_partition": "**5 defined / 4 undefined**",
+    "mode": "P",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.DECISION.DEST",
+    "domain": "6 kinds × {absent,null,empty,nonempty} destination",
+    "blueprint_formula": "6×4 = **24**",
+    "blueprint_partition": "**11 V / 13 I**",
+    "mode": "P/R",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.DECISION.ROUTE",
+    "domain": "destination × reachable direct successors/guards/control",
+    "blueprint_formula": "∞",
+    "blueprint_partition": "Explicit graph obligations, not another enum",
+    "mode": "P/R",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.NODE.ROLE",
+    "domain": "4 node kinds × 3 individual output roles",
+    "blueprint_formula": "4×3 = **12**",
+    "blueprint_partition": "**7 permitted / 5 forbidden**, excludes port-name/cardinality obligations",
+    "mode": "P",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.NODE.PRIMARY",
+    "domain": "required `result` or `decision`, auxiliary INFORMATION, duplicate/wrong role",
+    "blueprint_formula": "finite rule matrix; derive",
+    "blueprint_partition": "Required-role/name/cardinality invariants",
+    "mode": "P/R",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.NODE.INVOKED_RESULT",
+    "domain": "EVALUATE,AGGREGATE × 9 semantic Result classes",
+    "blueprint_formula": "2×9 = **18**",
+    "blueprint_partition": "**12 permitted executed / 6 forbidden nonexecution** if 6/3 per kind confirmed",
+    "mode": "P/R",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.BIND.IDENTITY",
+    "domain": "4 equality/mismatch bits against independent trusted anchors",
+    "blueprint_formula": "2^4 = **16**",
+    "blueprint_partition": "**1 match / 15 mismatches**, in anchored projection",
+    "mode": "P/R",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.PORT.HANDLING",
+    "domain": "input required? × {BLOCK,OMIT,DEFAULT}",
+    "blueprint_formula": "2×3 = **6**",
+    "blueprint_partition": "**3 V / 3 I**",
+    "mode": "P",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.PORT.DEFAULT",
+    "domain": "DEFAULT × value present/absent",
+    "blueprint_formula": "**2**",
+    "blueprint_partition": "**1 V / 1 I**",
+    "mode": "P",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.SOURCE.KIND",
+    "domain": "CONSTANT,RUN_INPUT,EXTERNAL_REFERENCE,UPSTREAM_OUTPUT",
+    "blueprint_formula": "**4**",
+    "blueprint_partition": "all four defined kinds",
+    "mode": "P/R",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.SOURCE.POLICY",
+    "domain": "four sources × three policy roles",
+    "blueprint_formula": "4×3 = **12**",
+    "blueprint_partition": "**9 permitted / 3 forbidden**, assuming current policy source limits",
+    "mode": "P",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.RESOLVE.HANDLER",
+    "domain": "six statuses × BLOCK/OMIT/DEFAULT",
+    "blueprint_formula": "6×3 = **18**",
+    "blueprint_partition": "**Conditional on port/source/trace**",
+    "mode": "P/R",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.RESOLVE.CONSUMER",
+    "domain": "18 × four node kinds",
+    "blueprint_formula": "18×4 = **72**",
+    "blueprint_partition": "Conditional; reused rules only with proof",
+    "mode": "P/R",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.RESOLVE.RAW",
+    "domain": "4 node kinds × 4 source kinds × 6 statuses × 3 handlers",
+    "blueprint_formula": "4×4×6×3 = **288**",
+    "blueprint_partition": "**Not independently classifiable** without port, schema, producer role, trace",
+    "mode": "P/R",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.RESOLVE.UNBOUND",
+    "domain": "4 kinds × UNBOUND × 6 statuses × 3 handlers",
+    "blueprint_formula": "**72**",
+    "blueprint_partition": "Conditional",
+    "mode": "P/R",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.RESOLVE.RECORD_BITS",
+    "domain": "6 statuses × 3 handling × used_default bit × value-presence bit",
+    "blueprint_formula": "6×3×2×2 = **72**",
+    "blueprint_partition": "**18 V / 54 inconsistent**, assuming reachable source/status",
+    "mode": "P",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.SCHEMA.PRIMITIVE",
+    "domain": "seven JSON primitive type labels × seven",
+    "blueprint_formula": "7×7 = **49**",
+    "blueprint_partition": "**9 overlapping / 40 disjoint**",
+    "mode": "P",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.SCHEMA.FULL",
+    "domain": "boolean/object JSON Schema supported subset and references",
+    "blueprint_formula": "∞",
+    "blueprint_partition": "Refs, unsupported schema vocabularies, actual instance value",
+    "mode": "P",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.GUARD.OPERATOR",
+    "domain": "equality operator only",
+    "blueprint_formula": "**1**",
+    "blueprint_partition": "exactly one normative operator",
+    "mode": "P/R",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.GUARD.SOURCE",
+    "domain": "four possible source kinds × equality",
+    "blueprint_formula": "**4 candidates**",
+    "blueprint_partition": "typed/ancestor constraints apply",
+    "mode": "P/R",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.GUARD.BOOL",
+    "domain": "two Boolean operands × two Boolean values",
+    "blueprint_formula": "2×2 = **4**",
+    "blueprint_partition": "**2 true / 2 false**",
+    "mode": "P/R",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.GUARD.POINTER",
+    "domain": "pointer existence, JSON type, unavailable source, incoming-edge conjunction",
+    "blueprint_formula": "∞",
+    "blueprint_partition": "Domain partition and interaction",
+    "mode": "P/R",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.GRAPH.DAG_0_4",
+    "domain": "labeled loop-free directed graphs, n=0..4",
+    "blueprint_formula": "1+1+4+64+4096 = **4,166**",
+    "blueprint_partition": "**573 acyclic / 3,593 cyclic**; *topology only*",
+    "mode": "P",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.GRAPH.FEATURES",
+    "domain": "{CYCLES,DYNAMIC_EXPANSION} presence bits",
+    "blueprint_formula": "2^2 = **4**",
+    "blueprint_partition": "**1 executable / 3 unsupported**",
+    "mode": "P",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.GRAPH.DEFINITION",
+    "domain": "IDs, edge endpoints, duplication, ports, binding, guards, cycles",
+    "blueprint_formula": "∞",
+    "blueprint_partition": "Test invariants and counterexamples",
+    "mode": "P",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.AGG.MEMBER_ROLE",
+    "domain": "4 producer node kinds × 3 output roles as aggregate input",
+    "blueprint_formula": "4×3 = **12**",
+    "blueprint_partition": "**2 permitted / 10 forbidden** for upstream RESULT membership",
+    "mode": "P/R",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.AGG.SEMANTIC",
+    "domain": "EVALUATE/AGGREGATE × subject+criterion plus Aggregate members",
+    "blueprint_formula": "**5 required kind/name obligations**",
+    "blueprint_partition": "Binding and snapshot equalities",
+    "mode": "P/R",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.AGG.HANDLING_MAP",
+    "domain": "8 reducers × 7 binary handling choices",
+    "blueprint_formula": "8×2^7 = **1,024**",
+    "blueprint_partition": "All maps complete with valid prerequisites; distinguish reducer interactions",
+    "mode": "P",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.AGG.EXCEPTION",
+    "domain": "8 reducers × seven exceptional classes × two actions",
+    "blueprint_formula": "8×7×2 = **112**",
+    "blueprint_partition": "Behavior obligations; actual admissibility depends on membership",
+    "mode": "P/R",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.AGG.LOGICAL",
+    "domain": "n retained PASS/FAIL members",
+    "blueprint_formula": "2^n for each n≥1",
+    "blueprint_partition": "ALL/ANY/MAJORITY mathematical partitions",
+    "mode": "P",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.AGG.SCORE",
+    "domain": "numeric scores, min/max/average",
+    "blueprint_formula": "∞",
+    "blueprint_partition": "Equations, boundaries, algebraic laws",
+    "mode": "P",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.AGG.WEIGHT_SIGN_2",
+    "domain": "2 members with negative/zero/positive weight class",
+    "blueprint_formula": "3² = **9**",
+    "blueprint_partition": "**3 admissible / 6 rejected** before filtering",
+    "mode": "P",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.AGG.WEIGHT_GENERAL",
+    "domain": "n members × 3 weight-sign classes",
+    "blueprint_formula": "3^n",
+    "blueprint_partition": "**2^n−1 admissible / 3^n−2^n+1 invalid** pre-filtering",
+    "mode": "P",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.AGG.WEIGHT_IDENTITY",
+    "domain": "permutations, missing/misassigned weights, filtered retention",
+    "blueprint_formula": "∞",
+    "blueprint_partition": "Identity/order interaction required",
+    "mode": "P/R",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.AGG.SEVERITY",
+    "domain": "k-level domain and n retained members",
+    "blueprint_formula": "k^n",
+    "blueprint_partition": "Max rank j in j^n−(j−1)^n cases",
+    "mode": "P",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.POLICY.DECLARATIONS",
+    "domain": "activation:2 × selection:2 × admission:3 supported declaration families",
+    "blueprint_formula": "2×2×3 = **12**",
+    "blueprint_partition": "Other declaration/port cases separate",
+    "mode": "P",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.POLICY.PATH",
+    "domain": "activation → selection → admission short circuit",
+    "blueprint_formula": "**5 reachable paths**",
+    "blueprint_partition": "All five need actual host/Relay disposition witness",
+    "mode": "R",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.POLICY.ROLE_RESULT",
+    "domain": "3 roles × 3 outcome-object types",
+    "blueprint_formula": "3×3 = **9**",
+    "blueprint_partition": "**3 matched / 6 mismatched**",
+    "mode": "P",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.POLICY.EVAL_ORDER",
+    "domain": "permutations of three role records",
+    "blueprint_formula": "3! = **6**",
+    "blueprint_partition": "**1 valid / 5 invalid** where three records exist",
+    "mode": "P",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.RESOURCE.PRESENCE_BINARY",
+    "domain": "4 kinds × value/min/max presence bits",
+    "blueprint_formula": "4×2³ = **32**",
+    "blueprint_partition": "**4 V / 28 I**",
+    "mode": "P",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.RESOURCE.PRESENCE_TRINARY",
+    "domain": "4 kinds × absent/null/present for value/min/max",
+    "blueprint_formula": "4×3³ = **108**",
+    "blueprint_partition": "**18 V / 90 I**",
+    "mode": "P",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.RESOURCE.RANGE_ORDER",
+    "domain": "min < max, =, >",
+    "blueprint_formula": "**3**",
+    "blueprint_partition": "**2 V / 1 I**",
+    "mode": "P",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.EXEC_OBS.PRESENCE",
+    "domain": "3 required + 1 optional (error) fields",
+    "blueprint_formula": "2^4 = **16**",
+    "blueprint_partition": "**2 V / 14 I**",
+    "mode": "P",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.RUN_RECORD.PRESENCE",
+    "domain": "14 required + 4 optional",
+    "blueprint_formula": "2^18 = **262,144**",
+    "blueprint_partition": "**16 V / 262,128 I**, presence-only",
+    "mode": "P, symbolic reduction",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.NODE_RECORD.PRESENCE",
+    "domain": "12 required + 8 optional",
+    "blueprint_formula": "2^20 = **1,048,576**",
+    "blueprint_partition": "**256 V / 1,048,320 I**, presence-only",
+    "mode": "P, symbolic reduction",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.RECORD.LINEAGE",
+    "domain": "source, binding, upstream snapshot, errors, resource usage, timing",
+    "blueprint_formula": "∞",
+    "blueprint_partition": "Independently anchored consistency laws",
+    "mode": "P/R",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.LIFECYCLE.PHASES",
+    "domain": "PENDING,READY,RUNNING,TERMINAL × same next phase",
+    "blueprint_formula": "4×4 = **16**",
+    "blueprint_partition": "**5 progression, 4 stutters, 7 non-progression pairs**",
+    "mode": "P/R",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.LIFECYCLE.RESULT",
+    "domain": "four terminal record states × four Result dispositions for EVAL/AGG",
+    "blueprint_formula": "4×4 = **16 per kind**",
+    "blueprint_partition": "**6 compatible / 10 incompatible per kind**",
+    "mode": "P/R",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.LIFECYCLE.REASON",
+    "domain": "declared nonexecution reason enum",
+    "blueprint_formula": "**9**",
+    "blueprint_partition": "Each normatively reachable applicable reason",
+    "mode": "P/R",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.CANCEL.ELIGIBILITY",
+    "domain": "2 cancellation phases × 3 admission outcomes",
+    "blueprint_formula": "2×3 = **6**",
+    "blueprint_partition": "**2 eligible / 4 forbidden**",
+    "mode": "P/R",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.VCP.EXT.REQUIRED",
+    "domain": "required flag × consumer support flag",
+    "blueprint_formula": "2×2 = **4**",
+    "blueprint_partition": "**3 consumable / 1 unsupported**",
+    "mode": "P",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.PROVIDER.FEATURE_FLAGS",
+    "domain": "streaming,cancellation,deadlines,resource_reporting",
+    "blueprint_formula": "2^4 = **16**",
+    "blueprint_partition": "**16 valid flag combinations**",
+    "mode": "P/R selective",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.PROVIDER.VCP_COMPAT",
+    "domain": "capability declares VCP × manifest supports version",
+    "blueprint_formula": "2×2 = **4**",
+    "blueprint_partition": "**3 permitted / 1 invalid**",
+    "mode": "P",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.PROVIDER.INIT",
+    "domain": "valid session initialization / fail-and-close",
+    "blueprint_formula": "**2 branches**",
+    "blueprint_partition": "Version selection/preferences also unbounded",
+    "mode": "P/R",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.PROVIDER.INVOKE.DEADLINE",
+    "domain": "deadline feature flag × deadline supplied",
+    "blueprint_formula": "2×2 = **4**",
+    "blueprint_partition": "**3 permitted / 1 forbidden**",
+    "mode": "P",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.PROVIDER.INVOKE.BUDGET",
+    "domain": "budget present × VCP enabled",
+    "blueprint_formula": "2×2 = **4**",
+    "blueprint_partition": "**3 permitted / 1 forbidden**",
+    "mode": "P",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.PROVIDER.OUTCOME.SHAPE",
+    "domain": "4 terminal states × output presence × error presence",
+    "blueprint_formula": "4×2×2 = **16**",
+    "blueprint_partition": "**4 V / 12 I**",
+    "mode": "P/R",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.PROVIDER.OUTCOME.USAGE",
+    "domain": "usage present × 4 states × resource flag × VCP enabled",
+    "blueprint_formula": "2×4×2×2 = **32**",
+    "blueprint_partition": "**20 permitted / 12 forbidden**",
+    "mode": "P",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.PROVIDER.EVENT.ELIGIBILITY",
+    "domain": "6 event kinds × stream flag × resource flag × VCP enabled",
+    "blueprint_formula": "6×2×2×2 = **48**",
+    "blueprint_partition": "**17 permitted / 31 forbidden**",
+    "mode": "P/R valid only",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.PROVIDER.EVENT.SEQUENCE",
+    "domain": "valid strictly increasing positive sequence, gaps allowed",
+    "blueprint_formula": "1…2^53−1",
+    "blueprint_partition": "Symbolic invariant, bound/overflow tests",
+    "mode": "P/R",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.PROVIDER.ATTEMPT.TRANSITION",
+    "domain": "4 correlation classes × 4 actions",
+    "blueprint_formula": "4×4 = **16**",
+    "blueprint_partition": "**5 conditionally permitted / 11 forbidden**",
+    "mode": "P/R valid only",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.PROVIDER.CANCEL.ELIGIBILITY",
+    "domain": "4 correlation classes × cancellation feature bit",
+    "blueprint_formula": "4×2 = **8**",
+    "blueprint_partition": "**3 permitted / 5 forbidden**",
+    "mode": "P/R",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.PROVIDER.DEADLINE.RACE",
+    "domain": "4 terminal outcomes × requested-cancel bit × deadline phase {absent,unexpired,expired}",
+    "blueprint_formula": "4×2×3 = **24**",
+    "blueprint_partition": "**12 eligible / 12 forbidden**, given accepted constraints",
+    "mode": "P/R",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.PROVIDER.TRANSPORT.METHOD",
+    "domain": "initialize,invoke,cancel,event",
+    "blueprint_formula": "**4**",
+    "blueprint_partition": "3 RPC request methods, 1 notification",
+    "mode": "X",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.ERROR.NAMES",
+    "domain": "VCP 33 + Provider 8 + Relay 10 declared named codes",
+    "blueprint_formula": "**51 identifiers**",
+    "blueprint_partition": "Error-source and layer-specific guards; do not cross product blindly",
+    "mode": "P/R",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.RELAY.PORTS",
+    "domain": "Catalog,Binder,Driver,Transport,Store,Observer",
+    "blueprint_formula": "**6 ports / 7 public methods**",
+    "blueprint_partition": "Full legal signature/return behavior, unspecified custom-failure space separately noted",
+    "mode": "P/R",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.RELAY.SCHEDULER",
+    "domain": "four logical VCP phases and Relay wave/barrier rules",
+    "blueprint_formula": "**4 phases; event alphabet unspecified**",
+    "blueprint_partition": "Derive a local model with explicit bounds; no invented normative total",
+    "mode": "P/R",
+    "status": "MISSING"
+  },
+  {
+    "family": "V4.RELAY.ENTRYPOINT",
+    "domain": "every *actually shipped* Python/CLI/MCP/HTTP interface",
+    "blueprint_formula": "up to **4 surface classes**",
+    "blueprint_partition": "Discover supported operations; do not assume parity",
+    "mode": "X",
+    "status": "MISSING"
+  }
+]

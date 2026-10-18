@@ -1,0 +1,26 @@
+{
+  "integration.http.health": {
+    "entrypoint": "http",
+    "variant": "health"
+  },
+  "integration.http.pass": {
+    "entrypoint": "http",
+    "variant": "pass"
+  },
+  "integration.http.fail": {
+    "entrypoint": "http",
+    "variant": "fail"
+  },
+  "integration.http.bad_token": {
+    "entrypoint": "http",
+    "variant": "bad_token"
+  },
+  "integration.http.oversized": {
+    "entrypoint": "http",
+    "variant": "oversized"
+  },
+  "integration.http.unknown_graph": {
+    "entrypoint": "http",
+    "variant": "unknown_graph"
+  }
+}

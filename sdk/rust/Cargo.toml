@@ -1,0 +1,20 @@
+[package]
+name = "openverify"
+version = "0.1.0"
+edition = "2024"
+description = "OpenVerify DRAFT VCP and Provider Contract wire SDK"
+license = "MIT"
+repository = "https://github.com/openverifyproject/openverify"
+readme = "README.md"
+include = ["src/**", "schemas/**", "LICENSE", "README.md", "Cargo.toml"]
+
+[lib]
+name = "openverify_sdk"
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = { version = "1.0", features = ["arbitrary_precision"] }
+jsonschema = { version = "0.59.0", default-features = false }
+
+[dev-dependencies]
+serde_json = { version = "1.0", features = ["arbitrary_precision"] }

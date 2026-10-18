@@ -1,0 +1,22 @@
+[
+  {
+    "id": "store.get_boundary",
+    "status": "unsupported",
+    "reason": "Relay.run never invokes get; get errors/invalid values are host port-contract obligations, not Relay rejection guarantees"
+  },
+  {
+    "id": "void_port_returns",
+    "status": "ambiguous",
+    "reason": "Annotations require None, but no runtime rejection rule is declared for put/observe return values. Assert no semantic effect, not a fabricated error code"
+  },
+  {
+    "id": "malicious_store_mutation",
+    "status": "ambiguous",
+    "reason": "No declared trust/isolation rule for a custom put mutating its argument. Do not infer one from MemoryStore behavior"
+  },
+  {
+    "id": "sync_callback_cancelled_error",
+    "status": "ambiguous",
+    "reason": "No declared translation rule for a synchronous callback raising asyncio.CancelledError. Test external task cancellation instead"
+  }
+]

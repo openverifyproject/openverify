@@ -1,0 +1,24 @@
+{
+  "id": "vcp.error-missing-axis",
+  "contract": "vcp",
+  "version": "draft",
+  "type": "result",
+  "operation": "parse",
+  "input": {
+    "protocol": "draft",
+    "disposition": "EXECUTED",
+    "execution_outcome": "ERROR"
+  },
+  "expected": {
+    "accepted": true,
+    "normalized": {
+      "protocol": "draft",
+      "disposition": "EXECUTED",
+      "execution_outcome": "ERROR"
+    }
+  },
+  "features": [
+    "standalone",
+    "result"
+  ]
+}

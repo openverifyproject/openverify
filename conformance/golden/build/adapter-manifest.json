@@ -1,0 +1,87 @@
+{
+  "suite_version": "0.1.0",
+  "freeze_commit": "33b511c",
+  "adapter_commit": "300de76",
+  "sut_executed": false,
+  "collection_count": 11943,
+  "operation_counts": {
+    "parse_result": 3375,
+    "parse_raw": 6,
+    "parse_object": 64,
+    "parse_definition": 57,
+    "run": 729,
+    "abstract_scheduler": 30,
+    "metamorphic_run": 32,
+    "reducer_graph": 7289,
+    "policy_run": 12,
+    "provider_trace": 132,
+    "provider_frame": 6,
+    "runtime_experiment": 28,
+    "port_experiment": 36,
+    "provenance_experiment": 26,
+    "mutation_probe": 13,
+    "standard_experiment": 68,
+    "integration_experiment": 35,
+    "blocked": 5
+  },
+  "adapter_source_sha256": {
+    "tests/golden_current/check.py": "48c8e804a879fcf0a210f330e4fd5aebfc5b76ddd63548bc83ed733627ef4031",
+    "tests/golden_current/conftest.py": "d097cc518206314916e3cdd0d4e4e9736bd36a7eab112e337e399d2ab34bb06b",
+    "tests/golden_current/test_adversarial.py": "3dffa9104dc942d6bede55174ade541eb23759d5ebeda4a600fdc5566d2463be",
+    "tests/golden_current/test_concurrency.py": "d832a70000d17ed0566acec4931b7a71a7e5999ea712738b9540dc6233626ce2",
+    "tests/golden_current/test_extensions.py": "0db164cc3258657c0f8276ba719397d3070ef39aa301837bdac73e3d11918add",
+    "tests/golden_current/test_integrations.py": "4b6f967c9b6a19dc5f70c68959b3f227136be6f80084f4cadddaff58ca96aee6",
+    "tests/golden_current/test_provenance.py": "32ef256e1afe9f70b2caac1f7a96dcca05cfb99060efd64e2c55226a29627c73",
+    "tests/golden_current/test_provider_contract.py": "2a9fb2e8e6dbcda05f8a7119d2d43f9d9d04551f8a16aaa300570ca60cdf3ac2",
+    "tests/golden_current/test_relay_graphs.py": "367a4bea83fe3ae10e1a961a9e189aa81826fee095f09c82cdc1ec1d4c714f96",
+    "tests/golden_current/test_vcp.py": "3a66b78ae9e91002406548bc0a40a9f438ad8fde283f77175b280126568f94e9",
+    "tests/golden_current/__init__.py": "65bb0504ca4627ba11c4d6aa37b79ffca7a838f3c77c1c13cb425e3e3c5f057d",
+    "tests/golden_current/adapters/integrations.py": "8e07e2731656359114796be138e38292f7b35665b9b9de16d9cf004c1c7a49ac",
+    "tests/golden_current/adapters/mutations.py": "587a9e85d74b4eb8aab02207ce66207e0f2273d22227e9fb3ff8b94176fe2d64",
+    "tests/golden_current/adapters/ports.py": "06a39d70017d29e7fb3d0135ebf5ed2cc930e71422a72dfd29502129c9c51676",
+    "tests/golden_current/adapters/provenance.py": "798e6af4c8e9d5dd62944f72711823a4e730c472b58ed3033f5bfb62f5846f36",
+    "tests/golden_current/adapters/public.py": "de6283100217813bb22675f04789a33070032f530a7c9870265236a5602fd252",
+    "tests/golden_current/adapters/runtime.py": "e0059b01134ac665e5604b061c9db63dc0ab3962caa6a9158076c1f76a18c48e",
+    "tests/golden_current/adapters/standard.py": "758a3d3dc79e550b95a48e7ec9fbe3d8b1ec007e289c08da0088a8a79d0eb23e",
+    "tests/golden_current/adapters/__init__.py": "156922b4771e610cffee38d1efbd570f5f313fcbfaa248a5ed636939115dda19",
+    "tools/golden/coverage.py": "f552766fbe71ac6c297d7b65a816637414bad67228bf6d62b5efffe40c89aa6e",
+    "tools/golden/execution.py": "92194beee268baf75749320b882fa5519caaee18b31221129a4e7802dc72f3f6",
+    "tools/golden/run_suite.py": "77c2b6c8ed4915cb9109c4957b5a0c43f75d21eddfb57ad2ac9d0920a213f94c",
+    "tools/golden/selfcheck.py": "aaf6f304f15b539261637e4062242bc996bab15cd0d55adac378a3cd230f9d99"
+  },
+  "baseline_checksum_manifest_sha256": "3d04a1054f370c40ae21bdcddcd395cfffb691c5ac0ce59100df2bc4b18f8af7",
+  "golden_manifest_sha256": "2818158da175c898077d8ad40d4b85e338ac10165b930c2758251ffaa4700753",
+  "specification_snapshot_sha256": "ae74454faf9c5c207f24ce5e2174e309f6fc497783754e8c60d3bcd6d2f64139",
+  "environment": {
+    "python": "3.13.5 (main, Jun 12 2025, 12:42:35) [MSC v.1943 64 bit (AMD64)]",
+    "packages": {
+      "jsonschema": "4.26.0",
+      "pytest": "9.1.1",
+      "mcp": "1.30.0",
+      "starlette": "1.8.0",
+      "httpx": "0.28.1",
+      "ruff": "0.17.0",
+      "ast-grep-cli": "0.50.0"
+    },
+    "executable_paths": {
+      "git": "C:\\Program Files\\Git\\cmd\\git.EXE",
+      "ruff": "C:\\Users\\siddh\\OneDrive\\Desktop\\openverify\\.venv\\Scripts\\ruff.EXE",
+      "pytest": "C:\\Users\\siddh\\OneDrive\\Desktop\\openverify\\.venv\\Scripts\\pytest.EXE",
+      "ast-grep": "C:\\Users\\siddh\\OneDrive\\Desktop\\openverify\\.venv\\Scripts\\ast-grep.EXE"
+    }
+  },
+  "external_tools_executed": false,
+  "adapter_gaps": [
+    "standard.scope.changed_spans",
+    "standard.scope.ast_ranges",
+    "standard.scope.zero_deletion",
+    "standard.scope.half_open_boundary"
+  ],
+  "gap_behavior": "ERROR / ADAPTER_UNIMPLEMENTED; never PASS",
+  "read_only_audit_commands": [
+    "python -m tools.golden.verify_manifest",
+    "python tools/golden/run_suite.py --self-check",
+    "python tools/golden/run_suite.py --profile all",
+    "python -m pytest tests/golden_current -q"
+  ]
+}

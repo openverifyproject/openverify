@@ -1,0 +1,30 @@
+{
+  "integration.mcp.tools": {
+    "entrypoint": "mcp",
+    "variant": "tools"
+  },
+  "integration.mcp.list": {
+    "entrypoint": "mcp",
+    "variant": "list"
+  },
+  "integration.mcp.describe": {
+    "entrypoint": "mcp",
+    "variant": "describe"
+  },
+  "integration.mcp.run_pass": {
+    "entrypoint": "mcp",
+    "variant": "run_pass"
+  },
+  "integration.mcp.run_fail": {
+    "entrypoint": "mcp",
+    "variant": "run_fail"
+  },
+  "integration.mcp.inspect": {
+    "entrypoint": "mcp",
+    "variant": "inspect"
+  },
+  "integration.mcp.unauthorized": {
+    "entrypoint": "mcp",
+    "variant": "unauthorized"
+  }
+}

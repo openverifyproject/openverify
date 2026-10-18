@@ -1,0 +1,12 @@
+**/node_modules/
+**/dist/
+**/target/
+**/bin/
+**/obj/
+**/vendor/
+**/.bundle/
+**/packages/
+**/*.gem
+**/*.tgz
+**/*.nupkg
+**/TestResults/

@@ -1,0 +1,37 @@
+{
+  "initial_run": {
+    "executed": 243,
+    "passed": 171,
+    "failed": 72
+  },
+  "fixed_fixture_failures": 24,
+  "case_ids": [
+    "test_snapshot_relation[V4.REVISION.AVAILABILITY.EVALUATE.SUCCESS.RESULT.PASS.BLOCK]",
+    "test_snapshot_relation[V4.REVISION.AVAILABILITY.EVALUATE.SUCCESS.RESULT.PASS.OMIT]",
+    "test_snapshot_relation[V4.REVISION.AVAILABILITY.EVALUATE.SUCCESS.RESULT.PASS.DEFAULT]",
+    "test_snapshot_relation[V4.REVISION.AVAILABILITY.EVALUATE.ERROR.RESULT.PASS.BLOCK]",
+    "test_snapshot_relation[V4.REVISION.AVAILABILITY.EVALUATE.ERROR.RESULT.PASS.OMIT]",
+    "test_snapshot_relation[V4.REVISION.AVAILABILITY.EVALUATE.ERROR.RESULT.PASS.DEFAULT]",
+    "test_snapshot_relation[V4.REVISION.AVAILABILITY.EVALUATE.NONEXECUTED.RESULT.PASS.BLOCK]",
+    "test_snapshot_relation[V4.REVISION.AVAILABILITY.EVALUATE.NONEXECUTED.RESULT.PASS.OMIT]",
+    "test_snapshot_relation[V4.REVISION.AVAILABILITY.EVALUATE.NONEXECUTED.RESULT.PASS.DEFAULT]",
+    "test_snapshot_relation[V4.REVISION.AVAILABILITY.EVALUATE.CANCELLED.RESULT.PASS.BLOCK]",
+    "test_snapshot_relation[V4.REVISION.AVAILABILITY.EVALUATE.CANCELLED.RESULT.PASS.OMIT]",
+    "test_snapshot_relation[V4.REVISION.AVAILABILITY.EVALUATE.CANCELLED.RESULT.PASS.DEFAULT]",
+    "test_snapshot_relation[V4.REVISION.AVAILABILITY.AGGREGATE.SUCCESS.RESULT.PASS.BLOCK]",
+    "test_snapshot_relation[V4.REVISION.AVAILABILITY.AGGREGATE.SUCCESS.RESULT.PASS.OMIT]",
+    "test_snapshot_relation[V4.REVISION.AVAILABILITY.AGGREGATE.SUCCESS.RESULT.PASS.DEFAULT]",
+    "test_snapshot_relation[V4.REVISION.AVAILABILITY.AGGREGATE.ERROR.RESULT.PASS.BLOCK]",
+    "test_snapshot_relation[V4.REVISION.AVAILABILITY.AGGREGATE.ERROR.RESULT.PASS.OMIT]",
+    "test_snapshot_relation[V4.REVISION.AVAILABILITY.AGGREGATE.ERROR.RESULT.PASS.DEFAULT]",
+    "test_snapshot_relation[V4.REVISION.AVAILABILITY.AGGREGATE.NONEXECUTED.RESULT.PASS.BLOCK]",
+    "test_snapshot_relation[V4.REVISION.AVAILABILITY.AGGREGATE.NONEXECUTED.RESULT.PASS.OMIT]",
+    "test_snapshot_relation[V4.REVISION.AVAILABILITY.AGGREGATE.NONEXECUTED.RESULT.PASS.DEFAULT]",
+    "test_snapshot_relation[V4.REVISION.AVAILABILITY.AGGREGATE.CANCELLED.RESULT.PASS.BLOCK]",
+    "test_snapshot_relation[V4.REVISION.AVAILABILITY.AGGREGATE.CANCELLED.RESULT.PASS.OMIT]",
+    "test_snapshot_relation[V4.REVISION.AVAILABILITY.AGGREGATE.CANCELLED.RESULT.PASS.DEFAULT]"
+  ],
+  "cause": "Authored Result fixtures omitted explicit empty evidence/usage. Local typed serialization preserves these collections; independently authored stimuli now explicitly include both. No SUT output was recorded as oracle.",
+  "additional_collection_correction": "Added package __init__ for new relative import. Fixed before final run.",
+  "final_remaining_harness_failures": 0
+}

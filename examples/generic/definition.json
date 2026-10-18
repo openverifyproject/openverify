@@ -30,14 +30,86 @@
       {
         "id": "envelope",
         "kind": "EVALUATE",
-        "executor_ref": "demo.range",
         "config": {
           "key": "temperature",
           "minimum": 18,
           "maximum": 25
-        }
+        },
+        "operation": {
+          "capability_id": "com.example.demo.range",
+          "capability_version": "1"
+        },
+        "inputs": [
+          {
+            "name": "subject",
+            "schema": {
+              "type": "object"
+            },
+            "required": true,
+            "on_unavailable": "BLOCK"
+          },
+          {
+            "name": "criterion",
+            "schema": {
+              "type": "object"
+            },
+            "required": true,
+            "on_unavailable": "BLOCK"
+          },
+          {
+            "name": "temperature",
+            "schema": {
+              "type": "number"
+            },
+            "required": true,
+            "on_unavailable": "BLOCK"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "result",
+            "schema": {
+              "type": "object"
+            },
+            "role": "RESULT"
+          }
+        ],
+        "bindings": {
+          "subject": {
+            "kind": "CONSTANT",
+            "value": {
+              "id": "reading-1",
+              "type": "application/json",
+              "locator": {
+                "sensor": "local-mock"
+              }
+            }
+          },
+          "criterion": {
+            "kind": "CONSTANT",
+            "value": {
+              "id": "temperature-range",
+              "description": "Temperature is within the declared envelope."
+            }
+          },
+          "temperature": {
+            "kind": "RUN_INPUT",
+            "name": "temperature"
+          }
+        },
+        "aggregate_inputs": []
       }
     ],
     "edges": []
-  }
+  },
+  "run_inputs": [
+    {
+      "name": "temperature",
+      "schema": {
+        "type": "number"
+      },
+      "required": true,
+      "on_unavailable": "BLOCK"
+    }
+  ]
 }

@@ -1,0 +1,19 @@
+{
+  "id": "vcp.route-missing",
+  "contract": "vcp",
+  "version": "draft",
+  "type": "decision",
+  "operation": "parse",
+  "input": {
+    "protocol": "draft",
+    "kind": "ROUTE"
+  },
+  "expected": {
+    "accepted": false,
+    "error": "*"
+  },
+  "features": [
+    "standalone",
+    "decision"
+  ]
+}

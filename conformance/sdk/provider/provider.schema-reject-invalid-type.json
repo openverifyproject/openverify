@@ -1,0 +1,19 @@
+{
+  "id": "provider.schema-reject-invalid-type",
+  "contract": "provider",
+  "version": "0.1",
+  "type": "data",
+  "operation": "data",
+  "input": null,
+  "expected": {
+    "accepted": false,
+    "error": "INVALID_PROVIDER_OUTPUT"
+  },
+  "features": [
+    "standalone",
+    "data"
+  ],
+  "schema": {
+    "type": 42
+  }
+}

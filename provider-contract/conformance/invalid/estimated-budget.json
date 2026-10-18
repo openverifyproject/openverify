@@ -1,0 +1,16 @@
+{
+  "invocation_id": "attempt-1",
+  "contract_version": "0.1",
+  "capability_id": "com.example.execution.echo",
+  "capability_version": "1",
+  "input": "hello",
+  "config": {},
+  "vcp_version": "draft",
+  "resource_budget": {
+    "x": {
+      "kind": "ESTIMATED",
+      "unit": "u",
+      "value": 1
+    }
+  }
+}

@@ -1,0 +1,1974 @@
+{
+  "v02.availability.DERIVE.ABSENT.BLOCK": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {
+          "value": false
+        }
+      },
+      "n": {
+        "state": "NONEXECUTED",
+        "reason": "INPUT_UNAVAILABLE",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "INPUT_UNAVAILABLE"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      }
+    }
+  },
+  "v02.availability.DERIVE.PRODUCER_ERROR.BLOCK": {
+    "nodes": {
+      "p": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      },
+      "n": {
+        "state": "NONEXECUTED",
+        "reason": "INPUT_UNAVAILABLE",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "INPUT_UNAVAILABLE"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      }
+    }
+  },
+  "v02.availability.DERIVE.PRODUCER_NOT_EXECUTED.BLOCK": {
+    "nodes": {
+      "p": {
+        "state": "NONEXECUTED",
+        "reason": "GUARD_FALSE",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "GUARD_FALSE"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      },
+      "n": {
+        "state": "NONEXECUTED",
+        "reason": "INPUT_UNAVAILABLE",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "INPUT_UNAVAILABLE"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      },
+      "anchor": {
+        "state": "SUCCESS",
+        "information": {
+          "value": "anchor"
+        }
+      }
+    }
+  },
+  "v02.availability.DERIVE.OUTPUT_MISSING.BLOCK": {
+    "nodes": {
+      "p": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      },
+      "n": {
+        "state": "NONEXECUTED",
+        "reason": "INPUT_UNAVAILABLE",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "INPUT_UNAVAILABLE"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      }
+    }
+  },
+  "v02.availability.DERIVE.INVALID.BLOCK": {
+    "nodes": {
+      "p": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      },
+      "n": {
+        "state": "NONEXECUTED",
+        "reason": "INPUT_UNAVAILABLE",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "INPUT_UNAVAILABLE"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      }
+    }
+  },
+  "v02.availability.DERIVE.AVAILABLE.BLOCK": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {
+          "value": false
+        }
+      },
+      "n": {
+        "state": "SUCCESS",
+        "information": {
+          "value": false
+        }
+      }
+    }
+  },
+  "v02.availability.DERIVE.ABSENT.OMIT": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {
+          "value": false
+        }
+      },
+      "n": {
+        "state": "SUCCESS",
+        "information": {
+          "value": false
+        }
+      }
+    }
+  },
+  "v02.availability.DERIVE.PRODUCER_ERROR.OMIT": {
+    "nodes": {
+      "p": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      },
+      "n": {
+        "state": "SUCCESS",
+        "information": {
+          "value": false
+        }
+      }
+    }
+  },
+  "v02.availability.DERIVE.PRODUCER_NOT_EXECUTED.OMIT": {
+    "nodes": {
+      "p": {
+        "state": "NONEXECUTED",
+        "reason": "GUARD_FALSE",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "GUARD_FALSE"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      },
+      "n": {
+        "state": "SUCCESS",
+        "information": {
+          "value": false
+        }
+      },
+      "anchor": {
+        "state": "SUCCESS",
+        "information": {
+          "value": "anchor"
+        }
+      }
+    }
+  },
+  "v02.availability.DERIVE.OUTPUT_MISSING.OMIT": {
+    "nodes": {
+      "p": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      },
+      "n": {
+        "state": "SUCCESS",
+        "information": {
+          "value": false
+        }
+      }
+    }
+  },
+  "v02.availability.DERIVE.INVALID.OMIT": {
+    "nodes": {
+      "p": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      },
+      "n": {
+        "state": "SUCCESS",
+        "information": {
+          "value": false
+        }
+      }
+    }
+  },
+  "v02.availability.DERIVE.AVAILABLE.OMIT": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {
+          "value": false
+        }
+      },
+      "n": {
+        "state": "SUCCESS",
+        "information": {
+          "value": false
+        }
+      }
+    }
+  },
+  "v02.availability.DERIVE.ABSENT.DEFAULT": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {
+          "value": false
+        }
+      },
+      "n": {
+        "state": "SUCCESS",
+        "information": {
+          "value": false
+        }
+      }
+    }
+  },
+  "v02.availability.DERIVE.PRODUCER_ERROR.DEFAULT": {
+    "nodes": {
+      "p": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      },
+      "n": {
+        "state": "SUCCESS",
+        "information": {
+          "value": false
+        }
+      }
+    }
+  },
+  "v02.availability.DERIVE.PRODUCER_NOT_EXECUTED.DEFAULT": {
+    "nodes": {
+      "p": {
+        "state": "NONEXECUTED",
+        "reason": "GUARD_FALSE",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "GUARD_FALSE"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      },
+      "n": {
+        "state": "SUCCESS",
+        "information": {
+          "value": false
+        }
+      },
+      "anchor": {
+        "state": "SUCCESS",
+        "information": {
+          "value": "anchor"
+        }
+      }
+    }
+  },
+  "v02.availability.DERIVE.OUTPUT_MISSING.DEFAULT": {
+    "nodes": {
+      "p": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      },
+      "n": {
+        "state": "SUCCESS",
+        "information": {
+          "value": false
+        }
+      }
+    }
+  },
+  "v02.availability.DERIVE.INVALID.DEFAULT": {
+    "nodes": {
+      "p": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      },
+      "n": {
+        "state": "SUCCESS",
+        "information": {
+          "value": false
+        }
+      }
+    }
+  },
+  "v02.availability.DERIVE.AVAILABLE.DEFAULT": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {
+          "value": false
+        }
+      },
+      "n": {
+        "state": "SUCCESS",
+        "information": {
+          "value": false
+        }
+      }
+    }
+  },
+  "v02.availability.EVALUATE.ABSENT.BLOCK": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {
+          "value": false
+        }
+      },
+      "n": {
+        "state": "NONEXECUTED",
+        "reason": "INPUT_UNAVAILABLE",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "INPUT_UNAVAILABLE"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      }
+    }
+  },
+  "v02.availability.EVALUATE.PRODUCER_ERROR.BLOCK": {
+    "nodes": {
+      "p": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      },
+      "n": {
+        "state": "NONEXECUTED",
+        "reason": "INPUT_UNAVAILABLE",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "INPUT_UNAVAILABLE"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      }
+    }
+  },
+  "v02.availability.EVALUATE.PRODUCER_NOT_EXECUTED.BLOCK": {
+    "nodes": {
+      "p": {
+        "state": "NONEXECUTED",
+        "reason": "GUARD_FALSE",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "GUARD_FALSE"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      },
+      "n": {
+        "state": "NONEXECUTED",
+        "reason": "INPUT_UNAVAILABLE",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "INPUT_UNAVAILABLE"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      },
+      "anchor": {
+        "state": "SUCCESS",
+        "information": {
+          "value": "anchor"
+        }
+      }
+    }
+  },
+  "v02.availability.EVALUATE.OUTPUT_MISSING.BLOCK": {
+    "nodes": {
+      "p": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      },
+      "n": {
+        "state": "NONEXECUTED",
+        "reason": "INPUT_UNAVAILABLE",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "INPUT_UNAVAILABLE"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      }
+    }
+  },
+  "v02.availability.EVALUATE.INVALID.BLOCK": {
+    "nodes": {
+      "p": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      },
+      "n": {
+        "state": "NONEXECUTED",
+        "reason": "INPUT_UNAVAILABLE",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "INPUT_UNAVAILABLE"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      }
+    }
+  },
+  "v02.availability.EVALUATE.AVAILABLE.BLOCK": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {
+          "value": false
+        }
+      },
+      "n": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "v02.availability.EVALUATE.ABSENT.OMIT": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {
+          "value": false
+        }
+      },
+      "n": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "v02.availability.EVALUATE.PRODUCER_ERROR.OMIT": {
+    "nodes": {
+      "p": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      },
+      "n": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "v02.availability.EVALUATE.PRODUCER_NOT_EXECUTED.OMIT": {
+    "nodes": {
+      "p": {
+        "state": "NONEXECUTED",
+        "reason": "GUARD_FALSE",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "GUARD_FALSE"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      },
+      "n": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "anchor": {
+        "state": "SUCCESS",
+        "information": {
+          "value": "anchor"
+        }
+      }
+    }
+  },
+  "v02.availability.EVALUATE.OUTPUT_MISSING.OMIT": {
+    "nodes": {
+      "p": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      },
+      "n": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "v02.availability.EVALUATE.INVALID.OMIT": {
+    "nodes": {
+      "p": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      },
+      "n": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "v02.availability.EVALUATE.AVAILABLE.OMIT": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {
+          "value": false
+        }
+      },
+      "n": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "v02.availability.EVALUATE.ABSENT.DEFAULT": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {
+          "value": false
+        }
+      },
+      "n": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "v02.availability.EVALUATE.PRODUCER_ERROR.DEFAULT": {
+    "nodes": {
+      "p": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      },
+      "n": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "v02.availability.EVALUATE.PRODUCER_NOT_EXECUTED.DEFAULT": {
+    "nodes": {
+      "p": {
+        "state": "NONEXECUTED",
+        "reason": "GUARD_FALSE",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "GUARD_FALSE"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      },
+      "n": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "anchor": {
+        "state": "SUCCESS",
+        "information": {
+          "value": "anchor"
+        }
+      }
+    }
+  },
+  "v02.availability.EVALUATE.OUTPUT_MISSING.DEFAULT": {
+    "nodes": {
+      "p": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      },
+      "n": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "v02.availability.EVALUATE.INVALID.DEFAULT": {
+    "nodes": {
+      "p": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      },
+      "n": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "v02.availability.EVALUATE.AVAILABLE.DEFAULT": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {
+          "value": false
+        }
+      },
+      "n": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "v02.availability.AGGREGATE.ABSENT.BLOCK": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "n": {
+        "state": "NONEXECUTED",
+        "reason": "INPUT_UNAVAILABLE",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "INPUT_UNAVAILABLE"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      }
+    }
+  },
+  "v02.availability.AGGREGATE.PRODUCER_ERROR.BLOCK": {
+    "nodes": {
+      "p": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      },
+      "n": {
+        "state": "NONEXECUTED",
+        "reason": "INPUT_UNAVAILABLE",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "INPUT_UNAVAILABLE"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      }
+    }
+  },
+  "v02.availability.AGGREGATE.PRODUCER_NOT_EXECUTED.BLOCK": {
+    "nodes": {
+      "p": {
+        "state": "NONEXECUTED",
+        "reason": "GUARD_FALSE",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "GUARD_FALSE"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      },
+      "n": {
+        "state": "NONEXECUTED",
+        "reason": "INPUT_UNAVAILABLE",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "INPUT_UNAVAILABLE"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      },
+      "anchor": {
+        "state": "SUCCESS",
+        "information": {
+          "value": "anchor"
+        }
+      }
+    }
+  },
+  "v02.availability.AGGREGATE.OUTPUT_MISSING.BLOCK": {
+    "nodes": {
+      "p": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      },
+      "n": {
+        "state": "NONEXECUTED",
+        "reason": "INPUT_UNAVAILABLE",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "INPUT_UNAVAILABLE"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      }
+    }
+  },
+  "v02.availability.AGGREGATE.INVALID.BLOCK": {
+    "nodes": {
+      "p": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      },
+      "n": {
+        "state": "NONEXECUTED",
+        "reason": "INPUT_UNAVAILABLE",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "INPUT_UNAVAILABLE"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      }
+    }
+  },
+  "v02.availability.AGGREGATE.AVAILABLE.BLOCK": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {
+          "value": false
+        },
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "n": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "v02.availability.AGGREGATE.ABSENT.OMIT": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "n": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "v02.availability.AGGREGATE.PRODUCER_ERROR.OMIT": {
+    "nodes": {
+      "p": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      },
+      "n": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "v02.availability.AGGREGATE.PRODUCER_NOT_EXECUTED.OMIT": {
+    "nodes": {
+      "p": {
+        "state": "NONEXECUTED",
+        "reason": "GUARD_FALSE",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "GUARD_FALSE"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      },
+      "n": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "anchor": {
+        "state": "SUCCESS",
+        "information": {
+          "value": "anchor"
+        }
+      }
+    }
+  },
+  "v02.availability.AGGREGATE.OUTPUT_MISSING.OMIT": {
+    "nodes": {
+      "p": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      },
+      "n": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "v02.availability.AGGREGATE.INVALID.OMIT": {
+    "nodes": {
+      "p": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      },
+      "n": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "v02.availability.AGGREGATE.AVAILABLE.OMIT": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {
+          "value": false
+        },
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "n": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "v02.availability.AGGREGATE.ABSENT.DEFAULT": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "n": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "v02.availability.AGGREGATE.PRODUCER_ERROR.DEFAULT": {
+    "nodes": {
+      "p": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      },
+      "n": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "v02.availability.AGGREGATE.PRODUCER_NOT_EXECUTED.DEFAULT": {
+    "nodes": {
+      "p": {
+        "state": "NONEXECUTED",
+        "reason": "GUARD_FALSE",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "GUARD_FALSE"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      },
+      "n": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "anchor": {
+        "state": "SUCCESS",
+        "information": {
+          "value": "anchor"
+        }
+      }
+    }
+  },
+  "v02.availability.AGGREGATE.OUTPUT_MISSING.DEFAULT": {
+    "nodes": {
+      "p": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      },
+      "n": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "v02.availability.AGGREGATE.INVALID.DEFAULT": {
+    "nodes": {
+      "p": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      },
+      "n": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "v02.availability.AGGREGATE.AVAILABLE.DEFAULT": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {
+          "value": false
+        },
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      },
+      "n": {
+        "state": "SUCCESS",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "SUCCESS",
+          "applicability": "APPLICABLE",
+          "determination": "KNOWN",
+          "verdict": "PASS"
+        }
+      }
+    }
+  },
+  "v02.availability.CONTROL.ABSENT.BLOCK": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {
+          "value": false
+        }
+      },
+      "n": {
+        "state": "NONEXECUTED",
+        "reason": "INPUT_UNAVAILABLE",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "INPUT_UNAVAILABLE"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      }
+    }
+  },
+  "v02.availability.CONTROL.PRODUCER_ERROR.BLOCK": {
+    "nodes": {
+      "p": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      },
+      "n": {
+        "state": "NONEXECUTED",
+        "reason": "INPUT_UNAVAILABLE",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "INPUT_UNAVAILABLE"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      }
+    }
+  },
+  "v02.availability.CONTROL.PRODUCER_NOT_EXECUTED.BLOCK": {
+    "nodes": {
+      "p": {
+        "state": "NONEXECUTED",
+        "reason": "GUARD_FALSE",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "GUARD_FALSE"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      },
+      "n": {
+        "state": "NONEXECUTED",
+        "reason": "INPUT_UNAVAILABLE",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "INPUT_UNAVAILABLE"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      },
+      "anchor": {
+        "state": "SUCCESS",
+        "information": {
+          "value": "anchor"
+        }
+      }
+    }
+  },
+  "v02.availability.CONTROL.OUTPUT_MISSING.BLOCK": {
+    "nodes": {
+      "p": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      },
+      "n": {
+        "state": "NONEXECUTED",
+        "reason": "INPUT_UNAVAILABLE",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "INPUT_UNAVAILABLE"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      }
+    }
+  },
+  "v02.availability.CONTROL.INVALID.BLOCK": {
+    "nodes": {
+      "p": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      },
+      "n": {
+        "state": "NONEXECUTED",
+        "reason": "INPUT_UNAVAILABLE",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "INPUT_UNAVAILABLE"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      }
+    }
+  },
+  "v02.availability.CONTROL.AVAILABLE.BLOCK": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {
+          "value": false
+        }
+      },
+      "n": {
+        "state": "SUCCESS",
+        "information": {},
+        "decision": {
+          "protocol": "draft",
+          "kind": "CONTINUE"
+        }
+      }
+    }
+  },
+  "v02.availability.CONTROL.ABSENT.OMIT": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {
+          "value": false
+        }
+      },
+      "n": {
+        "state": "SUCCESS",
+        "information": {},
+        "decision": {
+          "protocol": "draft",
+          "kind": "CONTINUE"
+        }
+      }
+    }
+  },
+  "v02.availability.CONTROL.PRODUCER_ERROR.OMIT": {
+    "nodes": {
+      "p": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      },
+      "n": {
+        "state": "SUCCESS",
+        "information": {},
+        "decision": {
+          "protocol": "draft",
+          "kind": "CONTINUE"
+        }
+      }
+    }
+  },
+  "v02.availability.CONTROL.PRODUCER_NOT_EXECUTED.OMIT": {
+    "nodes": {
+      "p": {
+        "state": "NONEXECUTED",
+        "reason": "GUARD_FALSE",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "GUARD_FALSE"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      },
+      "n": {
+        "state": "SUCCESS",
+        "information": {},
+        "decision": {
+          "protocol": "draft",
+          "kind": "CONTINUE"
+        }
+      },
+      "anchor": {
+        "state": "SUCCESS",
+        "information": {
+          "value": "anchor"
+        }
+      }
+    }
+  },
+  "v02.availability.CONTROL.OUTPUT_MISSING.OMIT": {
+    "nodes": {
+      "p": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      },
+      "n": {
+        "state": "SUCCESS",
+        "information": {},
+        "decision": {
+          "protocol": "draft",
+          "kind": "CONTINUE"
+        }
+      }
+    }
+  },
+  "v02.availability.CONTROL.INVALID.OMIT": {
+    "nodes": {
+      "p": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      },
+      "n": {
+        "state": "SUCCESS",
+        "information": {},
+        "decision": {
+          "protocol": "draft",
+          "kind": "CONTINUE"
+        }
+      }
+    }
+  },
+  "v02.availability.CONTROL.AVAILABLE.OMIT": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {
+          "value": false
+        }
+      },
+      "n": {
+        "state": "SUCCESS",
+        "information": {},
+        "decision": {
+          "protocol": "draft",
+          "kind": "CONTINUE"
+        }
+      }
+    }
+  },
+  "v02.availability.CONTROL.ABSENT.DEFAULT": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {
+          "value": false
+        }
+      },
+      "n": {
+        "state": "SUCCESS",
+        "information": {},
+        "decision": {
+          "protocol": "draft",
+          "kind": "CONTINUE"
+        }
+      }
+    }
+  },
+  "v02.availability.CONTROL.PRODUCER_ERROR.DEFAULT": {
+    "nodes": {
+      "p": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      },
+      "n": {
+        "state": "SUCCESS",
+        "information": {},
+        "decision": {
+          "protocol": "draft",
+          "kind": "CONTINUE"
+        }
+      }
+    }
+  },
+  "v02.availability.CONTROL.PRODUCER_NOT_EXECUTED.DEFAULT": {
+    "nodes": {
+      "p": {
+        "state": "NONEXECUTED",
+        "reason": "GUARD_FALSE",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "SKIPPED",
+          "output": {
+            "reason": "GUARD_FALSE"
+          }
+        },
+        "absent": [
+          "provider_binding",
+          "executor_ref",
+          "executor_version",
+          "observation",
+          "decision"
+        ]
+      },
+      "n": {
+        "state": "SUCCESS",
+        "information": {},
+        "decision": {
+          "protocol": "draft",
+          "kind": "CONTINUE"
+        }
+      },
+      "anchor": {
+        "state": "SUCCESS",
+        "information": {
+          "value": "anchor"
+        }
+      }
+    }
+  },
+  "v02.availability.CONTROL.OUTPUT_MISSING.DEFAULT": {
+    "nodes": {
+      "p": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      },
+      "n": {
+        "state": "SUCCESS",
+        "information": {},
+        "decision": {
+          "protocol": "draft",
+          "kind": "CONTINUE"
+        }
+      }
+    }
+  },
+  "v02.availability.CONTROL.INVALID.DEFAULT": {
+    "nodes": {
+      "p": {
+        "state": "ERROR",
+        "information": {},
+        "result": {
+          "protocol": "draft",
+          "disposition": "EXECUTED",
+          "execution_outcome": "ERROR"
+        }
+      },
+      "n": {
+        "state": "SUCCESS",
+        "information": {},
+        "decision": {
+          "protocol": "draft",
+          "kind": "CONTINUE"
+        }
+      }
+    }
+  },
+  "v02.availability.CONTROL.AVAILABLE.DEFAULT": {
+    "nodes": {
+      "p": {
+        "state": "SUCCESS",
+        "information": {
+          "value": false
+        }
+      },
+      "n": {
+        "state": "SUCCESS",
+        "information": {},
+        "decision": {
+          "protocol": "draft",
+          "kind": "CONTINUE"
+        }
+      }
+    }
+  }
+}

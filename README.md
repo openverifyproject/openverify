@@ -7,6 +7,29 @@ preserving provenance across runs.
 **Protocol status: DRAFT. Implementation: 0.1.0.** JSON is the only implemented
 normative wire format. The package name is not part of protocol meaning.
 
+## Run verification with Relay
+
+OpenVerify now includes **Relay v0.1**, an independent provider-driven asyncio
+runtime. Use the same typed VCP graphs for code, documents, arbitrary JSON,
+application guardrails, agents, CLI, MCP, or a Python harness.
+
+```sh
+python -m pip install .
+openverify run text --inputs examples/first-run/fail.json --json
+openverify run text --inputs examples/first-run/pass.json --json
+python -m pip install '.[code,mcp,http]'
+python examples/code-verification/run.py
+openverify mcp
+```
+
+The text commands demonstrate FAIL (exit 1) then PASS (exit 0). Install this
+checkout; this task does not publish a package. Python 3.13 is required.
+[Five-minute quickstart](docs/relay/quickstart.md) ?
+[Graph authoring](docs/relay/graph-authoring.md) ?
+[Providers](docs/relay/providers.md) ? [Integrations](docs/relay/integration.md) ?
+[Architecture](docs/relay/architecture.md) ? [Security](docs/relay/security.md) ?
+[Limitations](docs/relay/limitations.md).
+
 ## Why it exists
 
 Different domains already have excellent specialized mechanisms: regex, scripts,
@@ -107,10 +130,9 @@ a document. The host owns those actions and the underlying mechanisms.
 
 **Meaning:** Subject identifies what is examined; Criterion identifies the property
 to establish. A definition includes id/version, subject reference, criterion metadata,
-judgment schema, graph, and execution policy. Criterion metadata is descriptive;
-trusted adapters execute it. There is no criterion expression language.
+judgment schema, graph, and execution policy. Every evaluator explicitly binds the definition subject and criterion; trusted implementations must honor these semantic inputs. There is no criterion expression language.
 
-**Knowledge:** Context is available structured information. ArtifactRef identifies
+**Knowledge:** Typed run inputs, constants, explicit external references and upstream outputs supply semantic information. Context is optional ambient nonsemantic metadata. ArtifactRef identifies
 content without requiring its bytes or automatically fetching it. Evidence records
 messages, references, opaque locators, or structured observations. A locator can
 address prose, image regions, sensor events, or database rows; fundamental Evidence
@@ -129,17 +151,18 @@ are recognized as unsupported draft features. Independent nodes execute sequenti
 in definition order when ready in the reference engine.
 
 **Activation:** Trigger asks whether an event makes verification eligible. Trigger
-capabilities are extensible. The engine implements MANUAL host invocation; it has
-no periodic scheduler.
+capabilities are extensible. The engine implements MANUAL host invocation and
+registered custom policy operations with explicit typed inputs. It has no periodic
+scheduler.
 
 **Selection:** Scope asks which subjects from a candidate universe are included.
-This remains distinct from criterion. The engine implements EXPLICIT selection of
-the definition's single subject. Changed/impacted/predicate-selected sets need other
-host capabilities; they are not code-specific core concepts.
+This remains distinct from criterion. EXPLICIT selects the definition's single
+subject; custom policies select that exact subject or an empty set using explicit
+typed inputs. General subject-universe execution is not implemented.
 
 **Admission:** Run policy asks whether an eligible selected opportunity should spend
-resources now: RUN, SKIP, or DEFER. Percentage sampling belongs here. ALWAYS and
-PROBABILITY are implemented; probability requires `0 <= p <= 1` and a host-supplied
+resources now: RUN, SKIP, or DEFER. Percentage sampling belongs here. Custom typed
+policies and ALWAYS/PROBABILITY are implemented. Probability requires `0 <= p <= 1` and a host-supplied
 opportunity id. Reference sampling is deterministic for the same definition
 fingerprint, subject, and opportunity; its bucket identity is not portable.
 Maximum staleness and its interaction with sampling/history remain OPEN.
@@ -160,8 +183,11 @@ Decision controls execution and is distinct from judgment. A human is an evaluat
 not a special Result type.
 
 **History / Provenance:** RunRecord retains the definition snapshot and identity,
-subject, initial/node input contexts, executor references and versions when known,
-upstream Results, outputs, evidence, usage, admission reason, and timing. Lineage
+subject, initial run inputs, exact per-port resolutions and source identities,
+executor references and versions when known, upstream Results, observed/accepted
+outputs, evidence, usage, ordered policy evaluations, lifecycle reason codes,
+cancellation events, and timing. Validation detects inconsistent snapshots along
+declared dataflow edges without rerunning implementations. Lineage
 does not prescribe a backend. The engine returns JSON-serializable records; memory
 and local JSONL stores are supplied. Cache equivalence, coverage/backfill scheduling,
 clock trust, and full replay are not implemented.
@@ -195,7 +221,7 @@ DECISION, so the three fundamental computation types are exhaustive by output ty
 ```text
 DERIVE     information          -> information
 EVALUATE   information/results  -> judgment
-CONTROL    context/results      -> workflow decision
+CONTROL    explicit bound inputs -> workflow decision
 
 Aggregate: Results[] -> Result
 Aggregate is a specialized Evaluate.
@@ -205,6 +231,25 @@ An operation with multiple output kinds can be decomposed. Enumerating executor
 technologies or reducers would not establish exhaustiveness.
 
 ## Protocol, SDK, and reference engine
+
+```text
+OpenVerify
+  +-- VCP                 verification semantics
+  +-- Provider Contract   runner/provider interoperability (DRAFT "0.1")
+  +-- Python SDK          types + parsing + validation
+  +-- Reference Engine    current small reference VCP executor
+```
+
+The [Provider Contract](provider-contract/README.md) sits below VCP and lets any
+compatible runner invoke independently implemented capabilities. OpenVerify Relay
+is the implemented provider-driven asyncio runtime built on that contract, with
+explicit trusted provider discovery, deterministic binding, local Python/stdio
+transports, and CLI/MCP/HTTP entrypoints. The Engine uses a small local registry of exact capability ID/version implementations, with no discovery or provider transport runtime.
+Hosts can also supply explicit graph-node `BoundProvider` values through
+`Engine(registry, provider_bindings=...)`. The engine checks manifest compatibility
+and declared input/config/output contracts, and records the exact concrete binding
+in occurrence provenance. An empty supplied mapping requires bindings and chooses
+no provider. See [provider binding](spec/draft/provider-binding.md).
 
 ```text
 PROTOCOL: prose semantics + normative JSON schemas + conformance fixtures
@@ -246,42 +291,48 @@ are rejected. Models are frozen at the attribute level; nested containers remain
 mutable, so validation and engine snapshots guard interchange boundaries.
 
 Public functions: `parse_definition`, `parse_result`, `parse_run_record`,
-`validate_definition`, `validate_result`, `load_schema`, `inspect_definition`,
+`validate_definition` / `validate_executable_definition`, `validate_result`, `load_schema`, `inspect_definition`,
 `serialize`, `fingerprint`, and `flattened_status`. Lower-level `parse_object` and
 `validate_wire` cover other wire objects. Constructed models are convenient typed
 values; validate before interchange. `fingerprint` returns a **reference-only,
 non-portable** `local-sha256:` identity, not canonical signing bytes.
 
-The engine executes registered Derive/Evaluate/Control adapters and ALL, ANY,
-MAJORITY, MIN_SCORE, MAX_SCORE, AVERAGE, WORST_SEVERITY graph reducers. The direct
-reducer API also supports WEIGHTED_AVERAGE with explicit ordered Results and
-positional weights. Standard weighted graph nodes are GRAPH_UNSUPPORTED while
-graph input membership/order and weight identity remain OPEN.
+Every executable node declares an operation requirement, typed input/output ports,
+and explicit bindings. [Typed executable dataflow](spec/draft/dataflow.md) specifies
+the four ValueSource variants, availability, subject/criterion binding, provider
+boundary, and provenance. Execution dependency != data binding: edges transfer no
+values. Providers never guess required portable input.
+
+The engine executes registered Derive/Evaluate/Control and custom Aggregate
+implementations and all eight standard reducers, including WEIGHTED_AVERAGE.
+Graph reducers declare ordered aggregate_inputs and a constant-bound members input;
+weights map stable member names to values. The direct ordered reducer API retains
+aligned positional weights. Derive outputs never mutate global Context.
 Every reducer invocation requires explicit REJECT/IGNORE handling for exceptional
 and missing inputs. Empty retained input and majority ties are rejected; UNKNOWN
 is never silently 0.5 or ERROR silently zero. There is no synthesized overall verdict
 without an aggregation node. Reference numeric scores/measurements use binary64;
 means use exact rational intermediate arithmetic and one final rounding.
-Provenance comparisons distinguish JSON booleans from numbers. Admission SKIP
-requires every node Result to be SKIPPED. Integral severity ranks such as 1.0
+Provenance comparisons distinguish JSON booleans from numbers. Admission SKIP requires every node Result to be SKIPPED/ADMISSION_SKIP;
+admission DEFER requires DEFERRED/ADMISSION_DEFER. Integral severity ranks such as 1.0
 normalize to SDK integers; UTC timestamps accept Z and +00:00.
 
-Equality guards inspect source Result axes or Decision kind/destination. ROUTE
-checks a graph destination and selects through explicit guards. Stops record remaining
-nodes as SKIPPED. RETRY/DEFER serialize and stop a local run without scheduling
-another. Adapter failures become ERROR Results; downstream behavior follows explicit
+Equality guards use explicit typed sources and JSON Pointers, including Result/Decision ports, run inputs and information outputs. ROUTE
+checks a graph destination and selects through explicit guards. Stops record remaining nodes as SKIPPED/CONTROL_STOP. RETRY records
+SKIPPED/RETRY_REQUESTED; control DEFER records DEFERRED/CONTROL_DEFER without
+scheduling another occurrence. Adapter failures become ERROR Results; downstream behavior follows explicit
 edges, guards, and reducer policies.
 
 Definitions are **data**: no eval, expressions, arbitrary imports, or automatic artifact
 fetching. Hosts explicitly register trusted capabilities. Demo adapters are trusted
-host code, not a security sandbox. CLI `run` uses only the local demo registry.
+host code, not a security sandbox. Relay CLI `run` uses its trusted provider catalog. The legacy Reference Engine
+demo registry remains a separate Python convenience.
 
 [Open questions](spec/draft/open-questions.md) document portable canonical hashing
 and numeric precision, general guards, cycles/expansion, remaining status projections,
 partial UNKNOWN judgments, formal criteria/satisfaction mapping execution, richer
 reducer policies, capability negotiation, portable sampling identity, maximum staleness,
-parallel Derive conflicts, retry/defer scheduling, cache equivalence, and external
-artifact/schema resolution. Future authoring syntaxes could compile to JSON; YAML
+retry/defer scheduling, cache equivalence, and external artifact integrity. External judgment/port schema references are rejected before execution; richer schema resolution is unsupported. Future authoring syntaxes could compile to JSON; YAML
 has no implemented semantics.
 
 ## Quickstart
@@ -290,13 +341,14 @@ With uv and Python 3.13, run from the root:
 
 ```sh
 uv sync
-uv run openverify validate examples/prose/definition.json
-uv run openverify inspect examples/prose/definition.json
-uv run openverify run examples/prose/definition.json --context examples/prose/context.json --opportunity-id article-draft-1 --output run.json
+uv run openverify validate examples/first-run/definition.json
+uv run openverify inspect text
+uv run openverify run text --inputs examples/first-run/pass.json --json --output run.json
 ```
 
-The prose graph derives length, checks a banned phrase and length, then aggregates
-ALL. The supplied input produces PASS. The same SDK works locally:
+The Relay text graph checks required/prohibited terms and aggregates ALL. The
+supplied input produces PASS. The pre-existing prose graph remains executable
+through the unchanged Reference Engine Python API:
 
 ```python
 from pathlib import Path
@@ -320,9 +372,9 @@ Path("run.json").write_text(serialize(record), encoding="utf-8")
 
 See [examples](examples/README.md) for a temperature measurement and mock AI judges
 with UNKNOWN-to-human routing. No model provider is required. Validation accepts
-`--type result` and `--type run-record`; invalid input prints a stable error object
-and exits 1. A completed `run` exits 0 even when its record contains ERROR/FAIL;
-callers inspect the Results.
+`--type result` and `--type run-record`; invalid input prints a stable error object on stderr and exits 2. Relay run exits
+0 for terminal PASS, 1 for terminal FAIL, 2 for errors, 3 for other determinations
+or nonexecution. Callers can always inspect the full Results.
 
 ## Development
 
@@ -355,6 +407,43 @@ tools/                     deterministic artifact maintenance scripts
 Schema/profile copies are packaged for offline SDK use and tested against the
 normative root files. Edit their maintainers and regenerate in order with
 `uv run python tools/<file>`: `build_schemas.py`, `build_fixtures.py`,
-`build_profile.py`, `build_examples.py`. Maintenance scripts are not package code.
+`build_profile.py`, `build_dataflow_fixtures.py`, `build_examples.py`. Maintenance scripts are not package code.
+Run `build_provider_binding_fixtures.py` after the other conformance builders to
+maintain the concrete provider identity and rejection fixtures.
 See [CONTRIBUTING](CONTRIBUTING.md) for the protocol-change and open-question process.
 
+
+## Breaking DRAFT dataflow revision
+
+Definitions and RunRecords from earlier revisions require reauthoring. Node
+executor_ref/shared Context injection and implicit predecessor reducer membership
+are removed. CLI run uses --run-inputs. Registry.register binds exact capability
+ID/version pairs; implementations execute(inputs, config) with fresh JSON objects.
+All kinds can return ExecutionObservation(outputs, usage, evidence, error). Local
+conveniences returning Result, Decision or information mappings normalize into that
+channel. Valid reported usage survives invalid judgments and information outputs.
+Engine.run accepts optional ambient context= metadata separately from run inputs.
+Custom activation/selection/admission operations use the same exact-pair registry,
+with typed ports/bindings and constrained outcomes. Engine.attempt returns None
+for DO_NOT_ACTIVATE or empty selection; Engine.run raises NO_OCCURRENCE instead.
+Valid RUN/SKIP/DEFER admission creates a RunRecord with all three policy evaluations.
+See [execution policy](spec/draft/execution-policy.md) and
+[lifecycle](spec/draft/lifecycle.md) for reason codes, routing and cooperative
+Cancellation tokens. This is a breaking DRAFT provenance revision.
+Relay and trusted provider discovery are implemented; cycles, iteration and
+dynamic expansion remain unsupported. See the Relay docs for its API and
+conservative control/cancellation scheduling boundaries.
+
+## Language SDKs and first public handoff
+
+This monorepo also contains eight independently versioned DRAFT wire SDKs:
+Node/TypeScript, Python, Rust, Go, JVM, .NET, Ruby and PHP. See
+[sdk/README.md](sdk/README.md) for supported operations and explicit semantic
+limits, and [sdk/RELEASE.md](sdk/RELEASE.md) for separate package releases.
+The Python Relay package and the Python wire library are different distributions.
+
+[GITHUB_HANDOFF.md](GITHUB_HANDOFF.md) records the integrated source history,
+verification, security review, exact PowerShell upload instructions and required
+GitHub/registry settings. A first source push does not publish packages.
+Golden test passes are bounded evidence; full Golden certification and the
+complete v0.1 semantic release gate remain unproved.

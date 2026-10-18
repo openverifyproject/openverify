@@ -1,0 +1,24 @@
+{
+  "id": "provider.schema-local-ref",
+  "contract": "provider",
+  "version": "0.1",
+  "type": "data",
+  "operation": "data",
+  "input": 1,
+  "expected": {
+    "accepted": true,
+    "normalized": 1
+  },
+  "features": [
+    "standalone",
+    "data"
+  ],
+  "schema": {
+    "$defs": {
+      "n": {
+        "type": "integer"
+      }
+    },
+    "$ref": "#/$defs/n"
+  }
+}

@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "openverify"
 version = "0.1.0"
-description = "Draft domain-neutral verification protocol, SDK, and local reference engine"
+description = "Draft domain-neutral verification protocol, SDK, and provider-driven Relay runtime"
 readme = "README.md"
 requires-python = ">=3.13,<3.14"
 license = "MIT"
@@ -18,16 +18,37 @@ dev = [
     "ruff>=0.11",
     "pyright>=1.1.400",
     "types-jsonschema>=4.26.0.20261006",
+    "ast-grep-cli>=0.50.0",
+    "mcp>=1.10,<2",
+    "starlette>=0.40",
+    "httpx>=0.28",
+    "uvicorn>=0.54.0",
 ]
 
 [project.scripts]
-openverify = "openverify.cli:main"
+openverify = "openverify.relay.entrypoints.cli:main"
+
+[project.optional-dependencies]
+all = ["ruff>=0.17.0", "pytest>=9.1.1", "ast-grep-cli>=0.50.0", "mcp>=1.10,<2", "starlette>=0.40", "uvicorn>=0.54.0"]
+code = [
+    "ast-grep-cli>=0.50.0",
+    "pytest>=9.1.1",
+    "ruff>=0.17.0",
+]
+mcp = [
+    "mcp>=1.10,<2",
+]
+http = [
+    "starlette>=0.40",
+    "uvicorn>=0.54.0",
+]
 
 [tool.setuptools.packages.find]
 where = ["src"]
 
 [tool.setuptools.package-data]
 openverify = ["data/schemas/*.json", "data/profile.json", "py.typed"]
+"openverify.provider" = ["data/schemas/*.json"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
@@ -36,6 +57,7 @@ addopts = "-ra --basetemp=.pytest_cache/tmp"
 [tool.ruff]
 target-version = "py313"
 line-length = 100
+extend-exclude = ["tests/golden_graph"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B"]
@@ -44,6 +66,7 @@ select = ["E", "F", "I", "UP", "B"]
 pythonVersion = "3.13"
 typeCheckingMode = "strict"
 include = ["src", "tests"]
+exclude = ["tests/golden_graph"]
 venvPath = "."
 venv = ".venv"
 

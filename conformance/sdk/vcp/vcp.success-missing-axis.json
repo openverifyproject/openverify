@@ -1,0 +1,20 @@
+{
+  "id": "vcp.success-missing-axis",
+  "contract": "vcp",
+  "version": "draft",
+  "type": "result",
+  "operation": "parse",
+  "input": {
+    "protocol": "draft",
+    "disposition": "EXECUTED",
+    "execution_outcome": "SUCCESS"
+  },
+  "expected": {
+    "accepted": false,
+    "error": "RESULT_STATE"
+  },
+  "features": [
+    "standalone",
+    "result"
+  ]
+}

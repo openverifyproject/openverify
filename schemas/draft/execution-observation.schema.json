@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:verification:draft:execution-observation",
+  "description": "Typed explicit executable dataflow; see spec/draft/dataflow.md.",
+  "type": "object",
+  "properties": {
+    "outputs": {
+      "type": "object"
+    },
+    "usage": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "minLength": 1
+      },
+      "additionalProperties": {
+        "$ref": "urn:verification:draft:resource"
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:verification:draft:evidence"
+      }
+    },
+    "error": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string",
+          "minLength": 1
+        },
+        "message": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "code",
+        "message"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "outputs",
+    "usage",
+    "evidence"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,24 @@
+Traceback (most recent call last):
+  File "C:\Users\siddh\OneDrive\Desktop\openverify\.worktrees\golden-v4\tests\golden_v4\stdio_peer.py", line 29, in <module>
+    if __name__=="__main__":asyncio.run(serve_stdio(Peer()))
+                            ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\siddh\AppData\Roaming\uv\python\cpython-3.13-windows-x86_64-none\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Users\siddh\AppData\Roaming\uv\python\cpython-3.13-windows-x86_64-none\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\siddh\AppData\Roaming\uv\python\cpython-3.13-windows-x86_64-none\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Users\siddh\OneDrive\Desktop\openverify\.worktrees\golden-v4\src\openverify\relay\adapters\server.py", line 120, in serve_stdio
+    await asyncio.gather(*tasks.values())
+  File "C:\Users\siddh\OneDrive\Desktop\openverify\.worktrees\golden-v4\src\openverify\relay\adapters\server.py", line 39, in invoke
+    async for item in provider.invoke(invocation):
+    ...<8 lines>...
+            send({"jsonrpc": "2.0", "id": request_id, "result": wire_data(item)})
+  File "C:\Users\siddh\OneDrive\Desktop\openverify\.worktrees\golden-v4\tests\golden_v4\stdio_peer.py", line 24, in invoke
+    await barrier.wait()
+  File "C:\Users\siddh\AppData\Roaming\uv\python\cpython-3.13-windows-x86_64-none\Lib\asyncio\locks.py", line 213, in wait
+    await fut
+asyncio.exceptions.CancelledError

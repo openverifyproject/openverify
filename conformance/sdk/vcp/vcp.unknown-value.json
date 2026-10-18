@@ -1,0 +1,20 @@
+{
+  "id": "vcp.unknown-value",
+  "contract": "vcp",
+  "version": "draft",
+  "type": "resource",
+  "operation": "parse",
+  "input": {
+    "unit": "x",
+    "kind": "UNKNOWN",
+    "value": 0
+  },
+  "expected": {
+    "accepted": false,
+    "error": "RESOURCE_MEASUREMENT"
+  },
+  "features": [
+    "standalone",
+    "resource"
+  ]
+}

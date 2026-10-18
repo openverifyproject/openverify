@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:openverify:provider:0.1:provider-error",
+  "type": "object",
+  "properties": {
+    "code": {
+      "anyOf": [
+        {
+          "enum": [
+            "CONTRACT_VERSION_UNSUPPORTED",
+            "CAPABILITY_UNAVAILABLE",
+            "CAPABILITY_VERSION_UNSUPPORTED",
+            "INVALID_INVOCATION",
+            "INVALID_CONFIG",
+            "INVALID_INPUT",
+            "INVALID_PROVIDER_OUTPUT",
+            "PROTOCOL_VIOLATION"
+          ]
+        },
+        {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^(?:openverify\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*|(?!openverify\\.)[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)*)$"
+        }
+      ]
+    },
+    "message": {
+      "type": "string",
+      "minLength": 1
+    },
+    "details": {}
+  },
+  "required": [
+    "code",
+    "message"
+  ],
+  "additionalProperties": false
+}
