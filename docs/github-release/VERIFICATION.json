@@ -1,0 +1,208 @@
+{
+  "source_handoff": "READY",
+  "package_publication": "BLOCKED",
+  "universal_golden_certification": "NOT PROVED",
+  "code_head": "4d8f128f7085e2dc4cb60a0465c3b5b9c61b8026",
+  "python_golden_production_tested_commit": "479e59ee580f5578c14846a5bd8c8c1dfe15536b",
+  "profiles": [
+    {
+      "profile": "golden",
+      "command": "python -B -m pytest -q -c tests/golden_v4/pytest.ini tests/golden_v4 --junitxml=.pytest_cache/github-prep/golden.xml",
+      "tests": 15236,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 15236,
+      "junit_seconds": 88.358,
+      "junit": "docs/github-release/evidence/golden.xml.gz",
+      "log": "docs/github-release/evidence/golden.log.gz"
+    },
+    {
+      "profile": "regressions",
+      "command": "python -B -m pytest -q tests/golden_v4_reconciliation --basetemp=.pytest_cache/github-prep/regression-tmp --junitxml=.pytest_cache/github-prep/regressions.xml",
+      "tests": 388,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 388,
+      "junit_seconds": 9.635,
+      "junit": "docs/github-release/evidence/regressions.xml.gz",
+      "log": "docs/github-release/evidence/regressions.log.gz"
+    },
+    {
+      "profile": "production",
+      "command": "python -B -m pytest -q tests/unit tests/integration tests/property tests/conformance tests/relay tests/test_error_contract_hardening.py --basetemp=.pytest_cache/github-prep/production-tmp --junitxml=.pytest_cache/github-prep/production.xml",
+      "tests": 1038,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1,
+      "passed": 1037,
+      "junit_seconds": 179.582,
+      "junit": "docs/github-release/evidence/production.xml.gz",
+      "log": "docs/github-release/evidence/production.log.gz"
+    },
+    {
+      "profile": "python-maintenance-final",
+      "command": "python -B -m pytest -q sdk/tests/test_tooling.py sdk/python/tests --junitxml=.pytest_cache/github-prep/python-maintenance-final.xml",
+      "tests": 234,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 234,
+      "junit_seconds": 2.69,
+      "junit": "docs/github-release/evidence/python-maintenance-final.xml.gz",
+      "log": "docs/github-release/evidence/python-maintenance-final.log.gz"
+    }
+  ],
+  "sdk_evidence": "SDK_VERIFICATION.json",
+  "unchanged_sdk_inputs": {
+    "python": {
+      "changed_paths_since_tested_commit": []
+    },
+    "rust": {
+      "changed_paths_since_tested_commit": []
+    },
+    "go": {
+      "changed_paths_since_tested_commit": []
+    },
+    "jvm": {
+      "changed_paths_since_tested_commit": []
+    },
+    "dotnet": {
+      "changed_paths_since_tested_commit": []
+    },
+    "ruby": {
+      "changed_paths_since_tested_commit": []
+    },
+    "php": {
+      "changed_paths_since_tested_commit": []
+    }
+  },
+  "mutations": {
+    "golden_detected": 9,
+    "revision_detected": 3,
+    "total_detected": 12,
+    "scope": "targeted mutation probes, not arbitrary mutation completeness"
+  },
+  "freeze_verification": {
+    "verified": true,
+    "issues": []
+  },
+  "core_consumer": {
+    "status": "PASS",
+    "python": "3.13.5 (main, Jun 12 2025, 12:42:35) [MSC v.1943 64 bit (AMD64)]",
+    "import_path": "C:\\Users\\siddh\\OneDrive\\Desktop\\openverify\\.worktrees\\openverify-release-v0.1\\.pytest_cache\\github-prep\\core-consumer\\Lib\\site-packages\\openverify\\__init__.py",
+    "version": "0.1.0",
+    "result": "PASS",
+    "cli_exit": 0,
+    "vcp_schema_roots": 24,
+    "provider_schema_roots": 9,
+    "resource_hashes": {
+      "data\\schemas\\activation.schema.json": "6e37ab4712eb1e96d5a5ff866f2b27bde808ec51a81dca8b47dfd9e2655b0dc9",
+      "data\\schemas\\admission.schema.json": "bcbcee1094ba855888dc566a48004a0f1ee5d9625e5f94a7138ae293b676953f",
+      "data\\schemas\\artifact-ref.schema.json": "7bf26b3364910fc080867c4cef15e4cb7fd3c416f4fee6b7f2650d01373e1f2d",
+      "data\\schemas\\cancellation-event.schema.json": "9cbac956328c63c971092e1d07c1a9cc49d63b692893ffd4c1ce0fecccf4f641",
+      "data\\schemas\\decision.schema.json": "47ebf3ea5ab3fd1f4cd434ec2d18981d5593f7f66dd3cdeb9a2f6b15160723ee",
+      "data\\schemas\\evidence.schema.json": "e5fe25b8d81739697c6139d5d6e7b541ad6910f58c543a6a90b5f1e9e44a688f",
+      "data\\schemas\\execution-observation.schema.json": "3925c1e9077ecfb9eaa47094325aa4c6c4a22871aadede4f977b06d0fd8115b4",
+      "data\\schemas\\extension.schema.json": "d311028d33dc5062da712c553eb75d61a1f6d9038ec35b6e7a15b6fafaa12abc",
+      "data\\schemas\\graph.schema.json": "d363f055c63cf2692a566885b71030da8f8ac9ab2d024798f652c2c3f119d86c",
+      "data\\schemas\\input-port.schema.json": "06bf28b97b7d3c4cb92d058ff2866cc334120c00c5279cba8fda8425c7f9d3c9",
+      "data\\schemas\\input-resolution.schema.json": "b648c5a0866f5c56bbc62e20fa8a93b9ef9c389be522126bb322023a3e35349f",
+      "data\\schemas\\operation-requirement.schema.json": "93f38eb5c2c21f7afcfebc46e05fe36143b7cdcede959ffae69a0e9eee919af0",
+      "data\\schemas\\output-port.schema.json": "6c4160672d752a4b12340290b6069f305eebaf9d2e7ea4fbb2d61ef1cc25f2bf",
+      "data\\schemas\\policy-evaluation.schema.json": "cd4cb6210e17891149edbe908dc1a1daab8abb8f8471e6c14fdaaed45e132806",
+      "data\\schemas\\profile.schema.json": "1c46b09ba4bb431f5781f8663b30774895fa719fe3ba08753960f3df8478aedd",
+      "data\\schemas\\provider-binding.schema.json": "b3230a926aac92122ba09889966dbcbce0985f2b6f37773874c9d5331af4933d",
+      "data\\schemas\\resource-dimension.schema.json": "fa4e4bcdc4d442c5db8e19c7e9cfeee041c1f843355454eccbfc0d0132f1bb29",
+      "data\\schemas\\resource.schema.json": "da075a12e91b40d9110f7e5f07ef4aad6a3d4dfcf0edc499219098b7c4cb2145",
+      "data\\schemas\\result.schema.json": "41625c8616ebb6cbe5da97a88bb8d7e747b40d40db35b82eb0ea4a534a4c2173",
+      "data\\schemas\\run-record.schema.json": "f0d812b54bd748d282e39016885d3776207a7865763969365002e052aca02773",
+      "data\\schemas\\selection.schema.json": "d6c0f5e13bf50425e9b934254188a95a968465dc27774f61187caec77f5000b9",
+      "data\\schemas\\severity-domain.schema.json": "5451af1a9db01672b874f8d38811ea265f9635fb9f8b9892cfe0f07a693540fd",
+      "data\\schemas\\value-source.schema.json": "d2b60c21b86c717dfd76aa10573bd85750aebcf653f93d04b57535e1ae73e3d5",
+      "data\\schemas\\verification-definition.schema.json": "4830194f7bfc1c33ba1d6f9d977ac402231f9bcc59e2990ab076ba0e7b545294",
+      "provider\\data\\schemas\\cancel-request.schema.json": "b17be231743fe9044906e1c2aecf9b73da3dffeb5d4c39324608b3539532ad22",
+      "provider\\data\\schemas\\capability.schema.json": "67ad1c93bb83909e09bdcf3fb80fdef16e449937c72b3091e3d722490470d025",
+      "provider\\data\\schemas\\initialize-request.schema.json": "5c446cc8404f26a8dfc23a210e93f66b686c2f4d0e25f668119517e9af310f97",
+      "provider\\data\\schemas\\initialize-result.schema.json": "b482448bc85f808515f3fbc023b9fb0aa5211aed14f9f8790869fe6c19cde4f9",
+      "provider\\data\\schemas\\invocation.schema.json": "14992170f80ea57a1171147a022af2a5bb83a38e5e8a49fbbaf32dbd801fc40f",
+      "provider\\data\\schemas\\outcome.schema.json": "6c6a9b4bc62fe5a61096f7b50d1ceffce5edff0e6ffbaa797cd0cd685eccc0db",
+      "provider\\data\\schemas\\provider-error.schema.json": "2c77abc25cd022473bc593457ba88f4a4b5e38a17b6262e0ee083726482bef62",
+      "provider\\data\\schemas\\provider-event.schema.json": "515f84003aa3c11a69bcd8ab3b6b4aa3a553f829277d31f413d4dcc1315e8d9a",
+      "provider\\data\\schemas\\provider-manifest.schema.json": "dd2509a8096a9290642d1d0b8e7870a4fa54ff9ace27840bfa5c57545360a783"
+    },
+    "scope": "Core wheel install, packaged resources, in-process standard text execution, CLI help. Optional extras and other platforms are not covered."
+  },
+  "core_packages": [
+    {
+      "name": "openverify-0.1.0-py3-none-any.whl",
+      "bytes": 145594,
+      "sha256": "93fd94e4683472ccc37769bff86b5965cf79709cf271c706bb143a1f63981b8a"
+    },
+    {
+      "name": "openverify-0.1.0.tar.gz",
+      "bytes": 2301810,
+      "sha256": "0738473a56070f5d9e49a842bffecb5f1233a9ff6be265c7e61e76673becdc93"
+    }
+  ],
+  "workflow_validation": {
+    "tool": "actionlint 1.7.7",
+    "workflows": 11,
+    "exit_code": 0,
+    "shellcheck": false,
+    "pyflakes": false,
+    "remote_github_actions": "NOT RUN; owner first push required"
+  },
+  "semantic_release_gate": {
+    "records": 615,
+    "verified_projection": 1,
+    "partial": 396,
+    "no_reviewed_assertion_link": 218,
+    "verdict": "BLOCKED; preserved historical gate, not re-audited into certification"
+  },
+  "security": {
+    "tool": "gitleaks 8.30.1",
+    "history_patch_scan_commit": "e8c5cd9215dc056dd227cf3fcdee9e2a4128c1fb",
+    "all_unique_blob_scan_commit": "b992b926c24fc7eef88a9d69c6613c6a79c913be",
+    "incremental_history_through": "4d8f128f7085e2dc4cb60a0465c3b5b9c61b8026",
+    "incremental_history_candidates": 0,
+    "final_changed_and_new_file_candidates": 0,
+    "initial_candidates": 6,
+    "confirmed_credentials": 0,
+    "review": "SECURITY_REVIEW.md",
+    "npm_final_audit": {
+      "auditReportVersion": 2,
+      "vulnerabilities": {},
+      "metadata": {
+        "vulnerabilities": {
+          "info": 0,
+          "low": 0,
+          "moderate": 0,
+          "high": 0,
+          "critical": 0,
+          "total": 0
+        },
+        "dependencies": {
+          "prod": 7,
+          "dev": 3,
+          "optional": 0,
+          "peer": 0,
+          "peerOptional": 0,
+          "total": 9
+        }
+      }
+    }
+  },
+  "resolved_execution_failures": [
+    "Ruby native process denied by sandbox; rerun authorized outside sandbox passed",
+    "JVM Javadoc output denied by sandbox; rerun authorized outside sandbox passed",
+    "Final combined Python invocation omitted sdk/python/src from PYTHONPATH; corrected invocation passed; original failed collection retained"
+  ],
+  "limits": [
+    "Windows local runs do not establish all CI platforms",
+    "Finite fixture/test passes are not universal conformance",
+    "Registry ownership and publication approval not established",
+    "No push, tag, publish, remote-setting mutation or existing worktree deletion"
+  ]
+}
