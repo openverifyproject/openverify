@@ -18,7 +18,7 @@ jobs:
     environment: sdk-dotnet
     permissions:
       contents: read
-
+      id-token: write
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # actions/checkout@v4
         with:
@@ -41,9 +41,14 @@ jobs:
       - uses: actions/setup-dotnet@67a3573c9a986a3f9c594539f4ab511d57bb3ce9 # actions/setup-dotnet@v4
         with:
           dotnet-version: '8.0.x'
+      - name: Exchange GitHub OIDC for a short-lived NuGet key
+        uses: NuGet/login@8d196754b4036150537f80ac539e15c2f1028841 # NuGet/login@v1
+        id: nugetauth
+        with:
+          user: ${{ vars.NUGET_USER }}
       - name: Publish verified NuGet archive
         env:
-          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+          NUGET_API_KEY: ${{ steps.nugetauth.outputs.NUGET_API_KEY }}
         run: dotnet nuget push dist/sdk/dotnet/*.nupkg --api-key "$NUGET_API_KEY" --source https://api.nuget.org/v3/index.json
       - name: Verify registry availability and a fresh external installation
         env:

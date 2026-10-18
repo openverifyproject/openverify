@@ -4,6 +4,7 @@ on:
   push:
     branches: ['main', 'release/openverify-v0.1']
   workflow_dispatch:
+  workflow_call:
 permissions:
   contents: read
 concurrency:
@@ -55,6 +56,22 @@ jobs:
           subprocess.run([str(python), '-I', '-m', 'pip', 'install', str(wheel)], check=True)
           subprocess.run([str(python), '-I', '-m', 'pip', 'check'], check=True)
           subprocess.run([str(python), '-I', 'conformance/golden-v4/release-review-v0.1/consumer_check.py'], check=True)
+      - name: Build portable Python SDK for coexistence checks
+        run: uv build sdk/python --out-dir dist/sdk/python
+      - name: Verify independent Python products and both installation orders
+        shell: python
+        run: |
+          import pathlib, subprocess, sys
+          core = next(pathlib.Path('dist/python').glob('*.whl'))
+          sdk = next(pathlib.Path('dist/sdk/python').glob('*.whl'))
+          subprocess.run([sys.executable, 'tools/python_products_verify.py', '--core-wheel', str(core), '--sdk-wheel', str(sdk)], check=True)
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # actions/upload-artifact@v4
+        with:
+          name: core-python-${{ matrix.os }}-${{ github.sha }}
+          path: |
+            dist/python/
+            dist/python-products/verification.json
+          if-no-files-found: error
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # actions/upload-artifact@v4
         if: always()
         with:

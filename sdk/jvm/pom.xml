@@ -1,6 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
- <modelVersion>4.0.0</modelVersion><groupId>io.github.openverifyproject</groupId><artifactId>openverify</artifactId><version>0.1.0</version>
- <name>OpenVerify SDK</name><description>OpenVerify DRAFT VCP and Provider Contract wire SDK</description><url>https://github.com/openverifyproject/openverify</url>
+ <modelVersion>4.0.0</modelVersion><groupId>io.github.openverifyproject</groupId><artifactId>verifyanything</artifactId><version>0.1.0</version>
+ <name>VerifyAnything SDK</name><description>VerifyAnything DRAFT VCP and Provider Contract wire SDK</description><url>https://github.com/openverifyproject/openverify</url>
  <licenses><license><name>MIT</name><url>https://opensource.org/license/mit</url></license></licenses>
  <developers><developer><id>openverifyproject</id><name>OpenVerify contributors</name><url>https://github.com/openverifyproject</url></developer></developers>
  <scm><url>https://github.com/openverifyproject/openverify</url><connection>scm:git:https://github.com/openverifyproject/openverify.git</connection><developerConnection>scm:git:ssh://git@github.com/openverifyproject/openverify.git</developerConnection><tag>HEAD</tag></scm>

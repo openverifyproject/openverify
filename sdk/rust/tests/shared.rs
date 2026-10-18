@@ -1,4 +1,4 @@
-use openverify_sdk::{parse, serialize, validate_data};
+use verifyanything::{parse, serialize, validate_data};
 use serde_json::Value;
 #[test]
 fn shared_fixtures() {

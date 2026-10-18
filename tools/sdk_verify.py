@@ -108,7 +108,7 @@ def build(language):
         return latest("dist/sdk/node/*.tgz")
     if language == "rust":
         run("cargo", "package", "--locked", "--allow-dirty", cwd=directory, env=env)
-        source = latest("sdk/rust/target/package/openverify-[0-9]*.crate")
+        source = latest("sdk/rust/target/package/verifyanything-[0-9]*.crate")
     elif language == "go":
         # A distributable source snapshot; public Go resolution is checked only after tagging.
         source = destination / "openverify-go.zip"
@@ -126,10 +126,10 @@ def build(language):
         return source
     elif language == "jvm":
         run(MVN, "-B", "package", "-DskipTests", cwd=directory, env=env)
-        source = ROOT / "sdk/jvm/target" / ("openverify-" + version("jvm") + ".jar")
-        for extra in directory.glob("target/openverify-" + version("jvm") + "-sources.jar"):
+        source = ROOT / "sdk/jvm/target" / ("verifyanything-" + version("jvm") + ".jar")
+        for extra in directory.glob("target/verifyanything-" + version("jvm") + "-sources.jar"):
             shutil.copy2(extra, destination)
-        for extra in directory.glob("target/openverify-" + version("jvm") + "-javadoc.jar"):
+        for extra in directory.glob("target/verifyanything-" + version("jvm") + "-javadoc.jar"):
             shutil.copy2(extra, destination)
     elif language == "dotnet":
         run(
@@ -142,21 +142,21 @@ def build(language):
             cwd=directory,
             env=env,
         )
-        return latest("dist/sdk/dotnet/OpenVerify.[0-9]*.nupkg")
+        return latest("dist/sdk/dotnet/VerifyAnything.[0-9]*.nupkg")
     elif language == "ruby":
         run(
             GEM,
             "build",
             "openverify.gemspec",
             "--output",
-            destination / "openverify.gem",
+            destination / "verifyanything.gem",
             cwd=directory,
             env=env,
         )
-        return destination / "openverify.gem"
+        return destination / "verifyanything.gem"
     elif language == "php":
         # Composer infers the mirror tag version at release; an archive uses explicit metadata.
-        source = destination / "openverify.zip"
+        source = destination / "verifyanything.zip"
         with zipfile.ZipFile(source, "w", zipfile.ZIP_DEFLATED) as archive:
             for path in sorted(directory.rglob("*")):
                 relative = path.relative_to(directory)
@@ -196,31 +196,31 @@ def consumer(language, artifact=None, registry=False):
                 NPM,
                 "install",
                 "--ignore-scripts",
-                "openverify@" + version(language) if registry else artifact,
+                "verifyanything@" + version(language) if registry else artifact,
                 cwd=directory,
             )
             write(
                 directory / "test.mjs",
-                "import {parse,serialize} from 'openverify'; const v=parse('vcp','decision','{\"protocol\":\"draft\",\"kind\":\"CONTINUE\"}'); if(JSON.parse(serialize(v)).kind!=='CONTINUE')throw Error('consumer');",
+                "import {parse,serialize} from 'verifyanything'; const v=parse('vcp','decision','{\"protocol\":\"draft\",\"kind\":\"CONTINUE\"}'); if(JSON.parse(serialize(v)).kind!=='CONTINUE')throw Error('consumer');",
             )
             run("node", "test.mjs", cwd=directory)
         elif language == "rust":
             if registry:
-                dependency = '{package="openverify",version="=' + version(language) + '"}'
+                dependency = '{package="verifyanything",version="=' + version(language) + '"}'
             else:
                 with tarfile.open(artifact) as archive:
                     archive.extractall(directory / "package", filter="data")
                 package = next((directory / "package").iterdir()).as_posix()
-                dependency = '{package="openverify",path=' + json.dumps(package) + "}"
+                dependency = '{package="verifyanything",path=' + json.dumps(package) + "}"
             write(
                 directory / "Cargo.toml",
-                '[package]\nname="external-consumer"\nversion="0.0.0"\nedition="2024"\n[dependencies]\nopenverify_sdk='
+                '[package]\nname="external-consumer"\nversion="0.0.0"\nedition="2024"\n[dependencies]\nverifyanything='
                 + dependency
                 + "\n",
             )
             write(
                 directory / "src/main.rs",
-                'fn main(){let v=openverify_sdk::parse("vcp","decision",r#"{"protocol":"draft","kind":"CONTINUE"}"#).unwrap();assert!(openverify_sdk::serialize(&v).unwrap().contains("CONTINUE"));}',
+                'fn main(){let v=verifyanything::parse("vcp","decision",r#"{"protocol":"draft","kind":"CONTINUE"}"#).unwrap();assert!(verifyanything::serialize(&v).unwrap().contains("CONTINUE"));}',
             )
             run("cargo", "run", "--quiet", cwd=directory)
         elif language == "go":
@@ -252,7 +252,7 @@ def consumer(language, artifact=None, registry=False):
                 run(MVN, "-B", "install", "-DskipTests", cwd=ROOT / "sdk/jvm")
             write(
                 directory / "pom.xml",
-                '<project xmlns="http://maven.apache.org/POM/4.0.0"><modelVersion>4.0.0</modelVersion><groupId>test</groupId><artifactId>consumer</artifactId><version>0.0.0</version><properties><maven.compiler.release>17</maven.compiler.release></properties><dependencies><dependency><groupId>io.github.openverifyproject</groupId><artifactId>openverify</artifactId><version>'
+                '<project xmlns="http://maven.apache.org/POM/4.0.0"><modelVersion>4.0.0</modelVersion><groupId>test</groupId><artifactId>consumer</artifactId><version>0.0.0</version><properties><maven.compiler.release>17</maven.compiler.release></properties><dependencies><dependency><groupId>io.github.openverifyproject</groupId><artifactId>verifyanything</artifactId><version>'
                 + version("jvm")
                 + "</version></dependency></dependencies><build><plugins><plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-compiler-plugin</artifactId><version>3.14.0</version></plugin><plugin><groupId>org.codehaus.mojo</groupId><artifactId>exec-maven-plugin</artifactId><version>3.5.0</version></plugin></plugins></build></project>",
             )
@@ -274,7 +274,7 @@ def consumer(language, artifact=None, registry=False):
         elif language == "dotnet":
             write(
                 directory / "Consumer.csproj",
-                '<Project Sdk="Microsoft.NET.Sdk"><PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net8.0</TargetFramework></PropertyGroup><ItemGroup><PackageReference Include="OpenVerify" Version="'
+                '<Project Sdk="Microsoft.NET.Sdk"><PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net8.0</TargetFramework></PropertyGroup><ItemGroup><PackageReference Include="VerifyAnything" Version="'
                 + version("dotnet")
                 + '"/></ItemGroup></Project>',
             )
@@ -298,7 +298,7 @@ def consumer(language, artifact=None, registry=False):
         elif language == "ruby":
             install = directory / "gems"
             package_args = (
-                ["openverify", "--version", version(language)] if registry else [artifact]
+                ["verifyanything", "--version", version(language)] if registry else [artifact]
             )
             run(
                 GEM,
@@ -315,14 +315,14 @@ def consumer(language, artifact=None, registry=False):
             run(
                 "ruby",
                 "-e",
-                "require 'openverify'; v=OpenVerify.parse('vcp','decision','{\"protocol\":\"draft\",\"kind\":\"CONTINUE\"}');raise unless OpenVerify.serialize(v).include?('CONTINUE')",
+                "require 'verifyanything'; v=VerifyAnything.parse('vcp','decision','{\"protocol\":\"draft\",\"kind\":\"CONTINUE\"}');raise unless VerifyAnything.serialize(v).include?('CONTINUE')",
                 cwd=directory,
                 env=env,
             )
         elif language == "php":
             # Composer's package repository installs the exact built archive and
             # works without its optional artifact-repository PHP zip extension.
-            metadata = {"name": "external/consumer", "require": {"openverify/openverify": version("php")}}
+            metadata = {"name": "external/consumer", "require": {"openverify/verifyanything": version("php")}}
             if not registry:
                 with zipfile.ZipFile(artifact) as archive:
                     package = json.loads(archive.read("composer.json"))
@@ -346,18 +346,20 @@ def consumer(language, artifact=None, registry=False):
             )
             run(
                 python,
+                "-I",
                 "-m",
                 "pip",
                 "install",
-                "openverify-wire==" + version(language) if registry else artifact,
+                "verifyanything==" + version(language) if registry else artifact,
                 cwd=directory,
             )
             env = os.environ.copy()
             env.pop("PYTHONPATH", None)
             run(
                 python,
+                "-I",
                 "-c",
-                'import openverify_sdk as s; v=s.parse("vcp","decision",\'{"protocol":"draft","kind":"CONTINUE"}\'); assert "CONTINUE" in s.serialize(v)',
+                'import verifyanything as s; v=s.parse("vcp","decision",\'{"protocol":"draft","kind":"CONTINUE"}\'); assert "CONTINUE" in s.serialize(v)',
                 cwd=directory,
                 env=env,
             )
@@ -380,7 +382,7 @@ def version(language):
     paths = {
         "go": ("openverify.go", r'SDKVersion\s*=\s*"([^"]+)"'),
         "ruby": ("openverify.gemspec", r"s.version\s*=\s*'([^']+)'"),
-        "jvm": ("pom.xml", r"<artifactId>openverify</artifactId><version>([^<]+)</version>"),
+        "jvm": ("pom.xml", r"<artifactId>verifyanything</artifactId><version>([^<]+)</version>"),
         "dotnet": ("OpenVerify.Sdk/OpenVerify.Sdk.csproj", r"<Version>([^<]+)</Version>"),
     }
     path, pattern = paths[language]
@@ -394,7 +396,7 @@ def validate_version(language):
     expected = version(language)
     paths = {
         "node": ("src/index.ts", r"SDK_VERSION\s*=\s*'([^']+)'"),
-        "python": ("src/openverify_sdk/__init__.py", r'__version__\s*=\s*"([^"]+)"'),
+        "python": ("src/verifyanything/__init__.py", r'__version__\s*=\s*"([^"]+)"'),
         "go": ("openverify.go", r'SDKVersion\s*=\s*"([^"]+)"'),
         "jvm": ("src/main/java/org/openverify/sdk/Sdk.java", r'VERSION\s*=\s*"([^"]+)"'),
         "dotnet": ("OpenVerify.Sdk/Sdk.cs", r'Version\s*=\s*"([^"]+)"'),

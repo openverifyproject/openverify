@@ -1,3 +1,5 @@
+> Historical publication notes. Current instructions: [VerifyAnything](docs/releases/VERIFYANYTHING_SETUP.md) and [OpenVerify harness](docs/releases/OPENVERIFY_SETUP.md). Do not use the superseded package names below.
+
 # OpenVerify 0.1.0: first package publications
 
 Source: `release/openverify-v0.1`, descended from integrated `e19c37a`, never the

@@ -11,6 +11,7 @@ import pytest
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "tools"))
+import core_release
 import sdk_bundle
 import sdk_mirror
 import sdk_release
@@ -60,7 +61,7 @@ def test_release_filters_only_one_language(language):
 @pytest.mark.parametrize("language", sdk_workflows.LANGUAGES)
 def test_publish_permissions_and_checkout_credentials(language):
     text = (ROOT / f".github/workflows/sdk-release-{language}.yml").read_text()
-    assert ("id-token: write" in text) == (language in ("node", "python", "ruby"))
+    assert ("id-token: write" in text) == (language in ("node", "python", "ruby", "rust", "dotnet"))
     assert "persist-credentials: false" in text
 
 
@@ -140,19 +141,19 @@ def test_release_accepts_merged_source_and_checkout_origin_forms(remote):
 def test_exact_package_identities_and_preserved_language_apis():
     import tomllib
 
-    assert json.loads((ROOT / "sdk/node/package.json").read_text())["name"] == "openverify"
+    assert json.loads((ROOT / "sdk/node/package.json").read_text())["name"] == "verifyanything"
     rust = tomllib.loads((ROOT / "sdk/rust/Cargo.toml").read_text())
-    assert rust["package"]["name"] == "openverify"
-    assert rust["lib"]["name"] == "openverify_sdk"
+    assert rust["package"]["name"] == "verifyanything"
+    assert rust["lib"]["name"] == "verifyanything"
     dotnet = ROOT / "sdk/dotnet/OpenVerify.Sdk/OpenVerify.Sdk.csproj"
-    assert "<PackageId>OpenVerify</PackageId>" in dotnet.read_text()
-    assert '<artifactId>openverify</artifactId>' in (ROOT / "sdk/jvm/pom.xml").read_text()
-    assert "s.name = 'openverify'" in (ROOT / "sdk/ruby/openverify.gemspec").read_text()
+    assert "<PackageId>VerifyAnything</PackageId>" in dotnet.read_text()
+    assert '<artifactId>verifyanything</artifactId>' in (ROOT / "sdk/jvm/pom.xml").read_text()
+    assert "s.name = 'verifyanything'" in (ROOT / "sdk/ruby/openverify.gemspec").read_text()
     php = json.loads((ROOT / "sdk/php/composer.json").read_text())
-    assert php["name"] == "openverify/openverify"
+    assert php["name"] == "openverify/verifyanything"
     python = tomllib.loads((ROOT / "sdk/python/pyproject.toml").read_text())
-    assert python["project"]["name"] == "openverify-wire"
-    assert sdk_release.NAME_URLS["node"] == "https://registry.npmjs.org/openverify"
+    assert python["project"]["name"] == "verifyanything"
+    assert sdk_release.NAME_URLS["node"] == "https://registry.npmjs.org/verifyanything"
 
 
 def test_registry_failures_are_not_name_availability():
@@ -162,6 +163,48 @@ def test_registry_failures_are_not_name_availability():
             and p["classification"] == "UNKNOWN"
             for p in sdk_release.names()["packages"]
         )
+
+
+def test_unlisted_name_is_not_registration_acceptance_or_ownership():
+    with patch.object(sdk_release, "fetch", return_value=(404, "")):
+        rows = sdk_release.names()["packages"]
+    assert all(row["classification"] == "UNLISTED" for row in rows)
+    assert all(row["ownership"].startswith("UNKNOWN") for row in rows)
+    assert all("unverified" in row["status"] for row in rows)
+
+
+def test_empty_go_proxy_list_does_not_mean_a_version_is_published():
+    with patch.object(sdk_release, "fetch", return_value=(200, "")):
+        go = next(p for p in sdk_release.names()["packages"] if p["language"] == "go")
+    assert go["classification"] == "UNLISTED"
+
+
+@pytest.mark.parametrize("tag", ["sdk/python/v0.1.0", "core/node/v0.1.0", "core/python/v0.1"])
+def test_core_rejects_other_release_tags_before_network_or_publication(tag):
+    with patch.object(core_release, "fetch", side_effect=AssertionError("no network")):
+        with pytest.raises(RuntimeError, match="Expected core/python"):
+            core_release.preflight(tag, "unused", "unused")
+
+
+def test_core_release_is_independent_and_gated_by_harness_checks():
+    text = (ROOT / ".github/workflows/core-release-python.yml").read_text()
+    trigger = text.split("permissions:", 1)[0]
+    assert "tags: ['core/python/v*']" in trigger
+    assert "branches:" not in trigger and "pull_request:" not in trigger
+    assert "environment: core-python" in text and "needs: verify" in text
+    assert "uses: ./.github/workflows/project-ci.yml" in text
+    assert "tools/core_release.py" in text and "--evidence" in text
+
+
+def test_portable_python_namespace_does_not_supply_harness_or_cli():
+    import tomllib
+
+    metadata = tomllib.loads((ROOT / "sdk/python/pyproject.toml").read_text())
+    assert metadata["project"]["name"] == "verifyanything"
+    assert not metadata["project"].get("scripts")
+    assert not any(d.startswith("openverify") for d in metadata["project"]["dependencies"])
+    assert (ROOT / "sdk/python/src/verifyanything/__init__.py").is_file()
+    assert not (ROOT / "sdk/python/src/openverify").exists()
 
 
 def test_published_version_is_rejected():
@@ -220,7 +263,7 @@ def test_mirror_refuses_nonempty_unexpected_repository(monkeypatch):
 def test_mirror_refuses_unrelated_history(monkeypatch):
     monkeypatch.setenv("GITHUB_REF_NAME", "sdk/php/v0.1.0")
     monkeypatch.setenv("SDK_PHP_MIRROR", "openverifyproject/sdk-php")
-    answers = ["a" * 40, "b" * 40 + "\trefs/heads/main", "", '{"name":"openverify/openverify"}']
+    answers = ["a" * 40, "b" * 40 + "\trefs/heads/main", "", '{"name":"openverify/verifyanything"}']
     calls = []
 
     def run(command, **kwargs):

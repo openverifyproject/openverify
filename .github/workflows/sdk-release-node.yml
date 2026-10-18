@@ -43,7 +43,9 @@ jobs:
           node-version: '24'
           registry-url: https://registry.npmjs.org
       - run: npm install --global npm@latest
-      - name: Publish verified tarball using npm OIDC
+      - name: Publish verified tarball using npm OIDC or a bootstrap-only token
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npm publish dist/sdk/node/*.tgz --access public --provenance
       - name: Verify registry availability and a fresh external installation
         env:

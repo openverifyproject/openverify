@@ -12,24 +12,24 @@ from pathlib import Path
 from sdk_verify import ROOT, validate_version, version
 
 NAMES = {
-    "node": "openverify",
-    "python": "openverify-wire",
-    "rust": "openverify",
+    "node": "verifyanything",
+    "python": "verifyanything",
+    "rust": "verifyanything",
     "go": "github.com/openverifyproject/openverify/sdk/go",
-    "jvm": "io.github.openverifyproject:openverify",
-    "dotnet": "OpenVerify",
-    "ruby": "openverify",
-    "php": "openverify/openverify",
+    "jvm": "io.github.openverifyproject:verifyanything",
+    "dotnet": "VerifyAnything",
+    "ruby": "verifyanything",
+    "php": "openverify/verifyanything",
 }
 NAME_URLS = {
-    "node": "https://registry.npmjs.org/openverify",
-    "python": "https://pypi.org/pypi/openverify-wire/json",
-    "rust": "https://crates.io/api/v1/crates/openverify",
+    "node": "https://registry.npmjs.org/verifyanything",
+    "python": "https://pypi.org/pypi/verifyanything/json",
+    "rust": "https://crates.io/api/v1/crates/verifyanything",
     "go": "https://proxy.golang.org/github.com/openverifyproject/openverify/sdk/go/@v/list",
-    "jvm": "https://repo.maven.apache.org/maven2/io/github/openverifyproject/openverify/maven-metadata.xml",
-    "dotnet": "https://api.nuget.org/v3-flatcontainer/openverify/index.json",
-    "ruby": "https://rubygems.org/api/v1/gems/openverify.json",
-    "php": "https://repo.packagist.org/p2/openverify/openverify.json",
+    "jvm": "https://repo.maven.apache.org/maven2/io/github/openverifyproject/verifyanything/maven-metadata.xml",
+    "dotnet": "https://api.nuget.org/v3-flatcontainer/verifyanything/index.json",
+    "ruby": "https://rubygems.org/api/v1/gems/verifyanything.json",
+    "php": "https://repo.packagist.org/p2/openverify/verifyanything.json",
 }
 
 
@@ -52,12 +52,13 @@ def fetch(url):
 def names():
     rows = []
     for language, url in NAME_URLS.items():
+        unlisted = False
         try:
-            status, _ = fetch(url)
+            status, body = fetch(url)
+            unlisted = status == 404 or (language == "go" and status == 200 and not body.strip())
             state = (
-                "listed; ownership unverified"
-                if status == 200
-                else "unlisted; registration acceptance and reserved-name restrictions unverified"
+                "unlisted; registration acceptance and reserved-name restrictions unverified"
+                if unlisted else "listed; ownership unverified"
             )
         except Exception as error:
             status, state = None, "query failed: " + str(error)
@@ -68,7 +69,10 @@ def names():
                 "url": url,
                 "http_status": status,
                 "status": state,
-                "classification": "AVAILABLE" if status == 404 else "UNKNOWN",
+                "classification": (
+                    "UNLISTED" if unlisted else "LISTED_OWNERSHIP_UNKNOWN"
+                    if status == 200 else "UNKNOWN"
+                ),
                 "ownership": "UNKNOWN; no authenticated registry ownership checked",
             }
         )
@@ -90,13 +94,13 @@ def unpublished(language, release_version):
         "ruby": lambda: any(
             v["number"] == release_version
             for v in json.loads(
-                fetch("https://rubygems.org/api/v1/versions/openverify.json")[1]
+                fetch("https://rubygems.org/api/v1/versions/verifyanything.json")[1]
             )
         ),
         "php": lambda: any(
             v.get("version_normalized") == release_version + ".0"
             or v.get("version", "").lstrip("v") == release_version
-            for v in data.get("packages", {}).get("openverify/openverify", [])
+            for v in data.get("packages", {}).get("openverify/verifyanything", [])
         ),
     }[language]()
     if present:

@@ -7,6 +7,8 @@ ROOT = Path(__file__).resolve().parents[1]
 LANGUAGES = ["node", "python", "rust", "go", "jvm", "dotnet", "ruby", "php"]
 # Resolved from the upstream refs on 2026-10-18 UTC. Review updates explicitly.
 ACTION_REVISIONS = {
+    "rust-lang/crates-io-auth-action@v1": "ebc737b6fc418a6ca0073cf116ec8dc156d8b81e",
+    "NuGet/login@v1": "8d196754b4036150537f80ac539e15c2f1028841",
     "actions/checkout@v4": "11d5960a326750d5838078e36cf38b85af677262",
     "actions/setup-python@v5": "a26af69be951a213d495a4c3e4e4022e16d87065",
     "actions/setup-node@v4": "49933ea5288caeca8642d1e84afbd3f7d6820020",
@@ -103,7 +105,12 @@ SETUP = {
       - run: npm install --global npm@latest
 """,
     "python": "",
-    "rust": "      - uses: dtolnay/rust-toolchain@stable\n",
+    "rust": """      - uses: dtolnay/rust-toolchain@stable
+      - name: Exchange GitHub OIDC for a short-lived crates.io token
+        if: vars.REGISTRY_AUTH_MODE != 'token'
+        uses: rust-lang/crates-io-auth-action@v1
+        id: rustauth
+""",
     "go": """      - uses: actions/setup-go@v5
         with:
           go-version: '1.24.x'
@@ -121,6 +128,11 @@ SETUP = {
     "dotnet": """      - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.0.x'
+      - name: Exchange GitHub OIDC for a short-lived NuGet key
+        uses: NuGet/login@v1
+        id: nugetauth
+        with:
+          user: ${{ vars.NUGET_USER }}
 """,
     "ruby": """      - uses: ruby/setup-ruby@v1
         with:
@@ -133,7 +145,9 @@ SETUP = {
 """,
 }
 PUBLISH = {
-    "node": """      - name: Publish verified tarball using npm OIDC
+    "node": """      - name: Publish verified tarball using npm OIDC or a bootstrap-only token
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npm publish dist/sdk/node/*.tgz --access public --provenance
 """,
     "python": """      - name: Publish verified distributions using PyPI OIDC
@@ -146,11 +160,11 @@ PUBLISH = {
 """,
     "rust": """      - name: Publish the verified crate contents
         env:
-          CARGO_REGISTRY_TOKEN: ${{ secrets.CARGO_REGISTRY_TOKEN }}
+          CARGO_REGISTRY_TOKEN: ${{ steps.rustauth.outputs.token || secrets.CARGO_REGISTRY_TOKEN }}
         run: |
           mkdir -p .sdk-release/crate
           tar -xzf dist/sdk/rust/*.crate -C .sdk-release/crate
-          cd .sdk-release/crate/openverify-[0-9]*
+          cd .sdk-release/crate/verifyanything-[0-9]*
           cargo publish --locked
 """,
     "go": """      - name: Verify public nested-module resolution from the pushed tag
@@ -177,7 +191,7 @@ PUBLISH = {
 """,
     "dotnet": """      - name: Publish verified NuGet archive
         env:
-          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+          NUGET_API_KEY: ${{ steps.nugetauth.outputs.NUGET_API_KEY }}
         run: dotnet nuget push dist/sdk/dotnet/*.nupkg --api-key "$NUGET_API_KEY" --source https://api.nuget.org/v3/index.json
 """,
     "ruby": """      - name: Exchange GitHub OIDC for short-lived RubyGems credential
@@ -221,7 +235,7 @@ jobs:
 """
     (directory / "sdk-ci.yml").write_text(pin_actions(ci), encoding="utf-8", newline="\n")
     for language in LANGUAGES:
-        oidc = "      id-token: write\n" if language in ("node", "python", "ruby") else ""
+        oidc = "      id-token: write\n" if language in ("node", "python", "ruby", "rust", "dotnet") else ""
         template = f"""name: Release {language} SDK
 on:
   push:

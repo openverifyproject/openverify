@@ -1,6 +1,6 @@
-# openverify
+# verifyanything
 
-OpenVerify DRAFT wire SDK for rust. Independently versioned package **0.1.0**,
+VerifyAnything DRAFT wire SDK for rust. Independently versioned package **0.1.0**,
 intended registry: crates.io. Names/ownership must be confirmed before publication.
 
 VCP means portable verification semantics; Provider Contract means the portable
@@ -12,8 +12,8 @@ Provider Contract: exact `0.1`. Both remain DRAFT with no stable 1.0 promise.
 Validation does not fetch schemas, artifact content or URLs.
 
 ```rust
-let object = openverify_sdk::parse("vcp", "decision", r#"{"protocol":"draft","kind":"CONTINUE"}"#)?;
-let json = openverify_sdk::serialize(&object)?;
+let object = verifyanything::parse("vcp", "decision", r#"{"protocol":"draft","kind":"CONTINUE"}"#)?;
+let json = verifyanything::serialize(&object)?;
 ```
 
 ## Actual support
@@ -58,12 +58,12 @@ twice, compares package file contents and installs into a separate consumer.
 Dependency installation can use the network; actual schema validation is offline.
 The shared corpus is a bounded compatibility test, **not full protocol certification**.
 
-Keep existing Rust imports with this Cargo dependency alias:
+Use the native VerifyAnything crate:
 ```toml
 [dependencies]
-openverify_sdk = { package = "openverify", version = "0.1.0" }
+verifyanything = "0.1.0"
 ```
-The library target remains `openverify_sdk`; the registry crate is `openverify`.
+The library target is `verifyanything`; the registry crate is `verifyanything`.
 
 ## Release
 
@@ -71,3 +71,5 @@ Tag only this language: `sdk/rust/vX.Y.Z` after updating only its package.
 The protected release environment is `sdk-rust`. First publication requires
 owner setup and explicit approval; no package has been published by this change.
 License: MIT (included in the distribution).
+
+Package setup: [VerifyAnything publication guide](https://github.com/openverifyproject/openverify/blob/main/docs/releases/VERIFYANYTHING_SETUP.md).
