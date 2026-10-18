@@ -8,6 +8,7 @@ permissions:
   contents: read
 jobs:
   sdk:
+    name: SDK (${{ matrix.language }})
     strategy:
       fail-fast: false
       matrix:
