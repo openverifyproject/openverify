@@ -51,8 +51,9 @@ jobs:
           venv.EnvBuilder(with_pip=True).create(destination)
           python = destination / ('Scripts/python.exe' if os.name == 'nt' else 'bin/python')
           wheel = next((root / 'dist/python').glob('*.whl'))
-          subprocess.run([str(python), '-m', 'pip', 'install', str(wheel)], check=True)
-          subprocess.run([str(python), '-m', 'pip', 'check'], check=True)
+          # Ignore job PYTHONPATH: build-created src/*.egg-info is not an installed wheel.
+          subprocess.run([str(python), '-I', '-m', 'pip', 'install', str(wheel)], check=True)
+          subprocess.run([str(python), '-I', '-m', 'pip', 'check'], check=True)
           subprocess.run([str(python), '-I', 'conformance/golden-v4/release-review-v0.1/consumer_check.py'], check=True)
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # actions/upload-artifact@v4
         if: always()
