@@ -1,0 +1,351 @@
+{
+  "checked_at": "2026-10-19T18:53:24.969863+00:00",
+  "source_base": "1c4a617560004965a66e21a818d56c74d04742aa",
+  "environments": [
+    {
+      "name": "sdk-node",
+      "expected_tag_pattern": "sdk/node/v*",
+      "deployment_branch_policy": {
+        "protected_branches": false,
+        "custom_branch_policies": true
+      },
+      "policies": [
+        {
+          "id": 63616376,
+          "node_id": "MDE2OkdhdGVCcmFuY2hQb2xpY3k2MzYxNjM3Ng==",
+          "name": "sdk/node/v*",
+          "type": "tag"
+        }
+      ],
+      "variables": [
+        {
+          "name": "RELEASE_TAG_PATTERN",
+          "value": "sdk/node/v*",
+          "created_at": "2026-10-19T18:46:27Z",
+          "updated_at": "2026-10-19T18:46:27Z"
+        }
+      ]
+    },
+    {
+      "name": "sdk-python",
+      "expected_tag_pattern": "sdk/python/v*",
+      "deployment_branch_policy": {
+        "protected_branches": false,
+        "custom_branch_policies": true
+      },
+      "policies": [
+        {
+          "id": 63616379,
+          "node_id": "MDE2OkdhdGVCcmFuY2hQb2xpY3k2MzYxNjM3OQ==",
+          "name": "sdk/python/v*",
+          "type": "tag"
+        }
+      ],
+      "variables": [
+        {
+          "name": "RELEASE_TAG_PATTERN",
+          "value": "sdk/python/v*",
+          "created_at": "2026-10-19T18:46:30Z",
+          "updated_at": "2026-10-19T18:46:30Z"
+        }
+      ]
+    },
+    {
+      "name": "sdk-rust",
+      "expected_tag_pattern": "sdk/rust/v*",
+      "deployment_branch_policy": {
+        "protected_branches": false,
+        "custom_branch_policies": true
+      },
+      "policies": [
+        {
+          "id": 63616386,
+          "node_id": "MDE2OkdhdGVCcmFuY2hQb2xpY3k2MzYxNjM4Ng==",
+          "name": "sdk/rust/v*",
+          "type": "tag"
+        }
+      ],
+      "variables": [
+        {
+          "name": "REGISTRY_AUTH_MODE",
+          "value": "token",
+          "created_at": "2026-10-19T18:46:33Z",
+          "updated_at": "2026-10-19T18:46:33Z"
+        },
+        {
+          "name": "RELEASE_TAG_PATTERN",
+          "value": "sdk/rust/v*",
+          "created_at": "2026-10-19T18:46:33Z",
+          "updated_at": "2026-10-19T18:46:33Z"
+        }
+      ]
+    },
+    {
+      "name": "sdk-go",
+      "expected_tag_pattern": "sdk/go/v*",
+      "deployment_branch_policy": {
+        "protected_branches": false,
+        "custom_branch_policies": true
+      },
+      "policies": [
+        {
+          "id": 63616397,
+          "node_id": "MDE2OkdhdGVCcmFuY2hQb2xpY3k2MzYxNjM5Nw==",
+          "name": "sdk/go/v*",
+          "type": "tag"
+        }
+      ],
+      "variables": [
+        {
+          "name": "RELEASE_TAG_PATTERN",
+          "value": "sdk/go/v*",
+          "created_at": "2026-10-19T18:46:36Z",
+          "updated_at": "2026-10-19T18:46:36Z"
+        }
+      ]
+    },
+    {
+      "name": "sdk-jvm",
+      "expected_tag_pattern": "sdk/jvm/v*",
+      "deployment_branch_policy": {
+        "protected_branches": false,
+        "custom_branch_policies": true
+      },
+      "policies": [
+        {
+          "id": 63616400,
+          "node_id": "MDE2OkdhdGVCcmFuY2hQb2xpY3k2MzYxNjQwMA==",
+          "name": "sdk/jvm/v*",
+          "type": "tag"
+        }
+      ],
+      "variables": [
+        {
+          "name": "RELEASE_TAG_PATTERN",
+          "value": "sdk/jvm/v*",
+          "created_at": "2026-10-19T18:46:39Z",
+          "updated_at": "2026-10-19T18:46:39Z"
+        }
+      ]
+    },
+    {
+      "name": "sdk-dotnet",
+      "expected_tag_pattern": "sdk/dotnet/v*",
+      "deployment_branch_policy": {
+        "protected_branches": false,
+        "custom_branch_policies": true
+      },
+      "policies": [
+        {
+          "id": 63616404,
+          "node_id": "MDE2OkdhdGVCcmFuY2hQb2xpY3k2MzYxNjQwNA==",
+          "name": "sdk/dotnet/v*",
+          "type": "tag"
+        }
+      ],
+      "variables": [
+        {
+          "name": "RELEASE_TAG_PATTERN",
+          "value": "sdk/dotnet/v*",
+          "created_at": "2026-10-19T18:46:41Z",
+          "updated_at": "2026-10-19T18:46:41Z"
+        }
+      ]
+    },
+    {
+      "name": "sdk-ruby",
+      "expected_tag_pattern": "sdk/ruby/v*",
+      "deployment_branch_policy": {
+        "protected_branches": false,
+        "custom_branch_policies": true
+      },
+      "policies": [
+        {
+          "id": 63616407,
+          "node_id": "MDE2OkdhdGVCcmFuY2hQb2xpY3k2MzYxNjQwNw==",
+          "name": "sdk/ruby/v*",
+          "type": "tag"
+        }
+      ],
+      "variables": [
+        {
+          "name": "RELEASE_TAG_PATTERN",
+          "value": "sdk/ruby/v*",
+          "created_at": "2026-10-19T18:46:44Z",
+          "updated_at": "2026-10-19T18:46:44Z"
+        }
+      ]
+    },
+    {
+      "name": "sdk-php",
+      "expected_tag_pattern": "sdk/php/v*",
+      "deployment_branch_policy": {
+        "protected_branches": false,
+        "custom_branch_policies": true
+      },
+      "policies": [
+        {
+          "id": 63616415,
+          "node_id": "MDE2OkdhdGVCcmFuY2hQb2xpY3k2MzYxNjQxNQ==",
+          "name": "sdk/php/v*",
+          "type": "tag"
+        }
+      ],
+      "variables": [
+        {
+          "name": "RELEASE_TAG_PATTERN",
+          "value": "sdk/php/v*",
+          "created_at": "2026-10-19T18:46:46Z",
+          "updated_at": "2026-10-19T18:46:46Z"
+        },
+        {
+          "name": "SDK_PHP_MIRROR",
+          "value": "openverifyproject/verifyanything-php",
+          "created_at": "2026-10-19T18:46:47Z",
+          "updated_at": "2026-10-19T18:46:47Z"
+        }
+      ]
+    },
+    {
+      "name": "core-python",
+      "expected_tag_pattern": "core/python/v*",
+      "deployment_branch_policy": {
+        "protected_branches": false,
+        "custom_branch_policies": true
+      },
+      "policies": [
+        {
+          "id": 63616423,
+          "node_id": "MDE2OkdhdGVCcmFuY2hQb2xpY3k2MzYxNjQyMw==",
+          "name": "core/python/v*",
+          "type": "tag"
+        }
+      ],
+      "variables": [
+        {
+          "name": "RELEASE_TAG_PATTERN",
+          "value": "core/python/v*",
+          "created_at": "2026-10-19T18:46:50Z",
+          "updated_at": "2026-10-19T18:46:50Z"
+        }
+      ]
+    }
+  ],
+  "release_ruleset": {
+    "id": 25426366,
+    "name": "release-tag-integrity",
+    "target": "tag",
+    "source_type": "Repository",
+    "source": "openverifyproject/openverify",
+    "enforcement": "active",
+    "conditions": {
+      "ref_name": {
+        "exclude": [],
+        "include": [
+          "refs/tags/sdk/*/v*",
+          "refs/tags/core/python/v*"
+        ]
+      }
+    },
+    "rules": [
+      {
+        "type": "creation"
+      },
+      {
+        "type": "update"
+      },
+      {
+        "type": "deletion"
+      }
+    ],
+    "node_id": "RRS_lACqUmVwb3NpdG9yec5Uh1RYzgGD-b4",
+    "created_at": "2026-10-19T11:46:50.600-07:00",
+    "updated_at": "2026-10-19T11:46:50.644-07:00",
+    "bypass_actors": [
+      {
+        "actor_id": 5,
+        "actor_type": "RepositoryRole",
+        "bypass_mode": "always"
+      }
+    ],
+    "current_user_can_bypass": "always",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/openverifyproject/openverify/rulesets/25426366"
+      },
+      "html": {
+        "href": "https://github.com/openverifyproject/openverify/rules/25426366"
+      }
+    }
+  },
+  "mirror": {
+    "name": "openverifyproject/verifyanything-php",
+    "created_empty": true,
+    "no_release_tags": true
+  },
+  "first_release_plan": [
+    {
+      "product": "node",
+      "version": "0.1.0",
+      "tag": "sdk/node/v0.1.0",
+      "action": "SKIP_PUBLISHED"
+    },
+    {
+      "product": "rust",
+      "version": "0.1.0",
+      "tag": "sdk/rust/v0.1.0",
+      "action": "PUSH_TAG"
+    },
+    {
+      "product": "ruby",
+      "version": "0.1.0",
+      "tag": "sdk/ruby/v0.1.0",
+      "action": "PUSH_TAG"
+    },
+    {
+      "product": "go",
+      "version": "0.1.0",
+      "tag": "sdk/go/v0.1.0",
+      "action": "PUSH_TAG"
+    },
+    {
+      "product": "python",
+      "version": "0.1.0",
+      "tag": "sdk/python/v0.1.0",
+      "action": "PUSH_TAG"
+    },
+    {
+      "product": "dotnet",
+      "version": "0.1.0",
+      "tag": "sdk/dotnet/v0.1.0",
+      "action": "PUSH_TAG"
+    },
+    {
+      "product": "jvm",
+      "version": "0.1.0",
+      "tag": "sdk/jvm/v0.1.0",
+      "action": "PUSH_TAG"
+    },
+    {
+      "product": "php",
+      "version": "0.1.0",
+      "tag": "sdk/php/v0.1.0",
+      "action": "PUSH_TAG"
+    },
+    {
+      "product": "core",
+      "version": "0.1.0",
+      "tag": "core/python/v0.1.0",
+      "action": "PUSH_TAG"
+    }
+  ],
+  "external_registry_authorization": "NOT VERIFIED; requires account owners",
+  "local_checks": {
+    "release_tests": 61,
+    "actionlint": "PASS",
+    "ruff": "PASS",
+    "scoped_npm_tests_build_consumer": "PASS; 0.1.0 not uploaded"
+  },
+  "release_tags_pushed": false,
+  "packages_published": false
+}
