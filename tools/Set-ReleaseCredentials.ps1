@@ -4,7 +4,9 @@ $repository = 'openverifyproject/openverify'
 $gh = (Get-Command gh -ErrorAction SilentlyContinue).Source
 if (-not $gh) { $gh = 'C:\Program Files\GitHub CLI\gh.exe' }
 
-function Set-PrivateInput([string]$environment, [string]$name, [switch]$KeyFile) {
+function Set-PrivateInput(
+    [string]$environment, [string]$name, [switch]$KeyFile, [switch]$AllowEmpty
+) {
     $known = & $gh secret list -R $repository --env $environment --json name --jq '.[].name'
     if ($LASTEXITCODE -ne 0) { throw "Cannot inspect $environment secret names" }
     if ($known -contains $name) { Write-Host "$environment/$name already configured"; return }
@@ -12,12 +14,14 @@ function Set-PrivateInput([string]$environment, [string]$name, [switch]$KeyFile)
         $keyPath = Read-Host 'Path to the existing ASCII-armored Maven signing private key'
         $plain = [System.IO.File]::ReadAllText((Resolve-Path -LiteralPath $keyPath))
     } else {
-        $secure = Read-Host "$environment/$name (hidden input)" -AsSecureString
+        $hint = if ($AllowEmpty) { 'blank only for an unprotected key' } else { 'required' }
+        $secure = Read-Host "$environment/$name (hidden input; $hint)" -AsSecureString
         $pointer = [Runtime.InteropServices.Marshal]::SecureStringToBSTR($secure)
         try { $plain = [Runtime.InteropServices.Marshal]::PtrToStringBSTR($pointer) }
         finally { [Runtime.InteropServices.Marshal]::ZeroFreeBSTR($pointer) }
     }
     try {
+        if ($AllowEmpty -and [string]::IsNullOrEmpty($plain)) { return }
         if ([string]::IsNullOrWhiteSpace($plain)) { throw "Missing $name" }
         $plain | & $gh secret set $name -R $repository --env $environment
         if ($LASTEXITCODE -ne 0) { throw "Secure upload failed: $environment/$name" }
@@ -40,7 +44,7 @@ Set-PrivateInput sdk-rust CARGO_REGISTRY_TOKEN
 Set-PrivateInput sdk-jvm CENTRAL_USERNAME
 Set-PrivateInput sdk-jvm CENTRAL_PASSWORD
 Set-PrivateInput sdk-jvm MAVEN_GPG_PRIVATE_KEY -KeyFile
-Set-PrivateInput sdk-jvm MAVEN_GPG_PASSPHRASE
+Set-PrivateInput sdk-jvm MAVEN_GPG_PASSPHRASE -AllowEmpty
 Set-PrivateInput sdk-php SDK_PHP_MIRROR_TOKEN
 Set-PrivateInput sdk-php PACKAGIST_API_TOKEN
 Write-Host 'Release inputs configured. No registry upload or release tag was created.'
