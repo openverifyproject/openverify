@@ -62,6 +62,18 @@ def test_failed_main_ci_is_a_release_blocker():
             release_launch.green("a" * 40)
 
 
+def test_central_waits_for_published_state_before_registry_consumer():
+    from xml.etree import ElementTree
+
+    pom = ElementTree.parse(ROOT / "sdk/jvm/pom.xml")
+    ns = {"m": "http://maven.apache.org/POM/4.0.0"}
+    plugins = pom.findall(".//m:profile/m:build/m:plugins/m:plugin", ns)
+    central = next(p for p in plugins if p.findtext("m:artifactId", namespaces=ns)
+                   == "central-publishing-maven-plugin")
+    assert central.findtext("m:configuration/m:autoPublish", namespaces=ns) == "true"
+    assert central.findtext("m:configuration/m:waitUntil", namespaces=ns) == "published"
+
+
 def test_published_only_launch_performs_no_git_tag_or_push():
     def git(*args):
         if args in [("status", "--porcelain"), ("fetch", "origin")]:

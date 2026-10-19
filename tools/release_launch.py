@@ -51,8 +51,7 @@ def require_credentials(rows):
     requirements = {
         "rust": (["CARGO_REGISTRY_TOKEN"], []),
         "dotnet": ([], ["NUGET_USER"]),
-        "jvm": (["CENTRAL_USERNAME", "CENTRAL_PASSWORD", "MAVEN_GPG_PRIVATE_KEY",
-                 "MAVEN_GPG_PASSPHRASE"], []),
+        "jvm": (["CENTRAL_USERNAME", "CENTRAL_PASSWORD", "MAVEN_GPG_PRIVATE_KEY"], []),
         "php": (["SDK_PHP_MIRROR_TOKEN", "PACKAGIST_API_TOKEN"], ["PACKAGIST_USERNAME"]),
     }
     for row in rows:

@@ -341,11 +341,12 @@
   ],
   "external_registry_authorization": "NOT VERIFIED; requires account owners",
   "local_checks": {
-    "release_tests": 61,
+    "release_tests": 62,
     "actionlint": "PASS",
     "ruff": "PASS",
     "scoped_npm_tests_build_consumer": "PASS; 0.1.0 not uploaded"
   },
   "release_tags_pushed": false,
-  "packages_published": false
+  "packages_published": false,
+  "publisher_completion": "Central plugin explicitly waits for published state before registry consumer; default vendor timeout unchanged"
 }
