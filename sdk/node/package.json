@@ -1,5 +1,5 @@
 {
-  "name": "verifyanything",
+  "name": "@openverifyproject/verifyanything",
   "version": "0.1.0",
   "description": "VerifyAnything DRAFT VCP and Provider Contract wire SDK",
   "type": "module",

@@ -34,9 +34,7 @@ jobs:
       - name: Check exact tag, test evidence, checksum and unpublished version
         env:
           RELEASE_TAG: ${{ github.ref_name }}
-          REGISTRY_OWNERSHIP_APPROVED: ${{ vars.REGISTRY_OWNERSHIP_APPROVED }}
         run: |
-          test "$REGISTRY_OWNERSHIP_APPROVED" = true
           python tools/sdk_release.py preflight --language php --tag "$RELEASE_TAG" --evidence dist/sdk/php/verification.json
       - uses: shivammathur/setup-php@eb7c497e18156a6bbabfef1d3a82760b9eda3962 # shivammathur/setup-php@v2
         with:
@@ -49,6 +47,12 @@ jobs:
         run: |
           gh auth setup-git
           python tools/sdk_mirror.py
+      - name: Register or update the mirrored package on Packagist
+        env:
+          PACKAGIST_USERNAME: ${{ vars.PACKAGIST_USERNAME }}
+          PACKAGIST_API_TOKEN: ${{ secrets.PACKAGIST_API_TOKEN }}
+          SDK_PHP_MIRROR: ${{ vars.SDK_PHP_MIRROR }}
+        run: python tools/sdk_packagist.py
       - name: Verify registry availability and a fresh external installation
         env:
           SDK_LANGUAGE: php

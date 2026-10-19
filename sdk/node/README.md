@@ -1,4 +1,4 @@
-# verifyanything
+# @openverifyproject/verifyanything
 
 VerifyAnything DRAFT wire SDK for node. Independently versioned package **0.1.0**,
 intended registry: npm. Names/ownership must be confirmed before publication.
@@ -12,7 +12,7 @@ Provider Contract: exact `0.1`. Both remain DRAFT with no stable 1.0 promise.
 Validation does not fetch schemas, artifact content or URLs.
 
 ```typescript
-import {parse, serialize} from 'verifyanything';
+import {parse, serialize} from '@openverifyproject/verifyanything';
 const object = parse('vcp', 'decision', '{"protocol":"draft","kind":"CONTINUE"}');
 console.log(serialize(object));
 ```
@@ -67,3 +67,5 @@ owner setup and explicit approval; no package has been published by this change.
 License: MIT (included in the distribution).
 
 Package setup: [VerifyAnything publication guide](https://github.com/openverifyproject/openverify/blob/main/docs/releases/VERIFYANYTHING_SETUP.md).
+
+The npm scope is `@openverifyproject`; 0.1.0 is already public and must not be republished.

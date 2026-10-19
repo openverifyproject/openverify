@@ -34,9 +34,7 @@ jobs:
       - name: Check exact tag, test evidence, checksum and unpublished version
         env:
           RELEASE_TAG: ${{ github.ref_name }}
-          REGISTRY_OWNERSHIP_APPROVED: ${{ vars.REGISTRY_OWNERSHIP_APPROVED }}
         run: |
-          test "$REGISTRY_OWNERSHIP_APPROVED" = true
           python tools/sdk_release.py preflight --language jvm --tag "$RELEASE_TAG" --evidence dist/sdk/jvm/verification.json
       - uses: actions/setup-java@cf277c60eb25467037889841efdb72551f06f6c3 # actions/setup-java@v4
         with:

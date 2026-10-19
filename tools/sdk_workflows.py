@@ -145,9 +145,7 @@ SETUP = {
 """,
 }
 PUBLISH = {
-    "node": """      - name: Publish verified tarball using npm OIDC or a bootstrap-only token
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+    "node": """      - name: Publish verified scoped tarball using npm OIDC
         run: npm publish dist/sdk/node/*.tgz --access public --provenance
 """,
     "python": """      - name: Publish verified distributions using PyPI OIDC
@@ -206,6 +204,12 @@ PUBLISH = {
         run: |
           gh auth setup-git
           python tools/sdk_mirror.py
+      - name: Register or update the mirrored package on Packagist
+        env:
+          PACKAGIST_USERNAME: ${{ vars.PACKAGIST_USERNAME }}
+          PACKAGIST_API_TOKEN: ${{ secrets.PACKAGIST_API_TOKEN }}
+          SDK_PHP_MIRROR: ${{ vars.SDK_PHP_MIRROR }}
+        run: python tools/sdk_packagist.py
 """,
 }
 
@@ -272,9 +276,7 @@ jobs:
       - name: Check exact tag, test evidence, checksum and unpublished version
         env:
           RELEASE_TAG: ${{{{ github.ref_name }}}}
-          REGISTRY_OWNERSHIP_APPROVED: ${{{{ vars.REGISTRY_OWNERSHIP_APPROVED }}}}
         run: |
-          test "$REGISTRY_OWNERSHIP_APPROVED" = true
           python tools/sdk_release.py preflight --language {language} --tag "$RELEASE_TAG" --evidence dist/sdk/{language}/verification.json
 {SETUP[language]}{PUBLISH[language]}      - name: Verify registry availability and a fresh external installation
         env:

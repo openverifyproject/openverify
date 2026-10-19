@@ -72,15 +72,13 @@ do not grant each other publishing permission. Follow [PyPI pending publisher
 instructions](https://docs.pypi.org/trusted-publishers/creating-a-project-through-oidc/).
 A pending publisher is not a guaranteed reservation/acceptance of a project name.
 
-GitHub Settings -> Environments -> `core-python`: require reviewer approval;
-restrict to `core/python/v*`; set `REGISTRY_OWNERSHIP_APPROVED=true` after reviewing
-the intended account and registration. No permanent PyPI API token is needed for
-OIDC. The publisher job alone has `id-token: write`; source checkout does not
-persist credentials. The workflow first runs the full two-platform harness CI,
-then checks exact tag, root package version, merged main ancestry, clean-source
-consumer evidence and checksums for both wheel and source archive. A published
-version cannot be overwritten. Only the core artifact directory is uploaded to
-PyPI; no SDK package is published by a core release.
+GitHub environment creation, tag restrictions and safe configuration are
+performed by `tools/release_github_setup.py --apply`. No manual environment or
+variable creation is required. The independent PyPI publisher uses `core-python`
+and requires actual PyPI OIDC authorization. No ownership-approval boolean is
+used as a substitute for authentication. The publisher job alone has OIDC write
+permission; it verifies merged source, the exact tag and tested artifact hashes.
+The automated launcher skips already published versions.
 
 ## Source review, merge and independent release
 
