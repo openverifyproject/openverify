@@ -20,6 +20,8 @@ implicitly answered by reference Python behavior.
 | External artifact integrity and schema resolution | No fetching; self-contained judgment schemas only |
 | Provider authenticity and independent reproduction of host contract-rejection claims | Exact occurrence binding and structural consistency only; no binary/endpoint attestation or manifest snapshot in VCP records |
 | Future provider transport/session provenance and policy provider bindings | Graph-node bindings are normative; Relay retains extra transport/policy correlation as optional unauthenticated annotations, not new portable fields |
+| Portable client graph identity and revision semantics | Relay Client v1 IDs/revisions are local host API concepts; no cross-host VCP identity, migration, or portable idempotency rule is defined |
+| Finding profile interoperability | Local Finding v1 uses Evidence structured_data; the core protocol does not assign universal path/line meaning or require other profiles to consume it |
 
 No missing top-level category was established by the conceptual audit. Category
 coverage does not imply portable syntax or runtime support for every example.

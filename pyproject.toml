@@ -9,7 +9,7 @@ description = "Draft domain-neutral verification protocol, SDK, and provider-dri
 readme = "README.md"
 requires-python = ">=3.13,<3.14"
 license = "MIT"
-dependencies = ["pydantic>=2.11,<3", "jsonschema>=4.23,<5"]
+dependencies = ["openverify-relay==0.1.0", "openverify-code[tools]==0.1.0", "openverify-english==0.1.0"]
 
 [dependency-groups]
 dev = [
@@ -43,12 +43,15 @@ http = [
     "uvicorn>=0.54.0",
 ]
 
-[tool.setuptools.packages.find]
-where = ["src"]
+[tool.uv.sources]
+openverify-relay = { path = "packages/relay" }
+openverify-code = { path = "packages/code" }
+openverify-english = { path = "packages/english" }
+verifyanything = { path = "sdk/python" }
 
-[tool.setuptools.package-data]
-openverify = ["data/schemas/*.json", "data/profile.json", "py.typed"]
-"openverify.provider" = ["data/schemas/*.json"]
+[tool.setuptools]
+packages = []
+
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
@@ -66,6 +69,7 @@ select = ["E", "F", "I", "UP", "B"]
 pythonVersion = "3.13"
 typeCheckingMode = "strict"
 include = ["src", "tests"]
+extraPaths = ["src", "packages/code/src", "packages/english/src"]
 exclude = ["tests/golden_graph"]
 venvPath = "."
 venv = ".venv"

@@ -334,8 +334,9 @@ name = "openverify"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
-    { name = "jsonschema" },
-    { name = "pydantic" },
+    { name = "openverify-code", extra = ["tools"] },
+    { name = "openverify-english" },
+    { name = "openverify-relay" },
 ]
 
 [package.optional-dependencies]
@@ -378,10 +379,11 @@ dev = [
 requires-dist = [
     { name = "ast-grep-cli", marker = "extra == 'all'", specifier = ">=0.50.0" },
     { name = "ast-grep-cli", marker = "extra == 'code'", specifier = ">=0.50.0" },
-    { name = "jsonschema", specifier = ">=4.23,<5" },
     { name = "mcp", marker = "extra == 'all'", specifier = ">=1.10,<2" },
     { name = "mcp", marker = "extra == 'mcp'", specifier = ">=1.10,<2" },
-    { name = "pydantic", specifier = ">=2.11,<3" },
+    { name = "openverify-code", extras = ["tools"], directory = "packages/code" },
+    { name = "openverify-english", directory = "packages/english" },
+    { name = "openverify-relay", directory = "packages/relay" },
     { name = "pytest", marker = "extra == 'all'", specifier = ">=9.1.1" },
     { name = "pytest", marker = "extra == 'code'", specifier = ">=9.1.1" },
     { name = "ruff", marker = "extra == 'all'", specifier = ">=0.17.0" },
@@ -405,6 +407,58 @@ dev = [
     { name = "starlette", specifier = ">=0.40" },
     { name = "types-jsonschema", specifier = ">=4.26.0.20261006" },
     { name = "uvicorn", specifier = ">=0.54.0" },
+]
+
+[[package]]
+name = "openverify-code"
+version = "0.1.0"
+source = { directory = "packages/code" }
+dependencies = [
+    { name = "openverify-relay" },
+]
+
+[package.optional-dependencies]
+tools = [
+    { name = "ast-grep-cli" },
+    { name = "pytest" },
+    { name = "ruff" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "ast-grep-cli", marker = "extra == 'tools'", specifier = ">=0.50" },
+    { name = "openverify-relay", specifier = "==0.1.0" },
+    { name = "pytest", marker = "extra == 'tools'", specifier = ">=8.3" },
+    { name = "ruff", marker = "extra == 'tools'", specifier = ">=0.17" },
+]
+provides-extras = ["tools"]
+
+[[package]]
+name = "openverify-english"
+version = "0.1.0"
+source = { directory = "packages/english" }
+dependencies = [
+    { name = "openverify-relay" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "openverify-relay", specifier = "==0.1.0" }]
+
+[[package]]
+name = "openverify-relay"
+version = "0.1.0"
+source = { directory = "packages/relay" }
+dependencies = [
+    { name = "jsonschema" },
+    { name = "pydantic" },
+    { name = "verifyanything" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "jsonschema", specifier = ">=4.23,<5" },
+    { name = "pydantic", specifier = ">=2.11,<3" },
+    { name = "verifyanything", specifier = "==0.1.0" },
 ]
 
 [[package]]
@@ -709,4 +763,16 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/da/34/30e9280707135d2cfc589dfff3cb796bd07a3aeb1a3e415ba09dd89d7bb4/uvicorn-0.54.0.tar.gz", hash = "sha256:a2e33cbfaa0306f8e6b0c13e0cb89d7d7a2da3e62b90c66e18c33d9807b28620", size = 112283, upload-time = "2026-09-25T06:52:37.601Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/38/0c/b54a4fdd7f90a3af8b02ebc9ce6712c2c208b7926a2f7bad95c33ebbe943/uvicorn-0.54.0-py3-none-any.whl", hash = "sha256:505bdb0f318731d45f1f712071fc781a8981f6847a31c902c9f5e652d4f67faf", size = 87427, upload-time = "2026-09-25T06:52:35.829Z" },
+]
+
+[[package]]
+name = "verifyanything"
+version = "0.1.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "jsonschema" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/a3/4a/24b4d2ececd9860293477687ee3cc3fc3812c68979d60bc30aefda292f05/verifyanything-0.1.0.tar.gz", hash = "sha256:218e3d07dd4457758c830cab0e43eae60226652b6c31a8eff6f58f50e1f8bfbc", size = 23962, upload-time = "2026-10-20T00:38:41.909Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/98/86/98f3fa086aa0ed432c3d99c90b499f6f6a825f6c07d578a4fa3733f21596/verifyanything-0.1.0-py3-none-any.whl", hash = "sha256:5c52cdd28fa18c28a5258db5ef262706ec0666b02e0c5bd79fa5205fc484186e", size = 21995, upload-time = "2026-10-20T00:38:40.572Z" },
 ]

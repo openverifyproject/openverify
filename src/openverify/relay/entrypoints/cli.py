@@ -1,4 +1,5 @@
 """Human and machine CLI; diagnostics exclusively on stderr in JSON mode."""
+# pyright: basic
 
 import argparse
 import asyncio
@@ -66,6 +67,26 @@ def configured_catalog(path: str | None, roots: list[str]) -> Catalog:
     return catalog
 
 
+def project_catalog(root: Path, roots: list[str]) -> Catalog:
+    """Load trusted provider bindings from the project's single TOML file."""
+    from openverify.relay.local import configuration
+
+    config = configuration(root).get("providers", {})
+    catalog = standard_catalog(roots=tuple(Path(p).resolve() for p in roots) if roots else (root,))
+    for item in config.get("stdio", []):
+        manifest_path = (root / item["manifest_file"]).resolve()
+        manifest = parse_provider_manifest(read_json(str(manifest_path)))
+        cwd = (root / item.get("cwd", ".")).resolve()
+        if not cwd.is_dir():
+            raise ValueError("Provider cwd must exist")
+        catalog.register_transport(
+            manifest,
+            StdioTransport(tuple(item["argv"]), str(cwd), item.get("env")),
+        )
+    catalog.load_entry_points(set(config.get("entry_points", [])))
+    return catalog
+
+
 def load_bindings(path: str | None) -> dict[str, ProviderBinding]:
     if path is None:
         return {}
@@ -121,10 +142,116 @@ def main() -> int:
     ps.add_parser("inspect").add_argument("id")
     commands.add_parser("examples", aliases=["templates"])
     commands.add_parser("mcp")
+    for profile in ("code", "english"):
+        harness = commands.add_parser(profile)
+        actions = harness.add_subparsers(dest="harness_action", required=True)
+        check_command = actions.add_parser("check")
+        check_command.add_argument("--staged", action="store_true")
+        check_command.add_argument("--changed", action="store_true")
+        check_command.add_argument("--json", action="store_true")
+        check_command.add_argument("--root", type=Path, default=Path.cwd())
+    rules = commands.add_parser("rules")
+    rule_actions = rules.add_subparsers(dest="rule_action", required=True)
+    rule_actions.add_parser("list")
+    rule_actions.add_parser("show").add_argument("name")
+    client = commands.add_parser("client")
+    client.add_argument("--database", type=Path, required=True)
+    client.add_argument("--providers", help="Trusted host provider configuration JSON")
+    client.add_argument("--root", action="append", default=[])
+    client.add_argument("--project-root", type=Path, default=Path.cwd())
     http = commands.add_parser("http")
     http.add_argument("--port", type=int, default=8765)
     args = parser.parse_args()
     try:
+        if args.command in ("code", "english"):
+            from openverify.relay.local import changed
+
+            if args.command == "code":
+                from openverify_code import check
+            else:
+                from openverify_english import check
+
+            if args.staged and args.changed:
+                raise ValueError("Choose either --staged or --changed")
+            root = args.root.resolve()
+            files = (
+                changed(root, args.staged)
+                if args.staged or args.changed
+                else [
+                    p.relative_to(root).as_posix()
+                    for p in root.rglob("*")
+                    if p.is_file()
+                    and not any(
+                        part in {".git", ".venv", ".venv2", ".uv-cache", ".tmp"}
+                        for part in p.relative_to(root).parts
+                    )
+                ]
+            )
+            report = check(root, files, args.staged)
+            if args.json:
+                print(json.dumps(report))
+            else:
+                print(f"{args.command}: {report['status']} ({report['scope']})")
+                for item in report["findings"]:
+                    print(
+                        f"{item['file']}:{item['line']}:{item['column']}: "
+                        f"{item['rule_id']}: {item['message']}"
+                    )
+                for name, result in report["rules"].items():
+                    if result.get("execution_outcome") == "ERROR":
+                        print(f"{name}: ERROR: {result.get('output', {}).get('error')}")
+            return {"PASS": 0, "FAIL": 1, "ERROR": 2}.get(report["status"], 3)
+        if args.command == "rules":
+            import shutil
+
+            from openverify_code.local import RULES as CODE_RULES
+            from openverify_english.local import RULES as ENGLISH_RULES
+
+            RULES = {"code": CODE_RULES, "english": ENGLISH_RULES}
+
+            if args.rule_action == "list":
+                print(
+                    json.dumps(
+                        {
+                            **RULES,
+                            "optional_writing_tools": {
+                                name: {
+                                    "available": shutil.which(name) is not None,
+                                    "configured": False,
+                                }
+                                for name in ("vale", "languagetool")
+                            },
+                        }
+                    )
+                )
+            else:
+                for profile, entries in RULES.items():
+                    if args.name in entries:
+                        print(
+                            json.dumps(
+                                {
+                                    "profile": profile,
+                                    "rule": args.name,
+                                    "description": entries[args.name],
+                                }
+                            )
+                        )
+                        return 0
+                raise ValueError("Unknown rule")
+            return 0
+        if args.command == "client":
+            from openverify.relay.adapters.sqlite import SQLiteStore
+            from openverify.relay.entrypoints.client import serve
+            from openverify.relay.entrypoints.service import GraphService
+
+            store = SQLiteStore(args.database)
+            catalog = (
+                configured_catalog(args.providers, args.root)
+                if args.providers
+                else project_catalog(args.project_root.resolve(), args.root)
+            )
+            asyncio.run(serve(GraphService(Relay(store=store, catalog=catalog), registry=store)))
+            return 0
         if args.command == "mcp":
             from openverify.relay.entrypoints.mcp import main as mcp_main
 

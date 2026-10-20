@@ -1,0 +1,7 @@
+{
+  "client_version": "1",
+  "id": "get-1",
+  "op": "get",
+  "graph_id": "$GRAPH_ID",
+  "revision": 1
+}

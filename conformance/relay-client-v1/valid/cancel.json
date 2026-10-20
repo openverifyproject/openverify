@@ -1,0 +1,6 @@
+{
+  "client_version": "1",
+  "id": "cancel-1",
+  "op": "cancel",
+  "request_id": "fixture-run"
+}

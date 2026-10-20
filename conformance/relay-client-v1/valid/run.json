@@ -1,0 +1,11 @@
+{
+  "client_version": "1",
+  "id": "run-1",
+  "op": "run",
+  "graph_id": "$GRAPH_ID",
+  "revision": 1,
+  "request_id": "fixture-run",
+  "inputs": {
+    "text": "Migration Rollback"
+  }
+}

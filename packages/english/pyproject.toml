@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "openverify-english"
+version = "0.1.0"
+description = "Deterministic English checks for OpenVerify"
+requires-python = ">=3.13,<3.14"
+dependencies = ["openverify-relay==0.1.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
