@@ -1,8 +1,9 @@
-"""Build and install the two Python products independently and in both orders.
+"""Build and install the Python product and SDK independently and in both orders.
 
 Uses only local wheels for the products; dependencies may come from PyPI.
 Does not publish, change accounts, or use source imports for consumer checks.
 """
+# pyright: basic
 
 import argparse
 import hashlib
@@ -33,31 +34,59 @@ def build(directory, output):
 
 def verify(core, sdk, output):
     core, sdk = core.resolve(), sdk.resolve()
+    wheelhouse = core.parent
+    components = [
+        next(wheelhouse.glob(name + "-*.whl"))
+        for name in ("openverify_relay", "openverify_code", "openverify_english")
+    ]
     payloads = []
-    for path, namespace in [(core, "openverify"), (sdk, "verifyanything")]:
+    for path, namespace in [
+        (core, None),
+        (sdk, "verifyanything"),
+        (components[0], "openverify"),
+        (components[1], "openverify_code"),
+        (components[2], "openverify_english"),
+    ]:
         with ZipFile(path) as archive:
             files = set(archive.namelist())
-            assert f"{namespace}/__init__.py" in files, (path, namespace)
+            if namespace is not None:
+                assert f"{namespace}/__init__.py" in files, (path, namespace)
             payloads.append({n for n in files if ".dist-info/" not in n})
             if namespace == "verifyanything":
                 assert not any(n.startswith("openverify/") for n in files)
                 assert not any(n.endswith("entry_points.txt") for n in files)
-    assert not payloads[0] & payloads[1], "Products overwrite the same package files"
+    assert all(
+        not left & right for i, left in enumerate(payloads) for right in payloads[i + 1 :]
+    ), "Products overwrite the same package files"
     cache = ROOT / ".sdk-cache/python-products"
     cache.mkdir(parents=True, exist_ok=True)
     results = []
     for scenario, wheels in [
-        ("sdk-alone", [sdk]), ("core-alone", [core]),
-        ("sdk-then-core", [sdk, core]), ("core-then-sdk", [core, sdk]),
+        ("sdk-alone", [sdk]),
+        ("core-alone", [core]),
+        ("sdk-then-core", [sdk, core]),
+        ("core-then-sdk", [core, sdk]),
     ]:
         with tempfile.TemporaryDirectory(prefix=scenario + "-", dir=cache) as temporary:
             destination = Path(temporary)
             venv.EnvBuilder(with_pip=True).create(destination)
             python = destination / ("Scripts/python.exe" if os.name == "nt" else "bin/python")
             for wheel in wheels:
-                run(python, "-I", "-m", "pip", "install", wheel, cwd=destination)
+                targets = [wheel, sdk, *components] if wheel == core else [wheel]
+                run(
+                    python,
+                    "-I",
+                    "-m",
+                    "pip",
+                    "install",
+                    "--find-links",
+                    wheelhouse,
+                    *targets,
+                    cwd=destination,
+                )
             run(python, "-I", "-m", "pip", "check", cwd=destination)
-            has_sdk, has_core = sdk in wheels, core in wheels
+            has_core = core in wheels
+            has_sdk = True  # The product depends on Relay, which depends on verifyanything.
             script = (
                 "import importlib.util, importlib.metadata\n"
                 f"assert (importlib.util.find_spec('verifyanything') is not None) == {has_sdk}\n"
@@ -67,7 +96,7 @@ def verify(core, sdk, output):
                 script += (
                     "import verifyanything as s\n"
                     "assert s.__version__ == importlib.metadata.version('verifyanything')\n"
-                    "v=s.parse('vcp','decision','{\"protocol\":\"draft\",\"kind\":\"CONTINUE\"}')\n"
+                    'v=s.parse(\'vcp\',\'decision\',\'{"protocol":"draft","kind":"CONTINUE"}\')\n'
                     "assert s.serialize(v) and v.data['kind']=='CONTINUE'\n"
                 )
             if has_core:
@@ -75,27 +104,46 @@ def verify(core, sdk, output):
                     "import openverify\n"
                     "from openverify import Graph, Relay\n"
                     "assert callable(Graph) and callable(Relay)\n"
+                    "import openverify_code, openverify_english\n"
                 )
             run(python, "-I", "-c", script, cwd=destination)
             if has_core:
+                executable = destination / (
+                    "Scripts/openverify.exe" if os.name == "nt" else "bin/openverify"
+                )
+                run(executable, "rules", "list", cwd=destination)
+                sample = destination / "sample"
+                sample.mkdir()
+                (sample / "clean.py").write_text("value = 1\n", encoding="utf-8")
+                run(executable, "code", "check", "--root", sample, "--json", cwd=destination)
                 run(
-                    python, "-I",
+                    python,
+                    "-I",
                     ROOT / "conformance/golden-v4/release-review-v0.1/consumer_check.py",
                     cwd=destination,
                 )
             results.append({"scenario": scenario, "status": "PASS"})
     report = {
-        "status": "PASS", "scenarios": results,
+        "status": "PASS",
+        "scenarios": results,
         "commit": subprocess.check_output(
-            ["git", "rev-parse", "HEAD"], cwd=ROOT, text=True,
+            ["git", "rev-parse", "HEAD"],
+            cwd=ROOT,
+            text=True,
         ).strip(),
-        "dirty_worktree": bool(subprocess.check_output(
-            ["git", "status", "--porcelain"], cwd=ROOT, text=True,
-        ).strip()),
-        "wheels": {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in (core, sdk)},
+        "dirty_worktree": bool(
+            subprocess.check_output(
+                ["git", "status", "--porcelain"],
+                cwd=ROOT,
+                text=True,
+            ).strip()
+        ),
+        "wheels": {
+            p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in (core, sdk, *components)
+        },
         "artifacts": {
             p.name: hashlib.sha256(p.read_bytes()).hexdigest()
-            for p in [core, sdk, *core.parent.glob("*.tar.gz")]
+            for p in [core, sdk, *components, *core.parent.glob("*.tar.gz")]
         },
         "scope": (
             "Local wheel isolation, installation order, API, resources and CLI; "
@@ -112,7 +160,9 @@ def main():
     parser.add_argument("--core-wheel", type=Path)
     parser.add_argument("--sdk-wheel", type=Path)
     parser.add_argument(
-        "--output", type=Path, default=ROOT / "dist/python-products/verification.json",
+        "--output",
+        type=Path,
+        default=ROOT / "dist/python-products/verification.json",
     )
     args = parser.parse_args()
     core = args.core_wheel or build(ROOT, ROOT / "dist/core-python")
