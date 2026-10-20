@@ -6,8 +6,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 LANGUAGES = ["node", "python", "rust", "go", "jvm", "dotnet", "ruby", "php"]
 # Resolved from the upstream refs on 2026-10-18 UTC. Review updates explicitly.
+# crates-io-auth-action corrected against upstream v1.0.5 on 2026-10-20 UTC.
 ACTION_REVISIONS = {
-    "rust-lang/crates-io-auth-action@v1": "ebc737b6fc418a6ca0073cf116ec8dc156d8b81e",
+    "rust-lang/crates-io-auth-action@v1.0.5": "c6f97d42243bad5fab37ca0427f495c86d5b1a18",
     "NuGet/login@v1": "8d196754b4036150537f80ac539e15c2f1028841",
     "actions/checkout@v4": "11d5960a326750d5838078e36cf38b85af677262",
     "actions/setup-python@v5": "a26af69be951a213d495a4c3e4e4022e16d87065",
@@ -108,7 +109,7 @@ SETUP = {
     "rust": """      - uses: dtolnay/rust-toolchain@stable
       - name: Exchange GitHub OIDC for a short-lived crates.io token
         if: vars.REGISTRY_AUTH_MODE != 'token'
-        uses: rust-lang/crates-io-auth-action@v1
+        uses: rust-lang/crates-io-auth-action@v1.0.5
         id: rustauth
 """,
     "go": """      - uses: actions/setup-go@v5
