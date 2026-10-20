@@ -13,9 +13,11 @@ from sdk_verify import ROOT, validate_version
 ORDER = ["node", "rust", "ruby", "go", "python", "dotnet", "jvm", "php", "core"]
 
 
-def plan():
+def plan(products=None):
     rows = []
     for product in ORDER:
+        if products is not None and product not in products:
+            continue
         release_version = (
             tomllib.loads((ROOT / "pyproject.toml").read_text())["project"]["version"]
             if product == "core" else validate_version(product)
@@ -68,7 +70,7 @@ def require_credentials(rows):
             raise RuntimeError("Missing secure authorization inputs for " + env)
 
 
-def launch(wait=False):
+def launch(wait=False, products=None):
     if git("status", "--porcelain"):
         raise RuntimeError("Release source must be clean")
     git("fetch", "origin")
@@ -81,7 +83,8 @@ def launch(wait=False):
             raise RuntimeError("Merged main must pass both CI workflows before tagging")
         print("Waiting for existing main CI; no build or publication started", flush=True)
         time.sleep(15)
-    rows = plan()  # Registry state is checked immediately before any tag writes.
+    # Registry state is checked only for the explicitly selected products.
+    rows = plan() if products is None else plan(products)
     require_credentials(rows)
     for row in rows:
         if row["action"] == "SKIP_PUBLISHED":
@@ -113,8 +116,10 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--push", action="store_true")
     parser.add_argument("--wait-for-ci", action="store_true")
+    parser.add_argument("--only", action="append", choices=ORDER,
+                        help="Select one product; repeat to select more. Default: all.")
     args = parser.parse_args()
     if args.push:
-        launch(args.wait_for_ci)
+        launch(args.wait_for_ci, args.only)
     else:
-        print(json.dumps(plan(), indent=2))
+        print(json.dumps(plan(args.only), indent=2))
