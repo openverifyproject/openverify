@@ -1,0 +1,39 @@
+[profiles.code]
+include = ["*.py", "src/**/*.py", "tests/**/*.py"]
+exclude = [".venv/**"]
+
+[profiles.english]
+include = ["*.md", "docs/**/*.md"]
+exclude = ["vendor/**"]
+
+[rules.ruff]
+select = ["E", "F"]
+
+[rules.ruff-format]
+enabled = true
+
+[rules.pytest]
+enabled = true
+tests = ["tests"]
+
+[rules.ast-grep]
+enabled = false
+language = "python"
+pattern = "print($$$ARGS)"
+
+[rules.phrase]
+prohibited = ["very unique"]
+
+[rules.terminology.terms]
+whitelist = "allowlist"
+
+[rules.replacement.replacements]
+utilize = "use"
+
+[rules.em-dash]
+enabled = true
+
+[providers]
+entry_points = []
+# For a trusted external provider, add [[providers.stdio]] with argv,
+# manifest_file, and optional cwd and env. The graph cannot choose argv.

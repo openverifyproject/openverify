@@ -1,0 +1,3 @@
+#!/bin/sh
+# Optional read-only hook: copy to .git/hooks/pre-commit if desired.
+openverify code check --staged && openverify english check --staged
