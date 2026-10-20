@@ -14,6 +14,7 @@ import release_github_setup
 import release_launch
 import sdk_packagist
 import sdk_release
+import sdk_workflows
 
 
 def test_published_scoped_npm_version_is_not_a_candidate_for_another_upload():
@@ -47,6 +48,14 @@ def test_all_nine_environments_have_only_their_own_exact_tag_prefix():
         assert envs["sdk-" + language] == "sdk/" + language + "/v*"
 
 
+@pytest.mark.parametrize("product", ["rust", "jvm"])
+def test_selected_release_does_not_query_other_registries(product):
+    with patch.object(release_launch, "is_published", return_value=False) as published:
+        rows = release_launch.plan([product])
+    assert [r["product"] for r in rows] == [product]
+    assert published.call_args_list == [((product, rows[0]["version"]),)]
+
+
 def test_launcher_cannot_write_tags_from_dirty_source():
     with patch.object(release_launch, "git", return_value=" M changed.py") as git:
         with pytest.raises(RuntimeError, match="clean"):
@@ -72,6 +81,25 @@ def test_central_waits_for_published_state_before_registry_consumer():
                    == "central-publishing-maven-plugin")
     assert central.findtext("m:configuration/m:autoPublish", namespaces=ns) == "true"
     assert central.findtext("m:configuration/m:waitUntil", namespaces=ns) == "published"
+    # 0.11.0 bundles Maven 3.10's local metadata, repository tracking and locks.
+    assert tuple(map(int, central.findtext("m:version", namespaces=ns).split("."))) >= (0, 12, 0)
+
+
+def test_rust_auth_revision_is_the_resolved_upstream_release():
+    reference = "rust-lang/crates-io-auth-action@v1.0.5"
+    revision = "c6f97d42243bad5fab37ca0427f495c86d5b1a18"
+    assert sdk_workflows.ACTION_REVISIONS[reference] == revision
+    text = (ROOT / ".github/workflows/sdk-release-rust.yml").read_text()
+    assert sdk_workflows.pin_actions(sdk_workflows.SETUP["rust"]) in text
+    # A skipped action is still resolved when GitHub prepares the job.
+    assert "ebc737b6fc418a6ca0073cf116ec8dc156d8b81e" not in text
+
+
+def test_published_nuget_release_cannot_be_republished_after_consumer_failure():
+    with patch.object(sdk_release, "fetch", return_value=(200, '{"versions":["0.1.0"]}')):
+        assert sdk_release.is_published("dotnet", "0.1.0")
+        with pytest.raises(RuntimeError, match="already published"):
+            sdk_release.unpublished("dotnet", "0.1.0")
 
 
 def test_published_only_launch_performs_no_git_tag_or_push():

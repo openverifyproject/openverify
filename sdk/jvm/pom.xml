@@ -1,5 +1,5 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
- <modelVersion>4.0.0</modelVersion><groupId>io.github.openverifyproject</groupId><artifactId>verifyanything</artifactId><version>0.1.0</version>
+ <modelVersion>4.0.0</modelVersion><groupId>io.github.openverifyproject</groupId><artifactId>verifyanything</artifactId><version>0.1.1</version>
  <name>VerifyAnything SDK</name><description>VerifyAnything DRAFT VCP and Provider Contract wire SDK</description><url>https://github.com/openverifyproject/openverify</url>
  <licenses><license><name>MIT</name><url>https://opensource.org/license/mit</url></license></licenses>
  <developers><developer><id>openverifyproject</id><name>OpenVerify contributors</name><url>https://github.com/openverifyproject</url></developer></developers>
@@ -17,7 +17,7 @@
   <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-javadoc-plugin</artifactId><version>3.11.2</version><executions><execution><goals><goal>jar</goal></goals></execution></executions></plugin>
  </plugins><resources><resource><directory>src/main/resources</directory></resource><resource><directory>.</directory><includes><include>LICENSE</include></includes><targetPath>META-INF</targetPath></resource></resources></build>
  <profiles><profile><id>release</id><build><plugins>
-  <plugin><groupId>org.sonatype.central</groupId><artifactId>central-publishing-maven-plugin</artifactId><version>0.11.0</version><extensions>true</extensions><configuration><publishingServerId>central</publishingServerId><autoPublish>true</autoPublish><waitUntil>published</waitUntil></configuration></plugin>
+  <plugin><groupId>org.sonatype.central</groupId><artifactId>central-publishing-maven-plugin</artifactId><version>0.12.0</version><extensions>true</extensions><configuration><publishingServerId>central</publishingServerId><autoPublish>true</autoPublish><waitUntil>published</waitUntil></configuration></plugin>
   <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-gpg-plugin</artifactId><version>3.2.8</version><executions><execution><phase>verify</phase><goals><goal>sign</goal></goals></execution></executions><configuration><gpgArguments><arg>--pinentry-mode</arg><arg>loopback</arg></gpgArguments></configuration></plugin>
  </plugins></build></profile></profiles>
 </project>
