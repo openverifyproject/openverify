@@ -2,8 +2,10 @@
 # pyright: basic
 
 import json
+import os
 import shutil
 import subprocess
+import sys
 from pathlib import Path
 
 from openverify.relay.local import finding, run_rules
@@ -14,6 +16,11 @@ RULES = {
     "pytest": "Configured project tests",
     "ast-grep": "Configured structural code pattern",
 }
+
+
+def tool(name: str) -> str | None:
+    sibling = Path(sys.executable).with_name(name + (".exe" if os.name == "nt" else ""))
+    return str(sibling) if sibling.is_file() else shutil.which(name)
 
 
 def run_command(argv: list[str], root: Path) -> subprocess.CompletedProcess[str]:
@@ -30,7 +37,7 @@ def code_rule(rule: str, root: Path, files: list[str], settings: dict) -> list[d
             return []
         if any(not isinstance(t, str) or t.startswith("-") for t in tests):
             raise ValueError("pytest tests must be explicit paths")
-        executable = settings.get("executable") or shutil.which("pytest")
+        executable = settings.get("executable") or tool("pytest")
         if not executable:
             raise FileNotFoundError("pytest is required")
         pytest_config = []
@@ -58,7 +65,7 @@ def code_rule(rule: str, root: Path, files: list[str], settings: dict) -> list[d
     if not files:
         return []
     if rule in ("ruff", "ruff-format"):
-        executable = settings.get("executable") or shutil.which("ruff")
+        executable = settings.get("executable") or tool("ruff")
         if not executable:
             raise FileNotFoundError("Ruff is required")
         ruff_config = []
@@ -98,7 +105,7 @@ def code_rule(rule: str, root: Path, files: list[str], settings: dict) -> list[d
             if result.returncode == 1:
                 findings.append(finding(rule, name, 1, 1, "Formatting differs"))
         return findings
-    executable = settings.get("executable") or shutil.which("ast-grep")
+    executable = settings.get("executable") or tool("ast-grep")
     if not executable:
         raise FileNotFoundError("ast-grep is required")
     if "rule_file" in settings:

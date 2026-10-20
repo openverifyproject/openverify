@@ -158,6 +158,12 @@ def test_ruff_format_reports_only_unformatted_files(tmp_path: Path) -> None:
     assert [item["file"] for item in report["findings"]] == ["dirty.py"]
 
 
+def test_installed_tool_is_found_beside_python_without_path(tmp_path: Path, monkeypatch) -> None:
+    (tmp_path / "clean.py").write_text("x = 1\n", encoding="utf-8")
+    monkeypatch.setenv("PATH", "")
+    assert code_check(tmp_path, ["clean.py"])["status"] == "PASS"
+
+
 def test_configured_pytest_failure_and_missing_tool(tmp_path: Path) -> None:
     pytest_exe = Path(sys.executable).with_name(
         "pytest.exe" if sys.platform == "win32" else "pytest"
