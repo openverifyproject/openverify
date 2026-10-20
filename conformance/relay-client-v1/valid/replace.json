@@ -1,0 +1,331 @@
+{
+  "client_version": "1",
+  "id": "replace-1",
+  "op": "replace",
+  "graph_id": "$GRAPH_ID",
+  "definition": {
+    "protocol": "draft",
+    "id": "text",
+    "version": "1",
+    "subject": {
+      "id": "text",
+      "type": "declared-input",
+      "locator": {
+        "graph": "text"
+      }
+    },
+    "criterion": {
+      "id": "text",
+      "description": "Verification defined by text"
+    },
+    "judgment_schema": true,
+    "run_inputs": [
+      {
+        "name": "text",
+        "schema": {
+          "type": "string"
+        },
+        "required": true,
+        "on_unavailable": "BLOCK"
+      }
+    ],
+    "graph": {
+      "nodes": [
+        {
+          "id": "required",
+          "kind": "EVALUATE",
+          "operation": {
+            "capability_id": "openverify.text",
+            "capability_version": "1"
+          },
+          "inputs": [
+            {
+              "name": "text",
+              "schema": {
+                "type": "string"
+              },
+              "required": true,
+              "on_unavailable": "BLOCK"
+            },
+            {
+              "name": "subject",
+              "schema": {
+                "type": "object"
+              },
+              "required": true,
+              "on_unavailable": "BLOCK"
+            },
+            {
+              "name": "criterion",
+              "schema": {
+                "type": "object"
+              },
+              "required": true,
+              "on_unavailable": "BLOCK"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "result",
+              "schema": {
+                "type": "object"
+              },
+              "role": "RESULT"
+            }
+          ],
+          "bindings": {
+            "criterion": {
+              "kind": "CONSTANT",
+              "value": {
+                "description": "Verification defined by text",
+                "id": "text"
+              }
+            },
+            "subject": {
+              "kind": "CONSTANT",
+              "value": {
+                "id": "text",
+                "locator": {
+                  "graph": "text"
+                },
+                "type": "declared-input"
+              }
+            },
+            "text": {
+              "kind": "RUN_INPUT",
+              "name": "text"
+            }
+          },
+          "aggregate_inputs": [],
+          "config": {
+            "required": [
+              "Migration",
+              "Rollback"
+            ]
+          },
+          "resource_estimate": {}
+        },
+        {
+          "id": "prohibited",
+          "kind": "EVALUATE",
+          "operation": {
+            "capability_id": "openverify.text",
+            "capability_version": "1"
+          },
+          "inputs": [
+            {
+              "name": "text",
+              "schema": {
+                "type": "string"
+              },
+              "required": true,
+              "on_unavailable": "BLOCK"
+            },
+            {
+              "name": "subject",
+              "schema": {
+                "type": "object"
+              },
+              "required": true,
+              "on_unavailable": "BLOCK"
+            },
+            {
+              "name": "criterion",
+              "schema": {
+                "type": "object"
+              },
+              "required": true,
+              "on_unavailable": "BLOCK"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "result",
+              "schema": {
+                "type": "object"
+              },
+              "role": "RESULT"
+            }
+          ],
+          "bindings": {
+            "criterion": {
+              "kind": "CONSTANT",
+              "value": {
+                "description": "Verification defined by text",
+                "id": "text"
+              }
+            },
+            "subject": {
+              "kind": "CONSTANT",
+              "value": {
+                "id": "text",
+                "locator": {
+                  "graph": "text"
+                },
+                "type": "declared-input"
+              }
+            },
+            "text": {
+              "kind": "RUN_INPUT",
+              "name": "text"
+            }
+          },
+          "aggregate_inputs": [],
+          "config": {
+            "prohibited": [
+              "TODO",
+              "TBD"
+            ]
+          },
+          "resource_estimate": {}
+        },
+        {
+          "id": "all",
+          "kind": "AGGREGATE",
+          "operation": {
+            "capability_id": "openverify.aggregate",
+            "capability_version": "1"
+          },
+          "inputs": [
+            {
+              "name": "required",
+              "schema": {
+                "type": "object"
+              },
+              "required": true,
+              "on_unavailable": "BLOCK"
+            },
+            {
+              "name": "prohibited",
+              "schema": {
+                "type": "object"
+              },
+              "required": true,
+              "on_unavailable": "BLOCK"
+            },
+            {
+              "name": "members",
+              "schema": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "required": true,
+              "on_unavailable": "BLOCK"
+            },
+            {
+              "name": "subject",
+              "schema": {
+                "type": "object"
+              },
+              "required": true,
+              "on_unavailable": "BLOCK"
+            },
+            {
+              "name": "criterion",
+              "schema": {
+                "type": "object"
+              },
+              "required": true,
+              "on_unavailable": "BLOCK"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "result",
+              "schema": {
+                "type": "object"
+              },
+              "role": "RESULT"
+            }
+          ],
+          "bindings": {
+            "criterion": {
+              "kind": "CONSTANT",
+              "value": {
+                "description": "Verification defined by text",
+                "id": "text"
+              }
+            },
+            "members": {
+              "kind": "CONSTANT",
+              "value": [
+                "required",
+                "prohibited"
+              ]
+            },
+            "prohibited": {
+              "kind": "UPSTREAM_OUTPUT",
+              "node_id": "prohibited",
+              "output": "result"
+            },
+            "required": {
+              "kind": "UPSTREAM_OUTPUT",
+              "node_id": "required",
+              "output": "result"
+            },
+            "subject": {
+              "kind": "CONSTANT",
+              "value": {
+                "id": "text",
+                "locator": {
+                  "graph": "text"
+                },
+                "type": "declared-input"
+              }
+            }
+          },
+          "aggregate_inputs": [
+            "required",
+            "prohibited"
+          ],
+          "config": {
+            "handling": {
+              "CANCELLED": "REJECT",
+              "DEFERRED": "REJECT",
+              "ERROR": "REJECT",
+              "MISSING": "REJECT",
+              "NOT_APPLICABLE": "REJECT",
+              "SKIP": "REJECT",
+              "UNKNOWN": "REJECT"
+            },
+            "reducer": "ALL"
+          },
+          "resource_estimate": {}
+        }
+      ],
+      "edges": [
+        {
+          "from_node": "required",
+          "to_node": "all"
+        },
+        {
+          "from_node": "prohibited",
+          "to_node": "all"
+        }
+      ],
+      "features": []
+    },
+    "execution_policy": {
+      "activation": {
+        "config": {},
+        "inputs": [],
+        "bindings": {},
+        "executor_ref": "MANUAL"
+      },
+      "selection": {
+        "config": {},
+        "inputs": [],
+        "bindings": {},
+        "executor_ref": "EXPLICIT"
+      },
+      "admission": {
+        "config": {},
+        "inputs": [],
+        "bindings": {},
+        "strategy": "ALWAYS"
+      }
+    }
+  }
+}
