@@ -12,7 +12,7 @@ from pathlib import Path
 from sdk_verify import ROOT, validate_version, version
 
 NAMES = {
-    "node": "verifyanything",
+    "node": "@openverifyproject/verifyanything",
     "python": "verifyanything",
     "rust": "verifyanything",
     "go": "github.com/openverifyproject/openverify/sdk/go",
@@ -22,7 +22,7 @@ NAMES = {
     "php": "openverify/verifyanything",
 }
 NAME_URLS = {
-    "node": "https://registry.npmjs.org/verifyanything",
+    "node": "https://registry.npmjs.org/@openverifyproject%2fverifyanything",
     "python": "https://pypi.org/pypi/verifyanything/json",
     "rust": "https://crates.io/api/v1/crates/verifyanything",
     "go": "https://proxy.golang.org/github.com/openverifyproject/openverify/sdk/go/@v/list",
@@ -79,10 +79,10 @@ def names():
     return {"checked_at": datetime.datetime.now(datetime.UTC).isoformat(), "packages": rows}
 
 
-def unpublished(language, release_version):
+def is_published(language, release_version):
     status, body = fetch(NAME_URLS[language])
     if status == 404:
-        return
+        return False
     data = json.loads(body) if language not in ("jvm", "go") else body
     present = {
         "node": lambda: release_version in data.get("versions", {}),
@@ -103,7 +103,11 @@ def unpublished(language, release_version):
             for v in data.get("packages", {}).get("openverify/verifyanything", [])
         ),
     }[language]()
-    if present:
+    return present
+
+
+def unpublished(language, release_version):
+    if is_published(language, release_version):
         raise RuntimeError(f"{language} {release_version} is already published; refusing overwrite")
 
 

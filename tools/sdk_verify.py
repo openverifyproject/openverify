@@ -196,12 +196,12 @@ def consumer(language, artifact=None, registry=False):
                 NPM,
                 "install",
                 "--ignore-scripts",
-                "verifyanything@" + version(language) if registry else artifact,
+                "@openverifyproject/verifyanything@" + version(language) if registry else artifact,
                 cwd=directory,
             )
             write(
                 directory / "test.mjs",
-                "import {parse,serialize} from 'verifyanything'; const v=parse('vcp','decision','{\"protocol\":\"draft\",\"kind\":\"CONTINUE\"}'); if(JSON.parse(serialize(v)).kind!=='CONTINUE')throw Error('consumer');",
+                "import {parse,serialize} from '@openverifyproject/verifyanything'; const v=parse('vcp','decision','{\"protocol\":\"draft\",\"kind\":\"CONTINUE\"}'); if(JSON.parse(serialize(v)).kind!=='CONTINUE')throw Error('consumer');",
             )
             run("node", "test.mjs", cwd=directory)
         elif language == "rust":

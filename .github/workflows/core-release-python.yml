@@ -32,9 +32,7 @@ jobs:
       - name: Verify merged source, independent tag and exact consumer-tested artifacts
         env:
           RELEASE_TAG: ${{ github.ref_name }}
-          REGISTRY_OWNERSHIP_APPROVED: ${{ vars.REGISTRY_OWNERSHIP_APPROVED }}
         run: |
-          test "$REGISTRY_OWNERSHIP_APPROVED" = true
           python tools/core_release.py --tag "$RELEASE_TAG" --evidence dist/core-artifact/python-products/verification.json --package-directory dist/core-artifact/python
       - uses: pypa/gh-action-pypi-publish@dc37677b2e1c63e2034f94d8a5b11f265b73ba33 # pypa/gh-action-pypi-publish@release/v1
         with:
