@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "openverify-relay"
+version = "0.1.0"
+description = "OpenVerify DRAFT Relay runtime and Python compatibility API"
+requires-python = ">=3.13,<3.14"
+dependencies = ["verifyanything==0.1.0", "pydantic>=2.11,<3", "jsonschema>=4.23,<5"]
+
+[tool.setuptools.packages.find]
+where = ["../../src"]
+include = ["openverify*"]
+
+[tool.setuptools.package-data]
+openverify = ["data/schemas/*.json", "data/profile.json", "py.typed"]
+"openverify.provider" = ["data/schemas/*.json"]
