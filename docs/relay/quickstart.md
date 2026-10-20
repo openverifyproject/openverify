@@ -6,7 +6,7 @@ database is required. Install this checkout; publication to PyPI is a separate
 release operation and is not performed by this change.
 
 ```sh
-python -m pip install .
+python -m pip install ./sdk/python ./packages/relay ./packages/code ./packages/english .
 openverify run text --inputs examples/first-run/fail.json --json
 openverify run text --inputs examples/first-run/pass.json --json
 ```
@@ -18,7 +18,7 @@ complete VCP RunRecord, including provider bindings and consumed input snapshots
 The same commands work in PowerShell. To select Python explicitly:
 
 ```powershell
-py -3.13 -m pip install .
+py -3.13 -m pip install ./sdk/python ./packages/relay ./packages/code ./packages/english .
 '{"text":"Migration Rollback"}' | openverify run text --inputs - --json
 ```
 
