@@ -44,11 +44,7 @@ jobs:
       - name: Publish the verified crate contents
         env:
           CARGO_REGISTRY_TOKEN: ${{ steps.rustauth.outputs.token || secrets.CARGO_REGISTRY_TOKEN }}
-        run: |
-          mkdir -p .sdk-release/crate
-          tar -xzf dist/sdk/rust/*.crate -C .sdk-release/crate
-          cd .sdk-release/crate/verifyanything-[0-9]*
-          cargo publish --locked
+        run: python tools/sdk_rust_publish.py dist/sdk/rust/*.crate
       - name: Verify registry availability and a fresh external installation
         env:
           SDK_LANGUAGE: rust

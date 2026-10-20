@@ -91,6 +91,9 @@ jobs:
         env:
           SDK_LANGUAGE: ${{ inputs.language }}
         run: python tools/sdk_verify.py "$SDK_LANGUAGE"
+      - name: Rust exact publication path, dry-run and repackaged consumer
+        if: inputs.language == 'rust'
+        run: python tools/sdk_rust_publish.py --dry-run dist/sdk/rust/*.crate
       - uses: actions/upload-artifact@v4
         with:
           name: sdk-${{ inputs.language }}-${{ github.sha }}
@@ -160,11 +163,7 @@ PUBLISH = {
     "rust": """      - name: Publish the verified crate contents
         env:
           CARGO_REGISTRY_TOKEN: ${{ steps.rustauth.outputs.token || secrets.CARGO_REGISTRY_TOKEN }}
-        run: |
-          mkdir -p .sdk-release/crate
-          tar -xzf dist/sdk/rust/*.crate -C .sdk-release/crate
-          cd .sdk-release/crate/verifyanything-[0-9]*
-          cargo publish --locked
+        run: python tools/sdk_rust_publish.py dist/sdk/rust/*.crate
 """,
     "go": """      - name: Verify public nested-module resolution from the pushed tag
         env:
