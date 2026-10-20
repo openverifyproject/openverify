@@ -1,0 +1,9 @@
+{
+  "client_version": "1",
+  "id": "bad-extra",
+  "op": "get",
+  "graph_id": "$GRAPH_ID",
+  "argv": [
+    "untrusted"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "client_version": "1",
+  "id": "bad-inputs",
+  "op": "run",
+  "graph_id": "$GRAPH_ID",
+  "inputs": []
+}

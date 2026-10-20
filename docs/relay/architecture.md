@@ -88,7 +88,8 @@ identities, events, raw terminal outcomes and observer diagnostics. It adds no V
 meaning or authentication. Graph-node ProviderBinding remains normative. Observer
 exceptions are isolated and recorded; store failures propagate to the host.
 
-Mandatory OSS dependencies remain Pydantic and jsonschema. Optional extras install
+Relay depends on the `verifyanything` wheel plus Pydantic and jsonschema. The
+product wheel depends on the Relay, code, and English wheels. Optional extras install
 the official MCP SDK; Starlette/Uvicorn; or Ruff, pytest and ast-grep-cli. The
 standard library uses stdlib asyncio/subprocess and the installed Git CLI. It does
 not implement a replacement parser, linter, test runner, prover, or HTTP server.
