@@ -107,7 +107,7 @@ def build(language):
         run(NPM, "pack", "--pack-destination", destination, cwd=directory, env=env)
         return latest("dist/sdk/node/*.tgz")
     if language == "rust":
-        run("cargo", "package", "--locked", "--allow-dirty", cwd=directory, env=env)
+        run("cargo", "package", "--locked", cwd=directory, env=env)
         source = latest("sdk/rust/target/package/verifyanything-[0-9]*.crate")
     elif language == "go":
         # A distributable source snapshot; public Go resolution is checked only after tagging.

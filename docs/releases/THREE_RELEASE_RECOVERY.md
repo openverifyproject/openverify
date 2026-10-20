@@ -144,3 +144,25 @@ command with `--only jvm`. Selection regressions bring tooling tests to 66 PASS.
 Remaining limits: first-crate token permissions/name acceptance and new Central
 server-side validation can only be established by authorized publication. Local
 build/consumer success is not universal Golden certification.
+
+## Follow-up after Rust `sdk/rust/v0.1.1` failed before upload
+
+[The Rust 0.1.1 run](https://github.com/openverifyproject/openverify/actions/runs/39354837860)
+passed package verification, then `cargo publish --locked` refused the six
+uncommitted files extracted under `.sdk-release/` inside Git. The earlier local
+dry-run used an ignored directory and missed this checkout interaction. Version
+0.1.1 remains unpublished; its immutable tag is preserved.
+
+The Rust workflow and its reusable verification job now call the same
+`tools/sdk_rust_publish.py` helper. It requires `RUNNER_TEMP` outside Git, extracts
+the verified `.crate` there, and runs `cargo publish --locked`. Verification uses
+`--dry-run` and installs the *repackaged* crate that Cargo generated. The existing
+`--allow-dirty` packaging flag was also removed. Rust package metadata and lockfile
+advance to **0.1.2**; all other package versions remain unchanged.
+
+Before this follow-up was committed, 68 tooling tests passed; Rust native/shared
+tests, two identical-content package builds from an external source snapshot,
+the original package consumer, actual external-path `cargo publish --locked
+--dry-run`, and the repackaged crate consumer all passed. The source snapshot was
+needed only because pre-commit source files are intentionally dirty; the hosted
+tag run will build from a clean exact commit. The local dry-run made no upload.
