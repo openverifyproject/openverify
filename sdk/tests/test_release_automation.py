@@ -48,6 +48,14 @@ def test_all_nine_environments_have_only_their_own_exact_tag_prefix():
         assert envs["sdk-" + language] == "sdk/" + language + "/v*"
 
 
+@pytest.mark.parametrize("product", ["rust", "jvm"])
+def test_selected_release_does_not_query_other_registries(product):
+    with patch.object(release_launch, "is_published", return_value=False) as published:
+        rows = release_launch.plan([product])
+    assert [r["product"] for r in rows] == [product]
+    assert published.call_args_list == [((product, rows[0]["version"]),)]
+
+
 def test_launcher_cannot_write_tags_from_dirty_source():
     with patch.object(release_launch, "git", return_value=" M changed.py") as git:
         with pytest.raises(RuntimeError, match="clean"):

@@ -133,7 +133,13 @@ then wait for both main CI workflows at the actual merge commit. Confirm 0.1.1
 remains unpublished and new tags do not already exist. Create/push only
 `sdk/rust/v0.1.1` and `sdk/jvm/v0.1.1`, separately, from that merged commit.
 For NuGet, only recheck the published consumer; never publish 0.1.0 again.
-Do not run the all-products launcher for this recovery.
+Do not run the all-products launcher for this recovery. The launcher now accepts
+`--only rust` or `--only jvm`, querying and releasing only that product. It derives
+the release commit dynamically from clean HEAD, requires exact latest
+`origin/main` and green main CI, and never uses a hardcoded correction SHA.
+Run `python tools/release_launch.py --push --wait-for-ci --only rust` first;
+only after hosted Rust release success and registry verification run the same
+command with `--only jvm`. Selection regressions bring tooling tests to 66 PASS.
 
 Remaining limits: first-crate token permissions/name acceptance and new Central
 server-side validation can only be established by authorized publication. Local
