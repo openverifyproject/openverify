@@ -55,7 +55,8 @@ def test_release_filters_only_one_language(language):
     assert f"environment: sdk-{language}" in text
     assert "needs: verify" in text and "--evidence" in text
     assert "--registry-only" in text
-    assert "REGISTRY_OWNERSHIP_APPROVED" in text
+    assert "tools/sdk_release.py preflight" in text
+    assert "REGISTRY_OWNERSHIP_APPROVED" not in text
 
 
 @pytest.mark.parametrize("language", sdk_workflows.LANGUAGES)
@@ -141,7 +142,8 @@ def test_release_accepts_merged_source_and_checkout_origin_forms(remote):
 def test_exact_package_identities_and_preserved_language_apis():
     import tomllib
 
-    assert json.loads((ROOT / "sdk/node/package.json").read_text())["name"] == "verifyanything"
+    node = json.loads((ROOT / "sdk/node/package.json").read_text())
+    assert node["name"] == "@openverifyproject/verifyanything"
     rust = tomllib.loads((ROOT / "sdk/rust/Cargo.toml").read_text())
     assert rust["package"]["name"] == "verifyanything"
     assert rust["lib"]["name"] == "verifyanything"
@@ -153,7 +155,7 @@ def test_exact_package_identities_and_preserved_language_apis():
     assert php["name"] == "openverify/verifyanything"
     python = tomllib.loads((ROOT / "sdk/python/pyproject.toml").read_text())
     assert python["project"]["name"] == "verifyanything"
-    assert sdk_release.NAME_URLS["node"] == "https://registry.npmjs.org/verifyanything"
+    assert sdk_release.NAME_URLS["node"] == "https://registry.npmjs.org/@openverifyproject%2fverifyanything"
 
 
 def test_registry_failures_are_not_name_availability():

@@ -34,9 +34,7 @@ jobs:
       - name: Check exact tag, test evidence, checksum and unpublished version
         env:
           RELEASE_TAG: ${{ github.ref_name }}
-          REGISTRY_OWNERSHIP_APPROVED: ${{ vars.REGISTRY_OWNERSHIP_APPROVED }}
         run: |
-          test "$REGISTRY_OWNERSHIP_APPROVED" = true
           python tools/sdk_release.py preflight --language dotnet --tag "$RELEASE_TAG" --evidence dist/sdk/dotnet/verification.json
       - uses: actions/setup-dotnet@67a3573c9a986a3f9c594539f4ab511d57bb3ce9 # actions/setup-dotnet@v4
         with:

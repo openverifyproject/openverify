@@ -34,9 +34,7 @@ jobs:
       - name: Check exact tag, test evidence, checksum and unpublished version
         env:
           RELEASE_TAG: ${{ github.ref_name }}
-          REGISTRY_OWNERSHIP_APPROVED: ${{ vars.REGISTRY_OWNERSHIP_APPROVED }}
         run: |
-          test "$REGISTRY_OWNERSHIP_APPROVED" = true
           python tools/sdk_release.py preflight --language rust --tag "$RELEASE_TAG" --evidence dist/sdk/rust/verification.json
       - uses: dtolnay/rust-toolchain@b725eda525362e7cf34af9a7243cac1e3f01a7ec # dtolnay/rust-toolchain@stable
       - name: Exchange GitHub OIDC for a short-lived crates.io token

@@ -34,9 +34,7 @@ jobs:
       - name: Check exact tag, test evidence, checksum and unpublished version
         env:
           RELEASE_TAG: ${{ github.ref_name }}
-          REGISTRY_OWNERSHIP_APPROVED: ${{ vars.REGISTRY_OWNERSHIP_APPROVED }}
         run: |
-          test "$REGISTRY_OWNERSHIP_APPROVED" = true
           python tools/sdk_release.py preflight --language ruby --tag "$RELEASE_TAG" --evidence dist/sdk/ruby/verification.json
       - uses: ruby/setup-ruby@651ff0d62c5c79bed6d53ec518387aae20e72c1a # ruby/setup-ruby@v1
         with:

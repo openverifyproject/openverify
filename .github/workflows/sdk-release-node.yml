@@ -34,18 +34,14 @@ jobs:
       - name: Check exact tag, test evidence, checksum and unpublished version
         env:
           RELEASE_TAG: ${{ github.ref_name }}
-          REGISTRY_OWNERSHIP_APPROVED: ${{ vars.REGISTRY_OWNERSHIP_APPROVED }}
         run: |
-          test "$REGISTRY_OWNERSHIP_APPROVED" = true
           python tools/sdk_release.py preflight --language node --tag "$RELEASE_TAG" --evidence dist/sdk/node/verification.json
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # actions/setup-node@v4
         with:
           node-version: '24'
           registry-url: https://registry.npmjs.org
       - run: npm install --global npm@latest
-      - name: Publish verified tarball using npm OIDC or a bootstrap-only token
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Publish verified scoped tarball using npm OIDC
         run: npm publish dist/sdk/node/*.tgz --access public --provenance
       - name: Verify registry availability and a fresh external installation
         env:

@@ -19,7 +19,7 @@ been used as implementation or certification sources.
 
 | SDK | Proposed package | Registry | Native validator |
 | --- | --- | --- | --- |
-| Node/TypeScript | `verifyanything` | npm | Ajv 8, Draft 2020-12 |
+| Node/TypeScript | `@openverifyproject/verifyanything` | npm | Ajv 8, Draft 2020-12 |
 | Rust | `verifyanything` | crates.io | jsonschema, Draft 2020-12 |
 | Go | `github.com/openverifyproject/openverify/sdk/go` | Git/Go modules | santhosh-tekuri/jsonschema v6, ECMAScript regex adapter |
 | JVM | `io.github.openverifyproject:verifyanything` | Maven Central | NetworkNT, Draft 2020-12 |

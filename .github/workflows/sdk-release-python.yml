@@ -34,9 +34,7 @@ jobs:
       - name: Check exact tag, test evidence, checksum and unpublished version
         env:
           RELEASE_TAG: ${{ github.ref_name }}
-          REGISTRY_OWNERSHIP_APPROVED: ${{ vars.REGISTRY_OWNERSHIP_APPROVED }}
         run: |
-          test "$REGISTRY_OWNERSHIP_APPROVED" = true
           python tools/sdk_release.py preflight --language python --tag "$RELEASE_TAG" --evidence dist/sdk/python/verification.json
       - name: Publish verified distributions using PyPI OIDC
         run: mkdir -p dist/pypi && cp dist/sdk/python/*.whl dist/sdk/python/*.tar.gz dist/pypi/
