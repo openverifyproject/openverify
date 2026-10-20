@@ -14,6 +14,7 @@ import release_github_setup
 import release_launch
 import sdk_packagist
 import sdk_release
+import sdk_rust_publish
 import sdk_workflows
 
 
@@ -100,6 +101,55 @@ def test_published_nuget_release_cannot_be_republished_after_consumer_failure():
         assert sdk_release.is_published("dotnet", "0.1.0")
         with pytest.raises(RuntimeError, match="already published"):
             sdk_release.unpublished("dotnet", "0.1.0")
+
+
+def test_rust_publish_rejects_temp_inside_checkout_before_reading_artifact(monkeypatch):
+    monkeypatch.setenv("RUNNER_TEMP", str(ROOT))
+    with pytest.raises(RuntimeError, match="outside every Git checkout"):
+        sdk_rust_publish.publish(ROOT / "nonexistent.crate", dry_run=True)
+
+
+def test_rust_dry_run_installs_the_repackaged_crate_outside_git(monkeypatch):
+    import subprocess
+    import tarfile
+    import tempfile
+
+    with tempfile.TemporaryDirectory(prefix="rust-publish-test-") as temporary:
+        runner_temp = Path(temporary).resolve()
+        assert not runner_temp.is_relative_to(ROOT)
+        monkeypatch.setenv("RUNNER_TEMP", str(runner_temp))
+        package_name = "verifyanything-0.1.2"
+        manifest = runner_temp / "Cargo.toml"
+        manifest.write_text('[package]\nname="verifyanything"\nversion="0.1.2"\n')
+        artifact = runner_temp / "verified.crate"
+        with tarfile.open(artifact, "w:gz") as archive:
+            archive.add(manifest, arcname=package_name + "/Cargo.toml")
+        original_run = subprocess.run
+
+        def execute(command, **kwargs):
+            if command[0] == "git":
+                return original_run(command, **kwargs)
+            assert command == ["cargo", "publish", "--locked", "--dry-run"]
+            package = kwargs["cwd"]
+            assert package.is_relative_to(runner_temp)
+            assert not package.is_relative_to(ROOT)
+            repackaged = package / "target/package/tmp-crate" / (package_name + ".crate")
+            repackaged.parent.mkdir(parents=True)
+            repackaged.write_bytes(b"actual-repackaged-content")
+            return subprocess.CompletedProcess(command, 0)
+
+        def install(language, repackaged):
+            assert language == "rust"
+            assert repackaged.read_bytes() == b"actual-repackaged-content"
+            assert repackaged != artifact
+
+        with (
+            patch.object(sdk_rust_publish.subprocess, "run", side_effect=execute),
+            patch.object(sdk_rust_publish, "version", return_value="0.1.2"),
+            patch.object(sdk_rust_publish, "consumer", side_effect=install) as consumer,
+        ):
+            sdk_rust_publish.publish(artifact, dry_run=True)
+        consumer.assert_called_once()
 
 
 def test_published_only_launch_performs_no_git_tag_or_push():
