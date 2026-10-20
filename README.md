@@ -14,16 +14,29 @@ runtime. Use the same typed VCP graphs for code, documents, arbitrary JSON,
 application guardrails, agents, CLI, MCP, or a Python harness.
 
 ```sh
-python -m pip install .
+python -m pip install ./sdk/python ./packages/relay ./packages/code ./packages/english .
 openverify run text --inputs examples/first-run/fail.json --json
 openverify run text --inputs examples/first-run/pass.json --json
-python -m pip install '.[code,mcp,http]'
+python -m pip install '.[all]'
 python examples/code-verification/run.py
 openverify mcp
 ```
 
 The text commands demonstrate FAIL (exit 1) then PASS (exit 0). Install this
 checkout; this task does not publish a package. Python 3.13 is required.
+
+The source tree builds five independent wheels: `verifyanything` for portable
+wire validation, `openverify-relay` for the generic runtime and existing Python
+API, `openverify-code` and `openverify-english` for local checks, and `openverify`
+for the product CLI. `openverify-relay` does not install the local harnesses.
+
+For project checks, place `openverify.toml` in the project root, then run
+`openverify code check --staged` or `openverify english check --changed`.
+`openverify rules list` shows available rules. See
+[local verification](docs/harness-mvp.md) and the
+[example configuration](examples/local-verification/openverify.toml).
+The Relay Client v1 host is `openverify client --database relay.db`;
+see [the local client contract](docs/relay/client-v1.md).
 [Five-minute quickstart](docs/relay/quickstart.md) ?
 [Graph authoring](docs/relay/graph-authoring.md) ?
 [Providers](docs/relay/providers.md) ? [Integrations](docs/relay/integration.md) ?
