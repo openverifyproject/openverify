@@ -8,7 +8,7 @@ import java.util.*;
 
 /** Offline wire validation for the documented standalone semantic subset. */
 public final class Sdk {
- /** Independent package version. */ public static final String VERSION="0.1.0";
+ /** Independent package version. */ public static final String VERSION="0.1.1";
  /** Revision-sensitive VCP marker. */ public static final String VCP_VERSION="draft";
  /** Provider Contract exact version. */ public static final String PROVIDER_CONTRACT_VERSION="0.1";
  /** Normative source revision. */ public static final String SPEC_REVISION="5f17f402a270882f244a54dde25eda92a085eb39";
