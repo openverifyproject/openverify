@@ -69,9 +69,9 @@ GitHub Trusted Publishers:
 
 | PyPI project | Workflow filename | GitHub environment | Tag |
 | --- | --- | --- | --- |
-| `openverify-relay` | `core-release-relay.yml` | `core-relay` | `core/relay/v0.1.0` |
-| `openverify-code` | `core-release-code.yml` | `core-code` | `core/code/v0.1.0` |
-| `openverify-english` | `core-release-english.yml` | `core-english` | `core/english/v0.1.0` |
+| `openverify-relay` | `core-release-relay.yml` | `core-relay` | `core/relay/v0.1.1` |
+| `openverify-code` | `core-release-code.yml` | `core-code` | `core/code/v0.1.1` |
+| `openverify-english` | `core-release-english.yml` | `core-english` | `core/english/v0.1.1` |
 | `openverify` | `core-release-python.yml` | `core-python` | `core/python/v0.1.1` |
 
 Create pending publishers for the first three on the PyPI account Publishing
@@ -99,13 +99,13 @@ then the root product. Each tag requires separate authorization. The first tag i
 ```powershell
 git fetch origin
 $releaseCommit = git rev-parse origin/main
-$tag = 'core/relay/v0.1.0'
+$tag = 'core/relay/v0.1.1'
 git tag -a $tag $releaseCommit -m "$tag"
 git push origin "refs/tags/$tag"
 ```
 
 This triggers only `.github/workflows/core-release-relay.yml`. Once the Relay
-package is available, use `core/code/v0.1.0` and `core/english/v0.1.0`; once both
+package is available, use `core/code/v0.1.1` and `core/english/v0.1.1`; once both
 are available, use `core/python/v0.1.1`. Ordinary pushes and PRs cannot publish.
 
 After public publication, in a fresh Python 3.13 environment:

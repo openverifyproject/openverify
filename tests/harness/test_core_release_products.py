@@ -49,7 +49,7 @@ def test_core_product_preflight_stages_only_its_verified_artifacts(product, tmp_
     def registry(url):
         if url.endswith("/" + name + "/json"):
             return (404, "") if product != "python" else (200, '{"releases":{"0.1.0":[]}}')
-        return 200, '{"releases":{"0.1.0":[]}}'
+        return 200, '{"releases":{"0.1.0":[],"0.1.1":[]}}'
 
     monkeypatch.setattr(core_release, "fetch", registry)
     core_release.preflight(
@@ -61,14 +61,14 @@ def test_core_product_preflight_stages_only_its_verified_artifacts(product, tmp_
 
 @pytest.mark.parametrize("product,expected", [
     ("relay", [("verifyanything", "0.1.0")]),
-    ("code", [("openverify-relay", "0.1.0")]),
-    ("english", [("openverify-relay", "0.1.0")]),
+    ("code", [("openverify-relay", "0.1.1")]),
+    ("english", [("openverify-relay", "0.1.1")]),
     (
         "python",
         [
-            ("openverify-relay", "0.1.0"),
-            ("openverify-code", "0.1.0"),
-            ("openverify-english", "0.1.0"),
+            ("openverify-relay", "0.1.1"),
+            ("openverify-code", "0.1.1"),
+            ("openverify-english", "0.1.1"),
         ],
     ),
 ])
