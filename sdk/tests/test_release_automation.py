@@ -37,16 +37,39 @@ def test_launcher_skips_existing_npm_but_retains_both_python_products():
     assert rows[0]["action"] == "SKIP_PUBLISHED"
     assert len([r for r in rows if r["action"] == "PUSH_TAG"]) == 8
     assert {r["tag"] for r in rows if r["product"] in ("python", "core")} == {
-        "sdk/python/v0.1.0", "core/python/v0.1.0",
+        "sdk/python/v0.1.0", "core/python/v0.1.1",
     }
 
 
-def test_all_nine_environments_have_only_their_own_exact_tag_prefix():
+def test_all_twelve_environments_have_only_their_own_exact_tag_prefix():
     envs = release_github_setup.ENVIRONMENTS
-    assert len(envs) == 9
-    assert envs["core-python"] == "core/python/v*"
-    for language in release_launch.ORDER[:-1]:
-        assert envs["sdk-" + language] == "sdk/" + language + "/v*"
+    expected = {
+        "sdk-node": "sdk/node/v*",
+        "sdk-python": "sdk/python/v*",
+        "sdk-rust": "sdk/rust/v*",
+        "sdk-go": "sdk/go/v*",
+        "sdk-jvm": "sdk/jvm/v*",
+        "sdk-dotnet": "sdk/dotnet/v*",
+        "sdk-ruby": "sdk/ruby/v*",
+        "sdk-php": "sdk/php/v*",
+        "core-relay": "core/relay/v*",
+        "core-code": "core/code/v*",
+        "core-english": "core/english/v*",
+        "core-python": "core/python/v*",
+    }
+    assert envs == expected
+    for environment, prefix in expected.items():
+        product = environment.removeprefix("sdk-").removeprefix("core-")
+        workflow = (
+            ROOT / ".github/workflows" /
+            f"{environment.split('-', 1)[0]}-release-{product}.yml"
+        )
+        tag_filters = [
+            line.strip()
+            for line in workflow.read_text(encoding="utf-8").splitlines()
+            if line.strip().startswith("tags:")
+        ]
+        assert tag_filters == [f"tags: ['{prefix}']"]
 
 
 @pytest.mark.parametrize("product", ["rust", "jvm"])
