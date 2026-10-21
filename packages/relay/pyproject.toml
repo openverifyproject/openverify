@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "openverify-relay"
-version = "0.1.0"
+version = "0.1.1"
 description = "OpenVerify DRAFT Relay runtime and Python compatibility API"
 requires-python = ">=3.13,<3.14"
 dependencies = ["verifyanything==0.1.0", "pydantic>=2.11,<3", "jsonschema>=4.23,<5"]

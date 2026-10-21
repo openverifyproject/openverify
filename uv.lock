@@ -331,7 +331,7 @@ wheels = [
 
 [[package]]
 name = "openverify"
-version = "0.1.0"
+version = "0.1.1"
 source = { editable = "." }
 dependencies = [
     { name = "openverify-code", extra = ["tools"] },
@@ -411,7 +411,7 @@ dev = [
 
 [[package]]
 name = "openverify-code"
-version = "0.1.0"
+version = "0.1.1"
 source = { directory = "packages/code" }
 dependencies = [
     { name = "openverify-relay" },
@@ -427,7 +427,7 @@ tools = [
 [package.metadata]
 requires-dist = [
     { name = "ast-grep-cli", marker = "extra == 'tools'", specifier = ">=0.50" },
-    { name = "openverify-relay", specifier = "==0.1.0" },
+    { name = "openverify-relay", specifier = "==0.1.1" },
     { name = "pytest", marker = "extra == 'tools'", specifier = ">=8.3" },
     { name = "ruff", marker = "extra == 'tools'", specifier = ">=0.17" },
 ]
@@ -435,18 +435,18 @@ provides-extras = ["tools"]
 
 [[package]]
 name = "openverify-english"
-version = "0.1.0"
+version = "0.1.1"
 source = { directory = "packages/english" }
 dependencies = [
     { name = "openverify-relay" },
 ]
 
 [package.metadata]
-requires-dist = [{ name = "openverify-relay", specifier = "==0.1.0" }]
+requires-dist = [{ name = "openverify-relay", specifier = "==0.1.1" }]
 
 [[package]]
 name = "openverify-relay"
-version = "0.1.0"
+version = "0.1.1"
 source = { directory = "packages/relay" }
 dependencies = [
     { name = "jsonschema" },

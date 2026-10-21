@@ -33,10 +33,10 @@ jobs:
         env:
           RELEASE_TAG: ${{ github.ref_name }}
         run: |
-          python tools/core_release.py --tag "$RELEASE_TAG" --evidence dist/core-artifact/python-products/verification.json --package-directory dist/core-artifact/python
+          python tools/core_release.py --tag "$RELEASE_TAG" --evidence dist/core-artifact/python-products/verification.json --package-directory dist/core-artifact/python --stage-dir dist/publish/python
       - uses: pypa/gh-action-pypi-publish@dc37677b2e1c63e2034f94d8a5b11f265b73ba33 # pypa/gh-action-pypi-publish@release/v1
         with:
-          packages-dir: dist/core-artifact/python/
+          packages-dir: dist/publish/python/
           skip-existing: false
       - name: Install the published harness in an isolated environment
         shell: python

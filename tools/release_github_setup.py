@@ -12,6 +12,8 @@ REPO = "openverifyproject/openverify"
 MIRROR = "openverifyproject/verifyanything-php"
 ENVIRONMENTS = {f"sdk-{language}": f"sdk/{language}/v*" for language in LANGUAGES}
 ENVIRONMENTS["core-python"] = "core/python/v*"
+for product in ("relay", "code", "english"):
+    ENVIRONMENTS[f"core-{product}"] = f"core/{product}/v*"
 
 
 def gh(*args, body=None):
@@ -64,7 +66,7 @@ def setup():
     ruleset = {
         "name": "release-tag-integrity", "target": "tag", "enforcement": "active",
         "conditions": {"ref_name": {
-            "include": ["refs/tags/sdk/*/v*", "refs/tags/core/python/v*"], "exclude": [],
+            "include": ["refs/tags/sdk/*/v*", "refs/tags/core/*/v*"], "exclude": [],
         }},
         "bypass_actors": [{"actor_id": 5, "actor_type": "RepositoryRole", "bypass_mode": "always"}],
         "rules": [{"type": t} for t in ("creation", "update", "deletion")],

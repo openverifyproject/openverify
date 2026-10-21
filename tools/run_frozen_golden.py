@@ -13,10 +13,29 @@ ROOT = Path(__file__).resolve().parents[1]
 BASELINE = "83b8e1ec0e5c5b4e0c9ef9e5c587121b5d38e242"
 
 
+def ensure_baseline_available(root=ROOT, baseline=BASELINE):
+    """Fetch the historical commit when it is absent from a clean checkout."""
+    present = subprocess.run(
+        ["git", "cat-file", "-e", f"{baseline}^{{commit}}"],
+        cwd=root,
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
+        check=False,
+    )
+    if present.returncode:
+        subprocess.run(["git", "fetch", "--no-tags", "origin", baseline], cwd=root, check=True)
+    resolved = subprocess.check_output(
+        ["git", "rev-parse", f"{baseline}^{{commit}}"], cwd=root, text=True
+    ).strip()
+    if resolved != baseline:
+        raise RuntimeError("Frozen Golden baseline commit did not resolve to the pinned SHA")
+
+
 def main() -> int:
     checkout = ROOT / ".pytest_cache/github/golden-baseline"
     checkout.parent.mkdir(parents=True, exist_ok=True)
     if not checkout.exists():
+        ensure_baseline_available()
         subprocess.run(
             ["git", "worktree", "add", "--detach", str(checkout), BASELINE],
             cwd=ROOT,

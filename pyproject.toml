@@ -4,12 +4,12 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "openverify"
-version = "0.1.0"
+version = "0.1.1"
 description = "Draft domain-neutral verification protocol, SDK, and provider-driven Relay runtime"
 readme = "README.md"
 requires-python = ">=3.13,<3.14"
 license = "MIT"
-dependencies = ["openverify-relay==0.1.0", "openverify-code[tools]==0.1.0", "openverify-english==0.1.0"]
+dependencies = ["openverify-relay==0.1.1", "openverify-code[tools]==0.1.1", "openverify-english==0.1.1"]
 
 [dependency-groups]
 dev = [
